@@ -1,0 +1,4 @@
+Airspace_NOTAM_Add=LPPC
+Shortcut_AHDG_NoFixes_Combo=0x00
+System_RepHdg_Correction=2
+Window_LostList_Auto=0
