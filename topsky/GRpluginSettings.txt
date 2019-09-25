@@ -32,7 +32,7 @@ System_UseReportedGS=0
 System_RwyArea=45.0 
 System_RwyBufferArea=90.0 
 System_RwyArea_LVP=90.0
-System_RwyBufferArea_LVP=120.0
+System_RwyBufferArea_LVP=140.0
 
 
 
@@ -49,7 +49,6 @@ List_Arrival_WTC=0
 List_Arrival_ETA=1
 List_Arrival_STAND=1
 
-List_Inbound_RWY=0
 List_Inbound_TYPE=0
 List_Inbound_WTC=0
 List_Inbound_ETA=1
