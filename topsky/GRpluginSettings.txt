@@ -1,0 +1,16 @@
+Color_Arrival=255,117,44
+Color_Departure=104,248,253
+GroundLabel_ATYP=1
+GroundLabel_WTC=1
+GroundLabel_SID=1
+RawVideo=0
+RawVideo_MaxHistory=0
+Track_Heading_Line=1
+Track_PredictionLine_TWR=1
+Track_PredictionLine_APP=1
+Window_APP_Extensions=1
+AppLabel_AFL_VS=1
+
+[LPPT]
+Airport_Elevation=374
+Airport_Radius=6.5
