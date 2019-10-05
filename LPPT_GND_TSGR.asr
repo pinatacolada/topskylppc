@@ -1,0 +1,172 @@
+DisplayTypeName:Ground Radar display
+DisplayTypeNeedRadarContent:0
+DisplayTypeGeoReferenced:1
+SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20190926000227-191001-0006.sct
+SECTORTITLE:LPPC-Package_20190926000227-191001-0006.sct
+ARTCC low boundary:LPCS Tower CTR:
+ARTCC low boundary:LPPT Tower CTR:
+Free Text:LPCS Taxiways\F:freetext
+Free Text:LPCS Taxiways\F:freetext
+Free Text:LPCS Taxiways\G:freetext
+Free Text:LPCS Taxiways\H:freetext
+Free Text:LPCS Taxiways\J:freetext
+Free Text:LPCS Taxiways\K:freetext
+Free Text:LPCS Taxiways\N:freetext
+Free Text:LPCS Taxiways\O:freetext
+Free Text:LPCS Taxiways\P:freetext
+Free Text:LPCS Taxiways\R:freetext
+Free Text:LPCS Taxiways\S:freetext
+Free Text:LPPT Stands\104:freetext
+Free Text:LPPT Stands\105:freetext
+Free Text:LPPT Stands\106:freetext
+Free Text:LPPT Stands\107:freetext
+Free Text:LPPT Stands\108:freetext
+Free Text:LPPT Stands\114:freetext
+Free Text:LPPT Stands\115:freetext
+Free Text:LPPT Stands\116:freetext
+Free Text:LPPT Stands\117:freetext
+Free Text:LPPT Stands\122:freetext
+Free Text:LPPT Stands\123:freetext
+Free Text:LPPT Stands\124:freetext
+Free Text:LPPT Stands\125:freetext
+Free Text:LPPT Stands\126:freetext
+Free Text:LPPT Stands\141:freetext
+Free Text:LPPT Stands\142:freetext
+Free Text:LPPT Stands\143:freetext
+Free Text:LPPT Stands\144:freetext
+Free Text:LPPT Stands\145:freetext
+Free Text:LPPT Stands\146:freetext
+Free Text:LPPT Stands\147:freetext
+Free Text:LPPT Stands\200:freetext
+Free Text:LPPT Stands\201:freetext
+Free Text:LPPT Stands\202:freetext
+Free Text:LPPT Stands\203:freetext
+Free Text:LPPT Stands\204:freetext
+Free Text:LPPT Stands\205:freetext
+Free Text:LPPT Stands\206:freetext
+Free Text:LPPT Stands\207:freetext
+Free Text:LPPT Stands\208:freetext
+Free Text:LPPT Stands\209:freetext
+Free Text:LPPT Stands\221:freetext
+Free Text:LPPT Stands\222:freetext
+Free Text:LPPT Stands\223:freetext
+Free Text:LPPT Stands\224:freetext
+Free Text:LPPT Stands\225:freetext
+Free Text:LPPT Stands\301:freetext
+Free Text:LPPT Stands\302:freetext
+Free Text:LPPT Stands\401:freetext
+Free Text:LPPT Stands\402:freetext
+Free Text:LPPT Stands\403:freetext
+Free Text:LPPT Stands\404:freetext
+Free Text:LPPT Stands\405:freetext
+Free Text:LPPT Stands\411:freetext
+Free Text:LPPT Stands\412:freetext
+Free Text:LPPT Stands\413:freetext
+Free Text:LPPT Stands\414:freetext
+Free Text:LPPT Stands\415:freetext
+Free Text:LPPT Stands\416:freetext
+Free Text:LPPT Stands\421:freetext
+Free Text:LPPT Stands\422:freetext
+Free Text:LPPT Stands\423:freetext
+Free Text:LPPT Stands\424:freetext
+Free Text:LPPT Stands\425:freetext
+Free Text:LPPT Stands\426:freetext
+Free Text:LPPT Stands\501:freetext
+Free Text:LPPT Stands\502:freetext
+Free Text:LPPT Stands\503:freetext
+Free Text:LPPT Stands\504:freetext
+Free Text:LPPT Stands\505:freetext
+Free Text:LPPT Stands\506:freetext
+Free Text:LPPT Stands\600:freetext
+Free Text:LPPT Stands\601:freetext
+Free Text:LPPT Stands\602:freetext
+Free Text:LPPT Stands\603:freetext
+Free Text:LPPT Stands\604:freetext
+Free Text:LPPT Stands\605:freetext
+Free Text:LPPT Stands\606:freetext
+Free Text:LPPT Stands\607:freetext
+Free Text:LPPT Stands\608:freetext
+Free Text:LPPT Stands\609:freetext
+Free Text:LPPT Stands\701:freetext
+Free Text:LPPT Stands\702:freetext
+Free Text:LPPT Stands\703:freetext
+Free Text:LPPT Stands\704:freetext
+Free Text:LPPT Stands\705:freetext
+Free Text:LPPT Stands\706:freetext
+Free Text:LPPT Stands\801:freetext
+Free Text:LPPT Stands\802:freetext
+Free Text:LPPT Stands\803:freetext
+Free Text:LPPT Stands\804:freetext
+Free Text:LPPT Stands\805:freetext
+Free Text:LPPT Stands\806:freetext
+Free Text:LPPT Taxiways\A1:freetext
+Free Text:LPPT Taxiways\A2:freetext
+Free Text:LPPT Taxiways\B:freetext
+Free Text:LPPT Taxiways\C:freetext
+Free Text:LPPT Taxiways\D:freetext
+Free Text:LPPT Taxiways\E:freetext
+Free Text:LPPT Taxiways\F:freetext
+Free Text:LPPT Taxiways\G1:freetext
+Free Text:LPPT Taxiways\G2:freetext
+Free Text:LPPT Taxiways\HN:freetext
+Free Text:LPPT Taxiways\HS:freetext
+Free Text:LPPT Taxiways\J:freetext
+Free Text:LPPT Taxiways\K:freetext
+Free Text:LPPT Taxiways\L1:freetext
+Free Text:LPPT Taxiways\L2:freetext
+Free Text:LPPT Taxiways\M1:freetext
+Free Text:LPPT Taxiways\M2:freetext
+Free Text:LPPT Taxiways\M3:freetext
+Free Text:LPPT Taxiways\M4:freetext
+Free Text:LPPT Taxiways\M5:freetext
+Free Text:LPPT Taxiways\N1:freetext
+Free Text:LPPT Taxiways\N2:freetext
+Free Text:LPPT Taxiways\P:freetext
+Free Text:LPPT Taxiways\Q1:freetext
+Free Text:LPPT Taxiways\Q2:freetext
+Free Text:LPPT Taxiways\Q3:freetext
+Free Text:LPPT Taxiways\R1:freetext
+Free Text:LPPT Taxiways\R2:freetext
+Free Text:LPPT Taxiways\S1:freetext
+Free Text:LPPT Taxiways\S2:freetext
+Free Text:LPPT Taxiways\S3:freetext
+Free Text:LPPT Taxiways\S4:freetext
+Free Text:LPPT Taxiways\T:freetext
+Free Text:LPPT Taxiways\TWR:freetext
+Free Text:LPPT Taxiways\U1:freetext
+Free Text:LPPT Taxiways\U2:freetext
+Free Text:LPPT Taxiways\U3:freetext
+Free Text:LPPT Taxiways\U4:freetext
+Free Text:LPPT Taxiways\U5:freetext
+Free Text:LPPT Taxiways\U6:freetext
+Free Text:LPPT Taxiways\V:freetext
+Free Text:LPPT Taxiways\W1:freetext
+Free Text:LPPT Taxiways\W2:freetext
+Free Text:LPPT Taxiways\W3:freetext
+Free Text:LPPT Taxiways\Y:freetext
+Free Text:LPPT Taxiways\Z1:freetext
+Free Text:LPPT Taxiways\Z2:freetext
+Free Text:LPPT Taxiways\Z3:freetext
+Geo:GEO:
+Geo:LPCS Groundlayout:
+Geo:LPPT Groundlayout:
+Geo:PT Continental Coastline:
+Regions:LPPT Background:polygon
+Regions:LPPT Groundlayout:polygon
+SHOWC:1
+SHOWSB:1
+BELOW:0
+ABOVE:0
+LEADER:5
+SHOWLEADER:0
+TURNLEADER:0
+HISTORY_DOTS:0
+SIMULATION_MODE:1
+DISABLEPANNING:0
+DISABLEZOOMING:0
+DisplayRotation:67.00000
+TAGFAMILY:Matias (built in)
+WINDOWAREA:38.767605:-9.161567:38.790789:-9.107281
+PLUGIN:Ground Radar plugin:AirportElevation:374
+PLUGIN:Ground Radar plugin:AirportRadius:1.9
+PLUGIN:Ground Radar plugin:GroundMode:LPPT
