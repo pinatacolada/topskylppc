@@ -1,8 +1,8 @@
 DisplayTypeName:Ground Radar display
 DisplayTypeNeedRadarContent:0
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20190926000227-191001-0006.sct
-SECTORTITLE:LPPC-Package_20190926000227-191001-0006.sct
+SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20191001233453-191001-0014.sct
+SECTORTITLE:LPPC-Package_20191001233453-191001-0014.sct
 ARTCC low boundary:LPCS Tower CTR:
 ARTCC low boundary:LPPT Tower CTR:
 Free Text:LPCS Taxiways\F:freetext
@@ -166,7 +166,8 @@ DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:67.00000
 TAGFAMILY:Matias (built in)
-WINDOWAREA:38.767605:-9.161567:38.790789:-9.107281
+WINDOWAREA:38.766937:-9.162300:38.790121:-9.108013
 PLUGIN:Ground Radar plugin:AirportElevation:374
 PLUGIN:Ground Radar plugin:AirportRadius:1.9
 PLUGIN:Ground Radar plugin:GroundMode:LPPT
+PLUGIN:TopSky plugin:NoDraw:1
