@@ -1,12 +1,34 @@
-Airspace_NOTAM_Add=LPPC
-Shortcut_AHDG_NoFixes_Combo=0x00
-System_RepHdg_Correction=2
-Window_LostList_Auto=0
-Label_UseTransferInColor=1
-Color_Track_Default=185,255,253
-Color_Track_Highlight=185,255,253
-Color_Assumed=169,252,95
 Setup_COOPANS=1
+
+Airspace_NOTAM_Add=LPPC
+
+Shortcut_AHDG_NoFixes_Combo=0x00
+
+//Window_LostList_Auto=0
+
+Label_UseTransferInColor=1
+
+//Color_Arm=250,0,250//grey out option font color
+Color_Assumed=169,252,95//radar target and label
+//Color_Background=250,0,250//menu backgrounds
+Color_Concerned=185,255,253
+Color_Track_Default=169,252,95
+//Color_Foreground=250,0,250//font color
+Color_Track_Highlight=169,252,95
+Color_Informed=250,0,250
+
+//Color_Trough=069,252,95 //this controls slider background color
+Color_VAW_Track_Position=169,252,95
 Color_Rwy_App_Line_Inuse=150,150,150
+
+
+
 RwyAppLines_Length=0.1
 RwyAppLines_Auto=0
+Label_Alt_Digits=3
+Label_All_N=0
+
+System_FPASD=0
+System_RepHdg_Correction=2
+
+Track_PredictionLine=2
