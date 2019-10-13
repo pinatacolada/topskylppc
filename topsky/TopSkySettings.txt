@@ -8,22 +8,20 @@ Shortcut_AHDG_NoFixes_Combo=0x00
 
 Label_UseTransferInColor=1
 
-Color_Active_Sector=1,2,26
 //Color_Arm=250,0,250//grey out option font color
 Color_Assumed=169,252,95//radar target and label
 //Color_Background=250,0,250//menu backgrounds
 Color_Concerned=185,255,253
-//Color_Foreground=250,0,250//font color
 Color_Track_Default=169,252,95
+//Color_Foreground=250,0,250//font color
 Color_Track_Highlight=169,252,95
 Color_Informed=250,0,250
-Color_Redundant=250,0,250
 
 //Color_Trough=069,252,95 //this controls slider background color
-Color_VAW_Track_Position=185,255,253//Vertical Aid Window
+Color_VAW_Track_Position=169,252,95
 Color_Rwy_App_Line_Inuse=150,150,150
-Color_Unconcerned=185,255,253//unassumed contact
-Color_Unknown=250,0,250
+
+
 
 RwyAppLines_Length=0.1
 RwyAppLines_Auto=0
