@@ -6,15 +6,15 @@ Shortcut_AHDG_NoFixes_Combo=0x00
 
 //Window_LostList_Auto=0
 
-Label_UseTransferInColor=1
-
 Color_Active_Sector=1,2,26
 Color_AIW_Intrusion=255,128,1
 //Color_Arm=250,0,250//grey out option font color
 Color_Assumed=169,252,95//radar target and label
 //Color_Background=250,0,250//menu backgrounds
 Color_Concerned=185,255,253
+Color_Coordination=250,0,250
 //Color_Foreground=250,0,250//font color
+Color_Heading_Vector=250,0,250
 //Color_TopShadow=250,0,255//UI top shadow
 Color_Track_Default=169,252,95
 Color_Track_Highlight=169,252,95
@@ -29,13 +29,23 @@ Color_Rwy_App_Line_Inuse=150,150,150
 Color_Unconcerned=185,255,253//unassumed contact
 Color_Unknown=57,255,255//ongoing transfer
 
+HTTP_METAR_Server=http://metars.flyatlantic-va.com/
+HTTP_METAR_Page_Prefix=metar?ICAO=
+HTTP_METAR_Page_Suffix=
+HTTP_METAR_Data_Prefix="
+HTTP_METAR_Data_Suffix="
+
 RwyAppLines_Length=0.1
 RwyAppLines_Auto=0
 Label_Alt_Digits=3
 Label_All_N=0
+Label_UseTransferInColor=1
+Label_SI_FreqTime=5
+Label_SI_ShowFreq=1
 
 System_FPASD=0
 System_RepHdg_Correction=2
+System_TaxiTime=13
 
 Track_PredictionLine=2
 Track_DivergenceSymbol_Size=0
