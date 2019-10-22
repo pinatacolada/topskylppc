@@ -1,8 +1,8 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20190926000227-191001-0006.sct
-SECTORTITLE:LPPC-Package_20190926000227-191001-0006.sct
+SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20191021200958-191101-0039.sct
+SECTORTITLE:LPPC-Package_20191021200958-191101-0039.sct
 Airports:LPBG:symbol
 Airports:LPBR:symbol
 Airports:LPCO:symbol
@@ -19,6 +19,12 @@ Airports:LPVZ:symbol
 ARTCC boundary:COBERTURA RADAR:
 ARTCC boundary:SECTOR EAST:
 ARTCC boundary:SECTOR WEST:
+ARTCC low boundary:Braganca ATZ:
+ARTCC low boundary:Chaves ATZ:
+ARTCC low boundary:Coimbra ATZ:
+ARTCC low boundary:Coordenacao LPPT/LPPR:
+ARTCC low boundary:Evora ATZ:
+ARTCC low boundary:LPCS Guincho/Cabo Raso:
 ARTCC low boundary:LPCS Tower CTR:
 ARTCC low boundary:LPFR MRVA:
 ARTCC low boundary:LPFR TMA:
@@ -34,6 +40,11 @@ ARTCC low boundary:LPPT AoR APP:
 ARTCC low boundary:LPPT MRVA:
 ARTCC low boundary:LPPT TMA:
 ARTCC low boundary:LPPT Tower CTR:
+ARTCC low boundary:Ponte de Sor ATZ:
+ARTCC low boundary:Ponte do Sor TRMZ:
+ARTCC low boundary:Portimao ATZ:
+ARTCC low boundary:Vila Real ATZ:
+ARTCC low boundary:Viseu ATZ:
 Fixes:68PRT:symbol
 Fixes:6FIT:symbol
 Fixes:ABALO:symbol
@@ -43,6 +54,8 @@ Fixes:ABUPI:name
 Fixes:ABUPI:symbol
 Fixes:ABUSU:name
 Fixes:ABUSU:symbol
+Fixes:ADAGO:name
+Fixes:ADAGO:symbol
 Fixes:ADINO:symbol
 Fixes:ADNOV:name
 Fixes:ADNOV:symbol
@@ -133,6 +146,8 @@ Fixes:GUDAV:symbol
 Fixes:GUNTI:name
 Fixes:GUNTI:symbol
 Fixes:IDBID:symbol
+Fixes:IDIGO:name
+Fixes:IDIGO:symbol
 Fixes:IIF6:symbol
 Fixes:INBOM:name
 Fixes:INBOM:symbol
@@ -166,6 +181,8 @@ Fixes:MANOX:name
 Fixes:MANOX:symbol
 Fixes:MARIM:symbol
 Fixes:MARUM:symbol
+Fixes:MAVEX:name
+Fixes:MAVEX:symbol
 Fixes:MIMBO:symbol
 Fixes:MINTA:symbol
 Fixes:MONUR:symbol
@@ -295,6 +312,8 @@ Fixes:VENOL:name
 Fixes:VENOL:symbol
 Fixes:VERAM:name
 Fixes:VERAM:symbol
+Fixes:VETEL:name
+Fixes:VETEL:symbol
 Fixes:XAMAX:symbol
 Fixes:XANEL:symbol
 Fixes:XEGEN:name
@@ -318,9 +337,11 @@ Free Text:LPPT MRVA\3000:freetext
 Free Text:LPPT MRVA\3100:freetext
 Free Text:LPPT MRVA\3600:freetext
 Geo:GEO:
-Geo:LPMA Coastline:
-Geo:LPPS Coastline:
-Geo:PT Continental Coastline:
+Geo:GM Landmark Morocco Coastline:
+Geo:LE Landmark Spain Coastline:
+Geo:LP Landmark Continental Coastline:
+Geo:LP Landmark Madeira Coastline:
+Geo:LP Landmark Porto Santo Coastline:
 Runways:LPAR 04-22:centerline
 Runways:LPAR 04-22:name
 Runways:LPBJ 01L-19R:centerline
@@ -348,9 +369,9 @@ VORs:VFA:symbol
 VORs:VIS:symbol
 SHOWC:1
 SHOWSB:1
-BELOW:0
+BELOW:500
 ABOVE:66000
-LEADER:-1
+LEADER:-2
 SHOWLEADER:1
 TURNLEADER:0
 HISTORY_DOTS:0
@@ -358,5 +379,5 @@ SIMULATION_MODE:1
 DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:0.00000
-TAGFAMILY:LOVV_Topsky
-WINDOWAREA:37.568611:-12.075938:40.445408:-5.339705
+TAGFAMILY:PT vACC - NORM
+WINDOWAREA:30.653787:-26.208017:44.679470:6.634162
