@@ -14,14 +14,14 @@ Color_Assumed=140,220,110//radar target and label
 Color_Concerned=0,52,241
 Color_Coordination=188,194,188//unassumed color
 //Color_Foreground=250,0,250//font color
-Color_Heading_Vector=250,0,250
+Color_Heading_Vector=185,185,185
 //Color_TopShadow=250,0,255//UI top shadow
 Color_Track_Default=140,220,110
 Color_Track_Highlight=140,220,110
 Color_Suite_Highlight=250,0,250
 //Color_Information=250,0,250
 Color_Informed=250,0,250
-Color_Redundant=177,157,192//ongoing and accepted transfer
+Color_Redundant=150,130,165//ongoing and accepted transfer
 
 //Color_Trough=069,252,95 //slider background color
 //Color_VAW_Track_Position=185,255,253//Vertical Aid Window
@@ -47,5 +47,5 @@ System_FPASD=0
 System_RepHdg_Correction=2
 System_TaxiTime=13
 
-Track_PredictionLine=0
+Track_PredictionLine=0//leader line length
 Track_DivergenceSymbol_Size=0
