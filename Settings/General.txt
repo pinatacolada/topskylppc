@@ -97,7 +97,7 @@ m_AtisMessageLevel:0
 m_PrivateMessageLevel:2
 m_FreqMessageLevel:4
 m_MericUnits:0
-m_ShowCorrelatedInFpList:0
+m_ShowCorrelatedInFpList:1
 m_ShowUncorrelatedInFpList:1
 m_ShowVFRInFpList:0
 m_ShowIFRInFpList:0
@@ -125,10 +125,6 @@ m_RubberHeadingRounding:5
 SqawkForSModeTransponder:
 m_TransparentTagBackground:1
 m_UseArrDepTagBgColor:0
-VCCS
-Ts3Server:localhost
-Ts3Port:9988
-END
 PILOTING
 m_Visible:0
 m_X:0
@@ -148,4 +144,8 @@ m_Column:LAND:7:0:101:38:0:1::::1792687510
 m_Column:TX:6:0:102:39:0:1::::1792687510
 m_Column:TXB:6:0:103:40:0:1::::1792687510
 m_Column:HOLD:5:0:104:43:0:1::::1792687510
+END
+VCCS
+Ts3Server:localhost
+Ts3Port:9988
 END
