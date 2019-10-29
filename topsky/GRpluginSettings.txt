@@ -10,6 +10,7 @@ Color_WForeground=65,65,65
 Color_WTitleBar=250,250,250
 
 GroundLabel=1
+GroundLabel_Font=EuroScope
 GroundLabel_FontStyle=1000,0,0,0
 GroundLabel_FontSize=11
 GroundLabel_ATYP=1
@@ -17,6 +18,8 @@ GroundLabel_RMK=0
 GroundLabel_SID=1
 GroundLabel_WTC=1
 GroundLabel_STAND=1
+
+AppLabel_Font=EuroScope
 
 AppLabel_AFL_VS=1
 AppLabel_GS=1
