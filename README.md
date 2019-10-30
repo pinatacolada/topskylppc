@@ -36,7 +36,7 @@ Ground Radar based on the SAAB A3000 A-SMGCS system
 And a lot more
 
 # Instalation
-Download and unzip the contents of topskylppc-master folder into the folder where you keep your LPPC sector file. It should ask you to overwrite some files, say yes to those.
+[Download](https://github.com/pinatacolada/topskylppc/archive/v0.1.zip) and unzip the contents of topskylppc-0.1 folder into the folder where you keep your LPPC sector file. It should ask you to overwrite some files, say yes to those.
 Then, on Euroscope, go to Other Settings/Plug-ins. Click on load and navigate to where you dropped the files before. Select the TopSky.dll and then the GRplugin.dll files.
 Both plug-ins should now show in the plug-in list. Select each and on the Forbidden to draw on types list click on << on all entries, so as to allow the plug-ins to draw on the screen.
 Close and reopen Euroscope, save all changes.
