@@ -10,17 +10,17 @@ This plugin is for users with at least a basic understanding of ATC procedures a
 # Features
 This plugin adds a ton of neat features and tools, some highlights are:
 TSA managment, including timed and scheduled activations
-text: ![TSA Managment](https://user-images.githubusercontent.com/13833056/67867649-a0fe7000-fb22-11e9-9243-7bd44873d0e4.png)
+![TSA Managment](https://user-images.githubusercontent.com/13833056/67867649-a0fe7000-fb22-11e9-9243-7bd44873d0e4.png)
 Conflict and Risk Display (CARD)
-text: ![CARD](https://user-images.githubusercontent.com/13833056/67867654-a360ca00-fb22-11e9-8929-64138c7b9aa4.png)
+![CARD](https://user-images.githubusercontent.com/13833056/67867654-a360ca00-fb22-11e9-8929-64138c7b9aa4.png)
 Vertical Aid Window (VAW)
-text: ![VAW](https://user-images.githubusercontent.com/13833056/67867656-a491f700-fb22-11e9-9e79-13dd79b09742.png)
+![VAW](https://user-images.githubusercontent.com/13833056/67867656-a491f700-fb22-11e9-9e79-13dd79b09742.png)
 Segregated Area Probe (SAP)
 Airport specific Transition level
-text: ![SAP](https://user-images.githubusercontent.com/13833056/67867661-a5c32400-fb22-11e9-843c-b3f450f552f8.png)
+![SAP](https://user-images.githubusercontent.com/13833056/67867661-a5c32400-fb22-11e9-843c-b3f450f552f8.png)
 Medium Term Conflict Detection
 Ground Radar based on the SAAB A3000 A-SMGCS system
-text: ![Ground Radar](https://user-images.githubusercontent.com/13833056/67867817-e28f1b00-fb22-11e9-825d-92de422971e7.png)
+![Ground Radar](https://user-images.githubusercontent.com/13833056/67867817-e28f1b00-fb22-11e9-825d-92de422971e7.png)
 
 And a lot more
 
