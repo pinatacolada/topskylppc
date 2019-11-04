@@ -7,6 +7,7 @@ Shortcut_AHDG_NoFixes_Combo=0x00
 //Window_LostList_Auto=0
 
 Color_Active_Sector=1,2,26
+Color_Active_Map_Type_7=128,0,0//red restricted areas 
 Color_AIW_Intrusion=255,128,1
 //Color_Arm=250,0,250//grey out option font color
 Color_Assumed=140,220,110//radar target and label
