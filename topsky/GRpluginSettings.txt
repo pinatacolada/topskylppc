@@ -24,10 +24,10 @@ AppLabel_Font=EuroScope
 AppLabel_AFL_VS=1
 AppLabel_GS=1
 
-RawVideo=0
-RawVideo_MaxHistory=0
+RawVideo=1
+RawVideo_MaxHistory=5
 
-Equip_ProMode=0
+Equip_ProMode=1
 
 Track_Heading_Line=1
 Track_PredictionLine_TWR=1
@@ -38,8 +38,6 @@ System_RwyArea=45.0
 System_RwyBufferArea=90.0 
 System_RwyArea_LVP=90.0
 System_RwyBufferArea_LVP=140.0
-
-
 
 Track_PredictionLine_APP=2
 Track_HistoryDots_APP=0
