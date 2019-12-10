@@ -37,7 +37,7 @@ m_VFRSquawks:7000
 m_WhoIsOnlineURL:http://vatsim.metacraft.com/vatsim-data.txt
 m_AutoLoadMetarForActiveAirports:0
 m_LockShowRouteWhenAccepting:0
-m_VoiceAtisBuilderUrl:https://atis-pt.herokuapp.com/?metar=$metar($atisairport)&rwy=$arrrwy($atisairport)&letter=$atiscode&show_freqs=True&hiro=False&xpndr_startup=False&rwy_35_clsd=False
+m_VoiceAtisBuilderUrl:http://atis-pt.herokuapp.com/?metar=$metar($atisairport)&rwy=$arrrwy($atisairport)&letter=$atiscode&show_freqs=True&hiro=False&xpndr_startup=False&rwy_35_clsd=False
 m_DoNotUseAcceptedColor:0
 m_DoNotUseRefusedColor:0
 SET_TransparentAcListBackground:0
