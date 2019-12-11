@@ -35,9 +35,9 @@ m_InhibitAutoPushOnHandoff:0
 m_RandomSquawks:1
 m_VFRSquawks:7000
 m_WhoIsOnlineURL:http://vatsim.metacraft.com/vatsim-data.txt
-m_AutoLoadMetarForActiveAirports:1
+m_AutoLoadMetarForActiveAirports:0
 m_LockShowRouteWhenAccepting:0
-m_VoiceAtisBuilderUrl:https://atis-pt.herokuapp.com/?metar=$metar($atisairport)&rwy=$arrrwy($atisairport)&letter=$atiscode&show_freqs=True&hiro=False&xpndr_startup=False&rwy_35_clsd=False
+m_VoiceAtisBuilderUrl:http://atis-pt.herokuapp.com/?metar=$metar($atisairport)&rwy=$arrrwy($atisairport)&letter=$atiscode&show_freqs=True&hiro=False&xpndr_startup=False&rwy_35_clsd=False
 m_DoNotUseAcceptedColor:0
 m_DoNotUseRefusedColor:0
 SET_TransparentAcListBackground:0
@@ -71,12 +71,12 @@ m_CorrelationDistance:100
 m_SimulateRadars:1
 m_AllowCorrelatedTAGDown:1
 m_ShowDetailedOverUntagged:1
-m_ShowRectAroundFPTrack:1
+m_ShowRectAroundFPTrack:0
 m_ShowRectAroundASEL:0
 m_VatsimStatusURL:http://status.vatsim.net/
 m_OverrideWhoIsOnlineURL:0
 m_ShowVFRFlightPlanTrack:0
-m_ShowIFRFlightPlanTrack:0
+m_ShowIFRFlightPlanTrack:1
 m__AutoStartFlightPlanTracks:1
 m_UnicomFrequency:122.8
 m_MessageInfoLevel:1
@@ -125,6 +125,10 @@ m_RubberHeadingRounding:5
 SqawkForSModeTransponder:
 m_TransparentTagBackground:1
 m_UseArrDepTagBgColor:0
+VCCS
+Ts3Server:localhost
+Ts3Port:9988
+END
 PILOTING
 m_Visible:0
 m_X:0
@@ -144,8 +148,4 @@ m_Column:LAND:7:0:101:38:0:1::::1792687510
 m_Column:TX:6:0:102:39:0:1::::1792687510
 m_Column:TXB:6:0:103:40:0:1::::1792687510
 m_Column:HOLD:5:0:104:43:0:1::::1792687510
-END
-VCCS
-Ts3Server:localhost
-Ts3Port:9988
 END
