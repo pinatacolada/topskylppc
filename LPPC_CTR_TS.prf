@@ -1,0 +1,45 @@
+Settings	sector	\LPPC-Package_20191206221446-191301-0012.sct
+Settings	alias	\LPPC\Alias\alias.txt
+Settings	airlines	\LPPC\ICAO\ICAO_Airlines.txt
+Settings	airports	\LPPC\ICAO\ICAO_Airports.txt
+Settings	aircraft	\LPPC\ICAO\ICAO_Aircraft.txt
+Settings	Settingsfile	\LPPC\Settings\General.txt
+Settings	AtisFolder	\LPPC\ATIS\atisfiles.txt
+Settings	SettingsfileSYMBOLOGY	\LPPC\Settings\Symbology.txt
+Settings	SettingsfileVOICE	\LPPC\Settings\VoiceChannels.txt
+Settings	SettingsfilePROFILE	\LPPC\Settings\Settings.txt
+Settings	SettingsfileTAGS	\LPPC\Settings\Tags.txt
+Settings	SettingsfileSIL	\LPPC\Settings\SectorInboundList_TopSky.txt
+Settings	SettingsfileSEL	\LPPC\Settings\SectorExitList_TopSky.txt
+Settings	SettingsfileDEP	\LPPC\Settings\DepartureList_TopSky.txt
+Settings	SettingsfileARR	\LPPC\Settings\ArrivalList.txt
+Settings	SettingsfileFP	\LPPC\Settings\FPList.txt
+Settings	SettingsfilePLUGINS	\LPPC\Settings\Plugins.txt
+Settings	SettingsfileSCREEN	\LPPC\Settings\Screen.txt
+Settings	SettingsfileCONFLICT	\LPPC\Settings\Conflict.txt
+Settings	SettingsfileVCCS	\LPPC\Settings\General.txt
+Plugins	Plugin0	\topsky\TopSky.dll
+Plugins	Plugin0Display0	Standard ES radar screen
+Plugins	Plugin1	\topsky\GRplugin.dll
+Plugins	Plugin1Display0	Ground Radar display
+Plugins	Plugin1Display1	Standard ES radar screen
+Plugins	Plugin0Display1	Ground Radar display
+Settings	AselKey	5111808
+Settings	FreqKey	3604480
+Settings	SettingsfilePILOTING	\LPPC\Settings\General.txt
+Voice	PPPT	18677760
+Settings	ipaddr	\ipaddr.txt
+Settings	airways	\LPPC\NavData\airway.txt
+ASRFastKeys	1	\LPPC\ASR\LPPC_CTR.asr
+ASRFastKeys	2	\LPPC\ASR\LPMA_APP.asr
+ASRFastKeys	3	\LPPC\ASR\LPFR_APP.asr
+ASRFastKeys	4	\LPPC\ASR\LPPT_APP.asr
+ASRFastKeys	5	\LPPC\ASR\LPPR_APP.asr
+ASRFastKeys	6	\LPPC\ASR\LPMA_TWR.asr
+ASRFastKeys	7	\LPPC\ASR\LPFR_TWR.asr
+ASRFastKeys	8	\LPPC\ASR\LPPT_GND_TSGR.asr
+ASRFastKeys	9	\LPPC\ASR\LPPR_TWR.asr
+RecentFiles	Recent7	\LPPC\ASR\LPMA_APP.asr
+RecentFiles	Recent8	\LPPC\ASR\LPPR_APP.asr
+RecentFiles	Recent9	\LPPC\ASR\LPFR_APP.asr
+RecentFiles	Recent10	\LPPC\ASR\LPPR_GND.asr

@@ -1,8 +1,8 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20191021200958-191101-0039.sct
-SECTORTITLE:LPPC-Package_20191021200958-191101-0039.sct
+SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20191121153415-191201-0004.sct
+SECTORTITLE:LPPC-Package_20191121153415-191201-0004.sct
 Airports:LPBG:symbol
 Airports:LPBR:symbol
 Airports:LPCO:symbol
@@ -19,6 +19,7 @@ Airports:LPVZ:symbol
 ARTCC boundary:COBERTURA RADAR:
 ARTCC boundary:SECTOR EAST:
 ARTCC boundary:SECTOR WEST:
+ARTCC boundary:SEPARACAO 8NM:
 ARTCC low boundary:Braganca ATZ:
 ARTCC low boundary:Chaves ATZ:
 ARTCC low boundary:Coimbra ATZ:
@@ -47,6 +48,7 @@ ARTCC low boundary:Vila Real ATZ:
 ARTCC low boundary:Viseu ATZ:
 Fixes:68PRT:symbol
 Fixes:6FIT:symbol
+Fixes:ABALO:name
 Fixes:ABALO:symbol
 Fixes:ABLEG:name
 Fixes:ABLEG:symbol
@@ -56,6 +58,8 @@ Fixes:ABUSU:name
 Fixes:ABUSU:symbol
 Fixes:ADAGO:name
 Fixes:ADAGO:symbol
+Fixes:ADILI:name
+Fixes:ADILI:symbol
 Fixes:ADINO:symbol
 Fixes:ADNOV:name
 Fixes:ADNOV:symbol
@@ -77,6 +81,7 @@ Fixes:ARDID:name
 Fixes:ARDID:symbol
 Fixes:ARMED:name
 Fixes:ARMED:symbol
+Fixes:ASGAM:name
 Fixes:ASGAM:symbol
 Fixes:ASMAR:symbol
 Fixes:ASMOV:name
@@ -89,6 +94,7 @@ Fixes:BALNO:name
 Fixes:BALNO:symbol
 Fixes:BANAL:name
 Fixes:BANAL:symbol
+Fixes:BARDI:name
 Fixes:BARDI:symbol
 Fixes:BAROK:name
 Fixes:BAROK:symbol
@@ -98,8 +104,12 @@ Fixes:BELDU:name
 Fixes:BELDU:symbol
 Fixes:BEXAL:name
 Fixes:BEXAL:symbol
+Fixes:BIGPI:name
+Fixes:BIGPI:symbol
 Fixes:BIMBO:name
 Fixes:BIMBO:symbol
+Fixes:BURAG:name
+Fixes:BURAG:symbol
 Fixes:BUSEN:symbol
 Fixes:DEGUN:name
 Fixes:DEGUN:symbol
@@ -115,6 +125,7 @@ Fixes:DIVUT:name
 Fixes:DIVUT:symbol
 Fixes:EKMAR:name
 Fixes:EKMAR:symbol
+Fixes:ELBIM:name
 Fixes:ELBIM:symbol
 Fixes:ELGIX:symbol
 Fixes:ELVAR:symbol
@@ -123,6 +134,8 @@ Fixes:EPAKA:symbol
 Fixes:EPOPO:symbol
 Fixes:ERPES:name
 Fixes:ERPES:symbol
+Fixes:ERTIS:symbol
+Fixes:ETAKA:name
 Fixes:ETAKA:symbol
 Fixes:EVURA:name
 Fixes:EVURA:symbol
@@ -141,6 +154,7 @@ Fixes:GENRO:symbol
 Fixes:GIMAL:name
 Fixes:GIMAL:symbol
 Fixes:GODGI:symbol
+Fixes:GOSGA:name
 Fixes:GOSGA:symbol
 Fixes:GUDAV:symbol
 Fixes:GUNTI:name
@@ -148,6 +162,8 @@ Fixes:GUNTI:symbol
 Fixes:IDBID:symbol
 Fixes:IDIGO:name
 Fixes:IDIGO:symbol
+Fixes:IDREL:name
+Fixes:IDREL:symbol
 Fixes:IIF6:symbol
 Fixes:INBOM:name
 Fixes:INBOM:symbol
@@ -159,8 +175,11 @@ Fixes:IXOLI:symbol
 Fixes:KOMUT:name
 Fixes:KOMUT:symbol
 Fixes:LAMDI:symbol
+Fixes:LASIB:name
 Fixes:LASIB:symbol
 Fixes:LATRU:symbol
+Fixes:LEPRU:name
+Fixes:LEPRU:symbol
 Fixes:LIDRO:name
 Fixes:LIDRO:symbol
 Fixes:LIGRA:symbol
@@ -174,6 +193,7 @@ Fixes:MA532:name
 Fixes:MA532:symbol
 Fixes:MADAT:name
 Fixes:MADAT:symbol
+Fixes:MALIS:name
 Fixes:MALIS:symbol
 Fixes:MANIK:name
 Fixes:MANIK:symbol
@@ -184,6 +204,7 @@ Fixes:MARUM:symbol
 Fixes:MAVEX:name
 Fixes:MAVEX:symbol
 Fixes:MIMBO:symbol
+Fixes:MINTA:name
 Fixes:MINTA:symbol
 Fixes:MONUR:symbol
 Fixes:MOSEN:symbol
@@ -197,16 +218,21 @@ Fixes:NAVIX:symbol
 Fixes:NEGRI:symbol
 Fixes:NELSO:name
 Fixes:NELSO:symbol
+Fixes:NETOS:name
 Fixes:NETOS:symbol
 Fixes:NETVO:symbol
 Fixes:NIDUL:symbol
 Fixes:NINOS:symbol
+Fixes:NIPRI:name
 Fixes:NIPRI:symbol
+Fixes:NIRAK:name
 Fixes:NIRAK:symbol
 Fixes:OBESA:symbol
+Fixes:OBOLO:symbol
 Fixes:ODEMI:name
 Fixes:ODEMI:symbol
 Fixes:ODLIX:symbol
+Fixes:OGDOR:name
 Fixes:OGDOR:symbol
 Fixes:OGERO:name
 Fixes:OGERO:symbol
@@ -220,7 +246,9 @@ Fixes:ORTOP:symbol
 Fixes:OSLAD:name
 Fixes:OSLAD:symbol
 Fixes:PARAV:symbol
+Fixes:PECKY:name
 Fixes:PECKY:symbol
+Fixes:PESAS:name
 Fixes:PESAS:symbol
 Fixes:PESEX:symbol
 Fixes:PESUL:symbol
@@ -232,6 +260,7 @@ Fixes:PIGOR:symbol
 Fixes:PINEK:name
 Fixes:PINEK:symbol
 Fixes:PINIM:symbol
+Fixes:PIREN:name
 Fixes:PIREN:symbol
 Fixes:PORLI:symbol
 Fixes:PORTA:symbol
@@ -259,8 +288,10 @@ Fixes:PT420:symbol
 Fixes:PT421:symbol
 Fixes:PT422:symbol
 Fixes:RAKOD:symbol
+Fixes:RAKUN:name
 Fixes:RAKUN:symbol
 Fixes:RALUS:symbol
+Fixes:RETEN:name
 Fixes:RETEN:symbol
 Fixes:RETMO:name
 Fixes:RETMO:symbol
@@ -273,18 +304,23 @@ Fixes:RIVRO:symbol
 Fixes:RODAP:symbol
 Fixes:ROKAP:symbol
 Fixes:ROKOB:symbol
+Fixes:ROSAL:name
 Fixes:ROSAL:symbol
 Fixes:ROSRO:symbol
+Fixes:RUPEP:name
 Fixes:RUPEP:symbol
 Fixes:SONAP:symbol
 Fixes:SOPOP:symbol
 Fixes:SOTEX:name
 Fixes:SOTEX:symbol
+Fixes:SUBAL:name
 Fixes:SUBAL:symbol
 Fixes:TABAL:symbol
 Fixes:TABOM:symbol
 Fixes:TAKAV:name
 Fixes:TAKAV:symbol
+Fixes:TIGGI:name
+Fixes:TIGGI:symbol
 Fixes:TORVU:name
 Fixes:TORVU:symbol
 Fixes:TOSDI:name
@@ -292,6 +328,7 @@ Fixes:TOSDI:symbol
 Fixes:TROIA:name
 Fixes:TROIA:symbol
 Fixes:TUNAV:symbol
+Fixes:TUPIX:name
 Fixes:TUPIX:symbol
 Fixes:TURON:name
 Fixes:TURON:symbol
@@ -331,11 +368,6 @@ Free Text:LPMA MRVA\9000:freetext
 Free Text:LPPR MRVA\3000:freetext
 Free Text:LPPR MRVA\4000:freetext
 Free Text:LPPR MRVA\5100:freetext
-Free Text:LPPT MRVA\2500:freetext
-Free Text:LPPT MRVA\2800:freetext
-Free Text:LPPT MRVA\3000:freetext
-Free Text:LPPT MRVA\3100:freetext
-Free Text:LPPT MRVA\3600:freetext
 Geo:GEO:
 Geo:GM Landmark Morocco Coastline:
 Geo:LE Landmark Spain Coastline:
@@ -345,16 +377,35 @@ Geo:LP Landmark Porto Santo Coastline:
 Runways:LPAR 04-22:centerline
 Runways:LPAR 04-22:name
 Runways:LPBJ 01L-19R:centerline
-Runways:LPBJ 01L-19R:name
+Runways:LPCO 16-34:centerline
+Runways:LPCS 17-35:centerline
+Runways:LPCS 17-35:extended centerline 2
+Runways:LPEV 01-19:centerline
+Runways:LPFR 10-28:centerline
 Runways:LPFR 10-28:extended centerline 1
 Runways:LPFR 10-28:extended centerline 2
+Runways:LPMA 05-23:centerline
+Runways:LPMR 18-36:centerline
+Runways:LPMT 01-19:centerline
+Runways:LPMT 08-26:centerline
+Runways:LPOV 18-36:centerline
+Runways:LPPM 11-29:centerline
+Runways:LPPR 17-35:centerline
 Runways:LPPR 17-35:extended centerline 1
 Runways:LPPR 17-35:extended centerline 2
+Runways:LPPS 18-36:centerline
 Runways:LPPS 18-36:extended centerline 1
 Runways:LPPS 18-36:extended centerline 2
-Runways:LPPS 18-36:name
+Runways:LPPT 03-21:centerline
 Runways:LPPT 03-21:extended centerline 1
 Runways:LPPT 03-21:extended centerline 2
+Runways:LPPT 17-35:centerline
+Runways:LPSC 17-35:centerline
+Runways:LPSO 03-21:centerline
+Runways:LPST 14-32:centerline
+Runways:LPVL 16-34:centerline
+Runways:LPVR 02-20:centerline
+Runways:LPVZ 18-36:centerline
 VORs:CAS:symbol
 VORs:CCS:symbol
 VORs:ESP:symbol
@@ -380,4 +431,4 @@ DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:0.00000
 TAGFAMILY:PT vACC - NORM
-WINDOWAREA:30.653787:-26.208017:44.679470:6.634162
+WINDOWAREA:38.158508:-11.148078:40.292843:-6.150375
