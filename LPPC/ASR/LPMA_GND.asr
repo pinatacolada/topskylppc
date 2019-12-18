@@ -1,0 +1,606 @@
+DisplayTypeName:Standard ES radar screen
+DisplayTypeNeedRadarContent:1
+DisplayTypeGeoReferenced:1
+SECTORFILE:
+SECTORTITLE:
+Airports:LPBG:symbol
+Airports:LPBR:symbol
+Airports:LPCO:symbol
+Airports:LPEV:symbol
+Airports:LPPM:symbol
+Airports:LPSC:symbol
+Airports:LPSO:symbol
+Airports:LPSR:symbol
+Airports:LPST:symbol
+Airports:LPVL:symbol
+Airports:LPVR:symbol
+Airports:LPVZ:symbol
+ARTCC boundary:SECTOR EAST:
+ARTCC boundary:SECTOR WEST:
+ARTCC low boundary:LPCS Tower CTR:
+ARTCC low boundary:LPFR TMA:
+ARTCC low boundary:LPFR Tower CTR:
+ARTCC low boundary:LPMA MRVA:
+ARTCC low boundary:LPMA TMA:
+ARTCC low boundary:LPMA Tower CTR:
+ARTCC low boundary:LPPR MRVA:
+ARTCC low boundary:LPPR TMA:
+ARTCC low boundary:LPPR Tower CTR:
+ARTCC low boundary:LPPT AoR APP:
+ARTCC low boundary:LPPT MRVA:
+ARTCC low boundary:LPPT TMA:
+Fixes:68PRT:symbol
+Fixes:6FIT:symbol
+Fixes:ABALO:symbol
+Fixes:ABLEG:name
+Fixes:ABLEG:symbol
+Fixes:ABUPI:name
+Fixes:ABUPI:symbol
+Fixes:ABUSU:name
+Fixes:ABUSU:symbol
+Fixes:ADINO:symbol
+Fixes:ADNOV:name
+Fixes:ADNOV:symbol
+Fixes:ADORO:name
+Fixes:ADORO:symbol
+Fixes:ADSAD:name
+Fixes:ADSAD:symbol
+Fixes:AGADO:name
+Fixes:AGADO:symbol
+Fixes:AKUDA:name
+Fixes:AKUDA:symbol
+Fixes:AKULU:name
+Fixes:AKULU:symbol
+Fixes:ALAGU:name
+Fixes:ALAGU:symbol
+Fixes:AMSEL:name
+Fixes:AMSEL:symbol
+Fixes:ARDID:name
+Fixes:ARDID:symbol
+Fixes:ARMED:name
+Fixes:ARMED:symbol
+Fixes:ASGAM:symbol
+Fixes:ASMAR:symbol
+Fixes:ASMOV:name
+Fixes:ASMOV:symbol
+Fixes:ASPOR:name
+Fixes:ASPOR:symbol
+Fixes:BABOV:symbol
+Fixes:BADUM:symbol
+Fixes:BALNO:name
+Fixes:BALNO:symbol
+Fixes:BANAL:name
+Fixes:BANAL:symbol
+Fixes:BARDI:symbol
+Fixes:BAROK:name
+Fixes:BAROK:symbol
+Fixes:BATAX:name
+Fixes:BATAX:symbol
+Fixes:BELDU:name
+Fixes:BELDU:symbol
+Fixes:BEXAL:name
+Fixes:BEXAL:symbol
+Fixes:BIMBO:name
+Fixes:BIMBO:symbol
+Fixes:BUSEN:name
+Fixes:BUSEN:symbol
+Fixes:DEGUN:name
+Fixes:DEGUN:symbol
+Fixes:DEMOS:name
+Fixes:DEMOS:symbol
+Fixes:DETOX:name
+Fixes:DETOX:symbol
+Fixes:DIDIT:symbol
+Fixes:DIKUV:name
+Fixes:DIKUV:symbol
+Fixes:DIRUP:symbol
+Fixes:DIVUT:name
+Fixes:DIVUT:symbol
+Fixes:EKMAR:name
+Fixes:EKMAR:symbol
+Fixes:ELBIM:symbol
+Fixes:ELGIX:symbol
+Fixes:ELVAR:name
+Fixes:ELVAR:symbol
+Fixes:EPAKA:name
+Fixes:EPAKA:symbol
+Fixes:EPOPO:symbol
+Fixes:ERPES:name
+Fixes:ERPES:symbol
+Fixes:ETAKA:symbol
+Fixes:EVURA:name
+Fixes:EVURA:symbol
+Fixes:EXONA:name
+Fixes:EXONA:symbol
+Fixes:FR607:name
+Fixes:FR607:symbol
+Fixes:FUSUL:name
+Fixes:FUSUL:symbol
+Fixes:GAIOS:name
+Fixes:GAIOS:symbol
+Fixes:GANSU:name
+Fixes:GANSU:symbol
+Fixes:GEBTI:name
+Fixes:GEBTI:symbol
+Fixes:GELO:symbol
+Fixes:GENRO:symbol
+Fixes:GIMAL:name
+Fixes:GIMAL:symbol
+Fixes:GODGI:name
+Fixes:GODGI:symbol
+Fixes:GOSGA:symbol
+Fixes:GUDAV:symbol
+Fixes:GUNTI:name
+Fixes:GUNTI:symbol
+Fixes:IDBID:name
+Fixes:IDBID:symbol
+Fixes:IIF6:symbol
+Fixes:INBOM:name
+Fixes:INBOM:symbol
+Fixes:IRKID:name
+Fixes:IRKID:symbol
+Fixes:IXIDA:name
+Fixes:IXIDA:symbol
+Fixes:IXOLI:symbol
+Fixes:KOMUT:name
+Fixes:KOMUT:symbol
+Fixes:LAMDI:symbol
+Fixes:LASIB:name
+Fixes:LASIB:symbol
+Fixes:LATRU:symbol
+Fixes:LIDRO:name
+Fixes:LIDRO:symbol
+Fixes:LIGRA:name
+Fixes:LIGRA:symbol
+Fixes:LUKAN:name
+Fixes:LUKAN:symbol
+Fixes:LUTAK:name
+Fixes:LUTAK:symbol
+Fixes:MA514:name
+Fixes:MA514:symbol
+Fixes:MA532:name
+Fixes:MA532:symbol
+Fixes:MADAT:name
+Fixes:MADAT:symbol
+Fixes:MALIS:symbol
+Fixes:MANIK:name
+Fixes:MANIK:symbol
+Fixes:MANOX:name
+Fixes:MANOX:symbol
+Fixes:MARIM:symbol
+Fixes:MARUM:symbol
+Fixes:MIMBO:symbol
+Fixes:MINTA:name
+Fixes:MINTA:symbol
+Fixes:MONUR:symbol
+Fixes:MOSEN:name
+Fixes:MOSEN:symbol
+Fixes:NAKOS:name
+Fixes:NAKOS:symbol
+Fixes:NARBO:symbol
+Fixes:NARTA:name
+Fixes:NARTA:symbol
+Fixes:NASAS:symbol
+Fixes:NAVIX:name
+Fixes:NAVIX:symbol
+Fixes:NEGRI:symbol
+Fixes:NELSO:name
+Fixes:NELSO:symbol
+Fixes:NETOS:symbol
+Fixes:NETVO:symbol
+Fixes:NIDUL:symbol
+Fixes:NINOS:symbol
+Fixes:NIPRI:symbol
+Fixes:NIRAK:symbol
+Fixes:OBESA:symbol
+Fixes:ODEMI:name
+Fixes:ODEMI:symbol
+Fixes:ODLIX:name
+Fixes:ODLIX:symbol
+Fixes:OGDOR:symbol
+Fixes:OGERO:name
+Fixes:OGERO:symbol
+Fixes:OM03:symbol
+Fixes:OM17:symbol
+Fixes:ORSOS:symbol
+Fixes:ORTIS:name
+Fixes:ORTIS:symbol
+Fixes:ORTOP:name
+Fixes:ORTOP:symbol
+Fixes:OSLAD:name
+Fixes:OSLAD:symbol
+Fixes:PARAV:symbol
+Fixes:PECKY:name
+Fixes:PECKY:symbol
+Fixes:PESAS:name
+Fixes:PESAS:symbol
+Fixes:PESEX:name
+Fixes:PESEX:symbol
+Fixes:PESUL:name
+Fixes:PESUL:symbol
+Fixes:PETEK:name
+Fixes:PETEK:symbol
+Fixes:PEVAP:name
+Fixes:PEVAP:symbol
+Fixes:PIGOR:symbol
+Fixes:PINEK:name
+Fixes:PINEK:symbol
+Fixes:PINIM:symbol
+Fixes:PIREN:name
+Fixes:PIREN:symbol
+Fixes:PORLI:symbol
+Fixes:PORTA:symbol
+Fixes:PR541:name
+Fixes:PR541:symbol
+Fixes:PR542:name
+Fixes:PR542:symbol
+Fixes:PR611:name
+Fixes:PR611:symbol
+Fixes:PR612:name
+Fixes:PR612:symbol
+Fixes:PR635:name
+Fixes:PR635:symbol
+Fixes:PR636:name
+Fixes:PR636:symbol
+Fixes:PT401:symbol
+Fixes:PT402:symbol
+Fixes:PT405:name
+Fixes:PT405:symbol
+Fixes:PT407:symbol
+Fixes:PT408:symbol
+Fixes:PT410:symbol
+Fixes:PT411:symbol
+Fixes:PT412:symbol
+Fixes:PT414:symbol
+Fixes:PT416:symbol
+Fixes:PT420:name
+Fixes:PT420:symbol
+Fixes:PT421:symbol
+Fixes:PT422:name
+Fixes:PT422:symbol
+Fixes:RAKOD:symbol
+Fixes:RAKUN:symbol
+Fixes:RALUS:name
+Fixes:RALUS:symbol
+Fixes:RETEN:symbol
+Fixes:RETMO:name
+Fixes:RETMO:symbol
+Fixes:RINOR:name
+Fixes:RINOR:symbol
+Fixes:RIPEL:name
+Fixes:RIPEL:symbol
+Fixes:RITUS:symbol
+Fixes:RIVRO:name
+Fixes:RIVRO:symbol
+Fixes:RODAP:symbol
+Fixes:ROKAP:symbol
+Fixes:ROKOB:symbol
+Fixes:ROSAL:name
+Fixes:ROSAL:symbol
+Fixes:ROSRO:symbol
+Fixes:RUPEP:name
+Fixes:RUPEP:symbol
+Fixes:SONAP:symbol
+Fixes:SOPOP:symbol
+Fixes:SOTEX:name
+Fixes:SOTEX:symbol
+Fixes:SUBAL:symbol
+Fixes:TABAL:symbol
+Fixes:TABOM:symbol
+Fixes:TAKAV:name
+Fixes:TAKAV:symbol
+Fixes:TORVU:name
+Fixes:TORVU:symbol
+Fixes:TOSDI:name
+Fixes:TOSDI:symbol
+Fixes:TROIA:name
+Fixes:TROIA:symbol
+Fixes:TUNAV:symbol
+Fixes:TUPIX:symbol
+Fixes:TURON:name
+Fixes:TURON:symbol
+Fixes:UBANI:name
+Fixes:UBANI:symbol
+Fixes:UMUPI:name
+Fixes:UMUPI:symbol
+Fixes:UNPOT:name
+Fixes:UNPOT:symbol
+Fixes:UPKAT:name
+Fixes:UPKAT:symbol
+Fixes:UREDI:name
+Fixes:UREDI:symbol
+Fixes:USALU:name
+Fixes:USALU:symbol
+Fixes:USIVI:symbol
+Fixes:VABEM:symbol
+Fixes:VEDEL:symbol
+Fixes:VENOL:name
+Fixes:VENOL:symbol
+Fixes:VERAM:name
+Fixes:VERAM:symbol
+Fixes:XAMAX:name
+Fixes:XAMAX:symbol
+Fixes:XANEL:symbol
+Fixes:XEGEN:name
+Fixes:XEGEN:symbol
+Fixes:XERES:name
+Fixes:XERES:symbol
+Free Text:LPCS Taxiways\F:freetext
+Free Text:LPCS Taxiways\F:freetext
+Free Text:LPCS Taxiways\G:freetext
+Free Text:LPCS Taxiways\H:freetext
+Free Text:LPCS Taxiways\J:freetext
+Free Text:LPCS Taxiways\K:freetext
+Free Text:LPCS Taxiways\N:freetext
+Free Text:LPCS Taxiways\O:freetext
+Free Text:LPCS Taxiways\P:freetext
+Free Text:LPCS Taxiways\R:freetext
+Free Text:LPCS Taxiways\S:freetext
+Free Text:LPFR Taxiways\A:freetext
+Free Text:LPFR Taxiways\B:freetext
+Free Text:LPFR Taxiways\C1:freetext
+Free Text:LPFR Taxiways\C2:freetext
+Free Text:LPFR Taxiways\D:freetext
+Free Text:LPFR Taxiways\P:freetext
+Free Text:LPFR Taxiways\P:freetext
+Free Text:LPFR Taxiways\P:freetext
+Free Text:LPFR Taxiways\P:freetext
+Free Text:LPFR Taxiways\P:freetext
+Free Text:LPMA Stands\A1:freetext
+Free Text:LPMA Stands\A10:freetext
+Free Text:LPMA Stands\A11:freetext
+Free Text:LPMA Stands\A12:freetext
+Free Text:LPMA Stands\A13:freetext
+Free Text:LPMA Stands\A14:freetext
+Free Text:LPMA Stands\A15:freetext
+Free Text:LPMA Stands\A16:freetext
+Free Text:LPMA Stands\A17:freetext
+Free Text:LPMA Stands\A18:freetext
+Free Text:LPMA Stands\A2:freetext
+Free Text:LPMA Stands\A3:freetext
+Free Text:LPMA Stands\A4:freetext
+Free Text:LPMA Stands\A5:freetext
+Free Text:LPMA Stands\A6:freetext
+Free Text:LPMA Stands\A7:freetext
+Free Text:LPMA Stands\A8:freetext
+Free Text:LPMA Stands\A9:freetext
+Free Text:LPMA Taxiways\A:freetext
+Free Text:LPMA Taxiways\B:freetext
+Free Text:LPMA Taxiways\C:freetext
+Free Text:LPPR Stands\S10:freetext
+Free Text:LPPR Stands\S11:freetext
+Free Text:LPPR Stands\S12:freetext
+Free Text:LPPR Stands\S20:freetext
+Free Text:LPPR Stands\S21:freetext
+Free Text:LPPR Stands\S22:freetext
+Free Text:LPPR Stands\S23:freetext
+Free Text:LPPR Stands\S24:freetext
+Free Text:LPPR Stands\S25:freetext
+Free Text:LPPR Stands\S30:freetext
+Free Text:LPPR Stands\S31:freetext
+Free Text:LPPR Stands\S32:freetext
+Free Text:LPPR Stands\S33:freetext
+Free Text:LPPR Stands\S34:freetext
+Free Text:LPPR Stands\S35:freetext
+Free Text:LPPR Stands\S36:freetext
+Free Text:LPPR Stands\S37:freetext
+Free Text:LPPR Stands\S40:freetext
+Free Text:LPPR Stands\S41:freetext
+Free Text:LPPR Stands\S42:freetext
+Free Text:LPPR Stands\S43:freetext
+Free Text:LPPR Stands\S50:freetext
+Free Text:LPPR Stands\S51:freetext
+Free Text:LPPR Stands\S52:freetext
+Free Text:LPPR Stands\S53:freetext
+Free Text:LPPR Stands\S54:freetext
+Free Text:LPPR Stands\S55:freetext
+Free Text:LPPR Stands\S60:freetext
+Free Text:LPPR Stands\S61:freetext
+Free Text:LPPR Stands\S62:freetext
+Free Text:LPPR Stands\S63:freetext
+Free Text:LPPR Stands\S64:freetext
+Free Text:LPPR Stands\S65:freetext
+Free Text:LPPR Stands\S66:freetext
+Free Text:LPPR Stands\S70:freetext
+Free Text:LPPR Stands\S71:freetext
+Free Text:LPPR Stands\S72:freetext
+Free Text:LPPR Stands\S73:freetext
+Free Text:LPPR Taxiways\B:freetext
+Free Text:LPPR Taxiways\C:freetext
+Free Text:LPPR Taxiways\D:freetext
+Free Text:LPPR Taxiways\F:freetext
+Free Text:LPPR Taxiways\H:freetext
+Free Text:LPPR Taxiways\J:freetext
+Free Text:LPPS Stands\A01:freetext
+Free Text:LPPS Stands\A02:freetext
+Free Text:LPPS Stands\A03:freetext
+Free Text:LPPS Stands\A04:freetext
+Free Text:LPPS Stands\A05:freetext
+Free Text:LPPS Stands\A06:freetext
+Free Text:LPPS Stands\A07:freetext
+Free Text:LPPS Taxiways\A:freetext
+Free Text:LPPS Taxiways\B:freetext
+Free Text:LPPT Stands\104:freetext
+Free Text:LPPT Stands\105:freetext
+Free Text:LPPT Stands\106:freetext
+Free Text:LPPT Stands\107:freetext
+Free Text:LPPT Stands\114:freetext
+Free Text:LPPT Stands\115:freetext
+Free Text:LPPT Stands\116:freetext
+Free Text:LPPT Stands\117:freetext
+Free Text:LPPT Stands\122:freetext
+Free Text:LPPT Stands\123:freetext
+Free Text:LPPT Stands\124:freetext
+Free Text:LPPT Stands\125:freetext
+Free Text:LPPT Stands\126:freetext
+Free Text:LPPT Stands\141:freetext
+Free Text:LPPT Stands\142:freetext
+Free Text:LPPT Stands\143:freetext
+Free Text:LPPT Stands\144:freetext
+Free Text:LPPT Stands\145:freetext
+Free Text:LPPT Stands\146:freetext
+Free Text:LPPT Stands\200:freetext
+Free Text:LPPT Stands\201:freetext
+Free Text:LPPT Stands\202:freetext
+Free Text:LPPT Stands\203:freetext
+Free Text:LPPT Stands\204:freetext
+Free Text:LPPT Stands\205:freetext
+Free Text:LPPT Stands\206:freetext
+Free Text:LPPT Stands\207:freetext
+Free Text:LPPT Stands\208:freetext
+Free Text:LPPT Stands\209:freetext
+Free Text:LPPT Stands\221:freetext
+Free Text:LPPT Stands\222:freetext
+Free Text:LPPT Stands\223:freetext
+Free Text:LPPT Stands\224:freetext
+Free Text:LPPT Stands\225:freetext
+Free Text:LPPT Stands\301:freetext
+Free Text:LPPT Stands\302:freetext
+Free Text:LPPT Stands\401:freetext
+Free Text:LPPT Stands\402:freetext
+Free Text:LPPT Stands\403:freetext
+Free Text:LPPT Stands\404:freetext
+Free Text:LPPT Stands\405:freetext
+Free Text:LPPT Stands\411:freetext
+Free Text:LPPT Stands\412:freetext
+Free Text:LPPT Stands\413:freetext
+Free Text:LPPT Stands\414:freetext
+Free Text:LPPT Stands\415:freetext
+Free Text:LPPT Stands\416:freetext
+Free Text:LPPT Stands\421:freetext
+Free Text:LPPT Stands\422:freetext
+Free Text:LPPT Stands\423:freetext
+Free Text:LPPT Stands\424:freetext
+Free Text:LPPT Stands\425:freetext
+Free Text:LPPT Stands\426:freetext
+Free Text:LPPT Stands\501:freetext
+Free Text:LPPT Stands\502:freetext
+Free Text:LPPT Stands\503:freetext
+Free Text:LPPT Stands\504:freetext
+Free Text:LPPT Stands\505:freetext
+Free Text:LPPT Stands\506:freetext
+Free Text:LPPT Stands\601:freetext
+Free Text:LPPT Stands\602:freetext
+Free Text:LPPT Stands\603:freetext
+Free Text:LPPT Stands\604:freetext
+Free Text:LPPT Stands\701:freetext
+Free Text:LPPT Stands\702:freetext
+Free Text:LPPT Stands\703:freetext
+Free Text:LPPT Stands\704:freetext
+Free Text:LPPT Stands\705:freetext
+Free Text:LPPT Stands\706:freetext
+Free Text:LPPT Stands\801:freetext
+Free Text:LPPT Stands\802:freetext
+Free Text:LPPT Stands\803:freetext
+Free Text:LPPT Stands\804:freetext
+Free Text:LPPT Stands\805:freetext
+Free Text:LPPT Taxiways\A1:freetext
+Free Text:LPPT Taxiways\A2:freetext
+Free Text:LPPT Taxiways\B:freetext
+Free Text:LPPT Taxiways\C:freetext
+Free Text:LPPT Taxiways\D:freetext
+Free Text:LPPT Taxiways\E:freetext
+Free Text:LPPT Taxiways\F:freetext
+Free Text:LPPT Taxiways\G1:freetext
+Free Text:LPPT Taxiways\G2:freetext
+Free Text:LPPT Taxiways\HN:freetext
+Free Text:LPPT Taxiways\HS:freetext
+Free Text:LPPT Taxiways\J:freetext
+Free Text:LPPT Taxiways\K:freetext
+Free Text:LPPT Taxiways\L1:freetext
+Free Text:LPPT Taxiways\L2:freetext
+Free Text:LPPT Taxiways\M1:freetext
+Free Text:LPPT Taxiways\M2:freetext
+Free Text:LPPT Taxiways\M2:freetext
+Free Text:LPPT Taxiways\M3:freetext
+Free Text:LPPT Taxiways\M4:freetext
+Free Text:LPPT Taxiways\M5:freetext
+Free Text:LPPT Taxiways\N1:freetext
+Free Text:LPPT Taxiways\N2:freetext
+Free Text:LPPT Taxiways\P:freetext
+Free Text:LPPT Taxiways\Q1:freetext
+Free Text:LPPT Taxiways\Q2:freetext
+Free Text:LPPT Taxiways\Q3:freetext
+Free Text:LPPT Taxiways\R1:freetext
+Free Text:LPPT Taxiways\R2:freetext
+Free Text:LPPT Taxiways\S1:freetext
+Free Text:LPPT Taxiways\S2:freetext
+Free Text:LPPT Taxiways\S3:freetext
+Free Text:LPPT Taxiways\S4:freetext
+Free Text:LPPT Taxiways\T:freetext
+Free Text:LPPT Taxiways\TWR:freetext
+Free Text:LPPT Taxiways\U1:freetext
+Free Text:LPPT Taxiways\U2:freetext
+Free Text:LPPT Taxiways\U3:freetext
+Free Text:LPPT Taxiways\U4:freetext
+Free Text:LPPT Taxiways\U5:freetext
+Free Text:LPPT Taxiways\U6:freetext
+Free Text:LPPT Taxiways\V:freetext
+Free Text:LPPT Taxiways\W2:freetext
+Free Text:LPPT Taxiways\W3:freetext
+Free Text:LPPT Taxiways\Y:freetext
+Free Text:LPPT Taxiways\Z1:freetext
+Free Text:LPPT Taxiways\Z2:freetext
+Free Text:LPPT Taxiways\Z3:freetext
+Geo:GEO:
+Geo:LPBJ Groundlayout:
+Geo:LPCS Groundlayout:
+Geo:LPFR Groundlayout:
+Geo:LPMA Coastline:
+Geo:LPMA Groundlayout:
+Geo:LPPR Groundlayout:
+Geo:LPPS Coastline:
+Geo:LPPS Groundlayout:
+Geo:LPPT Groundlayout:
+Geo:PT Continental Coastline:
+NDBs:LAR:symbol
+Regions:LPFR Groundlayout:polygon
+Regions:LPMA Groundlayout:polygon
+Regions:LPPR Groundlayout:polygon
+Regions:LPPT Groundlayout:polygon
+Runways:LPAR 04-22:centerline
+Runways:LPAR 04-22:name
+Runways:LPBJ 01L-19R:name
+Runways:LPFR 10-28:extended centerline 1
+Runways:LPFR 10-28:extended centerline 2
+Runways:LPFR 10-28:name
+Runways:LPMA 05-23:name
+Runways:LPPR 17-35:extended centerline 1
+Runways:LPPR 17-35:extended centerline 2
+Runways:LPPS 18-36:extended centerline 1
+Runways:LPPS 18-36:extended centerline 2
+Runways:LPPS 18-36:name
+Runways:LPPT 03-21:extended centerline 1
+Runways:LPPT 03-21:extended centerline 2
+Runways:LPPT 17-35:extended centerline 2
+Stars:HOLDING LPPC ABUSU R 211.0 3000 14000:
+Stars:HOLDING LPPC ADSAD R 344.0 4000 14000:
+Stars:HOLDING LPPC DIVUT L 315.0 8000 14000:
+Stars:HOLDING LPPC EKMAR L 44.0 3000 14000:
+Stars:HOLDING LPPC FUSUL L 351.0 4000 14000:
+Stars:HOLDING LPPC GIMAL R 08.0 3000 14000:
+Stars:HOLDING LPPC RETMO R 83.0 6000 14000:
+Stars:HOLDING LPPC RINOR L 225.0 7000 14000:
+Stars:HOLDING LPPC UMUPI R 182.0 7000 14000:
+VORs:CCS:symbol
+VORs:ESP:symbol
+VORs:FTM:symbol
+VORs:FUN:symbol
+VORs:LIS:symbol
+VORs:PRT:symbol
+VORs:SNT:symbol
+VORs:VFA:symbol
+VORs:VIS:symbol
+SHOWC:1
+SHOWSB:1
+BELOW:0
+ABOVE:66000
+LEADER:-2
+SHOWLEADER:1
+TURNLEADER:0
+HISTORY_DOTS:5
+SIMULATION_MODE:1
+DISABLEPANNING:0
+DISABLEZOOMING:0
+TAGFAMILY:PT vACC - GND RDR
+WINDOWAREA:32.687274:-16.797825:32.706718:-16.751739
