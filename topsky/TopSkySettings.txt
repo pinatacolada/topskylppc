@@ -4,31 +4,51 @@ Airspace_NOTAM_Add=LPPC,LECM
 
 Shortcut_AHDG_NoFixes_Combo=0x00
 
-//Window_LostList_Auto=0
-
 Color_Active_Sector=1,2,26
 Color_Active_Map_Type_7=128,0,0//red restricted areas 
 Color_AIW_Intrusion=255,128,1
 //Color_Arm=250,0,250//grey out option font color
 Color_Assumed=140,220,110//radar target and label
-//Color_Background=250,0,250//menu backgrounds
+Color_Background=0,0,50//menu backgrounds
+Color_Border=250,250,250
+Color_BottomShadow=250,250,250
 Color_Concerned=0,52,241
 Color_Coordination=188,194,188//unassumed color
-//Color_Foreground=250,0,250//font color
+Color_Foreground=250,250,250//font color
+Color_Flight_Leg=185,185,185
 Color_Heading_Vector=185,185,185
-//Color_TopShadow=250,0,255//UI top shadow
+Color_TopShadow=250,250,250//UI top shadow
 Color_Track_Default=140,220,110
 Color_Track_Highlight=140,220,110
+Color_Trough=250,250,250
 Color_Suite_Highlight=244,147,1
 //Color_Information=250,0,250
 Color_Informed=250,0,250
+Color_QDM=185,185,185
 Color_Redundant=150,130,165//ongoing and accepted transfer
 
-//Color_Trough=069,252,95 //slider background color
+Color_Trough=250,250,250 //slider background color
 //Color_VAW_Track_Position=185,255,253//Vertical Aid Window
 Color_Rwy_App_Line_Inuse=150,150,150
 Color_Unconcerned=188,194,188//uncorrelated contact
 Color_Unknown=250,0,250//ongoing transfer
+
+Color_WM_Active_Fg=125,125,125//mouse over text color
+Color_WM_Bg=250,250,250//windows title bar color
+Color_WM_Border=250,250,250//windows
+Color_WM_Fg=125,125,125//windows
+Color_WM_Frame=250,250,250//windows
+
+CPDLC_Default=1
+CPDLC_MinLevel=285
+CPDLC_Transfer=0
+CPDLC_CFL=0
+CPDLC_DCT=0
+CPDLC_AHDG=0
+CPDLC_ASP=0
+CPDLC_PlaySound=0
+CPDLC_PDC_PlaySound=0
+
 
 HTTP_METAR_Server=http://metars.flyatlantic-va.com/
 HTTP_METAR_Page_Prefix=metar?ICAO=
@@ -44,9 +64,17 @@ Label_UseTransferInColor=1
 Label_SI_FreqTime=5
 Label_SI_ShowFreq=1
 
-System_FPASD=0
+System_FPASD=1
 System_RepHdg_Correction=2
 System_TaxiTime=13
 
 Track_PredictionLine=0//leader line length
 Track_DivergenceSymbol_Size=0
+
+Window_ASM_ShowNOTAMasUsertext=0
+Window_SM_LowestLevel=60
+Window_FlightPlan=0,1412,600
+Window_MsgIn=1,800,25
+Window_MsgOut=1,1200,25
+Window_SAP=1,6,885
+Window_CARD=1,6,693
