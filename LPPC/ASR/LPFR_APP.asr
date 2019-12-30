@@ -1,8 +1,6 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20191220173517-191301-0015.sct
-SECTORTITLE:LPPC-Package_20191220173517-191301-0015.sct
 Airports:LPPM:symbol
 ARTCC boundary:COBERTURA RADAR:
 ARTCC boundary:SECTOR CENTRE UPPER:
