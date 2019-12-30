@@ -1,11 +1,16 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Users\alexm\Documents\EuroScope\LPPC-Package_20191210191902-191301-0003.sct
-SECTORTITLE:LPPC-Package_20191210191902-191301-0003.sct
 Airports:LPPM:symbol
+ARTCC boundary:COBERTURA RADAR:
+ARTCC boundary:SECTOR CENTRE UPPER:
+ARTCC boundary:SECTOR DEMOS:
 ARTCC boundary:SECTOR EAST:
-ARTCC boundary:SECTOR WEST:
+ARTCC boundary:SECTOR MADEIRA:
+ARTCC boundary:SECTOR NORTH UPPER:
+ARTCC boundary:SECTOR SOUTH:
+ARTCC boundary:SECTOR VERAM:
+ARTCC boundary:SEPARACAO 8NM:
 ARTCC low boundary:LPFR MRVA:
 ARTCC low boundary:LPFR TMA:
 ARTCC low boundary:LPFR Tower CTR:
@@ -13,11 +18,21 @@ ARTCC low boundary:LPMA TMA:
 ARTCC low boundary:LPPR TMA:
 ARTCC low boundary:LPPT TMA:
 ARTCC low boundary:Portimao ATZ:
+Fixes:ALAGU:name
+Fixes:ALAGU:symbol
+Fixes:AMSEL:name
+Fixes:AMSEL:symbol
+Fixes:BAROK:name
+Fixes:BAROK:symbol
 Fixes:ERTIS:name
 Fixes:ERTIS:symbol
+Fixes:EVURA:name
+Fixes:EVURA:symbol
 Fixes:FR455:symbol
 Fixes:FR457:symbol
+Fixes:FR604:symbol
 Fixes:FR607:symbol
+Fixes:FR609:symbol
 Fixes:FR611:symbol
 Fixes:GEBTI:name
 Fixes:GEBTI:symbol
@@ -29,10 +44,19 @@ Fixes:IXOLI:name
 Fixes:IXOLI:symbol
 Fixes:MARIM:name
 Fixes:MARIM:symbol
+Fixes:NARTA:name
+Fixes:NARTA:symbol
 Fixes:NIRAK:name
 Fixes:NIRAK:symbol
 Fixes:ODEMI:name
 Fixes:ODEMI:symbol
+Fixes:ORTOP:name
+Fixes:ORTOP:symbol
+Fixes:OSLAD:name
+Fixes:OSLAD:symbol
+Fixes:PIREN:symbol
+Fixes:SOTEX:name
+Fixes:SOTEX:symbol
 Fixes:TUPIX:name
 Fixes:TUPIX:symbol
 Fixes:USALU:name
@@ -49,6 +73,7 @@ Free Text:LPFR MRVA\4500:freetext
 Free Text:LPFR MRVA\5500:freetext
 Geo:GEO:
 Geo:LP Landmark Continental Coastline:
+NDBs:BJA:symbol
 Runways:LPAV 17-35:centerline
 Runways:LPAV 17-35:name
 Runways:LPCO 16-34:centerline
@@ -84,7 +109,12 @@ Stars:HOLDING LPPC GENRO R 168.0 4000 14000:
 Stars:HOLDING LPPC GIMAL R 08.0 3000 14000:
 Stars:HOLDING LPPC USALU R 131.0 5000 14000:
 VORs:CAS:symbol
+VORs:DML:symbol
+VORs:DMX:symbol
+VORs:DPR:symbol
+VORs:DSL:symbol
 VORs:ESP:symbol
+VORs:FAR:symbol
 VORs:FTM:symbol
 VORs:LIS:symbol
 VORs:SGR:symbol
@@ -102,4 +132,4 @@ DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:0.00000
 TAGFAMILY:PT vACC - NORM
-WINDOWAREA:36.331657:-9.583176:37.697632:-6.384646
+WINDOWAREA:36.188053:-10.115183:37.895522:-6.117019
