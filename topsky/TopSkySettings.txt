@@ -46,9 +46,8 @@ CPDLC_CFL=0
 CPDLC_DCT=0
 CPDLC_AHDG=0
 CPDLC_ASP=0
-CPDLC_PlaySound=0
+CPDLC_PlaySound=1
 CPDLC_PDC_PlaySound=0
-
 
 HTTP_METAR_Server=http://metars.flyatlantic-va.com/
 HTTP_METAR_Page_Prefix=metar?ICAO=
@@ -74,6 +73,7 @@ Track_DivergenceSymbol_Size=0
 Window_ASM_ShowNOTAMasUsertext=0
 Window_SM_LowestLevel=60
 Window_FlightPlan=0,1412,600
+
 Window_MsgIn=1,1150,25
 Window_MsgOut=1,1400,25
 Window_SAP=1,6,885
