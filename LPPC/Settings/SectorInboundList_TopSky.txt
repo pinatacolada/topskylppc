@@ -20,6 +20,6 @@ m_Column:ETX:5:0:10035:0:0:1:TopSky plugin:::1
 m_Column:XFL:4:0:10003:24:0:1:TopSky plugin:::1
 m_Column:STAR:8:0:10012:45:0:1:TopSky plugin:TopSky plugin::1
 m_Column:RWY:4:0:163:0:0:1:TopSky plugin:::1
-m_Column:SI:4:0:10043:69:0:1:TopSky plugin:TopSky plugin::1
+m_Column:SI:4:0:10043:20:42:1:TopSky plugin::TopSky plugin:1
 m_Column:ASSR:5:0:10041:62:0:1:TopSky plugin:TopSky plugin::1
 END
