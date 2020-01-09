@@ -39,6 +39,16 @@ Color_WM_Border=250,250,250//windows
 Color_WM_Fg=125,125,125//windows
 Color_WM_Frame=250,250,250//windows
 
+CPDLC_Default=1
+CPDLC_MinLevel=285
+CPDLC_Transfer=0
+CPDLC_CFL=0
+CPDLC_DCT=0
+CPDLC_AHDG=0
+CPDLC_ASP=0
+CPDLC_PlaySound=1
+CPDLC_PDC_PlaySound=0
+
 HTTP_METAR_Server=http://metars.flyatlantic-va.com/
 HTTP_METAR_Page_Prefix=metar?ICAO=
 HTTP_METAR_Page_Suffix=
@@ -63,7 +73,9 @@ Track_DivergenceSymbol_Size=0
 Window_ASM_ShowNOTAMasUsertext=0
 Window_SM_LowestLevel=60
 Window_FlightPlan=0,1412,600
-Window_MsgIn=1,800,25
-Window_MsgOut=1,1200,25
+
+Window_MsgIn=1,1150,25
+Window_MsgOut=1,1400,25
 Window_SAP=1,6,885
 Window_CARD=1,6,693
+Window_CPDLC_Current=1,700,25
