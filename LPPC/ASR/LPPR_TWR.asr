@@ -1,8 +1,8 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20191210191902-191301-0003.sct
-SECTORTITLE:LPPC-Package_20191210191902-191301-0003.sct
+SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20191220173517-191301-0015.sct
+SECTORTITLE:LPPC-Package_20191220173517-191301-0015.sct
 Airports:LPBG:symbol
 Airports:LPBR:symbol
 Airports:LPCO:symbol
@@ -521,13 +521,10 @@ Free Text:LPPT Taxiways\P:freetext
 Free Text:LPPT Taxiways\Q1:freetext
 Free Text:LPPT Taxiways\Q2:freetext
 Free Text:LPPT Taxiways\Q3:freetext
-Free Text:LPPT Taxiways\R1:freetext
-Free Text:LPPT Taxiways\R2:freetext
 Free Text:LPPT Taxiways\S1:freetext
 Free Text:LPPT Taxiways\S2:freetext
 Free Text:LPPT Taxiways\S3:freetext
 Free Text:LPPT Taxiways\S4:freetext
-Free Text:LPPT Taxiways\T:freetext
 Free Text:LPPT Taxiways\TWR:freetext
 Free Text:LPPT Taxiways\U1:freetext
 Free Text:LPPT Taxiways\U2:freetext
@@ -546,13 +543,10 @@ Geo:GEO:
 Geo:LPBJ Groundlayout:
 Geo:LPCS Groundlayout:
 Geo:LPFR Groundlayout:
-Geo:LPMA Coastline:
 Geo:LPMA Groundlayout:
 Geo:LPPR Groundlayout:
-Geo:LPPS Coastline:
 Geo:LPPS Groundlayout:
 Geo:LPPT Groundlayout:
-Geo:PT Continental Coastline:
 NDBs:LAR:symbol
 Regions:LPFR Groundlayout:polygon
 Regions:LPMA Groundlayout:polygon
@@ -599,9 +593,9 @@ LEADER:-2
 SHOWLEADER:1
 TURNLEADER:0
 HISTORY_DOTS:5
-SIMULATION_MODE:1
+SIMULATION_MODE:4
 DISABLEPANNING:0
 DISABLEZOOMING:0
-DisplayRotation:0.00000
+DisplayRotation:102.00000
 TAGFAMILY:PT vACC - NORM
-WINDOWAREA:40.905569:-9.431864:41.464944:-8.122045
+WINDOWAREA:41.228728:-8.713905:41.259479:-8.641897
