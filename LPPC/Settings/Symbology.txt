@@ -1,13 +1,13 @@
 SYMBOLOGY
 SYMBOLSIZE
-Airports:symbol:50913:3.7:0:2:7
-Airports:name:6579300:4.5:0:0:1
-Low airways:line:6579300:3.5:0:0:7
+Airports:symbol:38335:3.7:0:2:7
+Airports:name:38335:4.5:0:0:1
+Low airways:line:948771:3.5:0:0:7
 Low airways:name:6579300:3.5:0:0:8
-High airways:line:16512:3.5:0:0:7
+High airways:line:948771:3.5:0:0:7
 High airways:name:2512998:3.5:0:0:8
-Fixes:symbol:47084:1.0:0:0:7
-Fixes:name:47084:3.5:0:0:8
+Fixes:symbol:38335:1.0:0:0:7
+Fixes:name:38335:3.5:0:0:8
 Sids:line:6579300:3.0:1:0:7
 Stars:line:6579300:3.0:0:0:7
 ARTCC high boundary:line:8421504:3.0:0:0:7
@@ -23,8 +23,8 @@ NDBs:frequency:8421504:3.5:0:0:0
 Runways:centerline:8421504:3.5:0:0:7
 Runways:extended centerline:11974326:3.5:1:0:7
 Runways:name:8421504:3.5:0:0:7
-Datablock:non concerned:12435901:3.5:0:0:7
-Datablock:notified:12435901:3.5:0:0:7
+Datablock:non concerned:13883091:3.5:0:0:7
+Datablock:notified:13883091:3.5:0:0:7
 Datablock:assumed:7265420:3.5:0:0:7
 Datablock:transfer to me initiated:16777017:3.5:0:0:7
 Datablock:redundant:15807488:3.5:0:0:7
@@ -62,20 +62,20 @@ Metar:normal:16776960:3.5:0:0:7
 Metar:modified:12615935:3.5:0:0:7
 Metar:timeout:16777215:3.5:0:0:7
 Other:wait:16777215:3.5:0:0:7
-Other:distance line:12171705:3.5:0:0:7
-Other:distance values:12171705:5.5:0:0:7
+Other:distance line:16777215:3.5:0:1:7
+Other:distance values:16777215:5.5:0:0:7
 Other:distance annotation:12171705:3.8:0:0:7
 Other:separation leader:12171705:3.5:0:2:7
 Other:separation leader2:12171705:3.5:0:1:7
 Other:find:16777215:3.5:0:5:7
-Other:valid airway:13172680:3.5:0:2:7
+Other:valid airway:16777215:3.5:0:1:7
 Other:bad direction airway:255:3.5:0:2:7
 Other:unconnected airway:16711680:3.5:0:2:7
-Other:direct no airway:13172680:3.5:0:2:7
+Other:direct no airway:16777215:3.5:0:1:7
 Other:free of conflict:65280:3.5:0:2:7
 Other:conflict warning:65535:3.5:0:2:7
 Other:conflict detected:255:3.5:0:2:7
-Other:route annotation:13172680:3.7:0:2:8
+Other:route annotation:16777215:3.5:0:2:8
 Other:freetext:16777215:3.2:0:0:7
 Other:range rings:65535:5.0:0:0:2
 Other:off antenna range rings:255:5.0:0:0:2
@@ -97,8 +97,8 @@ Ground Network:taxiway:65280:3.5:0:3:7
 Ground Network:terminal taxiway:255:3.5:0:3:7
 Sector:line:12632256:4.0:0:2:7
 Sector:msaw:32768:2.0:0:2:7
-Sector:active sector background:1704449:3.5:0:0:7
-Sector:inactive sector background:1180161:3.5:0:0:7
+Sector:active sector background:2097409:3.5:0:0:7
+Sector:inactive sector background:1638657:3.5:0:0:7
 SYMBOL:0
 SYMBOLITEM:ARC 0 0 5 0 360
 SYMBOL:1
