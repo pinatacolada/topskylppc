@@ -1,8 +1,43 @@
 Setup_COOPANS=1
 
-Airspace_NOTAM_Add=LPPC,LECM
+
 
 Shortcut_AHDG_NoFixes_Combo=0x00
+
+Airspace_833_Min=0
+Airspace_ASSR_Type=0
+Airspace_ASSR_OAT_Remarks=RMK/OAT
+Airspace_ASSR_OAT_Type=0
+Airspace_P_Flag=LPPR,LPPT,LPFR,LPMA
+Airspace_No_DUPE_Codes=2000,7000
+Airspace_NOTAM_Add=LPPC,LECM
+Airspace_SIGMET_Areas=LPPC
+
+Areas_PreActiveTime=1800
+Areas_Label_Name=1
+Areas_Label_MapText=1
+Areas_Label_Levels=1
+Areas_Label_Times=1
+Areas_Label_UserText=1
+Areas_NOTAM_Activation=1
+
+AIW=0
+APW=1
+APW_VFR=1
+APW_Uncorrelated=0
+APW_UseCFL=1
+APW_PredictionTime=90
+APW_WarningTime=90
+//APW_WarningTime_Imm
+//APW_PredictionStep
+APW_Buffer_Lat_SepLevel=15550
+APW_Buffer_Lat_U=3
+APW_Buffer_Lat_L_IFR=3
+APW_Buffer_Lat_L_VFR=3
+APW_Buffer_Vert_U=1000
+APW_Buffer_Vert_L_IFR=1000
+APW_Buffer_Vert_L_VFR=1000
+APW_ConflictCount=3
 
 Color_Active_Sector=1,2,26
 Color_Active_Map_Type_7=128,0,0//red restricted areas 
@@ -22,7 +57,7 @@ Color_Track_Default=140,220,110
 Color_Track_Highlight=140,220,110
 Color_Trough=250,250,250
 Color_Suite_Highlight=244,147,1
-//Color_Information=250,0,250
+Color_Information=140,220,110
 Color_Informed=250,0,250
 Color_QDM=185,185,185
 Color_Redundant=150,130,165//ongoing and accepted transfer
@@ -31,7 +66,7 @@ Color_Trough=250,250,250 //slider background color
 //Color_VAW_Track_Position=185,255,253//Vertical Aid Window
 Color_Rwy_App_Line_Inuse=150,150,150
 Color_Unconcerned=188,194,188//uncorrelated contact
-Color_Unknown=250,0,250//ongoing transfer
+Color_Unknown=255,255,0//unknown statuses
 
 Color_WM_Active_Fg=125,125,125//mouse over text color
 Color_WM_Bg=250,250,250//windows title bar color
@@ -39,7 +74,7 @@ Color_WM_Border=250,250,250//windows
 Color_WM_Fg=125,125,125//windows
 Color_WM_Frame=250,250,250//windows
 
-CPDLC_Default=1
+CPDLC_Default=0
 CPDLC_MinLevel=285
 CPDLC_Transfer=0
 CPDLC_CFL=0
@@ -49,26 +84,116 @@ CPDLC_ASP=0
 CPDLC_PlaySound=1
 CPDLC_PDC_PlaySound=0
 
+Equip_UseCodes=1
+Equip_ModeS=WZLCISG
+Equip_833=WZLYCIVSGP
+Equip_Non833=XTUDBAMN
+
+FlightLeg_AssumeTime=10
+FlightLeg_AutoShow=1
+
 HTTP_METAR_Server=http://metars.flyatlantic-va.com/
 HTTP_METAR_Page_Prefix=metar?ICAO=
 HTTP_METAR_Page_Suffix=
 HTTP_METAR_Data_Prefix="
 HTTP_METAR_Data_Suffix="
 
-RwyAppLines_Length=0.1
-RwyAppLines_Auto=0
+MTCD=1
+MTCD_AHDG=1
+MTCD_RAM=1
+MTCD_Risks_Label=1
+MTCD_Sep_Lat=4
+
 Label_Alt_Digits=3
 Label_All_N=0
+Label_CFL_DefaultValue=1
 Label_UseTransferInColor=1
 Label_SI_FreqTime=5
 Label_SI_ShowFreq=1
+Label_AHDG_ShowExtra=1
+Label_RTE_Origin=LP
+Label_Field18_Flag_Items=STS/ALTRV,STS/ATFMX,STS/HUM,STS/FFR,STS/FLTCK,STS/HAZMAT,STS/HEAD,STS/HOSP,STS/MARSA,STS/MEDEVAC,STS/NONRVSM,STS/SAR,STS/STATE
 
+RwyAppLines_Length=0.1
+RwyAppLines_Auto=0
+
+STCA=1
+STCA_VFR=1
+STCA_Uncorrelated=1
+STCA_Filter=2
+STCA_Inhibit_ActiveAreas=0
+STCA_AlertSound=1
+STCA_AlertSound_Filter=2
+STCA_UseCFL=1
+//STCA_Sep_Lat_SepLevel
+//STCA_Floor
+//STCA_Max_Track_Age
+//STCA_Coarse_PredictionTime
+STCA_Coarse_Sep_Lat_U=5
+STCA_Coarse_Sep_Lat_L=3
+STCA_Coarse_Sep_Vert_U=1000
+STCA_Coarse_Sep_Vert_L=1000
+//STCA_FastDiv_Vel_Lat
+//STCA_FastDiv_Vel_Vert
+//STCA_FastDiv_Sep_Lat_U
+//STCA_FastDiv_Sep_Lat_L
+//STCA_FastDiv_Sep_Vert_U
+//STCA_FastDiv_Sep_Vert_L
+//STCA_LinPred_PredictionTime
+//STCA_LinPred_PredictionStep
+STCA_LinPred_Sep_Lat_U=4.5
+STCA_LinPred_Sep_Lat_L=2.75
+STCA_LinPred_Sep_Lat_U_Div=3.0
+STCA_LinPred_Sep_Lat_L_Div=2.0
+//STCA_LinPred_Sep_Vert_U
+//STCA_LinPred_Sep_Vert_L
+STCA_CurrProx_Sep_Lat_U=4.75
+STCA_CurrProx_Sep_Lat_L=2.85
+//STCA_CurrProx_Sep_Vert_U
+//STCA_CurrProx_Sep_Vert_L
+//STCA_WarningTime_U
+//STCA_WarningTime_L
+//STCA_WarningTime_U_Imm
+//STCA_WarningTime_L_Imm
+//STCA_LevelOff_React_Single
+//STCA_LevelOff_React_Double
+//STCA_LevelOff_Rate
+//STCA_LevelOff_Sep_Vert_U
+//STCA_LevelOff_Sep_Vert_L
+//STCA_Turn_React
+//STCA_Turn_Rate
+//STCA_Turn_Sep_Lat_U
+//STCA_Turn_Sep_Lat_L
+//STCA_LinPred_ConflictCount
+//STCA_LinPred_CycleCount
+//STCA_CurrProx_ConflictCount
+//STCA_CurrProx_CycleCount
+//STCA_CurrProx_Sep_Lat_U_Safe
+//STCA_CurrProx_Sep_Lat_L_Safe
+
+SAP_Risks_Label=1
+SAP_Buffer_Lat_SepLevel=15550
+SAP_Buffer_Lat_U=3
+SAP_Buffer_Lat_L_IFR=3
+SAP_Buffer_Lat_L_VFR=3
+SAP_Buffer_Vert_U=1000
+SAP_Buffer_Vert_L_IFR=1000
+SAP_Buffer_Vert_L_VFR=1000
+
+System_UseReportedGS=0
 System_FPASD=1
 System_RepHdg_Correction=2
-System_TaxiTime=13
+System_TaxiTime=15
+System_TransferConfirmation=1
+System_MetarSourceVATSIM=0
+System_UseAcceptedCoordColor=1
+System_UseTSAborderHighlightColor=1
 
 Track_PredictionLine=0//leader line length
 Track_DivergenceSymbol_Size=0
+
+Vector_AHDG_Label_Dist=1
+Vector_AHDG_Label_Time=1
 
 Window_ASM_ShowNOTAMasUsertext=0
 Window_SM_LowestLevel=60
