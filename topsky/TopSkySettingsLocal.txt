@@ -42,3 +42,18 @@ STCA_LinPred_Sep_Lat_L=4.5
 STCA_CurrProx_Sep_Lat_U=4.75
 STCA_CurrProx_Sep_Lat_L=4.75
 
+[LPPC_D_CTR]
+STCA_Coarse_Sep_Lat_U=5
+STCA_Coarse_Sep_Lat_L=5
+STCA_LinPred_Sep_Lat_U=4.5
+STCA_LinPred_Sep_Lat_L=4.5
+STCA_CurrProx_Sep_Lat_U=4.75
+STCA_CurrProx_Sep_Lat_L=4.75
+
+[LPPC_V_CTR]
+STCA_Coarse_Sep_Lat_U=5
+STCA_Coarse_Sep_Lat_L=5
+STCA_LinPred_Sep_Lat_U=4.5
+STCA_LinPred_Sep_Lat_L=4.5
+STCA_CurrProx_Sep_Lat_U=4.75
+STCA_CurrProx_Sep_Lat_L=4.75
