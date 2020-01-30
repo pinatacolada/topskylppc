@@ -5,7 +5,7 @@ Setup_COOPANS=1
 Shortcut_AHDG_NoFixes_Combo=0x00
 
 Airspace_833_Min=0
-Airspace_ASSR_Type=0
+Airspace_ASSR_Type=2
 Airspace_ASSR_OAT_Remarks=RMK/OAT
 Airspace_ASSR_OAT_Type=0
 Airspace_P_Flag=LPPR,LPPT,LPFR,LPMA
@@ -184,7 +184,7 @@ System_UseReportedGS=0
 System_FPASD=1
 System_RepHdg_Correction=2
 System_TaxiTime=15
-System_TransferConfirmation=1
+System_TransferConfirmation=0
 System_MetarSourceVATSIM=0
 System_UseAcceptedCoordColor=1
 System_UseTSAborderHighlightColor=1
