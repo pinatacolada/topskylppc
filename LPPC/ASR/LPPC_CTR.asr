@@ -1,8 +1,8 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20200116115535-200101-0001.sct
-SECTORTITLE:LPPC-Package_20200116115535-200101-0001.sct
+SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20191121153415-191201-0004.sct
+SECTORTITLE:LPPC-Package_20191121153415-191201-0004.sct
 Airports:LPBG:symbol
 Airports:LPBR:symbol
 Airports:LPCO:symbol
@@ -17,13 +17,7 @@ Airports:LPVL:symbol
 Airports:LPVR:symbol
 Airports:LPVZ:symbol
 ARTCC boundary:COBERTURA RADAR:
-ARTCC boundary:SECTOR CENTRE UPPER:
-ARTCC boundary:SECTOR DEMOS:
 ARTCC boundary:SECTOR EAST:
-ARTCC boundary:SECTOR MADEIRA:
-ARTCC boundary:SECTOR NORTH UPPER:
-ARTCC boundary:SECTOR SOUTH UPPER:
-ARTCC boundary:SECTOR VERAM:
 ARTCC boundary:SECTOR WEST:
 ARTCC boundary:SEPARACAO 8NM:
 ARTCC low boundary:Braganca ATZ:
@@ -110,13 +104,13 @@ Fixes:BELDU:name
 Fixes:BELDU:symbol
 Fixes:BEXAL:name
 Fixes:BEXAL:symbol
+Fixes:BIGPI:name
 Fixes:BIGPI:symbol
 Fixes:BIMBO:name
 Fixes:BIMBO:symbol
+Fixes:BURAG:name
 Fixes:BURAG:symbol
 Fixes:BUSEN:symbol
-Fixes:CANAR:name
-Fixes:CANAR:symbol
 Fixes:DEGUN:name
 Fixes:DEGUN:symbol
 Fixes:DEMOS:name
@@ -124,16 +118,18 @@ Fixes:DEMOS:symbol
 Fixes:DETOX:name
 Fixes:DETOX:symbol
 Fixes:DIDIT:symbol
+Fixes:DIKUV:name
 Fixes:DIKUV:symbol
 Fixes:DIRUP:symbol
 Fixes:DIVUT:name
 Fixes:DIVUT:symbol
 Fixes:EKMAR:name
 Fixes:EKMAR:symbol
+Fixes:ELBIM:name
 Fixes:ELBIM:symbol
 Fixes:ELGIX:symbol
-Fixes:ELVAR:name
 Fixes:ELVAR:symbol
+Fixes:EPAKA:name
 Fixes:EPAKA:symbol
 Fixes:EPOPO:symbol
 Fixes:ERPES:name
@@ -158,6 +154,7 @@ Fixes:GENRO:symbol
 Fixes:GIMAL:name
 Fixes:GIMAL:symbol
 Fixes:GODGI:symbol
+Fixes:GOSGA:name
 Fixes:GOSGA:symbol
 Fixes:GUDAV:symbol
 Fixes:GUNTI:name
@@ -165,6 +162,7 @@ Fixes:GUNTI:symbol
 Fixes:IDBID:symbol
 Fixes:IDIGO:name
 Fixes:IDIGO:symbol
+Fixes:IDREL:name
 Fixes:IDREL:symbol
 Fixes:IIF6:symbol
 Fixes:INBOM:name
@@ -185,6 +183,7 @@ Fixes:LEPRU:symbol
 Fixes:LIDRO:name
 Fixes:LIDRO:symbol
 Fixes:LIGRA:symbol
+Fixes:LUKAN:name
 Fixes:LUKAN:symbol
 Fixes:LUTAK:name
 Fixes:LUTAK:symbol
@@ -239,7 +238,6 @@ Fixes:OGERO:name
 Fixes:OGERO:symbol
 Fixes:OM03:symbol
 Fixes:OM17:symbol
-Fixes:ORSOS:name
 Fixes:ORSOS:symbol
 Fixes:ORTIS:name
 Fixes:ORTIS:symbol
@@ -248,6 +246,7 @@ Fixes:ORTOP:symbol
 Fixes:OSLAD:name
 Fixes:OSLAD:symbol
 Fixes:PARAV:symbol
+Fixes:PECKY:name
 Fixes:PECKY:symbol
 Fixes:PESAS:name
 Fixes:PESAS:symbol
@@ -255,6 +254,7 @@ Fixes:PESEX:symbol
 Fixes:PESUL:symbol
 Fixes:PETEK:name
 Fixes:PETEK:symbol
+Fixes:PEVAP:name
 Fixes:PEVAP:symbol
 Fixes:PIGOR:symbol
 Fixes:PINEK:name
@@ -307,6 +307,7 @@ Fixes:ROKOB:symbol
 Fixes:ROSAL:name
 Fixes:ROSAL:symbol
 Fixes:ROSRO:symbol
+Fixes:RUPEP:name
 Fixes:RUPEP:symbol
 Fixes:SONAP:symbol
 Fixes:SOPOP:symbol
@@ -320,6 +321,7 @@ Fixes:TAKAV:name
 Fixes:TAKAV:symbol
 Fixes:TIGGI:name
 Fixes:TIGGI:symbol
+Fixes:TORVU:name
 Fixes:TORVU:symbol
 Fixes:TOSDI:name
 Fixes:TOSDI:symbol
@@ -351,6 +353,7 @@ Fixes:VETEL:name
 Fixes:VETEL:symbol
 Fixes:XAMAX:symbol
 Fixes:XANEL:symbol
+Fixes:XEGEN:name
 Fixes:XEGEN:symbol
 Fixes:XERES:name
 Fixes:XERES:symbol
@@ -371,15 +374,8 @@ Geo:LE Landmark Spain Coastline:
 Geo:LP Landmark Continental Coastline:
 Geo:LP Landmark Madeira Coastline:
 Geo:LP Landmark Porto Santo Coastline:
-NDBs:BJA:symbol
-NDBs:CB:symbol
-NDBs:EVR:symbol
-NDBs:LAR:symbol
-NDBs:MIO:symbol
-NDBs:PST:symbol
-NDBs:STR:symbol
-NDBs:VR:symbol
 Runways:LPAR 04-22:centerline
+Runways:LPAR 04-22:name
 Runways:LPBJ 01L-19R:centerline
 Runways:LPCO 16-34:centerline
 Runways:LPCS 17-35:centerline
@@ -412,16 +408,7 @@ Runways:LPVR 02-20:centerline
 Runways:LPVZ 18-36:centerline
 VORs:CAS:symbol
 VORs:CCS:symbol
-VORs:DAR:symbol
-VORs:DML:symbol
-VORs:DMR:symbol
-VORs:DMT:symbol
-VORs:DMU:symbol
-VORs:DMX:symbol
-VORs:DPR:symbol
-VORs:DSL:symbol
 VORs:ESP:symbol
-VORs:FAR:symbol
 VORs:FTM:symbol
 VORs:FUN:symbol
 VORs:LIS:symbol
@@ -444,4 +431,4 @@ DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:0.00000
 TAGFAMILY:PT vACC - NORM
-WINDOWAREA:30.822060:-27.765851:46.724099:9.469952
+WINDOWAREA:38.158508:-11.148078:40.292843:-6.150375
