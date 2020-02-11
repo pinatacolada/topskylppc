@@ -96,8 +96,12 @@ Geo:LE Landmark Spain Coastline:
 Geo:LP Landmark Continental Coastline:
 Geo:LP Landmark Madeira Coastline:
 Geo:LP Landmark Porto Santo Coastline:
+NDBs:BJA:symbol
+NDBs:LAR:symbol
+NDBs:MIO:symbol
+NDBs:STR:symbol
+Runways:LPAR 04-22:centerline
 Runways:LPAV 17-35:centerline
-Runways:LPAV 17-35:name
 Runways:LPBJ 01L-19R:centerline
 Runways:LPCO 16-34:centerline
 Runways:LPCS 17-35:centerline
@@ -132,10 +136,14 @@ Stars:HOLDING LPPC ADSAD R 344.0 4000 14000:
 Stars:HOLDING LPPC EKMAR L 44.0 3000 14000:
 Stars:HOLDING LPPC RINOR L 225.0 7000 14000:
 Stars:HOLDING LPPC UMUPI R 182.0 7000 14000:
+VORs:ARR:symbol
 VORs:CAS:symbol
+VORs:DMT:symbol
 VORs:ESP:symbol
 VORs:FTM:symbol
 VORs:LIS:symbol
+VORs:NSA:symbol
+VORs:SRA:symbol
 SHOWC:1
 SHOWSB:1
 BELOW:500
@@ -149,4 +157,4 @@ DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:0.00000
 TAGFAMILY:PT vACC - NORM
-WINDOWAREA:37.511701:-13.311540:40.846601:-5.502626
+WINDOWAREA:37.434879:-13.310192:40.769779:-5.501276
