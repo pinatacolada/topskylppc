@@ -1,12 +1,12 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Users\alexm\Documents\EuroScope\LPPC-Package_20191210191902-191301-0003.sct
-SECTORTITLE:LPPC-Package_20191210191902-191301-0003.sct
 ARTCC boundary:SECTOR DEMOS:
 ARTCC boundary:SECTOR EAST:
 ARTCC boundary:SECTOR WEST:
+ARTCC low boundary:Coimbra ATZ:
 ARTCC low boundary:Coordenacao LPPT/LPPR:
+ARTCC low boundary:Evora ATZ:
 ARTCC low boundary:LPCS Guincho/Cabo Raso:
 ARTCC low boundary:LPCS Tower CTR:
 ARTCC low boundary:LPFR TMA:
@@ -16,8 +16,14 @@ ARTCC low boundary:LPPT AoR APP:
 ARTCC low boundary:LPPT MRVA:
 ARTCC low boundary:LPPT TMA:
 ARTCC low boundary:LPPT Tower CTR:
+ARTCC low boundary:Ponte de Sor ATZ:
+ARTCC low boundary:Ponte do Sor TRMZ:
 Fixes:ADSAD:name
 Fixes:ADSAD:symbol
+Fixes:AGUVO:symbol
+Fixes:ALAMA:symbol
+Fixes:BADUM:symbol
+Fixes:BUGID:symbol
 Fixes:BUSEN:name
 Fixes:BUSEN:symbol
 Fixes:EKMAR:name
@@ -28,6 +34,7 @@ Fixes:GAIOS:name
 Fixes:GAIOS:symbol
 Fixes:GANSU:name
 Fixes:GANSU:symbol
+Fixes:GUDAV:symbol
 Fixes:IDBID:name
 Fixes:IDBID:symbol
 Fixes:INBOM:name
@@ -36,27 +43,35 @@ Fixes:IXIDA:name
 Fixes:IXIDA:symbol
 Fixes:LIGRA:name
 Fixes:LIGRA:symbol
+Fixes:MONUR:symbol
+Fixes:MORAS:symbol
 Fixes:NAKOS:name
 Fixes:NAKOS:symbol
 Fixes:NETVO:symbol
 Fixes:ODLIX:symbol
 Fixes:PESEX:name
 Fixes:PESEX:symbol
+Fixes:PINIM:symbol
 Fixes:PT401:symbol
 Fixes:PT402:symbol
 Fixes:PT405:symbol
 Fixes:PT407:symbol
 Fixes:PT408:symbol
+Fixes:PT409:symbol
 Fixes:PT410:symbol
 Fixes:PT411:symbol
 Fixes:PT412:symbol
 Fixes:PT414:symbol
+Fixes:PT415:symbol
 Fixes:PT416:symbol
+Fixes:PT418:symbol
+Fixes:PT419:symbol
 Fixes:PT420:symbol
 Fixes:PT421:symbol
 Fixes:PT422:symbol
 Fixes:RINOR:name
 Fixes:RINOR:symbol
+Fixes:ROKAP:symbol
 Fixes:TROIA:name
 Fixes:TROIA:symbol
 Fixes:UMUPI:symbol
@@ -64,12 +79,18 @@ Fixes:UNPOT:name
 Fixes:UNPOT:symbol
 Fixes:UPKAT:name
 Fixes:UPKAT:symbol
+Fixes:USIVI:symbol
 Fixes:XAMAX:name
 Fixes:XAMAX:symbol
 Geo:GEO:
+Geo:GM Landmark Morocco Coastline:
+Geo:LE Landmark Spain Coastline:
 Geo:LP Landmark Continental Coastline:
+Geo:LP Landmark Madeira Coastline:
+Geo:LP Landmark Porto Santo Coastline:
 Runways:LPAV 17-35:centerline
 Runways:LPAV 17-35:name
+Runways:LPBJ 01L-19R:centerline
 Runways:LPCO 16-34:centerline
 Runways:LPCS 17-35:centerline
 Runways:LPCS 17-35:extended centerline 2
@@ -120,4 +141,4 @@ DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:0.00000
 TAGFAMILY:PT vACC - NORM
-WINDOWAREA:37.279379:-12.933263:40.614278:-5.124351
+WINDOWAREA:37.632911:-13.592319:40.967810:-5.783405
