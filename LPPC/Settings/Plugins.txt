@@ -1,5 +1,4 @@
 PLUGINS
-Arrival Manager:AMAN:UPKAT/PESEX;3600;1|GEBTI/VENOL;3600;1|GEBTI;3600;1|
 TopSky plugin:ACList/Holding List /m_Visible:0
 TopSky plugin:ACList/Holding List /m_X:20
 TopSky plugin:ACList/Holding List /m_Y:20
