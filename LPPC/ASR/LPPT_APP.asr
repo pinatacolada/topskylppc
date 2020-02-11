@@ -1,9 +1,17 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
+ARTCC boundary:COBERTURA RADAR:
 ARTCC boundary:SECTOR DEMOS:
 ARTCC boundary:SECTOR EAST:
+ARTCC boundary:SECTOR MADEIRA:
+ARTCC boundary:SECTOR NORTH:
+ARTCC boundary:SECTOR NORTH UPPER:
+ARTCC boundary:SECTOR SOUTH:
+ARTCC boundary:SECTOR SOUTH UPPER:
+ARTCC boundary:SECTOR VERAM:
 ARTCC boundary:SECTOR WEST:
+ARTCC boundary:SEPARACAO 8NM:
 ARTCC low boundary:Coimbra ATZ:
 ARTCC low boundary:Coordenacao LPPT/LPPR:
 ARTCC low boundary:Evora ATZ:
@@ -141,4 +149,4 @@ DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:0.00000
 TAGFAMILY:PT vACC - NORM
-WINDOWAREA:37.632911:-13.592319:40.967810:-5.783405
+WINDOWAREA:37.511701:-13.311540:40.846601:-5.502626
