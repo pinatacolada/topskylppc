@@ -1,10 +1,19 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Users\alexm\Documents\EuroScope\LPPC-Package_20191210191902-191301-0003.sct
-SECTORTITLE:LPPC-Package_20191210191902-191301-0003.sct
+ARTCC boundary:COBERTURA RADAR:
+ARTCC boundary:SECTOR CENTRE:
+ARTCC boundary:SECTOR CENTRE UPPER:
+ARTCC boundary:SECTOR DEMOS:
 ARTCC boundary:SECTOR EAST:
+ARTCC boundary:SECTOR MADEIRA:
+ARTCC boundary:SECTOR NORTH:
+ARTCC boundary:SECTOR NORTH UPPER:
+ARTCC boundary:SECTOR SOUTH:
+ARTCC boundary:SECTOR SOUTH UPPER:
+ARTCC boundary:SECTOR VERAM:
 ARTCC boundary:SECTOR WEST:
+ARTCC boundary:SEPARACAO 8NM:
 ARTCC low boundary:LPFR TMA:
 ARTCC low boundary:LPMA MRVA:
 ARTCC low boundary:LPMA TMA:
@@ -12,37 +21,82 @@ ARTCC low boundary:LPMA Tower CTR:
 ARTCC low boundary:LPPR TMA:
 ARTCC low boundary:LPPS Tower CTR:
 ARTCC low boundary:LPPT TMA:
+Fixes:ABALO:name
+Fixes:ABALO:symbol
 Fixes:ABUSU:name
 Fixes:ABUSU:symbol
+Fixes:ADAGO:name
+Fixes:ADAGO:symbol
+Fixes:ASGAM:name
+Fixes:ASGAM:symbol
+Fixes:BIMBO:name
+Fixes:BIMBO:symbol
 Fixes:DEGUN:name
 Fixes:DEGUN:symbol
 Fixes:ELBIM:name
 Fixes:ELBIM:symbol
-Fixes:EPAKA:name
 Fixes:EPAKA:symbol
 Fixes:FUSUL:name
 Fixes:FUSUL:symbol
+Fixes:GOSGA:symbol
+Fixes:IDIGO:name
+Fixes:IDIGO:symbol
+Fixes:IRKID:name
+Fixes:IRKID:symbol
+Fixes:IRSAN:symbol
 Fixes:KEKOS:name
 Fixes:KEKOS:symbol
 Fixes:LIDRO:name
 Fixes:LIDRO:symbol
+Fixes:MA514:name
+Fixes:MA514:symbol
+Fixes:MA516:symbol
 Fixes:MA532:name
 Fixes:MA532:symbol
+Fixes:MA534:symbol
+Fixes:MA536:symbol
+Fixes:MA538:symbol
+Fixes:MA542:symbol
 Fixes:MA566:symbol
+Fixes:MADAT:name
+Fixes:MADAT:symbol
+Fixes:MANOX:name
+Fixes:MANOX:symbol
+Fixes:MAVEX:name
+Fixes:MAVEX:symbol
+Fixes:NAVIX:name
+Fixes:NAVIX:symbol
+Fixes:NELSO:name
+Fixes:NELSO:symbol
 Fixes:NIDUL:name
 Fixes:NIDUL:symbol
 Fixes:NIKAV:name
 Fixes:NIKAV:symbol
+Fixes:NIPRI:name
+Fixes:NIPRI:symbol
+Fixes:OGDOR:name
+Fixes:OGDOR:symbol
+Fixes:ORTIS:name
+Fixes:ORTIS:symbol
+Fixes:POBAR:symbol
 Fixes:RAKUN:name
 Fixes:RAKUN:symbol
 Fixes:TABOM:name
 Fixes:TABOM:symbol
+Fixes:TOBED:symbol
+Fixes:VETEL:name
+Fixes:VETEL:symbol
+Fixes:XAVAL:symbol
+Fixes:XERON:symbol
 Free Text:LPMA MRVA\3000:freetext
 Free Text:LPMA MRVA\9000:freetext
 Geo:GEO:
+Geo:GM Landmark Morocco Coastline:
+Geo:LE Landmark Spain Coastline:
 Geo:LP Landmark Continental Coastline:
 Geo:LP Landmark Madeira Coastline:
 Geo:LP Landmark Porto Santo Coastline:
+NDBs:PST:symbol
 Runways:LPAV 17-35:centerline
 Runways:LPAV 17-35:name
 Runways:LPCO 16-34:centerline
@@ -74,8 +128,12 @@ Runways:LPST 14-32:centerline
 Runways:LPVL 16-34:centerline
 Runways:LPVR 02-20:centerline
 Runways:LPVZ 18-36:centerline
+Stars:HOLDING LPMA MA514 L 25.0 3000 10000:
+Stars:HOLDING LPMA MA532 R 227.0 3000 10000:
 Stars:HOLDING LPPC ABUSU R 211.0 3000 14000:
+Stars:HOLDING LPPC ADAGO R 03.0 3000 14000:
 Stars:HOLDING LPPC FUSUL L 351.0 4000 14000:
+Stars:HOLDING LPPC MAVEX L 183.0 3000 14000:
 VORs:FUN:symbol
 VORs:SNT:symbol
 SHOWC:1
@@ -91,4 +149,4 @@ DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:0.00000
 TAGFAMILY:PT vACC - NORM
-WINDOWAREA:26.560774:-31.379984:39.282408:-1.591334
+WINDOWAREA:31.685296:-19.707452:34.353216:-13.460320
