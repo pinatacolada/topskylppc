@@ -1,8 +1,8 @@
 DisplayTypeName:Ground Radar display
 DisplayTypeNeedRadarContent:0
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20200116115535-200101-0001.sct
-SECTORTITLE:LPPC-Package_20200116115535-200101-0001.sct
+SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20200129154612-200101-0002.sct
+SECTORTITLE:LPPC-Package_20200129154612-200101-0002.sct
 ARTCC low boundary:LPCS Tower CTR:
 ARTCC low boundary:LPPT Tower CTR:
 Free Text:LPBJ Taxiways\A1:freetext
@@ -398,11 +398,9 @@ Geo:LPFR Groundlayout:
 Geo:LPMA Groundlayout:
 Geo:LPPR Groundlayout:
 Geo:LPPS Groundlayout:
-Geo:LPPT AREA 0800-1800:
 Geo:LPPT Groundlayout:
 Regions:LPPT Background:polygon
 Regions:LPPT Groundlayout:polygon
-Regions:LPPT P. AREA 0800-1800:polygon
 SHOWC:1
 SHOWSB:1
 BELOW:0
@@ -415,8 +413,8 @@ SIMULATION_MODE:2
 DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:67.00000
-TAGFAMILY:PT vACC - GND RDR
-WINDOWAREA:38.761629:-9.173774:38.791754:-9.103236
+TAGFAMILY:PT vACC - NORM
+WINDOWAREA:38.766908:-9.162996:38.791009:-9.106562
 PLUGIN:Ground Radar plugin:AirportElevation:374
 PLUGIN:Ground Radar plugin:AirportRadius:1.9
 PLUGIN:Ground Radar plugin:GroundMode:LPPT
