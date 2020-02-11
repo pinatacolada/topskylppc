@@ -1,8 +1,6 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Users\alexm\Documents\EuroScope\LPPC-Package_20191210191902-191301-0003.sct
-SECTORTITLE:LPPC-Package_20191210191902-191301-0003.sct
 Airports:LPPM:symbol
 ARTCC boundary:SECTOR EAST:
 ARTCC boundary:SECTOR WEST:
