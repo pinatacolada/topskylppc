@@ -38,7 +38,6 @@ ASRFastKeys	6	\LPPC\ASR\LPMA_TWR.asr
 ASRFastKeys	7	\LPPC\ASR\LPFR_TWR.asr
 ASRFastKeys	8	\LPPC\ASR\LPPT_GND_TSGR.asr
 ASRFastKeys	9	\LPPC\ASR\LPPR_TWR.asr
-
 Plugins	Plugin2	\afv bridge\AfvEuroScopeBridge.dll
 Plugins	Plugin2Display0	Ground Radar display
 Plugins	Plugin2Display1	Standard ES radar screen
