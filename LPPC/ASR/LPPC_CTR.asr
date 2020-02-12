@@ -1,8 +1,6 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20200116115535-200101-0001.sct
-SECTORTITLE:LPPC-Package_20200116115535-200101-0001.sct
 Airports:LPBG:symbol
 Airports:LPBR:symbol
 Airports:LPCO:symbol
@@ -314,7 +312,6 @@ Fixes:SOTEX:name
 Fixes:SOTEX:symbol
 Fixes:SUBAL:name
 Fixes:SUBAL:symbol
-Fixes:TABAL:symbol
 Fixes:TABOM:symbol
 Fixes:TAKAV:name
 Fixes:TAKAV:symbol
@@ -444,4 +441,4 @@ DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:0.00000
 TAGFAMILY:PT vACC - NORM
-WINDOWAREA:30.822060:-27.765851:46.724099:9.469952
+WINDOWAREA:29.986202:-31.431506:45.888242:5.804300
