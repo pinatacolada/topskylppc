@@ -1,7 +1,7 @@
 SEL
 m_Visible:1
 m_X:0
-m_Y:168
+m_Y:116
 m_LineNumber:20
 m_Resizable:1
 m_OrderingColumn:-9
@@ -21,5 +21,5 @@ m_Column:RWY:7:0:10010:19:0:1:TopSky plugin:::1
 m_Column:ETA:4:0:10033:0:0:1:TopSky plugin:::1
 m_Column:ASSR:5:0:10041:62:0:1:TopSky plugin:TopSky plugin::1
 m_Column:SI:3:0:10014:20:42:1:TopSky plugin::TopSky plugin:1
-m_Column:TXT:7:0:19:29:0:1::::1
+m_Column:TXT:7:0:222:2:0:1:TopSky plugin:TopSky plugin::1
 END
