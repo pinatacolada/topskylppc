@@ -10,7 +10,7 @@ m_Column:C/S:9:0:22:6:0:1:TopSky plugin:TopSky plugin::1
 m_Column:ATYP:5:0:69:0:0:1:TopSky plugin:::1
 m_Column:COPN:6:0:10004:21:0:1:TopSky plugin:::1
 m_Column:ETN:5:0:10034:0:0:1:TopSky plugin:::1
-m_Column:PEL:5:0:10001:68:0:1:TopSky plugin:TopSky plugin::1
+m_Column:PEL:5:0:10001:26:0:1:TopSky plugin:::1
 m_Column:FR:2:0:10031:0:0:1:TopSky plugin:::1
 m_Column:ADEP:5:0:10007:0:0:1:TopSky plugin:::1
 m_Column:ADES:5:0:10008:0:39:1:TopSky plugin::TopSky plugin:1
