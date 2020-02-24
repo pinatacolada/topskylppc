@@ -37,13 +37,14 @@ Ground Radar based on the SAAB A3000 A-SMGCS system
 And a lot more
 
 # Instalation
-[Download](https://github.com/pinatacolada/topskylppc/archive/0.2.zip) and unzip the contents of topskylppc-0.2 folder into the folder where you keep your LPPC sector file. It should ask you to overwrite some files, say yes to those.
+[Download](https://github.com/pinatacolada/topskylppc/archive/1.0.zip) and unzip the contents of topskylppc-1.0 folder into the folder where you keep your LPPC sector file. It should ask you to overwrite some files, say yes to those.
 Then, on Euroscope, go to Other Settings/Plug-ins. Click on load and navigate to where you dropped the files before. Select the TopSky.dll and then the GRplugin.dll files.
 Both plug-ins should now show in the plug-in list. Select each and on the Forbidden to draw on types list click on << on all entries, so as to allow the plug-ins to draw on the screen.
 Close and reopen Euroscope, save all changes. 
 When prompted during startup, use the LPPC_CTR_TS.prf profile.
 Ta-daa, it should work now.
-Note: The Ground Radar is only available through the LPPT_GND_TSGR.asr. Go to OPEN SCT/Open, navigate to LPPC\ASR and open the LPPT_GND_TSGR to use it.
+The Ground Radar is only available through the LPPT_GND_TSGR.asr. Go to OPEN SCT/Open, navigate to LPPC\ASR and open the LPPT_GND_TSGR to use it.
+To use CPDLC you need a [Hoppie account](https://www.hoppie.nl/acars/system/register.html). Paste your Hoppie code inside the TopSkyCPDLChoppieCode.txt file and save. The code is now saved, but each time you connect to Vatsim you will still need to initate the CPDLC connection via the CPDLC menu. It's just pressing one button that says connect, really it's not hard.
 
 # Disclamer
 Although - as its name suggests - the plugin is based on the TopSky ATM system, it is in no way affiliated with or endorsed by Thales Group. Similarities between plugin features and the real system are not entirely coincidental, but anyone planning to use the plugin as a real world training aid really should know better…
