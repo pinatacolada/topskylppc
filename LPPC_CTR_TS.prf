@@ -16,7 +16,7 @@ Settings	SettingsfileARR	\LPPC\Settings\ArrivalList.txt
 Settings	SettingsfileFP	\LPPC\Settings\FPList.txt
 Settings	SettingsfilePLUGINS	\LPPC\Settings\Plugins.txt
 Settings	SettingsfileSCREEN	\LPPC\Settings\Screen_TopSky.txt
-Settings	SettingsfileCONFLICT	\LPPC\Settings\Conflict.txt
+Settings	SettingsfileCONFLICT	\LPPC\Settings\Conflict_TopSky.txt
 Settings	SettingsfileVCCS	\LPPC\Settings\VCCS.txt
 Plugins	Plugin0	\LPPC\Plugins\topsky\TopSky.dll
 Plugins	Plugin0Display0	Standard ES radar screen
