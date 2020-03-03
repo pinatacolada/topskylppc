@@ -18,9 +18,9 @@ Settings	SettingsfilePLUGINS	\LPPC\Settings\Plugins.txt
 Settings	SettingsfileSCREEN	\LPPC\Settings\Screen.txt
 Settings	SettingsfileCONFLICT	\LPPC\Settings\Conflict.txt
 Settings	SettingsfileVCCS	\LPPC\Settings\VCCS.txt
-Plugins	Plugin0	\topsky\TopSky.dll
+Plugins	Plugin0	\LPPC\Plugins\topsky\TopSky.dll
 Plugins	Plugin0Display0	Standard ES radar screen
-Plugins	Plugin1	\topsky\GRplugin.dll
+Plugins	Plugin1	\LPPC\Plugins\topsky\GRplugin.dll
 Plugins	Plugin1Display0	Ground Radar display
 Plugins	Plugin1Display1	Standard ES radar screen
 Plugins	Plugin0Display1	Ground Radar display
