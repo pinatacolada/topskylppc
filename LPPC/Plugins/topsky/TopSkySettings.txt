@@ -101,6 +101,8 @@ HTTP_METAR_Page_Suffix=
 HTTP_METAR_Data_Prefix="
 HTTP_METAR_Data_Suffix="
 
+HTTP_NOTAM_Server=https://www.notams.faa.gov
+
 MTCD=1
 MTCD_AHDG=1
 MTCD_RAM=1
