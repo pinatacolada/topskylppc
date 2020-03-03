@@ -15,7 +15,7 @@ Settings	SettingsfileDEP	\LPPC\Settings\DepartureList_TopSky.txt
 Settings	SettingsfileARR	\LPPC\Settings\ArrivalList.txt
 Settings	SettingsfileFP	\LPPC\Settings\FPList.txt
 Settings	SettingsfilePLUGINS	\LPPC\Settings\Plugins.txt
-Settings	SettingsfileSCREEN	\LPPC\Settings\Screen.txt
+Settings	SettingsfileSCREEN	\LPPC\Settings\Screen_TopSky.txt
 Settings	SettingsfileCONFLICT	\LPPC\Settings\Conflict.txt
 Settings	SettingsfileVCCS	\LPPC\Settings\VCCS.txt
 Plugins	Plugin0	\LPPC\Plugins\topsky\TopSky.dll
