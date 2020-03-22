@@ -1,8 +1,8 @@
-DisplayTypeName:Standard ES radar screen
-DisplayTypeNeedRadarContent:1
+DisplayTypeName:Ground Radar display
+DisplayTypeNeedRadarContent:0
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20200116115535-200101-0001.sct
-SECTORTITLE:LPPC-Package_20200116115535-200101-0001.sct
+SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20200322124616-200301-0005.sct
+SECTORTITLE:LPPC-Package_20200322124616-200301-0005.sct
 Airports:LPBG:symbol
 Airports:LPBR:symbol
 Airports:LPCO:symbol
@@ -588,14 +588,18 @@ VORs:VIS:symbol
 SHOWC:1
 SHOWSB:1
 BELOW:0
-ABOVE:66000
-LEADER:-2
-SHOWLEADER:1
+ABOVE:0
+LEADER:5
+SHOWLEADER:0
 TURNLEADER:0
-HISTORY_DOTS:5
-SIMULATION_MODE:4
+HISTORY_DOTS:0
+SIMULATION_MODE:2
 DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:102.00000
 TAGFAMILY:PT vACC - NORM
-WINDOWAREA:41.230170:-8.690369:41.242766:-8.660875
+WINDOWAREA:41.235779:-8.682207:41.242098:-8.667412
+PLUGIN:Ground Radar plugin:AirportElevation:227
+PLUGIN:Ground Radar plugin:AirportRadius:1.9
+PLUGIN:Ground Radar plugin:GroundMode:LPPR
+PLUGIN:TopSky plugin:NoDraw:1
