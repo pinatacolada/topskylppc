@@ -1,8 +1,8 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20200323020218-200301-0010.sct
-SECTORTITLE:LPPC-Package_20200323020218-200301-0010.sct
+SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20200322124616-200301-0005.sct
+SECTORTITLE:LPPC-Package_20200322124616-200301-0005.sct
 Airports:LPBG:symbol
 Airports:LPBR:symbol
 Airports:LPCO:symbol
@@ -17,20 +17,6 @@ Airports:LPVL:symbol
 Airports:LPVR:symbol
 Airports:LPVZ:symbol
 ARTCC boundary:COBERTURA RADAR:
-ARTCC boundary:LPP2 Prohibited area:
-ARTCC boundary:LPR26A Restricted area:
-ARTCC boundary:LPR40A Restricted area:
-ARTCC boundary:LPR40BN Restricted area:
-ARTCC boundary:LPR40BS Restricted area:
-ARTCC boundary:LPR42A Restricted area:
-ARTCC boundary:LPR42B Restricted area:
-ARTCC boundary:LPR44A Restricted area:
-ARTCC boundary:LPR51A Restricted area:
-ARTCC boundary:LPR51BN Restricted area:
-ARTCC boundary:LPR51BS Restricted area:
-ARTCC boundary:LPR51C Restricted area:
-ARTCC boundary:LPR60A Restricted area:
-ARTCC boundary:LPR60B Restricted area:
 ARTCC boundary:SECTOR CENTRE UPPER:
 ARTCC boundary:SECTOR DEMOS:
 ARTCC boundary:SECTOR EAST:
@@ -384,14 +370,6 @@ Geo:LE Landmark Spain Coastline:
 Geo:LP Landmark Continental Coastline:
 Geo:LP Landmark Madeira Coastline:
 Geo:LP Landmark Porto Santo Coastline:
-Geo:LPBJ Groundlayout:
-Geo:LPCS Groundlayout:
-Geo:LPEV Groundlayout:
-Geo:LPFR Groundlayout:
-Geo:LPMA Groundlayout:
-Geo:LPPR Groundlayout:
-Geo:LPPS Groundlayout:
-Geo:LPPT Groundlayout:
 NDBs:BJA:symbol
 NDBs:CB:symbol
 NDBs:EVR:symbol
@@ -400,10 +378,6 @@ NDBs:MIO:symbol
 NDBs:PST:symbol
 NDBs:STR:symbol
 NDBs:VR:symbol
-Regions:LPFR Groundlayout:polygon
-Regions:LPMA Groundlayout:polygon
-Regions:LPPR Groundlayout:polygon
-Regions:LPPT Groundlayout:polygon
 Runways:LPAR 04-22:centerline
 Runways:LPBJ 01L-19R:centerline
 Runways:LPBJ 01L-19R:extended centerline 1
@@ -460,7 +434,7 @@ VORs:VFA:symbol
 VORs:VIS:symbol
 SHOWC:1
 SHOWSB:1
-BELOW:0
+BELOW:500
 ABOVE:66000
 LEADER:-2
 SHOWLEADER:1
@@ -471,4 +445,4 @@ DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:0.00000
 TAGFAMILY:PT vACC - NORM
-WINDOWAREA:35.314412:-20.925754:43.456252:-1.861033
+WINDOWAREA:38.411708:-10.030036:39.111087:-8.392388

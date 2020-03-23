@@ -1,4 +1,4 @@
-Settings	sector	\LPPC-Package_20200129154612-200101-0002.sct
+Settings	sector	\LPPC-Package_20200322124616-200301-0005.sct
 Settings	alias	\LPPC\Alias\alias.txt
 Settings	airlines	\LPPC\ICAO\ICAO_Airlines.txt
 Settings	airports	\LPPC\ICAO\ICAO_Airports.txt
@@ -29,15 +29,13 @@ Settings	FreqKey	3604480
 Voice	PPPT	18677760
 Settings	ipaddr	\ipaddr.txt
 Settings	airways	\LPPC\NavData\airway.txt
-ASRFastKeys	1	\LPPC\ASR\LPPC_CTR.asr
+ASRFastKeys	1	\LPPC\ASR\LPPC_CTR_TS.asr
 ASRFastKeys	2	\LPPC\ASR\LPMA_APP.asr
 ASRFastKeys	3	\LPPC\ASR\LPFR_APP.asr
 ASRFastKeys	4	\LPPC\ASR\LPPT_APP.asr
-ASRFastKeys	5	\LPPC\ASR\LPPR_APP.asr
+ASRFastKeys	5	\LPPC\ASR\LPCS_TWR.asr
 ASRFastKeys	6	\LPPC\ASR\LPMA_TWR.asr
 ASRFastKeys	7	\LPPC\ASR\LPFR_TWR.asr
 ASRFastKeys	8	\LPPC\ASR\LPPT_GND_TSGR.asr
 ASRFastKeys	9	\LPPC\ASR\LPPR_TWR.asr
-Plugins	Plugin2	\afv bridge\AfvEuroScopeBridge.dll
-Plugins	Plugin2Display0	Ground Radar display
-Plugins	Plugin2Display1	Standard ES radar screen
+Settings	SettingsfilePILOTING	\LPPC\Settings\General_TopSky.txt
