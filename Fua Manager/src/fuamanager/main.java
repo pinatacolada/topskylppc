@@ -31,10 +31,11 @@ public class main {
 					CategoryDef catdef = new CategoryDef(line);
 					categories.add(catdef);
 				}
-				else if(line.contains("AREA")){//TODO nope this doesnt work need to read the whole are
-					Area a = new Area(line);
-					areas.add(a);
+				else if(line.contains("AREA")){
+					Area a = new Area(line,br);
+					
 				}
+			
 				
 				
 				
