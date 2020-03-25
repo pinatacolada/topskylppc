@@ -1,7 +1,12 @@
 package fuamanager;
 
 public class BufferVert {
-	private String BufferU;
-	private String BufferLI;
-	private String BufferLV;
+	public BufferVert(String high, String lowI, String lowV) {
+		bufferU = high;
+		bufferLI = lowI;
+		bufferLV = lowV;
+	}
+	private String bufferU;
+	private String bufferLI;
+	private String bufferLV;
 }
