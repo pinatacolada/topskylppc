@@ -123,3 +123,37 @@ STCA_CurrProx_Sep_Lat_U=4.75
 STCA_CurrProx_Sep_Lat_L=4.75
 
 
+[LPPR_APP]
+STCA_Coarse_Sep_Lat_U=5
+STCA_Coarse_Sep_Lat_L=5
+STCA_LinPred_Sep_Lat_U=4.5
+STCA_LinPred_Sep_Lat_L=4.5
+STCA_CurrProx_Sep_Lat_U=4.75
+STCA_CurrProx_Sep_Lat_L=4.75
+
+
+[LPFR_APP]
+STCA_Coarse_Sep_Lat_U=5
+STCA_Coarse_Sep_Lat_L=5
+STCA_LinPred_Sep_Lat_U=4.5
+STCA_LinPred_Sep_Lat_L=4.5
+STCA_CurrProx_Sep_Lat_U=4.75
+STCA_CurrProx_Sep_Lat_L=4.75
+
+[LPPR_1_APP]
+STCA_Coarse_Sep_Lat_U=5
+STCA_Coarse_Sep_Lat_L=5
+STCA_LinPred_Sep_Lat_U=4.5
+STCA_LinPred_Sep_Lat_L=4.5
+STCA_CurrProx_Sep_Lat_U=4.75
+STCA_CurrProx_Sep_Lat_L=4.75
+
+
+[LPFR_1_APP]
+STCA_Coarse_Sep_Lat_U=5
+STCA_Coarse_Sep_Lat_L=5
+STCA_LinPred_Sep_Lat_U=4.5
+STCA_LinPred_Sep_Lat_L=4.5
+STCA_CurrProx_Sep_Lat_U=4.75
+STCA_CurrProx_Sep_Lat_L=4.75
+
