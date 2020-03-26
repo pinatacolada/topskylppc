@@ -45,7 +45,7 @@ public class Area {
 				Coordinate c = new Coordinate(parts[1],parts[2]);
 				label = new ALabel(c,parts[3]);
 			}
-			else if(line.contains("LABEL")){
+			else if(line.contains("LIMITS")){
 //				LIMITS:0:240
 				limits = new VLimit(parts[1],parts[2]);
 			}
@@ -76,16 +76,40 @@ public class Area {
 			}
 			else if(line.contains("ACTIVE")){
 				switch(parts[1]) {
-					case "1": active = new Activation();
-					case "NOTAM": active = new NotamAct(parts[2],parts[3]);
-					case //TODO i went to sleep here zzzzzzzzzz
-					default: active = new SchedAct();//TODO
+					case "1": active = new Activation(); break;
+					case "NOTAM": active = new NotamAct(parts[2],parts[3]); break;
+					case "RWY": active = new RwyAct(parts); break;
+					default: active = new SchedAct(parts);
 				}
-				
-				
-				
-				
 			}
+			else if(line.contains("GROUP")) {
+				//TODO
+			}
+			else if(line.contains("BOUND")) {
+				//TODO
+			}
+			else if(line.contains("LIMITS")) {
+				//TODO
+			}
+			else if(line.contains("NOMSAW")) {
+				//TODO
+			}
+			else if(line.contains("NOAPW")) {
+				//TODO
+			}
+			else if(line.contains("NOSAP")) {
+				//TODO
+			}
+			else if(line.contains("SAP_BUFFER_LAT")) {
+				//TODO
+			}
+			else if(line.contains("SAP_BUFFER_VERT")) {
+				//TODO
+			}
+			else if(line.contains("COORD")) {
+				//TODO
+			}
+			
 		}
 	}
 	private String name;

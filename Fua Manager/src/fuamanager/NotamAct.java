@@ -6,7 +6,6 @@ public class NotamAct extends Activation {
 	private String text;
 	
 	public NotamAct(String fir, String keyword) {
-		// TODO Auto-generated constructor stub
 		rules =  "NOTAM";
 		icao = fir;
 		text = keyword;		
