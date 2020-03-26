@@ -8,67 +8,60 @@ import java.io.IOException;
  * unused
  */
 public class Area {
-	public Area(String name, String category, ALabel label, VLimit limits, Coordinate[] coordinates,
-			BufferLat aPWBL, BufferVert aPWBV, String usertext, Activation active, Boundary bound, boolean noMSAW,
-			boolean noAPW, boolean noSAP, BufferLat sAPL, BufferVert sAPV) {
+	private String name;
+	private String category;
+	private ALabel label;
+	private VLimit limits;
+	private Coordinate[] coordinates;//TODO
+	private BufferLat apwbl;
+	private BufferVert apwbv;
+	private String usertext;
+	private Activation active;
+	private AreaBound bound; 
+	private boolean  msaw;
+	private boolean  apw;
+	private boolean  sap;
+	private BufferLat sapl;
+	private BufferVert sapv;
+	
+	public Area(String name, String category, Coordinate[] coordinates) {
 		super();
 		this.name = name;
 		this.category = category;
-		this.label = label;
-		this.limits = limits;
+		label = null;
+		limits = null;
 		this.coordinates = coordinates;
-		APWBL = aPWBL;
-		APWBV = aPWBV;
-		this.usertext = usertext;
-		this.active = active;
-		this.bound = bound;
-		NoMSAW = noMSAW;
-		NoAPW = noAPW;
-		NoSAP = noSAP;
-		SAPL = sAPL;
-		SAPV = sAPV;
+		apwbl = null;
+		apwbv = null;
+		usertext = null;
+		active = null;
+		bound = null;
+		msaw = true;
+		apw = true;
+		sap = true;
+		sapl = null;
+		sapv = null;
 	}
 
 	public Area(String line, BufferedReader br) throws IOException {
 		//AREA:T:LPD10
 		String[] firstLine = line.split("[\\:]");
 		name=firstLine[2];
+		
 		while ((line = br.readLine()).contains("AREA") == false){
 			String[] parts = line.split("[\\:]");
 			if(line.contains("CATEGORY")) {
 //				CATEGORY:AMCRS
 				category = parts[1];	
 			}
-
 			else if(line.contains("LABEL")) {
 //				LABEL:N038.48.64.000:W008.48.06.000:SFL250
 				Coordinate c = new Coordinate(parts[1],parts[2]);
 				label = new ALabel(c,parts[3]);
 			}
-			else if(line.contains("LIMITS")){
-//				LIMITS:0:240
-				limits = new VLimit(parts[1],parts[2]);
-			}
-			
-//			N038.49.15.000 W008.53.20.000 
-//			N038.49.15.000 W008.40.50.000 
-//			N038.49.15.000 W008.40.50.000 
-//			N038.44.37.000 W008.40.50.000 
-//			N038.44.37.000 W008.40.50.000 
-//			N038.43.55.000 W008.43.05.000 
-//			N038.43.55.000 W008.43.05.000 
-//			N038.43.55.000 W008.48.35.000 
-//			N038.43.55.000 W008.48.35.000 
-//			N038.45.44.000 W008.53.20.000 
-//			N038.45.44.000 W008.53.20.000  
-			
-			else if(line.contains("APW_BUFFER_LAT")){
-				//APW_BUFFER_LAT:0.0:0.0:0.0
-				APWBL = new BufferLat(parts[1],parts[2],parts[3]);
-			}
-			else if(line.contains("APW_BUFFER_VERT")) {
-				//APW_BUFFER_VERT:0:0:0
-				APWBV = new BufferVert(parts[1],parts[2],parts[3]);
+			else if(line.contains("GROUP")) {
+				//TODO
+				unsupportedFunction(line);
 			}
 			else if(line.contains("USERTEXT")){
 //				USERTEXT:SFL250
@@ -82,51 +75,59 @@ public class Area {
 					default: active = new SchedAct(parts);
 				}
 			}
-			else if(line.contains("GROUP")) {
-				//TODO
-			}
 			else if(line.contains("BOUND")) {
-				//TODO
+				//BOUND:C:Lat:Lon:Radius
+				bound = new AreaBound(parts[2],parts[3],parts[4]);
+				
 			}
-			else if(line.contains("LIMITS")) {
-				//TODO
+			else if(line.contains("LIMITS")){
+//				LIMITS:0:240
+				limits = new VLimit(parts[1],parts[2]);
 			}
 			else if(line.contains("NOMSAW")) {
-				//TODO
+				msaw = false;
 			}
 			else if(line.contains("NOAPW")) {
-				//TODO
+				apw = false;
+			}			
+			else if(line.contains("APW_BUFFER_LAT")){
+				//APW_BUFFER_LAT:0.0:0.0:0.0
+				apwbl = new BufferLat(parts[1],parts[2],parts[3]);
+			}
+			else if(line.contains("APW_BUFFER_VERT")) {
+				//APW_BUFFER_VERT:0:0:0
+				apwbv = new BufferVert(parts[1],parts[2],parts[3]);
 			}
 			else if(line.contains("NOSAP")) {
-				//TODO
+				sap = false;
 			}
 			else if(line.contains("SAP_BUFFER_LAT")) {
-				//TODO
+				sapl = new BufferLat(parts[1],parts[2],parts[3]);
 			}
 			else if(line.contains("SAP_BUFFER_VERT")) {
-				//TODO
+				sapv = new BufferVert(parts[1],parts[2],parts[3]);
 			}
 			else if(line.contains("COORD")) {
 				//TODO
-			}
-			
+				while ((line = br.readLine()).contains("AREA") == false){
+					
+				}
+//				N038.49.15.000 W008.53.20.000 
+//				N038.49.15.000 W008.40.50.000 
+//				N038.49.15.000 W008.40.50.000 
+//				N038.44.37.000 W008.40.50.000 
+//				N038.44.37.000 W008.40.50.000 
+//				N038.43.55.000 W008.43.05.000 
+//				N038.43.55.000 W008.43.05.000 
+//				N038.43.55.000 W008.48.35.000 
+//				N038.43.55.000 W008.48.35.000 
+//				N038.45.44.000 W008.53.20.000 
+//				N038.45.44.000 W008.53.20.000 
+			}			
 		}
 	}
-	private String name;
-	private String category;
-	private ALabel label;
-	private VLimit limits;
-	private Coordinate[] coordinates;//TODO
-	private BufferLat APWBL;
-	private BufferVert APWBV;
-	private String usertext;
-	private Activation active;
-	private Boundary bound; 
-	private boolean  NoMSAW;
-	private boolean  NoAPW;
-	private boolean  NoSAP;
-	private BufferLat SAPL;
-	private BufferVert SAPV;
-
 	
+	private void unsupportedFunction(String s) {
+		System.out.println("Function not supported. Line causing issue: "+s);
+	}
 }
