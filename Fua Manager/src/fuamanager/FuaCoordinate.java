@@ -1,15 +1,17 @@
 package fuamanager;
 
-public class Coordinate {
+public class FuaCoordinate {
 	String lat;
 	String lon;
+	Coordinate[] coordinates;
 	
-	public Coordinate(String lat, String lon) {
+	
+	public FuaCoordinate(String lat, String lon) {
 		this.lat=lat;
 		this.lon=lon;
 	}
 	
-	public Coordinate(String string) {
+	public FuaCoordinate(String string) {
 		//N059.54.15.000 E025.15.06.000
 		//N059.54.15.000:E025.15.06.000
 		

@@ -12,7 +12,7 @@ public class Area {
 	private String category;
 	private ALabel label;
 	private VLimit limits;
-	private Coordinate[] coordinates;//TODO
+	private FuaCoordinate[] coordinates;//TODO
 	private BufferLat apwbl;
 	private BufferVert apwbv;
 	private String usertext;
@@ -24,7 +24,7 @@ public class Area {
 	private BufferLat sapl;
 	private BufferVert sapv;
 	
-	public Area(String name, String category, Coordinate[] coordinates) {
+	public Area(String name, String category, FuaCoordinate[] coordinates) {
 		super();
 		this.name = name;
 		this.category = category;
@@ -56,7 +56,7 @@ public class Area {
 			}
 			else if(line.contains("LABEL")) {
 //				LABEL:N038.48.64.000:W008.48.06.000:SFL250
-				Coordinate c = new Coordinate(parts[1],parts[2]);
+				FuaCoordinate c = new FuaCoordinate(parts[1],parts[2]);
 				label = new ALabel(c,parts[3]);
 			}
 			else if(line.contains("GROUP")) {
