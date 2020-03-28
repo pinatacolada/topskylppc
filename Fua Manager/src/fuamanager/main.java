@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import org.locationtech.spatial4j.*;
+import org.locationtech.spatial4j.shape.Point;
+
 
 public class main {
 	private ArrayList<Area> areas = new ArrayList<Area>();

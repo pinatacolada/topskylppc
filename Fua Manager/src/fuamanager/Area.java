@@ -2,6 +2,13 @@ package fuamanager;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.ArrayList;
+
+import org.locationtech.spatial4j.context.SpatialContext;
+import org.locationtech.spatial4j.context.SpatialContextFactory;
+import org.locationtech.spatial4j.shape.Point;
+import org.locationtech.spatial4j.shape.ShapeFactory;
+
 
 /**
  * @author rtpso
@@ -12,7 +19,8 @@ public class Area {
 	private String category;
 	private ALabel label;
 	private VLimit limits;
-	private FuaCoordinate[] coordinates;//TODO
+	//private ArrayList <Point> coordinates;//TODO
+	private ArrayList <FuaCoordinate> coordinates;//TODO
 	private BufferLat apwbl;
 	private BufferVert apwbv;
 	private String usertext;
@@ -23,6 +31,11 @@ public class Area {
 	private boolean  sap;
 	private BufferLat sapl;
 	private BufferVert sapv;
+
+	//TODO figure this out eventually
+	//Factory spatialContextFactory = new SpatialContextFactory();
+	//private SpatialContext spatialContext = spatialContextFactory.newSpatialContext();
+	//private ShapeFactory shapeFactory =spatialContext.getShapeFactory();
 	
 	public Area(String name, String category, FuaCoordinate[] coordinates) {
 		super();
@@ -30,7 +43,6 @@ public class Area {
 		this.category = category;
 		label = null;
 		limits = null;
-		this.coordinates = coordinates;
 		apwbl = null;
 		apwbv = null;
 		usertext = null;
@@ -41,6 +53,10 @@ public class Area {
 		sap = true;
 		sapl = null;
 		sapv = null;
+		
+		for(FuaCoordinate loc : coordinates) {
+			this.coordinates.add(loc);
+		}
 	}
 
 	public Area(String line, BufferedReader br) throws IOException {
@@ -110,7 +126,7 @@ public class Area {
 			else if(line.contains("COORD")) {
 				//TODO
 				while ((line = br.readLine()).contains("AREA") == false){
-					
+					//coordinates.add(shapeFactory.pointXY(0, 0));
 				}
 //				N038.49.15.000 W008.53.20.000 
 //				N038.49.15.000 W008.40.50.000 
