@@ -21,11 +21,14 @@ public class FuaCoordinate {
 		this.lon=correctFuaCoordinate(lon, false);
 	}
 	
+	/**
+	 * @param string Unparsed string straight from TopSkyAreas.txt in any of the possible formats supported by the plugin.
+	 * Examples
+	 * N059.54.15.000 E025.15.06.000
+	 * N059.54.15.000:E025.15.06.000
+	 * 59.904167:25.251667 maybe? who knows
+	 */
 	public FuaCoordinate(String string) {
-		//N059.54.15.000 E025.15.06.000
-		//N059.54.15.000:E025.15.06.000
-		//59.904167:25.251667 maybe? who knows
-		
 		if(string.contains(":")) {
 			String[] coord = string.split("[\\:]");
 			lat = coord[0];
@@ -39,7 +42,6 @@ public class FuaCoordinate {
 		
 		lat = correctFuaCoordinate(lat, true);
 		lon = correctFuaCoordinate(lon, false);
-	
 	}
 
 	/**
