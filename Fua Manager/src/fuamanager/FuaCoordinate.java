@@ -2,15 +2,23 @@ package fuamanager;
 
 import org.locationtech.spatial4j.context.SpatialContextFactory;
 
+/**
+ * @author rtpso
+ *
+ */
 public class FuaCoordinate {
 	String lat;
 	String lon;
 	//Coordinate[] coordinates;
 
 	
+	/**
+	 * @param lat Latitude in DDM or decimal degrees
+	 * @param lon Longitude in DDM or decimal degrees
+	 */
 	public FuaCoordinate(String lat, String lon) {
-		this.lat=lat;
-		this.lon=lon;
+		this.lat=correctFuaCoordinate(lat, true);
+		this.lon=correctFuaCoordinate(lon, false);
 	}
 	
 	public FuaCoordinate(String string) {
@@ -29,46 +37,67 @@ public class FuaCoordinate {
 			lon = coord[1];
 		}
 		
-		convertCoord(lat, lon);
-
-		
+		lat = correctFuaCoordinate(lat, true);
+		lon = correctFuaCoordinate(lon, false);
+	
 	}
 
-	private String convertCoord(String lat, String lon) {
-		// TODO Auto-generated method stub
-		//FUCKING MESS
-		String[] split = lat.split("[\\.]");
+	/**
+	 * Converts decimal degrees coordinates to DDM
+	 * @param coord Coordinate to be converted
+	 * @param isLatitude If the coordinate is a latitude or a longitude. Use true for latitude, false for longitude
+	 * @return The coordinate in DDM format
+	 */
+	public String correctFuaCoordinate(String coord, boolean isLatitude) {
+		int degrees;
+		int minutes;
+		int seconds;
+		int miliseconds;
 		
-		if(split.length == 2) {
+		String sDegrees;
+		String sMinutes;
+		String sSeconds;
+		String sMiliseconds;
+		String sign = "N";
+		
+		String[] split = coord.split("[\\.]");
+		
+		if(split.length == 2) {//decimal degrees time bois
 			//59.904167
-			//.904167
-			int degrees;
-			int minutes;
-			int seconds;
-			String latSign;
-			String lonSign;
-			
+		
 			degrees = Integer.parseInt(split[0]);
-			
+		
 			//54.25002
 			double tempMin = Double.parseDouble(split[1]) * 0.00006;
 			minutes = (int)tempMin;
-			
+		
 			double tempSeconds = tempMin - Double.valueOf(minutes) * 60;//0.25002
 			seconds = (int)tempSeconds;
 			
-			//N059.54.15.000
-			if(degrees > 0) {
-				lat = "N";
+			miliseconds = (int) ((tempSeconds - seconds) * 1000);
+		
+			if(isLatitude) {
+				if(degrees < 0) {
+					sign = "S";
+				}
 			}
 			else {
-				lat = "S";
+				if(degrees >= 0) {
+					sign = "E";
+				}
+				else {
+					sign = "W";
+				}
 			}
-			return latSign+Integer.toString(degrees)+"."+Integer.toString(minutes)+"."+Integer.toString(seconds)+"000";
+			//N038.49.15.000 W008.53.20.000
+			sDegrees = String.format("%3d", Integer.toString(degrees));
+			sMinutes = String.format("%2d", Integer.toString(minutes));
+			sSeconds = String.format("%2d", Integer.toString(seconds));
+			sMiliseconds = String.format("%3d", Integer.toString(miliseconds));
+			
+			return sign+sDegrees+"."+sMinutes+"."+sSeconds+sMiliseconds;
 		}
-		else {
-			return split[0];
-		}
+		return coord;//everything was fine already you dingus
 	}
 	
 }
