@@ -37,12 +37,12 @@ public class FuaManager {
 			while (reader.hasNextLine()){
 				line = reader.nextLine();
 					
-				if(line.contains("CATEGORYDEF:")) {
+				if(!line.startsWith("//") && line.contains("CATEGORYDEF:")) {
 					CategoryDef catdef = new CategoryDef(line);
 					categories.add(catdef);
 					System.out.println("Category definition "+catdef.getName()+" loaded");
 				}
-				else if(line.contains("AREA:")){
+				else if(!line.startsWith("//") && line.contains("AREA:T:")){
 					Area a = new Area(line, reader);
 					areas.add(a);
 					System.out.println("Area "+a.getName()+" loaded");
@@ -54,6 +54,7 @@ public class FuaManager {
 			System.out.println("TopSkyAreas.txt not found!");
 			e.printStackTrace();
 		}
+		System.out.println("Areas loading finished with "+areas.size()+" areas");
 	}
 }
 

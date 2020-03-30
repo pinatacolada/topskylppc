@@ -25,7 +25,7 @@ public class Area {
 	private BufferLat apwbl;
 	private BufferVert apwbv;
 	private String usertext;
-	private Activation active;
+	private ArrayList <Activation> active = new ArrayList<Activation>();
 	private AreaBound bound; 
 	private boolean  msaw;
 	private boolean  apw;
@@ -77,7 +77,7 @@ public class Area {
 		String[] firstLine = line.split("[\\:]");
 		setName(firstLine[2]);
 		
-		while ((line = sc.nextLine()).contains("AREA") == false){
+		while (sc.hasNext() && (line = sc.nextLine()).contains("AREA:T:") == false){
 			String[] parts = line.split("[\\:]");
 			if(!line.isBlank()) {
 				if(line.contains("CATEGORY")) {
@@ -99,10 +99,10 @@ public class Area {
 				}
 				else if(line.contains("ACTIVE")){
 					switch(parts[1]) {
-						case "1": active = new Activation(); break;
-						case "NOTAM": active = new NotamAct(parts[2],parts[3]); break;
-						case "RWY": active = new RwyAct(parts); break;
-						default: active = new SchedAct(parts);
+						case "1": active.add( new Activation() ); break;
+						case "NOTAM": active.add( new NotamAct(parts[2],parts[3]) ); break;
+						case "RWY": active.add( new RwyAct(parts) ); break;
+						default: active.add( new SchedAct(parts) );
 					}
 				}
 				else if(line.contains("BOUND")) {
@@ -142,26 +142,20 @@ public class Area {
 					comments.add(line.replace("//", ""));
 				}
 				else{//only coordinates left
-					int i = 1;
-					if( !line.isBlank() || !line.contains("AREA") || line.length() < 28) {
+					if( !line.isBlank() || !line.contains("AREA:T:") || line.length() < 28) {
 						coordinates.add(new FuaCoordinate(line));
-						
-						System.out.println("FIRST COORDINATE "+line + "NUMBER "+i);
 					}
 					while(sc.hasNext()) {
 						line = sc.nextLine();
-						if((line.isBlank() || line.contains("AREA")) && line.length() < 28) {
+						if((line.isBlank() || line.contains("AREA:T:")) && line.length() < 28) {
 							break;
 						}
 						coordinates.add(new FuaCoordinate(line));
-						i++;
-						System.out.println("COORDINATE "+line + "NUMBER "+i);
 					}
 				}
 			}
 				
 		}
-		System.out.println("AREA "+name+" FINISHED");
 	}
 	
 	private void unsupportedFunction(String s) {
