@@ -37,7 +37,10 @@ public class SchedAct extends Activation {
 			date = LocalDate.parse(day, DateTimeFormatter.ofPattern("yyMMdd"));
 		}
 		else if(day.length() == 4){
-			date = LocalDate.parse(day, DateTimeFormatter.ofPattern("MMdd"));
+			LocalDate currYear = LocalDate.now();
+			
+			String sYear = Integer.toString(currYear.getYear()).substring(2);
+			date = LocalDate.parse(sYear+day, DateTimeFormatter.ofPattern("yyMMdd"));
 		}
 
 		LocalDateTime dateTime = date.atTime(time);	

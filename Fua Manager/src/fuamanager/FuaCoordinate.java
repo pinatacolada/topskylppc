@@ -29,19 +29,22 @@ public class FuaCoordinate {
 	 * 59.904167:25.251667 maybe? who knows
 	 */
 	public FuaCoordinate(String string) {
-		if(string.contains(":")) {
-			String[] coord = string.split("[\\:]");
-			lat = coord[0];
-			lon = coord[1];
-		}
-		else {
-			String[] coord = string.split("\\s+");//regex for whitespaces, or thats the intention
-			lat = coord[0];
-			lon = coord[1];
+		if(string.length() > 0 && !string.startsWith("//")) {
+			if(string.contains(":")) {
+				String[] coord = string.split("[\\:]");
+				lat = coord[0];
+				lon = coord[1];
+			}
+			else {
+				String[] coord = string.split("\\s+");//regex for whitespaces, or thats the intention
+				lat = coord[0];
+				lon = coord[1];
+			}
+			
+			lat = correctFuaCoordinate(lat, true);
+			lon = correctFuaCoordinate(lon, false);
 		}
 		
-		lat = correctFuaCoordinate(lat, true);
-		lon = correctFuaCoordinate(lon, false);
 	}
 
 	/**
