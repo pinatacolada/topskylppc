@@ -62,7 +62,7 @@ public class Area {
 		sapv = null;
 		
 		for(FuaCoordinate loc : coordinates) {
-			this.coordinates.add(loc);
+			this.getCoordinates().add(loc);
 		}
 	}
 
@@ -77,7 +77,7 @@ public class Area {
 		String[] firstLine = line.split("[\\:]");
 		setName(firstLine[2]);
 		
-		while (sc.hasNext() && (line = sc.nextLine()).contains("AREA:T:") == false){
+		while (sc.hasNext() && !line.isBlank() == false){
 			String[] parts = line.split("[\\:]");
 			if(!line.isBlank()) {
 				if(line.contains("CATEGORY")) {
@@ -142,20 +142,22 @@ public class Area {
 					comments.add(line.replace("//", ""));
 				}
 				else{//only coordinates left
-					if( !line.isBlank() || !line.contains("AREA:T:") || line.length() < 28) {
-						coordinates.add(new FuaCoordinate(line));
+					if( !line.isBlank() || line.length() < 26) {
+						getCoordinates().add(new FuaCoordinate(line));
 					}
 					while(sc.hasNext()) {
 						line = sc.nextLine();
-						if((line.isBlank() || line.contains("AREA:T:")) && line.length() < 28) {
+						if((line.isBlank() || line.contains("AREA:T:")) || line.length() < 26) {
 							break;
 						}
-						coordinates.add(new FuaCoordinate(line));
+						getCoordinates().add(new FuaCoordinate(line));
 					}
+					line = sc.nextLine();
+					
 				}
-			}
 				
-		}
+			}
+		}	
 	}
 	
 	private void unsupportedFunction(String s) {
@@ -168,5 +170,13 @@ public class Area {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public ArrayList <FuaCoordinate> getCoordinates() {
+		return coordinates;
+	}
+
+	public void setCoordinates(ArrayList <FuaCoordinate> coordinates) {
+		this.coordinates = coordinates;
 	}
 }
