@@ -60,33 +60,13 @@ Free Text:LPFR Taxiways\P:freetext
 Free Text:LPFR Taxiways\P:freetext
 Free Text:LPFR Taxiways\RD:freetext
 Free Text:LPFR Taxiways\RG:freetext
-Free Text:LPPT Stands\201:freetext
-Free Text:LPPT Stands\202:freetext
-Free Text:LPPT Stands\203:freetext
-Free Text:LPPT Stands\204:freetext
-Free Text:LPPT Stands\205:freetext
-Free Text:LPPT Stands\206:freetext
-Free Text:LPPT Stands\207:freetext
-Free Text:LPPT Stands\208:freetext
-Free Text:LPPT Stands\209:freetext
-Free Text:LPPT Taxiways\B:freetext
-Free Text:LPPT Taxiways\D:freetext
-Free Text:LPPT Taxiways\E:freetext
-Free Text:LPPT Taxiways\F:freetext
 Geo:GEO:
 Geo:GM Landmark Morocco Coastline:
 Geo:LE Landmark Spain Coastline:
 Geo:LP Landmark Continental Coastline:
 Geo:LP Landmark Madeira Coastline:
 Geo:LP Landmark Porto Santo Coastline:
-Geo:LPBJ Groundlayout:
-Geo:LPCS Groundlayout:
-Geo:LPEV Groundlayout:
 Geo:LPFR Groundlayout:
-Geo:LPMA Groundlayout:
-Geo:LPPR Groundlayout:
-Geo:LPPS Groundlayout:
-Geo:LPPT Groundlayout:
 Regions:LPFR Groundlayout:polygon
 SHOWC:1
 SHOWSB:1
