@@ -1,8 +1,6 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20200116115535-200101-0001.sct
-SECTORTITLE:LPPC-Package_20200116115535-200101-0001.sct
 Airports:LPBG:symbol
 Airports:LPBR:symbol
 Airports:LPCO:symbol

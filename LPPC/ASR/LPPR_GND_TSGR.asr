@@ -1,0 +1,96 @@
+DisplayTypeName:Ground Radar display
+DisplayTypeNeedRadarContent:0
+DisplayTypeGeoReferenced:1
+ARTCC low boundary:LPPR Tower CTR:
+Free Text:LPPR Stands\S08:freetext
+Free Text:LPPR Stands\S09:freetext
+Free Text:LPPR Stands\S10:freetext
+Free Text:LPPR Stands\S11:freetext
+Free Text:LPPR Stands\S12:freetext
+Free Text:LPPR Stands\S20:freetext
+Free Text:LPPR Stands\S21:freetext
+Free Text:LPPR Stands\S22:freetext
+Free Text:LPPR Stands\S23:freetext
+Free Text:LPPR Stands\S24:freetext
+Free Text:LPPR Stands\S25:freetext
+Free Text:LPPR Stands\S30:freetext
+Free Text:LPPR Stands\S31:freetext
+Free Text:LPPR Stands\S32:freetext
+Free Text:LPPR Stands\S33:freetext
+Free Text:LPPR Stands\S34:freetext
+Free Text:LPPR Stands\S35:freetext
+Free Text:LPPR Stands\S36:freetext
+Free Text:LPPR Stands\S37:freetext
+Free Text:LPPR Stands\S38:freetext
+Free Text:LPPR Stands\S40:freetext
+Free Text:LPPR Stands\S41:freetext
+Free Text:LPPR Stands\S42:freetext
+Free Text:LPPR Stands\S43:freetext
+Free Text:LPPR Stands\S50:freetext
+Free Text:LPPR Stands\S51:freetext
+Free Text:LPPR Stands\S52:freetext
+Free Text:LPPR Stands\S53:freetext
+Free Text:LPPR Stands\S54:freetext
+Free Text:LPPR Stands\S55:freetext
+Free Text:LPPR Stands\S56:freetext
+Free Text:LPPR Stands\S57:freetext
+Free Text:LPPR Stands\S60:freetext
+Free Text:LPPR Stands\S61:freetext
+Free Text:LPPR Stands\S62:freetext
+Free Text:LPPR Stands\S63:freetext
+Free Text:LPPR Stands\S64:freetext
+Free Text:LPPR Stands\S65:freetext
+Free Text:LPPR Stands\S66:freetext
+Free Text:LPPR Stands\S70:freetext
+Free Text:LPPR Stands\S71:freetext
+Free Text:LPPR Stands\S72:freetext
+Free Text:LPPR Stands\S73:freetext
+Free Text:LPPR Stands\STD W:freetext
+Free Text:LPPR Stands\T01:freetext
+Free Text:LPPR Stands\T02:freetext
+Free Text:LPPR Stands\T03:freetext
+Free Text:LPPR Stands\T04:freetext
+Free Text:LPPR Taxiways\A1:freetext
+Free Text:LPPR Taxiways\A2:freetext
+Free Text:LPPR Taxiways\A3:freetext
+Free Text:LPPR Taxiways\A3:freetext
+Free Text:LPPR Taxiways\B:freetext
+Free Text:LPPR Taxiways\C:freetext
+Free Text:LPPR Taxiways\D:freetext
+Free Text:LPPR Taxiways\F:freetext
+Free Text:LPPR Taxiways\H:freetext
+Free Text:LPPR Taxiways\J:freetext
+Free Text:LPPR Taxiways\S1:freetext
+Free Text:LPPR Taxiways\S2:freetext
+Free Text:LPPR Taxiways\S3:freetext
+Free Text:LPPR Taxiways\S4:freetext
+Free Text:LPPR Taxiways\S5:freetext
+Free Text:LPPR Taxiways\S6:freetext
+Free Text:LPPR Taxiways\T:freetext
+Free Text:LPPR Taxiways\Y:freetext
+Geo:GEO:
+Geo:GM Landmark Morocco Coastline:
+Geo:LP Landmark Continental Coastline:
+Geo:LP Landmark Madeira Coastline:
+Geo:LP Landmark Porto Santo Coastline:
+Geo:LPPR Groundlayout:
+Regions:LPPR Groundlayout:polygon
+Regions:LPPR Background:polygon
+SHOWC:1
+SHOWSB:1
+BELOW:0
+ABOVE:0
+LEADER:5
+SHOWLEADER:0
+TURNLEADER:0
+HISTORY_DOTS:0
+SIMULATION_MODE:2
+DISABLEPANNING:0
+DISABLEZOOMING:0
+DisplayRotation:102.00000
+TAGFAMILY:PT vACC - NORM
+WINDOWAREA:41.236398:-8.707518:41.259115:-8.654325
+PLUGIN:Ground Radar plugin:AirportElevation:226
+PLUGIN:Ground Radar plugin:AirportRadius:1.9
+PLUGIN:Ground Radar plugin:GroundMode:LPPR
+PLUGIN:TopSky plugin:NoDraw:1
