@@ -62,12 +62,12 @@ Free Text:LPFR Taxiways\RD:freetext
 Free Text:LPFR Taxiways\RG:freetext
 Geo:GEO:
 Geo:GM Landmark Morocco Coastline:
-Geo:LE Landmark Spain Coastline:
 Geo:LP Landmark Continental Coastline:
 Geo:LP Landmark Madeira Coastline:
 Geo:LP Landmark Porto Santo Coastline:
 Geo:LPFR Groundlayout:
 Regions:LPFR Groundlayout:polygon
+Regions:LPFR Background:polygon
 SHOWC:1
 SHOWSB:1
 BELOW:0
@@ -76,7 +76,7 @@ LEADER:5
 SHOWLEADER:0
 TURNLEADER:0
 HISTORY_DOTS:0
-SIMULATION_MODE:4
+SIMULATION_MODE:2
 DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:171.00000
