@@ -29,7 +29,7 @@ public class SchedAct extends Activation {
 		}
 	}
 	
-	public LocalDateTime ParseDate(String day, String hour) {
+	public static LocalDateTime ParseDate(String day, String hour) {
 		LocalDate date = null;
 		LocalTime time = LocalTime.parse(hour, DateTimeFormatter.ofPattern("HHmm"));
 		

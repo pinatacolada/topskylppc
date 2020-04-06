@@ -3,6 +3,7 @@ package fuamanager;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -18,11 +19,20 @@ public class FuaManager {
 		    loadAreas(new File("TopSkyAreas.txt"));
 		}
 		
+		if( args[0].contains("-M")) {
+		    createManualAreas(args);
+		}
+		
 
 	}
 	
-	private static void loadAreas(File file) throws IOException {
+	private static void createManualAreas(String[] args) {
 		// TODO Auto-generated method stub
+		//LPD10:1400:1800:0:24000:SFL250
+		
+	}
+	
+	private static void loadAreas(File file) throws IOException {
 		//readFromInputStream(input);
 		try{
 			Scanner reader = new Scanner(file);
