@@ -83,3 +83,8 @@ Airport_Elevation=227
 Airport_Radius=6.5
 Airport_Runway_End=17:N041.15.47.900:W008.41.06.900
 Airport_Runway_End=35:N041.13.57.200:W008.40.37.900
+
+[LPFR]
+Airport_Elevation=24
+Airport_Radius=6.5
+Airport_Runway_Buffer_LVP=28:160.0
