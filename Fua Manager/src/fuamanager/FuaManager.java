@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class FuaManager {
 	static ArrayList<Area> areas = new ArrayList<Area>();
+	static ArrayList<FuaArea> fuaAreas = new ArrayList<FuaArea>();
 	static ArrayList<CategoryDef> categories = new ArrayList<CategoryDef>();
 
 	public static void main(String[] args) throws IOException {
@@ -20,15 +21,18 @@ public class FuaManager {
 		}
 		
 		if( args[0].contains("-M")) {
-		    createManualAreas(args);
+		    createFuaAreas(args);
 		}
 		
 
 	}
 	
-	private static void createManualAreas(String[] args) {
+	private static void createFuaAreas(String[] args) {
 		// TODO Auto-generated method stub
 		//LPD10:1400:1800:0:24000:SFL250
+		
+		FuaArea fa = new FuaArea(areaName, startDay, startHour, endDay, endHour, weekdays, low, high, label);
+		fuaAreas.add(fa);
 		
 	}
 	

@@ -1,10 +1,10 @@
 package fuamanager;
 
 public class VLimit {
-	public VLimit(String h, String l) {
+	public VLimit(int h, int l) {
 		high=h;
 		low=l;
 	}
-	private String high;
-	private String low;
+	private int high;
+	private int low;
 }

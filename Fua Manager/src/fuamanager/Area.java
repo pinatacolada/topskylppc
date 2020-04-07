@@ -112,7 +112,7 @@ public class Area {
 				}
 				else if(line.contains("LIMITS")){
 //					LIMITS:0:240
-					limits = new VLimit(parts[1],parts[2]);
+					limits = new VLimit(Integer.parseInt(parts[1]),Integer.parseInt(parts[2]));
 				}
 				else if(line.contains("NOMSAW")) {
 					msaw = false;

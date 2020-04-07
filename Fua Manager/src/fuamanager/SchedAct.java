@@ -29,6 +29,17 @@ public class SchedAct extends Activation {
 		}
 	}
 	
+	public SchedAct(LocalDateTime schedStartDate, LocalDateTime schedEndDate, String schedWeekdays, int lower, int upper, String userText) {
+		rules = "";
+		
+		this.schedStartDate=schedStartDate;
+		this.schedEndDate=schedEndDate;
+		this.schedWeekdays=schedWeekdays;
+		this.lower=lower;
+		this.upper=upper;
+		this.userText=userText;
+	}
+	
 	public static LocalDateTime ParseDate(String day, String hour) {
 		LocalDate date = null;
 		LocalTime time = LocalTime.parse(hour, DateTimeFormatter.ofPattern("HHmm"));
