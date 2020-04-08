@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class FuaManager {
@@ -21,7 +22,8 @@ public class FuaManager {
 		}
 		
 		if( args[0].contains("-M")) {
-		    createFuaAreas(args);
+			loadAreas(new File("TopSkyAreas.txt"));
+			createFuaAreas(args);
 		}
 		
 
@@ -31,9 +33,28 @@ public class FuaManager {
 		// TODO Auto-generated method stub
 		//LPD10:1400:1800:0:24000:SFL250
 		
-		FuaArea fa = new FuaArea(areaName, startDay, startHour, endDay, endHour, weekdays, low, high, label);
-		fuaAreas.add(fa);
+		String[] trimmedArgs = Arrays.copyOfRange(args, 1, args.length);//this is to remove the -M
 		
+		for(String part : trimmedArgs) {
+			String[] elements = part.split("[\\:]");
+			
+			String areaName = elements[0];
+			Area area = findAreabyName(areaName);
+			
+			if(area != null) {//if area exists
+				String startHour = elements[1];
+				String endHour = elements[2];
+				int low = Integer.parseInt(elements[3]);
+				int high = Integer.parseInt(elements[4]);
+				String label = elements[5];
+				
+				
+				FuaArea fa = new FuaArea(area, startHour, endHour, low, high, label);
+				fuaAreas.add(fa);
+			}
+			
+			
+		}
 	}
 	
 	private static void loadAreas(File file) throws IOException {
@@ -49,7 +70,6 @@ public class FuaManager {
 				line = reader.nextLine();
 			}
 			else if(!line.startsWith("//") && line.contains("AREA:T:")){
-				//line = reader.nextLine();
 				System.out.println("Loading line "+line);
 				Area a = new Area(line, reader);
 				areas.add(a);
@@ -64,7 +84,7 @@ public class FuaManager {
 					System.out.println("Category definition "+catdef.getName()+" loaded");
 				}
 				else if(!line.startsWith("//") && line.contains("AREA:T:")){
-					//line = reader.nextLine();
+					//TODO see if area is already in the list
 					Area a = new Area(line, reader);
 					areas.add(a);
 					System.out.println("Loaded area "+a.getName());
@@ -78,6 +98,24 @@ public class FuaManager {
 			e.printStackTrace();
 		}
 		System.out.println("Areas loading finished with "+areas.size()+" areas");
+	}
+	
+	/**
+	 * Searches for an Area in the Areas list
+	 * @param name Name of the Area
+	 * @return The Area object. Null if not found.
+	 */
+	private static Area findAreabyName(String name) {
+	    Area result = null;
+	    
+		for (Area a : areas) {
+	        if (a.getName().equals(name)) {
+	            result = a;
+	            break;
+	        }
+	    }
+	    
+	    return result;
 	}
 }
 

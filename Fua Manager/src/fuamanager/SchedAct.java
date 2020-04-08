@@ -40,6 +40,12 @@ public class SchedAct extends Activation {
 		this.userText=userText;
 	}
 	
+	/**
+	 * Creates a LocalDateTime object based on parameters given
+	 * @param day In either "yyMMdd" or "MMdd" formats. Current year is assumed if "MMdd" used
+	 * @param hour "HHmm" format
+	 * @return LocalDateTime object
+	 */
 	public static LocalDateTime ParseDate(String day, String hour) {
 		LocalDate date = null;
 		LocalTime time = LocalTime.parse(hour, DateTimeFormatter.ofPattern("HHmm"));
@@ -53,6 +59,23 @@ public class SchedAct extends Activation {
 			String sYear = Integer.toString(currYear.getYear()).substring(2);
 			date = LocalDate.parse(sYear+day, DateTimeFormatter.ofPattern("yyMMdd"));
 		}
+		else if(day.isBlank()){
+			date = LocalDate.now();
+		}
+
+		LocalDateTime dateTime = date.atTime(time);	
+	
+		return dateTime;
+	}
+	
+	/**
+	 * Creates a LocalDateTime object based only on hours. Current day is assumed.
+	 * @param hour "HHmm" format
+	 * @return LocalDateTime object
+	 */
+	public static LocalDateTime ParseDate(String hour) {
+		LocalDate date = LocalDate.now();
+		LocalTime time = LocalTime.parse(hour, DateTimeFormatter.ofPattern("HHmm"));
 
 		LocalDateTime dateTime = date.atTime(time);	
 	
