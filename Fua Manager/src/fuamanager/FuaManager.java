@@ -9,6 +9,15 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class FuaManager {
+	public static final String DAILY = "0";
+	public static final String MONDAY = "1";
+	public static final String TUESDAY = "2";
+	public static final String WEDNESDAY = "3";
+	public static final String THURSDAY = "4";
+	public static final String FRIDAY = "5";
+	public static final String SATRUDAY = "6";
+	public static final String SUNDAY = "7";
+	
 	static ArrayList<Area> areas = new ArrayList<Area>();
 	static ArrayList<FuaArea> fuaAreas = new ArrayList<FuaArea>();
 	static ArrayList<CategoryDef> categories = new ArrayList<CategoryDef>();
@@ -51,6 +60,7 @@ public class FuaManager {
 				
 				FuaArea fa = new FuaArea(area, startHour, endHour, low, high, label);
 				fuaAreas.add(fa);
+				System.out.println("FUA Area schedule "+fa.getArea().getName()+" loaded");
 			}
 			
 			
