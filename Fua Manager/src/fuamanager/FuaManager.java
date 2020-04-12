@@ -68,7 +68,7 @@ public class FuaManager {
 				System.out.println("Area "+areaName+" does not exist, FUA schedule not added.");
 			}
 		}
-		System.out.println("All FUA schedules processed.");	
+		System.out.println("All "+fuaAreas.size()+" FUA schedules processed.");	
 	}
 	
 	private static void exportFuaAreas() {
