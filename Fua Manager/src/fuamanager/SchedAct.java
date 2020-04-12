@@ -81,4 +81,13 @@ public class SchedAct extends Activation {
 	
 		return dateTime;
 	}
+
+	public String printActivation() {
+		//200317:200317:0:1100:1700
+		
+		DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyMMdd");
+		DateTimeFormatter hourFormat = DateTimeFormatter.ofPattern("HHmm");
+		
+		return schedStartDate.format(dateFormat)+":"+schedEndDate.format(dateFormat)+":"+schedWeekdays+":"+schedStartDate.format(hourFormat)+":"+schedEndDate.format(hourFormat);
+	}
 }

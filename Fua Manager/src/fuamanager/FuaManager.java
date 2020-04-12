@@ -2,6 +2,7 @@ package fuamanager;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class FuaManager {
 		if( args[0].contains("-M")) {
 			loadAreas(new File("TopSkyAreas.txt"));
 			createFuaAreas(args);
+			exportFuaAreas();
 		}
 		
 
@@ -62,9 +64,26 @@ public class FuaManager {
 				fuaAreas.add(fa);
 				System.out.println("FUA Area schedule "+fa.getArea().getName()+" loaded");
 			}
-			
-			
+			else {
+				System.out.println("Area "+areaName+" does not exist, FUA schedule not added.");
+			}
 		}
+		System.out.println("All FUA schedules processed.");	
+	}
+	
+	private static void exportFuaAreas() {
+		//LPD10:1400:1800:0:24000:SFL250
+		try {
+		      FileWriter fw = new FileWriter("TopSkyAreasManual.txt");
+		      for(FuaArea fa : fuaAreas) {
+		    	fw.write(fa.printFuaArea()+"\n");
+				}
+		      fw.close();
+		      System.out.println("Successfully exported FUA to TopSky");
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
 	}
 	
 	private static void loadAreas(File file) throws IOException {
@@ -76,7 +95,7 @@ public class FuaManager {
 			if(!line.startsWith("//") && line.contains("CATEGORYDEF:")) {
 				CategoryDef catdef = new CategoryDef(line);
 				categories.add(catdef);
-				System.out.println("Category definition "+catdef.getName()+" loaded");
+				//System.out.println("Category definition "+catdef.getName()+" loaded");
 				line = reader.nextLine();
 			}
 			else if(!line.startsWith("//") && line.contains("AREA:T:")){
@@ -91,13 +110,13 @@ public class FuaManager {
 				if(!line.startsWith("//") && line.contains("CATEGORYDEF:")) {
 					CategoryDef catdef = new CategoryDef(line);
 					categories.add(catdef);
-					System.out.println("Category definition "+catdef.getName()+" loaded");
+					//System.out.println("Category definition "+catdef.getName()+" loaded");
 				}
 				else if(!line.startsWith("//") && line.contains("AREA:T:")){
 					//TODO see if area is already in the list
 					Area a = new Area(line, reader);
 					areas.add(a);
-					System.out.println("Loaded area "+a.getName());
+					//System.out.println("Loaded area "+a.getName());
 					//System.out.println("Area "+a.getName()+" loaded with "+a.getCoordinates().size()+" coordinates. Line says: "+line);
 				}
 			}
@@ -107,7 +126,7 @@ public class FuaManager {
 			System.out.println("TopSkyAreas.txt not found!");
 			e.printStackTrace();
 		}
-		System.out.println("Areas loading finished with "+areas.size()+" areas");
+		System.out.println("Areas loading finished with "+categories.size()+" categories and "+areas.size()+" areas");
 	}
 	
 	/**

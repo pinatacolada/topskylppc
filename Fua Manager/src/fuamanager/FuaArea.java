@@ -40,6 +40,11 @@ public class FuaArea{
 		limits = new VLimit(high, low);
 		this.label = label;
 	}
+	
+	public String printFuaArea() {
+		//LPD66:200317:200317:0:1100:1700:0:5000:SFL060
+		return area.getName()+":"+activation.printActivation()+":"+limits.printVLimit()+":"+label;
+	}
 
 	public Area getArea() {
 		return area;

@@ -7,4 +7,8 @@ public class VLimit {
 	}
 	private int high;
 	private int low;
+	
+	public String printVLimit() {
+		return low+":"+high;
+	}
 }
