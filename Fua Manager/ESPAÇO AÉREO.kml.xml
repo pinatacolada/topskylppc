@@ -2,7 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <name>ESPAÇO AÉREO</name>
-    <description><![CDATA[ACTUALIZADO 06:00 UTC 15 ABRIL 2020<br>PROGRAMAÇÃO DIÁRIA DO ESPAÇO AÉREO DE USO FLEXÍVEL e NOTAM's relevantes para o voo VFR em Portugal.  Consulte também : http://cavok.pt/fuaflex/notams-portugal/]]></description>
+    <description><![CDATA[ACTUALIZADO 07:00 UTC 16 ABRIL 2020<br>PROGRAMAÇÃO DIÁRIA DO ESPAÇO AÉREO DE USO FLEXÍVEL e NOTAM's relevantes para o voo VFR em Portugal.  Consulte também : http://cavok.pt/fuaflex/notams-portugal/]]></description>
     <Style id="icon-1129-labelson">
       <IconStyle>
         <scale>1.1</scale>
@@ -21196,215 +21196,12 @@
           </coordinates>
         </LineString>
       </Placemark>
-      <Placemark>
-        <name>MONFORTINHO</name>
-        <description><![CDATA[RESERVA ESPAÇO AÉREO - EXERCICIOS MILITARES<br><br><br>SFC/450ft AGL<br>RESERVADA 31 MARÇO 2020 até 15 ABRIL 2020 23:59 UTC<br><br>NOTAM A1055/20]]></description>
-        <styleUrl>#poly-FF0000-6000-127</styleUrl>
-        <Polygon>
-          <outerBoundaryIs>
-            <LinearRing>
-              <tessellate>1</tessellate>
-              <coordinates>
-                -7.152624,40.14508,0
-                -7.112376,39.821948,0
-                -6.971973,39.820673,0
-                -6.964151,39.83314,0
-                -6.95088,39.845551,0
-                -6.943105,39.854671,0
-                -6.934265,39.862108,0
-                -6.923258,39.868686,0
-                -6.914399,39.876957,0
-                -6.912106,39.883623,0
-                -6.90756,39.894446,0
-                -6.901849,39.909438,0
-                -6.901676,39.919469,0
-                -6.896018,39.931117,0
-                -6.887069,39.943568,0
-                -6.883572,39.956075,0
-                -6.881345,39.958561,0
-                -6.876813,39.967714,0
-                -6.873417,39.974369,0
-                -6.869929,39.986042,0
-                -6.866499,39.994371,0
-                -6.866469,39.996043,0
-                -6.864161,40.002711,0
-                -6.862914,40.011063,0
-                -6.874564,40.031258,0
-                -6.880998,40.038015,0
-                -6.883138,40.040547,0
-                -6.889543,40.048977,0
-                -6.8927,40.055702,0
-                -6.892655,40.058212,0
-                -6.899047,40.067479,0
-                -6.906503,40.078431,0
-                -6.922606,40.095326,0
-                -6.925767,40.102053,0
-                -6.949683,40.110649,0
-                -6.960578,40.113262,0
-                -6.971416,40.119223,0
-                -6.99534,40.127814,0
-                -7.005062,40.135438,0
-                -7.007099,40.144669,0
-                -7.074947,40.144427,0
-                -7.152624,40.14508,0
-              </coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </Placemark>
-      <Placemark>
-        <name>ALMEIDA</name>
-        <description><![CDATA[RESERVA ESPAÇO AÉREO - EXERCICIOS MILITARES<br><br><br>SFC/450ft AGL<br>RESERVADA 31 MARÇO 2020 até 15 ABRIL 2020 23:59 UTC<br><br>NOTAM A1057/20]]></description>
-        <styleUrl>#poly-FF0000-6000-127</styleUrl>
-        <Polygon>
-          <outerBoundaryIs>
-            <LinearRing>
-              <tessellate>1</tessellate>
-              <coordinates>
-                -6.856007,40.306454,0
-                -6.818673,40.329934,0
-                -6.789717,40.359993,0
-                -6.792187,40.379542,0
-                -6.81738,40.399335,0
-                -6.83666,40.432057,0
-                -6.8361,40.462385,0
-                -6.795244,40.518247,0
-                -6.817266,40.55745,0
-                -6.845399,40.575062,0
-                -6.830889,40.590053,0
-                -6.821986,40.609427,0
-                -6.810394,40.620117,0
-                -6.804372,40.637354,0
-                -6.801278,40.650296,0
-                -6.795087,40.676176,0
-                -6.797525,40.697824,0
-                -6.814178,40.721785,0
-                -6.816907,40.7283,0
-                -6.818988,40.76939,0
-                -6.818459,40.797481,0
-                -6.832409,40.81492,0
-                -6.829191,40.834335,0
-                -6.803202,40.849182,0
-                -6.805688,40.868659,0
-                -6.825203,40.894802,0
-                -6.853233,40.925355,0
-                -6.875646,40.951522,0
-                -6.903614,40.988551,0
-                -6.929308,41.020619,0
-                -7.055758,41.020102,0
-                -6.856007,40.306454,0
-              </coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </Placemark>
-      <Placemark>
-        <name>BRAGANÇA</name>
-        <description><![CDATA[RESERVA ESPAÇO AÉREO - EXERCICIOS MILITARES<br><br><br>SFC/450ft AGL<br>RESERVADA 01 ABRIL 2020 até 15 ABRIL 2020 23:59 UTC<br><br>NOTAM A1066/20]]></description>
-        <styleUrl>#poly-AA0000-6000-127</styleUrl>
-        <Polygon>
-          <outerBoundaryIs>
-            <LinearRing>
-              <tessellate>1</tessellate>
-              <coordinates>
-                -7.195802,41.870179,0
-                -6.682972,41.844676,0
-                -6.634489,41.61273,0
-                -6.289037,41.464984,0
-                -6.274977,41.482585,0
-                -6.250561,41.503933,0
-                -6.22579,41.535462,0
-                -6.204575,41.559454,0
-                -6.20077,41.572153,0
-                -6.203692,41.588738,0
-                -6.218767,41.600326,0
-                -6.23039,41.613173,0
-                -6.233672,41.618305,0
-                -6.263975,41.638967,0
-                -6.282649,41.646768,0
-                -6.315102,41.653376,0
-                -6.316819,41.653386,0
-                -6.340731,41.658654,0
-                -6.344135,41.659955,0
-                -6.35435,41.663859,0
-                -6.364624,41.6652,0
-                -6.376534,41.670395,0
-                -6.385094,41.671725,0
-                -6.391938,41.673045,0
-                -6.438168,41.680984,0
-                -6.460566,41.677248,0
-                -6.476168,41.668349,0
-                -6.477884,41.668357,0
-                -6.534474,41.672458,0
-                -6.551609,41.675094,0
-                -6.55331,41.676383,0
-                -6.546157,41.699456,0
-                -6.547685,41.714887,0
-                -6.547574,41.723893,0
-                -6.554056,41.757429,0
-                -6.548675,41.774195,0
-                -6.548643,41.77678,0
-                -6.548546,41.784538,0
-                -6.544928,41.797464,0
-                -6.541372,41.805221,0
-                -6.5325,41.822039,0
-                -6.532465,41.824634,0
-                -6.532361,41.832423,0
-                -6.526969,41.846694,0
-                -6.526897,41.851896,0
-                -6.524982,41.864903,0
-                -6.524837,41.875326,0
-                -6.533289,41.892319,0
-                -6.550553,41.901532,0
-                -6.550257,41.925071,0
-                -6.550109,41.936859,0
-                -6.550059,41.940791,0
-                -6.553447,41.948674,0
-                -6.560262,41.961829,0
-                -6.589801,41.973773,0
-                -6.591775,41.95145,0
-                -6.611026,41.943652,0
-                -6.619763,41.941062,0
-                -6.637219,41.937193,0
-                -6.645948,41.934603,0
-                -6.654667,41.933324,0
-                -6.713886,41.936139,0
-                -6.726077,41.938798,0
-                -6.745239,41.946723,0
-                -6.746981,41.94804,0
-                -6.755688,41.967763,0
-                -6.773157,41.988864,0
-                -6.797624,41.983665,0
-                -6.804579,41.967899,0
-                -6.809781,41.953462,0
-                -6.834176,41.944337,0
-                -6.848118,41.941747,0
-                -6.856839,41.941766,0
-                -6.935409,41.947174,0
-                -6.953013,41.960339,0
-                -6.960034,41.962979,0
-                -6.968853,41.969569,0
-                -7.031547,41.95126,0
-                -7.08926,41.951323,0
-                -7.098547,41.978957,0
-                -7.137231,41.984262,0
-                -7.154774,41.984275,0
-                -7.156529,41.984277,0
-                -7.167027,41.982965,0
-                -7.177078,41.963216,0
-                -7.186694,41.926437,0
-                -7.195802,41.870179,0
-              </coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </Placemark>
     </Folder>
     <Folder>
       <name>AREAS RESTRITAS</name>
       <Placemark>
         <name>LP-R42B</name>
-        <description><![CDATA[SINTRA<br>AREA RESTRITA - Espaço Aéreo D<br><br>Sintra APP 118.600Mhz<br>Lisboa Militar 123.750Mhz<br><br>1,000ft/FL090<br>RESTRITA 08:00-16:00 UTC]]></description>
+        <description><![CDATA[SINTRA<br>AREA RESTRITA - Espaço Aéreo D<br><br>Sintra APP 118.600Mhz<br>Lisboa Militar 123.750Mhz<br><br>1,000ft/FL090<br>RESTRITA 08:00-21:30 UTC]]></description>
         <styleUrl>#poly-55007F-6000-128</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -21936,7 +21733,7 @@
       <name>AREAS TEMPORARIAMENTE RESTRITAS</name>
       <Placemark>
         <name>LP-TRA13</name>
-        <description><![CDATA[EXERCÍCIO:S AÉREOS<br><br>GND/FL150<br>RESTRITA  09:30-12:00 17:30-20:00 UTC]]></description>
+        <description><![CDATA[EXERCÍCIO:S AÉREOS<br><br>GND/FL150<br>RESTRITA  13:30-15:00 17:30-20:00 UTC]]></description>
         <styleUrl>#poly-AA0000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -21955,7 +21752,7 @@
       </Placemark>
       <Placemark>
         <name>LP-TRA55</name>
-        <description><![CDATA[EXERCÍCIOS AÉREOS<br><br>1,500ft/FL245<br>RESTRITA 14:40-16:30 19:30-21:30 UTC<br><br>RESERVA ESPAÇO AÉREO  - EXERCÍCIOS MILITARES SNOWFALL AREA<br>FL245/FL280<br>RESERVADA 15 ABRIL 14:30-16:30 19:30-21:30  UTC<br>RESERVADA 16 ABRIL 14:30-16:30 19:30-21:30  UTC<br>RESERVADA 17 ABRIL 10:00-12:00 13:30-15:30  UTC<br><br>NOTAM A1112/20]]></description>
+        <description><![CDATA[EXERCÍCIOS AÉREOS<br><br>1,500ft/FL245<br>RESTRITA 14:40-16:30 19:30-21:30 UTC<br><br>RESERVA ESPAÇO AÉREO  - EXERCÍCIOS MILITARES SNOWFALL AREA<br>FL245/FL280<br>RESERVADA 16 ABRIL 14:30-16:30 19:30-21:30  UTC<br>RESERVADA 17 ABRIL 10:00-12:00 13:30-15:30  UTC<br><br>NOTAM A1112/20]]></description>
         <styleUrl>#poly-000000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -21988,7 +21785,7 @@
       </Placemark>
       <Placemark>
         <name>LP-TRA54</name>
-        <description><![CDATA[EXERCÍCIOS AÉREOS<br><br>GND/FL245<br>RESTRITA 14:40-16:30 19:30-21:30 UTC<br><br>RESERVA ESPAÇO AÉREO  - EXERCÍCIOS MILITARES NEVERLAND AREA<br>FL245/FL280<br>RESERVADA 15 ABRIL 14:30-16:30 19:30-21:30  UTC<br>RESERVADA 16 ABRIL 14:30-16:30 19:30-21:30  UTC<br>RESERVADA 17 ABRIL 10:00-12:00 13:30-15:30  UTC<br><br>NOTAM A1111/20]]></description>
+        <description><![CDATA[EXERCÍCIOS AÉREOS<br><br>GND/FL245<br>RESTRITA 14:40-16:30 19:30-21:30 UTC<br><br>RESERVA ESPAÇO AÉREO  - EXERCÍCIOS MILITARES NEVERLAND AREA<br>FL245/FL280<br>RESERVADA 16 ABRIL 14:30-16:30 19:30-21:30  UTC<br>RESERVADA 17 ABRIL 10:00-12:00 13:30-15:30  UTC<br><br>NOTAM A1111/20]]></description>
         <styleUrl>#poly-000000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>

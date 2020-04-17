@@ -26,6 +26,9 @@ import org.xml.sax.*;
 import org.xml.sax.helpers.*;
 
 import de.micromata.opengis.kml.v_2_2_0.Coordinate;
+import de.micromata.opengis.kml.v_2_2_0.Document;
+import de.micromata.opengis.kml.v_2_2_0.Feature;
+import de.micromata.opengis.kml.v_2_2_0.Folder;
 import de.micromata.opengis.kml.v_2_2_0.Kml;
 import de.micromata.opengis.kml.v_2_2_0.LinearRing;
 import de.micromata.opengis.kml.v_2_2_0.Placemark;
@@ -189,22 +192,16 @@ public class FuaManager {
 	
 	public static void parseFua(File fuaFile) throws JAXBException {
 	    
-	    JAXBContext jc = JAXBContext.newInstance(Kml.class);
+	    Kml unmarshal = Kml.unmarshal(fuaFile);
+	    Document document = (Document) unmarshal.getFeature();
+	    Folder areasRestrictas = (Folder) document.getFeature().get(6);//AREAS RESTRICTAS
+	    System.out.println(areasRestrictas.getName());
 
-	    // create KML reader to parse arbitrary KML into Java Object structure
-	    Unmarshaller u = jc.createUnmarshaller();
-	    Kml kml = (Kml) u.unmarshal(fuaFile);
-
-	    Placemark placemark = (Placemark) kml.getFeature();
-	    Polygon geom = (Polygon) placemark.getGeometry();
-	    LinearRing linearRing = geom.getOuterBoundaryIs().getLinearRing();
-	    
-	    List<Coordinate> coordinates = linearRing.getCoordinates();
-	   
-	    for (Coordinate coordinate : coordinates) {
-	    	System.out.println(coordinate.getLongitude());
-	    	System.out.println(coordinate.getLatitude());
-	    	System.out.println(coordinate.getAltitude());
+	    int folderSize = areasRestrictas.getFeature().size();
+	    // loop over all countries / Placemarks
+	    for (int i = 0; i < folderSize; i++) {
+	    	Placemark placemark = (Placemark) areasRestrictas.getFeature().get(i);
+	    	System.out.println(placemark.getDescription());
 	    }
 	}
 
