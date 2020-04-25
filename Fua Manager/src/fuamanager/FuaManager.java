@@ -4,12 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -18,21 +15,8 @@ import javax.xml.parsers.SAXParserFactory;
 
 import org.apache.commons.io.FileUtils;
 
-import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
-import javax.xml.parsers.*;
 import org.xml.sax.*;
-import org.xml.sax.helpers.*;
-
-import de.micromata.opengis.kml.v_2_2_0.Coordinate;
-import de.micromata.opengis.kml.v_2_2_0.Document;
-import de.micromata.opengis.kml.v_2_2_0.Feature;
-import de.micromata.opengis.kml.v_2_2_0.Folder;
-import de.micromata.opengis.kml.v_2_2_0.Kml;
-import de.micromata.opengis.kml.v_2_2_0.LinearRing;
-import de.micromata.opengis.kml.v_2_2_0.Placemark;
-import de.micromata.opengis.kml.v_2_2_0.Polygon;
 
 
 public class FuaManager {
@@ -44,8 +28,8 @@ public class FuaManager {
 	public static final String FRIDAY = "5";
 	public static final String SATURDAY = "6";
 	public static final String SUNDAY = "7";
-	private static final int CONNECT_TIMEOUT = 0;
-	private static final int READ_TIMEOUT = 0;
+	private static final int CONNECT_TIMEOUT = 5000;
+	private static final int READ_TIMEOUT = 10000;
 	private static final String FUAFILE_URL = "https://www.google.com/maps/d/u/0/kml?forcekml=1&mid=1Og8rGguyGgNR1DUpGW7Oq9k4_Xw";
 	private static final String DOWNLOADED_FUAFILE_NAME = "ESPAÇO AÉREO.kml.xml";
 	
@@ -53,10 +37,8 @@ public class FuaManager {
 	static ArrayList<FuaArea> fuaAreas = new ArrayList<FuaArea>();
 	static ArrayList<CategoryDef> categories = new ArrayList<CategoryDef>();
 
-	public static void main(String[] args) throws IOException, JAXBException {
-		// TODO Auto-generated method stub
-		
-		
+	public static void main(String[] args) throws IOException, JAXBException, ParserConfigurationException, SAXException {
+	
 		if( args[0].contains("-L")) {
 		    loadAreas(new File("TopSkyAreas.txt"));
 		}
@@ -76,7 +58,6 @@ public class FuaManager {
 	}
 	
 	private static void createFuaAreas(String[] args) {
-		// TODO Auto-generated method stub
 		//LPD10:1400:1800:0:24000:SFL250
 		
 		String[] trimmedArgs = Arrays.copyOfRange(args, 1, args.length);//this is to remove the -M
@@ -182,27 +163,29 @@ public class FuaManager {
 	    return result;
 	}
 
-	private static void downloadFua() throws JAXBException, IOException {
+	private static void downloadFua() throws JAXBException, IOException, ParserConfigurationException, SAXException {
 		File fuaFile = new File(DOWNLOADED_FUAFILE_NAME);
 		
 		FileUtils.copyURLToFile(new URL(FUAFILE_URL), fuaFile, CONNECT_TIMEOUT, READ_TIMEOUT);
-		parseFua(fuaFile);
+		FuaXMLKml fua = parseFua(fuaFile);
 		
 	}
 	
-	public static void parseFua(File fuaFile) throws JAXBException {
+	public static FuaXMLKml parseFua(File fuaFile) throws JAXBException, ParserConfigurationException, SAXException, IOException {
+		SAXParserFactory factory = SAXParserFactory.newInstance();
+		SAXParser saxParser = factory.newSAXParser();
+		FuaXMLHandler fuaHandler = new FuaXMLHandler();
+		
+		saxParser.parse(fuaFile, fuaHandler);
+	    FuaXMLKml fua = fuaHandler.getKml();
 	    
-	    Kml unmarshal = Kml.unmarshal(fuaFile);
-	    Document document = (Document) unmarshal.getFeature();
-	    Folder areasRestrictas = (Folder) document.getFeature().get(6);//AREAS RESTRICTAS
-	    System.out.println(areasRestrictas.getName());
-
-	    int folderSize = areasRestrictas.getFeature().size();
-	    // loop over all countries / Placemarks
-	    for (int i = 0; i < folderSize; i++) {
-	    	Placemark placemark = (Placemark) areasRestrictas.getFeature().get(i);
-	    	System.out.println(placemark.getDescription());
+	    for(FuaXMLPlacemark p : fua.getDocument().getFolderByName("NOTAM").getPlacemarks()) {
+	    	System.out.println(p.getName());
 	    }
+        
+        return fua;
+        
+        
 	}
 
 
