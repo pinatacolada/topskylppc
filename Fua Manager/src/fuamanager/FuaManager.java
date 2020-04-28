@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -32,10 +33,12 @@ public class FuaManager {
 	private static final int READ_TIMEOUT = 10000;
 	private static final String FUAFILE_URL = "https://www.google.com/maps/d/u/0/kml?forcekml=1&mid=1Og8rGguyGgNR1DUpGW7Oq9k4_Xw";
 	private static final String DOWNLOADED_FUAFILE_NAME = "ESPAÇO AÉREO.kml.xml";
+	private static final String[] FUA_FOLDERS = {"NOTAM E OUTRAS AREAS", "AREAS RESTRITAS", "AREAS PERIGOSAS", "AREAS PROIBIDAS"}; 
 	
 	static ArrayList<Area> areas = new ArrayList<Area>();
 	static ArrayList<FuaArea> fuaAreas = new ArrayList<FuaArea>();
 	static ArrayList<CategoryDef> categories = new ArrayList<CategoryDef>();
+	static ArrayList<String> amcAreas = new ArrayList<String>();
 
 	public static void main(String[] args) throws IOException, JAXBException, ParserConfigurationException, SAXException {
 	
@@ -50,7 +53,8 @@ public class FuaManager {
 		}
 		else if( args[0].contains("-A")) {
 			loadAreas(new File("TopSkyAreas.txt"));
-			downloadFua();
+			FuaXMLKml kml = downloadFua();
+			loadFua(kml);
 			exportFuaAreas();
 		}
 		
@@ -103,7 +107,7 @@ public class FuaManager {
 	}
 	
 	private static void loadAreas(File file) throws IOException {
-		//readFromInputStream(input);
+
 		try{
 			Scanner reader = new Scanner(file);
 			String line = reader.nextLine();
@@ -163,11 +167,72 @@ public class FuaManager {
 	    return result;
 	}
 
-	private static void downloadFua() throws JAXBException, IOException, ParserConfigurationException, SAXException {
+	private static FuaXMLKml downloadFua() throws JAXBException, IOException, ParserConfigurationException, SAXException {
 		File fuaFile = new File(DOWNLOADED_FUAFILE_NAME);
 		
 		FileUtils.copyURLToFile(new URL(FUAFILE_URL), fuaFile, CONNECT_TIMEOUT, READ_TIMEOUT);
-		FuaXMLKml fua = parseFua(fuaFile);
+		return parseFua(fuaFile);
+		
+	}
+	
+	private static void loadFua(FuaXMLKml kml) {
+		FuaXMLDocument fua = kml.getDocument();
+		fua.getFolderByName("NOTAM E OUTRAS AREAS");
+		FuaXMLFolder notam = fua.getFolderByName("NOTAM E OUTRAS AREAS");
+		FuaXMLFolder lpr = fua.getFolderByName("AREAS RESTRITAS");
+		FuaXMLFolder lpd = fua.getFolderByName("AREAS PERIGOSAS");
+		FuaXMLFolder lpp = fua.getFolderByName("AREAS PROIBIDAS");
+		FuaXMLFolder lptra = fua.getFolderByName("AREAS TEMPORARIAMENTE RESTRITAS");
+		
+
+		System.out.println("----------------------------------------");
+		//if(notam != null && notam.getPlacemarks().size() > 0) {
+		//	for(FuaXMLPlacemark place : notam.getPlacemarks()) {
+		//		place.toActivation();
+		//	}
+		//}
+		
+		if(lpr != null && lpr.getPlacemarks().size() > 0) {
+			for(FuaXMLPlacemark place : lpr.getPlacemarks()) {
+				if(place.getName().contains("LP-R60B")) {
+					place.setName("LP-R60BAMC)");
+				}
+				if(place.getName().contains("LP-R42B")) {
+					place.setName("LPR42BAMC)");
+				}
+				
+				
+				Area a = findAreabyName(place.getName().replace("-", ""));
+				System.out.println(place.getName());
+				if(a.isAmc()) {
+					SchedAct act = place.toSchedAct();
+					System.out.println("assgd");
+					FuaArea areaManual = new FuaArea(a, act, act.getLimits(), "butts");
+					System.out.println(areaManual.printFuaArea());
+				}
+				
+				
+			}
+		}
+		
+		//if(lpd != null && lpd.getPlacemarks().size() > 0) {
+		//	for(FuaXMLPlacemark place : lpd.getPlacemarks()) {
+		//		place.toActivation();
+		//	}
+		//}
+		
+		//if(lpp != null && lpp.getPlacemarks().size() > 0) {
+		//	for(FuaXMLPlacemark place : lpp.getPlacemarks()) {
+		//		place.toActivation();
+		//	}
+		//}
+		
+		//if(lptra != null && lptra.getPlacemarks().size() > 0) {
+		//	for(FuaXMLPlacemark place : lptra.getPlacemarks()) {
+		//		place.toActivation();
+		//	}
+		//}
+		
 		
 	}
 	
@@ -178,18 +243,9 @@ public class FuaManager {
 		
 		saxParser.parse(fuaFile, fuaHandler);
 	    FuaXMLKml fua = fuaHandler.getKml();
-	    
-	    for(FuaXMLPlacemark p : fua.getDocument().getFolderByName("NOTAM").getPlacemarks()) {
-	    	System.out.println(p.getName());
-	    }
-        
+	      
         return fua;
-        
-        
+
 	}
-
-
-
 }
-
 

@@ -3,6 +3,13 @@ package fuamanager;
 import java.time.LocalDateTime;
 
 public class FuaArea{
+	public FuaArea(Area area, SchedAct activation, VLimit limits, String label) {
+		this.area = area;
+		this.activation = activation;
+		this.limits = limits;
+		this.label = label;
+	}
+
 	private Area area;
 	private SchedAct activation;
 	private VLimit limits;
@@ -25,10 +32,13 @@ public class FuaArea{
 		LocalDateTime end = SchedAct.ParseDate(endDay, endHour);
 
 		this.setArea(area);
-		activation = new SchedAct(start, end, weekdays, low, high, label);
+		
 		limits = new VLimit(high, low);
+		activation = new SchedAct(start, end, weekdays, limits, label);
 		this.label = label;
 	}
+	
+	
 	
 	public FuaArea(Area area, String startHour, String endHour, int low, int high, String label) {
 		LocalDateTime start = SchedAct.ParseDate(startHour);
@@ -36,8 +46,8 @@ public class FuaArea{
 		String weekdays = FuaManager.DAILY;
 		this.setArea(area);
 		
-		activation = new SchedAct(start, end, weekdays, low, high, label);
 		limits = new VLimit(high, low);
+		activation = new SchedAct(start, end, weekdays, limits, label);
 		this.label = label;
 	}
 	

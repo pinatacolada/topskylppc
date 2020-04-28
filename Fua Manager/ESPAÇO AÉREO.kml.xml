@@ -2,7 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <name>ESPAÇO AÉREO</name>
-    <description><![CDATA[ACTUALIZADO 06:00 UTC 24 ABRIL 2020<br>PROGRAMAÇÃO DIÁRIA DO ESPAÇO AÉREO DE USO FLEXÍVEL e NOTAM's relevantes para o voo VFR em Portugal.  Consulte também : http://cavok.pt/fuaflex/notams-portugal/]]></description>
+    <description><![CDATA[ACTUALIZADO 05:00 UTC 28 ABRIL 2020<br>PROGRAMAÇÃO DIÁRIA DO ESPAÇO AÉREO DE USO FLEXÍVEL e NOTAM's relevantes para o voo VFR em Portugal.  Consulte também : http://cavok.pt/fuaflex/notams-portugal/]]></description>
     <Style id="icon-1129-labelson">
       <IconStyle>
         <scale>1.1</scale>
@@ -20516,7 +20516,7 @@
       </Placemark>
       <Placemark>
         <name>LP-R60B</name>
-        <description><![CDATA[MONTE REAL<br>AREA RESTRITA - Espaço Aéreo D<br><br>Monte Real APP 122.100Mhz<br>Lisboa Militar 123.750Mhz<br><br>1,000ft AGL/FL245<br>RESTRITA  H24<br><br>FL245/FL500<br>RESTRITA 10:00-12:00 13:30-16:00 UTC]]></description>
+        <description><![CDATA[MONTE REAL<br>AREA RESTRITA - Espaço Aéreo D<br><br>Monte Real APP 122.100Mhz<br>Lisboa Militar 123.750Mhz<br><br>1,000ft AGL/FL245<br>RESTRITA  H24<br><br>FL245/FL500<br>RESTRITA 10:00-12:00 13:30-15:30  UTC]]></description>
         <styleUrl>#poly-000000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -21014,8 +21014,29 @@
     <Folder>
       <name>AREAS TEMPORARIAMENTE RESTRITAS</name>
       <Placemark>
+        <name>LP-TRA56</name>
+        <description><![CDATA[PARAQUEDISMO<br><br>GND/FL130<br>RESTRITA 08:00-17:00 UTC]]></description>
+        <styleUrl>#poly-AA0000-6000-127</styleUrl>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <tessellate>1</tessellate>
+              <coordinates>
+                -8.494611,39.425469,0
+                -8.449538,39.38362,0
+                -8.359678,39.409713,0
+                -8.268939,39.409744,0
+                -8.281659,39.536334,0
+                -8.451334,39.515224,0
+                -8.494611,39.425469,0
+              </coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
         <name>LP-TRA55</name>
-        <description><![CDATA[EXERCÍCIOS AÉREOS<br><br>1,500ft/FL245<br>RESTRITA 10:00-12:00 13:30-16:00 UTC<br><br>RESERVA ESPAÇO AÉREO  - EXERCÍCIOS MILITARES SNOWFALL AREA<br>FL245/FL280<br>RESERVADA 24 ABRIL 10:00-12:00 13:30-16:00  UTC<br><br>NOTAM A1165/20]]></description>
+        <description><![CDATA[EXERCÍCIOS AÉREOS<br><br>1,500ft/FL245<br>RESTRITA 10:00-12:00 13:30-15:30 UTC<br><br>RESERVA ESPAÇO AÉREO  - EXERCÍCIOS MILITARES SNOWFALL AREA<br>FL245/FL280<br>RESERVADA 28 ABRIL 10:00-12:00 13:30-15:30 UTC<br>RESERVADA 29 ABRIL 10:00-12:00 13:30-15:30 UTC<br>RESERVADA 30 ABRIL 10:00-12:00 13:30-15:30 UTC<br><br>NOTAM A1207/20]]></description>
         <styleUrl>#poly-000000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -21048,7 +21069,7 @@
       </Placemark>
       <Placemark>
         <name>LP-TRA54</name>
-        <description><![CDATA[EXERCÍCIOS AÉREOS<br><br>GND/FL245<br>RESTRITA 10:00-12:00 13:30-16:00 UTC<br><br>RESERVA ESPAÇO AÉREO  - EXERCÍCIOS MILITARES NEVERLAND AREA<br>FL245/FL280<br>RESERVADA 24 ABRIL 10:00-12:00 13:30-16:00  UTC<br><br>NOTAM A1166/20]]></description>
+        <description><![CDATA[EXERCÍCIOS AÉREOS<br><br>GND/FL245<br>RESTRITA 10:00-12:00 13:30-15:30 UTC<br><br>RESERVA ESPAÇO AÉREO  - EXERCÍCIOS MILITARES NEVERLAND AREA<br>FL245/FL280<br>RESERVADA 28 ABRIL 10:00-12:00 13:30-15:30 UTC<br>RESERVADA 29 ABRIL 10:00-12:00 13:30-15:30 UTC<br>RESERVADA 30 ABRIL 10:00-12:00 13:30-15:30 UTC<br><br>NOTAM A1206/20]]></description>
         <styleUrl>#poly-000000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -21092,7 +21113,7 @@
       <name>AREAS PERIGOSAS</name>
       <Placemark>
         <name>LP-D67</name>
-        <description><![CDATA[EXERCÍCIOS AÉREOS<br><br>4,000ft/FL300<br>PERIGOSA 10:00-12:00  UTC]]></description>
+        <description><![CDATA[EXERCÍCIOS AÉREOS<br><br>4,000ft/FL300<br>PERIGOSA 10:00-12:00 13:30-15:30  UTC]]></description>
         <styleUrl>#poly-000000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>

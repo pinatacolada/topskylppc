@@ -10,8 +10,7 @@ public class SchedAct extends Activation {
 	private LocalDateTime schedStartDate;
 	private LocalDateTime schedEndDate;
 	private String schedWeekdays;
-	private int lower;
-	private int upper;
+	private VLimit limits;
 	private String userText;
 	
 	public SchedAct(String[] parts) {
@@ -23,21 +22,21 @@ public class SchedAct extends Activation {
 		schedWeekdays = parts[3];
 		
 		if(parts.length > 6) {
-			lower = Integer.parseInt(parts[6]);
-			upper = Integer.parseInt(parts[7]);
+			setLimits(new VLimit(Integer.parseInt(parts[7]), Integer.parseInt(parts[6])));
 			userText = parts[8];
 		}
 	}
 	
-	public SchedAct(LocalDateTime schedStartDate, LocalDateTime schedEndDate, String schedWeekdays, int lower, int upper, String userText) {
+	public SchedAct(LocalDateTime schedStartDate, LocalDateTime schedEndDate, String schedWeekdays, VLimit limits, String userText) {
 		rules = "";
 		
 		this.schedStartDate=schedStartDate;
 		this.schedEndDate=schedEndDate;
 		this.schedWeekdays=schedWeekdays;
-		this.lower=lower;
-		this.upper=upper;
+		this.setLimits(limits);
 		this.userText=userText;
+		
+		
 	}
 	
 	/**
@@ -89,5 +88,13 @@ public class SchedAct extends Activation {
 		DateTimeFormatter hourFormat = DateTimeFormatter.ofPattern("HHmm");
 		
 		return schedStartDate.format(dateFormat)+":"+schedEndDate.format(dateFormat)+":"+schedWeekdays+":"+schedStartDate.format(hourFormat)+":"+schedEndDate.format(hourFormat);
+	}
+
+	public VLimit getLimits() {
+		return limits;
+	}
+
+	public void setLimits(VLimit limits) {
+		this.limits = limits;
 	}
 }

@@ -33,6 +33,7 @@ public class Area {
 	private BufferLat sapl;
 	private BufferVert sapv;
 	private ArrayList <String> comments = new ArrayList<String>();
+	private boolean amc = false;
 
 	//TODO figure this out eventually
 	//Factory spatialContextFactory = new SpatialContextFactory();
@@ -78,11 +79,17 @@ public class Area {
 		setName(firstLine[2]);
 		
 		while (sc.hasNext() && !line.isBlank() == false){
+			System.out.println(line);
 			String[] parts = line.split("[\\:]");
+			
 			if(!line.isBlank()) {
+				
 				if(line.contains("CATEGORY")) {
 //					CATEGORY:AMCRS
-					category = parts[1];	
+					category = parts[1];
+					if(category.contains("AMC")) {
+						setAmc(true);
+					}
 				}
 				else if(line.contains("LABEL")) {
 //					LABEL:N038.48.64.000:W008.48.06.000:SFL250
@@ -155,7 +162,7 @@ public class Area {
 					line = sc.nextLine();
 					
 				}
-				
+				System.out.println("complete");
 			}
 		}	
 	}
@@ -178,5 +185,22 @@ public class Area {
 
 	public void setCoordinates(ArrayList <FuaCoordinate> coordinates) {
 		this.coordinates = coordinates;
+	}
+	
+	public void toggleAMC() {
+		if(isAmc()) {
+			setAmc(false);
+		}
+		else {
+			setAmc(true);
+		}
+	}
+
+	public boolean isAmc() {
+		return amc;
+	}
+
+	public void setAmc(boolean amc) {
+		this.amc = amc;
 	}
 }
