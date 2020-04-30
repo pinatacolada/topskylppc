@@ -80,10 +80,8 @@ public class Area {
 		
 		while (sc.hasNext()){
 			line = sc.nextLine();
-			System.out.println("in loop: "+line);
 			String[] parts = line.split("[\\:]");
 			
-			//System.out.println("beep");
 			if(!line.isBlank()) {
 				if(line.contains("CATEGORY")) {
 //					CATEGORY:AMCRS
@@ -154,22 +152,16 @@ public class Area {
 						getCoordinates().add(new FuaCoordinate(line));
 					}
 					while(sc.hasNext()) {
-						
 						line = sc.nextLine();
 						if((line.isBlank() || line.contains("AREA:T:")) || line.length() < 26) {
 							break;
 						}
 						getCoordinates().add(new FuaCoordinate(line));
 					}
-					//line = sc.nextLine();
 					break;
 				}
 				line = "";
 			}
-			//if(sc.hasNext()) {
-				//if(sc.hasNext()) {line = sc.nextLine();}
-			//}
-				
 		}	
 	}
 	
