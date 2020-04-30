@@ -206,7 +206,6 @@ public class FuaManager {
 				System.out.println(place.getName());
 				if(a.isAmc()) {
 					SchedAct act = place.toSchedAct();
-					System.out.println("assgd");
 					FuaArea areaManual = new FuaArea(a, act, act.getLimits(), "butts");
 					System.out.println(areaManual.printFuaArea());
 				}
