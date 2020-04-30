@@ -78,12 +78,13 @@ public class Area {
 		String[] firstLine = line.split("[\\:]");
 		setName(firstLine[2]);
 		
-		while (sc.hasNext() && !line.isBlank() == false){
-			System.out.println(line);
+		while (sc.hasNext()){
+			line = sc.nextLine();
+			System.out.println("in loop: "+line);
 			String[] parts = line.split("[\\:]");
 			
+			//System.out.println("beep");
 			if(!line.isBlank()) {
-				
 				if(line.contains("CATEGORY")) {
 //					CATEGORY:AMCRS
 					category = parts[1];
@@ -119,7 +120,7 @@ public class Area {
 				}
 				else if(line.contains("LIMITS")){
 //					LIMITS:0:240
-					limits = new VLimit(Integer.parseInt(parts[1]),Integer.parseInt(parts[2]));
+					limits = new VLimit(Integer.parseInt(parts[1].replaceAll("\\s+","")),Integer.parseInt(parts[2].replaceAll("\\s+","")));
 				}
 				else if(line.contains("NOMSAW")) {
 					msaw = false;
@@ -153,17 +154,22 @@ public class Area {
 						getCoordinates().add(new FuaCoordinate(line));
 					}
 					while(sc.hasNext()) {
+						
 						line = sc.nextLine();
 						if((line.isBlank() || line.contains("AREA:T:")) || line.length() < 26) {
 							break;
 						}
 						getCoordinates().add(new FuaCoordinate(line));
 					}
-					line = sc.nextLine();
-					
+					//line = sc.nextLine();
+					break;
 				}
-				System.out.println("complete");
+				line = "";
 			}
+			//if(sc.hasNext()) {
+				//if(sc.hasNext()) {line = sc.nextLine();}
+			//}
+				
 		}	
 	}
 	

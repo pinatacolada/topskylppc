@@ -115,7 +115,7 @@ public class FuaManager {
 			if(!line.startsWith("//") && line.contains("CATEGORYDEF:")) {
 				CategoryDef catdef = new CategoryDef(line);
 				categories.add(catdef);
-				//System.out.println("Category definition "+catdef.getName()+" loaded");
+				System.out.println("Category definition "+catdef.getName()+" loaded");
 				line = reader.nextLine();
 			}
 			else if(!line.startsWith("//") && line.contains("AREA:T:")){
@@ -136,7 +136,7 @@ public class FuaManager {
 					//TODO see if area is already in the list
 					Area a = new Area(line, reader);
 					areas.add(a);
-					//System.out.println("Loaded area "+a.getName());
+					System.out.println("Loaded area "+a.getName());
 					//System.out.println("Area "+a.getName()+" loaded with "+a.getCoordinates().size()+" coordinates. Line says: "+line);
 				}
 			}
@@ -195,10 +195,10 @@ public class FuaManager {
 		if(lpr != null && lpr.getPlacemarks().size() > 0) {
 			for(FuaXMLPlacemark place : lpr.getPlacemarks()) {
 				if(place.getName().contains("LP-R60B")) {
-					place.setName("LP-R60BAMC)");
+					place.setName("LP-R60BAMC");
 				}
 				if(place.getName().contains("LP-R42B")) {
-					place.setName("LPR42BAMC)");
+					place.setName("LPR42BAMC");
 				}
 				
 				
