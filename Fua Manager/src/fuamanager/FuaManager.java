@@ -170,7 +170,7 @@ public class FuaManager {
 	private static FuaXMLKml downloadFua() throws JAXBException, IOException, ParserConfigurationException, SAXException {
 		File fuaFile = new File(DOWNLOADED_FUAFILE_NAME);
 		
-		FileUtils.copyURLToFile(new URL(FUAFILE_URL), fuaFile, CONNECT_TIMEOUT, READ_TIMEOUT);
+		//FileUtils.copyURLToFile(new URL(FUAFILE_URL), fuaFile, CONNECT_TIMEOUT, READ_TIMEOUT);
 		return parseFua(fuaFile);
 		
 	}
@@ -185,7 +185,7 @@ public class FuaManager {
 		FuaXMLFolder lptra = fua.getFolderByName("AREAS TEMPORARIAMENTE RESTRITAS");
 		
 
-		System.out.println("----------------------------------------");
+		System.out.println("AMC PROCESSING----------------------------------------");
 		//if(notam != null && notam.getPlacemarks().size() > 0) {
 		//	for(FuaXMLPlacemark place : notam.getPlacemarks()) {
 		//		place.toActivation();
@@ -200,13 +200,12 @@ public class FuaManager {
 				if(place.getName().contains("LP-R42B")) {
 					place.setName("LPR42BAMC");
 				}
-				
-				
+								
 				Area a = findAreabyName(place.getName().replace("-", ""));
-				System.out.println(place.getName());
+				
 				if(a.isAmc()) {
-					SchedAct act = place.toSchedAct();
-					FuaArea areaManual = new FuaArea(a, act, act.getLimits(), "butts");
+					ArrayList<SchedAct> acts = place.toSchedAct();
+					FuaArea areaManual = new FuaArea(a, acts.get(0), acts.get(0).getLimits(), "butts");
 					System.out.println(areaManual.printFuaArea());
 				}
 				
@@ -214,23 +213,54 @@ public class FuaManager {
 			}
 		}
 		
-		//if(lpd != null && lpd.getPlacemarks().size() > 0) {
-		//	for(FuaXMLPlacemark place : lpd.getPlacemarks()) {
-		//		place.toActivation();
-		//	}
-		//}
+		if(lpd != null && lpr.getPlacemarks().size() > 0) {
+			for(FuaXMLPlacemark place : lpd.getPlacemarks()) {
+												
+				Area a = findAreabyName(place.getName().replace("-", ""));
+				
+				if(a.isAmc()) {
+					ArrayList<SchedAct> acts = place.toSchedAct();
+					FuaArea areaManual = new FuaArea(a, acts.get(0), acts.get(0).getLimits(), "butts");
+					System.out.println(areaManual.printFuaArea());
+				}
+				
+				
+			}
+		}
 		
-		//if(lpp != null && lpp.getPlacemarks().size() > 0) {
-		//	for(FuaXMLPlacemark place : lpp.getPlacemarks()) {
-		//		place.toActivation();
-		//	}
-		//}
+		if(lpp != null && lpp.getPlacemarks().size() > 0) {
+			for(FuaXMLPlacemark place : lpp.getPlacemarks()) {
+												
+				Area a = findAreabyName(place.getName().replace("-", ""));
+				
+				if(a.isAmc()) {
+					ArrayList<SchedAct> acts = place.toSchedAct();
+					FuaArea areaManual = new FuaArea(a, acts.get(0), acts.get(0).getLimits(), "butts");
+					System.out.println(areaManual.printFuaArea());
+				}
+				
+				
+			}
+		}
 		
-		//if(lptra != null && lptra.getPlacemarks().size() > 0) {
-		//	for(FuaXMLPlacemark place : lptra.getPlacemarks()) {
-		//		place.toActivation();
-		//	}
-		//}
+		if(lptra != null && lptra.getPlacemarks().size() > 0) {
+			for(FuaXMLPlacemark place : lptra.getPlacemarks()) {
+												
+				Area a = findAreabyName(place.getName().replace("-", ""));
+				
+				if(a.isAmc()) {
+					ArrayList<SchedAct> acts = place.toSchedAct();
+					
+					for(SchedAct act : acts) {
+						FuaArea areaManual = new FuaArea(a, act, act.getLimits(), "butts");
+						System.out.println(areaManual.printFuaArea());
+					}
+					
+				}
+				
+				
+			}
+		}
 		
 		
 	}
