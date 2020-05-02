@@ -205,8 +205,12 @@ public class FuaManager {
 				
 				if(a.isAmc()) {
 					ArrayList<SchedAct> acts = place.toSchedAct();
-					FuaArea areaManual = new FuaArea(a, acts.get(0), acts.get(0).getLimits(), "butts");
-					System.out.println(areaManual.printFuaArea());
+
+					for(SchedAct act : acts) {
+						FuaArea areaManual = new FuaArea(a, act, act.getLimits(), "butts");
+						fuaAreas.add(areaManual);
+						System.out.println(areaManual.printFuaArea());
+					}
 				}
 				
 				
@@ -220,8 +224,13 @@ public class FuaManager {
 				
 				if(a.isAmc()) {
 					ArrayList<SchedAct> acts = place.toSchedAct();
-					FuaArea areaManual = new FuaArea(a, acts.get(0), acts.get(0).getLimits(), "butts");
-					System.out.println(areaManual.printFuaArea());
+
+					for(SchedAct act : acts) {
+						FuaArea areaManual = new FuaArea(a, act, act.getLimits(), "butts");
+						fuaAreas.add(areaManual);
+						System.out.println(areaManual.printFuaArea());
+					}
+					
 				}
 				
 				
@@ -235,8 +244,13 @@ public class FuaManager {
 				
 				if(a.isAmc()) {
 					ArrayList<SchedAct> acts = place.toSchedAct();
-					FuaArea areaManual = new FuaArea(a, acts.get(0), acts.get(0).getLimits(), "butts");
-					System.out.println(areaManual.printFuaArea());
+					
+					for(SchedAct act : acts) {
+						FuaArea areaManual = new FuaArea(a, act, act.getLimits(), "butts");
+						fuaAreas.add(areaManual);
+						System.out.println(areaManual.printFuaArea());
+					}
+					
 				}
 				
 				
@@ -253,6 +267,7 @@ public class FuaManager {
 					
 					for(SchedAct act : acts) {
 						FuaArea areaManual = new FuaArea(a, act, act.getLimits(), "butts");
+						fuaAreas.add(areaManual);
 						System.out.println(areaManual.printFuaArea());
 					}
 					
@@ -261,6 +276,7 @@ public class FuaManager {
 				
 			}
 		}
+		
 		
 		
 	}

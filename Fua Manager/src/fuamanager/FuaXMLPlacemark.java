@@ -42,6 +42,8 @@ public class FuaXMLPlacemark {
 			String high = stringLimits[1];
 			
 			limits = new VLimit(low, high);
+			
+			description = bits[3];
 		}
 		else {
 			for(String s : bits) {
