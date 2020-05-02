@@ -23,7 +23,7 @@ public class SchedAct extends Activation {
 		
 		if(parts.length > 6) {
 			setLimits(new VLimit(Integer.parseInt(parts[7]), Integer.parseInt(parts[6])));
-			userText = parts[8];
+			setUserText(parts[8]);
 		}
 	}
 	
@@ -34,7 +34,7 @@ public class SchedAct extends Activation {
 		this.schedEndDate=schedEndDate;
 		this.schedWeekdays=schedWeekdays;
 		this.setLimits(limits);
-		this.userText=userText;
+		this.setUserText(userText);
 		
 		
 	}
@@ -96,5 +96,13 @@ public class SchedAct extends Activation {
 
 	public void setLimits(VLimit limits) {
 		this.limits = limits;
+	}
+
+	public String getUserText() {
+		return userText;
+	}
+
+	public void setUserText(String userText) {
+		this.userText = userText;
 	}
 }

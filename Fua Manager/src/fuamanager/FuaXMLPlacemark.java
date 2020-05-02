@@ -87,7 +87,7 @@ public class FuaXMLPlacemark {
 				start = SchedAct.ParseDate(sStart);
 				end = SchedAct.ParseDate(sEnd);
 
-				SchedAct sched = new SchedAct(start, end, "0", limits, "butts");
+				SchedAct sched = new SchedAct(start, end, "0", limits, Integer.toString(limits.calculateSFL()));
 				schedules.add(sched);
 			}   
 

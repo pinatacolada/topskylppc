@@ -207,7 +207,7 @@ public class FuaManager {
 					ArrayList<SchedAct> acts = place.toSchedAct();
 
 					for(SchedAct act : acts) {
-						FuaArea areaManual = new FuaArea(a, act, act.getLimits(), "butts");
+						FuaArea areaManual = new FuaArea(a, act, act.getLimits(), act.getUserText());
 						fuaAreas.add(areaManual);
 						System.out.println(areaManual.printFuaArea());
 					}

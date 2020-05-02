@@ -1,28 +1,28 @@
 package fuamanager;
 
 public class VLimit {
-	
+
 	private int high;
 	private int low;
-	
+
 	public VLimit(int h, int l) {
 		high=h;
 		low=l;
 	}
-	
+
 	public VLimit(String sLow, String sHigh){
 		low = stringToAlt(sLow);
 		high = stringToAlt(sHigh);
-		
+
 	}
-	
+
 	public String printVLimit() {
 		return low+":"+high;
 	}
 
 	public int stringToAlt(String s) {
 		int level = -1;
-		
+
 		if(s.contentEquals("GND") || s.contentEquals("SFC")) {
 			level = 0;
 		}
@@ -33,7 +33,7 @@ public class VLimit {
 			s = s.replace("AGL","");
 			s = s.replaceAll("\\s","");
 			level = Integer.parseInt(s) / 100;
-			
+
 		}
 		else if(s.contains("FL")) {
 			s = s.replace("FL", "");
@@ -41,5 +41,13 @@ public class VLimit {
 		}
 		return level;
 
+	}
+
+	public int calculateSFL() {
+		int i =  (int) Math.ceil(high / 10);
+		i = (i + 1)*10;
+
+
+		return i;
 	}
 }
