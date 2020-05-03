@@ -44,10 +44,20 @@ public class VLimit {
 	}
 
 	public int calculateSFL() {
-		int i =  (int) Math.ceil(high / 10);
-		i = (i + 1)*10;
+		int buffer = 10;//buffer of 1000ft of vertical separation
+		float alt = ((float) high + buffer) / 10; 
+		alt = (int) Math.ceil(alt);
+		int sfl = (int) alt *10; //next flight level in 1000ft steps
+		
+		if(sfl >410) {//if safe level ends up above RVSM, apply CVSM sep
+			sfl += 10;
+			
+			if(sfl % 20 == 0) {//CVSM is only FL430, 450, 470, 490, 510, you get the gist
+				sfl += 10;
+			}
+		}
 
 
-		return i;
+		return sfl;
 	}
 }
