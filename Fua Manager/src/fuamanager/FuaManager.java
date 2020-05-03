@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -33,7 +32,6 @@ public class FuaManager {
 	private static final int READ_TIMEOUT = 10000;
 	private static final String FUAFILE_URL = "https://www.google.com/maps/d/u/0/kml?forcekml=1&mid=1Og8rGguyGgNR1DUpGW7Oq9k4_Xw";
 	private static final String DOWNLOADED_FUAFILE_NAME = "ESPAÇO AÉREO.kml.xml";
-	private static final String[] FUA_FOLDERS = {"NOTAM E OUTRAS AREAS", "AREAS RESTRITAS", "AREAS PERIGOSAS", "AREAS PROIBIDAS"}; 
 	
 	static ArrayList<Area> areas = new ArrayList<Area>();
 	static ArrayList<FuaArea> fuaAreas = new ArrayList<FuaArea>();
@@ -178,19 +176,13 @@ public class FuaManager {
 	private static void loadFua(FuaXMLKml kml) {
 		FuaXMLDocument fua = kml.getDocument();
 		fua.getFolderByName("NOTAM E OUTRAS AREAS");
-		FuaXMLFolder notam = fua.getFolderByName("NOTAM E OUTRAS AREAS");
 		FuaXMLFolder lpr = fua.getFolderByName("AREAS RESTRITAS");
 		FuaXMLFolder lpd = fua.getFolderByName("AREAS PERIGOSAS");
 		FuaXMLFolder lpp = fua.getFolderByName("AREAS PROIBIDAS");
 		FuaXMLFolder lptra = fua.getFolderByName("AREAS TEMPORARIAMENTE RESTRITAS");
 		
 
-		System.out.println("AMC PROCESSING----------------------------------------");
-		//if(notam != null && notam.getPlacemarks().size() > 0) {
-		//	for(FuaXMLPlacemark place : notam.getPlacemarks()) {
-		//		place.toActivation();
-		//	}
-		//}
+		System.out.println("AMC PROCESSING");
 		
 		if(lpr != null && lpr.getPlacemarks().size() > 0) {
 			for(FuaXMLPlacemark place : lpr.getPlacemarks()) {
@@ -226,7 +218,7 @@ public class FuaManager {
 					ArrayList<SchedAct> acts = place.toSchedAct();
 
 					for(SchedAct act : acts) {
-						FuaArea areaManual = new FuaArea(a, act, act.getLimits(), "butts");
+						FuaArea areaManual = new FuaArea(a, act, act.getLimits(), act.getUserText());
 						fuaAreas.add(areaManual);
 						System.out.println(areaManual.printFuaArea());
 					}
@@ -246,7 +238,7 @@ public class FuaManager {
 					ArrayList<SchedAct> acts = place.toSchedAct();
 					
 					for(SchedAct act : acts) {
-						FuaArea areaManual = new FuaArea(a, act, act.getLimits(), "butts");
+						FuaArea areaManual = new FuaArea(a, act, act.getLimits(), act.getUserText());
 						fuaAreas.add(areaManual);
 						System.out.println(areaManual.printFuaArea());
 					}
@@ -266,7 +258,7 @@ public class FuaManager {
 					ArrayList<SchedAct> acts = place.toSchedAct();
 					
 					for(SchedAct act : acts) {
-						FuaArea areaManual = new FuaArea(a, act, act.getLimits(), "butts");
+						FuaArea areaManual = new FuaArea(a, act, act.getLimits(), act.getUserText());
 						fuaAreas.add(areaManual);
 						System.out.println(areaManual.printFuaArea());
 					}
@@ -275,10 +267,7 @@ public class FuaManager {
 				
 				
 			}
-		}
-		
-		
-		
+		}	
 	}
 	
 	public static FuaXMLKml parseFua(File fuaFile) throws JAXBException, ParserConfigurationException, SAXException, IOException {

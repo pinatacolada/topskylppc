@@ -1,7 +1,5 @@
 package fuamanager;
 
-import org.locationtech.spatial4j.context.SpatialContextFactory;
-
 /**
  * @author rtpso
  *
