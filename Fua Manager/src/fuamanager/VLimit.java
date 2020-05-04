@@ -43,7 +43,7 @@ public class VLimit {
 
 	}
 
-	public int calculateSFL() {
+	public String calculateSFL() {
 		int buffer = 10;//buffer of 1000ft of vertical separation
 		float alt = ((float) high + buffer) / 10; 
 		alt = (int) Math.ceil(alt);
@@ -56,8 +56,12 @@ public class VLimit {
 				sfl += 10;
 			}
 		}
+		
+		if(sfl < 50) {
+			return "SFA"+sfl+"00FT";
+		}
 
 
-		return sfl;
+		return "SFL"+sfl;
 	}
 }

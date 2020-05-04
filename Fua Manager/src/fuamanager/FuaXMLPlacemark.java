@@ -85,16 +85,16 @@ public class FuaXMLPlacemark {
 				String sEnd = sTimes[1];
 				start = SchedAct.ParseDate(sStart);
 				end = SchedAct.ParseDate(sEnd);
-				int sfl = limits.calculateSFL();
+				String sfl = limits.calculateSFL();
 				
 				if(name.contains("LPR42BAMC")) {
-					sfl = 40;
+					sfl = "SFA4000FT";
 				}
 				else if(name.contains("LPR51B")) {
-					sfl = 100;
+					sfl = "SFL100";
 				}
 
-				SchedAct sched = new SchedAct(start, end, "0", limits, Integer.toString(sfl));
+				SchedAct sched = new SchedAct(start, end, "0", limits, sfl);
 				schedules.add(sched);
 			}   
 

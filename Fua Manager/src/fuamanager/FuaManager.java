@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -31,7 +32,7 @@ public class FuaManager {
 	private static final int CONNECT_TIMEOUT = 5000;
 	private static final int READ_TIMEOUT = 10000;
 	private static final String FUAFILE_URL = "https://www.google.com/maps/d/u/0/kml?forcekml=1&mid=1Og8rGguyGgNR1DUpGW7Oq9k4_Xw";
-	private static final String DOWNLOADED_FUAFILE_NAME = "ESPAÇO AÉREO.kml.xml";
+	private static final String DOWNLOADED_FUAFILE_NAME = Integer.toString(LocalDate.now().getMonthValue())+Integer.toString(LocalDate.now().getDayOfMonth())+"fua.xml";
 	
 	static ArrayList<Area> areas = new ArrayList<Area>();
 	static ArrayList<FuaArea> fuaAreas = new ArrayList<FuaArea>();
@@ -168,11 +169,10 @@ public class FuaManager {
 	private static FuaXMLKml downloadFua() throws JAXBException, IOException, ParserConfigurationException, SAXException {
 		File fuaFile = new File(DOWNLOADED_FUAFILE_NAME);
 		
-		//FileUtils.copyURLToFile(new URL(FUAFILE_URL), fuaFile, CONNECT_TIMEOUT, READ_TIMEOUT);
+		FileUtils.copyURLToFile(new URL(FUAFILE_URL), fuaFile, CONNECT_TIMEOUT, READ_TIMEOUT);
 		return parseFua(fuaFile);
 		
 	}
-	
 	private static void loadFua(FuaXMLKml kml) {
 		FuaXMLDocument fua = kml.getDocument();
 		fua.getFolderByName("NOTAM E OUTRAS AREAS");
