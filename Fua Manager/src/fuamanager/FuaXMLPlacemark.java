@@ -85,7 +85,8 @@ public class FuaXMLPlacemark {
 				String sEnd = sTimes[1];
 				start = SchedAct.ParseDate(sStart);
 				end = SchedAct.ParseDate(sEnd);
-				String sfl = limits.calculateSFL();
+				
+				String sfl = limits.printSfl();
 				
 				if(name.contains("LPR42BAMC")) {
 					sfl = "SFA4000FT";

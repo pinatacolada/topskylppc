@@ -4,6 +4,7 @@ public class VLimit {
 
 	private int high;
 	private int low;
+	private int sfl;
 
 	public VLimit(int h, int l) {
 		high=h;
@@ -13,6 +14,7 @@ public class VLimit {
 	public VLimit(String sLow, String sHigh){
 		low = stringToAlt(sLow);
 		high = stringToAlt(sHigh);
+		sfl = calculateSFL();
 
 	}
 
@@ -43,13 +45,13 @@ public class VLimit {
 
 	}
 
-	public String calculateSFL() {
+	public int calculateSFL() {
 		int buffer = 10;//buffer of 1000ft of vertical separation
 		float alt = ((float) high + buffer) / 10; 
 		alt = (int) Math.ceil(alt);
-		int sfl = (int) alt *10; //next flight level in 1000ft steps
+		sfl = (int) alt *10; //next flight level in 1000ft steps
 		
-		if(sfl >410) {//if safe level ends up above RVSM, apply CVSM sep
+		if(sfl > 410) {//if safe level ends up above RVSM, apply CVSM sep
 			sfl += 10;
 			
 			if(sfl % 20 == 0) {//CVSM is only FL430, 450, 470, 490, 510, you get the gist
@@ -57,11 +59,21 @@ public class VLimit {
 			}
 		}
 		
-		if(sfl < 50) {
+		return sfl;
+	}
+
+	public int getSfl() {
+		return sfl;
+	}
+
+	public void setSfl(int sfl) {
+		this.sfl = sfl;
+	}
+	
+	public String printSfl() {
+		if(sfl < FuaManager.TRANSITION_LEVEL) {
 			return "SFA"+sfl+"00FT";
 		}
-
-
 		return "SFL"+sfl;
 	}
 }
