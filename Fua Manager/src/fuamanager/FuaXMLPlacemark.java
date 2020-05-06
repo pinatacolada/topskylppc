@@ -51,8 +51,14 @@ public class FuaXMLPlacemark {
 					String low = stringLimits[0];
 					String high = stringLimits[1];
 
-					limits = new VLimit(low, high);
-
+					limits = new VLimit(name, low, high);
+					
+					if(name.contains("LP-R42B")) {
+						limits.setSfl(40);
+					}
+					else if(name.contains("LP-R51B")) {
+						limits.setSfl(100);
+					}
 				}
 			}
 		}
@@ -64,8 +70,10 @@ public class FuaXMLPlacemark {
 			end = SchedAct.ParseDate("2359");
 		}
 		if(bits[bits.length-1].contains("NASCER")) {
-			start = SchedAct.ParseDate("0800");
-			end = SchedAct.ParseDate("1800");
+			LocalDateTime sr = Tools.getSunrise();
+			LocalDateTime ss = Tools.getSunset();
+			start = SchedAct.ParseDate(""+sr.getHour()+sr.getMinute());
+			end = SchedAct.ParseDate(""+ss.getHour()+ss.getMinute());
 		}
 		if(description.contains("UTC")) {
 			String schedule = description;
@@ -75,8 +83,6 @@ public class FuaXMLPlacemark {
 
 			Matcher m = Pattern.compile("\\d\\d[:]\\d\\d[-]\\d\\d[:]\\d\\d").matcher(schedule);
 			while (m.find()) {
-				
-				
 				String match = m.group();
 
 				match = match.replaceAll(":", "");
@@ -85,22 +91,12 @@ public class FuaXMLPlacemark {
 				String sEnd = sTimes[1];
 				start = SchedAct.ParseDate(sStart);
 				end = SchedAct.ParseDate(sEnd);
-				
-				String sfl = limits.printSfl();
-				
-				if(name.contains("LPR42BAMC")) {
-					sfl = "SFA4000FT";
-				}
-				else if(name.contains("LPR51B")) {
-					sfl = "SFL100";
-				}
-
-				SchedAct sched = new SchedAct(start, end, "0", limits, sfl);
-				schedules.add(sched);
 			}   
-
 		}
 
+		SchedAct sched = new SchedAct(start, end, "0", limits, limits.printSfl());
+		schedules.add(sched);
+		
 		System.out.println(name+description);
 		return schedules;
 

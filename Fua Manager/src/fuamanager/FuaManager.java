@@ -30,6 +30,7 @@ public class FuaManager {
 	public static final String SATURDAY = "6";
 	public static final String SUNDAY = "7";
 	public static final int TRANSITION_LEVEL = 50;
+	public static final ArrayList<String> FUA_FOLDERS = new ArrayList<String>(Arrays.asList("AREAS RESTRITAS", "AREAS PERIGOSAS", "AREAS PROIBIDAS", "AREAS TEMPORARIAMENTE RESTRITAS"));
 
 	private static final int CONNECT_TIMEOUT = 5000;
 	private static final int READ_TIMEOUT = 10000;
@@ -158,7 +159,6 @@ public class FuaManager {
 	 * @return The Area object. Null if not found.
 	 */
 	private static Area findAreabyName(String name) {
-		Area result = null;
 
 		name = name.replace("-", "");
 
@@ -169,15 +169,7 @@ public class FuaManager {
 			name = "LPR42BAMC";
 		}
 
-
-		for (Area a : areas) {
-			if (a.getName().equals(name)) {
-				result = a;
-				break;
-			}
-		}
-
-		return result;
+		return findAreabyNameStrict(name);
 	}
 
 	/**
@@ -207,20 +199,15 @@ public class FuaManager {
 	}
 	private static void loadFua(FuaXMLKml kml) {
 		FuaXMLDocument fua = kml.getDocument();
-		FuaXMLFolder notam = fua.getFolderByName("NOTAM E OUTRAS AREAS");//TODO
-		FuaXMLFolder lpr = fua.getFolderByName("AREAS RESTRITAS");
-		FuaXMLFolder lpd = fua.getFolderByName("AREAS PERIGOSAS");
-		FuaXMLFolder lpp = fua.getFolderByName("AREAS PROIBIDAS");
-		FuaXMLFolder lptra = fua.getFolderByName("AREAS TEMPORARIAMENTE RESTRITAS");
-
-
+		
 		System.out.println("AMC PROCESSING");
 		
-		loadFuaXMLFolder(lpr);
-		loadFuaXMLFolder(lpd);
-		loadFuaXMLFolder(lpp);
-		loadFuaXMLFolder(lptra);
-	
+		for(String folderName : FUA_FOLDERS) {
+			FuaXMLFolder folder = fua.getFolderByName(folderName);
+			loadFuaXMLFolder(folder);
+		}
+		
+		
 	}
 
 	public static FuaXMLKml parseFua(File fuaFile) throws JAXBException, ParserConfigurationException, SAXException, IOException {

@@ -1,6 +1,6 @@
 package fuamanager;
 
-public class VLimit {
+public class VLimit{
 
 	private int high;
 	private int low;
@@ -9,6 +9,7 @@ public class VLimit {
 	public VLimit(int h, int l) {
 		high=h;
 		low=l;
+		sfl = calculateSFL();
 	}
 
 	public VLimit(String sLow, String sHigh){
@@ -17,6 +18,14 @@ public class VLimit {
 		sfl = calculateSFL();
 
 	}
+
+	public VLimit(String name, String sLow, String sHigh) {
+		low = stringToAlt(sLow);
+		high = stringToAlt(sHigh);
+		sfl = calculateSFL();
+	}
+	
+	
 
 	public String printVLimit() {
 		return low+":"+high;
