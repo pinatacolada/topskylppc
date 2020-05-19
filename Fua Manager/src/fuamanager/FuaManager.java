@@ -9,6 +9,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -30,7 +32,7 @@ public class FuaManager {
 	public static final String SATURDAY = "6";
 	public static final String SUNDAY = "7";
 	public static final int TRANSITION_LEVEL = 50;
-	public static final ArrayList<String> FUA_FOLDERS = new ArrayList<String>(Arrays.asList("AREAS RESTRITAS", "AREAS PERIGOSAS", "AREAS PROIBIDAS", "AREAS TEMPORARIAMENTE RESTRITAS"));
+	public static final ArrayList<String> FUA_FOLDERS = new ArrayList<String>(Arrays.asList("AREAS LP-R", "AREAS LP-D", "LP-P", "AREAS  LP-TRA"));//, "NOTAM E OUTRAS AREAS"
 
 	private static final int CONNECT_TIMEOUT = 5000;
 	private static final int READ_TIMEOUT = 10000;
@@ -159,7 +161,7 @@ public class FuaManager {
 	 * @return The Area object. Null if not found.
 	 */
 	private static Area findAreabyName(String name) {
-
+		name = name.replaceAll("\\s+","");
 		name = name.replace("-", "");
 
 		if(name.contains("LPR60B")) {
@@ -168,7 +170,7 @@ public class FuaManager {
 		if(name.contains("LPR42B")) {
 			name = "LPR42BAMC";
 		}
-
+		
 		return findAreabyNameStrict(name);
 	}
 
@@ -179,10 +181,11 @@ public class FuaManager {
 	 */
 	private static Area findAreabyNameStrict(String name) {
 		Area result = null;
-
+		System.out.println("tired of this "+name);
 		for (Area a : areas) {
-			if (a.getName().equals(name)) {
+			if (a.getName().contains(name)) {
 				result = a;
+				System.out.println("found it");
 				break;
 			}
 		}
@@ -199,15 +202,16 @@ public class FuaManager {
 	}
 	private static void loadFua(FuaXMLKml kml) {
 		FuaXMLDocument fua = kml.getDocument();
-		
+
 		System.out.println("AMC PROCESSING");
-		
+
 		for(String folderName : FUA_FOLDERS) {
 			FuaXMLFolder folder = fua.getFolderByName(folderName);
 			loadFuaXMLFolder(folder);
+			System.out.println("LOASKLDDED "+folder.getName());
 		}
-		
-		
+
+
 	}
 
 	public static FuaXMLKml parseFua(File fuaFile) throws JAXBException, ParserConfigurationException, SAXException, IOException {
@@ -224,22 +228,77 @@ public class FuaManager {
 
 	public static void loadFuaXMLFolder(FuaXMLFolder folder) {
 		if(folder != null && folder.getPlacemarks().size() > 0) {
-			for(FuaXMLPlacemark place : folder.getPlacemarks()) {
+			if(folder.getName().contains("NOTAM")){
+				for(FuaXMLPlacemark place : folder.getPlacemarks()) {
+					//regex [A-Z]\d\d\d\d
+					Matcher m = Pattern.compile("[A-Z]\\d\\d\\d\\d").matcher(place.getDescription());
+					while(m.find()) {
+						String notamId = m.group();
+						System.out.println("searching "+notamId);
+						Area a = findAreabyName(notamId);
+						if(a != null) {
 
-				Area a = findAreabyName(place.getName());
+							if(a.isNotam()) {
 
-				if(a.isAmc()) {
-					ArrayList<SchedAct> acts = place.toSchedAct();
+								ArrayList<SchedAct> acts = place.toSchedAct();
 
-					for(SchedAct act : acts) {
-						FuaArea areaManual = new FuaArea(a, act, act.getLimits(), act.getUserText());
-						fuaAreas.add(areaManual);
-						System.out.println(areaManual.printFuaArea());
+								for(SchedAct act : acts) {
+									FuaArea areaManual = new FuaArea(a, act, act.getLimits(), act.getUserText());
+									fuaAreas.add(areaManual);
+									System.out.println(areaManual.printFuaArea());
+								}
+							}
+						}
+							else {//create
+
+								System.out.println("CREATING AREA "+notamId);
+
+
+								String areaSfl = null;
+								FuaCoordinate labelCoordinate = null;
+								ALabel label = new ALabel(labelCoordinate, areaSfl);
+
+								ArrayList<Activation> activations = new ArrayList<Activation>();
+								activations.add( new NotamAct("LPPC", "AIRSPACE RESERVATION FOR UNAMNNED ACFT ACTIVITY WILL TAKE PLACE ON AREA 2B BOUNDED BY:"));
+
+								VLimit limits = null;
+								
+								String[] bits = place.getDescription().split("<br>");
+								for(String s : bits) {
+									if(s.contains("/")) {
+										String[] stringLimits = s.split("/");
+										String low = stringLimits[0];
+										String high = stringLimits[1];
+
+										limits = new VLimit(low, high);
+									}
+								}
+
+								ArrayList<FuaCoordinate> coordinates = place.getCoordinates();
+								Area area = new Area(notamId, "NOTAM", label , limits , null, null, null, activations, null, false, false, false, null, null, notamId, coordinates);
+								areas.add(area);	
+							}
+						}
+					}
+				}
+				else {
+					for(FuaXMLPlacemark place : folder.getPlacemarks()) {
+						System.out.println(folder.getName());
+						Area a = findAreabyName(place.getName());
+
+						if(a!=null && a.isAmc()) {
+							ArrayList<SchedAct> acts = place.toSchedAct();
+
+							for(SchedAct act : acts) {
+								FuaArea areaManual = new FuaArea(a, act, act.getLimits(), act.getUserText());
+								fuaAreas.add(areaManual);
+								System.out.println(areaManual.printFuaArea());
+							}
+						}
 					}
 				}
 			}
 		}
 	}
 	
-}
 

@@ -52,6 +52,7 @@ public class FuaCoordinate {
 	 * @return The coordinate in DDM format
 	 */
 	public String correctFuaCoordinate(String coord, boolean isLatitude) {
+		
 		int degrees;
 		int minutes;
 		int seconds;
@@ -69,7 +70,6 @@ public class FuaCoordinate {
 			//59.904167
 		
 			degrees = Integer.parseInt(split[0]);
-		
 			//54.25002
 			double tempMin = Double.parseDouble(split[1]) * 0.00006;
 			minutes = (int)tempMin;
@@ -92,11 +92,14 @@ public class FuaCoordinate {
 					sign = "W";
 				}
 			}
+			
 			//N038.49.15.000 W008.53.20.000
-			sDegrees = String.format("%3d", Integer.toString(degrees));
-			sMinutes = String.format("%2d", Integer.toString(minutes));
-			sSeconds = String.format("%2d", Integer.toString(seconds));
-			sMiliseconds = String.format("%3d", Integer.toString(miliseconds));
+			degrees = Math.abs(degrees);
+
+			sDegrees = String.format("%3s", Integer.toString(degrees));
+			sMinutes = String.format("%2s", Integer.toString(minutes));
+			sSeconds = String.format("%2s", Integer.toString(seconds));
+			sMiliseconds = String.format("%3s", Integer.toString(miliseconds));
 			
 			return sign+sDegrees+"."+sMinutes+"."+sSeconds+sMiliseconds;
 		}

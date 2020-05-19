@@ -27,6 +27,7 @@ public class Area {
 	private BufferVert sapv;
 	private ArrayList <String> comments = new ArrayList<String>();
 	private boolean amc = false;
+	private String notam;
 
 	//TODO figure this out eventually
 	//Factory spatialContextFactory = new SpatialContextFactory();
@@ -38,22 +39,23 @@ public class Area {
 	 * @param category Area category
 	 * @param coordinates List containing FuaCoordinates defining the area
 	 */
-	public Area(String name, String category, FuaCoordinate[] coordinates) {
+	public Area(String name, String category, ALabel label, VLimit limits, BufferLat apwbl, BufferVert apwbv, String usertext, ArrayList<Activation> active, AreaBound bound, Boolean msaw, Boolean apw, Boolean sap, BufferLat sapl, BufferVert sapv, String notam, ArrayList<FuaCoordinate> coordinates) {
 		super();
 		this.setName(name);
 		this.category = category;
-		label = null;
-		limits = null;
-		apwbl = null;
-		apwbv = null;
-		usertext = null;
-		active = null;
-		bound = null;
-		msaw = true;
-		apw = true;
-		sap = true;
-		sapl = null;
-		sapv = null;
+		this.label = label;
+		this.limits = limits;
+		this.apwbl = apwbl;
+		this.apwbv = apwbv;
+		this.usertext = usertext;
+		this.active = active;
+		this.bound = bound;
+		this.msaw = msaw;
+		this.apw = apw;
+		this.sap = sap;
+		this.sapl = sapl;
+		this.sapv = sapv;
+		this.notam = notam;
 		
 		for(FuaCoordinate loc : coordinates) {
 			this.getCoordinates().add(loc);
@@ -81,6 +83,10 @@ public class Area {
 					category = parts[1];
 					if(category.contains("AMC")) {
 						setAmc(true);
+					}
+					if(category.contains("NOTAM")) {
+						System.out.println("HEYO: "+name);
+						setNotam(name);
 					}
 				}
 				else if(line.contains("LABEL")) {
@@ -158,6 +164,8 @@ public class Area {
 		}	
 	}
 	
+	
+
 	private void unsupportedFunction(String s) {
 		System.out.println("Function not supported. Line causing issue: "+s);
 	}
@@ -193,5 +201,22 @@ public class Area {
 
 	public void setAmc(boolean amc) {
 		this.amc = amc;
+	}
+	
+	public boolean isNotam() {
+		System.out.println("k im here");
+		if(notam != null ||!notam.isBlank()) {
+			System.out.println("ITRS TRUE TURST ME");
+			return true;
+		}
+		System.out.println("LEIS");return false;
+	}
+
+	public void setNotam(String text) {
+		this.notam = text;
+	}
+	
+	public String getNotam() {
+		return notam;
 	}
 }

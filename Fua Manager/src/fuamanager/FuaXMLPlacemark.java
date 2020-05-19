@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 public class FuaXMLPlacemark {
 	private String name;
 	private String description;
+	private ArrayList <FuaCoordinate> coordinates = new ArrayList<FuaCoordinate>();
 
 	public String getName() {
 		return name;
@@ -36,13 +37,13 @@ public class FuaXMLPlacemark {
 		System.out.println("----------------------------------------------------------------------------------------------------------------------------------");
 		
 		if(name.contains("LP-TRA54") || name.contains("LP-TRA55")) {
-			String[] stringLimits = bits[2].split("/");
+			String[] stringLimits = bits[3].split("/");
 			String low = stringLimits[0];
 			String high = stringLimits[1];
 			
 			limits = new VLimit(low, high);
 			
-			description = bits[3];
+			description = bits[6];
 		}
 		else {
 			for(String s : bits) {
@@ -57,7 +58,7 @@ public class FuaXMLPlacemark {
 						limits.setSfl(40);
 					}
 					else if(name.contains("LP-R51B")) {
-						limits.setSfl(100);
+						limits.setSfl(60);
 					}
 				}
 			}
@@ -84,14 +85,21 @@ public class FuaXMLPlacemark {
 			Matcher m = Pattern.compile("\\d\\d[:]\\d\\d[-]\\d\\d[:]\\d\\d").matcher(schedule);
 			while (m.find()) {
 				String match = m.group();
-
+				System.out.println("JEP ME "+match);
 				match = match.replaceAll(":", "");
 				sTimes = match.split("-");
 				String sStart = sTimes[0];
 				String sEnd = sTimes[1];
 				start = SchedAct.ParseDate(sStart);
 				end = SchedAct.ParseDate(sEnd);
-			}   
+				
+				SchedAct sched = new SchedAct(start, end, "0", limits, limits.printSfl());
+				schedules.add(sched);
+				System.out.println(name+description);
+				
+			}
+			
+			return schedules;  
 		}
 
 		SchedAct sched = new SchedAct(start, end, "0", limits, limits.printSfl());
@@ -100,5 +108,29 @@ public class FuaXMLPlacemark {
 		System.out.println(name+description);
 		return schedules;
 
+	}
+
+	public ArrayList <FuaCoordinate> getCoordinates() {
+		return coordinates;
+	}
+	
+	public void addCoordinate(FuaCoordinate c) {
+		coordinates.add(c);
+	}
+
+	public void setCoordinates(ArrayList <FuaCoordinate> coordinates) {
+		this.coordinates = coordinates;
+	}
+
+	public void addCoordinate(String rawCoords) {
+		String treatedCoords = rawCoords.replaceAll("\\s+","");
+		
+		String[] coords = treatedCoords.split(",0");
+		
+		for(String coord : coords) {
+			String[] coordPair = coord.split(",");
+			FuaCoordinate c = new FuaCoordinate(coordPair[0], coordPair[1]);
+			coordinates.add(c);
+		}
 	}
 }
