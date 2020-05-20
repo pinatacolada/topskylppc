@@ -85,7 +85,6 @@ public class FuaXMLPlacemark {
 			Matcher m = Pattern.compile("\\d\\d[:]\\d\\d[-]\\d\\d[:]\\d\\d").matcher(schedule);
 			while (m.find()) {
 				String match = m.group();
-				System.out.println("JEP ME "+match);
 				match = match.replaceAll(":", "");
 				sTimes = match.split("-");
 				String sStart = sTimes[0];

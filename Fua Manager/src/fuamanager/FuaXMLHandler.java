@@ -28,7 +28,7 @@ public class FuaXMLHandler extends DefaultHandler{
 
 	@Override
 	public void characters(char[] ch, int start, int length) throws SAXException {
-		elementValue += new String(ch, start, length);//TODO
+		elementValue += new String(ch, start, length);
 	}
 
 	@Override

@@ -85,7 +85,6 @@ public class Area {
 						setAmc(true);
 					}
 					if(category.contains("NOTAM")) {
-						System.out.println("HEYO: "+name);
 						setNotam(name);
 					}
 				}
@@ -206,10 +205,9 @@ public class Area {
 	public boolean isNotam() {
 		System.out.println("k im here");
 		if(notam != null ||!notam.isBlank()) {
-			System.out.println("ITRS TRUE TURST ME");
 			return true;
 		}
-		System.out.println("LEIS");return false;
+		return false;
 	}
 
 	public void setNotam(String text) {
