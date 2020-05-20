@@ -1,13 +1,19 @@
 package fuamanager;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -57,12 +63,49 @@ public class FuaManager {
 			exportFuaAreas();
 		}
 		else if( args[0].contains("-A")) {
+			doNotams();
 			loadAreas(new File("TopSkyAreas.txt"));
 			FuaXMLKml kml = downloadFua();
 			loadFua(kml);
 			exportFuaAreas();
 		}
 
+
+	}
+
+	private static void doNotams() throws IOException {
+		// TODO Auto-generated method stub
+		//POST https://www.notams.faa.gov/dinsQueryWeb/queryRetrievalMapAction.do
+		//PARAM reportType=Report&retrieveLocId=lppc&actionType=notamRetrievalByICAOs&submit=View+NOTAMs
+
+		URL url = new URL("https://www.notams.faa.gov/dinsQueryWeb/queryRetrievalMapAction.do");
+		HttpURLConnection con = (HttpURLConnection) url.openConnection();
+		con.setRequestMethod("POST");
+
+		con.setDoOutput(true);
+		DataOutputStream out = new DataOutputStream(con.getOutputStream());
+		out.writeBytes("reportType=Raw&retrieveLocId=lppc&actionType=notamRetrievalByICAOs&submit=NOTAMs");
+		out.flush();
+		out.close();
+
+		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+		String inputLine;
+		StringBuffer raw = new StringBuffer();
+		while ((inputLine = in.readLine()) != null) {
+			raw.append(inputLine);
+		}
+		in.close();
+		
+		con.disconnect();
+		
+		Matcher m = Pattern.compile("<PRE\\b[^>]*>(.*?)<\\/PRE>").matcher(raw);
+		while (m.find()) {
+			String match = m.group();
+			match = match.replaceAll("</PRE>", "");
+			match = match.replaceAll("<PRE>", "");
+			System.out.println(match);
+			
+		}
 
 	}
 
@@ -170,7 +213,7 @@ public class FuaManager {
 		if(name.contains("LPR42B")) {
 			name = "LPR42BAMC";
 		}
-		
+
 		return findAreabyNameStrict(name);
 	}
 
@@ -181,11 +224,9 @@ public class FuaManager {
 	 */
 	private static Area findAreabyNameStrict(String name) {
 		Area result = null;
-		System.out.println("tired of this "+name);
 		for (Area a : areas) {
 			if (a.getName().contains(name)) {
 				result = a;
-				System.out.println("found it");
 				break;
 			}
 		}
@@ -208,7 +249,6 @@ public class FuaManager {
 		for(String folderName : FUA_FOLDERS) {
 			FuaXMLFolder folder = fua.getFolderByName(folderName);
 			loadFuaXMLFolder(folder);
-			System.out.println("LOASKLDDED "+folder.getName());
 		}
 
 
@@ -249,56 +289,56 @@ public class FuaManager {
 								}
 							}
 						}
-							else {//create
+						else {//create
 
-								System.out.println("CREATING AREA "+notamId);
+							System.out.println("CREATING AREA "+notamId);
 
 
-								String areaSfl = null;
-								FuaCoordinate labelCoordinate = null;
-								ALabel label = new ALabel(labelCoordinate, areaSfl);
+							String areaSfl = null;
+							FuaCoordinate labelCoordinate = null;
+							ALabel label = new ALabel(labelCoordinate, areaSfl);
 
-								ArrayList<Activation> activations = new ArrayList<Activation>();
-								activations.add( new NotamAct("LPPC", "AIRSPACE RESERVATION FOR UNAMNNED ACFT ACTIVITY WILL TAKE PLACE ON AREA 2B BOUNDED BY:"));
+							ArrayList<Activation> activations = new ArrayList<Activation>();
+							activations.add( new NotamAct("LPPC", "AIRSPACE RESERVATION FOR UNAMNNED ACFT ACTIVITY WILL TAKE PLACE ON AREA 2B BOUNDED BY:"));
 
-								VLimit limits = null;
-								
-								String[] bits = place.getDescription().split("<br>");
-								for(String s : bits) {
-									if(s.contains("/")) {
-										String[] stringLimits = s.split("/");
-										String low = stringLimits[0];
-										String high = stringLimits[1];
+							VLimit limits = null;
 
-										limits = new VLimit(low, high);
-									}
+							String[] bits = place.getDescription().split("<br>");
+							for(String s : bits) {
+								if(s.contains("/")) {
+									String[] stringLimits = s.split("/");
+									String low = stringLimits[0];
+									String high = stringLimits[1];
+
+									limits = new VLimit(low, high);
 								}
-
-								ArrayList<FuaCoordinate> coordinates = place.getCoordinates();
-								Area area = new Area(notamId, "NOTAM", label , limits , null, null, null, activations, null, false, false, false, null, null, notamId, coordinates);
-								areas.add(area);	
 							}
+
+							ArrayList<FuaCoordinate> coordinates = place.getCoordinates();
+							Area area = new Area(notamId, "NOTAM", label , limits , null, null, null, activations, null, false, false, false, null, null, notamId, coordinates);
+							areas.add(area);	
 						}
 					}
 				}
-				else {
-					for(FuaXMLPlacemark place : folder.getPlacemarks()) {
-						System.out.println(folder.getName());
-						Area a = findAreabyName(place.getName());
+			}
+			else {
+				for(FuaXMLPlacemark place : folder.getPlacemarks()) {
+					System.out.println(folder.getName());
+					Area a = findAreabyName(place.getName());
 
-						if(a!=null && a.isAmc()) {
-							ArrayList<SchedAct> acts = place.toSchedAct();
+					if(a!=null && a.isAmc()) {
+						ArrayList<SchedAct> acts = place.toSchedAct();
 
-							for(SchedAct act : acts) {
-								FuaArea areaManual = new FuaArea(a, act, act.getLimits(), act.getUserText());
-								fuaAreas.add(areaManual);
-								System.out.println(areaManual.printFuaArea());
-							}
+						for(SchedAct act : acts) {
+							FuaArea areaManual = new FuaArea(a, act, act.getLimits(), act.getUserText());
+							fuaAreas.add(areaManual);
+							System.out.println(areaManual.printFuaArea());
 						}
 					}
 				}
 			}
 		}
 	}
-	
+}
+
 

@@ -203,7 +203,6 @@ public class Area {
 	}
 	
 	public boolean isNotam() {
-		System.out.println("k im here");
 		if(notam != null ||!notam.isBlank()) {
 			return true;
 		}
