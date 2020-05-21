@@ -106,4 +106,57 @@ public class FuaCoordinate {
 		return coord;//everything was fine already you dingus
 	}
 	
+	public static String icaoToFuaCoordinate(String rawCoord) {
+		String lat = null;
+		String lon = null;
+		
+		if(rawCoord.contains("N")) {
+			lat = "N0"+rawCoord.split("N")[0];
+			lon = rawCoord.split("N")[1];
+		}
+		if(rawCoord.contains("S")) {
+			lat = "S0"+rawCoord.split("S")[0];
+			lon = rawCoord.split("S")[1];
+		}
+		
+		lon = lon.subSequence(lon.length()-1, lon.length()) + lon;
+		lon = lon.substring(0, lon.length()-1);
+		
+		lat = formatToFua(lat);
+		lon = formatToFua(lon);
+		
+		return lat+" "+lon;
+	}
+	
+	public static String formatToFua(String raw) {
+		if(raw.length() < 7) {
+			raw += "00.000";
+		}
+		
+		raw = raw.substring(0, 4)+"."+raw.substring(4);
+		raw = raw.substring(0, 7)+"."+raw.substring(7);
+		
+		return raw;
+		
+	}
+	
+	public static String formatToNotam(String raw) {
+		raw = raw.replaceAll("\\.", "");
+		raw = raw.substring(0, raw.length() - 5);
+		
+		String sign = raw.substring(0, 1);
+		if(raw.contains("N") || raw.contains("S")) {
+			raw = raw.substring(2, raw.length())+sign;
+		}
+		else {
+			raw = raw.substring(1, raw.length())+sign;
+		}
+		
+		
+		return raw;
+	}
+	public String printNotam() {
+		return formatToNotam(lat)+formatToNotam(lon);
+	}
+	
 }

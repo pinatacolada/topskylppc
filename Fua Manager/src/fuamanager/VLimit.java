@@ -30,6 +30,10 @@ public class VLimit{
 	public String printVLimit() {
 		return low+":"+high;
 	}
+	
+	public String printNotamVLString() {
+		return String.format("%03d", low)+"/"+String.format("%03d", high);
+	}
 
 	public int stringToAlt(String s) {
 		int level = -1;

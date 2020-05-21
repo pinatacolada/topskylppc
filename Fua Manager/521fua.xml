@@ -2,7 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <name>ESPAÇO AÉREO</name>
-    <description><![CDATA[ACTUALIZADO 06:05 UTC 20 MAIO 2020<br>PROGRAMAÇÃO DIÁRIA DO ESPAÇO AÉREO DE USO FLEXÍVEL e NOTAM's relevantes para o voo VFR em Portugal.  Consulte também : http://cavok.pt/fuaflex/notams-portugal/]]></description>
+    <description><![CDATA[ACTUALIZADO 05:35 UTC 21 MAIO 2020<br>PROGRAMAÇÃO DIÁRIA DO ESPAÇO AÉREO DE USO FLEXÍVEL e NOTAM's relevantes para o voo VFR em Portugal.  Consulte também : http://cavok.pt/fuaflex/notams-portugal/]]></description>
     <Style id="icon-1203-labelson">
       <IconStyle>
         <scale>1.1</scale>
@@ -241,28 +241,6 @@
         <styleUrl>#line-AAFF7F-6000-highlight</styleUrl>
       </Pair>
     </StyleMap>
-    <Style id="line-AAFFFF-6000-normal">
-      <LineStyle>
-        <color>ffffffaa</color>
-        <width>6</width>
-      </LineStyle>
-    </Style>
-    <Style id="line-AAFFFF-6000-highlight">
-      <LineStyle>
-        <color>ffffffaa</color>
-        <width>9</width>
-      </LineStyle>
-    </Style>
-    <StyleMap id="line-AAFFFF-6000">
-      <Pair>
-        <key>normal</key>
-        <styleUrl>#line-AAFFFF-6000-normal</styleUrl>
-      </Pair>
-      <Pair>
-        <key>highlight</key>
-        <styleUrl>#line-AAFFFF-6000-highlight</styleUrl>
-      </Pair>
-    </StyleMap>
     <Style id="line-F8971B-5650-normal">
       <LineStyle>
         <color>ff1b97f8</color>
@@ -305,6 +283,28 @@
       <Pair>
         <key>highlight</key>
         <styleUrl>#line-FF0000-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-FF0000-6000-normal">
+      <LineStyle>
+        <color>ff0000ff</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-FF0000-6000-highlight">
+      <LineStyle>
+        <color>ff0000ff</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-FF0000-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FF0000-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FF0000-6000-highlight</styleUrl>
       </Pair>
     </StyleMap>
     <Style id="poly-000000-6000-127-normal">
@@ -18854,7 +18854,7 @@
       <Placemark>
         <name>TROIA</name>
         <description><![CDATA[RESERVA ESPAﾃ�O Aﾃ嘘EO - TREINO BUSCA E SALVAMENTO<br><br>SFC/1,000ft AMSL<br>RESERVADO 21 MAIO 10:30-12:10 UTC<br><br>NOTAM A1455/20]]></description>
-        <styleUrl>#line-AAFFFF-6000</styleUrl>
+        <styleUrl>#line-FF0000-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19539,7 +19539,7 @@
       </Placemark>
       <Placemark>
         <name>LP-R60B</name>
-        <description><![CDATA[AREA RESTRITA - MONTE REAL<br>ESPAﾃ�O AEREO DELTA<br>1,000ft AGL AMSL/FL245<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>APROXIMAﾃ�ﾃグ MONTE REAL - 122.100MHz<br>LISBOA MILITAR - 123.750MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-3/9<br><br>ACTIVAﾃ�ﾃグ POR FUA<br>FL245/FL500<br>RESTRITA 15:00-17:30 20:30-22:30 UTC]]></description>
+        <description><![CDATA[AREA RESTRITA - MONTE REAL<br>ESPAﾃ�O AEREO DELTA<br>1,000ft AGL AMSL/FL245<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>APROXIMAﾃ�ﾃグ MONTE REAL - 122.100MHz<br>LISBOA MILITAR - 123.750MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-3/9<br><br>ACTIVAﾃ�ﾃグ POR FUA<br>FL245/FL500<br>RESTRITA 10:30-12:30 14:00-16:30 UTC]]></description>
         <styleUrl>#poly-FFFF00-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -19976,7 +19976,7 @@
       <name>AREAS  LP-TRA</name>
       <Placemark>
         <name>LP-TRA55</name>
-        <description><![CDATA[AREA RESTRITA TEMPORARIA - COVILHA<br><br>EXERCICIOS AEREOS<br>1,500ft AMSL/FL245<br><br>ACTIVAﾃ�ﾃグ FUA<br>RESTRITA  15:00-17:30 20:30-22:30 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-13<br><br>RESERVA ESPAﾃ�O Aﾃ嘘EO  - EXERCﾃ垢IOS MILITARES NEVERLAND AREA<br>FL245/FL280<br>RESERVADA 20 MAIO 15:00-17:30 UTC<br>RESERVADA 21 MAIO 10:30-12:30 14:00-16:30 UTCC<br><br>NOTAM A1412/20]]></description>
+        <description><![CDATA[AREA RESTRITA TEMPORARIA - COVILHA<br><br>EXERCICIOS AEREOS<br>1,500ft AMSL/FL245<br><br>ACTIVAﾃ�ﾃグ FUA<br>RESTRITA  10:30-12:30 14:00-16:30 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-13<br><br>RESERVA ESPAﾃ�O Aﾃ嘘EO  - EXERCﾃ垢IOS MILITARES NEVERLAND AREA<br>FL245/FL280<br>RESERVADA 21 MAIO 10:30-12:30 14:00-16:30 UTCC<br><br>NOTAM A1412/20]]></description>
         <styleUrl>#poly-AA0000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20009,7 +20009,7 @@
       </Placemark>
       <Placemark>
         <name>LP-TRA54</name>
-        <description><![CDATA[AREA RESTRITA TEMPORARIA - MONCORVO<br><br>EXERCICIOS AEREOS<br>GND/FL245<br><br>ACTIVAﾃ�ﾃグ FUA<br>RESTRITA  15:00-17:30 20:30-22:30 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-13<br><br>RESERVA ESPAﾃ�O Aﾃ嘘EO  - EXERCﾃ垢IOS MILITARES NEVERLAND AREA<br>FL245/FL280<br>RESERVADA 20 MAIO 15:00-17:30 UTC<br>RESERVADA 21 MAIO 10:30-12:30 14:00-16:30 UTC<br><br><br><br><br>NOTAM A1411/20]]></description>
+        <description><![CDATA[AREA RESTRITA TEMPORARIA - MONCORVO<br><br>EXERCICIOS AEREOS<br>GND/FL245<br><br>ACTIVAﾃ�ﾃグ FUA<br>RESTRITA  10:30-12:30 14:00-16:30 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-13<br><br>RESERVA ESPAﾃ�O Aﾃ嘘EO  - EXERCﾃ垢IOS MILITARES NEVERLAND AREA<br>FL245/FL280<br>RESERVADA 21 MAIO 10:30-12:30 14:00-16:30 UTC<br><br>NOTAM A1411/20]]></description>
         <styleUrl>#poly-AA0000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20051,26 +20051,6 @@
     </Folder>
     <Folder>
       <name>AREAS LP-D</name>
-      <Placemark>
-        <name>LP-D66</name>
-        <description><![CDATA[AREA PERIGOSA - ALCOCHETE<br><br>EXERCICIOS AEREOS<br>GND/5,000ft AMSL<br><br>ACTIVAﾃ�ﾃグ FUA<br>PERIGOSA  08:30-16:00 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-10]]></description>
-        <styleUrl>#poly-000000-6000-127</styleUrl>
-        <Polygon>
-          <outerBoundaryIs>
-            <LinearRing>
-              <tessellate>1</tessellate>
-              <coordinates>
-                -8.884022,38.787464,0
-                -8.88376,38.767211,0
-                -8.809398,38.738296,0
-                -8.701239,38.737964,0
-                -8.701234,38.787348,0
-                -8.884022,38.787464,0
-              </coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </Placemark>
       <Placemark>
         <name>LP-D28A</name>
         <description><![CDATA[AREA PERIGOSA - VENDAS NOVAS<br><br>FOGO ARTILHARIA<br>GND/3,300ft AMSL<br>PERIGOSA DIAS UTEIS 06:00-22:59 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-3]]></description>
@@ -20114,7 +20094,7 @@
       </Placemark>
       <Placemark>
         <name>LP-D67</name>
-        <description><![CDATA[AREA PERIGOSA - MAR W MONTE REAL<br><br>EXERCICIOS AEREOS<br>4,000ft AMSL/FL300<br><br>ACTIVAﾃ�ﾃグ FUA<br>PERIGOSA  15:00-17:30 20:30-22:30  UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-10]]></description>
+        <description><![CDATA[AREA PERIGOSA - MAR W MONTE REAL<br><br>EXERCICIOS AEREOS<br>4,000ft AMSL/FL300<br><br>ACTIVAﾃ�ﾃグ FUA<br>PERIGOSA  10:30-12:30 14:00-16:30  UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-10]]></description>
         <styleUrl>#poly-000000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>

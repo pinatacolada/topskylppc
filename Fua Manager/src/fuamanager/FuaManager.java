@@ -78,7 +78,7 @@ public class FuaManager {
 		//POST https://www.notams.faa.gov/dinsQueryWeb/queryRetrievalMapAction.do
 		//PARAM reportType=Report&retrieveLocId=lppc&actionType=notamRetrievalByICAOs&submit=View+NOTAMs
 
-		URL url = new URL("https://www.notams.faa.gov/dinsQueryWeb/queryRetrievalMapAction.do");
+		URL url = new URL("https://www.notams.faa.gov/dinsQueryWeb/queryRetrievalMapAction.do");//TODO figure out why no \n here
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();
 		con.setRequestMethod("POST");
 
@@ -103,8 +103,9 @@ public class FuaManager {
 			String match = m.group();
 			match = match.replaceAll("</PRE>", "");
 			match = match.replaceAll("<PRE>", "");
-			System.out.println(match);
 			
+			Notam n = new Notam(match);
+			System.out.println(n.printNotam());
 		}
 
 	}
