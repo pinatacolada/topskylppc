@@ -296,7 +296,7 @@ public class FuaManager {
 			FuaXMLFolder folder = fua.getFolderByName(folderName);
 			loadFuaXMLFolder(folder);
 		}
-
+		System.out.println("AMC PROCESSING ENDED");
 
 	}
 
@@ -369,7 +369,6 @@ public class FuaManager {
 			}
 			else {
 				for(FuaXMLPlacemark place : folder.getPlacemarks()) {
-					System.out.println(folder.getName());
 					Area a = findAreabyName(place.getName());
 
 					if(a!=null && a.isAmc()) {

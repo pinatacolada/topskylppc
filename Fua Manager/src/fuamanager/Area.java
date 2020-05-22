@@ -48,7 +48,7 @@ public class Area {
 		this.apwbl = apwbl;
 		this.apwbv = apwbv;
 		this.usertext = usertext;
-		this.active = active;
+		this.setActive(active);
 		this.bound = bound;
 		this.msaw = msaw;
 		this.apw = apw;
@@ -103,10 +103,10 @@ public class Area {
 				}
 				else if(line.contains("ACTIVE")){
 					switch(parts[1]) {
-						case "1": active.add( new Activation() ); break;
-						case "NOTAM": active.add( new NotamAct(parts[2],parts[3]) ); break;
-						case "RWY": active.add( new RwyAct(parts) ); break;
-						default: active.add( new SchedAct(parts) );
+						case "1": getActive().add( new Activation() ); break;
+						case "NOTAM": getActive().add( new NotamAct(parts[2],parts[3]) ); break;
+						case "RWY": getActive().add( new RwyAct(parts) ); break;
+						default: getActive().add( new SchedAct(parts) );
 					}
 				}
 				else if(line.contains("BOUND")) {
@@ -215,5 +215,13 @@ public class Area {
 	
 	public String getNotam() {
 		return notam;
+	}
+
+	public ArrayList <Activation> getActive() {
+		return active;
+	}
+
+	public void setActive(ArrayList <Activation> active) {
+		this.active = active;
 	}
 }

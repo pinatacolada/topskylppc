@@ -2,7 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <name>ESPAÇO AÉREO</name>
-    <description><![CDATA[ACTUALIZADO 05:35 UTC 21 MAIO 2020<br>PROGRAMAÇÃO DIÁRIA DO ESPAÇO AÉREO DE USO FLEXÍVEL e NOTAM's relevantes para o voo VFR em Portugal.  Consulte também : http://cavok.pt/fuaflex/notams-portugal/]]></description>
+    <description><![CDATA[ACTUALIZADO 05:00 UTC 22 MAIO 2020<br>PROGRAMAÇÃO DIÁRIA DO ESPAÇO AÉREO DE USO FLEXÍVEL e NOTAM's relevantes para o voo VFR em Portugal.  Consulte também : http://cavok.pt/fuaflex/notams-portugal/]]></description>
     <Style id="icon-1203-labelson">
       <IconStyle>
         <scale>1.1</scale>
@@ -19539,7 +19539,7 @@
       </Placemark>
       <Placemark>
         <name>LP-R60B</name>
-        <description><![CDATA[AREA RESTRITA - MONTE REAL<br>ESPAﾃ�O AEREO DELTA<br>1,000ft AGL AMSL/FL245<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>APROXIMAﾃ�ﾃグ MONTE REAL - 122.100MHz<br>LISBOA MILITAR - 123.750MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-3/9<br><br>ACTIVAﾃ�ﾃグ POR FUA<br>FL245/FL500<br>RESTRITA 10:30-12:30 14:00-16:30 UTC]]></description>
+        <description><![CDATA[AREA RESTRITA - MONTE REAL<br>ESPAﾃ�O AEREO DELTA<br>1,000ft AGL AMSL/FL245<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>APROXIMAﾃ�ﾃグ MONTE REAL - 122.100MHz<br>LISBOA MILITAR - 123.750MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-3/9]]></description>
         <styleUrl>#poly-FFFF00-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -19973,83 +19973,6 @@
       </Placemark>
     </Folder>
     <Folder>
-      <name>AREAS  LP-TRA</name>
-      <Placemark>
-        <name>LP-TRA55</name>
-        <description><![CDATA[AREA RESTRITA TEMPORARIA - COVILHA<br><br>EXERCICIOS AEREOS<br>1,500ft AMSL/FL245<br><br>ACTIVAﾃ�ﾃグ FUA<br>RESTRITA  10:30-12:30 14:00-16:30 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-13<br><br>RESERVA ESPAﾃ�O Aﾃ嘘EO  - EXERCﾃ垢IOS MILITARES NEVERLAND AREA<br>FL245/FL280<br>RESERVADA 21 MAIO 10:30-12:30 14:00-16:30 UTCC<br><br>NOTAM A1412/20]]></description>
-        <styleUrl>#poly-AA0000-6000-127</styleUrl>
-        <Polygon>
-          <outerBoundaryIs>
-            <LinearRing>
-              <tessellate>1</tessellate>
-              <coordinates>
-                -7.750495,40.531748,0
-                -7.750416,39.898923,0
-                -6.901948,39.892089,0
-                -6.891082,39.911164,0
-                -6.86474,40.012493,0
-                -6.925505,40.098189,0
-                -7.006342,40.13128,0
-                -7.001027,40.228732,0
-                -6.956767,40.240135,0
-                -6.857627,40.264352,0
-                -6.859995,40.295575,0
-                -6.789727,40.332172,0
-                -6.777267,40.365603,0
-                -6.834244,40.398422,0
-                -6.838198,40.448114,0
-                -6.800549,40.515707,0
-                -6.788505,40.531579,0
-                -6.801204,40.530148,0
-                -7.750495,40.531748,0
-              </coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </Placemark>
-      <Placemark>
-        <name>LP-TRA54</name>
-        <description><![CDATA[AREA RESTRITA TEMPORARIA - MONCORVO<br><br>EXERCICIOS AEREOS<br>GND/FL245<br><br>ACTIVAﾃ�ﾃグ FUA<br>RESTRITA  10:30-12:30 14:00-16:30 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-13<br><br>RESERVA ESPAﾃ�O Aﾃ嘘EO  - EXERCﾃ垢IOS MILITARES NEVERLAND AREA<br>FL245/FL280<br>RESERVADA 21 MAIO 10:30-12:30 14:00-16:30 UTC<br><br>NOTAM A1411/20]]></description>
-        <styleUrl>#poly-AA0000-6000-127</styleUrl>
-        <Polygon>
-          <outerBoundaryIs>
-            <LinearRing>
-              <tessellate>1</tessellate>
-              <coordinates>
-                -7.383182,41.299346,0
-                -7.751535,40.728912,0
-                -7.75054,40.532174,0
-                -6.803208,40.53161,0
-                -6.78531,40.532143,0
-                -6.793538,40.53946,0
-                -6.837002,40.568073,0
-                -6.791765,40.648155,0
-                -6.807353,40.697164,0
-                -6.824946,40.751019,0
-                -6.813915,40.806791,0
-                -6.83233,40.831923,0
-                -6.795985,40.847401,0
-                -6.808874,40.882047,0
-                -6.84998,40.931496,0
-                -6.934386,41.031874,0
-                -6.898234,41.036972,0
-                -6.800434,41.048352,0
-                -6.750095,41.107554,0
-                -6.766586,41.126191,0
-                -6.732913,41.154458,0
-                -6.634723,41.243278,0
-                -6.567805,41.237399,0
-                -6.480724,41.294371,0
-                -6.381264,41.359964,0
-                -6.393384,41.381009,0
-                -7.383182,41.299346,0
-              </coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </Placemark>
-    </Folder>
-    <Folder>
       <name>AREAS LP-D</name>
       <Placemark>
         <name>LP-D28A</name>
@@ -20087,41 +20010,6 @@
                 -8.251221,39.407831,0
                 -8.359762,39.408644,0
                 -8.358626,39.305246,0
-              </coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </Placemark>
-      <Placemark>
-        <name>LP-D67</name>
-        <description><![CDATA[AREA PERIGOSA - MAR W MONTE REAL<br><br>EXERCICIOS AEREOS<br>4,000ft AMSL/FL300<br><br>ACTIVAﾃ�ﾃグ FUA<br>PERIGOSA  10:30-12:30 14:00-16:30  UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-10]]></description>
-        <styleUrl>#poly-000000-6000-127</styleUrl>
-        <Polygon>
-          <outerBoundaryIs>
-            <LinearRing>
-              <tessellate>1</tessellate>
-              <coordinates>
-                -9.889444,40.333333,0
-                -9.958286,40.173374,0
-                -10.026803,40.013374,0
-                -10.095,39.853333,0
-                -10.166364,39.685136,0
-                -10.237381,39.516895,0
-                -10.308056,39.348611,0
-                -10.133611,39.348872,0
-                -9.959166,39.348872,0
-                -9.784722,39.348611,0
-                -9.728269,39.490532,0
-                -9.671586,39.632426,0
-                -9.614669,39.774292,0
-                -9.557517,39.916131,0
-                -9.500128,40.057941,0
-                -9.4425,40.199722,0
-                -9.368056,40.382222,0
-                -9.255162,40.645978,0
-                -9.4914,40.66438,0
-                -9.732574,40.68219,0
-                -9.889444,40.333333,0
               </coordinates>
             </LinearRing>
           </outerBoundaryIs>

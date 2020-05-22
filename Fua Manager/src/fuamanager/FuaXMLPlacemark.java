@@ -70,7 +70,7 @@ public class FuaXMLPlacemark {
 			start = SchedAct.ParseDate("0000");
 			end = SchedAct.ParseDate("2359");
 		}
-		if(bits[bits.length-1].contains("NASCER")) {
+		if(bits[bits.length-1].contains("NASCER")) {//TODO
 			LocalDateTime sr = Tools.getSunrise();
 			LocalDateTime ss = Tools.getSunset();
 			start = SchedAct.ParseDate(""+sr.getHour()+sr.getMinute());
@@ -94,17 +94,18 @@ public class FuaXMLPlacemark {
 				
 				SchedAct sched = new SchedAct(start, end, "0", limits, limits.printSfl());
 				schedules.add(sched);
-				System.out.println(name+description);
+				System.out.println(name+description+"\n");
 				
 			}
 			
 			return schedules;  
 		}
 
-		SchedAct sched = new SchedAct(start, end, "0", limits, limits.printSfl());
-		schedules.add(sched);
-		
-		System.out.println(name+description);
+		if(start != null && end != null) {
+			SchedAct sched = new SchedAct(start, end, "0", limits, limits.printSfl());
+			schedules.add(sched);
+			System.out.println(name+description);
+		}
 		return schedules;
 
 	}
