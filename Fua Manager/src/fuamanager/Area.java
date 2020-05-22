@@ -58,7 +58,7 @@ public class Area {
 		this.notam = notam;
 		
 		for(FuaCoordinate loc : coordinates) {
-			this.getCoordinates().add(loc);
+			this.coordinates.add(loc);
 		}
 	}
 

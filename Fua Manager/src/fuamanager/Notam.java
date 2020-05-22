@@ -45,7 +45,7 @@ public class Notam {
 	private String created;
 
 	public Notam(String raw) {
-		id = raw.substring(0, 8);
+		setId(raw.substring(0, 8));
 
 		opType = "NOTAM"+raw.substring(14, 15);
 
@@ -81,17 +81,17 @@ public class Notam {
 
 		String[] qSplit = qLine.split("/");
 
-		fir = qSplit[0];
-		qCode = qSplit[1];
+		setFir(qSplit[0]);
+		setqCode(qSplit[1]);
 		traffic = qSplit[2];
 		purpose = qSplit[3];
 		scope = qSplit[4];
 
-		limits = new VLimit(Integer.parseInt(qSplit[6]), Integer.parseInt(qSplit[5]));
+		setLimits(new VLimit(Integer.parseInt(qSplit[6]), Integer.parseInt(qSplit[5])));
 
 		String rawCoord = qSplit[7].substring(0, 11);
 
-		coord = new FuaCoordinate(FuaCoordinate.icaoToFuaCoordinate(rawCoord));
+		setCoord(new FuaCoordinate(FuaCoordinate.icaoToFuaCoordinate(rawCoord)));
 		
 		radius = Integer.parseInt(qSplit[7].substring(11, 14));
 
@@ -112,7 +112,7 @@ public class Notam {
 	
 	public String printNotam() {
 		
-		String qLine = "Q) "+fir+"/"+qCode+"/"+traffic+"/"+purpose+"/"+scope+"/"+limits.printNotamVLString()+"/"+coord.printNotam()+String.format("%03d", radius);
+		String qLine = "Q) "+getFir()+"/"+getqCode()+"/"+traffic+"/"+purpose+"/"+scope+"/"+getLimits().printNotamVLString()+"/"+getCoord().printNotam()+String.format("%03d", radius);
 		String aLine = "A) "+location;
 		String bLine = "B) "+start.format(DateTimeFormatter.ofPattern("yyMMddHHmm"));
 		String cLine = "C) "+end.format(DateTimeFormatter.ofPattern("yyMMddHHmm"));
@@ -130,16 +130,56 @@ public class Notam {
 			gLine = "G) "+gUpper;
 		}
 		
-		String result = id+" "+opType+"\n"
+		String result = getId()+" "+opType+"\n"
 				+qLine+"\n"
 				+aLine+" "+bLine+" "+cLine+"\n"
 				+dLine
 				+eLine
-				+fLine+gLine+"\n"
+				+fLine+gLine
 				+created;
 
 		return result;
 			
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getqCode() {
+		return qCode;
+	}
+
+	public void setqCode(String qCode) {
+		this.qCode = qCode;
+	}
+
+	public VLimit getLimits() {
+		return limits;
+	}
+
+	public void setLimits(VLimit limits) {
+		this.limits = limits;
+	}
+
+	public String getFir() {
+		return fir;
+	}
+
+	public void setFir(String fir) {
+		this.fir = fir;
+	}
+
+	public FuaCoordinate getCoord() {
+		return coord;
+	}
+
+	public void setCoord(FuaCoordinate coord) {
+		this.coord = coord;
 	}
 
 

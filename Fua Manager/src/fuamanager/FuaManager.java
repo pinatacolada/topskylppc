@@ -45,6 +45,9 @@ public class FuaManager {
 	private static final String FUAFILE_URL = "https://www.google.com/maps/d/u/0/kml?forcekml=1&mid=1Og8rGguyGgNR1DUpGW7Oq9k4_Xw";
 	private static final String DOWNLOADED_FUAFILE_NAME = Integer.toString(LocalDate.now().getMonthValue())+Integer.toString(LocalDate.now().getDayOfMonth())+"fua.xml";
 
+	private static final String NOTAM_URL = "https://www.notams.faa.gov/dinsQueryWeb/queryRetrievalMapAction.do";
+	private static final String NOTAM_PARAM = "reportType=Raw&retrieveLocId=lppc&actionType=notamRetrievalByICAOs&submit=NOTAMs";
+	
 
 	static ArrayList<Area> areas = new ArrayList<Area>();
 	static ArrayList<FuaArea> fuaAreas = new ArrayList<FuaArea>();
@@ -64,10 +67,10 @@ public class FuaManager {
 			exportFuaAreas();
 		}
 		else if( args[0].contains("-A")) {
-			loadNotams();
 			loadAreas(new File("TopSkyAreas.txt"));
 			FuaXMLKml kml = downloadFua();
 			loadFua(kml);
+			loadNotams();
 			exportFuaAreas();
 		}
 
@@ -75,17 +78,14 @@ public class FuaManager {
 	}
 
 	private static void loadNotams() throws IOException {
-		// TODO Auto-generated method stub
-		//POST https://www.notams.faa.gov/dinsQueryWeb/queryRetrievalMapAction.do
-		//PARAM reportType=Report&retrieveLocId=lppc&actionType=notamRetrievalByICAOs&submit=View+NOTAMs
 
-		URL url = new URL("https://www.notams.faa.gov/dinsQueryWeb/queryRetrievalMapAction.do");//TODO figure out why no \n here
+		URL url = new URL(NOTAM_URL);
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();
 		con.setRequestMethod("POST");
 
 		con.setDoOutput(true);
 		DataOutputStream out = new DataOutputStream(con.getOutputStream());
-		out.writeBytes("reportType=Raw&retrieveLocId=lppc&actionType=notamRetrievalByICAOs&submit=NOTAMs");
+		out.writeBytes(NOTAM_PARAM);
 		out.flush();
 		out.close();
 
@@ -110,7 +110,47 @@ public class FuaManager {
 			
 			Notam n = new Notam(match);
 			notams.add(n);
-			System.out.println(n.printNotam());
+		}
+		
+		for(Notam n : notams) {
+			if(n.getqCode().contains("QRALW")){//YO THIS IS AN AIRSPACE RESERVATION THIS KINDA LOOKS IMPORTANT
+				System.out.println(n.printNotam());
+				Area notamArea = findAreabyName(n.getId());
+				if(notamArea == null) {
+					System.out.println("HEY DOESNT EXIST NEED TO CREATE MEH");
+					//A1311/20 NOTAMN
+//					Q) LPPC/QRALW/IV/NBO/W /005/035/3940N00955W030
+//					A) LPPC B) 2006010514 C) 2008312350
+//					D) MON-FRI SR-2350//TODO
+//					E) AIRSPACE RESERVATION AREA 2B WILL TAKE PLACE AREA BOUNDED BY:
+//					400710N 0100535W - 400443N 0093654W - 394950N 0093634W - 
+//					391200N 0095425W - 391200N 0100420W - 400710N 0100535W.
+//					F) 500FT AMSL G) 3500FT AMSL
+//					CREATED: 05 May 2020 11:39:00 
+//					SOURCE: EUECYIYN
+					
+					BufferVert sapv = null;
+					BufferLat sapl = null;
+					Boolean sap = true;
+					Boolean apw = true;
+					Boolean msaw = true;
+					AreaBound bound = null;//TODO
+					ArrayList<Activation> active = new ArrayList<Activation>();
+					active.add(new NotamAct(n.getFir(), "TEMPORARY KEYWORD FOR FINDING"));//TODO
+					String usertext = null;
+					BufferVert apwbv = null;
+					BufferLat apwbl = null;
+					VLimit limits = n.getLimits();
+					ALabel label = new ALabel(n.getCoord(), limits.printSfl());
+					String category = "NOTAM";
+					String name = n.getId();
+					String notam = n.getId();
+					ArrayList<FuaCoordinate> coordinates = new ArrayList<FuaCoordinate>();//TODO
+					
+					notamArea = new Area(name, category, label, limits, apwbl, apwbv, usertext, active, bound, msaw, apw, sap, sapl, sapv, notam, coordinates);
+					areas.add(notamArea);
+				}
+			}
 		}
 
 	}
