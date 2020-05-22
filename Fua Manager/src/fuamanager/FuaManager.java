@@ -50,6 +50,7 @@ public class FuaManager {
 	static ArrayList<FuaArea> fuaAreas = new ArrayList<FuaArea>();
 	static ArrayList<CategoryDef> categories = new ArrayList<CategoryDef>();
 	static ArrayList<String> amcAreas = new ArrayList<String>();
+	static ArrayList<Notam> notams = new ArrayList<Notam>();
 
 	public static void main(String[] args) throws IOException, JAXBException, ParserConfigurationException, SAXException {
 
@@ -63,7 +64,7 @@ public class FuaManager {
 			exportFuaAreas();
 		}
 		else if( args[0].contains("-A")) {
-			doNotams();
+			loadNotams();
 			loadAreas(new File("TopSkyAreas.txt"));
 			FuaXMLKml kml = downloadFua();
 			loadFua(kml);
@@ -73,7 +74,7 @@ public class FuaManager {
 
 	}
 
-	private static void doNotams() throws IOException {
+	private static void loadNotams() throws IOException {
 		// TODO Auto-generated method stub
 		//POST https://www.notams.faa.gov/dinsQueryWeb/queryRetrievalMapAction.do
 		//PARAM reportType=Report&retrieveLocId=lppc&actionType=notamRetrievalByICAOs&submit=View+NOTAMs
@@ -93,18 +94,22 @@ public class FuaManager {
 		StringBuffer raw = new StringBuffer();
 		while ((inputLine = in.readLine()) != null) {
 			raw.append(inputLine);
+			raw.append("\n");
+			
 		}
 		in.close();
 		
 		con.disconnect();
 		
-		Matcher m = Pattern.compile("<PRE\\b[^>]*>(.*?)<\\/PRE>").matcher(raw);
+			
+		Matcher m = Pattern.compile("<PRE\\b[^>]*>(.*?)<\\/PRE>", Pattern.DOTALL).matcher(raw);
 		while (m.find()) {
 			String match = m.group();
 			match = match.replaceAll("</PRE>", "");
 			match = match.replaceAll("<PRE>", "");
 			
 			Notam n = new Notam(match);
+			notams.add(n);
 			System.out.println(n.printNotam());
 		}
 

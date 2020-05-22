@@ -95,7 +95,7 @@ public class Notam {
 		
 		radius = Integer.parseInt(qSplit[7].substring(11, 14));
 
-		location = aLine;
+		location = aLine.trim();
 
 		start = LocalDateTime.parse(bLine, DateTimeFormatter.ofPattern("yyMMddHHmm"));
 		end = LocalDateTime.parse(cLine, DateTimeFormatter.ofPattern("yyMMddHHmm"));
@@ -112,33 +112,30 @@ public class Notam {
 	
 	public String printNotam() {
 		
-		String qLine = "Q) "+fir+"/"+qCode+"/"+traffic+"/"+purpose+"/"+scope+"/"+limits.printNotamVLString()+"/"+coord.printNotam()+String.format("%03d", radius)+"\n";
-		String aLine = "A) "+location+"\n";
-		String bLine = "B) "+start.format(DateTimeFormatter.ofPattern("yyMMddHHmm"))+"\n";
-		String cLine = "C) "+end.format(DateTimeFormatter.ofPattern("yyMMddHHmm"))+"\n";
+		String qLine = "Q) "+fir+"/"+qCode+"/"+traffic+"/"+purpose+"/"+scope+"/"+limits.printNotamVLString()+"/"+coord.printNotam()+String.format("%03d", radius);
+		String aLine = "A) "+location;
+		String bLine = "B) "+start.format(DateTimeFormatter.ofPattern("yyMMddHHmm"));
+		String cLine = "C) "+end.format(DateTimeFormatter.ofPattern("yyMMddHHmm"));
 		String dLine = "";
 		if(schedule != null) {
-			dLine = "D) "+schedule+"\n";
+			dLine = "D) "+schedule;
 		}
-		String eLine = "E) "+description+"\n";
+		String eLine = "E) "+description;
 		String fLine = "";
 		if(fLower != null) {
-			fLine = "F) "+fLower+"\n";
+			fLine = "F) "+fLower;
 		}
 		String gLine = "";
 		if(gUpper != null) {
-			gLine = "G) "+gUpper+"\n";
+			gLine = "G) "+gUpper;
 		}
 		
 		String result = id+" "+opType+"\n"
-				+qLine
-				+aLine
-				+bLine
-				+cLine
+				+qLine+"\n"
+				+aLine+" "+bLine+" "+cLine+"\n"
 				+dLine
 				+eLine
-				+fLine
-				+gLine
+				+fLine+gLine+"\n"
 				+created;
 
 		return result;
