@@ -6,11 +6,11 @@ stages:
 
 build:
   stage: build
-  script: /usr/lib/jvm/java-13-openjdk-amd64/bin/javac /Fua Manager/src/fuamanager/FuaManager.java
+  script: /usr/lib/jvm/java-8-openjdk-amd64/bin/javac /Fua Manager/src/fuamanager/FuaManager.java
   artifacts:
     paths:
      - /.*
 
 execute:
   stage: execute
-  script: /usr/lib/jvm/java-13-openjdk-amd64/bin/java Fua Manager -A
+  script: /usr/lib/jvm/java-8-openjdk-amd64/bin/java Fua Manager -A
