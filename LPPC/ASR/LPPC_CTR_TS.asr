@@ -373,6 +373,7 @@ Free Text:SCT2\8NM:freetext
 Free Text:SCT2\AIC:freetext
 Geo:GEO:
 Geo:GM Landmark Morocco Coastline:
+Geo:LE Landmark:
 Geo:LP Landmark Continental Coastline:
 Geo:LP Landmark Madeira Coastline:
 Geo:LP Landmark Porto Santo Coastline:
@@ -451,4 +452,4 @@ DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:0.00000
 TAGFAMILY:PT vACC - NORM
-WINDOWAREA:34.433096:-25.436809:44.610403:-1.605889
+WINDOWAREA:33.743278:-23.822416:43.920586:0.008504
