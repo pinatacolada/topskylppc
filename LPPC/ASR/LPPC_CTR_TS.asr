@@ -1,8 +1,8 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20200322124616-200301-0005.sct
-SECTORTITLE:LPPC-Package_20200322124616-200301-0005.sct
+SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20200527095352-200601-0011.sct
+SECTORTITLE:LPPC-Package_20200527095352-200601-0011.sct
 Airports:LPBG:symbol
 Airports:LPBR:symbol
 Airports:LPCO:symbol
@@ -16,7 +16,11 @@ Airports:LPST:symbol
 Airports:LPVL:symbol
 Airports:LPVR:symbol
 Airports:LPVZ:symbol
+ARTCC boundary:AIC:
 ARTCC boundary:COBERTURA RADAR:
+ARTCC boundary:GCCC FIR:
+ARTCC boundary:GMMM FIR:
+ARTCC boundary:LECM FIR:
 ARTCC boundary:SECTOR CENTRE UPPER:
 ARTCC boundary:SECTOR DEMOS:
 ARTCC boundary:SECTOR EAST:
@@ -364,9 +368,12 @@ Free Text:LPMA MRVA\9000:freetext
 Free Text:LPPR MRVA\3000:freetext
 Free Text:LPPR MRVA\4000:freetext
 Free Text:LPPR MRVA\5100:freetext
+Free Text:SCT2\5NM:freetext
+Free Text:SCT2\8NM:freetext
+Free Text:SCT2\AIC:freetext
 Geo:GEO:
 Geo:GM Landmark Morocco Coastline:
-Geo:LE Landmark Spain Coastline:
+Geo:LE Landmark:
 Geo:LP Landmark Continental Coastline:
 Geo:LP Landmark Madeira Coastline:
 Geo:LP Landmark Porto Santo Coastline:
@@ -445,4 +452,4 @@ DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:0.00000
 TAGFAMILY:PT vACC - NORM
-WINDOWAREA:38.411708:-10.030036:39.111087:-8.392388
+WINDOWAREA:33.743278:-23.822416:43.920586:0.008504
