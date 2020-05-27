@@ -37,7 +37,7 @@ Ground Radar based on the SAAB A3000 A-SMGCS system
 And a lot more
 
 # Instalation
-[Download](https://github.com/pinatacolada/topskylppc/archive/1.1.zip) and unzip the contents of topskylppc-1.1 folder into the folder where you keep your LPPC sector file. It should ask you to overwrite some files, say yes to those.
+[Download](https://github.com/pinatacolada/topskylppc/archive/1.1.1.zip) and unzip the contents of topskylppc-1.1.1 folder into the folder where you keep your LPPC sector file. It should ask you to overwrite some files, say yes to those.
 
 Then, on Euroscope, go to Other Settings/Plug-ins. Click on load and navigate to where you dropped the files before. Select the TopSky.dll and then the GRplugin.dll files.
 
@@ -55,4 +55,3 @@ To use CPDLC you need a [Hoppie account](https://www.hoppie.nl/acars/system/regi
 
 # Disclamer
 Although - as its name suggests - the plugin is based on the TopSky ATM system, it is in no way affiliated with or endorsed by Thales Group. Similarities between plugin features and the real system are not entirely coincidental, but anyone planning to use the plugin as a real world training aid really should know better…
-
