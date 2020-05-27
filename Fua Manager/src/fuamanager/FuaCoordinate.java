@@ -85,7 +85,7 @@ public class FuaCoordinate {
 				}
 			}
 			else {
-				if(degrees >= 0) {
+				if(degrees > 0) {
 					sign = "E";
 				}
 				else {
@@ -161,7 +161,7 @@ public class FuaCoordinate {
 	
 	public String printTopsky() {
 		//N040.00.20.000 W010.39.16.000
-		return formatToFua(lat) + formatToFua(lon);
+		return lat + lon;
 	}
 	
 }
