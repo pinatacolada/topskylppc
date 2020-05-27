@@ -10,4 +10,8 @@ public class Activation {
 	public String getRules() {
 		return rules;
 	}
+	
+	public String printTopSky() {
+		return "ACTIVE:"+rules;
+	}
 }

@@ -89,4 +89,9 @@ public class VLimit{
 		}
 		return "SFL"+sfl;
 	}
+	
+	public String printTopSky() {
+		//LIMITS:0:350 
+		return "LIMITS:" + printVLimit();
+	}
 }

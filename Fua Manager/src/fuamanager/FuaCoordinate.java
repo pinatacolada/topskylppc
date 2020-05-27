@@ -159,4 +159,9 @@ public class FuaCoordinate {
 		return formatToNotam(lat)+formatToNotam(lon);
 	}
 	
+	public String printTopsky() {
+		//N040.00.20.000 W010.39.16.000
+		return formatToFua(lat) + formatToFua(lon);
+	}
+	
 }

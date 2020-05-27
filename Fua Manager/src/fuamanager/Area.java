@@ -224,4 +224,47 @@ public class Area {
 	public void setActive(ArrayList <Activation> active) {
 		this.active = active;
 	}
+	
+	public String printTopSky() {
+		
+		////A4283/19
+		//AREA:T:A4283
+		//ACTIVE:1111:1112:1234567:1800:1900
+		//ACTIVE:1113:1115:1234567:1800:2359
+		//CATEGORY:NOTAM
+		//LABEL:N039.22.00.000:W008.16.00.000:SFL140
+		////USERTEXT:SFL140
+		//LIMITS:0:130
+		//N039.24.35.000 W008.21.35.000 
+		//N039.24.35.000 W008.16.08.000 
+		//N039.24.35.000 W008.16.08.000 
+		
+		
+		String print = "";
+		
+		print += "//"+getName()+"\n";
+		print += "AREA:T:"+getName()+"\n";
+		
+		for(Activation a : active) {
+			print += a.printTopSky() + "\n";
+		}
+		
+		print += "CATEGORY:" + category +"\n";
+		
+		print += label.printTopSky() + "\n";
+		
+		print += limits.printTopSky() + "\n";
+		
+		for(FuaCoordinate c : coordinates) {
+			print += c.printTopsky() + "\n";
+		}
+
+		
+		
+		System.out.println(print);
+		
+		
+		return print;
+		
+	}
 }

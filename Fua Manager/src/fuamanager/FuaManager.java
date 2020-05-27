@@ -38,7 +38,7 @@ public class FuaManager {
 	public static final String SATURDAY = "6";
 	public static final String SUNDAY = "7";
 	public static final int TRANSITION_LEVEL = 50;
-	public static final ArrayList<String> FUA_FOLDERS = new ArrayList<String>(Arrays.asList("AREAS LP-R", "AREAS LP-D", "LP-P", "AREAS  LP-TRA"));//, "NOTAM E OUTRAS AREAS"
+	public static final ArrayList<String> FUA_FOLDERS = new ArrayList<String>(Arrays.asList("AREAS LP-R", "AREAS LP-D", "LP-P", "AREAS  LP-TRA", "NOTAM E OUTRAS AREAS"));//, "NOTAM E OUTRAS AREAS"
 
 	private static final int CONNECT_TIMEOUT = 5000;
 	private static final int READ_TIMEOUT = 10000;
@@ -109,7 +109,7 @@ public class FuaManager {
 			match = match.replaceAll("<PRE>", "");
 			
 			Notam n = new Notam(match);
-			notams.add(n);
+			notams.add(n);			
 		}
 		
 		for(Notam n : notams) {
@@ -145,14 +145,24 @@ public class FuaManager {
 					String category = "NOTAM";
 					String name = n.getId();
 					String notam = n.getId();
-					ArrayList<FuaCoordinate> coordinates = new ArrayList<FuaCoordinate>();//TODO
 					
+					
+					Area a = findAreabyName(n.getId().substring(0, 5));
+					ArrayList<FuaCoordinate> coordinates = new ArrayList<FuaCoordinate>();
+					
+					if(a != null) {
+						System.out.println("ARREBENTA A BOLHA");
+						coordinates = a.getCoordinates();
+					}
+										
 					notamArea = new Area(name, category, label, limits, apwbl, apwbv, usertext, active, bound, msaw, apw, sap, sapl, sapv, notam, coordinates);
 					areas.add(notamArea);
+					
+					notamArea.printTopSky();
 				}
 			}
 		}
-
+		
 	}
 
 	private static void createFuaAreas(String[] args) {
@@ -322,21 +332,7 @@ public class FuaManager {
 						String notamId = m.group();
 						System.out.println("searching "+notamId);
 						Area a = findAreabyName(notamId);
-						if(a != null) {
-
-							if(a.isNotam()) {
-
-								ArrayList<SchedAct> acts = place.toSchedAct();
-
-								for(SchedAct act : acts) {
-									FuaArea areaManual = new FuaArea(a, act, act.getLimits(), act.getUserText());
-									fuaAreas.add(areaManual);
-									System.out.println(areaManual.printFuaArea());
-								}
-							}
-						}
-						else {//create
-
+						if(a == null) {
 							System.out.println("CREATING AREA "+notamId);
 
 
@@ -345,7 +341,7 @@ public class FuaManager {
 							ALabel label = new ALabel(labelCoordinate, areaSfl);
 
 							ArrayList<Activation> activations = new ArrayList<Activation>();
-							activations.add( new NotamAct("LPPC", "AIRSPACE RESERVATION FOR UNAMNNED ACFT ACTIVITY WILL TAKE PLACE ON AREA 2B BOUNDED BY:"));
+							activations.add( new NotamAct("LPPC", "PLACEMARK KEYWORD"));
 
 							VLimit limits = null;
 

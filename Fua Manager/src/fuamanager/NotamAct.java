@@ -11,4 +11,8 @@ public class NotamAct extends Activation {
 		text = keyword;		
 	}
 	
+	public String printTopSky() {
+		return "ACTIVE:"+rules+":"+icao+":"+text;
+	}
+	
 }
