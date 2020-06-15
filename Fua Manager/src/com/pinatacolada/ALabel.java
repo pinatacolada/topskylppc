@@ -1,4 +1,4 @@
-package fuamanager;
+package com.pinatacolada;
 
 public class ALabel {
 	public ALabel(FuaCoordinate c, String s) {

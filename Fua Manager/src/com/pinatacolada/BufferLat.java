@@ -1,4 +1,4 @@
-package fuamanager;
+package com.pinatacolada;
 
 /**
  * @author rtpso

@@ -1,4 +1,4 @@
-package fuamanager;
+package com.pinatacolada;
 
 public class AreaBound {
 	public AreaBound(String lat, String lon, String rad) {

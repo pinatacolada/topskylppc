@@ -1,4 +1,4 @@
-package fuamanager;
+package com.pinatacolada;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

@@ -1,4 +1,4 @@
-package fuamanager;
+package com.pinatacolada;
 
 public class CategoryDef {
 	public CategoryDef(String line) {

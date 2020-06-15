@@ -1,4 +1,4 @@
-package fuamanager;
+package com.pinatacolada;
 
 public class FuaXMLKml {
 	private FuaXMLDocument document;

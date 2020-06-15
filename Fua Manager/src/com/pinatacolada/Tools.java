@@ -1,4 +1,4 @@
-package fuamanager;
+package com.pinatacolada;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;

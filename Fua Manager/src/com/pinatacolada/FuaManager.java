@@ -1,4 +1,4 @@
-package fuamanager;
+package com.pinatacolada;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -56,7 +56,7 @@ public class FuaManager {
 	static ArrayList<Notam> notams = new ArrayList<Notam>();
 
 	public static void main(String[] args) throws IOException, JAXBException, ParserConfigurationException, SAXException {
-
+		System.out.println("WELCOME TO THE MAD HOUSE");
 		if( args[0].contains("-L")) {
 			loadAreas(new File("TopSkyAreas.txt"));
 		}

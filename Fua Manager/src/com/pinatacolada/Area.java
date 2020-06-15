@@ -1,4 +1,4 @@
-package fuamanager;
+package com.pinatacolada;
 
 import java.io.IOException;
 import java.util.ArrayList;

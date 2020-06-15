@@ -1,4 +1,4 @@
-package fuamanager;
+package com.pinatacolada;
 
 public class NotamAct extends Activation {
 	//ACTIVE:NOTAM:LPPC:R39A
