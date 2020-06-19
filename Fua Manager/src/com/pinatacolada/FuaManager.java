@@ -259,7 +259,7 @@ public class FuaManager {
 	 * @param name The exact name of the Area. Areas which have AMC appended to their name will return the AMC variant. Use strict variant of this method if this isnt intended
 	 * @return The Area object. Null if not found.
 	 */
-	private static Area findAreabyName(String name) {
+	public static Area findAreabyName(String name) {
 		name = name.replaceAll("\\s+","");
 		name = name.replace("-", "");
 

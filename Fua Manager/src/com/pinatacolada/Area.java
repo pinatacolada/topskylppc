@@ -44,7 +44,7 @@ public class Area {
 		this.setName(name);
 		this.category = category;
 		this.label = label;
-		this.limits = limits;
+		this.setLimits(limits);
 		this.apwbl = apwbl;
 		this.apwbv = apwbv;
 		this.usertext = usertext;
@@ -117,7 +117,7 @@ public class Area {
 				}
 				else if(line.contains("LIMITS")){
 //					LIMITS:0:240
-					limits = new VLimit(Integer.parseInt(parts[1].replaceAll("\\s+","")),Integer.parseInt(parts[2].replaceAll("\\s+","")));
+					setLimits(new VLimit(Integer.parseInt(parts[2].replaceAll("\\s+","")),Integer.parseInt(parts[1].replaceAll("\\s+",""))));
 				}
 				else if(line.contains("NOMSAW")) {
 					msaw = false;
@@ -254,7 +254,7 @@ public class Area {
 		
 		print += label.printTopSky() + "\n";
 		
-		print += limits.printTopSky() + "\n";
+		print += getLimits().printTopSky() + "\n";
 		
 		for(FuaCoordinate c : coordinates) {
 			print += c.printTopsky() + "\n";
@@ -267,5 +267,13 @@ public class Area {
 		
 		return print;
 		
+	}
+
+	public VLimit getLimits() {
+		return limits;
+	}
+
+	public void setLimits(VLimit limits) {
+		this.limits = limits;
 	}
 }
