@@ -332,7 +332,7 @@ public class FuaManager {
 						String notamId = m.group();
 						System.out.println("searching "+notamId);
 						Area a = findAreabyName(notamId);
-						if(a == null) {
+						if(a == null && (place.getDescription().contains("RESERVATION") || place.getDescription().contains("PARACHUTE"))) {
 							System.out.println("CREATING AREA "+notamId);
 
 

@@ -2,7 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document>
     <name>ESPAÇO AÉREO</name>
-    <description><![CDATA[ACTUALIZADO 04:30 UTC 18 JUNHO 2020<br>PROGRAMAÇÃO DIÁRIA DO ESPAÇO AÉREO DE USO FLEXÍVEL e NOTAM's relevantes para o voo VFR em Portugal.  Consulte também : http://cavok.pt/fuaflex/notams-portugal/]]></description>
+    <description><![CDATA[ACTUALIZADO 04:50 UTC 19 JUNHO 2020<br>PROGRAMAÇÃO DIÁRIA DO ESPAÇO AÉREO DE USO FLEXÍVEL e NOTAM's relevantes para o voo VFR em Portugal.  Consulte também : http://cavok.pt/fuaflex/notams-portugal/]]></description>
     <Style id="icon-1203-labelson">
       <IconStyle>
         <scale>1.1</scale>
@@ -87,6 +87,28 @@
         <styleUrl>#line-000000-8000-highlight</styleUrl>
       </Pair>
     </StyleMap>
+    <Style id="line-00007F-6000-normal">
+      <LineStyle>
+        <color>ff7f0000</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-00007F-6000-highlight">
+      <LineStyle>
+        <color>ff7f0000</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-00007F-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-00007F-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-00007F-6000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
     <Style id="line-0000FF-4000-normal">
       <LineStyle>
         <color>ffff0000</color>
@@ -153,6 +175,28 @@
         <styleUrl>#line-0055FF-6000-highlight</styleUrl>
       </Pair>
     </StyleMap>
+    <Style id="line-00AA00-6000-normal">
+      <LineStyle>
+        <color>ff00aa00</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-00AA00-6000-highlight">
+      <LineStyle>
+        <color>ff00aa00</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-00AA00-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-00AA00-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-00AA00-6000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
     <Style id="line-00AAFF-6000-normal">
       <LineStyle>
         <color>ffffaa00</color>
@@ -173,6 +217,94 @@
       <Pair>
         <key>highlight</key>
         <styleUrl>#line-00AAFF-6000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-00FF00-6000-normal">
+      <LineStyle>
+        <color>ff00ff00</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-00FF00-6000-highlight">
+      <LineStyle>
+        <color>ff00ff00</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-00FF00-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-00FF00-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-00FF00-6000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-00FFFF-6000-normal">
+      <LineStyle>
+        <color>ffffff00</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-00FFFF-6000-highlight">
+      <LineStyle>
+        <color>ffffff00</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-00FFFF-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-00FFFF-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-00FFFF-6000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-55007F-6000-normal">
+      <LineStyle>
+        <color>ff7f0055</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-55007F-6000-highlight">
+      <LineStyle>
+        <color>ff7f0055</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-55007F-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-55007F-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-55007F-6000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-5500FF-6000-normal">
+      <LineStyle>
+        <color>ffff0055</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-5500FF-6000-highlight">
+      <LineStyle>
+        <color>ffff0055</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-5500FF-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-5500FF-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-5500FF-6000-highlight</styleUrl>
       </Pair>
     </StyleMap>
     <Style id="line-55557F-6000-normal">
@@ -219,6 +351,50 @@
         <styleUrl>#line-55AAFF-6000-highlight</styleUrl>
       </Pair>
     </StyleMap>
+    <Style id="line-55FF7F-6000-normal">
+      <LineStyle>
+        <color>ff7fff55</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-55FF7F-6000-highlight">
+      <LineStyle>
+        <color>ff7fff55</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-55FF7F-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-55FF7F-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-55FF7F-6000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-AA0000-6000-normal">
+      <LineStyle>
+        <color>ff0000aa</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-AA0000-6000-highlight">
+      <LineStyle>
+        <color>ff0000aa</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-AA0000-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-AA0000-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-AA0000-6000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
     <Style id="line-AA0000-8000-normal">
       <LineStyle>
         <color>ff0000aa</color>
@@ -239,6 +415,28 @@
       <Pair>
         <key>highlight</key>
         <styleUrl>#line-AA0000-8000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-AA5500-6000-normal">
+      <LineStyle>
+        <color>ff0055aa</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-AA5500-6000-highlight">
+      <LineStyle>
+        <color>ff0055aa</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-AA5500-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-AA5500-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-AA5500-6000-highlight</styleUrl>
       </Pair>
     </StyleMap>
     <Style id="line-AAAAFF-5000-normal">
@@ -263,6 +461,28 @@
         <styleUrl>#line-AAAAFF-5000-highlight</styleUrl>
       </Pair>
     </StyleMap>
+    <Style id="line-AAFF00-6000-normal">
+      <LineStyle>
+        <color>ff00ffaa</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-AAFF00-6000-highlight">
+      <LineStyle>
+        <color>ff00ffaa</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-AAFF00-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-AAFF00-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-AAFF00-6000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
     <Style id="line-AAFF7F-6000-normal">
       <LineStyle>
         <color>ff7fffaa</color>
@@ -283,6 +503,28 @@
       <Pair>
         <key>highlight</key>
         <styleUrl>#line-AAFF7F-6000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-AAFFFF-6000-normal">
+      <LineStyle>
+        <color>ffffffaa</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-AAFFFF-6000-highlight">
+      <LineStyle>
+        <color>ffffffaa</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-AAFFFF-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-AAFFFF-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-AAFFFF-6000-highlight</styleUrl>
       </Pair>
     </StyleMap>
     <Style id="line-C6A4CF-4875-normal">
@@ -329,6 +571,28 @@
         <styleUrl>#line-F4B400-5650-highlight</styleUrl>
       </Pair>
     </StyleMap>
+    <Style id="line-FF0000-10000-normal">
+      <LineStyle>
+        <color>ff0000ff</color>
+        <width>10</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-FF0000-10000-highlight">
+      <LineStyle>
+        <color>ff0000ff</color>
+        <width>15</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-FF0000-10000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FF0000-10000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FF0000-10000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
     <Style id="line-FF0000-5000-normal">
       <LineStyle>
         <color>ff0000ff</color>
@@ -349,6 +613,28 @@
       <Pair>
         <key>highlight</key>
         <styleUrl>#line-FF0000-5000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-FF0000-6000-normal">
+      <LineStyle>
+        <color>ff0000ff</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-FF0000-6000-highlight">
+      <LineStyle>
+        <color>ff0000ff</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-FF0000-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FF0000-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FF0000-6000-highlight</styleUrl>
       </Pair>
     </StyleMap>
     <Style id="line-FF0000-8000-normal">
@@ -373,26 +659,114 @@
         <styleUrl>#line-FF0000-8000-highlight</styleUrl>
       </Pair>
     </StyleMap>
-    <Style id="line-FFDD5E-3519-normal">
+    <Style id="line-FF007F-6000-normal">
       <LineStyle>
-        <color>ff5eddff</color>
-        <width>3.519</width>
+        <color>ff7f00ff</color>
+        <width>6</width>
       </LineStyle>
     </Style>
-    <Style id="line-FFDD5E-3519-highlight">
+    <Style id="line-FF007F-6000-highlight">
       <LineStyle>
-        <color>ff5eddff</color>
-        <width>5.2785</width>
+        <color>ff7f00ff</color>
+        <width>9</width>
       </LineStyle>
     </Style>
-    <StyleMap id="line-FFDD5E-3519">
+    <StyleMap id="line-FF007F-6000">
       <Pair>
         <key>normal</key>
-        <styleUrl>#line-FFDD5E-3519-normal</styleUrl>
+        <styleUrl>#line-FF007F-6000-normal</styleUrl>
       </Pair>
       <Pair>
         <key>highlight</key>
-        <styleUrl>#line-FFDD5E-3519-highlight</styleUrl>
+        <styleUrl>#line-FF007F-6000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-FF00FF-6000-normal">
+      <LineStyle>
+        <color>ffff00ff</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-FF00FF-6000-highlight">
+      <LineStyle>
+        <color>ffff00ff</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-FF00FF-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FF00FF-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FF00FF-6000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-FF5500-6000-normal">
+      <LineStyle>
+        <color>ff0055ff</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-FF5500-6000-highlight">
+      <LineStyle>
+        <color>ff0055ff</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-FF5500-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FF5500-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FF5500-6000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-FFFF00-6000-normal">
+      <LineStyle>
+        <color>ff00ffff</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-FFFF00-6000-highlight">
+      <LineStyle>
+        <color>ff00ffff</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-FFFF00-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FFFF00-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FFFF00-6000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-FFFF7F-6000-normal">
+      <LineStyle>
+        <color>ff7fffff</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-FFFF7F-6000-highlight">
+      <LineStyle>
+        <color>ff7fffff</color>
+        <width>9</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-FFFF7F-6000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FFFF7F-6000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FFFF7F-6000-highlight</styleUrl>
       </Pair>
     </StyleMap>
     <Style id="poly-000000-6000-127-normal">
@@ -18993,11 +19367,11 @@
       </Placemark>
     </Folder>
     <Folder>
-      <name>AREAS LIMA VIGILANCIA FOGOS</name>
+      <name>SUP 038/20 FOGOS AREAS LIMA</name>
       <Placemark>
         <name>AREA L</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES LOUSÃ<br><br>GND/7,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES LOUSﾃ�<br><br>GND/7,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-FF0000-10000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19079,8 +19453,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L7</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L7<br><br>2,000ft AGL/7,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L7<br><br>2,000ft AGL/7,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-FF007F-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19094,8 +19468,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L6</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L6<br><br>2,000ft AGL/6,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L6<br><br>2,000ft AGL/6,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-AAFF00-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19109,8 +19483,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L3</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L3<br><br>1,500ft AGL/6,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L3<br><br>1,500ft AGL/6,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-55007F-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19124,8 +19498,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L2</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L2<br><br>1,500ft AGL/6,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L2<br><br>1,500ft AGL/6,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-FF0000-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19149,8 +19523,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L1</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L1<br><br>1,500ft AGL/6,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L1<br><br>1,500ft AGL/6,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-FF0000-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19179,8 +19553,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L4</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA 4<br><br>2,000ft AGL/7,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA 4<br><br>2,000ft AGL/7,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-FFFF00-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19195,8 +19569,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L5</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L5<br><br>2,000ft AGL/4,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L5<br><br>2,000ft AGL/4,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-AA0000-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19209,8 +19583,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L8</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L8<br><br>2,000ft AGL/8,5000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L8<br><br>2,000ft AGL/8,5000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-5500FF-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19224,8 +19598,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L9</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L9<br><br>2,000ft AGL/4,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L9<br><br>2,000ft AGL/4,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-00FFFF-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19239,8 +19613,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L10</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L10<br><br>2,000ft AGL/5,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L10<br><br>2,000ft AGL/5,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-00AA00-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19254,8 +19628,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L11</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L11<br><br>2,000ft AGL/7,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L11<br><br>2,000ft AGL/7,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-FF0000-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19269,8 +19643,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L12</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L12<br><br>2,000ft AGL/9,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L12<br><br>2,000ft AGL/9,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-55FF7F-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19284,8 +19658,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L13</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L13<br><br>2,000ft AGL/5,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L13<br><br>2,000ft AGL/5,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-FF5500-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19300,8 +19674,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L14</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L14<br><br>2,000ft AGL/7,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L14<br><br>2,000ft AGL/7,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-00007F-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19315,8 +19689,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L15</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L15<br><br>2,000ft AGL/7,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L15<br><br>2,000ft AGL/7,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-FFFF00-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19332,8 +19706,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L16</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L16<br><br>2,000ft AGL/5,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L16<br><br>2,000ft AGL/5,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-FF00FF-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19348,8 +19722,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L17</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L17<br><br>2,000ft AGL/5,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L17<br><br>2,000ft AGL/5,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-AAFFFF-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19363,8 +19737,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L18</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L18<br><br>2,000ft AGL/5,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L18<br><br>2,000ft AGL/5,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-00FF00-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19380,8 +19754,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L20</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L20<br><br>2,000ft AGL/4,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L20<br><br>2,000ft AGL/4,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-00FF00-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19396,8 +19770,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L19</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L19<br><br>2,000ft AGL/5,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L19<br><br>2,000ft AGL/5,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-55007F-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19421,8 +19795,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L21</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L21<br><br>2,000ft AGL/6,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L21<br><br>2,000ft AGL/6,000ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-FF0000-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19440,8 +19814,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L22</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L22<br><br>2,000ft AGL/5,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L22<br><br>2,000ft AGL/5,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-AA5500-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19455,8 +19829,8 @@
       </Placemark>
       <Placemark>
         <name>AREA L23</name>
-        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L23<br><br>2,000ft AGL/4,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERÃO UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
-        <styleUrl>#line-FFDD5E-3519</styleUrl>
+        <description><![CDATA[ACTIVIDADE UAS - DRONES AREA L23<br><br>2,000ft AGL/4,500ft AMSL<br>19 JUNHO a 31 OUTUBRO 2020<br><br>SUP MVFR 038/2020<br><br>AS UA/DRONES  IRAO EVITAR UMA AREA CIRCULAR DE 2NM CENTRADA NOS ARP DOS AERODRODROMOS/HELIPORTOS/PISTAS UL E MANTERﾃグ UMA ALTITUDE SUPERIOR A 2,000ft QUANDO SOBREVOAREM ESSAS AREAS <br><br>ACTIVAS NASCER SOL/02:00L . PARA MAIS INFORMACOES SOBRE QUAIS AS AREAS ACTIVAS CONTACTAR LISBOA MILITAR/LISBOA INFORMACAO/LISBOA CONTROL 130.900MHZ 123.750MHZ 131.050MHZ]]></description>
+        <styleUrl>#line-FF00FF-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
           <coordinates>
@@ -19485,7 +19859,7 @@
       <name>LP-P</name>
       <Placemark>
         <name>LP-P2</name>
-        <description><![CDATA[ÁREA PROIBIDA -  PINHAL DO ARNEIRO <br><br>GND/2,000ft AMSL<br>PROIBIDA TODOS OS DIAS  H24<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-1]]></description>
+        <description><![CDATA[ﾃヽEA PROIBIDA -  PINHAL DO ARNEIRO <br><br>GND/2,000ft AMSL<br>PROIBIDA TODOS OS DIAS  H24<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-1]]></description>
         <styleUrl>#poly-000000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -19506,8 +19880,184 @@
     <Folder>
       <name>NOTAM E OUTRAS AREAS</name>
       <Placemark>
+        <name>TMA PORTO</name>
+        <description><![CDATA[TMA PORTO ENCERRADA<br><br>LANﾃ�AMENTO MASSIVO DE BALﾃ髭S LIVRES<br>ENCERRADA 23 JUNHO 20:45-00:01 UTC]]></description>
+        <styleUrl>#line-FFFF7F-6000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -8.064029,41.052212,0
+            -8.088544,41.012623,0
+            -8.117508,40.97479,0
+            -8.150694,40.938997,0
+            -8.187848,40.905513,0
+            -8.228684,40.874589,0
+            -8.272892,40.846458,0
+            -8.320137,40.821328,0
+            -8.370063,40.799389,0
+            -8.422295,40.780803,0
+            -8.476442,40.76571,0
+            -8.5321,40.754221,0
+            -8.588853,40.746423,0
+            -8.646278,40.742373,0
+            -8.703948,40.742102,0
+            -8.761435,40.745611,0
+            -8.818311,40.752875,0
+            -8.874151,40.763839,0
+            -8.92854,40.778422,0
+            -8.981071,40.796514,0
+            -9.031351,40.817982,0
+            -9.079003,40.842666,0
+            -9.123667,40.870379,0
+            -9.165006,40.900916,0
+            -9.202706,40.934048,0
+            -9.236478,40.969526,0
+            -9.266061,41.007084,0
+            -9.291227,41.046439,0
+            -9.311777,41.087295,0
+            -9.327548,41.129344,0
+            -9.33841,41.172266,0
+            -9.344273,41.215738,0
+            -9.345082,41.259429,0
+            -9.340819,41.303007,0
+            -9.331508,41.346139,0
+            -9.317211,41.388496,0
+            -9.298025,41.429754,0
+            -9.274091,41.469597,0
+            -9.245582,41.507718,0
+            -9.21271,41.543824,0
+            -9.175722,41.577636,0
+            -9.134898,41.608894,0
+            -9.090546,41.637356,0
+            -9.043007,41.662801,0
+            -8.992646,41.685033,0
+            -8.93985,41.703877,0
+            -8.885029,41.719189,0
+            -8.828606,41.730848,0
+            -8.771021,41.738765,0
+            -8.712721,41.742877,0
+            -8.65416,41.743152,0
+            -8.595795,41.739589,0
+            -8.53808,41.732215,0
+            -8.481463,41.721087,0
+            -8.426386,41.706293,0
+            -8.373274,41.687946,0
+            -8.322539,41.666191,0
+            -8.274572,41.641195,0
+            -8.229743,41.613152,0
+            -8.188392,41.582281,0
+            -8.150836,41.548819,0
+            -8.117359,41.513025,0
+            -8.088211,41.475175,0
+            -8.063608,41.435561,0
+            -8.043733,41.394487,0
+            -8.028727,41.352267,0
+            -8.018697,41.309226,0
+            -8.013708,41.265692,0
+            -8.01379,41.221997,0
+            -8.01893,41.178473,0
+            -8.029081,41.135452,0
+            -8.044155,41.093258,0
+            -8.064029,41.052212,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>AROUCA</name>
+        <description><![CDATA[ACTIVIDADE PARAQUEDISMO<br><br>GND/FL050<br>ACTIVIDADE 20 JUNHO 10:00-13:00 UTC<br><br>NOTAM A1796/20]]></description>
+        <styleUrl>#line-FFFF7F-6000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -8.292576,40.922188,0
+            -8.293628,40.924987,0
+            -8.294353,40.927845,0
+            -8.294745,40.93074,0
+            -8.294802,40.93365,0
+            -8.294523,40.936553,0
+            -8.293911,40.939426,0
+            -8.292969,40.942248,0
+            -8.291705,40.944997,0
+            -8.290128,40.947652,0
+            -8.288251,40.950194,0
+            -8.286088,40.952602,0
+            -8.283655,40.954859,0
+            -8.28097,40.956946,0
+            -8.278055,40.958849,0
+            -8.274931,40.960553,0
+            -8.271622,40.962045,0
+            -8.268153,40.963313,0
+            -8.264551,40.964348,0
+            -8.260843,40.965142,0
+            -8.257058,40.965688,0
+            -8.253224,40.965984,0
+            -8.24937,40.966025,0
+            -8.245527,40.965813,0
+            -8.241722,40.965349,0
+            -8.237986,40.964635,0
+            -8.234346,40.963679,0
+            -8.23083,40.962486,0
+            -8.227466,40.961067,0
+            -8.224279,40.959431,0
+            -8.221292,40.957592,0
+            -8.21853,40.955563,0
+            -8.216012,40.95336,0
+            -8.213758,40.951,0
+            -8.211785,40.9485,0
+            -8.210109,40.94588,0
+            -8.208741,40.943159,0
+            -8.207693,40.940359,0
+            -8.206971,40.9375,0
+            -8.206582,40.934605,0
+            -8.206529,40.931695,0
+            -8.206812,40.928793,0
+            -8.207428,40.92592,0
+            -8.208374,40.923099,0
+            -8.209641,40.920351,0
+            -8.21122,40.917696,0
+            -8.213099,40.915156,0
+            -8.215263,40.912749,0
+            -8.217697,40.910494,0
+            -8.220382,40.908408,0
+            -8.223297,40.906506,0
+            -8.22642,40.904804,0
+            -8.229727,40.903313,0
+            -8.233193,40.902046,0
+            -8.236792,40.901012,0
+            -8.240497,40.900219,0
+            -8.244278,40.899673,0
+            -8.248109,40.899378,0
+            -8.251959,40.899337,0
+            -8.255798,40.899549,0
+            -8.259599,40.900013,0
+            -8.263332,40.900725,0
+            -8.266969,40.901681,0
+            -8.270482,40.902872,0
+            -8.273844,40.904291,0
+            -8.27703,40.905925,0
+            -8.280016,40.907763,0
+            -8.282778,40.90979,0
+            -8.285297,40.911991,0
+            -8.287552,40.91435,0
+            -8.289526,40.916849,0
+            -8.291205,40.919468,0
+            -8.292576,40.922188,0
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>RESTRIÇÕES AO VOO LPPC</name>
+        <description><![CDATA[COVID-19: FLIGHT RESTRICTIONS FROM/TO SPAIN<br><br>RESTRICTIONS FROM 14 JUNE 2020 TO 30 JUNE 2020 22:59 UTC<br><br>O NOTAM A1741/20 informa que de acordo com instruções recebidas do Governo de Portugal, com o propósito de prevenção de infecção e mitigação da propagação do vírus COVID-19, VOOS de e para Espanha estão proibidas descolagens ou aterragens de aeródromos portugueses, incluindo voos que incluam paragens intermédias noutros Estados.<br><br>EXCEPTO Voos de Estado, Chefe de Estado, Emergências, Cargo, Correio, Hospital, Repatriamento, Nações Unidas, Humanitário, MEDEVAC, Combate a Incêndios, Paragens Técnicas onde os passageiros não desembarquem sem autorização. <br>Passageiros, excepto tripulantes, não deverão ser permitidos desembarcar. <br>Tripulações podem desembarcar e serão submetidos a quarentena obrigatória sob supervisão do Estado durante o período da estadia. <br>Serviços de rota e Operações Aéreas poderão preencher no Plano de Voo aeródromos portugueses como alternantes. <br><br>DESDE o dia 14 JUNHO 2020 às 10:53 UTC até dia 30 JUNHO 2020 às 22:59 UTC.]]></description>
+        <styleUrl>#icon-503-DB4436-labelson</styleUrl>
+        <Point>
+          <coordinates>
+            -7.2138358,39.177966,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
         <name>CORREDOR TC02</name>
-        <description><![CDATA[RESERVA ESPAÇO AÉREO - EXERCÍCIOS AÉREOS<br><br>FL130-FL140<br>RESERVADO 18 JUNHO 13:00-16:00 UTC<br>RESERVADO 19 JUNHO 09:30-12:30 UTC<br><br>NOTAM A1758/20]]></description>
+        <description><![CDATA[RESERVA ESPAﾃ�O Aﾃ嘘EO - EXERCﾃ垢IOS Aﾃ嘘EOS<br><br>FL130-FL140<br>RESERVADO 19 JUNHO 09:30-12:30 UTC<br><br>NOTAM A1758/20]]></description>
         <styleUrl>#line-FF0000-8000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
@@ -19519,7 +20069,7 @@
       </Placemark>
       <Placemark>
         <name>MONTE REAL COSTA</name>
-        <description><![CDATA[RESERVA ESPAÇO ÁREO - MONTE REAL<br><br>GND/ 1,000ft AGL AMSL/FL245<br>RESERVADO 18 JUNHO 13:30-16:00 UTC<br><br>NOTAM A1747/20]]></description>
+        <description><![CDATA[RESERVA ESPAﾃ�O ﾃヽEO - MONTE REAL<br><br>GND/ 1,000ft AGL AMSL/FL245<br>RESERVADO 18 JUNHO 13:30-16:00 UTC<br><br>NOTAM A1747/20]]></description>
         <styleUrl>#poly-000000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -19544,7 +20094,7 @@
       </Placemark>
       <Placemark>
         <name>SETUBAL</name>
-        <description><![CDATA[RESERVA ESPAÇO AÉREO - DRONE MARINHA<br><br><br>SFC/700ft AMSL<br>RESERVADO 16 JUNHO ATÉ 19 JUNHO HORÁRIO 13:00-16:30 UTC<br><br>NOTAM A1751/20]]></description>
+        <description><![CDATA[RESERVA ESPAﾃ�O Aﾃ嘘EO - DRONE MARINHA<br><br><br>SFC/700ft AMSL<br>RESERVADO 16 JUNHO ATﾃ� 19 JUNHO HORﾃヽIO 13:00-16:30 UTC<br><br>NOTAM A1751/20]]></description>
         <styleUrl>#line-000000-8000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
@@ -19627,7 +20177,7 @@
       </Placemark>
       <Placemark>
         <name>PENICHE AREA 1B</name>
-        <description><![CDATA[RESERVA ESPAÇO AÉREO - DRONES UAV<br><br>SFC/900ft AMSL<br>RESERVADA 01 JUNHO ATÉ 31 AGOSTO 2020<br>SEGUNDA FEIRA - SEXTA FEIRA do NASCER DO SOL até 23:50<br><br>NOTAM A1312/20]]></description>
+        <description><![CDATA[RESERVA ESPAﾃ�O Aﾃ嘘EO - DRONES UAV<br><br>SFC/900ft AMSL<br>RESERVADA 01 JUNHO ATﾃ� 31 AGOSTO 2020<br>SEGUNDA FEIRA - SEXTA FEIRA do NASCER DO SOL atﾃｩ 23:50<br><br>NOTAM A1312/20]]></description>
         <styleUrl>#poly-AA0000-6000-128</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -19649,7 +20199,7 @@
       </Placemark>
       <Placemark>
         <name>ATOUGUIA BALEIA</name>
-        <description><![CDATA[RESERVA ESPAÇO AÉREO - DRONES UAV<br><br>SFC/900ft AGL<br>RESERVADA 01 JUNHO ATÉ 31 AGOSTO 2020<br>SEGUNDA FEIRA - SEXTA FEIRA do NASCER DO SOL até 23:50<br><br>NOTAM A1313/20]]></description>
+        <description><![CDATA[RESERVA ESPAﾃ�O Aﾃ嘘EO - DRONES UAV<br><br>SFC/900ft AGL<br>RESERVADA 01 JUNHO ATﾃ� 31 AGOSTO 2020<br>SEGUNDA FEIRA - SEXTA FEIRA do NASCER DO SOL atﾃｩ 23:50<br><br>NOTAM A1313/20]]></description>
         <styleUrl>#poly-AA0000-6000-128</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20016,7 +20566,7 @@
       </Placemark>
       <Placemark>
         <name>PENICHE AREA 2B</name>
-        <description><![CDATA[RESERVA ESPAÇO AÉREO - DRONES UAV<br><br>500ft/3,500ft AMSL<br>RESERVADA 01 JUNHO ATÉ 31 AGOSTO 2020<br>SEGUNDA FEIRA - SEXTA FEIRA do NASCER DO SOL até 23:50<br><br>NOTAM A1311/20]]></description>
+        <description><![CDATA[RESERVA ESPAﾃ�O Aﾃ嘘EO - DRONES UAV<br><br>500ft/3,500ft AMSL<br>RESERVADA 01 JUNHO ATﾃ� 31 AGOSTO 2020<br>SEGUNDA FEIRA - SEXTA FEIRA do NASCER DO SOL atﾃｩ 23:50<br><br>NOTAM A1311/20]]></description>
         <styleUrl>#poly-AA0000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20036,7 +20586,7 @@
       </Placemark>
       <Placemark>
         <name>PENICHE - CORREDOR KILO</name>
-        <description><![CDATA[RESERVA ESPAÇO AÉREO - DRONES UAV<br><br>500ft/900ft AMSL<br>RESERVADA 01 JUNHO ATÉ 31 AGOSTO 2020<br>SEGUNDA FEIRA - SEXTA FEIRA do NASCER DO SOL até 23:50<br><br>NOTAM A1308/20]]></description>
+        <description><![CDATA[RESERVA ESPAﾃ�O Aﾃ嘘EO - DRONES UAV<br><br>500ft/900ft AMSL<br>RESERVADA 01 JUNHO ATﾃ� 31 AGOSTO 2020<br>SEGUNDA FEIRA - SEXTA FEIRA do NASCER DO SOL atﾃｩ 23:50<br><br>NOTAM A1308/20]]></description>
         <styleUrl>#line-AA0000-8000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
@@ -20049,7 +20599,7 @@
       </Placemark>
       <Placemark>
         <name>QUINTA DO ANJO</name>
-        <description><![CDATA[CONCENTRAÇÃO AVES<br><br>GND/1,500ft AGL<br>ACTIVIDADE 19 FEVEREIRO até PERMANENTE<br><br>NOTAM M0404/20]]></description>
+        <description><![CDATA[CONCENTRAﾃ�ﾃグ AVES<br><br>GND/1,500ft AGL<br>ACTIVIDADE 19 FEVEREIRO atﾃｩ PERMANENTE<br><br>NOTAM M0404/20]]></description>
         <styleUrl>#line-000000-6000</styleUrl>
         <LineString>
           <tessellate>1</tessellate>
@@ -20130,12 +20680,25 @@
           </coordinates>
         </LineString>
       </Placemark>
+      <Placemark>
+        <name>CORREDOR TC01</name>
+        <description><![CDATA[RESERVA ESPAﾃ�O Aﾃ嘘EO - EXERCﾃ垢IOS Aﾃ嘘EOS<br><br>FL130-FL140<br>RESERVADO 19 JUNHO 09:30-12:30 UTC<br><br>NOTAM A1760/20]]></description>
+        <styleUrl>#line-FF0000-8000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -8.642864,39.977708,0
+            -7.745887,40.541844,0
+            -6.724964,40.624071,0
+          </coordinates>
+        </LineString>
+      </Placemark>
     </Folder>
     <Folder>
       <name>AREAS LP-R</name>
       <Placemark>
         <name>LP-R42B</name>
-        <description><![CDATA[AREA RESTRITA - SINTRA<br><br>ESPAÇO AEREO DELTA<br>FREQUENCIAS UTEIS<br>APROXIMAÇÃO SINTRA - 118.600MHz<br>LISBOA MILITAR - 123.750MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-2<br><br>ACTIVAÇÃO POR FUA<br>1000ft AMSL/FL090<br>RESTRITA 08:00-16:00 UTC<br>FL100/FL245<br>RESTRITA 13:30-15:30 UTC]]></description>
+        <description><![CDATA[AREA RESTRITA - SINTRA<br><br>ESPAﾃ�O AEREO DELTA<br>FREQUENCIAS UTEIS<br>APROXIMAﾃ�ﾃグ SINTRA - 118.600MHz<br>LISBOA MILITAR - 123.750MHz<br><br>ACTIVAﾃ�ﾃグ POR FUA<br>1000ft AMSL/FL090<br>RESTRITA 08:00-16:00 UTC<br><br>FL100/FL245<br>RESTRITA 10:00-12:00  UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-2]]></description>
         <styleUrl>#poly-FFFF00-6000-128</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20168,7 +20731,7 @@
       </Placemark>
       <Placemark>
         <name>LP-R60B</name>
-        <description><![CDATA[AREA RESTRITA - MONTE REAL<br><br>FREQUENCIAS UTEIS<br>APROXIMAÇÃO MONTE REAL - 122.100MHz<br>LISBOA MILITAR - 123.750MHz<br><br>ESPAÇO AEREO DELTA<br>1,000ft AGL AMSL/FL245<br>RESTRITA  TODOS OS DIAS H24<br><br>ACTIVAÇÃO POR FUA<br>FL245/FL500<br>RESTRITA 10:00-12:00 13:30-16:00 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-3/9]]></description>
+        <description><![CDATA[AREA RESTRITA - MONTE REAL<br><br>FREQUENCIAS UTEIS<br>APROXIMAﾃ�ﾃグ MONTE REAL - 122.100MHz<br>LISBOA MILITAR - 123.750MHz<br><br>ESPAﾃ�O AEREO DELTA<br>1,000ft AGL AMSL/FL245<br>RESTRITA  TODOS OS DIAS H24<br><br>ACTIVAﾃ�ﾃグ POR FUA<br>FL245/FL500<br>RESTRITA 10:00-12:00 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-3/9]]></description>
         <styleUrl>#poly-FFFF00-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20193,7 +20756,7 @@
       </Placemark>
       <Placemark>
         <name>LP-R51BN</name>
-        <description><![CDATA[AREA RESTRITA - BEJA<br><br>ESPAÇO AEREO DELTA<br>1,000ft AGL/FL105<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>APROXIMAÇÃO BEJA - 130.100MHz<br>LISBOA MILITAR - 123.750MHz/131.050 MHz<br>FARO APROXIMAÇÃO - 119.405MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-2/9]]></description>
+        <description><![CDATA[AREA RESTRITA - BEJA<br><br>ESPAﾃ�O AEREO DELTA<br>1,000ft AGL/FL105<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>APROXIMAﾃ�ﾃグ BEJA - 130.100MHz<br>LISBOA MILITAR - 123.750MHz/131.050 MHz<br>FARO APROXIMAﾃ�ﾃグ - 119.405MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-2/9]]></description>
         <styleUrl>#poly-FFFF00-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20244,7 +20807,7 @@
       </Placemark>
       <Placemark>
         <name>LP-R51BS</name>
-        <description><![CDATA[AREA RESTRITA - BEJA<br><br>ESPAÇO AEREO DELTA<br>1,000ft AGL/FL105<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>APROXIMAÇÃO BEJA - 130.100MHz<br>LISBOA MILITAR - 123.750MHz/131.050 MHz<br>FARO APROXIMAÇÃO - 119.405MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-2/9]]></description>
+        <description><![CDATA[AREA RESTRITA - BEJA<br><br>ESPAﾃ�O AEREO DELTA<br>1,000ft AGL/FL105<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>APROXIMAﾃ�ﾃグ BEJA - 130.100MHz<br>LISBOA MILITAR - 123.750MHz/131.050 MHz<br>FARO APROXIMAﾃ�ﾃグ - 119.405MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-2/9]]></description>
         <styleUrl>#poly-FFFF00-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20347,7 +20910,7 @@
       </Placemark>
       <Placemark>
         <name>LP-R51C</name>
-        <description><![CDATA[AREA RESTRITA - BEJA<br><br>1,000ft AGL/5,500ft AMSL<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>APROXIMAÇÃO BEJA - 130.100MHz<br>LISBOA MILITAR - 123.750MHz/131.050 MHz<br><br><br>MANUAL VFR - AVISOS NAV. AEREA 18-2]]></description>
+        <description><![CDATA[AREA RESTRITA - BEJA<br><br>1,000ft AGL/5,500ft AMSL<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>APROXIMAﾃ�ﾃグ BEJA - 130.100MHz<br>LISBOA MILITAR - 123.750MHz/131.050 MHz<br><br><br>MANUAL VFR - AVISOS NAV. AEREA 18-2]]></description>
         <styleUrl>#poly-FF0000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20365,7 +20928,7 @@
       </Placemark>
       <Placemark>
         <name>LP-R51A</name>
-        <description><![CDATA[AREA RESTRITA - BEJA<br><br>ESPAÇO AEREO DELTA<br>SFC/3,000ft AMSL<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>TORRE BEJA - 130.400MHz<br>LISBOA MILITAR - 123.750MHz/131.050MHz<br>FARO APROXIMAÇÃO - 119.405MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-2]]></description>
+        <description><![CDATA[AREA RESTRITA - BEJA<br><br>ESPAﾃ�O AEREO DELTA<br>SFC/3,000ft AMSL<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>TORRE BEJA - 130.400MHz<br>LISBOA MILITAR - 123.750MHz/131.050MHz<br>FARO APROXIMAﾃ�ﾃグ - 119.405MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-2]]></description>
         <styleUrl>#poly-FF0000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20384,7 +20947,7 @@
       </Placemark>
       <Placemark>
         <name>LP-R44A</name>
-        <description><![CDATA[AREA RESTRITA - ALVERCA<br><br>ESPAÇO AEREO CHARLIE<br>SFC/1,500ft AMSL<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>TORRE ALVERCA - 119.850MHz<br>LISBOA MILITAR - 123.750MHz<br>LISBOA APROXIMAÇÃO - 119.105MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-2]]></description>
+        <description><![CDATA[AREA RESTRITA - ALVERCA<br><br>ESPAﾃ�O AEREO CHARLIE<br>SFC/1,500ft AMSL<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>TORRE ALVERCA - 119.850MHz<br>LISBOA MILITAR - 123.750MHz<br>LISBOA APROXIMAﾃ�ﾃグ - 119.105MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-2]]></description>
         <styleUrl>#poly-FF0000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20403,7 +20966,7 @@
       </Placemark>
       <Placemark>
         <name>LP-R42A</name>
-        <description><![CDATA[AREA RESTRITA - SINTRA<br><br>ESPAÇO AEREO DELTA<br>SFC/3,000ft AMSL<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>TORRE SINTRA - 119.850MHz<br>LISBOA MILITAR - 123.750MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-2]]></description>
+        <description><![CDATA[AREA RESTRITA - SINTRA<br><br>ESPAﾃ�O AEREO DELTA<br>SFC/3,000ft AMSL<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>TORRE SINTRA - 119.850MHz<br>LISBOA MILITAR - 123.750MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-2]]></description>
         <styleUrl>#poly-FF0000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20456,7 +21019,7 @@
       </Placemark>
       <Placemark>
         <name>LP-R40BS</name>
-        <description><![CDATA[AREA RESTRITA - OVAR<br><br>ESPAÇO AEREO DELTA<br>1,000ft AGL AMSL/FL055<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>TORRE OVAR - 118.600MHz<br>LISBOA MILITAR - 130.900MHz<br>PORTO APROXIMAÇÃO - 121.105MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-2]]></description>
+        <description><![CDATA[AREA RESTRITA - OVAR<br><br>ESPAﾃ�O AEREO DELTA<br>1,000ft AGL AMSL/FL055<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>TORRE OVAR - 118.600MHz<br>LISBOA MILITAR - 130.900MHz<br>PORTO APROXIMAﾃ�ﾃグ - 121.105MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-2]]></description>
         <styleUrl>#poly-FFFF00-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20475,7 +21038,7 @@
       </Placemark>
       <Placemark>
         <name>LP-R40BN</name>
-        <description><![CDATA[AREA RESTRITA - OVAR<br><br>ESPAÇO AEREO DELTA<br>1,000ft AGL/FL045<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>TORRE OVAR - 118.600MHz<br>LISBOA MILITAR - 130.900MHz<br>PORTO APROXIMAÇÃO - 121.105MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-1]]></description>
+        <description><![CDATA[AREA RESTRITA - OVAR<br><br>ESPAﾃ�O AEREO DELTA<br>1,000ft AGL/FL045<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>TORRE OVAR - 118.600MHz<br>LISBOA MILITAR - 130.900MHz<br>PORTO APROXIMAﾃ�ﾃグ - 121.105MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-1]]></description>
         <styleUrl>#poly-FFFF00-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20499,7 +21062,7 @@
       </Placemark>
       <Placemark>
         <name>LP-R40A</name>
-        <description><![CDATA[AREA RESTRITA - OVAR<br><br>ESPAÇO AEREO DELTA<br>SFC/2,000ft AMSL<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>TORRE OVAR - 118.600MHz<br>LISBOA MILITAR - 130.900MHz<br>PORTO APROXIMAÇÃO - 121.105MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-1]]></description>
+        <description><![CDATA[AREA RESTRITA - OVAR<br><br>ESPAﾃ�O AEREO DELTA<br>SFC/2,000ft AMSL<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>TORRE OVAR - 118.600MHz<br>LISBOA MILITAR - 130.900MHz<br>PORTO APROXIMAﾃ�ﾃグ - 121.105MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-1]]></description>
         <styleUrl>#poly-FF0000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20604,7 +21167,7 @@
       </Placemark>
       <Placemark>
         <name>LP-R26A</name>
-        <description><![CDATA[AREA RESTRITA - MONTIJO<br><br>ESPAÇO AEREO DELTA<br>SFC/2,000ft AMSL<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>TORRE MONTIJO - 134.100MHz<br>LISBOA MILITAR - 123.750MHz<br>LISBOA APROXIMAÇÃO - 119.105MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-1]]></description>
+        <description><![CDATA[AREA RESTRITA - MONTIJO<br><br>ESPAﾃ�O AEREO DELTA<br>SFC/2,000ft AMSL<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>TORRE MONTIJO - 134.100MHz<br>LISBOA MILITAR - 123.750MHz<br>LISBOA APROXIMAﾃ�ﾃグ - 119.105MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-1]]></description>
         <styleUrl>#poly-FF0000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20644,7 +21207,7 @@
       </Placemark>
       <Placemark>
         <name>LP-R60A</name>
-        <description><![CDATA[AREA RESTRITA - MONTE REAL<br><br>ESPAÇO AEREO DELTA<br>SFC/4,000ft AMSL<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>APROXIMAÇÃO MONTE REAL - 122.100MHz<br>LISBOA MILITAR - 123.750MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-3]]></description>
+        <description><![CDATA[AREA RESTRITA - MONTE REAL<br><br>ESPAﾃ�O AEREO DELTA<br>SFC/4,000ft AMSL<br>RESTRITA  TODOS OS DIAS H24<br><br>FREQUENCIAS UTEIS<br>APROXIMAﾃ�ﾃグ MONTE REAL - 122.100MHz<br>LISBOA MILITAR - 123.750MHz<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-3]]></description>
         <styleUrl>#poly-FF0000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20666,8 +21229,29 @@
     <Folder>
       <name>AREAS  LP-TRA</name>
       <Placemark>
+        <name>LP-TRA56</name>
+        <description><![CDATA[AREA RESTRITA TEMPORARIA - ARRIPIADO<br><br>AREA PARAQUEDISMO<br>GND/FL100<br><br>ACTIVAﾃ�ﾃグ FUA<br>RESTRITA  08:00-17:00 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-13]]></description>
+        <styleUrl>#poly-AA0000-6000-127</styleUrl>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <tessellate>1</tessellate>
+              <coordinates>
+                -8.494611,39.425469,0
+                -8.449538,39.38362,0
+                -8.359678,39.409713,0
+                -8.268939,39.409744,0
+                -8.281659,39.536334,0
+                -8.451334,39.515224,0
+                -8.494611,39.425469,0
+              </coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
         <name>LP-TRA68</name>
-        <description><![CDATA[AREA RESTRITA TEMPORARIA - ABRANTES<br><br>EXERCICIOS AEREOS/PARAQUEDISMO<br>GND/FL055<br><br>ACTIVAÇÃO FUA<br>RESTRITA  08:30-12:30 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA]]></description>
+        <description><![CDATA[AREA RESTRITA TEMPORARIA - ABRANTES<br><br>EXERCICIOS AEREOS/PARAQUEDISMO<br>GND/FL055<br><br>ACTIVAﾃ�ﾃグ FUA<br>RESTRITA  08:30-12:30 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA]]></description>
         <styleUrl>#poly-AA0000-6000-128</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20686,7 +21270,7 @@
       </Placemark>
       <Placemark>
         <name>LP-TRA55</name>
-        <description><![CDATA[AREA RESTRITA TEMPORARIA - COVILHA<br><br>EXERCICIOS AEREOS<br>1,500ft AMSL/FL245<br><br>ACTIVAÇÃO FUA<br>RESTRITA  13:25-15:25 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-13<br><br>RESERVA ESPAÇO AÉREO  - EXERCÍCIOS MILITARES NEVERLAND AREA<br>FL245/FL280<br>RESERVADA 18 JUNHO 13:30-15:30  UTC<br>RESERVADA 19 JUNHO 10:00-12:00  UTC<br><br>NOTAM A1745/20]]></description>
+        <description><![CDATA[AREA RESTRITA TEMPORARIA - COVILHA<br><br>EXERCICIOS AEREOS<br>1,500ft AMSL/FL245<br><br>ACTIVAﾃ�ﾃグ FUA<br>RESTRITA  10:00-12:00 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-13<br><br>RESERVA ESPAﾃ�O Aﾃ嘘EO  - EXERCﾃ垢IOS MILITARES NEVERLAND AREA<br>FL245/FL280<br>RESERVADA 19 JUNHO 10:00-12:00  UTC<br><br>NOTAM A1745/20]]></description>
         <styleUrl>#poly-AA0000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20719,7 +21303,7 @@
       </Placemark>
       <Placemark>
         <name>LP-TRA54</name>
-        <description><![CDATA[AREA RESTRITA TEMPORARIA - MONCORVO<br><br>EXERCICIOS AEREOS<br>GND/FL245<br><br>ACTIVAÇÃO FUA<br>RESTRITA  13:25-15:25 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-13<br><br>RESERVA ESPAÇO AÉREO  - EXERCÍCIOS MILITARES NEVERLAND AREA<br>FL245/FL280<br>RESERVADA 18 JUNHO 13:30-15:30  UTC<br>RESERVADA 19 JUNHO 10:00-12:00  UTC<br><br>NOTAM A1746/20]]></description>
+        <description><![CDATA[AREA RESTRITA TEMPORARIA - MONCORVO<br><br>EXERCICIOS AEREOS<br>GND/FL245<br><br>ACTIVAﾃ�ﾃグ FUA<br>RESTRITA  10:00-12:00 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-13<br><br>RESERVA ESPAﾃ�O Aﾃ嘘EO  - EXERCﾃ垢IOS MILITARES NEVERLAND AREA<br>FL245/FL280<br>RESERVADA 19 JUNHO 10:00-12:00  UTC<br><br>NOTAM A1746/20]]></description>
         <styleUrl>#poly-AA0000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20763,7 +21347,7 @@
       <name>AREAS LP-D</name>
       <Placemark>
         <name>LP-D10</name>
-        <description><![CDATA[AREA PERIGOSA - ALCOCHETE<br><br>FOGO AR-AR<br><br>ACTIVAÇÃO POR FUA<br>GND/FL240<br>PERIGOSA 10:00-12:00 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-9]]></description>
+        <description><![CDATA[AREA PERIGOSA - ALCOCHETE<br><br>FOGO AR-AR<br><br>ACTIVAﾃ�ﾃグ POR FUA<br>GND/FL240<br>PERIGOSA 13:25-16:05 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-9]]></description>
         <styleUrl>#poly-000000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20784,7 +21368,7 @@
       </Placemark>
       <Placemark>
         <name>LP-D66</name>
-        <description><![CDATA[AREA PERIGOSA - ALCOCHETE<br><br>EXERCICIOS AEREOS<br>GND/5,000ft AMSL<br><br>ACTIVAÇÃO FUA<br>PERIGOSA 08:30-10:00 12:00-16:00 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-10<br><br>RESERVA ESPAÇO AÉREO - EXERCÍCIOS MILITARES<br><br>GND/4,000ft AMSL<br>RESERVADA 18 JUNHO 19:00-22:59 UTC<br><br>NOTAM A1787/20]]></description>
+        <description><![CDATA[AREA PERIGOSA - ALCOCHETE<br><br>EXERCICIOS AEREOS<br>GND/5,000ft AMSL<br><br>ACTIVAﾃ�ﾃグ FUA<br>PERIGOSA 08:30-13:25 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-10]]></description>
         <styleUrl>#poly-000000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>
@@ -20804,7 +21388,7 @@
       </Placemark>
       <Placemark>
         <name>LP-D67</name>
-        <description><![CDATA[AREA PERIGOSA - MAR W MONTE REAL<br><br>EXERCICIOS AEREOS<br>4,000ft AMSL/FL300<br><br>ACTIVAÇÃO FUA<br>PERIGOSA 13:30-16:00 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-10]]></description>
+        <description><![CDATA[AREA PERIGOSA - MAR W MONTE REAL<br><br>EXERCICIOS AEREOS<br>4,000ft AMSL/FL300<br><br>ACTIVAﾃ�ﾃグ FUA<br>PERIGOSA 10:00-12:00 UTC<br><br>MANUAL VFR - AVISOS NAV. AEREA 18-10]]></description>
         <styleUrl>#poly-000000-6000-127</styleUrl>
         <Polygon>
           <outerBoundaryIs>

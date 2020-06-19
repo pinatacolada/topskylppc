@@ -28,7 +28,7 @@ public class VLimit{
 	
 
 	public String printVLimit() {
-		return low+":"+high;
+		return low+"00:"+high+"00";
 	}
 	
 	public String printNotamVLString() {
