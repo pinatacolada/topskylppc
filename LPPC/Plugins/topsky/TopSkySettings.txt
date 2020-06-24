@@ -100,6 +100,8 @@ HTTP_METAR_Page_Prefix=metar?ICAO=
 HTTP_METAR_Page_Suffix=
 HTTP_METAR_Data_Prefix="
 HTTP_METAR_Data_Suffix="
+HTTP_NOTAM_Area_Sched_Text= 
+HTTP_NOTAM_Area_Sched_Debug=1
 
 HTTP_NOTAM_Server=https://www.notams.faa.gov
 
@@ -209,3 +211,4 @@ Window_MsgOut=1,1400,25
 Window_SAP=1,6,885
 Window_CARD=1,6,693
 Window_CPDLC_Current=1,700,25
+Window_NOTAM=1,700,300,400
