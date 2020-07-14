@@ -1,13 +1,14 @@
 DEP
 m_Visible:1
 m_X:0
-m_Y:107
+m_Y:187
 m_LineNumber:10
 m_Resizable:1
 m_OrderingColumn:2
 m_HeaderOnly:0
 m_Column:C/S:9:0:10021:6:0:1:TopSky plugin:TopSky plugin::4
-m_Column:TOBT:4:0:10018:95:0:1:TopSky plugin:TopSky plugin::1
+m_Column:TOBT:5:0:10018:95:0:1:TopSky plugin:TopSky plugin::1
+m_Column:CTOT:5:0:10055:94:98:0:TopSky plugin:TopSky plugin:TopSky plugin:42
 m_Column:ATYP:4:0:10028:0:0:1:TopSky plugin:::4
 m_Column:WTC:3:0:10032:0:0:1:TopSky plugin:::4
 m_Column:FR:2:0:10031:0:0:1:TopSky plugin:::4
@@ -18,7 +19,7 @@ m_Column:ADES:4:0:10008:1001:39:1:TopSky plugin:TopSky plugin:TopSky plugin:1
 m_Column:RWY:3:0:10050:78:0:1:TopSky plugin:TopSky plugin::1
 m_Column:SID:8:0:10011:78:0:1:TopSky plugin:TopSky plugin::1
 m_Column:ASSR:5:0:10041:62:0:1:TopSky plugin:TopSky plugin::1
-m_Column:CFL:5:0:10049:12:0:1:TopSky plugin:TopSky plugin::1
+m_Column:CFL:5:1:10049:12:0:1:TopSky plugin:TopSky plugin::1
 m_Column:RFL:5:0:10006:59:0:1:TopSky plugin:TopSky plugin::1
 m_Column::1:0:10046:27:0:1:TopSky plugin:::1
 m_Column:STS:10:0:3:13:0:1:Ground Radar plugin:Ground Radar plugin::1
