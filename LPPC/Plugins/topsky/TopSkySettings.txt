@@ -79,7 +79,7 @@ Color_WM_Frame=250,250,250//windows
 
 CPDLC_Default=0
 CPDLC_MinLevel=285
-CPDLC_Transfer=0
+CPDLC_Transfer=1
 CPDLC_CFL=0
 CPDLC_DCT=0
 CPDLC_AHDG=0
@@ -95,11 +95,11 @@ Equip_Non833=XTUDBAMN
 FlightLeg_AssumeTime=10
 FlightLeg_AutoShow=1
 
-HTTP_METAR_Server=http://metars.flyatlantic-va.com/
-HTTP_METAR_Page_Prefix=metar?ICAO=
-HTTP_METAR_Page_Suffix=
-HTTP_METAR_Data_Prefix="
-HTTP_METAR_Data_Suffix="
+//HTTP_METAR_Server=http://metars.flyatlantic-va.com/
+//HTTP_METAR_Page_Prefix=metar?ICAO=
+//HTTP_METAR_Page_Suffix=
+//HTTP_METAR_Data_Prefix="
+//HTTP_METAR_Data_Suffix="
 HTTP_NOTAM_Area_Sched_Text= 
 HTTP_NOTAM_Area_Sched_Debug=1
 
