@@ -2,15 +2,12 @@ image: java:latest
 
 stages:
   - build
-  - execute
 
-build:
+java 13 assemble:
   stage: build
-  script: /usr/lib/jvm/java-13-openjdk-amd64/bin/javac /Fua Manager/src/fuamanager/FuaManager.java
+  image: registry.gitlab.com/josm/docker-library/openjdk-13-josmplugin:latest
+  script: /usr/lib/jvm/java-8-openjdk-amd64/bin/javac /Fua\ Manager/src/fuamanager/FuaManager.java
   artifacts:
     paths:
-     - /.*
-
-execute:
-  stage: execute
-  script: /usr/lib/jvm/java-13-openjdk-amd64/bin/java Fua Manager -A
+      - build/
+  allow_failure: true
