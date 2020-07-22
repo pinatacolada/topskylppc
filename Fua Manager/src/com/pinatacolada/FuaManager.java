@@ -129,7 +129,7 @@ public class FuaManager {
 //					CREATED: 05 May 2020 11:39:00 
 //					SOURCE: EUECYIYN
 					
-					//maybe! prolly not
+					//maybe! prolly not, nah
 					
 					BufferVert sapv = null;
 					BufferLat sapl = null;
