@@ -39,6 +39,37 @@ public class FuaXMLPlacemark {
 		Area defaultArea = FuaManager.findAreabyName(name);
 		limits = defaultArea.getLimits();
 		
+		if(description.contains("ACTIVA플O POR FUA") || description.contains("ACTIVA플O FUA<")) {//NASTY ASS PLS USE PROPER REGEX GOD//TODO
+			int k = 0;
+			while(k < bits.length) {
+				if(bits[k].contains("ACTIVA플O POR FUA") || bits[k].contains("ACTIVA플O FUA")) {//LOOK AT THIS
+					
+					
+					//TIME
+				}
+				k++;
+			}
+		}
+		
+			
+		
+		return schedules;
+
+	}
+	
+	public ArrayList<SchedAct> oldtoSchedAct() {
+		LocalDateTime start = null;
+		LocalDateTime end = null;
+		VLimit limits = null;
+		ArrayList<SchedAct> schedules = new ArrayList<SchedAct>();
+
+		String[] bits = description.split("<br>");
+
+		System.out.println("----------------------------------------------------------------------------------------------------------------------------------");
+		
+		Area defaultArea = FuaManager.findAreabyName(name);
+		limits = defaultArea.getLimits();
+		
 		if(name.contains("LP-TRA54") || name.contains("LP-TRA55")) {
 			String[] stringLimits = bits[3].split("/");
 			String low = stringLimits[0];
@@ -51,7 +82,7 @@ public class FuaXMLPlacemark {
 		else {
 			for(String s : bits) {
 				//if(s.contains("/")) {
-				if(s.matches("\\S{3,7}\\/\\S{3,7}")){
+				if(s.matches("[A-Z0-9]{3,7}\\/[A-Z0-9]{3,7}")){
 					String[] stringLimits = s.split("/");
 					String low = stringLimits[0];
 					String high = stringLimits[1];

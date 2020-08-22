@@ -45,6 +45,8 @@ public class Notam {
 	private String created;
 
 	public Notam(String raw) {
+		System.out.println("faulty "+raw);
+		
 		setId(raw.substring(0, 8));
 
 		opType = "NOTAM"+raw.substring(14, 15);
@@ -58,25 +60,25 @@ public class Notam {
 		String bLine = raw.substring(raw.indexOf("B) ") + 3, raw.indexOf("B) ") + 3 + 10);
 		String cLine = raw.substring(raw.indexOf("C) ") + 3, raw.indexOf("C) ") + 3 + 10);
 		String dLine = null;
-		if(raw.contains("D) ")){
-			dLine = raw.substring(raw.indexOf("D) ") + 3, raw.indexOf("E) "));
+		if(raw.contains("\\nD) ")){
+			dLine = raw.substring(raw.indexOf("\\nD) ") + 3, raw.indexOf("\\nE) "));
 		}
 		String eLine = null;
-		if(raw.contains("E) ")){
-			if(raw.contains("F) ")) {
-				eLine = raw.substring(raw.indexOf("E) ") + 3, raw.indexOf("F) "));
+		if(raw.contains("\\nE) ")){
+			if(raw.contains("\\nF) ")) {
+				eLine = raw.substring(raw.indexOf("\\nE) ") + 3, raw.indexOf("\\nF) "));
 			}
 			else {
-				eLine = raw.substring(raw.indexOf("E) ") + 3, raw.indexOf("CREATED: "));
+				eLine = raw.substring(raw.indexOf("\\nE) ") + 3, raw.indexOf("CREATED: "));
 			}
 		}
 		String fLine = null;
-		if(raw.contains("F) ")){
-			fLine = raw.substring(raw.indexOf("F) ") + 3, raw.indexOf("G) "));
+		if(raw.contains("\\nF) ")){
+			fLine = raw.substring(raw.indexOf("\\nF) ") + 3, raw.indexOf("G) "));
 		}
 		String gLine = null;
-		if(raw.contains("G) ")) {
-			gLine = raw.substring(raw.indexOf("G) ") + 3, raw.indexOf("CREATED: "));
+		if(raw.contains(" G) ")) {
+			gLine = raw.substring(raw.indexOf("G) ") + 4, raw.indexOf("CREATED: "));
 		}
 
 		String[] qSplit = qLine.split("/");

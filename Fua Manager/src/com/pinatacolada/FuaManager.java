@@ -70,7 +70,7 @@ public class FuaManager {
 			loadAreas(new File("TopSkyAreas.txt"));
 			FuaXMLKml kml = downloadFua();
 			loadFua(kml);
-			loadNotams();
+			//loadNotams();//TODO
 			exportFuaAreas();
 		}
 
@@ -326,7 +326,7 @@ public class FuaManager {
 
 	public static void loadFuaXMLFolder(FuaXMLFolder folder) {
 		if(folder != null && folder.getPlacemarks().size() > 0) {
-			if(folder.getName().contains("NOTAM")){
+			if(folder.getName().contains("removemeremovemeNOTAM")){//TODO
 				for(FuaXMLPlacemark place : folder.getPlacemarks()) {
 					//regex [A-Z]\d\d\d\d
 					Matcher m = Pattern.compile("[A-Z]\\d\\d\\d\\d").matcher(place.getDescription());
