@@ -52,7 +52,6 @@ ARTCC low boundary:LPPT MRVA:
 ARTCC low boundary:LPPT TMA:
 ARTCC low boundary:LPPT Tower CTR:
 ARTCC low boundary:Ponte de Sor ATZ:
-ARTCC low boundary:Ponte do Sor TRMZ:
 ARTCC low boundary:Portimao ATZ:
 ARTCC low boundary:Vila Real ATZ:
 ARTCC low boundary:Viseu ATZ:
@@ -471,6 +470,7 @@ VORs:FAR:symbol
 VORs:FTM:symbol
 VORs:FUN:symbol
 VORs:LIS:symbol
+VORs:NSA:symbol
 VORs:PRT:symbol
 VORs:SGR:symbol
 VORs:SNT:symbol
@@ -490,4 +490,4 @@ DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:0.00000
 TAGFAMILY:PT vACC - NORM
-WINDOWAREA:38.254544:-11.941118:40.922468:-5.693977
+WINDOWAREA:29.746455:-31.251569:45.648521:5.984298

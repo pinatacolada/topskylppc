@@ -14,11 +14,11 @@ ARTCC high boundary:line:8421504:3.0:0:0:7
 ARTCC boundary:line:8421504:3.0:0:0:7
 ARTCC low boundary:line:11513680:3.0:0:0:7
 Geo:line:16777215:3.0:0:0:7
-VORs:symbol:948771:1.0:0:0:7
-VORs:name:6579300:3.5:0:0:14
+VORs:symbol:948771:3.0:0:0:7
+VORs:name:948771:3.5:0:0:8
 VORs:frequency:6579300:3.5:0:0:2
 NDBs:symbol:948771:1.0:0:0:7
-NDBs:name:8421504:3.5:0:0:12
+NDBs:name:948771:3.5:0:0:8
 NDBs:frequency:8421504:3.5:0:0:0
 Runways:centerline:8421504:3.5:0:0:7
 Runways:extended centerline:11974326:3.5:1:0:7
