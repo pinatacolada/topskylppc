@@ -1,7 +1,5 @@
 Setup_COOPANS=1
 
-
-
 Shortcut_AHDG_NoFixes_Combo=0x00
 
 Airspace_833_Min=0
@@ -63,7 +61,7 @@ Color_Proposition_Out=150,130,165
 Color_TopShadow=250,250,250//UI top shadow
 Color_Track_Default=140,220,110
 Color_Track_Highlight=140,220,110
-Color_Trough=250,250,250
+Color_Text_Notes=80,40,40
 Color_Suite_Highlight=244,147,1
 Color_Information=140,220,110
 Color_Information_FL=200,255,200
@@ -134,10 +132,7 @@ Label_RTE_Origin=LP
 Label_Field18_Flag_Items=STS/ALTRV,STS/ATFMX,STS/HUM,STS/FFR,STS/FLTCK,STS/HAZMAT,STS/HEAD,STS/HOSP,STS/MARSA,STS/MEDEVAC,STS/NONRVSM,STS/SAR,STS/STATE
 
 RwyAppLines_Length=0.1
-RwyAppLines_Auto=1
-RwyAppLines_Markers=3
-RwyAppLines_MarkerSpacing=4
-
+RwyAppLines_Auto=0
 
 STCA=1
 STCA_VFR=1
@@ -207,9 +202,14 @@ System_FPASD=1
 System_RepHdg_Correction=2
 System_TaxiTime=15
 System_TransferConfirmation=2
+System_MagModel_Year=2020
 System_MetarSourceVATSIM=0
 System_UseAcceptedCoordColor=1
 System_UseTSAborderHighlightColor=1
+
+
+TextNotes_Font=EuroScope
+TextNotes_FontSize=14
 
 Track_PredictionLine=0//leader line length
 Track_DivergenceSymbol_Size=0
