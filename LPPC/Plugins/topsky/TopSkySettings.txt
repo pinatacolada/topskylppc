@@ -10,6 +10,7 @@ Airspace_P_Flag=LPPR,LPPT,LPFR,LPMA
 Airspace_No_DUPE_Codes=2000,7000
 Airspace_NOTAM_Add=LPPC,LECM
 Airspace_SIGMET_Areas=LPPC
+HTTP_SIGMET_Pages=6443,6450
 
 Areas_PreActiveTime=1800
 Areas_Label_FontSize=12
@@ -39,7 +40,7 @@ APW_Buffer_Vert_L_IFR=1000
 APW_Buffer_Vert_L_VFR=1000
 APW_ConflictCount=3
 
-Color_Active_Text_Map=100,60,60
+Color_Active_Text_Map=100,70,00
 Color_Active_Sector=0,0,30
 Color_Active_Map_Type_6=160,100,100//preactive red restricted areas 
 Color_Active_Map_Type_7=80,40,40//red restricted areas 
