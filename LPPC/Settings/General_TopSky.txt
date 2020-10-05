@@ -1,12 +1,12 @@
 m_PlaySounds:1
 m_AssumeSlowAcAsStandby:0
-m_ShowAirspaceLines:1
+m_ShowAirspaceLines:0
 m_ShowRouteFixName:1
 m_ShowRouteETA:1
 m_ShowCalculatedHeading:1
-m_ShowSimulatedData:1
+m_ShowSimulatedData:0
 m_TransitionAltitude:5000
-m_AllowConcernedACTagDown:0
+m_AllowConcernedACTagDown:1
 m_CenterlineDme:0.0
 m_CenterlineLength:10.0
 m_CenterlineTickDme:5.0
@@ -30,7 +30,7 @@ m_ExtendedCenterlinActiveArr:0
 m_UseHoveringTagForKeys:0
 m_AutoMessageForTextAircraft:1
 m_ShowRouteWhenAccepting:0
-m_AllowAssumedACTagDown:0
+m_AllowAssumedACTagDown:1
 m_InhibitAutoPushOnHandoff:0
 m_RandomSquawks:1
 m_VFRSquawks:7000
