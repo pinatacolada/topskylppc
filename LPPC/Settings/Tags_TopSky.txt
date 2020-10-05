@@ -1,11 +1,29 @@
 TAGS
 TAGFAMILY:PT vACC - NORM
-TAGTYPE:0:1:0
+TAGTYPE:0:12:1
 TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:0:0:TopSky plugin:0:1:::0
+TAGITEM:207::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:202::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:23::0:0:0:0:TopSky plugin:2:1:::1
+TAGITEM:26::0:0:0:0:TopSky plugin:2:1:::1
+TAGITEM:264::0:0:0:0:TopSky plugin:2:1:::1
+TAGITEM:210::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:80::0:0:0:0:TopSky plugin:2:1:::1
+TAGITEM:228::0:0:0:0:TopSky plugin:2:1:::1
+TAGITEM:65::0:0:0:0::2:1:::1
+TAGITEM:119::0:0:0:0:TopSky plugin:3:1:::1
 TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:1:TopSky plugin:0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:22::1:0:0:0:TopSky plugin:0:1:::0
+TAGITEM:58::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:265::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:166::0:1:0:0:TopSky plugin:0:1:::1
+TAGITEM:66::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:0::0:0:0:0::0:1:::1
+TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:67::0:0:0:0:TopSky plugin:4:1:::1
+TAGITEM:43::0:0:0:0:TopSky plugin:6:1:::1
+TAGITEM:1::0:0:0:0:FlightType:0:1:::1
+TAGITEM:0::0:0:0:0::0:1:::1
 TAGTYPE:1:12:1
 TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
 TAGITEM:207::0:0:0:0:TopSky plugin:0:1:::1
@@ -16,7 +34,7 @@ TAGITEM:264::0:0:0:0:TopSky plugin:2:1:::1
 TAGITEM:210::0:1:0:0:TopSky plugin:0:1:::1
 TAGITEM:80::0:1:0:0:TopSky plugin:2:1:::1
 TAGITEM:228::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:65::0:1:25:0::2:1:::1
+TAGITEM:65::0:1:0:0::2:1:::1
 TAGITEM:119::0:1:0:0:TopSky plugin:3:1:::1
 TAGITEM:0::0:0:0:0::0:1:::1
 TAGITEM:22::1:0:0:0:TopSky plugin:0:1:::0
@@ -70,24 +88,53 @@ TAGTYPE:3:0:0
 TAGITEM:39::1:0:0:0::0:1:::0
 TAGITEM:0::0:0:0:0::0:1:::1
 TAGITEM:13::0:0:0:0::0:1:::1
-TAGTYPE:4:1:0
+TAGTYPE:4:12:1
 TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:0:0:TopSky plugin:0:1:::0
+TAGITEM:207::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:202::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:23::0:0:0:0:TopSky plugin:2:1:::1
+TAGITEM:26::0:0:0:0:TopSky plugin:2:1:::1
+TAGITEM:264::0:0:0:0:TopSky plugin:2:1:::1
+TAGITEM:210::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:80::0:0:0:0:TopSky plugin:2:1:::1
+TAGITEM:228::0:0:0:0:TopSky plugin:2:1:::1
+TAGITEM:65::0:0:0:0::2:1:::1
+TAGITEM:119::0:0:0:0:TopSky plugin:3:1:::1
 TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:1:TopSky plugin:0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:5:3:1
+TAGITEM:22::1:0:0:0:TopSky plugin:0:1:::0
+TAGITEM:58::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:265::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:166::0:1:0:0:TopSky plugin:0:1:::1
+TAGITEM:66::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:0::0:0:0:0::0:1:::1
+TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:67::0:0:0:0:TopSky plugin:4:1:::1
+TAGITEM:43::0:0:0:0:TopSky plugin:6:1:::1
+TAGITEM:1::0:0:0:0:FlightType:0:1:::1
+TAGITEM:0::0:0:0:0::0:1:::1
+TAGTYPE:5:12:1
 TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:207::0:0:0:0:TopSky plugin:0:1:::1
 TAGITEM:202::0:0:0:0:TopSky plugin:1:1:::1
+TAGITEM:23::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:26::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:264::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:210::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:80::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:228::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:65::0:0:0:0::0:1:::1
+TAGITEM:119::0:0:0:0:TopSky plugin:0:1:::1
 TAGITEM:0::0:0:0:0::0:1:::1
 TAGITEM:22::1:0:0:0:TopSky plugin:1:1:::1
+TAGITEM:58::0:0:0:0:TopSky plugin:0:1:::1
+TAGITEM:265::0:0:0:0:TopSky plugin:0:1:::1
 TAGITEM:233::0:1:0:0:TopSky plugin:0:1:::1
 TAGITEM:66::0:1:0:0:TopSky plugin:0:1:::1
 TAGITEM:0::0:0:0:0::0:1:::1
 TAGITEM:1:L:0:0:0:0::0:1:::4
 TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
 TAGITEM:43::0:0:0:0:TopSky plugin:7:1:::1
-TAGITEM:118::0:0:0:0:TopSky plugin:10:1:::1
+TAGITEM:1::0:0:0:0:FlightType:10:1:::1
 TAGTYPE:6:0:0
 TAGITEM:9::1:0:0:0::0:1:::0
 TAGITEM:16::0:1:0:0::0:1:::1
@@ -253,509 +300,6 @@ TAGITEM:52::0:1:26:0:TopSky plugin:7:1:::1
 TAGITEM:47::0:1:15:71:TopSky plugin:0:1:TopSky plugin:TopSky plugin:1
 TAGITEM:0::0:0:0:0::0:1:::1
 TAGITEM:141::0:0:1001:62:TopSky plugin:1:0:TopSky plugin:TopSky plugin:1
-TAGTYPE:20:0:0
-TAGITEM:9::1:0:0:0::0:1:::0
-TAGITEM:16::0:1:0:0::0:1:::1
-TAGTYPE:21:0:0
-TAGITEM:9::1:0:0:0::0:1:::0
-TAGITEM:16::0:1:0:0::0:1:::1
-TAGTYPE:22:0:0
-TAGITEM:81::1:0:0:0::0:1:::0
-TAGITEM:16::0:1:0:0::0:1:::1
-TAGTYPE:23:0:0
-TAGITEM:81::1:0:0:0::0:1:::0
-TAGITEM:16::0:1:0:0::0:1:::1
-TAGFAMILY:PT vACC - RDUC
-TAGTYPE:0:1:0
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:0:0:TopSky plugin:0:1:::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:1:TopSky plugin:0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:1:12:1
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:207::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:202::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:23::0:0:0:0:TopSky plugin:2:1:::4
-TAGITEM:26::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:264::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:210::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:80::0:1:0:0:TopSky plugin:2:1:::1
-TAGITEM:228::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:65::0:1:25:0::2:1:::1
-TAGITEM:119::0:1:0:0:TopSky plugin:3:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:22::1:0:0:0:TopSky plugin:0:1:::0
-TAGITEM:58::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:265::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:166::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:66::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:1: :0:0:0:0::0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:43::0:0:0:0:TopSky plugin:6:1:::1
-TAGITEM:1::0:0:0:0:FlightType:0:1:::1
-TAGTYPE:2:12:1
-TAGITEM:78::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:207::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:202::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:23::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:26::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:264::0:0:79:0:TopSky plugin:2:1:TopSky plugin::1
-TAGITEM:210::0:1:0:0:TopSky plugin:0:1:::4
-TAGITEM:80::0:1:0:0:TopSky plugin:2:1:::1
-TAGITEM:228::0:0:69:0:TopSky plugin:2:1:TopSky plugin::1
-TAGITEM:65::0:1:25:0::0:1:::1
-TAGITEM:119::0:1:0:0:TopSky plugin:3:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:22::1:0:6:1:TopSky plugin:0:1:TopSky plugin:TopSky plugin:0
-TAGITEM:58::0:0:32:0:TopSky plugin:0:1:::1
-TAGITEM:265::0:0:80:0:TopSky plugin:0:1:TopSky plugin::1
-TAGITEM:54::0:1:14:45:TopSky plugin:0:1:TopSky plugin:TopSky plugin:1
-TAGITEM:66::0:1:20:7:TopSky plugin:0:1::TopSky plugin:1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:16:39:TopSky plugin:0:1::TopSky plugin:1
-TAGITEM:1: :0:0:0:0::0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:43::0:1:12:59:TopSky plugin:6:1:TopSky plugin:TopSky plugin:1
-TAGITEM:1::0:0:0:0:FlightType:0:1:::0
-TAGTYPE:3:0:0
-TAGITEM:39::1:0:0:0::0:1:::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:13::0:0:0:0::0:1:::1
-TAGTYPE:4:1:0
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:0:0:TopSky plugin:0:1:::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:1:TopSky plugin:0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:5:3:1
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:202::0:0:0:0:TopSky plugin:1:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:22::1:0:0:0:TopSky plugin:1:1:::1
-TAGITEM:233::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:66::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:1:L:0:0:0:0::0:1:::4
-TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:43::0:0:0:0:TopSky plugin:7:1:::1
-TAGITEM:118::0:0:0:0:TopSky plugin:10:1:::1
-TAGTYPE:6:0:0
-TAGITEM:9::1:0:0:0::0:1:::0
-TAGITEM:16::0:1:0:0::0:1:::1
-TAGTYPE:7:0:0
-TAGITEM:81::1:0:0:0::0:1:::0
-TAGITEM:16::0:1:0:0::0:1:::1
-TAGTYPE:8:0:0
-TAGITEM:39::1:0:0:0::0:1:::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:13::0:0:0:0::0:1:::1
-TAGTYPE:9:0:0
-TAGITEM:39::1:0:0:0::0:1:::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:13::0:0:0:0::0:1:::1
-TAGTYPE:10:1:0
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:12:0:TopSky plugin:0:1:TopSky plugin::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:39:TopSky plugin:0:1::TopSky plugin:1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:11:1:0
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:6:0:TopSky plugin:0:1:TopSky plugin::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:39:TopSky plugin:0:1::TopSky plugin:1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:12:1:0
-TAGITEM:78::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:6:0:TopSky plugin:0:1:TopSky plugin::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:13:1:0
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:0:0:TopSky plugin:0:1:::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:1:TopSky plugin:0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:14:1:0
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:6:0:TopSky plugin:0:1:TopSky plugin::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:1:TopSky plugin:0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:15:1:0
-TAGITEM:78::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:6:0:TopSky plugin:0:1:TopSky plugin::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:16:12:1
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:207::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:202::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:23::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:26::0:0:0:0:TopSky plugin:2:1:::3
-TAGITEM:264::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:210::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:80::0:1:0:0:TopSky plugin:2:1:::1
-TAGITEM:228::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:65::0:1:25:0::0:1:::1
-TAGITEM:119::0:1:0:0:TopSky plugin:3:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:22::1:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:58::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:265::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:55::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:66::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:1: :0:0:0:0::0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:43::0:0:0:0:TopSky plugin:6:1:::1
-TAGITEM:1::0:0:0:0:FlightType:0:1:::1
-TAGTYPE:17:12:1
-TAGITEM:78::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:207::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:202::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:23::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:26::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:264::0:0:79:0:TopSky plugin:2:1:TopSky plugin::1
-TAGITEM:210::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:80::0:1:0:0:TopSky plugin:2:1:::1
-TAGITEM:228::0:0:69:0:TopSky plugin:2:1:TopSky plugin::1
-TAGITEM:65::0:1:25:0::0:1:::1
-TAGITEM:119::0:1:0:0:TopSky plugin:3:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:22::1:0:6:1:TopSky plugin:0:1:TopSky plugin:TopSky plugin:1
-TAGITEM:58::0:0:32:0:TopSky plugin:0:1:::1
-TAGITEM:265::0:0:80:0:TopSky plugin:0:1:TopSky plugin::1
-TAGITEM:54::0:1:14:45:TopSky plugin:0:1:TopSky plugin:TopSky plugin:1
-TAGITEM:66::0:1:20:7:TopSky plugin:0:1::TopSky plugin:1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:16:39:TopSky plugin:0:1::TopSky plugin:1
-TAGITEM:1: :0:0:0:0::0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:43::0:0:12:59:TopSky plugin:6:1:TopSky plugin:TopSky plugin:1
-TAGITEM:1::0:0:0:0:FlightType:0:1:::1
-TAGTYPE:18:12:1
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:207::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:202::0:0:0:0:TopSky plugin:1:1:::1
-TAGITEM:23::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:26::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:264::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:210::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:80::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:228::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:65::0:0:0:0::0:1:::1
-TAGITEM:119::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:22::1:0:0:0:TopSky plugin:1:1:::1
-TAGITEM:58::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:265::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:234::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:66::0:1:0:0:TopSky plugin:0:0:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:1:L:0:0:0:0::0:1:::4
-TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:43::0:0:0:0:TopSky plugin:7:1:::1
-TAGITEM:1::0:0:0:0:FlightType:10:1:::1
-TAGTYPE:19:12:1
-TAGITEM:78::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:207::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:202::0:0:0:0:TopSky plugin:1:1:::1
-TAGITEM:23::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:26::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:264::0:0:79:0:TopSky plugin:0:1:TopSky plugin::1
-TAGITEM:210::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:80::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:228::0:0:69:0:TopSky plugin:2:1:TopSky plugin::1
-TAGITEM:65::0:0:0:0::0:1:::1
-TAGITEM:119::0:0:0:0:TopSky plugin:3:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:22::1:0:6:1:TopSky plugin:1:1:TopSky plugin:TopSky plugin:1
-TAGITEM:58::0:0:32:0:TopSky plugin:0:1:::1
-TAGITEM:265::0:0:80:0:TopSky plugin:0:1:TopSky plugin::1
-TAGITEM:233::0:1:45:45:TopSky plugin:1:1:TopSky plugin:TopSky plugin:1
-TAGITEM:66::0:1:20:7:TopSky plugin:0:1::TopSky plugin:1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:1:L:0:0:0:0::0:0:::4
-TAGITEM:15::0:0:22:39:TopSky plugin:0:1:TopSky plugin:TopSky plugin:1
-TAGITEM:43::0:0:44:59:TopSky plugin:7:1:TopSky plugin:TopSky plugin:1
-TAGITEM:1::0:0:0:0:FlightType:10:0:::1
-TAGTYPE:20:0:0
-TAGITEM:9::1:0:0:0::0:1:::0
-TAGITEM:16::0:1:0:0::0:1:::1
-TAGTYPE:21:0:0
-TAGITEM:9::1:0:0:0::0:1:::0
-TAGITEM:16::0:1:0:0::0:1:::1
-TAGTYPE:22:0:0
-TAGITEM:81::1:0:0:0::0:1:::0
-TAGITEM:16::0:1:0:0::0:1:::1
-TAGTYPE:23:0:0
-TAGITEM:81::1:0:0:0::0:1:::0
-TAGITEM:16::0:1:0:0::0:1:::1
-TAGFAMILY:PT vACC - XPND
-TAGTYPE:0:1:0
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:0:0:TopSky plugin:0:1:::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:1:TopSky plugin:0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:1:12:1
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:207::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:202::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:23::0:0:0:0:TopSky plugin:2:1:::4
-TAGITEM:26::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:264::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:210::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:80::0:1:0:0:TopSky plugin:2:1:::1
-TAGITEM:228::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:65::0:1:25:0::2:1:::1
-TAGITEM:119::0:1:0:0:TopSky plugin:3:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:22::1:0:0:0:TopSky plugin:0:1:::0
-TAGITEM:58::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:265::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:166::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:66::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:1: :0:0:0:0::0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:43::0:0:0:0:TopSky plugin:6:1:::1
-TAGITEM:1::0:0:0:0:FlightType:0:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:40::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:131::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:52::0:1:0:0:TopSky plugin:7:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:106::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:2:12:1
-TAGITEM:78::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:207::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:202::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:23::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:26::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:264::0:0:79:0:TopSky plugin:2:1:TopSky plugin::1
-TAGITEM:210::0:1:0:0:TopSky plugin:0:1:::4
-TAGITEM:80::0:1:0:0:TopSky plugin:2:1:::1
-TAGITEM:228::0:0:69:0:TopSky plugin:2:1:TopSky plugin::1
-TAGITEM:65::0:1:25:0::0:1:::1
-TAGITEM:119::0:1:0:0:TopSky plugin:3:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:22::1:0:6:1:TopSky plugin:0:1:TopSky plugin:TopSky plugin:0
-TAGITEM:58::0:0:32:0:TopSky plugin:0:1:::1
-TAGITEM:265::0:0:80:0:TopSky plugin:0:1:TopSky plugin::1
-TAGITEM:54::0:1:14:45:TopSky plugin:0:1:TopSky plugin:TopSky plugin:1
-TAGITEM:66::0:1:20:7:TopSky plugin:0:1::TopSky plugin:1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:16:39:TopSky plugin:0:1::TopSky plugin:1
-TAGITEM:1: :0:0:0:0::0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:43::0:1:12:59:TopSky plugin:6:1:TopSky plugin:TopSky plugin:1
-TAGITEM:1::0:0:0:0:FlightType:0:1:::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:40::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:131::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:52::0:0:26:0:TopSky plugin:7:1:::1
-TAGITEM:47::0:1:15:71:TopSky plugin:0:1:TopSky plugin:TopSky plugin:1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:106::0:0:1001:62:TopSky plugin:0:1:TopSky plugin:TopSky plugin:1
-TAGTYPE:3:0:0
-TAGITEM:39::1:0:0:0::0:1:::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:13::0:0:0:0::0:1:::1
-TAGTYPE:4:1:0
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:0:0:TopSky plugin:0:1:::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:1:TopSky plugin:0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:5:3:1
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:202::0:0:0:0:TopSky plugin:1:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:22::1:0:0:0:TopSky plugin:1:1:::1
-TAGITEM:233::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:66::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:1:L:0:0:0:0::0:1:::4
-TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:43::0:0:0:0:TopSky plugin:7:1:::1
-TAGITEM:118::0:0:0:0:TopSky plugin:10:1:::1
-TAGTYPE:6:0:0
-TAGITEM:9::1:0:0:0::0:1:::0
-TAGITEM:16::0:1:0:0::0:1:::1
-TAGTYPE:7:0:0
-TAGITEM:81::1:0:0:0::0:1:::0
-TAGITEM:16::0:1:0:0::0:1:::1
-TAGTYPE:8:0:0
-TAGITEM:39::1:0:0:0::0:1:::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:13::0:0:0:0::0:1:::1
-TAGTYPE:9:0:0
-TAGITEM:39::1:0:0:0::0:1:::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:13::0:0:0:0::0:1:::1
-TAGTYPE:10:1:0
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:12:0:TopSky plugin:0:1:TopSky plugin::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:39:TopSky plugin:0:1::TopSky plugin:1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:11:1:0
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:6:0:TopSky plugin:0:1:TopSky plugin::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:39:TopSky plugin:0:1::TopSky plugin:1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:12:1:0
-TAGITEM:78::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:6:0:TopSky plugin:0:1:TopSky plugin::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:13:1:0
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:0:0:TopSky plugin:0:1:::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:1:TopSky plugin:0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:14:1:0
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:6:0:TopSky plugin:0:1:TopSky plugin::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:1:TopSky plugin:0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:15:1:0
-TAGITEM:78::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:106::1:0:6:0:TopSky plugin:0:1:TopSky plugin::0
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:16:12:1
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:207::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:202::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:23::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:26::0:0:0:0:TopSky plugin:2:1:::3
-TAGITEM:264::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:210::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:80::0:1:0:0:TopSky plugin:2:1:::1
-TAGITEM:228::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:65::0:1:25:0::0:1:::1
-TAGITEM:119::0:1:0:0:TopSky plugin:3:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:22::1:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:58::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:265::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:55::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:66::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:1: :0:0:0:0::0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:43::0:0:0:0:TopSky plugin:6:1:::1
-TAGITEM:1::0:0:0:0:FlightType:0:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:40::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:131::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:52::0:1:0:0:TopSky plugin:7:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:106::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:17:12:1
-TAGITEM:78::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:207::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:202::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:23::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:26::0:0:0:0:TopSky plugin:2:1:::1
-TAGITEM:264::0:0:79:0:TopSky plugin:2:1:TopSky plugin::1
-TAGITEM:210::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:80::0:1:0:0:TopSky plugin:2:1:::1
-TAGITEM:228::0:0:69:0:TopSky plugin:2:1:TopSky plugin::1
-TAGITEM:65::0:1:25:0::0:1:::1
-TAGITEM:119::0:1:0:0:TopSky plugin:3:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:22::1:0:6:1:TopSky plugin:0:1:TopSky plugin:TopSky plugin:1
-TAGITEM:58::0:0:32:0:TopSky plugin:0:1:::1
-TAGITEM:265::0:0:80:0:TopSky plugin:0:1:TopSky plugin::1
-TAGITEM:54::0:1:14:45:TopSky plugin:0:1:TopSky plugin:TopSky plugin:1
-TAGITEM:66::0:1:20:7:TopSky plugin:0:1::TopSky plugin:1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:15::0:0:16:39:TopSky plugin:0:1::TopSky plugin:1
-TAGITEM:1: :0:0:0:0::0:1:::1
-TAGITEM:67::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:43::0:0:12:59:TopSky plugin:6:1:TopSky plugin:TopSky plugin:1
-TAGITEM:1::0:0:0:0:FlightType:0:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:40::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:131::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:52::0:1:26:0:TopSky plugin:7:1:::1
-TAGITEM:47::0:1:15:71:TopSky plugin:7:1:TopSky plugin:TopSky plugin:1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:106::0:0:1001:62:TopSky plugin:0:1:TopSky plugin:TopSky plugin:1
-TAGTYPE:18:12:1
-TAGITEM:72::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:207::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:202::0:0:0:0:TopSky plugin:1:1:::1
-TAGITEM:23::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:26::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:264::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:210::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:80::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:228::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:65::0:0:0:0::0:1:::1
-TAGITEM:119::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:22::1:0:0:0:TopSky plugin:1:1:::1
-TAGITEM:58::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:265::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:234::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:66::0:1:0:0:TopSky plugin:0:0:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:1:L:0:0:0:0::0:1:::4
-TAGITEM:15::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:43::0:0:0:0:TopSky plugin:7:1:::1
-TAGITEM:1::0:0:0:0:FlightType:10:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:40::0:0:0:0:TopSky plugin:1:1:::1
-TAGITEM:52::0:1:0:0:TopSky plugin:7:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:10041::0:0:0:0:TopSky plugin:0:1:::1
-TAGTYPE:19:12:1
-TAGITEM:78::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:207::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:202::0:0:0:0:TopSky plugin:1:1:::1
-TAGITEM:23::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:26::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:264::0:0:79:0:TopSky plugin:0:1:TopSky plugin::1
-TAGITEM:210::0:1:0:0:TopSky plugin:0:1:::1
-TAGITEM:80::0:0:0:0:TopSky plugin:0:1:::1
-TAGITEM:228::0:0:69:0:TopSky plugin:2:1:TopSky plugin::1
-TAGITEM:65::0:0:0:0::0:1:::1
-TAGITEM:119::0:0:0:0:TopSky plugin:3:1:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:22::1:0:6:1:TopSky plugin:1:1:TopSky plugin:TopSky plugin:1
-TAGITEM:58::0:0:32:0:TopSky plugin:0:1:::1
-TAGITEM:265::0:0:80:0:TopSky plugin:0:1:TopSky plugin::1
-TAGITEM:233::0:1:45:45:TopSky plugin:1:1:TopSky plugin:TopSky plugin:1
-TAGITEM:66::0:1:20:7:TopSky plugin:0:1::TopSky plugin:1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:1:L:0:0:0:0::0:0:::4
-TAGITEM:15::0:0:22:39:TopSky plugin:0:1:TopSky plugin:TopSky plugin:1
-TAGITEM:43::0:0:44:59:TopSky plugin:7:1:TopSky plugin:TopSky plugin:1
-TAGITEM:1::0:0:0:0:FlightType:10:0:::1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:40::0:0:0:0:TopSky plugin:1:1:::1
-TAGITEM:52::0:1:26:0:TopSky plugin:7:1:::1
-TAGITEM:47::0:1:15:71:TopSky plugin:0:1:TopSky plugin:TopSky plugin:1
-TAGITEM:0::0:0:0:0::0:1:::1
-TAGITEM:10041::0:0:1001:62:TopSky plugin:1:0:TopSky plugin:TopSky plugin:1
 TAGTYPE:20:0:0
 TAGITEM:9::1:0:0:0::0:1:::0
 TAGITEM:16::0:1:0:0::0:1:::1
