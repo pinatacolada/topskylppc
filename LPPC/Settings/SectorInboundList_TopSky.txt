@@ -8,7 +8,7 @@ m_OrderingColumn:5
 m_HeaderOnly:0
 m_Column:CALLSIGN:9:1:10021:6:39:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
 m_Column:ATYPE:6:1:10028:0:0:1:TopSky plugin:::1:0.0
-m_Column:WTC:3:1:10032:0:0:1:TopSky plugin:::17818340:0.0
+m_Column:WTC:3:1:10032:0:0:1:TopSky plugin:::1:0.0
 m_Column:COPN:5:1:10004:21:21:1:TopSky plugin:::1:0.0
 m_Column:ETN:5:1:10034:0:0:1:TopSky plugin:::1:0.0
 m_Column:EFL:5:1:10001:26:26:1:TopSky plugin:::1:0.0
@@ -19,7 +19,7 @@ m_Column:ETA:5:1:10033:0:0:1:TopSky plugin:::1:0.0
 m_Column:COPX:5:1:10005:22:22:1:TopSky plugin:::1:0.0
 m_Column:STAR:7:1:10012:18:18:1:TopSky plugin:::1:0.0
 m_Column:RWY:4:1:10010:19:19:1:TopSky plugin:::1:0.0
-m_Column:SI:3:1:10043:20:42:1:TopSky plugin::TopSky plugin:1:0.0
+m_Column:SI:4:1:10043:20:42:1:TopSky plugin::TopSky plugin:1:0.0
 m_Column:ASSR:5:1:10041:62:62:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
-m_Column:TXT:7:1:10059:2:0:1:TopSky plugin:TopSky plugin::1:0.0
+m_Column:TXT:8:1:10059:2:0:1:TopSky plugin:TopSky plugin::1:0.0
 END

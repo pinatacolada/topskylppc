@@ -5,7 +5,7 @@ m_Y:415
 m_LineNumber:6
 m_Resizable:0
 m_OrderingColumn:1
-m_HeaderOnly:0
+m_HeaderOnly:1
 m_Column:CALLSIGN:8:1:22:6:0:1:TopSky plugin:TopSky plugin::1:0.0
 m_Column:COPN:6:1:10004:0:0:1:TopSky plugin:::1:0.0
 m_Column:ETN:7:1:10034:35:0:1:TopSky plugin:::1:0.0

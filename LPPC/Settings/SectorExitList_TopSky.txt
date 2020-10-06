@@ -1,14 +1,14 @@
 SEL
 m_Visible:1
 m_X:0
-m_Y:77
+m_Y:155
 m_LineNumber:20
 m_Resizable:1
-m_OrderingColumn:-9
+m_OrderingColumn:-8
 m_HeaderOnly:0
 m_Column:CALLSIGN:9:1:10021:6:39:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
 m_Column:ATYPE:6:1:10028:0:0:1:TopSky plugin:::1:0.0
-m_Column:WTC:3:1:10032:0:0:1:TopSky plugin:::17818340:0.0
+m_Column:WTC:3:1:10032:0:0:1:TopSky plugin:::1:0.0
 m_Column:COPX:5:1:10005:45:45:1:TopSky plugin:TopSky plugin:TopSky plugin:0:0.0
 m_Column:ETX:5:1:10017:0:0:1:TopSky plugin:::1:0.0
 m_Column:XFL:5:1:10003:26:26:1:TopSky plugin:::1:0.0
@@ -20,6 +20,6 @@ m_Column:STAR:7:1:10012:18:18:1:TopSky plugin:::1:0.0
 m_Column:RWY:4:1:10010:19:19:1:TopSky plugin:::1:0.0
 m_Column:ETA:5:1:10033:0:0:1:TopSky plugin:::1:0.0
 m_Column:ASSR:5:1:10041:62:62:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
-m_Column:SI:3:1:10014:20:42:1:TopSky plugin::TopSky plugin:1:0.0
-m_Column:TXT:7:1:10059:2:2:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
+m_Column:SI:4:1:10014:20:42:1:TopSky plugin::TopSky plugin:1:0.0
+m_Column:TXT:8:1:10059:2:2:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
 END
