@@ -5,7 +5,7 @@ m_ShowTitle:1
 m_ShowTitleFileName:0
 m_ShowTitleController:1
 m_ShowTitlePrimaryFreq:1
-m_ShowTitleAtisFreq:0
+m_ShowTitleAtisFreq:1
 m_ShowTitleClock:1
 m_ShowTitleLeader:1
 m_ShowTitleFilter:0
@@ -36,8 +36,8 @@ m_ScreenMaximized:0
 m_ShowTitleSelectedAc:0
 m_PlanesListX:366
 m_PlanesListY:512
-m_MetarListX:1647
-m_MetarListY:44
+m_MetarListX:1607
+m_MetarListY:48
 m_VoiceListX:1625
 m_VoiceListY:136
 m_ControllerListX:1787
@@ -49,7 +49,7 @@ m_PlaneRangeRingsDistance2:2.5
 m_PlaneRangeRingsDistance3:5.0
 m_PlaneRangeRingsDistance4:0.0
 m_ShowTooltips:1
-m_OnTheGroundAltitude:5700
+m_OnTheGroundAltitude:2400
 m_OnTheGroundSpeed:50
 m_ShowCdtOnCflCheck:0
 m_ShowTsVccsMiniControl:0

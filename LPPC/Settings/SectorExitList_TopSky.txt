@@ -1,25 +1,25 @@
 SEL
 m_Visible:1
 m_X:0
-m_Y:155
-m_LineNumber:0
+m_Y:77
+m_LineNumber:20
 m_Resizable:1
 m_OrderingColumn:-9
 m_HeaderOnly:0
-m_Column:C/S:9:0:22:6:0:1:TopSky plugin:TopSky plugin::1
-m_Column:ATYP:5:0:69:0:0:1:TopSky plugin:::1
-m_Column:COPX:7:0:10005:45:0:1:TopSky plugin:TopSky plugin::1
-m_Column:ETX:5:0:10017:0:0:1:TopSky plugin:::1
-m_Column:XFL:4:0:10003:26:0:1:TopSky plugin:::1
-m_Column:FR:3:0:10031:0:0:1:TopSky plugin:::1
-m_Column:ADEP:5:0:10007:0:0:1:TopSky plugin:::1
-m_Column:SID:8:0:10011:45:0:1:TopSky plugin:TopSky plugin::1
-m_Column:RFL:5:0:10006:59:0:1:TopSky plugin:TopSky plugin::1
-m_Column:ADES:4:0:10008:1001:39:1:TopSky plugin:TopSky plugin:TopSky plugin:1
-m_Column:STAR:8:0:10012:45:0:1:TopSky plugin:TopSky plugin::1
-m_Column:RWY:7:0:10010:19:0:1:TopSky plugin:::1
-m_Column:ETA:4:0:10033:0:0:1:TopSky plugin:::1
-m_Column:ASSR:5:0:10041:62:0:1:TopSky plugin:TopSky plugin::1
-m_Column:SI:3:0:10014:20:42:1:TopSky plugin::TopSky plugin:1
-m_Column:TXT:7:0:222:2:0:1:TopSky plugin:TopSky plugin::1
+m_Column:CALLSIGN:9:1:10021:6:39:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
+m_Column:ATYPE:6:1:10028:0:0:1:TopSky plugin:::1:0.0
+m_Column:WTC:3:1:10032:0:0:1:TopSky plugin:::17818340:0.0
+m_Column:COPX:5:1:10005:45:45:1:TopSky plugin:TopSky plugin:TopSky plugin:0:0.0
+m_Column:ETX:5:1:10017:0:0:1:TopSky plugin:::1:0.0
+m_Column:XFL:5:1:10003:26:26:1:TopSky plugin:::1:0.0
+m_Column:CFL:5:1:10002:12:12:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
+m_Column:RFL:5:1:10006:59:59:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
+m_Column:FR:3:1:10031:0:0:1:TopSky plugin:::1:0.0
+m_Column:ADES:5:1:10008:1001:39:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
+m_Column:STAR:7:1:10012:18:18:1:TopSky plugin:::1:0.0
+m_Column:RWY:4:1:10010:19:19:1:TopSky plugin:::1:0.0
+m_Column:ETA:5:1:10033:0:0:1:TopSky plugin:::1:0.0
+m_Column:ASSR:5:1:10041:62:62:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
+m_Column:SI:3:1:10014:20:42:1:TopSky plugin::TopSky plugin:1:0.0
+m_Column:TXT:7:1:10059:2:2:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
 END
