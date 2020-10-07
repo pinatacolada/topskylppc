@@ -74,8 +74,8 @@ Geo:LP Landmark Continental Coastline:
 Geo:LP Landmark Madeira Coastline:
 Geo:LP Landmark Porto Santo Coastline:
 Geo:LPPR Groundlayout:
-Regions:LPPR Groundlayout:polygon
 Regions:LPPR Background:polygon
+Regions:LPPR Groundlayout:polygon
 SHOWC:1
 SHOWSB:1
 BELOW:0
