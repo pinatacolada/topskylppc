@@ -74,9 +74,6 @@ List_Departure_STAND=0
 Window_APP_Scale=17
 Window_APP_AltFilter=5000
 
-Window_APP=1,1150,25
-
-
 [LPPT]
 Airport_Elevation=374
 Airport_Radius=6.5
