@@ -1,4 +1,4 @@
-Settings	sector	\LPPC-Package_20200322124616-200301-0005.sct
+Settings	sector	\LPPC-Package_20200917024852-201001-0001.sct
 Settings	alias	\LPPC\Alias\alias.txt
 Settings	airlines	\LPPC\ICAO\ICAO_Airlines.txt
 Settings	airports	\LPPC\ICAO\ICAO_Airports.txt
@@ -29,13 +29,32 @@ Settings	FreqKey	3604480
 Voice	PPPT	18677760
 Settings	ipaddr	\ipaddr.txt
 Settings	airways	\LPPC\NavData\airway.txt
-ASRFastKeys	1	\LPPC\ASR\LPPC_CTR_TS.asr
-ASRFastKeys	2	\LPPC\ASR\LPMA_APP.asr
-ASRFastKeys	3	\LPPC\ASR\LPFR_APP.asr
-ASRFastKeys	4	\LPPC\ASR\LPPT_APP.asr
-ASRFastKeys	5	\LPPC\ASR\LPCS_TWR.asr
-ASRFastKeys	6	\LPPC\ASR\LPMA_TWR.asr
-ASRFastKeys	7	\LPPC\ASR\LPFR_GND_TSGR.asr
-ASRFastKeys	8	\LPPC\ASR\LPPT_GND_TSGR.asr
-ASRFastKeys	9	\LPPC\ASR\LPPR_GND_TSGR.asr
+ASRFastKeys	1	LPPC\ASR\LPPC_CTR_TS.asr
+ASRFastKeys	5	LPPC\ASR\LPCS_TWR.asr
+ASRFastKeys	6	LPPC\ASR\LPMA_GND_TSGR.asr
+ASRFastKeys	7	LPPC\ASR\LPFR_GND_TSGR.asr
+ASRFastKeys	8	LPPC\ASR\LPPT_GND_TSGR.asr
+ASRFastKeys	9	LPPC\ASR\LPPR_GND_TSGR.asr
 Settings	SettingsfilePILOTING	\LPPC\Settings\General_TopSky.txt
+Sounds	Sound0	\Sounds\handoff_request.wav
+Sounds	Sound1	\Sounds\handoff_accept.wav
+Sounds	Sound2	\Sounds\conflict_alert.wav
+Sounds	Sound3	\Sounds\radio_message.wav
+Sounds	Sound4	\Sounds\private_message.wav
+Sounds	Sound5	\Sounds\atc_message.wav
+Sounds	Sound6	\Sounds\broadcast_message.wav
+Sounds	Sound7	\Sounds\landline_request.wav
+Sounds	Sound8	\Sounds\supervisor_message.wav
+Sounds	Sound9	\Sounds\connected.wav
+Sounds	Sound10	\Sounds\disconnected.wav
+Sounds	Sound11	\Sounds\ongoing_request.wav
+Sounds	Sound12	\Sounds\ongoing_accepted.wav
+Sounds	Sound13	\Sounds\ongoing_refused.wav
+Sounds	Sound14	\Sounds\ongoing_manual.wav
+Sounds	Sound15	\Sounds\new_atis.wav
+Sounds	Sound16	\Sounds\handoff_refused.wav
+Sounds	Sound17	\Sounds\pointout.wav
+Sounds	Sound18	\Sounds\startup.wav
+Sounds	OutputDevice	Speakers (Sennheiser USB headse
+Plugins	Plugin2	\LPPC\Plugins\CFlightType.dll
+Plugins	Plugin2Display0	Standard ES radar screen

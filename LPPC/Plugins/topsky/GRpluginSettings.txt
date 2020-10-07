@@ -74,6 +74,9 @@ List_Departure_STAND=0
 Window_APP_Scale=17
 Window_APP_AltFilter=5000
 
+Window_APP=1,1150,25
+
+
 [LPPT]
 Airport_Elevation=374
 Airport_Radius=6.5
@@ -90,3 +93,7 @@ Airport_Runway_End=35:N041.13.57.200:W008.40.37.900
 Airport_Elevation=24
 Airport_Radius=6.5
 Airport_Runway_Buffer_LVP=28:160.0
+
+[LPMA]
+Airport_Elevation=191
+Airport_Radius=6.5
