@@ -3,6 +3,8 @@ Color_Departure=0,18,153
 Color_Unknown=0,0,0
 
 Color_Background=182,187,183
+Color_RawVideo=175,190,200
+Color_RawVideoHistory=175,190,200
 Color_WBackground=182,187,183
 Color_WBorder=250,250,250
 Color_WForeground2=180,180,180
@@ -88,3 +90,7 @@ Airport_Runway_End=35:N041.13.57.200:W008.40.37.900
 Airport_Elevation=24
 Airport_Radius=6.5
 Airport_Runway_Buffer_LVP=28:160.0
+
+[LPMA]
+Airport_Elevation=191
+Airport_Radius=6.5
