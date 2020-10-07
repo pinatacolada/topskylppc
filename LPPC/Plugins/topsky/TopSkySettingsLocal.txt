@@ -1,6 +1,7 @@
 Setup_AutoSignIn=1
 [_CTR]
 CPDLC_Default=1
+Window_CPDLC_Current=1,700,25
 
 [LPPC_I_CTR]
 STCA_Coarse_Sep_Lat_U=8
@@ -156,4 +157,3 @@ STCA_LinPred_Sep_Lat_U=4.5
 STCA_LinPred_Sep_Lat_L=4.5
 STCA_CurrProx_Sep_Lat_U=4.75
 STCA_CurrProx_Sep_Lat_L=4.75
-
