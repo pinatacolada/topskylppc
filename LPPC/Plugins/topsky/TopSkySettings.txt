@@ -122,6 +122,7 @@ MTCD_Risks_Label=1
 MTCD_Sep_Lat=4
 MTCD_Distance_Arr=50
 MTCD_Distance_Dep=50
+MTCD_Filter_Dep=3
 
 Label_Alt_Digits=3
 Label_CFL_DefaultValue=1
