@@ -17,16 +17,55 @@ GroundLabel=1
 GroundLabel_Font=EuroScope
 GroundLabel_FontStyle=1000,0,0,0
 GroundLabel_FontSize=11
-GroundLabel_ATYP=1
-GroundLabel_RMK=0
-GroundLabel_SID=1
-GroundLabel_WTC=1
-GroundLabel_STAND=1
 
 AppLabel_Font=EuroScope
 
-AppLabel_AFL_VS=1
-AppLabel_GS=1
+Label_AFL=1,1,0
+Label_AFL+VS=0,0,0
+Label_AHDG=0,1,0
+Label_ARWY=0,0,0
+Label_ASSR=0,0,0
+Label_ATYP=0,1,0
+Label_CFL=1,0,0
+Label_DEP=0,0,0
+Label_DRWY=0,0,0
+Label_GS=1,1,0
+Label_REF=0,0,0
+Label_REG=0,0,0
+Label_RMK=0,0,0
+Label_SID=0,1,0
+Label_STAND=0,1,0
+Label_STAR=0,0,0
+Label_TSSR=1,1,0
+Label_TYP=0,0,0
+Label_VS=1,1,0
+Label_WTC=0,1,0
+
+
+Label=GND:DEP:0:ALRT,0,0:ASSR_E,0,1:COMM,0,0
+Label=GND:DEP:1:CALLSIGN,0,0:SID,8,0
+Label=GND:DEP:2:WTC,0,0:ATYP,2,0
+Label=GND:DEP:3:
+
+Label=GND:ARR:0:ALRT,0,0:ASSR_E,0,1:COMM,0,0
+Label=GND:ARR:1:CALLSIGN,0,0:STAND,8,0
+Label=GND:ARR:2:WTC,0,0:ATYP,2,0
+Label=GND:ARR:3:
+
+Label=GND:OTH:0:ALRT,0,0:ASSR_E,0,1:COMM,0,0
+Label=GND:OTH:1:CALLSIGN,0,0
+Label=GND:OTH:2:
+Label=GND:OTH:3:
+
+Label=GND:UNC:0:
+Label=GND:UNC:1:
+Label=GND:UNC:2:
+Label=GND:UNC:3:
+
+Label=APP:ARR:0:ALRT,0,0
+Label=APP:ARR:1:CALLSIGN,0,0
+Label=APP:ARR:2:AFL,0,0::VS,4,0:CFL,0,1,14
+Label=APP:ARR:3:GS,0,0
 
 RawVideo=1
 RawVideo_MaxHistory=5
@@ -48,7 +87,7 @@ System_RwyArea_LVP=90.0
 System_RwyBufferArea_LVP=140.0
 
 Track_PredictionLine_APP=2
-Track_HistoryDots_APP=0
+Track_HistoryDots_APP=5
 Track_HistoryDots_APP=0
 Track_HistoryDots_GND=5
 Track_HistoryDots_TWR_Type=1
@@ -72,7 +111,7 @@ List_Departure_EOBT=1
 List_Departure_STAND=0
 
 Window_APP_Scale=17
-Window_APP_AltFilter=5000
+Window_APP_AltFilter=24000
 
 [LPPT]
 Airport_Elevation=374
@@ -94,3 +133,5 @@ Airport_Runway_Buffer_LVP=28:160.0
 [LPMA]
 Airport_Elevation=191
 Airport_Radius=6.5
+Airport_Runway_End=05:N032.41.20.317:W016.47.05.617
+Airport_Runway_End=23:N032.42.24.461:W016.45.50.583
