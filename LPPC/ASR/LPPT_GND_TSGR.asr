@@ -1,8 +1,8 @@
 DisplayTypeName:Ground Radar display
 DisplayTypeNeedRadarContent:0
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20200129154612-200101-0002.sct
-SECTORTITLE:LPPC-Package_20200129154612-200101-0002.sct
+SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20201020002018-201101-0007.sct
+SECTORTITLE:LPPC-Package_20201020002018-201101-0007.sct
 ARTCC low boundary:LPCS Tower CTR:
 ARTCC low boundary:LPPT Tower CTR:
 Free Text:LPBJ Taxiways\A1:freetext
@@ -30,171 +30,6 @@ Free Text:LPCS Taxiways\O:freetext
 Free Text:LPCS Taxiways\P:freetext
 Free Text:LPCS Taxiways\R:freetext
 Free Text:LPCS Taxiways\S:freetext
-Free Text:LPFR MRVA\2400:freetext
-Free Text:LPFR MRVA\2500:freetext
-Free Text:LPFR MRVA\3000:freetext
-Free Text:LPFR MRVA\3300:freetext
-Free Text:LPFR MRVA\4500:freetext
-Free Text:LPFR MRVA\5500:freetext
-Free Text:LPFR Stands\201:freetext
-Free Text:LPFR Stands\202:freetext
-Free Text:LPFR Stands\203:freetext
-Free Text:LPFR Stands\204:freetext
-Free Text:LPFR Stands\205:freetext
-Free Text:LPFR Stands\206:freetext
-Free Text:LPFR Stands\207:freetext
-Free Text:LPFR Stands\208:freetext
-Free Text:LPFR Stands\209:freetext
-Free Text:LPFR Stands\210:freetext
-Free Text:LPFR Stands\211:freetext
-Free Text:LPFR Stands\212:freetext
-Free Text:LPFR Stands\213:freetext
-Free Text:LPFR Stands\314:freetext
-Free Text:LPFR Stands\316:freetext
-Free Text:LPFR Stands\318:freetext
-Free Text:LPFR Stands\320:freetext
-Free Text:LPFR Stands\321:freetext
-Free Text:LPFR Stands\322:freetext
-Free Text:LPFR Stands\323:freetext
-Free Text:LPFR Stands\324:freetext
-Free Text:LPFR Stands\325:freetext
-Free Text:LPFR Stands\432:freetext
-Free Text:LPFR Stands\434:freetext
-Free Text:LPFR Stands\436:freetext
-Free Text:LPFR Stands\442:freetext
-Free Text:LPFR Stands\444:freetext
-Free Text:LPFR Stands\446:freetext
-Free Text:LPFR Stands\451:freetext
-Free Text:LPFR Stands\452:freetext
-Free Text:LPFR Stands\453:freetext
-Free Text:LPFR Stands\454:freetext
-Free Text:LPFR Stands\455:freetext
-Free Text:LPFR Stands\456:freetext
-Free Text:LPFR Stands\461:freetext
-Free Text:LPFR Stands\462:freetext
-Free Text:LPFR Stands\463:freetext
-Free Text:LPFR Stands\464:freetext
-Free Text:LPFR Stands\465:freetext
-Free Text:LPFR Stands\466:freetext
-Free Text:LPFR Stands\471:freetext
-Free Text:LPFR Stands\473:freetext
-Free Text:LPFR Stands\475:freetext
-Free Text:LPFR Stands\500:freetext
-Free Text:LPFR Taxiways\A:freetext
-Free Text:LPFR Taxiways\B:freetext
-Free Text:LPFR Taxiways\C1:freetext
-Free Text:LPFR Taxiways\C2:freetext
-Free Text:LPFR Taxiways\D:freetext
-Free Text:LPFR Taxiways\E:freetext
-Free Text:LPFR Taxiways\F:freetext
-Free Text:LPFR Taxiways\P:freetext
-Free Text:LPFR Taxiways\P:freetext
-Free Text:LPFR Taxiways\P:freetext
-Free Text:LPFR Taxiways\P:freetext
-Free Text:LPFR Taxiways\P:freetext
-Free Text:LPFR Taxiways\RD:freetext
-Free Text:LPFR Taxiways\RG:freetext
-Free Text:LPMA MRVA\3000:freetext
-Free Text:LPMA MRVA\9000:freetext
-Free Text:LPMA Stands\A1:freetext
-Free Text:LPMA Stands\A10:freetext
-Free Text:LPMA Stands\A11:freetext
-Free Text:LPMA Stands\A12:freetext
-Free Text:LPMA Stands\A13:freetext
-Free Text:LPMA Stands\A14:freetext
-Free Text:LPMA Stands\A15:freetext
-Free Text:LPMA Stands\A16:freetext
-Free Text:LPMA Stands\A17:freetext
-Free Text:LPMA Stands\A18:freetext
-Free Text:LPMA Stands\A2:freetext
-Free Text:LPMA Stands\A3:freetext
-Free Text:LPMA Stands\A4:freetext
-Free Text:LPMA Stands\A5:freetext
-Free Text:LPMA Stands\A6:freetext
-Free Text:LPMA Stands\A7:freetext
-Free Text:LPMA Stands\A8:freetext
-Free Text:LPMA Stands\A9:freetext
-Free Text:LPMA Taxiways\A:freetext
-Free Text:LPMA Taxiways\B:freetext
-Free Text:LPMA Taxiways\C:freetext
-Free Text:LPPR MRVA\3000:freetext
-Free Text:LPPR MRVA\4000:freetext
-Free Text:LPPR MRVA\5100:freetext
-Free Text:LPPR Stands\S10:freetext
-Free Text:LPPR Stands\S11:freetext
-Free Text:LPPR Stands\S12:freetext
-Free Text:LPPR Stands\S20:freetext
-Free Text:LPPR Stands\S21:freetext
-Free Text:LPPR Stands\S22:freetext
-Free Text:LPPR Stands\S23:freetext
-Free Text:LPPR Stands\S24:freetext
-Free Text:LPPR Stands\S25:freetext
-Free Text:LPPR Stands\S30:freetext
-Free Text:LPPR Stands\S31:freetext
-Free Text:LPPR Stands\S32:freetext
-Free Text:LPPR Stands\S33:freetext
-Free Text:LPPR Stands\S34:freetext
-Free Text:LPPR Stands\S35:freetext
-Free Text:LPPR Stands\S36:freetext
-Free Text:LPPR Stands\S37:freetext
-Free Text:LPPR Stands\S38:freetext
-Free Text:LPPR Stands\S40:freetext
-Free Text:LPPR Stands\S41:freetext
-Free Text:LPPR Stands\S42:freetext
-Free Text:LPPR Stands\S43:freetext
-Free Text:LPPR Stands\S50:freetext
-Free Text:LPPR Stands\S51:freetext
-Free Text:LPPR Stands\S52:freetext
-Free Text:LPPR Stands\S53:freetext
-Free Text:LPPR Stands\S54:freetext
-Free Text:LPPR Stands\S55:freetext
-Free Text:LPPR Stands\S60:freetext
-Free Text:LPPR Stands\S61:freetext
-Free Text:LPPR Stands\S62:freetext
-Free Text:LPPR Stands\S63:freetext
-Free Text:LPPR Stands\S64:freetext
-Free Text:LPPR Stands\S65:freetext
-Free Text:LPPR Stands\S66:freetext
-Free Text:LPPR Stands\S70:freetext
-Free Text:LPPR Stands\S71:freetext
-Free Text:LPPR Stands\S72:freetext
-Free Text:LPPR Stands\S73:freetext
-Free Text:LPPR Stands\T01:freetext
-Free Text:LPPR Stands\T02:freetext
-Free Text:LPPR Stands\T03:freetext
-Free Text:LPPR Stands\T04:freetext
-Free Text:LPPR Taxiways\A1:freetext
-Free Text:LPPR Taxiways\A2:freetext
-Free Text:LPPR Taxiways\A3:freetext
-Free Text:LPPR Taxiways\A3:freetext
-Free Text:LPPR Taxiways\B:freetext
-Free Text:LPPR Taxiways\C:freetext
-Free Text:LPPR Taxiways\D:freetext
-Free Text:LPPR Taxiways\F:freetext
-Free Text:LPPR Taxiways\H:freetext
-Free Text:LPPR Taxiways\J:freetext
-Free Text:LPPR Taxiways\S1:freetext
-Free Text:LPPR Taxiways\S2:freetext
-Free Text:LPPR Taxiways\S3:freetext
-Free Text:LPPR Taxiways\S4:freetext
-Free Text:LPPR Taxiways\S5:freetext
-Free Text:LPPR Taxiways\S6:freetext
-Free Text:LPPR Taxiways\T:freetext
-Free Text:LPPR Taxiways\Y:freetext
-Free Text:LPPS Stands\A01:freetext
-Free Text:LPPS Stands\A02:freetext
-Free Text:LPPS Stands\A03:freetext
-Free Text:LPPS Stands\A04:freetext
-Free Text:LPPS Stands\A05:freetext
-Free Text:LPPS Stands\A06:freetext
-Free Text:LPPS Stands\A07:freetext
-Free Text:LPPS Taxiways\A:freetext
-Free Text:LPPS Taxiways\B:freetext
-Free Text:LPPT MRVA\2500:freetext
-Free Text:LPPT MRVA\2800:freetext
-Free Text:LPPT MRVA\3000:freetext
-Free Text:LPPT MRVA\3100:freetext
-Free Text:LPPT MRVA\3600:freetext
 Free Text:LPPT Stands\104:freetext
 Free Text:LPPT Stands\105:freetext
 Free Text:LPPT Stands\106:freetext
@@ -335,56 +170,6 @@ Free Text:LPPT Taxiways\Y:freetext
 Free Text:LPPT Taxiways\Z1:freetext
 Free Text:LPPT Taxiways\Z2:freetext
 Free Text:LPPT Taxiways\Z3:freetext
-Free Text:SCT2\5NM:freetext
-Free Text:SCT2\8NM:freetext
-Free Text:SCT2\LPD-10:freetext
-Free Text:SCT2\LPD-25:freetext
-Free Text:SCT2\LPD-28A:freetext
-Free Text:SCT2\LPD-28B:freetext
-Free Text:SCT2\LPD-37:freetext
-Free Text:SCT2\LPD-48N:freetext
-Free Text:SCT2\LPD-48S:freetext
-Free Text:SCT2\LPD-53:freetext
-Free Text:SCT2\LPD-62:freetext
-Free Text:SCT2\LPD-63:freetext
-Free Text:SCT2\LPD-64:freetext
-Free Text:SCT2\LPD-65:freetext
-Free Text:SCT2\LPD-66:freetext
-Free Text:SCT2\LPD-67:freetext
-Free Text:SCT2\LPM-TRA13:freetext
-Free Text:SCT2\LPM-TRA54:freetext
-Free Text:SCT2\LPM-TRA55:freetext
-Free Text:SCT2\LPM-TRA56:freetext
-Free Text:SCT2\LPM-TRA57:freetext
-Free Text:SCT2\LPM-TRA59:freetext
-Free Text:SCT2\LPM-TRA68:freetext
-Free Text:SCT2\LPP-2:freetext
-Free Text:SCT2\LPR-26A:freetext
-Free Text:SCT2\LPR-39A:freetext
-Free Text:SCT2\LPR-40A:freetext
-Free Text:SCT2\LPR-40BN:freetext
-Free Text:SCT2\LPR-40BS:freetext
-Free Text:SCT2\LPR-42A:freetext
-Free Text:SCT2\LPR-42B:freetext
-Free Text:SCT2\LPR-43C:freetext
-Free Text:SCT2\LPR-44A:freetext
-Free Text:SCT2\LPR-51A:freetext
-Free Text:SCT2\LPR-51BN:freetext
-Free Text:SCT2\LPR-51BS:freetext
-Free Text:SCT2\LPR-51C:freetext
-Free Text:SCT2\LPR-60A:freetext
-Free Text:SCT2\LPR-60B:freetext
-Free Text:SCT2\LPR-60BB:freetext
-Free Text:SCT2\LPR-61:freetext
-Free Text:VFR Referências\ABOBA:freetext
-Free Text:VFR Referências\BACEL:freetext
-Free Text:VFR Referências\MAXED:freetext
-Free Text:VFR Referências\NTRM:freetext
-Free Text:VFR Referências\OBRM:freetext
-Free Text:VFR Referências\P1:freetext
-Free Text:VFR Referências\P2:freetext
-Free Text:VFR Referências\P3:freetext
-Free Text:VFR Referências\VALVE:freetext
 Geo:GEO:
 Geo:GM Landmark Morocco Coastline:
 Geo:LE Landmark Spain Coastline:
@@ -393,11 +178,6 @@ Geo:LP Landmark Madeira Coastline:
 Geo:LP Landmark Porto Santo Coastline:
 Geo:LPBJ Groundlayout:
 Geo:LPCS Groundlayout:
-Geo:LPEV Groundlayout:
-Geo:LPFR Groundlayout:
-Geo:LPMA Groundlayout:
-Geo:LPPR Groundlayout:
-Geo:LPPS Groundlayout:
 Geo:LPPT Groundlayout:
 Regions:LPPT Background:polygon
 Regions:LPPT Groundlayout:polygon
@@ -410,11 +190,11 @@ SHOWLEADER:0
 TURNLEADER:0
 HISTORY_DOTS:0
 SIMULATION_MODE:2
-DISABLEPANNING:0
-DISABLEZOOMING:0
+DISABLEPANNING:1
+DISABLEZOOMING:1
 DisplayRotation:67.00000
 TAGFAMILY:PT vACC - NORM
-WINDOWAREA:38.766908:-9.162996:38.791009:-9.106562
+WINDOWAREA:38.770457:-9.162374:38.794558:-9.105939
 PLUGIN:Ground Radar plugin:AirportElevation:374
 PLUGIN:Ground Radar plugin:AirportRadius:1.9
 PLUGIN:Ground Radar plugin:GroundMode:LPPT

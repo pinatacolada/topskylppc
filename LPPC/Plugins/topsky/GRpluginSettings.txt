@@ -80,6 +80,7 @@ Track_Heading_Line=1
 Track_PredictionLine_TWR=1
 Window_APP_Extensions=1
 
+System_GroundMode_AltFilter_AAL=100
 System_UseReportedGS=0
 System_RwyArea=45.0 
 System_RwyBufferArea=90.0 
@@ -88,7 +89,6 @@ System_RwyBufferArea_LVP=140.0
 
 Track_PredictionLine_APP=2
 Track_HistoryDots_APP=5
-Track_HistoryDots_APP=0
 Track_HistoryDots_GND=5
 Track_HistoryDots_TWR_Type=1
 Track_Heading_Line=0
@@ -102,7 +102,7 @@ List_Arrival_STAND=1
 List_Inbound_TYPE=0
 List_Inbound_WTC=0
 List_Inbound_ETA=1
-List_Inbound_STAND=1
+List_Inbound_STAND=0
 
 List_Departure_RWY=0
 List_Departure_TYPE=0
@@ -118,6 +118,16 @@ Airport_Elevation=374
 Airport_Radius=6.5
 Airport_Runway_End=21:N038.47.50.400:W009.07.38.500
 Airport_Runway_End=03:N038.45.56.460:W009.08.39.480
+
+List_Inbound=21,1,1060,565
+List_Inbound=03,1,1060,565
+List_Arrival=1,1245,565
+List_Alerts=1,1351,25
+List_Stand=1,1102,25
+List_Stand_Items=20
+
+Window_APP=1,1430,500,490,457
+Window_APP_Extensions=10
 
 [LPPR]
 Airport_Elevation=227
