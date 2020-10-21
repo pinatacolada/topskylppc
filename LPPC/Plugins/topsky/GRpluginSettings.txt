@@ -118,6 +118,8 @@ Airport_Elevation=374
 Airport_Radius=6.5
 Airport_Runway_End=21:N038.47.50.400:W009.07.38.500
 Airport_Runway_End=03:N038.45.56.460:W009.08.39.480
+Airport_Runway_End=35:N008.47.50.400:W089.07.38.500
+Airport_Runway_End=17:N008.45.56.460:W089.08.39.480
 
 List_Inbound=21,0,1060,565
 List_Inbound=03,0,1060,565
@@ -127,7 +129,8 @@ List_Stand=0,1102,25
 List_Stand_Items=20
 
 Window_APP=1,1430,500,490,457
-Window_APP_Extensions=10
+Window_APP_Extensions=0
+Window_APP_Scale=9
 
 [LPPR]
 Airport_Elevation=227
