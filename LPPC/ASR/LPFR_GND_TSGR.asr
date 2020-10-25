@@ -1,6 +1,8 @@
 DisplayTypeName:Ground Radar display
 DisplayTypeNeedRadarContent:0
 DisplayTypeGeoReferenced:1
+SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20201020002018-201101-0007.sct
+SECTORTITLE:LPPC-Package_20201020002018-201101-0007.sct
 ARTCC low boundary:LPFR Tower CTR:
 Free Text:LPFR Stands\201:freetext
 Free Text:LPFR Stands\202:freetext
@@ -77,11 +79,11 @@ SHOWLEADER:0
 TURNLEADER:0
 HISTORY_DOTS:0
 SIMULATION_MODE:2
-DISABLEPANNING:0
-DISABLEZOOMING:0
+DISABLEPANNING:1
+DISABLEZOOMING:1
 DisplayRotation:171.00000
 TAGFAMILY:PT vACC - NORM
-WINDOWAREA:37.002822:-7.999901:37.027385:-7.942384
+WINDOWAREA:37.009538:-7.986809:37.022115:-7.957360
 PLUGIN:Ground Radar plugin:AirportElevation:24
 PLUGIN:Ground Radar plugin:AirportRadius:1.9
 PLUGIN:Ground Radar plugin:GroundMode:LPFR
