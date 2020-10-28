@@ -98,7 +98,7 @@ Track_Heading_Line=1
 Track_PredictionLine_TWR=1
 Window_APP_Extensions=1
 
-System_GroundMode_AltFilter_AAL=0
+System_GroundMode_AltFilter_AAL=24000
 System_UseReportedGS=0
 System_RwyArea=45.0 
 System_RwyBufferArea=90.0 
