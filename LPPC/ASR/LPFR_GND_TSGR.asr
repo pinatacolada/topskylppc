@@ -1,8 +1,6 @@
 DisplayTypeName:Ground Radar display
 DisplayTypeNeedRadarContent:0
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20201020002018-201101-0007.sct
-SECTORTITLE:LPPC-Package_20201020002018-201101-0007.sct
 ARTCC low boundary:LPFR Tower CTR:
 Free Text:LPFR Stands\201:freetext
 Free Text:LPFR Stands\202:freetext
