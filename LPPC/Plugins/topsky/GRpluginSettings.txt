@@ -1,7 +1,6 @@
 Color_Arrival=253,236,166
 Color_Departure=0,18,153
 Color_Unknown=0,0,0
-
 Color_Background=160,160,160
 Color_RawVideo=175,190,200
 Color_RawVideoHistory=175,190,200
@@ -14,6 +13,7 @@ Color_WForeground=65,65,65
 Color_WTitleBar=250,250,250
 
 Equip_ModeS=
+Equip_ProMode=1
 
 GroundLabel=1
 GroundLabel_Font=EuroScope
@@ -57,13 +57,13 @@ Label=GND:ARR:1:CALLSIGN,0,0:STAND,8,0
 Label=GND:ARR:2:WTC,0,0:ATYP,2,0
 Label=GND:ARR:3:RMK,0,0
 
-Label=GND:OTH:0:
-Label=GND:OTH:1:
+Label=GND:OTH:0:ALRT,0,0:COMM,0,0
+Label=GND:OTH:1:CALLSIGN,0,0
 Label=GND:OTH:2:
 Label=GND:OTH:3:
 
 Label=GND:UNC:0:ALRT,0,0:ASSR_E,0,1:COMM,0,0
-Label=GND:UNC:1:CALLSIGN,0,0
+Label=GND:UNC:1:TSSR,0,0
 Label=GND:UNC:2:
 Label=GND:UNC:3:
 
@@ -78,14 +78,21 @@ Label=APP:DEP:1:CALLSIGN,0,0
 Label=APP:DEP:2:AFL,0,0::VS,4,0:CFL,0,1,14
 Label=APP:DEP:3:GS,0,0
 
+Label=APP:OTH:0:ALRT,0,0
+Label=APP:OTH:1:CALLSIGN,0,0
+Label=APP:OTH:2:AFL,0,0::VS,4,0:CFL,0,1,14
+Label=APP:OTH:3:GS,0,0
+
+Label=APP:UNC:0:ALRT,0,0
+Label=APP:UNC:1:CALLSIGN,0,0
+Label=APP:UNC:2:AFL,0,0::VS,4,0
+Label=APP:UNC:3:GS,0,0
+
 RawVideo=1
 RawVideo_MaxHistory=5
 
 System_State_OnFreq=READY
 System_State_DeIce=TAXI SP
-
-
-Equip_ProMode=1
 
 Track_Heading_Line=1
 Track_PredictionLine_TWR=1

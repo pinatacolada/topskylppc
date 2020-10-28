@@ -1,4 +1,4 @@
-Settings	sector	\LPPC-Package_20200917024852-201001-0001.sct
+Settings	sector	C:\Program Files (x86)\EuroScope\LPPC-Package_20201020002018-201101-0007.sct
 Settings	alias	\LPPC\Alias\alias.txt
 Settings	airlines	\LPPC\ICAO\ICAO_Airlines.txt
 Settings	airports	\LPPC\ICAO\ICAO_Airports.txt
@@ -58,3 +58,24 @@ Sounds	Sound18	\Sounds\startup.wav
 Sounds	OutputDevice	Speakers (Sennheiser USB headse
 Plugins	Plugin2	\LPPC\Plugins\CFlightType.dll
 Plugins	Plugin2Display0	Standard ES radar screen
+RecentFiles	Recent1	LPPC\ASR\LPPT_GND_TSGR.asr
+RecentFiles	Recent2	LPPC\ASR\LPCS_TWR.asr
+LastSession	connecttype	2
+LastSession	callsign	LPPC_CTR
+LastSession	realname	Ricardo Sousa
+LastSession	certificate	1110850
+LastSession	password	400423
+LastSession	facility	6
+LastSession	rating	4
+LastSession	server	SweatBox
+LastSession	tovatsim	1
+LastSession	scenario	\LPPTGNDTWR21LVO.txt
+LastSession	atis2	Lisboa Control. CPDLC LPPC, DLIC only
+LastSession	atis3	Coversall controlled aerodromes in Portugal and Madeira islands, unless local ATC available
+LastSession	atis4	For updated charts - charts.portugal-vacc.org
+LastSession	range	600
+LastSession	proxyserver	localhost
+LastSession	simdatapublish	0
+RecentFiles	Recent3	LPPC\ASR\LPMA_GND_TSGR.asr
+RecentFiles	Recent4	LPPC\ASR\LPFR_GND_TSGR.asr
+RecentFiles	Recent5	LPPC\ASR\LPPC_CTR_TS.asr
