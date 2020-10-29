@@ -1,8 +1,6 @@
 DisplayTypeName:Ground Radar display
 DisplayTypeNeedRadarContent:0
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20201020002018-201101-0007.sct
-SECTORTITLE:LPPC-Package_20201020002018-201101-0007.sct
 Fixes:GELO:name
 Fixes:GELO:symbol
 Fixes:ROSRO:name
