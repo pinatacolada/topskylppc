@@ -61,10 +61,6 @@ Free Text:LPFR Taxiways\P:freetext
 Free Text:LPFR Taxiways\RD:freetext
 Free Text:LPFR Taxiways\RG:freetext
 Geo:GEO:
-Geo:GM Landmark Morocco Coastline:
-Geo:LP Landmark Continental Coastline:
-Geo:LP Landmark Madeira Coastline:
-Geo:LP Landmark Porto Santo Coastline:
 Geo:LPFR Groundlayout:
 Regions:LPFR Background:polygon
 Regions:LPFR Groundlayout:polygon
