@@ -198,3 +198,14 @@ Label=GND:UNC:0:COMM,0,0
 Label=GND:UNC:1:CALLSIGN,0,0
 Label=GND:UNC:2:
 Label=GND:UNC:3:
+
+List_Inbound=05,0,1734,650
+List_Inbound=23,0,1734,650
+List_Arrival=1,1549,650
+List_Alerts=1,1109,25
+List_Stand=0,1102,25
+List_Stand_Items=20
+
+Window_APP=1,700,25,410,410
+Window_APP_Extensions=0
+Window_APP_Scale=14
