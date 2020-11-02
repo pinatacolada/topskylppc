@@ -1,5 +1,5 @@
 DisplayTypeName:Standard ES radar screen
-DisplayTypeNeedRadarContent:0
+DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
 Fixes:A-POINT:name
 Fixes:A-POINT:symbol
