@@ -1,4 +1,5 @@
 //You can change the position of the windows in this file. Generally the numbers below are x-coord,y-coord. Ground Radar plugin for EuroScope - Developer Guide.pdf for more details
+//Just remember to remove the // from the left to uncomment the line
 //Example 2715*1527 resolution
 //[LPPT]
 //List_Inbound=21,0,1500,799
