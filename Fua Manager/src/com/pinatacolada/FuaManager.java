@@ -56,7 +56,6 @@ public class FuaManager {
 	static ArrayList<Notam> notams = new ArrayList<Notam>();
 
 	public static void main(String[] args) throws IOException, JAXBException, ParserConfigurationException, SAXException {
-		System.out.println("WELCOME TO THE MAD HOUSE");
 		if( args[0].contains("-L")) {
 			loadAreas(new File("TopSkyAreas.txt"));
 		}
@@ -307,6 +306,7 @@ public class FuaManager {
 		for(String folderName : FUA_FOLDERS) {
 			FuaXMLFolder folder = fua.getFolderByName(folderName);
 			loadFuaXMLFolder(folder);
+			System.out.println("bbpbp");
 		}
 		System.out.println("AMC PROCESSING ENDED");
 
