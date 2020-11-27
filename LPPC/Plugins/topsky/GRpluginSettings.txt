@@ -139,8 +139,8 @@ Airport_Runway_End=03:N038.45.56.460:W009.08.39.480
 Airport_Runway_End=35:N008.47.50.400:W089.07.38.500
 Airport_Runway_End=17:N008.45.56.460:W089.08.39.480
 
-List_Inbound=21,0,1060,565
-List_Inbound=03,0,1060,565
+List_Inbound=21,2,1060,565
+List_Inbound=03,2,1060,565
 List_Arrival=1,1245,565
 List_Alerts=1,1351,25
 List_Stand=0,1102,25
@@ -156,8 +156,8 @@ Airport_Radius=6.5
 Airport_Runway_End=17:N041.15.47.900:W008.41.06.900
 Airport_Runway_End=35:N041.13.57.200:W008.40.37.900
 
-List_Inbound=17,0,1734,650
-List_Inbound=35,0,1734,650
+List_Inbound=17,2,1734,650
+List_Inbound=35,2,1734,650
 List_Arrival=1,1549,650
 List_Alerts=1,1109,25
 List_Stand=0,1102,25
@@ -172,8 +172,8 @@ Airport_Elevation=24
 Airport_Radius=6.5
 Airport_Runway_Buffer_LVP=28:160.0
 
-List_Inbound=10,0,1734,650
-List_Inbound=28,0,1734,650
+List_Inbound=10,2,1734,650
+List_Inbound=28,2,1734,650
 List_Arrival=1,1549,650
 List_Alerts=1,1109,25
 List_Stand=0,1102,25
@@ -199,8 +199,8 @@ Label=GND:UNC:1:CALLSIGN,0,0
 Label=GND:UNC:2:
 Label=GND:UNC:3:
 
-List_Inbound=05,0,1734,650
-List_Inbound=23,0,1734,650
+List_Inbound=05,2,1734,650
+List_Inbound=23,2,1734,650
 List_Arrival=1,1549,650
 List_Alerts=1,1109,25
 List_Stand=0,1102,25
