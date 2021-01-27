@@ -93,6 +93,9 @@ CPDLC_ASP=0
 CPDLC_PlaySound=1
 CPDLC_PDC_PlaySound=1
 
+CPDLC_AutoAcceptLogon=1
+CPDLC_AutoAcceptLogon_Time=15
+
 CPDLC_PDC_Timeout_Pilot=300
 
 Equip_UseCodes=0
