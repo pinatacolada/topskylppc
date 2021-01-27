@@ -93,6 +93,8 @@ CPDLC_ASP=0
 CPDLC_PlaySound=1
 CPDLC_PDC_PlaySound=1
 
+CPDLC_PDC_Timeout_Pilot=300
+
 Equip_UseCodes=0
 Equip_ModeS=WZLCISG
 Equip_833=WZLYCIVSGP
