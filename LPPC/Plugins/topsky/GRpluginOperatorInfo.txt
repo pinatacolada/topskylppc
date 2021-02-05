@@ -100,7 +100,6 @@ GAM	Mil
 GBC	C
 GBO	C
 GCL	C
-GCO	C
 GDQ	Mil
 GEC	C
 GGC	C
@@ -115,6 +114,7 @@ GNY	Mil
 GOL	C
 GSC	C
 GTI	C
+GXA	C
 HAF	Mil
 HEX	C
 HKC	C
@@ -153,7 +153,6 @@ LCR	C
 LCS	Mil
 LEE	Mil
 LFR	C
-LGF	C
 LMG	Mil
 LOP	Mil
 LOS	Mil
