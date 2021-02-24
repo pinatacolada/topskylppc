@@ -49,6 +49,7 @@ CNT	C
 CNV	Mil
 CRG	C
 CSB	C
+CSG	C
 CTJ	C
 CTM	Mil
 CTW	C
@@ -144,6 +145,7 @@ KIN	Mil
 KIW	Mil
 KJD	Mil
 KRC	Mil
+KXP	C
 KZU	C
 LAF	Mil
 LBF	Mil

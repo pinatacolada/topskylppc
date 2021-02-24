@@ -14,7 +14,6 @@ CXD	Candan Air	Candan
 CYB	Cyber Air	Cyber
 DBX	Air Danubius	Danubius
 EUL	Euroline	Euroline
-ESG	Estonian Air Regional	Estonian Regional
 FCY	Cyberavia	Cyberavia
 FEU	Flyeuro	Flyeuro
 FFG	Federated Flight Group	Federated Flight Group
