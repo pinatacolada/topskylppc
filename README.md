@@ -43,7 +43,7 @@ Realist radar Maps
 And a lot more
 
 # Instalation
-TopSky is included in the Sector Package of Portugal vACC, and is the recommended method of installation. If for some reason you wan't to do it yourself, first, why, second, [Download](https://github.com/pinatacolada/topskylppc/archive/1.4.2.zip) and unzip the contents of topskylppc-1.4.2 folder into the folder where you keep your LPPC sector file. It should ask you to overwrite some files, say yes to those.
+TopSky is included in the Sector Package of Portugal vACC, and is the recommended method of installation. If for some reason you wan't to do it yourself, first, why, second, [Download](https://github.com/pinatacolada/topskylppc/archive/1.4.4.zip) and unzip the contents of topskylppc-1.4.4 folder into the folder where you keep your LPPC sector file. It should ask you to overwrite some files, say yes to those.
 
 Then, on Euroscope, go to Other Settings/Plug-ins. Click on load and navigate to where you dropped the files before. Select the TopSky.dll and then the GRplugin.dll files.
 
