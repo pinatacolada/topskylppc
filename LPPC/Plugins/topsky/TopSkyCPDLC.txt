@@ -1,5 +1,5 @@
 [DCL]
-DCL:LPPT:SID:CLRD TO:<ades> RWY: <drwy> SID: <sid> SQK: <assr> <rmk>
+DCL:LPPT:SID:CLRD TO: <ades> RWY: <drwy> SID: <sid> SQK: <assr> <rmk> <qnh>
 
 [FREETEXT]
 FREETEXT:NE:MESSAGE NOT SUPPORTED BY THIS ATS UNIT
