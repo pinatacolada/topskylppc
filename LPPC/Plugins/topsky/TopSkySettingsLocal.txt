@@ -157,3 +157,6 @@ STCA_LinPred_Sep_Lat_U=4.5
 STCA_LinPred_Sep_Lat_L=4.5
 STCA_CurrProx_Sep_Lat_U=4.75
 STCA_CurrProx_Sep_Lat_L=4.75
+
+[LPPT_]
+Window_CPDLC_Current=1,700,25

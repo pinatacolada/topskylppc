@@ -237,5 +237,5 @@ Window_MsgIn=1,1150,25
 Window_MsgOut=1,1400,25
 Window_SAP=1,6,885
 Window_CARD=1,6,693
-Window_CPDLC_Current=1,700,25
+Window_CPDLC_Current=0,700,25
 Window_NOTAM=1,700,300,400
