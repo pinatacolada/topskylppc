@@ -179,8 +179,23 @@ List_Alerts=1,1109,25
 List_Stand=0,1102,25
 List_Stand_Items=20
 
-Label=GND:UNC:0:COMM,0,0
-Label=GND:UNC:1:CALLSIGN,0,0
+Label=GND:DEP:0:
+Label=GND:DEP:1:
+Label=GND:DEP:2:
+Label=GND:DEP:3:
+
+Label=GND:ARR:0:
+Label=GND:ARR:1:
+Label=GND:ARR:2:
+Label=GND:ARR:3:
+
+Label=GND:OTH:0:
+Label=GND:OTH:1:
+Label=GND:OTH:2:
+Label=GND:OTH:3:
+
+Label=GND:UNC:0:
+Label=GND:UNC:1:
 Label=GND:UNC:2:
 Label=GND:UNC:3:
 
@@ -194,8 +209,23 @@ Airport_Radius=6.5
 Airport_Runway_End=05:N032.41.20.317:W016.47.05.617
 Airport_Runway_End=23:N032.42.24.461:W016.45.50.583
 
-Label=GND:UNC:0:COMM,0,0
-Label=GND:UNC:1:CALLSIGN,0,0
+Label=GND:DEP:0:
+Label=GND:DEP:1:
+Label=GND:DEP:2:
+Label=GND:DEP:3:
+
+Label=GND:ARR:0:
+Label=GND:ARR:1:
+Label=GND:ARR:2:
+Label=GND:ARR:3:
+
+Label=GND:OTH:0:
+Label=GND:OTH:1:
+Label=GND:OTH:2:
+Label=GND:OTH:3:
+
+Label=GND:UNC:0:
+Label=GND:UNC:1:
 Label=GND:UNC:2:
 Label=GND:UNC:3:
 
