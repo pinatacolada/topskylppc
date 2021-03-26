@@ -1,5 +1,4 @@
 Setup_COOPANS=1
-Setup_AutoSignIn=1
 Setup_LoadMap=ROT\LIM
 Setup_LoadMap=ROT\SEC SPAIN
 Setup_LoadMap=ROT\R PT BDRY
