@@ -1,5 +1,5 @@
 DisplayTypeName:Ground Radar display
-DisplayTypeNeedRadarContent:0
+DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
 ARTCC low boundary:LPFR Tower CTR:
 Free Text:LPFR Stands\201:freetext
@@ -72,7 +72,7 @@ LEADER:5
 SHOWLEADER:0
 TURNLEADER:0
 HISTORY_DOTS:0
-SIMULATION_MODE:2
+SIMULATION_MODE:4
 DISABLEPANNING:0
 DISABLEZOOMING:0
 DisplayRotation:171.00000
