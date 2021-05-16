@@ -12,6 +12,7 @@ Setup_LoadMap=APP\RWY
 Setup_LoadMap=APP\P FUN 05/23
 Setup_LoadMap=APP\PSNT
 Setup_LoadMap=APP\PCAS
+Setup_LoadMap=APP\PCAS GNSS
 Setup_LoadMap=DIV\VOR NDB
 Setup_LoadMap=DIV\ATZ
 Setup_LoadMap=CONTG\MSSR
