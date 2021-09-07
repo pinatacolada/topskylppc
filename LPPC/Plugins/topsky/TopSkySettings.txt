@@ -119,7 +119,7 @@ CPDLC_AutoAcceptLogon_Time=15
 
 CPDLC_PDC_Timeout_Pilot=180
 
-CPDLC_FSM_CLD_Header=DEPARTURE CLEARANCE <number> <hour><min>Z <day><month3><year4>               FROM: <adep2> <callsign> 
+CPDLC_FSM_CLD_Header=DEPARTURE CLEARANCE <number> <hour><min>Z <day><month3><year4> FROM: <adep2> <callsign> 
 
 Equip_UseCodes=0
 Equip_ModeS=WZLCISG
