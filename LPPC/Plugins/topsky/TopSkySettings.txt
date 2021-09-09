@@ -12,6 +12,7 @@ Setup_LoadMap=APP\RWY
 Setup_LoadMap=APP\P FUN 05/23
 Setup_LoadMap=APP\PSNT
 Setup_LoadMap=APP\PCAS
+Setup_LoadMap=APP\PCAS GNSS
 Setup_LoadMap=DIV\VOR NDB
 Setup_LoadMap=DIV\ATZ
 Setup_LoadMap=CONTG\MSSR
@@ -118,7 +119,7 @@ CPDLC_AutoAcceptLogon_Time=15
 
 CPDLC_PDC_Timeout_Pilot=180
 
-CPDLC_FSM_CLD_Header=DEPARTURE CLEARANCE <number> <hour><min>Z <day><month3><year4>               FROM: <adep2> <callsign> 
+CPDLC_FSM_CLD_Header=DEPARTURE CLEARANCE <number> <hour><min>Z <day><month3><year4> FROM: <adep2> <callsign> 
 
 Equip_UseCodes=0
 Equip_ModeS=WZLCISG
