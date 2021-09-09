@@ -143,6 +143,8 @@ HTTP_NOTAM_Area_Sched_Debug=1
 
 HTTP_NOTAM_Server=https://www.notams.faa.gov
 
+Maps_Font=EuroScope
+
 MTCD=1
 MTCD_AHDG=1
 MTCD_RAM=1
@@ -239,6 +241,16 @@ System_MagModel_Year=2020
 System_MetarSourceVATSIM=0
 System_UseAcceptedCoordColor=1
 System_UseTSAborderHighlightColor=1
+
+System_GUI_Font_1=EuroScope
+System_GUI_Font_1_Size=10
+//System_GUI_Font_1_Style=
+System_GUI_Font_2=EuroScope
+System_GUI_Font_2_Size=9
+//System_GUI_Font_2_Style=
+//System_GUI_Font_Fixed_1=
+System_GUI_Font_Fixed_1_Size=9
+//System_GUI_Font_Fixed_1_Style=
 
 
 TextNotes_Font=EuroScope
