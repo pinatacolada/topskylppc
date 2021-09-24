@@ -72,7 +72,7 @@ Color_AIW_Intrusion=255,128,1
 Color_Assumed=0,180,0//radar target and label
 Color_Background=0,0,50//menu backgrounds
 Color_Border=250,250,250
-Color_BottomShadow=250,250,250
+//Color_BottomShadow=250,250,250
 Color_Concerned=150,150,150
 Color_Coordination=150,150,150//unassumed color
 Color_Foreground=250,250,250//font color
@@ -81,7 +81,7 @@ Color_Heading_Vector=185,185,185
 Color_Proposition_Accepted=0,180,0
 Color_Proposition_In=244,147,1
 Color_Proposition_Out=150,130,165
-Color_TopShadow=250,250,250//UI top shadow
+//Color_TopShadow=250,250,250//UI top shadow
 Color_Track_Default=0,180,0
 Color_Track_Highlight=0,180,0
 Color_Text_Notes=80,40,40
@@ -142,6 +142,8 @@ HTTP_NOTAM_Area_Sched_Text=
 HTTP_NOTAM_Area_Sched_Debug=1
 
 HTTP_NOTAM_Server=https://www.notams.faa.gov
+
+Maps_Font=EuroScope
 
 MTCD=1
 MTCD_AHDG=1
@@ -240,6 +242,16 @@ System_MetarSourceVATSIM=0
 System_UseAcceptedCoordColor=1
 System_UseTSAborderHighlightColor=1
 
+System_GUI_Font_1=EuroScope
+System_GUI_Font_1_Size=10
+//System_GUI_Font_1_Style=
+System_GUI_Font_2=EuroScope
+System_GUI_Font_2_Size=9
+//System_GUI_Font_2_Style=
+//System_GUI_Font_Fixed_1=
+System_GUI_Font_Fixed_1_Size=9
+//System_GUI_Font_Fixed_1_Style=
+
 
 TextNotes_Font=EuroScope
 TextNotes_FontSize=14
@@ -253,6 +265,7 @@ Vector_AHDG_Label_Time=1
 Window_ASM_ShowNOTAMasUsertext=0
 Window_SM_LowestLevel=60
 Window_FlightPlan=0,1412,600
+Window_FlightPlan_ShowAlways=1
 
 Window_MsgIn=1,1150,25
 Window_MsgOut=1,1400,25
