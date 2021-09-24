@@ -265,6 +265,7 @@ Vector_AHDG_Label_Time=1
 Window_ASM_ShowNOTAMasUsertext=0
 Window_SM_LowestLevel=60
 Window_FlightPlan=0,1412,600
+Window_FlightPlan_ShowAlways=1
 
 Window_MsgIn=1,1150,25
 Window_MsgOut=1,1400,25
