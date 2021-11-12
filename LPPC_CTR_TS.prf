@@ -60,20 +60,4 @@ Plugins	Plugin2	\LPPC\Plugins\CFlightType.dll
 Plugins	Plugin2Display0	Standard ES radar screen
 RecentFiles	Recent1	LPPC\ASR\LPPT_GND_TSGR.asr
 RecentFiles	Recent2	LPPC\ASR\LPPC_CTR_TS.asr
-LastSession	connecttype	2
-LastSession	callsign	LPPC_CTR
-LastSession	realname	1110850
-LastSession	certificate	1110850
-LastSession	password	400423
-LastSession	facility	6
-LastSession	rating	6
-LastSession	server	SweatBox
-LastSession	tovatsim	1
-LastSession	scenario	C:\Program Files (x86)\EuroScope\LPPTGNDTWR21LVO.txt
-LastSession	atis2	Lisboa Control - CPDLC LOGON ONLY LPPC
-LastSession	atis3	Covers LPPT, LPPR, LPFR, LPMA, LPPS and LPCS unless local ATC available
-LastSession	atis4	For updated charts - charts.portugal-vacc.org
-LastSession	range	300
-LastSession	proxyserver	localhost
-LastSession	simdatapublish	0
 Plugins	Plugin3	C:\Program Files (x86)\EuroScope\LPPC\Plugins\CDM\CDM.dll
