@@ -58,3 +58,6 @@ Sounds	Sound18	\Sounds\startup.wav
 Sounds	OutputDevice	Speakers (Sennheiser USB headse
 Plugins	Plugin2	\LPPC\Plugins\CFlightType.dll
 Plugins	Plugin2Display0	Standard ES radar screen
+RecentFiles	Recent1	LPPC\ASR\LPPT_GND_TSGR.asr
+RecentFiles	Recent2	LPPC\ASR\LPPR_GND_TSGR.asr
+RecentFiles	Recent3	LPPC\ASR\LPCS_TWR.asr
