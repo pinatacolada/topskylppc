@@ -119,7 +119,7 @@ CPDLC_AutoAcceptLogon_Time=15
 
 CPDLC_PDC_Timeout_Pilot=180
 
-CPDLC_FSM_CLD_Header=<adep2> PDC <number> . . . . . CLD <hour><min> <year2><month2><day> <adep2> PDC <number> <callsign>
+CPDLC_FSM_CLD_Header=CLD <hour><min> <year2><month2><day> <adep2> PDC <number> <callsign>
 
 
 Equip_UseCodes=0
