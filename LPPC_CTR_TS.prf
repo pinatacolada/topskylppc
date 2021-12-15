@@ -1,4 +1,3 @@
-Settings	sector	\LPPC-Package_20211111094757-211101-0004.sct
 Settings	alias	\LPPC\Alias\alias.txt
 Settings	airlines	\LPPC\ICAO\ICAO_Airlines.txt
 Settings	airports	\LPPC\ICAO\ICAO_Airports.txt
@@ -58,4 +57,6 @@ Sounds	Sound18	\Sounds\startup.wav
 Sounds	OutputDevice	Speakers (Sennheiser USB headse
 Plugins	Plugin2	\LPPC\Plugins\CFlightType.dll
 Plugins	Plugin2Display0	Standard ES radar screen
-Plugins	Plugin3	\LPPC\Plugins\CDM\CDM.dll
+Plugins	Plugin3	\LPPC\Plugins\ACDM\CDM.dll
+Plugins	Plugin3Display0	Ground Radar display
+Plugins	Plugin3Display1	Standard ES radar screen
