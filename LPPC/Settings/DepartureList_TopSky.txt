@@ -1,11 +1,11 @@
 DEP
 m_Visible:1
 m_X:0
-m_Y:109
+m_Y:123
 m_LineNumber:15
 m_Resizable:1
 m_OrderingColumn:4
-m_HeaderOnly:0
+m_HeaderOnly:1
 m_Column:CALLSIGN:9:1:10021:6:39:1:TopSky plugin:TopSky plugin:TopSky plugin:4:0.0
 m_Column:EOBT:5:1:1:0:0:0:CDM Plugin:::1:0.0
 m_Column:TOBT:5:1:4:100:100:1:CDM Plugin:CDM Plugin:CDM Plugin:1:0.0

@@ -1,11 +1,11 @@
 SIL
 m_Visible:1
 m_X:0
-m_Y:45
+m_Y:65
 m_LineNumber:6
 m_Resizable:1
 m_OrderingColumn:5
-m_HeaderOnly:0
+m_HeaderOnly:1
 m_Column:CALLSIGN:9:1:10021:6:39:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
 m_Column:ATYPE:6:1:10028:0:0:1:TopSky plugin:::1:0.0
 m_Column:WTC:3:1:10032:0:0:1:TopSky plugin:::1:0.0
