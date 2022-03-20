@@ -33,6 +33,16 @@ Airspace_NOTAM_Add=LPPC,LECM
 Airspace_SIGMET_Areas=LPPC
 HTTP_SIGMET_Pages=6443,6450
 
+Areas_Altitude_Filtering=1
+
+HTTP_METAR_Server=https://topskytools.herokuapp.com/metar/
+HTTP_METAR_Page_Prefix=
+HTTP_METAR_Page_Suffix=
+HTTP_METAR_Data_Prefix=(prefix)
+HTTP_METAR_Data_Suffix=(suffix)
+HTTP_NOTAM_Area_Sched_Text= 
+HTTP_NOTAM_Server=https://www.notams.faa.gov
+
 Areas_PreActiveTime=1800
 Areas_Label_FontSize=12
 Areas_Label_FontStyle=700,0,0,0
@@ -43,6 +53,19 @@ Areas_Label_Times=1
 Areas_Label_UserText=1
 Areas_NOTAM_Activation=1
 
+CPDLC_MinLevel=285
+CPDLC_Transfer=1
+CPDLC_CFL=1
+CPDLC_DCT=1
+CPDLC_AHDG=1
+CPDLC_ASP=1
+CPDLC_AutoAcceptLogon=1
+CPDLC_AutoAcceptLogon_Time=15
+CPDLC_PlaySound=1
+CPDLC_PDC_PlaySound=1
+CPDLC_PDC_Timeout_Pilot=180
+CPDLC_FSM_CLD_Header=CLD <hour><min> <year2><month2><day> <adep2> PDC <number> <callsign>
+
 FlightLeg_AutoShow=1
 FlightLeg_AssumeTime=2
 
@@ -50,7 +73,8 @@ Label_RTE_Origin=LP
 Label_Field18_Flag_Items=STS/ALTRV,STS/ATFMX,STS/HUM,STS/FFR,STS/FLTCK,STS/HAZMAT,STS/HEAD,STS/HOSP,STS/MARSA,STS/MEDEVAC,STS/NONRVSM,STS/SAR,STS/STATE
 
 Label_All_N=1
-
+Label_COP_MaxChars=5
+Label_FCOP_MaxChars=5
 Label_DAPs=1
 
 Label_RTE_Origin=LP
@@ -112,6 +136,9 @@ Label_No_FCOPX=0
 Label_No_WTC=1
 Label_No_GS=0
 
+List_OptionsInGlobalMenu=1
+
+MTCD_Potential_Pred_Risk=1
 MTCD_Sep_Vert_U=2000
 MTCD_Sep_Vert_L=1000
 
@@ -123,9 +150,12 @@ Rings_HighlightStep=2
 System_ASP_IasMach=28500
 System_UseReportedGS=0
 System_FPASD=1
+System_FPASD_MinState=1
+System_GS_DeleteMinMax=1
 System_RepHdg_Correction=2
 System_TaxiTime=15
 System_TransferConfirmation=2
+System_MagModel_Type=1
 System_MagModel_Year=2022
 System_MetarSourceVATSIM=0
 System_UseAcceptedCoordColor=1
@@ -157,15 +187,7 @@ CPDLC_Default=1
 Window_CPDLC_Current=1,700,25
 Setup_LoadMap=ROT\R PT IN
 
-[LPPC_I_CTR]
-STCA_Coarse_Sep_Lat_U=8
-STCA_Coarse_Sep_Lat_L=8
-STCA_LinPred_Sep_Lat_U=7.5
-STCA_LinPred_Sep_Lat_L=7.5
-STCA_CurrProx_Sep_Lat_U=7.75
-STCA_CurrProx_Sep_Lat_L=7.75
-
-[LPPC_6_CTR]
+[LPPC_I]
 STCA_Coarse_Sep_Lat_U=8
 STCA_Coarse_Sep_Lat_L=8
 STCA_LinPred_Sep_Lat_U=7.5
@@ -182,7 +204,7 @@ STCA_CurrProx_Sep_Lat_U=7.75
 STCA_CurrProx_Sep_Lat_L=7.75
 Setup_LoadMap=APP\DELFUN
 
-[LPPC_S_CTR]
+[LPPC_S]
 STCA_Coarse_Sep_Lat_U=5
 STCA_Coarse_Sep_Lat_L=5
 STCA_LinPred_Sep_Lat_U=4.5
@@ -190,7 +212,7 @@ STCA_LinPred_Sep_Lat_L=4.5
 STCA_CurrProx_Sep_Lat_U=4.75
 STCA_CurrProx_Sep_Lat_L=4.75
 
-[LPPC_9_CTR]
+[LPPC_C]
 STCA_Coarse_Sep_Lat_U=5
 STCA_Coarse_Sep_Lat_L=5
 STCA_LinPred_Sep_Lat_U=4.5
@@ -198,7 +220,7 @@ STCA_LinPred_Sep_Lat_L=4.5
 STCA_CurrProx_Sep_Lat_U=4.75
 STCA_CurrProx_Sep_Lat_L=4.75
 
-[LPPC_C_CTR]
+[LPPC_N]
 STCA_Coarse_Sep_Lat_U=5
 STCA_Coarse_Sep_Lat_L=5
 STCA_LinPred_Sep_Lat_U=4.5
@@ -206,7 +228,7 @@ STCA_LinPred_Sep_Lat_L=4.5
 STCA_CurrProx_Sep_Lat_U=4.75
 STCA_CurrProx_Sep_Lat_L=4.75
 
-[LPPC_8_CTR]
+[LPPC_D]
 STCA_Coarse_Sep_Lat_U=5
 STCA_Coarse_Sep_Lat_L=5
 STCA_LinPred_Sep_Lat_U=4.5
@@ -214,7 +236,7 @@ STCA_LinPred_Sep_Lat_L=4.5
 STCA_CurrProx_Sep_Lat_U=4.75
 STCA_CurrProx_Sep_Lat_L=4.75
 
-[LPPC_N_CTR]
+[LPPC_V]
 STCA_Coarse_Sep_Lat_U=5
 STCA_Coarse_Sep_Lat_L=5
 STCA_LinPred_Sep_Lat_U=4.5
@@ -222,62 +244,13 @@ STCA_LinPred_Sep_Lat_L=4.5
 STCA_CurrProx_Sep_Lat_U=4.75
 STCA_CurrProx_Sep_Lat_L=4.75
 
-[LPPC_7_CTR]
+[LPPC_W]
 STCA_Coarse_Sep_Lat_U=5
 STCA_Coarse_Sep_Lat_L=5
 STCA_LinPred_Sep_Lat_U=4.5
 STCA_LinPred_Sep_Lat_L=4.5
 STCA_CurrProx_Sep_Lat_U=4.75
 STCA_CurrProx_Sep_Lat_L=4.75
-
-[LPPC_D_CTR]
-STCA_Coarse_Sep_Lat_U=5
-STCA_Coarse_Sep_Lat_L=5
-STCA_LinPred_Sep_Lat_U=4.5
-STCA_LinPred_Sep_Lat_L=4.5
-STCA_CurrProx_Sep_Lat_U=4.75
-STCA_CurrProx_Sep_Lat_L=4.75
-
-[LPPC_4_CTR]
-STCA_Coarse_Sep_Lat_U=5
-STCA_Coarse_Sep_Lat_L=5
-STCA_LinPred_Sep_Lat_U=4.5
-STCA_LinPred_Sep_Lat_L=4.5
-STCA_CurrProx_Sep_Lat_U=4.75
-STCA_CurrProx_Sep_Lat_L=4.75
-
-[LPPC_V_CTR]
-STCA_Coarse_Sep_Lat_U=5
-STCA_Coarse_Sep_Lat_L=5
-STCA_LinPred_Sep_Lat_U=4.5
-STCA_LinPred_Sep_Lat_L=4.5
-STCA_CurrProx_Sep_Lat_U=4.75
-STCA_CurrProx_Sep_Lat_L=4.75
-
-[LPPC_5_CTR]
-STCA_Coarse_Sep_Lat_U=5
-STCA_Coarse_Sep_Lat_L=5
-STCA_LinPred_Sep_Lat_U=4.5
-STCA_LinPred_Sep_Lat_L=4.5
-STCA_CurrProx_Sep_Lat_U=4.75
-STCA_CurrProx_Sep_Lat_L=4.75
-
-[LPPC_W_CTR]
-STCA_Coarse_Sep_Lat_U=5
-STCA_Coarse_Sep_Lat_L=5
-STCA_LinPred_Sep_Lat_U=4.5
-STCA_LinPred_Sep_Lat_L=4.5
-STCA_CurrProx_Sep_Lat_U=4.75
-STCA_CurrProx_Sep_Lat_L=4.75
-
-[LPPC_3_CTR]
-STCA_Coarse_Sep_Lat_U=5
-STCA_Coarse_Sep_Lat_L=5
-STCA_LinPred_Sep_Lat_U=4.5
-STCA_LinPred_Sep_Lat_L=4.5
-STCA_CurrProx_Sep_Lat_U=4.75
-STCA_CurrProx_Sep_Lat_L=4.75
-
 
 [LPPR_APP]
 STCA_Coarse_Sep_Lat_U=5
@@ -289,23 +262,6 @@ STCA_CurrProx_Sep_Lat_L=4.75
 Setup_LoadMap=APP\URB
 
 [LPFR_APP]
-STCA_Coarse_Sep_Lat_U=5
-STCA_Coarse_Sep_Lat_L=5
-STCA_LinPred_Sep_Lat_U=4.5
-STCA_LinPred_Sep_Lat_L=4.5
-STCA_CurrProx_Sep_Lat_U=4.75
-STCA_CurrProx_Sep_Lat_L=4.75
-
-[LPPR_1_APP]
-STCA_Coarse_Sep_Lat_U=5
-STCA_Coarse_Sep_Lat_L=5
-STCA_LinPred_Sep_Lat_U=4.5
-STCA_LinPred_Sep_Lat_L=4.5
-STCA_CurrProx_Sep_Lat_U=4.75
-STCA_CurrProx_Sep_Lat_L=4.75
-Setup_LoadMap=APP\URB
-
-[LPFR_1_APP]
 STCA_Coarse_Sep_Lat_U=5
 STCA_Coarse_Sep_Lat_L=5
 STCA_LinPred_Sep_Lat_U=4.5
