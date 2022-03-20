@@ -144,7 +144,9 @@ Window_FlightPlan_ShowAlways=1
 
 Window_MsgIn=1,1150,25
 Window_MsgOut=1,1400,25
+Window_Msg_MaxListItems=7
 Window_SAP=1,6,885
+Window_SAP_MaxListItems=7
 Window_SM_LowestLevel=30
 Window_CARD=1,6,693
 Window_CPDLC_Current=0,700,25
