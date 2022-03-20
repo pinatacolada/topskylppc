@@ -27,7 +27,7 @@ Airspace_833_Min=0
 Airspace_ASSR_Type=2
 Airspace_ASSR_OAT_Remarks=RMK/OAT
 Airspace_ASSR_OAT_Type=0
-Airspace_P_Flag=LPPR,LPPT,LPFR,LPMA
+Airspace_P_Flag=LPPR,LPPT,LPFR,LPMA,LPPS
 Airspace_No_DUPE_Codes=2000,7000
 Airspace_NOTAM_Add=LPPC,LECM
 Airspace_SIGMET_Areas=LPPC
@@ -43,10 +43,17 @@ Areas_Label_Times=1
 Areas_Label_UserText=1
 Areas_NOTAM_Activation=1
 
+FlightLeg_AutoShow=1
+FlightLeg_AssumeTime=2
+
 Label_RTE_Origin=LP
 Label_Field18_Flag_Items=STS/ALTRV,STS/ATFMX,STS/HUM,STS/FFR,STS/FLTCK,STS/HAZMAT,STS/HEAD,STS/HOSP,STS/MARSA,STS/MEDEVAC,STS/NONRVSM,STS/SAR,STS/STATE
 
 Label_All_N=1
+
+Label_DAPs=1
+
+Label_RTE_Origin=LP
 
 Label_Co_SQ=0
 Label_Co_ATYP=1
@@ -105,12 +112,21 @@ Label_No_FCOPX=0
 Label_No_WTC=1
 Label_No_GS=0
 
+MTCD_Sep_Vert_U=2000
+MTCD_Sep_Vert_L=1000
+
+Rings_Separation=5
+Rings_Number=10
+Rings_Highlight=1
+Rings_HighlightStep=2
+
+System_ASP_IasMach=28500
 System_UseReportedGS=0
 System_FPASD=1
 System_RepHdg_Correction=2
 System_TaxiTime=15
 System_TransferConfirmation=2
-System_MagModel_Year=2020
+System_MagModel_Year=2022
 System_MetarSourceVATSIM=0
 System_UseAcceptedCoordColor=1
 System_UseTSAborderHighlightColor=1
@@ -118,6 +134,10 @@ System_UseTSAborderHighlightColor=1
 Track_PredictionLine=2
 
 Window_ASM_ShowNOTAMasUsertext=0
+//Window_CARD_MaxConflicts=15
+Window_CPDLC_Current_MaxListItems=7
+Window_CPDLC_History_MaxListItems=7
+Window_SAP_MaxListItems=7
 Window_SM_LowestLevel=60
 Window_FlightPlan=0,1412,600
 Window_FlightPlan_ShowAlways=1
@@ -125,6 +145,7 @@ Window_FlightPlan_ShowAlways=1
 Window_MsgIn=1,1150,25
 Window_MsgOut=1,1400,25
 Window_SAP=1,6,885
+Window_SM_LowestLevel=30
 Window_CARD=1,6,693
 Window_CPDLC_Current=0,700,25
 Window_NOTAM=1,700,300,400
