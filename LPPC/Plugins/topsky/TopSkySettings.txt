@@ -44,8 +44,6 @@ HTTP_NOTAM_Area_Sched_Text=
 HTTP_NOTAM_Server=https://www.notams.faa.gov
 
 Areas_PreActiveTime=1800
-Areas_Label_FontSize=12
-Areas_Label_FontStyle=700,0,0,0
 Areas_Label_Name=1
 Areas_Label_MapText=1
 Areas_Label_Levels=1
