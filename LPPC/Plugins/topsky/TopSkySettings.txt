@@ -263,6 +263,9 @@ Track_DivergenceSymbol_Size=0
 Vector_AHDG_Label_Dist=1
 Vector_AHDG_Label_Time=1
 
+Window_PDC_SetASSR=1
+Window_PDC_SetCFL=1
+
 Window_ASM_ShowNOTAMasUsertext=0
 Window_SM_LowestLevel=60
 Window_FlightPlan=0,1412,600
