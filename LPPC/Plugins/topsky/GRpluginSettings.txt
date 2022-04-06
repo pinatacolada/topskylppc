@@ -141,7 +141,7 @@ List_Outbound_SID_MaxChars=4
 Window_APP_Scale=17
 Window_APP_AltFilter=24000
 
-Window_RVR=1,1100,0
+Window_RVR=1,1120,0
 
 [LPPT]
 Airport_Elevation=374
@@ -166,10 +166,10 @@ Airport_Radius=6.5
 Airport_Runway_End=17:N041.15.47.900:W008.41.06.900
 Airport_Runway_End=35:N041.13.57.200:W008.40.37.900
 
-List_Inbound=17,2,1734,650
-List_Inbound=35,2,1734,650
-List_Arrival=1,1549,650
-List_Alerts=1,1109,25
+List_Outbound=*,2,1427,650
+List_Inbound=*,2,1693,650
+List_Arrival=1,1427,780
+List_Alerts=1,1351,25
 List_Stand=0,1102,25
 List_Stand_Items=20
 
@@ -181,13 +181,6 @@ Window_APP_Scale=14
 Airport_Elevation=24
 Airport_Radius=6.5
 Airport_Runway_Buffer_LVP=28:160.0
-
-List_Inbound=10,2,1734,650
-List_Inbound=28,2,1734,650
-List_Arrival=1,1549,650
-List_Alerts=1,1109,25
-List_Stand=0,1102,25
-List_Stand_Items=20
 
 Label=GND:DEP:0:
 Label=GND:DEP:1:
@@ -208,6 +201,13 @@ Label=GND:UNC:0:
 Label=GND:UNC:1:
 Label=GND:UNC:2:
 Label=GND:UNC:3:
+
+List_Outbound=*,2,1427,650
+List_Inbound=*,2,1693,650
+List_Arrival=1,1427,780
+List_Alerts=1,1351,25
+List_Stand=0,1102,25
+List_Stand_Items=20
 
 Window_APP=1,700,25,410,410
 Window_APP_Extensions=0
@@ -239,10 +239,10 @@ Label=GND:UNC:1:
 Label=GND:UNC:2:
 Label=GND:UNC:3:
 
-List_Inbound=05,2,1734,650
-List_Inbound=23,2,1734,650
-List_Arrival=1,1549,650
-List_Alerts=1,1109,25
+List_Outbound=*,2,1427,650
+List_Inbound=*,2,1693,650
+List_Arrival=1,1427,780
+List_Alerts=1,1351,25
 List_Stand=0,1102,25
 List_Stand_Items=20
 
