@@ -118,6 +118,7 @@ List_Arrival_WTC=0
 List_Arrival_ETA=1
 List_Arrival_STAND=1
 
+List_Inbound_DTT=1
 List_Inbound_TYPE=0
 List_Inbound_WTC=0
 List_Inbound_ETA=1
@@ -129,8 +130,18 @@ List_Departure_WTC=0
 List_Departure_EOBT=1
 List_Departure_STAND=0
 
+List_Outbound_TYPE=1
+List_Outbound_WTC=1
+List_Outbound_SID=1
+List_Outbound_ADES=1
+List_Outbound_ExpiryTime=300
+List_Outbound_SID_MaxChars=4
+
+
 Window_APP_Scale=17
 Window_APP_AltFilter=24000
+
+Window_RVR=1,1100,0
 
 [LPPT]
 Airport_Elevation=374
@@ -138,9 +149,9 @@ Airport_Radius=6.5
 Airport_Runway_End=21:N038.47.50.400:W009.07.38.500
 Airport_Runway_End=03:N038.45.56.460:W009.08.39.480
 
-List_Inbound=21,2,1060,565
-List_Inbound=03,2,1060,565
-List_Arrival=1,1245,565
+List_Outbound=*,2,1131,500
+List_Inbound=*,2,1203,650
+List_Arrival=1,1243,830
 List_Alerts=1,1351,25
 List_Stand=0,1102,25
 List_Stand_Items=20
