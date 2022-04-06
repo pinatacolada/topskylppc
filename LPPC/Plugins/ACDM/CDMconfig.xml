@@ -9,4 +9,5 @@
 	<DefaultTaxiTime minutes="15" />
 	<RefreshTime seconds="20" />
 	<Debug mode="false" />
+	<eventMode mode="1"/>
 </CDM>

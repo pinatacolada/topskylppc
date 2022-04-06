@@ -7,6 +7,7 @@ Color_RawVideoHistory=175,190,200
 Color_SelectedLabelFill_App=200,200,200
 Color_SelectedLabelFill_Gnd=200,200,200
 Color_WBackground=170,170,170
+Color_WBackground2=170,170,170
 Color_WBorder=250,250,250
 Color_WForeground2=170,170,170
 Color_WForeground=65,65,65
