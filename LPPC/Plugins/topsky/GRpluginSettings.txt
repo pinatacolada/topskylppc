@@ -7,6 +7,7 @@ Color_RawVideoHistory=175,190,200
 Color_SelectedLabelFill_App=200,200,200
 Color_SelectedLabelFill_Gnd=200,200,200
 Color_WBackground=170,170,170
+Color_WBackground2=170,170,170
 Color_WBorder=250,250,250
 Color_WForeground2=170,170,170
 Color_WForeground=65,65,65
@@ -117,6 +118,7 @@ List_Arrival_WTC=0
 List_Arrival_ETA=1
 List_Arrival_STAND=1
 
+List_Inbound_DTT=1
 List_Inbound_TYPE=0
 List_Inbound_WTC=0
 List_Inbound_ETA=1
@@ -128,8 +130,18 @@ List_Departure_WTC=0
 List_Departure_EOBT=1
 List_Departure_STAND=0
 
+List_Outbound_TYPE=1
+List_Outbound_WTC=1
+List_Outbound_SID=1
+List_Outbound_ADES=1
+List_Outbound_ExpiryTime=300
+List_Outbound_SID_MaxChars=4
+
+
 Window_APP_Scale=17
 Window_APP_AltFilter=24000
+
+Window_RVR=1,1120,0
 
 [LPPT]
 Airport_Elevation=374
@@ -137,9 +149,9 @@ Airport_Radius=6.5
 Airport_Runway_End=21:N038.47.50.400:W009.07.38.500
 Airport_Runway_End=03:N038.45.56.460:W009.08.39.480
 
-List_Inbound=21,2,1060,565
-List_Inbound=03,2,1060,565
-List_Arrival=1,1245,565
+List_Outbound=*,2,1131,500
+List_Inbound=*,2,1203,650
+List_Arrival=1,1243,830
 List_Alerts=1,1351,25
 List_Stand=0,1102,25
 List_Stand_Items=20
@@ -154,10 +166,10 @@ Airport_Radius=6.5
 Airport_Runway_End=17:N041.15.47.900:W008.41.06.900
 Airport_Runway_End=35:N041.13.57.200:W008.40.37.900
 
-List_Inbound=17,2,1734,650
-List_Inbound=35,2,1734,650
-List_Arrival=1,1549,650
-List_Alerts=1,1109,25
+List_Outbound=*,2,1427,650
+List_Inbound=*,2,1693,650
+List_Arrival=1,1427,780
+List_Alerts=1,1351,25
 List_Stand=0,1102,25
 List_Stand_Items=20
 
@@ -169,13 +181,6 @@ Window_APP_Scale=14
 Airport_Elevation=24
 Airport_Radius=6.5
 Airport_Runway_Buffer_LVP=28:160.0
-
-List_Inbound=10,2,1734,650
-List_Inbound=28,2,1734,650
-List_Arrival=1,1549,650
-List_Alerts=1,1109,25
-List_Stand=0,1102,25
-List_Stand_Items=20
 
 Label=GND:DEP:0:
 Label=GND:DEP:1:
@@ -196,6 +201,13 @@ Label=GND:UNC:0:
 Label=GND:UNC:1:
 Label=GND:UNC:2:
 Label=GND:UNC:3:
+
+List_Outbound=*,2,1427,650
+List_Inbound=*,2,1693,650
+List_Arrival=1,1427,780
+List_Alerts=1,1351,25
+List_Stand=0,1102,25
+List_Stand_Items=20
 
 Window_APP=1,700,25,410,410
 Window_APP_Extensions=0
@@ -227,10 +239,10 @@ Label=GND:UNC:1:
 Label=GND:UNC:2:
 Label=GND:UNC:3:
 
-List_Inbound=05,2,1734,650
-List_Inbound=23,2,1734,650
-List_Arrival=1,1549,650
-List_Alerts=1,1109,25
+List_Outbound=*,2,1427,650
+List_Inbound=*,2,1693,650
+List_Arrival=1,1427,780
+List_Alerts=1,1351,25
 List_Stand=0,1102,25
 List_Stand_Items=20
 
