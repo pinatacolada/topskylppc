@@ -31,18 +31,10 @@ Airspace_P_Flag=LPPR,LPPT,LPFR,LPMA,LPPS
 Airspace_No_DUPE_Codes=2000,7000
 Airspace_NOTAM_Add=LPPC,LECM
 Airspace_SIGMET_Areas=LPPC
-HTTP_SIGMET_Pages=6443,6450
 
 Areas_Altitude_Filtering=1
-
-HTTP_METAR_Server=https://topskytools.herokuapp.com/metar/
-HTTP_METAR_Page_Prefix=
-HTTP_METAR_Page_Suffix=
-HTTP_METAR_Data_Prefix=(prefix)
-HTTP_METAR_Data_Suffix=(suffix)
-HTTP_NOTAM_Area_Sched_Text= 
-HTTP_NOTAM_Server=https://www.notams.faa.gov
-
+Areas_Label_Font=Poppins
+Areas_Label_FontSize=12
 Areas_PreActiveTime=1800
 Areas_Label_Name=1
 Areas_Label_MapText=1
@@ -50,6 +42,11 @@ Areas_Label_Levels=1
 Areas_Label_Times=1
 Areas_Label_UserText=1
 Areas_NOTAM_Activation=1
+
+Color_Active_Map_Type_1=153,158,164	//GREY
+Color_Active_Map_Type_2=40,210,40	//GREEN
+Color_Active_Map_Type_3=110,110,150	//PURPLE
+Color_Active_Map_Type_4=85,85,90	//GREY FILL
 
 CPDLC_MinLevel=285
 CPDLC_Transfer=1
@@ -66,6 +63,15 @@ CPDLC_FSM_CLD_Header=CLD <hour><min> <year2><month2><day> <adep2> PDC <number> <
 
 FlightLeg_AutoShow=1
 FlightLeg_AssumeTime=2
+
+HTTP_SIGMET_Pages=6443,6450
+HTTP_METAR_Server=https://topskytools.herokuapp.com/metar/
+HTTP_METAR_Page_Prefix=
+HTTP_METAR_Page_Suffix=
+HTTP_METAR_Data_Prefix=(prefix)
+HTTP_METAR_Data_Suffix=(suffix)
+HTTP_NOTAM_Area_Sched_Text= 
+HTTP_NOTAM_Server=https://www.notams.faa.gov
 
 Label_RTE_Origin=LP
 Label_Field18_Flag_Items=STS/ALTRV,STS/ATFMX,STS/HUM,STS/FFR,STS/FLTCK,STS/HAZMAT,STS/HEAD,STS/HOSP,STS/MARSA,STS/MEDEVAC,STS/NONRVSM,STS/SAR,STS/STATE
