@@ -233,7 +233,7 @@ SAP_Buffer_Vert_U=1000
 SAP_Buffer_Vert_L_IFR=1000
 SAP_Buffer_Vert_L_VFR=1000
 
-System_UseReportedGS=0
+System_UseReportedGS=1
 System_FPASD=1
 System_RepHdg_Correction=2
 System_TaxiTime=15
