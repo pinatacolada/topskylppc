@@ -43,10 +43,12 @@ Areas_Label_Times=1
 Areas_Label_UserText=1
 Areas_NOTAM_Activation=1
 
-Color_Active_Map_Type_1=153,158,164	//GREY
-Color_Active_Map_Type_2=85,130,85	//GREEN
-Color_Active_Map_Type_3=85,85,145	//PURPLE
-Color_Active_Map_Type_4=85,85,90	//GREY FILL
+Color_Active_Map_Type_1=87,87,164	//PURPLE
+Color_Active_Map_Type_2=80,162,74	//GREEN
+Color_Active_Map_Type_3=132,142,139	//D GREY
+Color_Active_Map_Type_4=200,53,18	//RED
+Color_Active_Map_Type_5=198,174,58	//MUSTARD
+Color_Active_Map_Type_6=90,90,90	//INFILL GREY
 
 CPDLC_MinLevel=285
 CPDLC_Transfer=1
@@ -72,24 +74,16 @@ HTTP_METAR_Page_Suffix=
 HTTP_METAR_Data_Prefix=(prefix)
 HTTP_METAR_Data_Suffix=(suffix)
 
-HTTP_NOTAM_Area_Sched_Text= 
-HTTP_NOTAM_Server=https://vacdm.000webhostapp.com/aup.php
+HTTP_NOTAM_Server=http://localhost/eaup/topsky/lp/aupnotam
 HTTP_NOTAM_Page_Prefix=?loc=
-HTTP_NOTAM_Page_Suffix=/
-HTTP_NOTAM_Area_Sched_Debug=1
-
-HTTP_NOTAM_AUP_Text=| RSA |MNM|MAX| WEF | TIL |REMARK
-HTTP_NOTAM_AUP_Offset_MNM=6
-HTTP_NOTAM_AUP_Offset_MAX=10
-HTTP_NOTAM_AUP_Offset_WEF=14
-HTTP_NOTAM_AUP_Offset_TIL=20
+HTTP_NOTAM_Page_Suffix=
 
 Label_RTE_Origin=LP
 Label_Field18_Flag_Items=STS/ALTRV,STS/ATFMX,STS/HUM,STS/FFR,STS/FLTCK,STS/HAZMAT,STS/HEAD,STS/HOSP,STS/MARSA,STS/MEDEVAC,STS/NONRVSM,STS/SAR,STS/STATE
 
 Label_All_N=1
 Label_COP_MaxChars=5
-Label_FCOP_MaxChars=5
+Label_FCOP_MaxChars=3
 Label_DAPs=1
 
 Label_RTE_Origin=LP
