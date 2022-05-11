@@ -142,7 +142,9 @@ HTTP_METAR_Data_Suffix=(suffix)
 HTTP_NOTAM_Area_Sched_Text= 
 HTTP_NOTAM_Area_Sched_Debug=1
 
-HTTP_NOTAM_Server=https://www.notams.faa.gov
+HTTP_NOTAM_Server=https://ambitio.cyou/eaup/topsky/lp/aupnotam/
+HTTP_NOTAM_Page_Prefix=?loc=
+HTTP_NOTAM_Page_Suffix=
 
 Maps_Font=EuroScope
 
