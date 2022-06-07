@@ -134,15 +134,15 @@ FlightLeg_FontSize=9
 FlightLeg_FontStyle=0,0,0,0
 FlightLeg_LineWidth=2
 
-HTTP_METAR_Server=https://topskytools.herokuapp.com/metar/
-HTTP_METAR_Page_Prefix=
+HTTP_METAR_Server=https://meteo.ambitio.cyou/
+HTTP_METAR_Page_Prefix=api/ipma/metar/topsky?airport_icao_codes=
 HTTP_METAR_Page_Suffix=
 HTTP_METAR_Data_Prefix=(prefix)
 HTTP_METAR_Data_Suffix=(suffix)
+
 HTTP_NOTAM_Area_Sched_Text= 
 HTTP_NOTAM_Area_Sched_Debug=1
-
-HTTP_NOTAM_Server=https://ambitio.cyou/eaup/topsky/lp/aupnotam/
+HTTP_NOTAM_Server=https://eaup.ambitio.cyou/topsky/lp/aupnotam/
 HTTP_NOTAM_Page_Prefix=?loc=
 HTTP_NOTAM_Page_Suffix=
 
