@@ -37,8 +37,6 @@ Setup_LoadMap=APPPRT\tma_por
 Setup_LoadMap=NAVAIDS\vor
 Setup_LoadMap=NAVAIDS\ndb
 
-Setup_LoadMap=DIV\mssr
-
 Shortcut_AHDG_NoFixes_Combo=0x00
 
 Airspace_833_Min=0
@@ -92,7 +90,8 @@ HTTP_METAR_Page_Suffix=
 HTTP_METAR_Data_Prefix=(prefix)
 HTTP_METAR_Data_Suffix=(suffix)
 
-HTTP_NOTAM_Server=http://localhost/eaup/topsky/lp/aupnotam
+HTTP_NOTAM_Area_Sched_Text= 
+HTTP_NOTAM_Server=https://eaup.ambitio.cyou/topsky/lp/aupnotam/
 HTTP_NOTAM_Page_Prefix=?loc=
 HTTP_NOTAM_Page_Suffix=
 
