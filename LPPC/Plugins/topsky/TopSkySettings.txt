@@ -225,7 +225,6 @@ Window_NOTAM=1,700,300,400
 CPDLC_Default=1
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
-Setup_LoadMap=ROT\R PT IN
 
 STCA_Coarse_Sep_Lat_U=5
 STCA_Coarse_Sep_Lat_L=5
@@ -249,10 +248,9 @@ STCA_LinPred_Sep_Lat_U=7.5
 STCA_LinPred_Sep_Lat_L=7.5
 STCA_CurrProx_Sep_Lat_U=7.75
 STCA_CurrProx_Sep_Lat_L=7.75
-Setup_LoadMap=APP\DELFUN
 
 [LPPR_APP]
-Setup_LoadMap=APP\URB
+Setup_LoadMap=APP\urb
 
 [LPPT_APP]
 STCA_Coarse_Sep_Lat_U=3
@@ -275,16 +273,15 @@ Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
 
 [LPAM_]
-Setup_LoadMap=APP\HELI
-Setup_LoadMap=APP\ROT VFR
-Setup_LoadMap=DIV\TOWN
-Setup_LoadMap=DIV\AEROD
-Setup_LoadMap=DIV\PROCIV
-Setup_LoadMap=DIV\DAM
-Setup_LoadMap=MIL\POVAR
-Setup_LoadMap=MIL\PMOJ
-Setup_LoadMap=MIL\PSTR
-Setup_LoadMap=MIL\PBEJ
-Setup_LoadMap=MIL\PMTR
-Setup_LoadMap=MIL\RAD VEC BEJ
-Setup_LoadMap=MIL\RAD VEC BEJ
+Setup_LoadMap=ENVR\town
+Setup_LoadMap=ENVR\aerod
+Setup_LoadMap=ENVR\dam_nl
+Setup_LoadMap=VFR\heli
+Setup_LoadMap=VFR\rot
+Setup_LoadMap=VFR\prociv
+Setup_LoadMap=MIL\povar
+Setup_LoadMap=MIL\pmoj
+Setup_LoadMap=MIL\pstr
+Setup_LoadMap=MIL\pbej
+Setup_LoadMap=MIL\pmtr
+Setup_LoadMap=MIL\rad_vec_bej
