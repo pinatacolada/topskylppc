@@ -92,8 +92,8 @@ FlightLeg_LineWidth=1
 
 HTTP_SIGMET_Pages=6443,6450
 
-HTTP_METAR_Server=https://topskytools.herokuapp.com/metar/
-HTTP_METAR_Page_Prefix=
+HTTP_METAR_Server=https://meteo.ambitio.cyou/
+HTTP_METAR_Page_Prefix=api/ipma/metar/topsky?airport_icao_codes=
 HTTP_METAR_Page_Suffix=
 HTTP_METAR_Data_Prefix=(prefix)
 HTTP_METAR_Data_Suffix=(suffix)
@@ -184,6 +184,7 @@ Rings_Highlight=1
 Rings_HighlightStep=2
 
 System_ASP_IasMach=28500
+
 System_UseReportedGS=1
 System_FPASD=1
 System_FPASD_MinState=1
@@ -198,6 +199,9 @@ System_UseAcceptedCoordColor=1
 System_UseTSAborderHighlightColor=1
 
 Track_PredictionLine=2
+
+Window_PDC_SetASSR=1
+Window_PDC_SetCFL=1
 
 Window_PDC_SetASSR=1
 Window_PDC_SetCFL=1
