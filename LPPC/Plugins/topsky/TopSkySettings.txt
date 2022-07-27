@@ -183,6 +183,9 @@ Rings_Number=10
 Rings_Highlight=1
 Rings_HighlightStep=2
 
+RwyAppLines_Auto=1
+RwyAppLines_Length=12
+
 System_ASP_IasMach=28500
 
 System_UseReportedGS=1
