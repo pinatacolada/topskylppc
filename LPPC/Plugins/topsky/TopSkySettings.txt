@@ -5,9 +5,9 @@ Setup_LoadMap=ENVR\rwy
 Setup_LoadMap=ENVR\atz
 
 Setup_LoadMap=ENR\adj_fir_sec
-Setup_LoadMap=ENR\rep_int_nl
-Setup_LoadMap=ENR\rep_out_nl
-Setup_LoadMap=ENR\rep_bdry_nl
+Setup_LoadMap=ENR\rep_int
+Setup_LoadMap=ENR\rep_out
+Setup_LoadMap=ENR\rep_bdry
 Setup_LoadMap=ENR\lim
 
 Setup_LoadMap=APP\tma
