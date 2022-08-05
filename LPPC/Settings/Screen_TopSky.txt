@@ -5,9 +5,9 @@ m_ShowTitle:1
 m_ShowTitleFileName:0
 m_ShowTitleController:1
 m_ShowTitlePrimaryFreq:1
-m_ShowTitleAtisFreq:1
+m_ShowTitleAtisFreq:0
 m_ShowTitleClock:1
-m_ShowTitleLeader:1
+m_ShowTitleLeader:0
 m_ShowTitleFilter:0
 m_ShowTitleTrans:0
 m_ShowVoiceRoomUsers:0
