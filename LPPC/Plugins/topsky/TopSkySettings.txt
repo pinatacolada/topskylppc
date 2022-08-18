@@ -182,7 +182,7 @@ Rings_Highlight=1
 Rings_HighlightStep=2
 
 RwyAppLines_Auto=1
-RwyAppLines_Length=12
+RwyAppLines_Length=18
 
 Shortcut_AHDG_NoFixes_Combo=0x00
 
@@ -237,8 +237,6 @@ Window_ASM_ShowNOTAMasUsertext=0
 //Window_CARD_MaxConflicts=15
 Window_CPDLC_Current_MaxListItems=7
 Window_CPDLC_History_MaxListItems=7
-Window_SAP_MaxListItems=7
-Window_SM_LowestLevel=60
 Window_FlightPlan=0,1412,600
 Window_FlightPlan_ShowAlways=1
 
@@ -247,7 +245,7 @@ Window_MsgOut=1,1400,25
 Window_Msg_MaxListItems=7
 Window_SAP=1,6,885
 Window_SAP_MaxListItems=7
-Window_SM_LowestLevel=30
+Window_SM_LowestLevel=20
 Window_CARD=1,6,693
 Window_CPDLC_Current=0,700,25
 Window_NOTAM=1,700,300,400
