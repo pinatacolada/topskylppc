@@ -168,6 +168,7 @@ Label_No_FCOPX=0
 Label_No_WTC=1
 Label_No_GS=0
 
+List_ETWR_ADEP=LPPT,LPPR,LPFR,LPMA
 List_OptionsInGlobalMenu=1
 
 Maps_Sct_Label_Pos=0,20
@@ -224,6 +225,10 @@ System_MagModel_Year=2022
 System_MetarSourceVATSIM=0
 System_UseAcceptedCoordColor=1
 System_UseTSAborderHighlightColor=1
+
+System_UseSidStarAllocationColor=0
+System_UseSidStarNoAllocationColor=1
+System_UseRwyLockedColor=0
 
 Track_PredictionLine=2
 
