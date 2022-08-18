@@ -1,41 +1,55 @@
 Setup_COOPANS=1
-Setup_LoadMap=ROT\LIM
-Setup_LoadMap=ROT\SEC SPAIN
-Setup_LoadMap=ROT\R PT BDRY
-Setup_LoadMap=ROT\R PT OUT
-Setup_LoadMap=APP\TMA
-Setup_LoadMap=APP\REP P TMA
-Setup_LoadMap=APP\CTR
-Setup_LoadMap=APP\ARC50
-Setup_LoadMap=APP\RAD VEC
-Setup_LoadMap=APP\RWY
-Setup_LoadMap=APP\P FUN 05/23
-Setup_LoadMap=APP\PSNT
-Setup_LoadMap=APP\PCAS
-Setup_LoadMap=APP\PCAS GNSS
-Setup_LoadMap=DIV\VOR NDB
-Setup_LoadMap=DIV\ATZ
-Setup_LoadMap=CONTG\MSSR
-Setup_LoadMap=CONTG\LPPC FIR
-Setup_LoadMap=CONTG\LECM FIR
-Setup_LoadMap=CONTG\LPPO FIR
-Setup_LoadMap=CONTG\GCCC FIR
 
-Shortcut_AHDG_NoFixes_Combo=0x00
+Setup_LoadMap=ENVR\fir
+Setup_LoadMap=ENVR\rwy
+Setup_LoadMap=ENVR\atz
+
+Setup_LoadMap=ENR\adj_fir_sec
+Setup_LoadMap=ENR\rep_int
+Setup_LoadMap=ENR\rep_out
+Setup_LoadMap=ENR\rep_bdry
+Setup_LoadMap=ENR\lim
+
+Setup_LoadMap=APP\tma
+Setup_LoadMap=APP\rad_vec
+Setup_LoadMap=APP\ctr
+
+Setup_LoadMap=APP\del_far
+Setup_LoadMap=APP\del_fun
+Setup_LoadMap=APP\del_lis
+Setup_LoadMap=APP\del_por
+
+Setup_LoadMap=APPFAR\tma_far
+
+Setup_LoadMap=APPFUN\tma_fun
+Setup_LoadMap=APPFUN\pfun_05_23
+Setup_LoadMap=APPFUN\psnt
+
+Setup_LoadMap=APPLIS\tma_lis
+Setup_LoadMap=APPLIS\arc50
+
+Setup_LoadMap=CASCAIS\ctr_cascais
+Setup_LoadMap=CASCAIS\pcas
+Setup_LoadMap=CASCAIS\pcas_gnss
+
+Setup_LoadMap=APPPRT\tma_por
+
+Setup_LoadMap=NAVAIDS\vor
+Setup_LoadMap=NAVAIDS\ndb
 
 Airspace_833_Min=0
 Airspace_ASSR_Type=2
 Airspace_ASSR_OAT_Remarks=RMK/OAT
 Airspace_ASSR_OAT_Type=0
-Airspace_P_Flag=LPPR,LPPT,LPFR,LPMA
+Airspace_P_Flag=LPPR,LPPT,LPFR,LPMA,LPPS
 Airspace_No_DUPE_Codes=2000,7000
 Airspace_NOTAM_Add=LPPC,LECM
 Airspace_SIGMET_Areas=LPPC
-HTTP_SIGMET_Pages=6443,6450
 
-Areas_PreActiveTime=1800
+Areas_Altitude_Filtering=1
+Areas_Label_Font=Poppins
 Areas_Label_FontSize=12
-Areas_Label_FontStyle=700,0,0,0
+Areas_PreActiveTime=1800
 Areas_Label_Name=1
 Areas_Label_MapText=1
 Areas_Label_Levels=1
@@ -43,96 +57,38 @@ Areas_Label_Times=1
 Areas_Label_UserText=1
 Areas_NOTAM_Activation=1
 
-AIW=0
-APW=1
-APW_VFR=1
-APW_Uncorrelated=0
-APW_UseCFL=1
-APW_PredictionTime=90
-APW_WarningTime=90
-//APW_WarningTime_Imm
-//APW_PredictionStep
-APW_Buffer_Lat_SepLevel=15550
-APW_Buffer_Lat_U=3
-APW_Buffer_Lat_L_IFR=3
-APW_Buffer_Lat_L_VFR=3
-APW_Buffer_Vert_U=1000
-APW_Buffer_Vert_L_IFR=1000
-APW_Buffer_Vert_L_VFR=1000
-APW_ConflictCount=3
+Color_Active_Map_Type_1=87,87,164	//PURPLE
+Color_Active_Map_Type_2=80,162,74	//GREEN
+Color_Active_Map_Type_3=132,142,139	//D GREY
+Color_Active_Map_Type_4=200,53,18	//RED
+Color_Active_Map_Type_5=198,174,58	//MUSTARD
+Color_Active_Map_Type_6=90,90,90	//INFILL GREY
 
-Color_Active_Text_Map=100,70,00
-Color_Active_Sector=0,0,30
-Color_Inactive_Sector=0,0,25
-Color_Active_Map_Type_6=160,100,100//preactive red restricted areas 
-Color_Active_Map_Type_7=80,40,40//red restricted areas 
-Color_Active_Map_Type_8=120,60,60//bright red restricted areas 
-Color_AIW_Intrusion=255,128,1
-//Color_Arm=250,0,250//grey out option font color
-Color_Assumed=0,180,0//radar target and label
-Color_Background=0,0,50//menu backgrounds
-Color_Border=250,250,250
-//Color_BottomShadow=250,250,250
-Color_Concerned=150,150,150
-Color_Coordination=150,150,150//unassumed color
-Color_Foreground=250,250,250//font color
-Color_Flight_Leg=200,255,200
-Color_Heading_Vector=185,185,185
-Color_Proposition_Accepted=0,180,0
-Color_Proposition_In=244,147,1
-Color_Proposition_Out=150,130,165
-//Color_TopShadow=250,250,250//UI top shadow
-Color_Track_Default=0,180,0
-Color_Track_Highlight=0,180,0
-Color_Text_Notes=80,40,40
-Color_Suite_Highlight=244,147,1
-Color_Information=0,180,0
-Color_Information_FL=200,255,200
-Color_Informed=250,0,250
-Color_QDM=185,185,185
-Color_Redundant=150,130,165//ongoing and accepted transfer
+Color_Text_Notes=125,125,125
 
-Color_Trough=250,250,250 //slider background color
-//Color_VAW_Track_Position=185,255,253//Vertical Aid Window
-Color_Rwy_App_Line_Inuse=150,150,150
-Color_Unconcerned=150,150,150//uncorrelated contact
-Color_Unknown=255,255,0//unknown statuses
-
-Color_WM_Active_Fg=125,125,125//mouse over text color
-Color_WM_Bg=250,250,250//windows title bar color
-Color_WM_Border=250,250,250//windows
-Color_WM_Fg=125,125,125//windows
-Color_WM_Frame=250,250,250//windows
-
-CPDLC_Default=0
 CPDLC_MinLevel=285
 CPDLC_Transfer=1
-CPDLC_CFL=0
-CPDLC_DCT=0
-CPDLC_AHDG=0
-CPDLC_ASP=0
-CPDLC_PlaySound=1
-CPDLC_PDC_PlaySound=1
-
+CPDLC_CFL=1
+CPDLC_DCT=1
+CPDLC_AHDG=1
+CPDLC_ASP=1
 CPDLC_AutoAcceptLogon=1
 CPDLC_AutoAcceptLogon_Time=15
-
+CPDLC_PlaySound=1
+CPDLC_PDC_PlaySound=1
 CPDLC_PDC_Timeout_Pilot=180
-
 CPDLC_FSM_CLD_Header=CLD <hour><min> <year2><month2><day> <adep2> PDC <number> <callsign>
 
-
-Equip_UseCodes=0
-Equip_ModeS=WZLCISG
-Equip_833=WZLYCIVSGP
-Equip_Non833=XTUDBAMN
-
-FlightLeg_AssumeTime=10
+FlightLeg_Label_Time=1
+FlightLeg_Label_Point=0
+FlightLeg_Label_DIST=0
+FlightLeg_Label_RFL=0
+FlightLeg_Label_SCFL=0
 FlightLeg_AutoShow=1
-FlightLeg_Font=EuroScope
-FlightLeg_FontSize=9
-FlightLeg_FontStyle=0,0,0,0
-FlightLeg_LineWidth=2
+FlightLeg_AssumeTime=2
+FlightLeg_LineWidth=1
+
+HTTP_SIGMET_Pages=6443,6450
 
 HTTP_METAR_Server=https://meteo.ambitio.cyou/
 HTTP_METAR_Page_Prefix=api/ipma/metar/topsky?airport_icao_codes=
@@ -141,141 +97,160 @@ HTTP_METAR_Data_Prefix=(prefix)
 HTTP_METAR_Data_Suffix=(suffix)
 
 HTTP_NOTAM_Area_Sched_Text= 
-HTTP_NOTAM_Area_Sched_Debug=1
 HTTP_NOTAM_Server=https://eaup.ambitio.cyou/topsky/lp/aupnotam/
 HTTP_NOTAM_Page_Prefix=?loc=
 HTTP_NOTAM_Page_Suffix=
 
-Maps_Font=EuroScope
-
-MTCD=1
-MTCD_AHDG=1
-MTCD_RAM=1
-MTCD_Risks_Label=1
-MTCD_Sep_Lat=4
-MTCD_Distance_Arr=50
-MTCD_Distance_Dep=50
-MTCD_Filter_Dep=3
-
-Label_Alt_Digits=3
-Label_CFL_DefaultValue=1
-Label_UseTransferInColor=1
-Label_SI_FreqTime=5
-Label_SI_ShowFreq=1
-Label_AHDG_ShowExtra=1
 Label_RTE_Origin=LP
 Label_Field18_Flag_Items=STS/ALTRV,STS/ATFMX,STS/HUM,STS/FFR,STS/FLTCK,STS/HAZMAT,STS/HEAD,STS/HOSP,STS/MARSA,STS/MEDEVAC,STS/NONRVSM,STS/SAR,STS/STATE
 
-Label_All_N=0
-//Label_Ass_NPT=1
+Label_All_N=1
+Label_COP_MaxChars=5
+Label_FCOP_MaxChars=3
+Label_DAPs=1
 
-RwyAppLines_Length=0.1
-RwyAppLines_Auto=0
+Label_RTE_Origin=LP
 
-STCA=1
-STCA_VFR=1
-STCA_Uncorrelated=1
-STCA_Filter=2
-STCA_Inhibit_ActiveAreas=0
-STCA_AlertSound=1
-STCA_AlertSound_Filter=2
-STCA_UseCFL=1
-//STCA_Sep_Lat_SepLevel
-//STCA_Floor
-//STCA_Max_Track_Age
-//STCA_Coarse_PredictionTime
-STCA_Coarse_Sep_Lat_U=5
-STCA_Coarse_Sep_Lat_L=3
-STCA_Coarse_Sep_Vert_U=1000
-STCA_Coarse_Sep_Vert_L=1000
-//STCA_FastDiv_Vel_Lat
-//STCA_FastDiv_Vel_Vert
-//STCA_FastDiv_Sep_Lat_U
-//STCA_FastDiv_Sep_Lat_L
-//STCA_FastDiv_Sep_Vert_U
-//STCA_FastDiv_Sep_Vert_L
-//STCA_LinPred_PredictionTime
-//STCA_LinPred_PredictionStep
-STCA_LinPred_Sep_Lat_U=4.5
-STCA_LinPred_Sep_Lat_L=2.75
-STCA_LinPred_Sep_Lat_U_Div=3.0
-STCA_LinPred_Sep_Lat_L_Div=2.0
-//STCA_LinPred_Sep_Vert_U
-//STCA_LinPred_Sep_Vert_L
-STCA_CurrProx_Sep_Lat_U=4.75
-STCA_CurrProx_Sep_Lat_L=2.85
-//STCA_CurrProx_Sep_Vert_U
-//STCA_CurrProx_Sep_Vert_L
-//STCA_WarningTime_U
-//STCA_WarningTime_L
-//STCA_WarningTime_U_Imm
-//STCA_WarningTime_L_Imm
-//STCA_LevelOff_React_Single
-//STCA_LevelOff_React_Double
-//STCA_LevelOff_Rate
-//STCA_LevelOff_Sep_Vert_U
-//STCA_LevelOff_Sep_Vert_L
-//STCA_Turn_React
-//STCA_Turn_Rate
-//STCA_Turn_Sep_Lat_U
-//STCA_Turn_Sep_Lat_L
-//STCA_LinPred_ConflictCount
-//STCA_LinPred_CycleCount
-//STCA_CurrProx_ConflictCount
-//STCA_CurrProx_CycleCount
-//STCA_CurrProx_Sep_Lat_U_Safe
-//STCA_CurrProx_Sep_Lat_L_Safe
+Label_Co_SQ=0
+Label_Co_ATYP=1
+Label_Co_ATYPW=0
+Label_Co_ADES=0
+Label_Co_NRAC=0
+Label_Co_TSSR=0
+Label_Co_RFL=1
+Label_Co_FCOPX=1
+Label_Co_WTC=1
+Label_Co_GS=1
+Label_Co_COPN=1
+Label_Co_XFL=0
+Label_Co_AHDG=1
+Label_Co_ASP=1
+Label_Co_PEL=1
 
-SAP_Risks_Label=1
-SAP_Buffer_Lat_SepLevel=15550
-SAP_Buffer_Lat_U=3
-SAP_Buffer_Lat_L_IFR=3
-SAP_Buffer_Lat_L_VFR=3
-SAP_Buffer_Vert_U=1000
-SAP_Buffer_Vert_L_IFR=1000
-SAP_Buffer_Vert_L_VFR=1000
+Label_Ass_SQ=0
+Label_Ass_ATYP=1
+Label_Ass_ATYPW=0
+Label_Ass_ADES=0
+Label_Ass_NRAC=0
+Label_Ass_TSSR=0
+Label_Ass_RFL=1
+Label_Ass_FCOPX=0
+Label_Ass_WTC=1
+Label_Ass_GS=1
+Label_Ass_COPX=0
+Label_Ass_XFL=1
+Label_Ass_AHDG=1
+Label_Ass_ASP=1
+
+Label_Red_SQ=0
+Label_Red_ATYP=0
+Label_Red_ATYPW=0
+Label_Red_ADES=0
+Label_Red_NRAC=0
+Label_Red_TSSR=0
+Label_Red_RFL=0
+Label_Red_FCOPX=0
+Label_Red_WTC=1
+Label_Red_GS=1
+Label_Red_COPX=0
+Label_Red_XFL=0
+Label_Red_AHDG=0
+Label_Red_ASP=0
+
+Label_No_SQ=0
+Label_No_ATYP=0
+Label_No_ATYPW=0
+Label_No_ADES=0
+Label_No_NRAC=0
+Label_No_TSSR=0
+Label_No_RFL=0
+Label_No_FCOPX=0
+Label_No_WTC=1
+Label_No_GS=0
+
+List_ETWR_ADEP=LPPT,LPPR,LPFR,LPMA
+List_OptionsInGlobalMenu=1
+
+Maps_Sct_Label_Pos=0,20
+
+MTCD_Potential_Pred_Risk=1
+MTCD_Sep_Vert_U=2000
+MTCD_Sep_Vert_L=1000
+
+Rings_Separation=5
+Rings_Number=10
+Rings_Highlight=1
+Rings_HighlightStep=2
+
+RwyAppLines_Auto=1
+RwyAppLines_Length=18
+
+Shortcut_AHDG_NoFixes_Combo=0x00
+
+Shortcut_FPL_Combo=0x12
+Shortcut_FPL=0x7A
+
+Shortcut_FPL_Search_Combo=0x12
+Shortcut_FPL_Search=0x78
+
+Shortcut_QDM_Combo=0x12
+Shortcut_QDM=0x74
+
+Shortcut_XQDM_Combo=0x00
+Shortcut_XQDM=0x00
+
+Shortcut_Quick_Look_Combo=0x12
+Shortcut_Quick_Look=0x75
+
+Shortcut_Flight_Leg_Combo=0x00
+Shortcut_Flight_Leg=0x00
+
+Shortcut_SEP_Combo=0x12
+Shortcut_SEP=0x73
+
+Shortcut_Cursor_Ini_Combo=0x12
+Shortcut_Cursor_Ini=0x70
+
+System_ASP_IasMach=28500
 
 System_UseReportedGS=1
 System_FPASD=1
+System_FPASD_MinState=1
+System_GS_DeleteMinMax=1
 System_RepHdg_Correction=2
 System_TaxiTime=15
 System_TransferConfirmation=2
-System_MagModel_Year=2020
+System_MagModel_Type=1
+System_MagModel_Year=2022
 System_MetarSourceVATSIM=0
 System_UseAcceptedCoordColor=1
 System_UseTSAborderHighlightColor=1
 
-System_GUI_Font_1=EuroScope
-System_GUI_Font_1_Size=10
-//System_GUI_Font_1_Style=
-System_GUI_Font_2=EuroScope
-System_GUI_Font_2_Size=9
-//System_GUI_Font_2_Style=
-//System_GUI_Font_Fixed_1=
-System_GUI_Font_Fixed_1_Size=9
-//System_GUI_Font_Fixed_1_Style=
+System_UseSidStarAllocationColor=0
+System_UseSidStarNoAllocationColor=1
+System_UseRwyLockedColor=0
 
+Track_PredictionLine=2
 
-TextNotes_Font=EuroScope
-TextNotes_FontSize=14
-
-Track_PredictionLine=0//leader line length
-Track_DivergenceSymbol_Size=0
-
-Vector_AHDG_Label_Dist=1
-Vector_AHDG_Label_Time=1
+Window_PDC_SetASSR=1
+Window_PDC_SetCFL=1
 
 Window_PDC_SetASSR=1
 Window_PDC_SetCFL=1
 
 Window_ASM_ShowNOTAMasUsertext=0
-Window_SM_LowestLevel=60
+//Window_CARD_MaxConflicts=15
+Window_CPDLC_Current_MaxListItems=7
+Window_CPDLC_History_MaxListItems=7
 Window_FlightPlan=0,1412,600
 Window_FlightPlan_ShowAlways=1
 
 Window_MsgIn=1,1150,25
 Window_MsgOut=1,1400,25
+Window_Msg_MaxListItems=7
 Window_SAP=1,6,885
+Window_SAP_MaxListItems=7
+Window_SM_LowestLevel=20
 Window_CARD=1,6,693
 Window_CPDLC_Current=0,700,25
 Window_NOTAM=1,700,300,400
@@ -284,7 +259,6 @@ Window_NOTAM=1,700,300,400
 CPDLC_Default=1
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
-Setup_LoadMap=ROT\R PT IN
 
 STCA_Coarse_Sep_Lat_U=5
 STCA_Coarse_Sep_Lat_L=5
@@ -308,24 +282,9 @@ STCA_LinPred_Sep_Lat_U=7.5
 STCA_LinPred_Sep_Lat_L=7.5
 STCA_CurrProx_Sep_Lat_U=7.75
 STCA_CurrProx_Sep_Lat_L=7.75
-Setup_LoadMap=APP\DELFUN
 
 [LPPR_APP]
-STCA_Coarse_Sep_Lat_U=5
-STCA_Coarse_Sep_Lat_L=5
-STCA_LinPred_Sep_Lat_U=4.5
-STCA_LinPred_Sep_Lat_L=4.5
-STCA_CurrProx_Sep_Lat_U=4.75
-STCA_CurrProx_Sep_Lat_L=4.75
-Setup_LoadMap=APP\URB
-
-[LPFR_APP]
-STCA_Coarse_Sep_Lat_U=5
-STCA_Coarse_Sep_Lat_L=5
-STCA_LinPred_Sep_Lat_U=4.5
-STCA_LinPred_Sep_Lat_L=4.5
-STCA_CurrProx_Sep_Lat_U=4.75
-STCA_CurrProx_Sep_Lat_L=4.75
+Setup_LoadMap=APP\urb
 
 [LPPT_APP]
 STCA_Coarse_Sep_Lat_U=3
@@ -348,16 +307,15 @@ Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
 
 [LPAM_]
-Setup_LoadMap=APP\HELI
-Setup_LoadMap=APP\ROT VFR
-Setup_LoadMap=DIV\TOWN
-Setup_LoadMap=DIV\AEROD
-Setup_LoadMap=DIV\PROCIV
-Setup_LoadMap=DIV\DAM
-Setup_LoadMap=MIL\POVAR
-Setup_LoadMap=MIL\PMOJ
-Setup_LoadMap=MIL\PSTR
-Setup_LoadMap=MIL\PBEJ
-Setup_LoadMap=MIL\PMTR
-Setup_LoadMap=MIL\RAD VEC BEJ
-Setup_LoadMap=MIL\RAD VEC BEJ
+Setup_LoadMap=ENVR\town
+Setup_LoadMap=ENVR\aerod
+Setup_LoadMap=ENVR\dam_nl
+Setup_LoadMap=VFR\heli
+Setup_LoadMap=VFR\rot
+Setup_LoadMap=VFR\prociv
+Setup_LoadMap=MIL\povar
+Setup_LoadMap=MIL\pmoj
+Setup_LoadMap=MIL\pstr
+Setup_LoadMap=MIL\pbej
+Setup_LoadMap=MIL\pmtr
+Setup_LoadMap=MIL\rad_vec_bej
