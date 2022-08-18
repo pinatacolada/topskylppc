@@ -41,9 +41,10 @@ CEF	Mil
 CFC	Mil
 CFN	Mil
 CFT	C
-CGD	Mil
 CGF	C
+CHZ	C
 CJT	C
+CKJ	Mil
 CKK	C
 CLM	C
 CLU	C
@@ -260,6 +261,7 @@ SOB	C
 SOO	C
 SQF	Mil
 SRB	Mil
+SRR	C
 STN	Mil
 SUB	C
 SUI	Mil
