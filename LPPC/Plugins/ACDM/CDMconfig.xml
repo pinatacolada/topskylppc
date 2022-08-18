@@ -6,8 +6,12 @@
 	<expiredCtot time="15" />
 	<ReaMsg minutes="0" />
 	<Taxizones url="" />
+	<Ctot url="" />
 	<DefaultTaxiTime minutes="15" />
 	<RefreshTime seconds="20" />
 	<Debug mode="false" />
-	<eventMode mode="1"/>
+	<FlowRestrictions url="https://ecfmp.vatsim.net/api/v1/plugin" />
+	<ftpHost host="" />
+	<ftpUser user="" />
+	<ftpPassword password="" />
 </CDM>
