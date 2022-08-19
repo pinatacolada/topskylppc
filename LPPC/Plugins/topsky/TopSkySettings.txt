@@ -47,7 +47,7 @@ Airspace_NOTAM_Add=LPPC,LECM
 Airspace_SIGMET_Areas=LPPC
 
 Areas_Altitude_Filtering=1
-Areas_Label_Font=Poppins
+Areas_Label_Font=Lucida Sans Unicode
 Areas_Label_FontSize=12
 Areas_PreActiveTime=1800
 Areas_Label_Name=1
