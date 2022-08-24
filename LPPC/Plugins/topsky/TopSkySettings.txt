@@ -319,3 +319,6 @@ Setup_LoadMap=MIL\pstr
 Setup_LoadMap=MIL\pbej
 Setup_LoadMap=MIL\pmtr
 Setup_LoadMap=MIL\rad_vec_bej
+
+[LPCS_]
+Setup_LoadMap=CASCAIS\cas_work
