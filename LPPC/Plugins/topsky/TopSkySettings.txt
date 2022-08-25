@@ -108,6 +108,7 @@ Label_All_N=1
 Label_COP_MaxChars=5
 Label_FCOP_MaxChars=3
 Label_DAPs=1
+Label_WTC_Highlight_WTC=J
 
 Label_RTE_Origin=LP
 
