@@ -91,7 +91,7 @@ TopSky plugin:ACList/Traffic Management List 2/m_Column_0:COPN:10:0:10004:45:99:
 TopSky plugin:ACList/Traffic Management List 2/m_Column_1:PEL:5:1:10001:68:0:1:TopSky plugin:TopSky plugin:
 TopSky plugin:ACList/Sector List/m_Column_2:PEL:5:1:10001:68:0:1:TopSky plugin:TopSky plugin:
 TopSky plugin:ACList/Sector List/m_Column_3:COPN:6:1:10004:45:99:1:TopSky plugin:TopSky plugin:TopSky plugin
-TopSky plugin:ACList/Sector List/m_Column_4:CFL:4:1:10002:12:0:1:TopSky plugin:TopSky plugin:
+TopSky plugin:ACList/Sector List/m_Column_4: CFL:4:1:10002:12:0:1:TopSky plugin:TopSky plugin:
 TopSky plugin:ACList/Sector List/m_Column_5:ASSR:5:1:10041:62:81:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/Sector List/m_Column_6:NSSR:5:1:109:62:81:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/Sector List/m_Column_7:FCOPX:6:1:44:99:0:1:TopSky plugin:TopSky plugin:
