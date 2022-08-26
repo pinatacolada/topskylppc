@@ -182,7 +182,7 @@ Rings_Number=10
 Rings_Highlight=1
 Rings_HighlightStep=2
 
-RwyAppLines_Auto=1
+RwyAppLines_Auto=0
 RwyAppLines_Length=18
 
 Shortcut_AHDG_NoFixes_Combo=0x00
@@ -321,4 +321,4 @@ Setup_LoadMap=MIL\pmtr
 Setup_LoadMap=MIL\rad_vec_bej
 
 [LPCS_]
-Setup_LoadMap=CASCAIS\cas_work
+Setup_LoadMap=TWRCAS\workng_areas
