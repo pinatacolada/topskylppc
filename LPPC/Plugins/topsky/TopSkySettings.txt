@@ -14,11 +14,6 @@ Setup_LoadMap=APP\tma
 Setup_LoadMap=APP\rad_vec
 Setup_LoadMap=APP\ctr
 
-Setup_LoadMap=APP\del_far
-Setup_LoadMap=APP\del_fun
-Setup_LoadMap=APP\del_lis
-Setup_LoadMap=APP\del_por
-
 Setup_LoadMap=APPFAR\tma_far
 
 Setup_LoadMap=APPFUN\tma_fun
