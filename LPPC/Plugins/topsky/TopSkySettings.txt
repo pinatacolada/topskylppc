@@ -23,9 +23,9 @@ Setup_LoadMap=APPFUN\psnt
 Setup_LoadMap=APPLIS\tma_lis
 Setup_LoadMap=APPLIS\arc50
 
-Setup_LoadMap=CASCAIS\ctr_cascais
-Setup_LoadMap=CASCAIS\pcas
-Setup_LoadMap=CASCAIS\pcas_gnss
+Setup_LoadMap=TWRCAS\ctr_cascais
+Setup_LoadMap=TWRCAS\pcas
+Setup_LoadMap=TWRCAS\pcas_gnss
 
 Setup_LoadMap=APPPRT\tma_por
 
