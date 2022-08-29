@@ -58,8 +58,8 @@ Datablock:SCTA CFL used warning leader:2744816:3.5:0:3:7
 Controller:normal:7248238:3.5:0:0:7
 Controller:breaking:12163583:3.5:0:0:7
 Controller:timeout:16777215:3.5:0:0:7
-Metar:normal:7248238:3.5:0:0:7
-Metar:modified:12163583:3.5:0:0:7
+Metar:normal:16776960:3.5:0:0:7
+Metar:modified:12615935:3.5:0:0:7
 Metar:timeout:16777215:3.5:0:0:7
 Other:wait:16777215:3.5:0:0:7
 Other:distance line:8421504:3.5:0:0:7
