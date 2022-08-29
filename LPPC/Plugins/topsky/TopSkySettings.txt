@@ -41,6 +41,14 @@ Airspace_No_DUPE_Codes=2000,7000
 Airspace_NOTAM_Add=LPPC,LECM
 Airspace_SIGMET_Areas=LPPC
 
+APW_PredictionTime=120
+APW_WarningTime=120
+APW_WarningTime_Imm=110
+APW_Buffer_Lat_U=3
+APW_Buffer_Vert_U=1000
+APW_Buffer_Vert_L_IFR=1000
+APW_Buffer_Vert_L_VFR=1000
+
 Areas_Altitude_Filtering=1
 Areas_Label_Font=Lucida Sans Unicode
 Areas_Label_FontSize=12
