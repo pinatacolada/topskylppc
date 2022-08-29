@@ -177,6 +177,7 @@ List_OptionsInGlobalMenu=1
 
 Maps_Sct_Label_Pos=0,20
 
+MTCD_PLC_Time=5
 MTCD_Potential_Pred_Risk=1
 MTCD_Sep_Vert_U=2000
 MTCD_Sep_Vert_L=1000
