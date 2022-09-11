@@ -315,6 +315,7 @@ Setup_LoadMap=ENVR\aerod
 Setup_LoadMap=ENVR\dam_nl
 Setup_LoadMap=VFR\heli
 Setup_LoadMap=VFR\rot
+Setup_LoadMap=VFR\rot_h
 Setup_LoadMap=VFR\prociv
 Setup_LoadMap=MIL\povar
 Setup_LoadMap=MIL\pmoj
@@ -325,3 +326,6 @@ Setup_LoadMap=MIL\rad_vec_bej
 
 [LPCS_]
 Setup_LoadMap=TWRCAS\workng_areas
+Setup_LoadMap=APP\urb
+Setup_LoadMap=VFR\rot
+Setup_LoadMap=VFR\rot_h
