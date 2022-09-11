@@ -17,7 +17,7 @@ Setup_LoadMap=APP\ctr
 Setup_LoadMap=APPFAR\tma_far
 
 Setup_LoadMap=APPFUN\tma_fun
-Setup_LoadMap=APPFUN\pfun_05_23
+Setup_LoadMap=APPFUN\pfun_05_23_a
 Setup_LoadMap=APPFUN\psnt
 
 Setup_LoadMap=APPLIS\tma_lis
