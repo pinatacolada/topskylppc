@@ -130,6 +130,18 @@ Label_Co_AHDG=1
 Label_Co_ASP=1
 Label_Co_PEL=1
 
+Label_Co_DSFL_Unsel=0
+Label_Co_DHDG_Unsel=0
+Label_Co_DIAS_Unsel=0
+Label_Co_DMACH_Unsel=0
+Label_Co_DRC_Unsel=0
+
+Label_Co_DSFL_Sel=1
+Label_Co_DHDG_Sel=1
+Label_Co_DIAS_Sel=1
+Label_Co_DMACH_Sel=1
+Label_Co_DRC_Sel=1
+
 Label_Ass_SQ=0
 Label_Ass_ATYP=1
 Label_Ass_ATYPW=0
@@ -144,6 +156,18 @@ Label_Ass_COPX=0
 Label_Ass_XFL=1
 Label_Ass_AHDG=1
 Label_Ass_ASP=1
+
+Label_Ass_DSFL_Unsel=0
+Label_Ass_DHDG_Unsel=0
+Label_Ass_DIAS_Unsel=0
+Label_Ass_DMACH_Unsel=0
+Label_Ass_DRC_Unsel=0
+
+Label_Ass_DSFL_Sel=1
+Label_Ass_DHDG_Sel=1
+Label_Ass_DIAS_Sel=1
+Label_Ass_DMACH_Sel=1
+Label_Ass_DRC_Sel=1
 
 Label_Red_SQ=0
 Label_Red_ATYP=0
@@ -160,6 +184,18 @@ Label_Red_XFL=0
 Label_Red_AHDG=0
 Label_Red_ASP=0
 
+Label_Red_DSFL_Unsel=0
+Label_Red_DHDG_Unsel=0
+Label_Red_DIAS_Unsel=0
+Label_Red_DMACH_Unsel=0
+Label_Red_DRC_Unsel=0
+
+Label_Red_DSFL_Sel=1
+Label_Red_DHDG_Sel=1
+Label_Red_DIAS_Sel=1
+Label_Red_DMACH_Sel=1
+Label_Red_DRC_Sel=1
+
 Label_No_SQ=0
 Label_No_ATYP=0
 Label_No_ATYPW=0
@@ -170,6 +206,18 @@ Label_No_RFL=0
 Label_No_FCOPX=0
 Label_No_WTC=1
 Label_No_GS=0
+
+Label_No_DSFL_Unsel=0
+Label_No_DHDG_Unsel=0
+Label_No_DIAS_Unsel=0
+Label_No_DMACH_Unsel=0
+Label_No_DRC_Unsel=0
+
+Label_No_DSFL_Sel=1
+Label_No_DHDG_Sel=1
+Label_No_DIAS_Sel=1
+Label_No_DMACH_Sel=1
+Label_No_DRC_Sel=1
 
 List_ETWR_ADEP=LPPT,LPPR,LPFR,LPMA
 List_OptionsInGlobalMenu=1
