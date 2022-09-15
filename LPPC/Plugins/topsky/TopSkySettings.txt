@@ -52,11 +52,11 @@ Areas_Altitude_Filtering=1
 Areas_Label_Font=Lucida Sans Unicode
 Areas_Label_FontSize=12
 Areas_PreActiveTime=1800
-Areas_Label_Name=1
-Areas_Label_MapText=1
+Areas_Label_Name=0
+Areas_Label_MapText=0
 Areas_Label_Levels=1
-Areas_Label_Times=1
-Areas_Label_UserText=1
+Areas_Label_Times=0
+Areas_Label_UserText=0
 Areas_NOTAM_Activation=1
 
 Color_Active_Map_Type_1=87,87,164	//PURPLE
