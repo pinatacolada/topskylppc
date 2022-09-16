@@ -106,15 +106,16 @@ HTTP_NOTAM_Server=https://eaup.ambitio.cyou/topsky/lp/aupnotam/
 HTTP_NOTAM_Page_Prefix=?loc=
 HTTP_NOTAM_Page_Suffix=
 
-Label_RTE_Origin=LP
-Label_Field18_Flag_Items=STS/ALTRV,STS/ATFMX,STS/HUM,STS/FFR,STS/FLTCK,STS/HAZMAT,STS/HEAD,STS/HOSP,STS/MARSA,STS/MEDEVAC,STS/NONRVSM,STS/SAR,STS/STATE
-
 Label_All_N=1
 Label_COP_MaxChars=5
-Label_FCOP_MaxChars=3
 Label_DAPs=1
+Label_FCOP_MaxChars=3
+Label_Field18_Flag_Items=STS/ALTRV,STS/ATFMX,STS/HUM,STS/FFR,STS/FLTCK,STS/HAZMAT,STS/HEAD,STS/HOSP,STS/MARSA,STS/MEDEVAC,STS/NONRVSM,STS/SAR,STS/STATE
 
 Label_RTE_Origin=LP
+Label_RTE_Origin=LP
+Label_SI_ShowFreq=1
+Label_SI_FreqTime=5
 
 Label_Co_SQ=0
 Label_Co_ATYP=1
