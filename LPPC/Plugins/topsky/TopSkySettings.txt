@@ -1,6 +1,7 @@
 Setup_COOPANS=1
 
 Setup_LoadMap=ENVR\fir
+Setup_LoadMap=ENVR\border
 Setup_LoadMap=ENVR\rwy
 Setup_LoadMap=ENVR\atz
 
