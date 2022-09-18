@@ -272,7 +272,12 @@ Window_PDC_SetCFL=1
 Window_PDC_SetASSR=1
 Window_PDC_SetCFL=1
 
+Window_ASM=0,200,200,610,270
+Window_ASM_Chars_Name=10
+Window_ASM_Chars_MapText=10
+Window_ASM_Chars_User=10
 Window_ASM_ShowNOTAMasUsertext=0
+
 //Window_CARD_MaxConflicts=15
 Window_CPDLC_Current_MaxListItems=7
 Window_CPDLC_History_MaxListItems=7
@@ -282,12 +287,13 @@ Window_FlightPlan_ShowAlways=1
 Window_MsgIn=1,1150,25
 Window_MsgOut=1,1400,25
 Window_Msg_MaxListItems=7
-Window_SAP=1,6,885
+Window_SAP=1,1630,885
 Window_SAP_MaxListItems=7
 Window_SM_LowestLevel=20
-Window_CARD=1,6,693
+Window_CARD=1,1560,693
 Window_CPDLC_Current=0,700,25
 Window_NOTAM=1,700,300,400
+Window_VAW=0,1610,450
 
 [_CTR]
 CPDLC_Default=1
