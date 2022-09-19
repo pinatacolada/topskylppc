@@ -2,10 +2,8 @@ Setup_COOPANS=1
 
 Setup_LoadMap=ENVR\fir
 Setup_LoadMap=ENVR\border
-Setup_LoadMap=ENVR\rivers
 Setup_LoadMap=ENVR\rwy
 Setup_LoadMap=ENVR\atz
-
 Setup_LoadMap=ENR\adj_fir_sec
 Setup_LoadMap=ENR\rep_int
 Setup_LoadMap=ENR\rep_out
@@ -296,6 +294,12 @@ Window_CARD=1,1560,693
 Window_CPDLC_Current=0,700,25
 Window_NOTAM=1,700,300,400
 Window_VAW=0,1610,450
+
+[_APP]
+Setup_LoadMap=ENVR\rivers
+
+[_TWR]
+Setup_LoadMap=ENVR\rivers
 
 [_CTR]
 CPDLC_Default=1
