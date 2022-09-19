@@ -1,0 +1,19 @@
+# .github/release.yml
+
+changelog:
+  categories:
+    - title: Plugin Version Updates
+      labels:
+        - Update
+    - title: New Features
+      labels:
+        - Feature
+        - Tweak
+    - title: Fixes
+      labels:
+        - Fix
+    - title: Documentation Updates
+      labels:
+        - Documentation
+    - title: Removals
+      labels: Revert/Removal
