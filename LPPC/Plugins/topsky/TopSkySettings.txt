@@ -11,7 +11,7 @@ Setup_LoadMap=ENR\rep_out
 Setup_LoadMap=ENR\rep_bdry
 Setup_LoadMap=ENR\lim
 
-Setup_LoadMap=APP\tma
+Setup_LoadMap=APP\p_tma
 Setup_LoadMap=APP\rad_vec
 Setup_LoadMap=APP\ctr
 
@@ -23,7 +23,6 @@ Setup_LoadMap=APPFUN\pfun_05_23_a
 Setup_LoadMap=APPLIS\tma_lis
 Setup_LoadMap=APPLIS\arc50
 
-Setup_LoadMap=TWRCAS\ctr_cascais
 Setup_LoadMap=TWRCAS\pcas
 Setup_LoadMap=TWRCAS\pcas_gnss
 
@@ -354,7 +353,6 @@ Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
 
 [LPAM_]
-Setup_LoadMap=ENVR\rivers
 Setup_LoadMap=ENVR\town
 Setup_LoadMap=ENVR\aerod
 Setup_LoadMap=ENVR\dam_nl
