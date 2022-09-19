@@ -3,12 +3,6 @@ DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
 SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20220125012959-211301-0002.sct
 SECTORTITLE:LPPC-Package_20220125012959-211301-0002.sct
-Geo:GEO:
-Geo:GM Landmark Morocco Coastline:
-Geo:LE Landmark Spain Coastline:
-Geo:LP Landmark Continental Coastline:
-Geo:LP Landmark Madeira Coastline:
-Geo:LP Landmark Porto Santo Coastline:
 SHOWC:1
 SHOWSB:0
 BELOW:500
