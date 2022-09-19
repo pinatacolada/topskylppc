@@ -5,7 +5,7 @@ m_ShowTitle:1
 m_ShowTitleFileName:0
 m_ShowTitleController:1
 m_ShowTitlePrimaryFreq:1
-m_ShowTitleAtisFreq:0
+m_ShowTitleAtisFreq:1
 m_ShowTitleClock:1
 m_ShowTitleLeader:0
 m_ShowTitleFilter:0
@@ -52,7 +52,7 @@ m_ShowTooltips:1
 m_OnTheGroundAltitude:2400
 m_OnTheGroundSpeed:50
 m_ShowCdtOnCflCheck:0
-m_ShowTsVccsMiniControl:0
+m_ShowTsVccsMiniControl:1
 ScenarioEditorX:0
 ScenarioEditorY:0
 m_ShowSTARControllers:1
