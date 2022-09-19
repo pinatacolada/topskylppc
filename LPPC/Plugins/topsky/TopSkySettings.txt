@@ -353,6 +353,7 @@ Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
 
 [LPAM_]
+Setup_LoadMap=ENVR\rivers
 Setup_LoadMap=ENVR\town
 Setup_LoadMap=ENVR\aerod
 Setup_LoadMap=ENVR\dam_nl
