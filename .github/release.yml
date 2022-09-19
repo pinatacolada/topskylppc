@@ -16,4 +16,5 @@ changelog:
       labels:
         - Documentation
     - title: Removals
-      labels: Revert/Removal
+      labels: 
+        - Revert/Removal
