@@ -60,3 +60,5 @@ Plugins	Plugin2Display0	Standard ES radar screen
 Plugins	Plugin3	\LPPC\Plugins\ACDM\CDM.dll
 Plugins	Plugin3Display0	Ground Radar display
 Plugins	Plugin3Display1	Standard ES radar screen
+TeamSpeakVccs	TsVccsMiniControlX	1741
+TeamSpeakVccs	TsVccsMiniControlY	675
