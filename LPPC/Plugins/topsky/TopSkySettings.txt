@@ -84,6 +84,8 @@ CPDLC_PDC_PlaySound=1
 CPDLC_PDC_Timeout_Pilot=180
 CPDLC_FSM_CLD_Header=CLD <hour><min> <year2><month2><day> <adep2> PDC <number> <callsign>
 
+Divergence_RAM_Limit=1
+
 FlightLeg_Label_Time=1
 FlightLeg_Label_Point=0
 FlightLeg_Label_DIST=0
