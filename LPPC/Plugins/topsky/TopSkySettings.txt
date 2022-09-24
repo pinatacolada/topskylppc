@@ -248,6 +248,18 @@ Shortcut_XQDM=0x00
 Shortcut_Flight_Leg_Combo=0x00
 Shortcut_Flight_Leg=0x00
 
+STCA_Coarse_PredictionTime=135
+STCA_Coarse_Sep_Vert_U=1900
+STCA_Coarse_Sep_Vert_L=900
+STCA_FastDiv_Sep_Vert_U=1900
+STCA_FastDiv_Sep_Vert_L=900
+STCA_LinPred_PredictionTime=135
+STCA_LinPred_PredictionStep=3
+STCA_WarningTime_U=120
+STCA_WarningTime_L=60
+STCA_WarningTime_U_Imm=110
+STCA_WarningTime_L_Imm=60
+
 System_ASP_IasMach=28500
 System_UseAcceptedCoordColor=1
 System_UseReportedGS=1
