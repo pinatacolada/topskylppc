@@ -46,9 +46,11 @@ APW_PredictionTime=120
 APW_WarningTime=120
 APW_WarningTime_Imm=110
 APW_Buffer_Lat_U=3
+APW_Buffer_Lat_L_IFR=3
+APW_Buffer_Lat_L_VFR=0
 APW_Buffer_Vert_U=1000
 APW_Buffer_Vert_L_IFR=1000
-APW_Buffer_Vert_L_VFR=1000
+APW_Buffer_Vert_L_VFR=0
 
 Areas_Altitude_Filtering=1
 Areas_Label_Font=Lucida Sans Unicode
@@ -84,7 +86,7 @@ CPDLC_PDC_PlaySound=1
 CPDLC_PDC_Timeout_Pilot=180
 CPDLC_FSM_CLD_Header=CLD <hour><min> <year2><month2><day> <adep2> PDC <number> <callsign>
 
-Divergence_RAM_Limit=1
+Divergence_RAM_Limit=3
 
 FlightLeg_Label_Time=1
 FlightLeg_Label_Point=0
@@ -247,6 +249,18 @@ Shortcut_XQDM_Combo=0x00
 Shortcut_XQDM=0x00
 Shortcut_Flight_Leg_Combo=0x00
 Shortcut_Flight_Leg=0x00
+
+STCA_Coarse_PredictionTime=135
+STCA_Coarse_Sep_Vert_U=1900
+STCA_Coarse_Sep_Vert_L=900
+STCA_FastDiv_Sep_Vert_U=1900
+STCA_FastDiv_Sep_Vert_L=900
+STCA_LinPred_PredictionTime=135
+STCA_LinPred_PredictionStep=3
+STCA_WarningTime_U=120
+STCA_WarningTime_L=60
+STCA_WarningTime_U_Imm=110
+STCA_WarningTime_L_Imm=60
 
 System_ASP_IasMach=28500
 System_UseAcceptedCoordColor=1
