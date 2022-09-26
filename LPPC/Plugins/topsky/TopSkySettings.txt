@@ -12,7 +12,7 @@ Setup_LoadMap=ENR\rep_bdry
 Setup_LoadMap=ENR\lim
 
 Setup_LoadMap=APP\p_tma
-Setup_LoadMap=APP\tmas
+Setup_LoadMap=APP\tma
 Setup_LoadMap=APP\rad_vec
 Setup_LoadMap=APP\ctr
 
