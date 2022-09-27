@@ -25,7 +25,7 @@ Settings	FreqKey	3604480
 Plugins	Plugin0	\LPPC\Plugins\topsky\TopSky.dll
 Plugins	Plugin0Display0	Standard ES radar screen
 Plugins	Plugin0Display1	Ground Radar display
-Plugins	Plugin1	\LPPC\Plugins\topsky\GRplugin.dll
+Plugins	Plugin1	\LPPC\Plugins\GroundRadar\GRplugin.dll
 Plugins	Plugin1Display0	Ground Radar display
 Plugins	Plugin1Display1	Standard ES radar screen
 Plugins	Plugin2	\LPPC\Plugins\ACDM\CDM.dll
@@ -37,17 +37,17 @@ ASRFastKeys	6	LPPC\ASR\LPMA_GND_TSGR.asr
 ASRFastKeys	7	LPPC\ASR\LPFR_GND_TSGR.asr
 ASRFastKeys	8	LPPC\ASR\LPPT_GND_TSGR.asr
 ASRFastKeys	9	LPPC\ASR\LPPR_GND_TSGR.asr
-RecentFiles	Recent1	\LPPC\ASR\LPPC_CTR_TS.asr
+RecentFiles	Recent1	LPPC\ASR\LPPC_CTR_TS.asr
 LastSession	connecttype	0
-LastSession	realname	
 LastSession	certificate	vatsim ID
-RecentFiles	Recent2	LPPC\ASR\LPPR_GND_TSGR.asr
-RecentFiles	Recent3	LPPC\ASR\LPPT_GND_TSGR.asr
-RecentFiles	Recent4	LPPC\ASR\LPFR_GND_TSGR.asr
-RecentFiles	Recent5	LPPC\ASR\LPMA_GND_TSGR.asr
+RecentFiles	Recent2	LPPC\ASR\LPMA_GND_TSGR.asr
+RecentFiles	Recent3	LPPC\ASR\LPFR_GND_TSGR.asr
+RecentFiles	Recent4	LPPC\ASR\LPPT_GND_TSGR.asr
+RecentFiles	Recent5	LPPC\ASR\LPPR_GND_TSGR.asr
 RecentFiles	Recent6	LPPC\ASR\LPCS_TWR.asr
-RecentFiles	Recent7	LPPC\ASR\LPPC_CTR_TS.asr
+RecentFiles	Recent7	\LPPC\ASR\LPPC_CTR_TS.asr
 RecentFiles	Recent8	LPPC\ASR\LPPR_GND_TSGR.asr
 RecentFiles	Recent9	LPPC\ASR\LPPR_GND_TSGR.asr
 TeamSpeakVccs	TsVccsMiniControlX	1741
 TeamSpeakVccs	TsVccsMiniControlY	675
+Settings	sector	C:\Program Files (x86)\EuroScope\LPPC-Package_20220924174352-220901-0002.sct
