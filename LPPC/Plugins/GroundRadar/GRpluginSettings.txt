@@ -17,6 +17,7 @@ Equip_ModeS=
 Equip_ProMode=1
 
 GroundLabel=1
+GroundLabel_Filter_Stby=1
 GroundLabel_Font=EuroScope
 GroundLabel_FontStyle=1000,0,0,0
 GroundLabel_FontSize=11
