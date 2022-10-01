@@ -42,7 +42,7 @@ CPDLC;
 ![image](https://user-images.githubusercontent.com/11005754/193365748-9d55bc71-eb26-4055-909d-7ce48400e9bf.png)
 
 
-Realist radar Maps;
+Realistic radar Maps;
 
 ![image](https://user-images.githubusercontent.com/11005754/193365835-079a8e3e-56fb-40a5-b618-27116edaf92f.png)
 
