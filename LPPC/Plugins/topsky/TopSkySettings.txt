@@ -6,7 +6,6 @@ Setup_LoadMap=ENVR\border
 Setup_LoadMap=ENVR\rwy
 Setup_LoadMap=ENVR\atz
 Setup_LoadMap=ENR\adj_fir_sec
-Setup_LoadMap=ENR\rep_int
 Setup_LoadMap=ENR\rep_out
 Setup_LoadMap=ENR\rep_bdry
 Setup_LoadMap=ENR\lim
@@ -23,8 +22,6 @@ Setup_LoadMap=APPLIS\arc50
 Setup_LoadMap=TWRCAS\pcas
 Setup_LoadMap=TWRCAS\pcas_gnss
 
-Setup_LoadMap=NAVAIDS\vor
-Setup_LoadMap=NAVAIDS\ndb
 
 Airspace_833_Min=0
 Airspace_ASSR_Type=2
