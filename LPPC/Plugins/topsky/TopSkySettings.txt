@@ -32,6 +32,8 @@ Airspace_No_DUPE_Codes=2000,7000
 Airspace_NOTAM_Add=LPPC,LECM
 Airspace_SIGMET_Areas=LPPC
 
+AIW_Inhibit_ActiveAreas=1
+AIW_FlightRules=1
 AIW_Floor=1500
 
 APW_PredictionTime=120
@@ -219,6 +221,7 @@ Label_No_DMACH_Sel=1
 Label_No_DRC_Sel=1
 
 List_ETWR_ADEP=LPPT,LPPR,LPFR,LPMA
+List_VFR_FPL_Area=42.2955958,-9.2532349,32.7503226,-17.9956055,32.0453328,-16.6882324,36.9520867,-7.2207642,38.182069,-6.9213867,38.4836948,-7.2015381,38.9893026,-6.8719482,39.4446776,-7.0532227,40.1704789,-6.7730713,41.0337871,-6.6467285,41.463312,-6.1468506,41.9431487,-5.9793091,42.2955958,-9.2532349
 List_OptionsInGlobalMenu=1
 
 Maps_Sct_Label_Pos=0,20
@@ -366,8 +369,7 @@ Setup_LoadMap=ENVR\town
 Setup_LoadMap=ENVR\aerod
 Setup_LoadMap=ENVR\dam_nl
 Setup_LoadMap=VFR\heli
-Setup_LoadMap=VFR\rot
-Setup_LoadMap=VFR\rot_h
+Setup_LoadMap=VFR\rot_vfr
 Setup_LoadMap=VFR\prociv
 Setup_LoadMap=MIL\povar
 Setup_LoadMap=MIL\pmoj
@@ -379,5 +381,4 @@ Setup_LoadMap=MIL\rad_vec_bej
 [LPCS_]
 Setup_LoadMap=TWRCAS\workng_areas
 Setup_LoadMap=APP\urb
-Setup_LoadMap=VFR\rot
-Setup_LoadMap=VFR\rot_h
+Setup_LoadMap=VFR\rot_vfr
