@@ -9403,7 +9403,7 @@ COLOR:MAP_GREY
 
 SCTDATA:ARTCC LOW\Cascais Bay Working Area
 SCTDATA:ARTCC LOW\Cabo Raso Working Area
-SCTDATA:ARTCC LOW\Guincho Bay Working Area
+SCTDATA:ARTCC LOW\Guincho Working Area
 
 MAP:ils_z_28
 FOLDER:TWRFAR
