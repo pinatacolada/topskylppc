@@ -67,12 +67,10 @@ Color_Active_Map_Type_6=90,90,90	//INFILL GREY
 Color_Proposition_Accepted=175,125,175 //C_Sector_Informed
 Color_Text_Notes=125,125,125
 
-CPDLC_MinLevel=285
+CPDLC_MinLevel=100
 CPDLC_Transfer=1
 CPDLC_CFL=1
 CPDLC_DCT=1
-CPDLC_AHDG=1
-CPDLC_ASP=1
 CPDLC_AutoAcceptLogon=1
 CPDLC_AutoAcceptLogon_Time=15
 CPDLC_PlaySound=1
