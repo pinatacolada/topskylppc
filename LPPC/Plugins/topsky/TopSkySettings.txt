@@ -339,15 +339,22 @@ STCA_CurrProx_Sep_Lat_U=7.75
 STCA_CurrProx_Sep_Lat_L=7.75
 
 [LPPR_APP]
+CPDLC_Default=1
+Window_CPDLC_Current=1,700,25
+Window_CPDLC_Setting=1,900,425
 Setup_LoadMap=APP\urb
 
 [LPPT_APP]
+CPDLC_Default=1
 STCA_Coarse_Sep_Lat_U=3
 STCA_Coarse_Sep_Lat_L=3
 STCA_LinPred_Sep_Lat_U=2.5
 STCA_LinPred_Sep_Lat_L=2.5
 STCA_CurrProx_Sep_Lat_U=2.75
 STCA_CurrProx_Sep_Lat_L=2.75
+
+[LPPT_U_APP]
+CPDLC_Default=1
 
 [LPPT_F_APP]
 STCA_Coarse_Sep_Lat_U=3
@@ -358,6 +365,16 @@ STCA_CurrProx_Sep_Lat_U=2.75
 STCA_CurrProx_Sep_Lat_L=2.75
 
 [LPPT_]
+Window_CPDLC_Current=1,700,25
+Window_CPDLC_Setting=1,900,425
+
+[LPFR_APP]
+CPDLC_Default=1
+Window_CPDLC_Current=1,700,25
+Window_CPDLC_Setting=1,900,425
+
+[LPMA_APP]
+CPDLC_Default=1
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
 
