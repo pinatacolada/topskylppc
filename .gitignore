@@ -95,3 +95,6 @@
 soundbackends
 Sounds
 PlugInEnvironment
+libcrypto-1_1.dll
+libcurl.dll
+libssl-1_1.dll

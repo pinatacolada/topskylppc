@@ -129,7 +129,7 @@ Screen resolutions other than 1920x1080 will yield different results. Larger res
 \includegraphics{img/globalmenu.png}\\
 The Global Menu is located on the top edge of the radar screen. It displays the current UTC time and contains a number of submenus which are explained below.
 
-\subsection{Setup}
+\subsection{Setup Menu}
 \includegraphics{img/Setup.png}\\
 Setup Menu allows for various adjustments. Each position will load its defined settings based on the active Primary Frequency.\\ 
 Most used options are CPDLC Setting for CPDLC operations and Default Setting to reset options.\\
@@ -155,32 +155,186 @@ Most used options are CPDLC Setting for CPDLC operations and Default Setting to 
 \\- Direction Finder > & Opens the Direction Finder submenu
   \end{tabular}
 
-\subsection{AMS (Airspace Management System)}
+\subsection*{Unit Settings submenu}
+This submenu can be used to change the units used in the plugin. Any changes to the settings are session-
+specific only, so they will be lost when exiting EuroScope.
+
+\begin{tabular}{p{5cm}p{10cm}}
+    \\- Altitude & Selects the units used for altitudes and vertical rates
+    - Nautical (feet, feet per minute)
+    - Metric (meters, meters per second)
+    \\- Flight level & Selects the units for flight levels – only applicable with metric altitudes
+    - Nautical (hundreds of feet)
+    - Metric (meters)
+    \\- Distance & Selects the units used for distances
+    - Nautical (nautical miles)
+    - Metric (kilometers)
+    \\- Speed & Selects the units used for speeds
+    - Nautical (knots)
+    - Metric (kilometers per hour)
+\end{tabular}
+
+\subsection*{Local Settings submenu}
+This submenu allows changing some of the plugin’s settings. Any changes to the settings are session-
+specific only, so they will be lost when exiting EuroScope.
+
+\begin{tabular}{p{5cm}p{10cm}}
+\\- Vertical reference    & Selects the pressure reference to be used at or below the
+transition altitude:
+• QNH Altitude above mean sea level
+• QFE Height above the aerodrome elevation
+(set/check it in the adjacent box)
+\\- Used equipment codes  & Selects whether to use or disregard the equipment codes
+found in the flight plans:
+• All Use all codes
+• ICAO Use all codes when specified in ICAO format
+• ICAO-alt As ICAO, but force transponder to report altitude
+• None Disregard all codes
+
+\\- ASSR codes    & Selects the transponder code source:
+• Plugin Plugin data file (reverts to ESE if no codes found)
+• ESE ESE file
+• Range Fixed code range
+\\- Groundspeed   & Selects whether to use pilot client reported ground speed or a
+plugin calculated value. Normally the reported value should be
+used as it is more accurate and stable, but some clients report
+wrong values. If that causes problems, you can try selecting the
+plugin calculated value instead
+\\- Transfer confirmation & Selects when to display the Transfer Confirmation Window:
+• On Always when CFL is not equal to XFL
+• NotRFL When CFL is not equal to XFL unless XFL = RFL
+• Off Never, any CFL value is OK
+\\- CFL menu default value    & Selects the default value for the CFL menu when it is opened:
+• XFL FSS or CTR: RFL if not yet reached, otherwise as below
+Other: The XFL value, or current CFL value with no XFL
+• CFL The current CFL value
+• RFL The RFL value
+\\- FPCP inhibit  & FPCP calculations start when tracks are within this time from
+entering active sector
+\\- STCA alert    & Selects which aircraft display the STCA alert:
+• All All aircraft
+• Own+Co Only assumed and coordinated aircraft
+• Own Only assumed aircraft
+\\- STCA alert sound  & Selects which STCA alerts trigger the alert sound:
+• All All alerts
+• Own+Co Only alerts with assumed and/or coordinated
+aircraft involved
+• Own Only alerts with assumed aircraft involved
+\\- APW alert & Selects which aircraft display the APW alert:
+• All All aircraft
+• Own+Co Only assumed and coordinated aircraft
+• Own Only assumed aircraft
+\\- APW alert sound   & Selects which STCA alerts trigger the alert sound:
+• All All alerts
+• Own+Co Only alerts for assumed or coordinated
+aircraft
+• Own Only alerts for assumed aircraft
+\\- METAR source  & Selects the METAR data source for the plugin windows that
+display METAR data
+\\- FPASD filter  & Allows filtering of displayed FPASD tracks based on sector state
+• Coord Display tracks at least in the coordinated state
+• Conc Display tracks at least in the concerned state
+• None Display all tracks
+
+\end{tabular}
+
+\subsection*{RR Main submenu}
+\begin{tabular}{p{5cm}p{10cm}}
+    - [] Rings On/Off & Toggles the range rings on/off
+    \\- Point & Sets the rings centerpoint. Either click on the radar screen or
+    enter the desired point in the text field. Fixes, VORs, NDBs and
+    airports from the active sector file can be used as well as
+    coordinates in the flight plan format (DD[N/S]DDD[E/W] or
+    DDMM[N/S]DDDMM[E/W], e.g. 60N025E or 0811S00300W).
+    Entering an empty text string resets the rings to be shown at
+    the radar screen centerpoint.
+    \\- Separation & Sets the separation between adjacent rings
+    \\- Number & Sets the number of rings drawn
+    \\- [] Highlight & Toggles highlight (drawn with solid line) of specified rings
+    \\- Step & Sets interval of highlighted rings
+\end{tabular}
+
+\subsection*{Direction Finder submenu}
+Not operational
+
+\subsection{AMS menu}
 \includegraphics{img/AMS.png}\\
-Used to access \textit{\titleref{menu:tsa}}.
+Opens the \textit{\titleref{menu:tsa}}.
 
 \subsection{FData menu}
 \includegraphics{img/FData.png}\\
-Used to access \textit{\titleref{menu:fpsel}} and \textit{\titleref{menu:fpwin}}.
+Opens the \textit{\titleref{menu:fpsel}} and \textit{\titleref{menu:fpwin}}.
 
 \subsection{Tools menu}
-\includegraphics{img/FData.png}\\
+
+\subsection{Tools menu}
+%TODO\includegraphics{img/tools.png}\\
 \begin{tabular}{p{5cm}p{10cm}}
 \\- Flight Plan Lists > & Opens the Flight Plan Lists submenu
-\\- CARD… & Opens the Conflict And Risk Display
-\\- SAP… & Opens the Segregated Area Probe Window
-\\- Vertical Aid Window… & Opens the Vertical Aid Window
-\\- Message In… & Opens the Message In Window
-\\- Message Out… & Opens the Message Out Window
+\\- CARD… & Opens the \textit{\titleref{win:card}}
+\\- SAP… & Opens the \textit{\titleref{win:sap}}
+\\- Vertical Aid Window… & Opens the \textit{\titleref{win:vaw}}
+\\- Message In… & Opens the \textit{\titleref{win:mi}}
+\\- Message Out… & Opens the \textit{\titleref{win:mo}}
 \\- CPDLC > & Opens the CPDLC submenu
-\\- LAT/LONG… & Opens the Cursor Lat/Long Window
+\\- LAT/LONG… & Opens the \textit{\titleref{win:cur}}
 \end{tabular}
 
-\section{NOTAM List}
-\includegraphics{img/notamlist.png}\\
-The NOTAM List is automatically displayed at startup in order to fetch the current FUA. It may be closed after loading.\\
+\subsection*{Flight Plan Lists submenu}
+\begin{tabular}{p{5cm}p{10cm}}
+    - [] List options bar           & Toggles the display of list options on the Global Menu
+    \\- Sector List…                & Opens the Sector List
+    \\- [] Informed                 & Toggles the display of informed aircraft
+    \\- [] Concerned                & Toggles the display of concerned aircraft
+    \\- [] Redundant                & Toggles the display of redundant aircraft
+    \\- Load Factor List…           & Opens the \textit{\titleref{list:lf}}
+    \\- ETWR List…                  & Opens the \textit{\titleref{list:etwr}}
+    \\- <adep>                      & ETWR List departure airports filter
+    \\- Uncont. List 1…             & Opens the \textit{\titleref{list:ul1}}
+    \\- <filter>                    & Uncontrolled 1 List state filter
+    \\- <units>                     & Uncontrolled 1 List units filter
+    \\- Uncont. List 2…             & Opens the \textit{\titleref{list:ul2}}
+    \\- <filter>                    & Uncontrolled 2 List state filter
+    \\- <units>                     & Uncontrolled 2 List units filter
+    \\- Lost List…                  & Opens the \textit{\titleref{list:ll}}
+    \\- Resectorisation List…       & Opens the \textit{\titleref{list:rl}}
+    \\- <lfunc>                     & Resectorisation List LFUNC filter
+    \\- Traffic Mgmt. List 1…       & Opens the \textit{\titleref{list:tml1}}
+    \\- <state>                     & Traffic Management List 1 flight plan state filter
+    \\- <ades>                      & Traffic Management List 1 destination airports filter
+    \\- <via>                       & Traffic Management List 1 route points filter
+    \\- Traffic Mgmt. List 2…       & Opens the \textit{\titleref{list:tml2}}
+    \\- <state>                     & Traffic Management List 2 flight plan state filter
+    \\- <ades>                      & Traffic Management List 2 destination airports filter
+    \\- <via>                       & Traffic Management List 2 route points filter
+\end{tabular}\\
 
-\section{TSA (Temporary Segregated Areas) Menu}
+When enabled, the list options bar displays “Info Conc Redu Filter Filter” on the right edge of the Global
+Menu. The first three toggle the respective settings for the Sector List and are colored with the appropriate
+color when enabled, and the last two are displayed in “VFR” color when the corresponding
+Uncontrolled list is somehow filtered. Clicking on them opens the Flight Plan Lists submenu to change
+the filtering options.\\
+Left-clicking <filter> cycles through “ALL” (no filtering), “ON-CONTACT” (only tracks on-contact with
+anyone), “ON-CONTACT-PPOS” (only tracks on-contact with you) and “FREE” (only tracks in the free state).\\
+Left-clicking <units> opens a text entry box to enter a comma-separated list of aerodrome ICAO codes to
+filter the list. When entered, the list will display a flight only if one of the entered codes is its departure or
+destination, or the code is found in its scratchpad (OP-TEXT2).\\
+
+Left-clicking <lfunc>, <adep>, <ades> and <via> open text entry boxes to enter comma-separated lists for
+controlled ID’s, ICAO codes and point names respectively to filter the affected lists.\\
+Left-clicking <state> toggles between “ALL” (no filtering), “SIMUL+TERM” (not started flight plans filtered),
+“NOTST+SIMUL” (terminated flight plans filtered) and “SIMUL” (not started and terminated flight plans
+filtered).\\
+
+\section{Track Presentation}
+
+\section{Track Label Menus}
+
+\section{Flight Leg}
+
+\section{Windows}
+
+\subsection{Airspace Management Window}
 \label{menu:tsa}
 \includegraphics{img/tsa.png}\\
 This window is used for the activation and deactivation of the areas for the APW and SAP functionality. Each area can have a start time and/or an end time defined for its activation, or it can be activated without any time limits, making it active until deactivated manually. Additionally, lower and upper altitude limits are given. An area can have activation schedules defined in the area data file. Such areas will be automatically activated as long as their “Auto” option is selected ( “A” in the “Auto” column). The “Auto” option cannot be selected for areas that don’t have an activation schedule defined in the area data file.
@@ -227,14 +381,28 @@ Preactive and active areas are displayed on the radar screen. The area border is
         Map text\\
         Upper level limit\\
         Start time --------- End time\\
-        Lower level limit\\ime in minutes until the area becomes active
+        Lower level limit\\time in minutes until the area becomes active
 \end{center}
+
+\section{Lists}
+
+\subsection{NOTAM List}
+\includegraphics{img/notamlist.png}\\
+The NOTAM List is automatically displayed at startup in order to fetch the current FUA. It may be closed after loading.\\
+
+\section{Safety Nets}
+
+\section{Monitoring Aids}
+
+\section{Flight Plan Conflict Probe}
 
 \appendix
 
-\chapter{Additional}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\chapter{Label field descriptions}
 
+\chapter{Color Values}
+
+\chapter{Keyboard Shortcuts}
 
 \bibliographystyle{unsrt}
 \bibliography{refs}
