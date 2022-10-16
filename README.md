@@ -1,55 +1,65 @@
 # TopSky plugin for Portugal vACC
 
-The TopSky plugin (a.k.a. The Plugin Formerly Known As “EUROCAT 2000 E”) is developed and maintained by Juha Holopainen from VATSIM Scandinavia. It is an almost complete set of tag items, tag menus, graphical elements on the radar display and some additional functionality based around the real world TopSky ATM system. 
+The TopSky plugin is developed and maintained by Juha Holopainen from VATSIM Scandinavia. It is an almost complete set of tag items, tag menus, graphical elements on the radar display and some additional functionality based around the real world TopSky ATM system. 
 
-As of right now, the aim of this plugin is to provide additional tools for ATC, while creating a system closer to LISATM than TopSky. As such, some tools and safety nets like PDC, MSAW, CPDLC etc are not currently available, while supported by the plugin.
-In the future with the introduction of TopSky in the real system in 2022 (Portuguese estimate™, subject to change), an update to bring it up to the real life counterpart standards should follow suit.
+The aim of this project is to emulate as much as possible TOPLIS system in Euroscope.
 
 This plugin is for users with at least a basic understanding of ATC procedures and terminology, and being familiar with the operation of the EuroScope program itself. Refer to the EuroScope documentation for the most current information on the program’s features. Because of the complexity of the plugin, some offline practice is recommended before attempting to control online traffic with it.
 
 # Features
 This plugin adds a ton of neat features and tools, some highlights are:
-TSA managment, including timed and scheduled activations
 
-![TSA Managment](https://user-images.githubusercontent.com/13833056/97945690-23e28800-1d80-11eb-8bce-a43d5735573e.jpg)
+TSA management, including timed and scheduled activations;
 
-Conflict and Risk Display (CARD)
-
-![CARD](https://user-images.githubusercontent.com/13833056/97945835-9bb0b280-1d80-11eb-9498-1f6bd4ed1c4e.png)
-
-Vertical Aid Window (VAW)
-
-![VAW](https://user-images.githubusercontent.com/13833056/97945927-de728a80-1d80-11eb-821a-d5ac31cc7cac.png)
-
-Segregated Area Probe (SAP)
-
-Airport specific Transition level
+![TSA Managment](https://user-images.githubusercontent.com/11005754/193365249-1ad20c2d-6476-46e9-ad2f-30d3d347b934.png)
 
 
-![SAP](https://user-images.githubusercontent.com/13833056/97945951-ecc0a680-1d80-11eb-9e7f-b42b4cf19085.png)
+Conflict and Risk Display (CARD);
 
-Medium Term Conflict Detection
+![CARD](https://user-images.githubusercontent.com/11005754/193365276-64eb1d0a-79b1-4cc1-9bf4-bafb6d1696c8.png)
 
-Ground Radar based on the SAAB A3000 A-SMGCS system
+Vertical Aid Window (VAW);
+
+![VAW](https://user-images.githubusercontent.com/11005754/193365325-57a22810-5f4f-4c0c-a05b-bc9270047430.png)
+
+
+Segregated Area Probe (SAP);
+
+![SAP](https://user-images.githubusercontent.com/11005754/193365380-9757378c-f99a-42ab-b349-845670150ad9.png)
+
+
+Airport specific Transition level;
+
+![TL](https://user-images.githubusercontent.com/11005754/193365416-6e6b57ea-160e-49b4-a870-b2ff73859c06.png)
+
+Medium Term Conflict Detection;
+
+![MTCD](https://user-images.githubusercontent.com/11005754/193365905-03177612-d221-4ff2-983b-2e8bf8b7fedb.png)
+
+
+CPDLC;
+
+![image](https://user-images.githubusercontent.com/11005754/193365748-9d55bc71-eb26-4055-909d-7ce48400e9bf.png)
+
+
+Realistic radar Maps;
+
+![image](https://user-images.githubusercontent.com/11005754/193365835-079a8e3e-56fb-40a5-b618-27116edaf92f.png)
+
+
+Ground Radar based on the SAAB A3000 A-SMGCS system (Ground Radar Plugin)
 
 ![Ground Radar](https://user-images.githubusercontent.com/13833056/97946021-18dc2780-1d81-11eb-9ae6-3174cfb085c1.png)
 
 ![Ground Radar](https://user-images.githubusercontent.com/13833056/97946071-33ae9c00-1d81-11eb-9a52-7af0abfd59d6.png)
 
-Realist radar Maps
-![Radar Maps](https://user-images.githubusercontent.com/13833056/97946155-6d7fa280-1d81-11eb-9e83-135feb0831ae.png)
 
 
-And a lot more
+
+And a lot more...
 
 # Instalation
-TopSky is included in the Sector Package of Portugal vACC, and is the recommended method of installation. If for some reason you want to do it yourself, first, why, second, [Download](https://github.com/pinatacolada/topskylppc/archive/1.4.9.zip) and unzip the contents of topskylppc-1.4.9 folder into the folder where you keep your LPPC sector file. It should ask you to overwrite some files, say yes to those.
-
-Then, on Euroscope, go to Other Settings/Plug-ins. Click on load and navigate to where you dropped the files before. Select the TopSky.dll and then the GRplugin.dll files.
-
-Both plug-ins should now show in the plug-in list. Select each and on the Forbidden to draw on types list click on << on all entries, so as to allow the plug-ins to draw on the screen.
-
-Close and reopen Euroscope, save all changes. 
+TopSky is already included in the Sector Package of Portugal vACC.
 
 When prompted during startup, use the LPPC_CTR_TS.prf profile.
 
@@ -61,5 +71,3 @@ To use CPDLC you need a [Hoppie account](https://www.hoppie.nl/acars/system/regi
 
 # Disclamer
 Although - as its name suggests - the plugin is based on the TopSky ATM system, it is in no way affiliated with or endorsed by Thales Group. Similarities between plugin features and the real system are not entirely coincidental, but anyone planning to use the plugin as a real world training aid really should know better…
-
-

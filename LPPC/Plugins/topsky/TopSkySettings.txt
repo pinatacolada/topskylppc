@@ -31,6 +31,8 @@ Airspace_No_DUPE_Codes=2000,7000
 Airspace_NOTAM_Add=LPPC,LECM
 Airspace_SIGMET_Areas=LPPC
 
+AIW_Inhibit_ActiveAreas=1
+AIW_FlightRules=1
 AIW_Floor=1500
 
 APW_PredictionTime=120
@@ -64,12 +66,10 @@ Color_Active_Map_Type_6=90,90,90	//INFILL GREY
 Color_Proposition_Accepted=175,125,175 //C_Sector_Informed
 Color_Text_Notes=125,125,125
 
-CPDLC_MinLevel=285
+CPDLC_MinLevel=100
 CPDLC_Transfer=1
 CPDLC_CFL=1
 CPDLC_DCT=1
-CPDLC_AHDG=1
-CPDLC_ASP=1
 CPDLC_AutoAcceptLogon=1
 CPDLC_AutoAcceptLogon_Time=15
 CPDLC_PlaySound=1
@@ -118,12 +118,12 @@ Label_Co_ATYPW=0
 Label_Co_ADES=0
 Label_Co_NRAC=0
 Label_Co_TSSR=0
-Label_Co_RFL=1
-Label_Co_FCOPX=1
-Label_Co_WTC=1
-Label_Co_GS=1
-Label_Co_COPN=1
-Label_Co_XFL=0
+Label_Co_RFL=0
+Label_Co_FCOPX=0
+Label_Co_WTC=0
+Label_Co_GS=0
+Label_Co_COPN=0
+Label_Co_XFL=1
 Label_Co_AHDG=1
 Label_Co_ASP=1
 Label_Co_PEL=1
@@ -146,10 +146,10 @@ Label_Ass_ATYPW=0
 Label_Ass_ADES=0
 Label_Ass_NRAC=0
 Label_Ass_TSSR=0
-Label_Ass_RFL=1
+Label_Ass_RFL=0
 Label_Ass_FCOPX=0
-Label_Ass_WTC=1
-Label_Ass_GS=1
+Label_Ass_WTC=0
+Label_Ass_GS=0
 Label_Ass_COPX=0
 Label_Ass_XFL=1
 Label_Ass_AHDG=1
@@ -175,8 +175,8 @@ Label_Red_NRAC=0
 Label_Red_TSSR=0
 Label_Red_RFL=0
 Label_Red_FCOPX=0
-Label_Red_WTC=1
-Label_Red_GS=1
+Label_Red_WTC=0
+Label_Red_GS=0
 Label_Red_COPX=0
 Label_Red_XFL=0
 Label_Red_AHDG=0
@@ -202,7 +202,7 @@ Label_No_NRAC=0
 Label_No_TSSR=0
 Label_No_RFL=0
 Label_No_FCOPX=0
-Label_No_WTC=1
+Label_No_WTC=0
 Label_No_GS=0
 
 Label_No_DSFL_Unsel=0
@@ -218,6 +218,7 @@ Label_No_DMACH_Sel=1
 Label_No_DRC_Sel=1
 
 List_ETWR_ADEP=LPPT,LPPR,LPFR,LPMA
+List_VFR_FPL_Area=42.2955958,-9.2532349,32.7503226,-17.9956055,32.0453328,-16.6882324,36.9520867,-7.2207642,38.182069,-6.9213867,38.4836948,-7.2015381,38.9893026,-6.8719482,39.4446776,-7.0532227,40.1704789,-6.7730713,41.0337871,-6.6467285,41.463312,-6.1468506,41.9431487,-5.9793091,42.2955958,-9.2532349
 List_OptionsInGlobalMenu=1
 
 Maps_Sct_Label_Pos=0,20
@@ -337,15 +338,22 @@ STCA_CurrProx_Sep_Lat_U=7.75
 STCA_CurrProx_Sep_Lat_L=7.75
 
 [LPPR_APP]
+CPDLC_Default=1
+Window_CPDLC_Current=1,700,25
+Window_CPDLC_Setting=1,900,425
 Setup_LoadMap=APP\urb
 
 [LPPT_APP]
+CPDLC_Default=1
 STCA_Coarse_Sep_Lat_U=3
 STCA_Coarse_Sep_Lat_L=3
 STCA_LinPred_Sep_Lat_U=2.5
 STCA_LinPred_Sep_Lat_L=2.5
 STCA_CurrProx_Sep_Lat_U=2.75
 STCA_CurrProx_Sep_Lat_L=2.75
+
+[LPPT_U_APP]
+CPDLC_Default=1
 
 [LPPT_F_APP]
 STCA_Coarse_Sep_Lat_U=3
@@ -356,6 +364,16 @@ STCA_CurrProx_Sep_Lat_U=2.75
 STCA_CurrProx_Sep_Lat_L=2.75
 
 [LPPT_]
+Window_CPDLC_Current=1,700,25
+Window_CPDLC_Setting=1,900,425
+
+[LPFR_APP]
+CPDLC_Default=1
+Window_CPDLC_Current=1,700,25
+Window_CPDLC_Setting=1,900,425
+
+[LPMA_APP]
+CPDLC_Default=1
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
 
