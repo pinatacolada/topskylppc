@@ -255,7 +255,7 @@ display METAR data
 \end{tabular}
 
 \subsection*{Direction Finder submenu}
-Not operational
+Not operational.
 
 \subsection{AMS menu}
 \includegraphics{img/AMS.png}\\
@@ -326,6 +326,139 @@ Left-clicking <state> toggles between “ALL” (no filtering), “SIMUL+TERM”
 “NOTST+SIMUL” (terminated flight plans filtered) and “SIMUL” (not started and terminated flight plans
 filtered).\\
 
+\subsection*{CPDLC submenu}
+\begin{tabular}{p{5cm}p{10cm}}
+- Microphone Check      & Opens the \textit{\titleref{win:dlmcm}}
+\\- Current Messages…   & Opens the \textit{\titleref{win:dlcmw}}
+\\- History Messages…   & Opens the \textit{\titleref{win:dlhmw}}
+\end{tabular}\\
+
+\subsection{MET menu}
+\begin{tabular}{p{5cm}p{10cm}}
+- Messages… & Opens the \textit{\titleref{win:wxcmw}}
+\\- QNH/TL    & Opens the \textit{\titleref{win:wxqnh}}
+\end{tabular}\\
+
+\subsection{[0]}
+Not implemented (always shows a zero value).
+
+\subsection{Info menu}
+\begin{tabular}{p{5cm}p{10cm}}
+- General Information…      & Opens the \textit{\titleref{win:gi}}
+\\- Document Viewer…          & Opens the \textit{\titleref{win:dv}}
+\\- NOTAM…                    & Opens the \textit{\titleref{list:notam}}
+\\- Aerodrome…                & Opens the \textit{\titleref{menu:ad}}
+\\- LFUNC Frequency Plan…     & Opens the \textit{\titleref{win:lfunc}}
+\\- [] Airport labels         & Toggles airport labels selection
+\\- [] Fix labels             & Toggles fix labels selection
+\\- [] NDB labels             & Toggles NDB labels selection
+\\- [] VOR labels             & Toggles VOR labels selection
+\end{tabular}\\
+When holding <ALT>, text labels will be displayed for airports, fixes, NDBs
+and VORs when the mouse cursor is placed over them. When one or more of the categories in the Info
+menu is selected, only those categories will display the labels. The “Label” buttons open submenus to select
+what information is shown on the corresponding labels. All the information is from the active sector file.\\
+
+\subsection{MSG menu}
+\begin{tabular}{p{5cm}p{10cm}}
+- Notepad…              & Opens the \textit{\titleref{win:notepad}}
+\\- Personal Queue…     & Opens the \textit{\titleref{win:pq}}
+\\- ATC Messages…       & Opens the \textit{\titleref{win:atcm}}
+\\- Prim Freq Messages… & Opens the \textit{\titleref{win:pfm}}
+\\- NAT Track Messages… & Opens the \textit{\titleref{win:natm}}
+\\- Text notes >        & Opens the Text notes submenu
+\end{tabular}\\
+
+It is possible to insert text notes on the radar screen to act as reminders. They will stay fixed at the
+geographical coordinates they are inserted to, the coordinates defining the center point of the note.
+\\When creating a note, a text entry field opens to enter the note text. When the [Enter] key is pressed, the
+note will be created at the current mouse cursor position.
+\\The notes can be deleted one by one or all of them at the same time. When deleting one by one, the notes
+are boxed to display their click areas. Clicking on one will delete the note. Pressing the [Esc] key or selecting
+the “Delete...” menu item again will abort the operation.
+
+\subsection*{Text notes submenu}
+\begin{tabular}{p{5cm}p{10cm}}
+\\- Create…     & Creates a new text note
+\\- Delete…     & Deletes a single text note
+\\- Delete all  & Deletes all text notes
+\end{tabular}\\
+
+\subsection{[x]}
+Shows the number of high priority messages in the personal message queue. These are critical failures in
+the plugin code. Open the Personal Queue Window to view the messages. The number is limited to 99, and
+is shown on “Global Menu Highlight” background when the window is not open.
+
+\subsection{[x]}
+Shows the number of low priority messages in the personal message queue. These are warnings about
+invalid data in the plugin data files. Open the Personal Queue Window to view the messages or see the
+Plugin Status submenu for more detailed information on the problem(s). The number is limited to 99, and is
+shown on “Global Menu Highlight” background when the window is not open.
+
+\subsection{STS menu}
+\begin{tabular}{p{5cm}p{10cm}}
+- Plugin Status >                & Opens the Plugin Status submenu
+\\- Safety Nets Status…            & Opens the \textit{\titleref{win:sn}}
+\\- Divergence Detection Status…   & Opens the \textit{\titleref{win:dds}}
+\\- MTCD Status…                   & Opens the \textit{\titleref{win:mtcds}}
+\\- CPDLC Default Status [ON/OFF]  & Toggles the CPDLC Default Status On/Off
+\\- Runway In Use                  & Opens the \textit{\titleref{menu:ad}}
+\\- Supervisory >                  & Opens the Supervisory submenu
+\\- RWY line display…              & Opens the \textit{\titleref{menu:ad}}
+\end{tabular}\\
+
+\subsection*{Plugin Status submenu}
+Shows the version of the plugin as well as some information on the loaded data files. Each data file reports
+its state with one of the following indicators:\\
+\begin{tabular}{p{5cm}p{10cm}}
+- OK        & File contains usable information and no faults
+\\- NO DATA   & File not found or contains no usable information
+\\- BAD DATA  & File contains invalid data (in “Warning” color)
+\end{tabular}\\
+Depending on the file, there are one to three of the following buttons available:\\
+\begin{tabular}{p{5cm}p{10cm}}
+- Reload                    & Reloads the data file
+\\- View                    & Displays the data in the file on the radar display
+\\- Save (Areas)            & Saves a snapshot of the current area activation data
+\\- Save set (Maps \& MapsL) & Saves a list of currently active radar screen specific maps
+\\- Load set (Maps \& MapsL) & Loads a saved list of active screen specific maps
+\end{tabular}\\ 
+
+Left-clicking the Save button will save the currently set manual activation periods as well as the
+information if an area with automatic schedules is set to manual mode. The information is saved to the
+“TopSkyAreasManualAct.txt” file in the same folder as the plugin dll. If the file already exists, the plugin will
+ask for confirmation as the save operation will overwrite any existing data.\\
+Depending on the maps data file setup, the display state of some or all of the maps may be specific to each
+radar screen. The Save set and Load set functions can be used to transfer the display state of these maps
+from one radar screen to another.\\
+Right-clicking the Reload button for Settings \& SettingsL has a special purpose. It opens a text entry box to
+type in a callsign whose settings should be loaded instead of the real login callsign. When entered, the
+callsign will be displayed next to the “Reload” button, and whenever a VATSIM callsign change is detected,
+an information popup is displayed to remind that the plugin settings are still forced to the manually
+entered callsign. This feature can be used for example to use settings for different positions on different
+EuroScope instances when providing top-down services, or to use settings for a specific position when
+logged in with an observer/staff/supervisor callsign. Clearing the entered callsign reverts to using the
+settings based on the actual login callsign.\\
+
+\subsection*{Supervisory submenu}
+\begin{tabular}{p{5cm}p{10cm}}
+- Operations Rate...     & Opens the \textit{\titleref{win:or}}
+\\- Predicted Traffic... & Opens the \textit{\titleref{win:pt}}
+\end{tabular}\\ 
+
+\subsection{RRxxx/Off}
+Opens the \textit{\titleref{menu:rr}}. If the rings are selected on,
+“xxx” displays the distance between consecutive rings, otherwise “Off”.
+
+\subsection{Mxxx-yyy}
+Displays the status of the filters. If any filter is enabled and Quick Look is not toggled on, the color of the
+text is “Global Menu Highlight”.\\
+Only the altitude filter status is shown. “xxx” displays the Lower filter value and “yyy” the Upper filter
+value, in hundreds of feet.\\
+
+\subsection{S000-999}
+Not implemented (shows static values).\\
+
 \section{Track Presentation}
 
 \section{Track Label Menus}
@@ -387,6 +520,7 @@ Preactive and active areas are displayed on the radar screen. The area border is
 \section{Lists}
 
 \subsection{NOTAM List}
+\label{list:notam}
 \includegraphics{img/notamlist.png}\\
 The NOTAM List is automatically displayed at startup in order to fetch the current FUA. It may be closed after loading.\\
 
