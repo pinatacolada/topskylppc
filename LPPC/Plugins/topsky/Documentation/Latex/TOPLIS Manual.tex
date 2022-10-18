@@ -460,6 +460,39 @@ value, in hundreds of feet.\\
 Not implemented (shows static values).\\
 
 \section{Track Presentation}
+The presentation of tracks consists of the following elements:
+\begin{itemize}
+\item{Aircraft position symbol}
+\item{History dots}
+\item{Prediction line}
+\item{Track label, joined to the position symbol with a leader line}
+\end{itemize}
+
+\subsection{Colors}
+Most of the track presentation coloring depends on the flight sector state.
+\\For controlled flights (any IFR flight or a VFR flight in ASSUMED state), the colors are as follows:\\
+\begin{tabular}{p{5cm}p{5cm}p{5cm}}
+\textbf{State}          & \textbf{Color}    & \textbf{Condition}
+\\Unconcerned           & “Unconcerned”     & Track will not enter the active sector
+\\Notified              & “Concerned”       & Track will enter the active sector (> 15 min)
+\\Coordinated           & “Coordination”    & Track will enter the active sector (< 15 min)
+\\Assumed               & “Assumed”         & Track is assumed
+\\Transfer Initiated    & “Assumed”         & Track is being transferred to the next controller
+\\Redundant             & “Redundant”       & Track has been transferred to the next controller but is still inside the active sector
+\end{tabular}\\
+
+An unconcerned track can be highlighted based on rules (a combination of departure airport, route and
+arrival airport) defined in plugin data files. In this case it is drawn with one of the three “Informed” colors.\\
+
+Coordinated tracks that have not departed yet will be shown as notified instead.\\
+
+For uncontrolled flights (VFR flights not in ASSUMED state), the colors are as follows:\\
+\begin{tabular}{p{5cm}p{5cm}p{5cm}}
+\textbf{State}  & \textbf{Color}    & \textbf{Condition}
+\\On Contact    & “Assumed”         & Track is on-contact (a plugin custom state) with you
+\\Free          & “VFR”             & Track is not assumed or on-contact with anyone
+\\Otherwise     & “Unconcerned”     &
+\end{tabular}\\
 
 \section{Track Label Menus}
 
