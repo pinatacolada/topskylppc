@@ -22,7 +22,6 @@ Setup_LoadMap=APPLIS\arc50
 Setup_LoadMap=TWRCAS\pcas
 Setup_LoadMap=TWRCAS\pcas_gnss
 
-
 Airspace_833_Min=0
 Airspace_ASSR_Type=2
 Airspace_ASSR_OAT_Remarks=RMK/OAT
