@@ -8,6 +8,7 @@
 \usepackage{graphicx,xcolor}
 \usepackage[usestackEOL]{stackengine}
 \usepackage[percent]{overpic}
+\usepackage{amssymb}
 
 
 \usepackage[
@@ -112,18 +113,18 @@ October 2022
 \chapter{Introduction}
 
 \section{Disclaimer}
-Although - as its name suggests - the plugin is based on TOPLIS and the TopSky ATM system, it is in no way affiliated with or endorsed by Thales Group or NAV Portugal. Similarities between plugin features and the real system are not entirely coincidental, but the plugin can not be used as a real world training aid. ~\cite{git}\\
+Although - as its name suggests - the plugin is based on TOPLIS and the TopSky ATM system, it is in no way affiliated with or endorsed by Thales Group or NAV Portugal. Similarities between plugin features and the real system are not entirely coincidental, but the plugin can not be used as a real world training aid. ~\cite{git}\\\\
 
 \section{Foreword}
 EuroScope, a controller client developed by Gergely Csernák for the VATSIM network, was first released for public use in September 2007. One of the biggest changes in version 3.1 was the possibility for the user community to customize the program to an even higher degree than was possible before by writing their own plugins that can be used to alter the way information is presented and even create completely new functionality into the program. This allowed creating very detailed simulations of all kinds of ATC systems without making the main program overly complex. Version 3.2 expands on these possibilities, making it possible to create even better plugins.
-The TopSky plugin (a.k.a. The Plugin Formerly Known As “EUROCAT 2000 E”) started out as a very small project to create a couple of customized aircraft tag items, but as more information about the real system and the possibilities with the plugin development became available, it slowly grew to include an almost complete set of tag items, tag menus, graphical elements on the radar display and some additional functionality.
+The TopSky plugin (a.k.a. The Plugin Formerly Known As “EUROCAT 2000 E”) started out as a very small project to create a couple of customized aircraft tag items, but as more information about the real system and the possibilities with the plugin development became available, it slowly grew to include an almost complete set of tag items, tag menus, graphical elements on the radar display and some additional functionality.\\\\
 
 \chapter{System Description}
 \section{Main Window}
-\includegraphics[width=15cm, keepaspectratio]{img/mainwindow.png}\\
-Euroscope should load with some preplaced windows similar to the above configuration\\
+\includegraphics[width=15cm, keepaspectratio]{img/mainwindow.png}\\\\
+Euroscope should load with some preplaced windows similar to the above configuration\\\\
 
-Screen resolutions other than 1920x1080 will yield different results. Larger resolutions will bring preplaced windows towards the left and middle, while smaller resolutions may potentially place windows outside the screen. It is recommended for users experiencing difficulties related to their screen size to experiment and create custom settings in the TopSkySettingsLocal file containing revised window placements adjusted for their own screen. Refer to \texttt{\detokenize{TopSky_Developer_Guide_Settings.xlsx}} for available settings.\\
+Screen resolutions other than 1920x1080 will yield different results. Larger resolutions will bring preplaced windows towards the left and middle, while smaller resolutions may potentially place windows outside the screen. It is recommended for users experiencing difficulties related to their screen size to experiment and create custom settings in the TopSkySettingsLocal file containing revised window placements adjusted for their own screen. Refer to \texttt{\detokenize{TopSky_Developer_Guide_Settings.xlsx}} for available settings.\\\\
 
 \section{Global Menu}
 \includegraphics{img/globalmenu.png}\\
@@ -236,7 +237,7 @@ display METAR data
 • Conc Display tracks at least in the concerned state
 • None Display all tracks
 
-\end{tabular}
+\end{tabular}\\\\
 
 \subsection*{RR Main submenu}
 \begin{tabular}{p{5cm}p{10cm}}
@@ -252,7 +253,7 @@ display METAR data
     \\- Number & Sets the number of rings drawn
     \\- [] Highlight & Toggles highlight (drawn with solid line) of specified rings
     \\- Step & Sets interval of highlighted rings
-\end{tabular}
+\end{tabular}\\\\
 
 \subsection*{Direction Finder submenu}
 Not operational.
@@ -278,7 +279,7 @@ Opens the \textit{\titleref{menu:fpsel}} and \textit{\titleref{menu:fpwin}}.
 \\- Message Out… & Opens the \textit{\titleref{win:mo}}
 \\- CPDLC > & Opens the CPDLC submenu
 \\- LAT/LONG… & Opens the \textit{\titleref{win:cur}}
-\end{tabular}
+\end{tabular}\\\\
 
 \subsection*{Flight Plan Lists submenu}
 \begin{tabular}{p{5cm}p{10cm}}
@@ -307,24 +308,24 @@ Opens the \textit{\titleref{menu:fpsel}} and \textit{\titleref{menu:fpwin}}.
     \\- <state>                     & Traffic Management List 2 flight plan state filter
     \\- <ades>                      & Traffic Management List 2 destination airports filter
     \\- <via>                       & Traffic Management List 2 route points filter
-\end{tabular}\\
+\end{tabular}\\\\
 
 When enabled, the list options bar displays “Info Conc Redu Filter Filter” on the right edge of the Global
 Menu. The first three toggle the respective settings for the Sector List and are colored with the appropriate
 color when enabled, and the last two are displayed in “VFR” color when the corresponding
 Uncontrolled list is somehow filtered. Clicking on them opens the Flight Plan Lists submenu to change
-the filtering options.\\
+the filtering options.\\\\
 Left-clicking <filter> cycles through “ALL” (no filtering), “ON-CONTACT” (only tracks on-contact with
-anyone), “ON-CONTACT-PPOS” (only tracks on-contact with you) and “FREE” (only tracks in the free state).\\
+anyone), “ON-CONTACT-PPOS” (only tracks on-contact with you) and “FREE” (only tracks in the free state).\\\\
 Left-clicking <units> opens a text entry box to enter a comma-separated list of aerodrome ICAO codes to
 filter the list. When entered, the list will display a flight only if one of the entered codes is its departure or
-destination, or the code is found in its scratchpad (OP-TEXT2).\\
+destination, or the code is found in its scratchpad (OP-TEXT2).\\\\
 
 Left-clicking <lfunc>, <adep>, <ades> and <via> open text entry boxes to enter comma-separated lists for
-controlled ID’s, ICAO codes and point names respectively to filter the affected lists.\\
+controlled ID’s, ICAO codes and point names respectively to filter the affected lists.\\\\
 Left-clicking <state> toggles between “ALL” (no filtering), “SIMUL+TERM” (not started flight plans filtered),
 “NOTST+SIMUL” (terminated flight plans filtered) and “SIMUL” (not started and terminated flight plans
-filtered).\\
+filtered).\\\\
 
 \subsection*{CPDLC submenu}
 \begin{tabular}{p{5cm}p{10cm}}
@@ -337,7 +338,7 @@ filtered).\\
 \begin{tabular}{p{5cm}p{10cm}}
 - Messages… & Opens the \textit{\titleref{win:wxcmw}}
 \\- QNH/TL    & Opens the \textit{\titleref{win:wxqnh}}
-\end{tabular}\\
+\end{tabular}\\\\
 
 \subsection{[0]}
 Not implemented (always shows a zero value).
@@ -353,7 +354,7 @@ Not implemented (always shows a zero value).
 \\- [] Fix labels             & Toggles fix labels selection
 \\- [] NDB labels             & Toggles NDB labels selection
 \\- [] VOR labels             & Toggles VOR labels selection
-\end{tabular}\\
+\end{tabular}\\\\
 When holding <ALT>, text labels will be displayed for airports, fixes, NDBs
 and VORs when the mouse cursor is placed over them. When one or more of the categories in the Info
 menu is selected, only those categories will display the labels. The “Label” buttons open submenus to select
@@ -405,7 +406,7 @@ shown on “Global Menu Highlight” background when the window is not open.
 \\- Runway In Use                  & Opens the \textit{\titleref{menu:ad}}
 \\- Supervisory >                  & Opens the Supervisory submenu
 \\- RWY line display…              & Opens the \textit{\titleref{menu:ad}}
-\end{tabular}\\
+\end{tabular}\\\\
 
 \subsection*{Plugin Status submenu}
 Shows the version of the plugin as well as some information on the loaded data files. Each data file reports
@@ -427,10 +428,10 @@ Depending on the file, there are one to three of the following buttons available
 Left-clicking the Save button will save the currently set manual activation periods as well as the
 information if an area with automatic schedules is set to manual mode. The information is saved to the
 “TopSkyAreasManualAct.txt” file in the same folder as the plugin dll. If the file already exists, the plugin will
-ask for confirmation as the save operation will overwrite any existing data.\\
+ask for confirmation as the save operation will overwrite any existing data.\\\\
 Depending on the maps data file setup, the display state of some or all of the maps may be specific to each
 radar screen. The Save set and Load set functions can be used to transfer the display state of these maps
-from one radar screen to another.\\
+from one radar screen to another.\\\\
 Right-clicking the Reload button for Settings \& SettingsL has a special purpose. It opens a text entry box to
 type in a callsign whose settings should be loaded instead of the real login callsign. When entered, the
 callsign will be displayed next to the “Reload” button, and whenever a VATSIM callsign change is detected,
@@ -438,13 +439,13 @@ an information popup is displayed to remind that the plugin settings are still f
 entered callsign. This feature can be used for example to use settings for different positions on different
 EuroScope instances when providing top-down services, or to use settings for a specific position when
 logged in with an observer/staff/supervisor callsign. Clearing the entered callsign reverts to using the
-settings based on the actual login callsign.\\
+settings based on the actual login callsign.\\\\
 
 \subsection*{Supervisory submenu}
 \begin{tabular}{p{5cm}p{10cm}}
 - Operations Rate...     & Opens the \textit{\titleref{win:or}}
 \\- Predicted Traffic... & Opens the \textit{\titleref{win:pt}}
-\end{tabular}\\ 
+\end{tabular}\\\\ 
 
 \subsection{RRxxx/Off}
 Opens the \textit{\titleref{menu:rr}}. If the rings are selected on,
@@ -452,9 +453,9 @@ Opens the \textit{\titleref{menu:rr}}. If the rings are selected on,
 
 \subsection{Mxxx-yyy}
 Displays the status of the filters. If any filter is enabled and Quick Look is not toggled on, the color of the
-text is “Global Menu Highlight”.\\
+text is “Global Menu Highlight”.\\\\
 Only the altitude filter status is shown. “xxx” displays the Lower filter value and “yyy” the Upper filter
-value, in hundreds of feet.\\
+value, in hundreds of feet.\\\\
 
 \subsection{S000-999}
 Not implemented (shows static values).\\
@@ -517,7 +518,7 @@ For other than the flight plan and coasted track symbols, a divergence alert wil
 or CLAM alert. This is a circle drawn around the symbol (will not be drawn if SPI is active):\\
 \begin{tabular}{p{5cm}p{5cm}}
 \includegraphics{img/rps_divalert.png}& Secondary radar track without DAPs with divergence alert
-\end{tabular}\\
+\end{tabular}\\\\
 
 \subsection{History dots}
 The history dots show the previous positions of the track. The number of displayed dots can be changed via
@@ -535,16 +536,118 @@ are not displayed for flight plan tracks.\\
 \subsection{Track label}
 There are four types of track labels that can be displayed: Standard, Reduced, Extended and Uncorrelated.
 In addition, each label except the extended one has an unselected and a selected state, the selected state
-being shown when the mouse cursor is over the label.\\
+being shown when the mouse cursor is over the label.\\\\
 Basically, the Standard label is shown for aircraft that are in or will enter the active sector and the Reduced
 label for aircraft that will not enter the active sector. The Extended label can be opened from the Standard
 or Reduced label and stays open as long as the cursor is within the label area. The Uncorrelated label is
-shown for radar tracks that aren’t correlated with a flight plan.\\
+shown for radar tracks that aren’t correlated with a flight plan.\\\\
 Refer to your setup specific documentation for detailed descriptions of the track labels.\\
 
 \section{Flight Leg}
-
+The Flight Leg displays the aircraft’s planned track in one-minute steps. Each one-minute-long part of the
+path is colored according to the results of the MTCD and SAP processing. The following colors are possible:\\\\
+\begin{tabular}{p{5cm}p{5cm}}
+“Urgency FL”        & MTCD and/or SAP conflic
+\\“Warning FL”      & MTCD and/or SAP risk
+\\“Potential FL”    & MTCD potential conflict
+\\“Information FL”  & MTCD and/or SAP processing available, no conflicts or risks detected
+\\“Flight Leg”      & No MTCD or SAP processing available for this part of the Flight Leg
+\end{tabular}\\\\
+If the aircraft has an assigned heading or is not following its route, the predictions only go up to 10 minutes
+and assume the aircraft continues on its present ground track. In this case the predicted track is shown as a
+dashed line when the flight leg is displayed.\\\\
+The Flight Leg is displayed by clicking on various track label and list items depending on the setup and is
+either automatically removed from display when the mouse cursor leaves the label area or must be
+manually toggled off, depending on the function that was used to display it.\\\\
+The label that’s shown on each route point includes the following predefined fields
+\begin{tabular}{p{5cm}p{5cm}}
+\includegraphics{img/fleto.png}     & Estimated Time Over the point
+\\\includegraphics{img/fltoc.png}   & Top of Climb
+\\\includegraphics{img/fltod.png}   & Top of Descent
+\end{tabular}\\   
 \section{Track Label Menus}
+These menus are opened from track label fields or flight lists. Except for the confirmation windows, they
+are closed automatically when a menu option is chosen or the mouse cursor leaves the menu area. Menu
+items shown with (X) represent an item that has an activated and a deactivated state. With the item
+activated, the item name is shown prefixed with the letter “X”. The mouse wheel can be used to scroll the
+selection lists in the menus.\\
+
+Many of the menus have a default item or value, displayed with inverse video. The menu usually opens so
+that the default value is located under the mouse cursor for easy selection. Some menus contain items that
+open folders within the menu. They show a filled triangle before the item name (upright if the folder is
+closed, inverted if the folder is open). The “More” folder is opened automatically when the mouse cursor is
+placed over it or if the default item is in the “More” folder, other folders must be left-clicked to open.\\
+
+\subsection{Callsign menu}
+\label{menu:cs}
+\subsection{Controlled Track}
+\includegraphics{img/cm.png}
+\begin{tabular}{p{5cm}p{5cm}p{5cm}}
+Assume                      & Assumes track
+\\Refuse                    & Refuses the incoming transfer
+\\Transfer                  & Initiates a transfer to the next sector
+\\Trf \& Release             & Opens the \textit{\titleref{menu:trm}}
+\\ROF                       & Sends a \textit{\titleref{dl:rof}}
+\\(X)Freq                   & Toggles the Freq indicator
+\\(X)Highlight              & Toggles the Callsign highlight
+\\(X)S-Highlight            & Toggles the Callsign+AFL fields highlight
+\\PRL                       & Opens the \textit{\titleref{menu:plm}}
+\\(X)Hold                   & “Hold” opens the \textit{\titleref{menu:hold}}, “XHold” cancels a given holding clearance
+\\$\blacktriangledown$ More & Shows additional less frequently used options
+\\Manual Transfer           & Opens the \textit{\titleref{menu:mtm}}
+\\(X)Inbound Est            & Toggles the “Inbound Est” manual alert
+\\HOP                       & Initiates a \textit{\titleref{menu:hop}}
+\\(X)Mark                   & Toggles the Mark indicator
+\\(X)Couple                 & Uncorrelates/correlates the flight plan
+\\FPL…                      & Opens the \textit{\titleref{menu:fpl}}
+\\(X)Irregular              & Toggles the “Irregular” manual alert
+\\Start/End CPDLC           & Starts/Ends CPDLC connection with the aircraft
+\\VCI                       & Opens the \textit{\titleref{menu:vci}}
+\\Squawk Ident              & Sends a “SQUAWK IDENT” CPDLC message to the aircraft
+\\CPDLC Free Text           & Opens the \textit{\titleref{menu:dlftm}}
+\\Free                      & Releases track
+\\On Contact                & Sets track in On-Contact state*
+\\(X)Missed App             & Toggles the “Missed App” manual alert
+\end{tabular}\\\\
+
+Besides the manual alerts, none of the selectable toggle options in this menu will be transmitted to other
+controllers, but the “Mark”, “Freq” and highlight selections will be seen in your other EuroScope instances.
+A holding clearance is transmitted to the next controller when transferring the track. To correlate a flight
+plan, first click on the “Correlate” item, and then click on the radar position symbol of the desired radar
+track.\\\\
+
+*Clicking “On Contact” for a track with “Y” or “Z” flight rules will also automatically change the flight rules
+in the VATSIM flight plan to VFR in order to make it uncontrolled. The displayed flight rules are not affected\\\\
+
+\subsection{Uncontrolled Track}
+\includegraphics{img/cmuncon.png}
+\begin{tabular}{p{5cm}p{5cm}p{5cm}}
+On Contact          & Sets track in On-Contact state (“Assumed” color, can’t be filtered, but still uncontrolled)
+\\Free              & Releases track
+\\Assume            & Assumes track*
+\\(X)Highlight      & Toggles the Callsign highlight
+\\(X)S-Highlight    & Toggles the Callsign+AFL fields highlight
+\\(X)Couple         & Uncorrelates/correlates the flight plan
+\\(X)Hold           & “Hold” opens the \textit{\titleref{menu:hold}}, “XHold” cancels a given holding clearance
+\\FPL...            & Opens the \textit{\titleref{menu:fpl}}
+\\PRL               & Opens the \textit{\titleref{menu:plm}}
+\end{tabular}\\\\
+
+*Clicking “Assume” for a track with “Y” or “Z” flight rules will also automatically change the flight rules in
+the VATSIM flight plan to IFR in order to make it controlled. The displayed flight rules are not affected.\\\\
+
+
+\subsection{Uncorrelated Track}
+\includegraphics{img/cmuncor.png}
+\begin{tabular}{p{5cm}p{5cm}p{5cm}}
+Correlate       & Correlates the radar track with the next clicked “Callsign” field
+\\Create APL    & Opens the \textit{\titleref{win:apl}}
+\\PRL           & Opens the \textit{\titleref{menu:plm}}
+\end{tabular}\\\\
+
+\subsection{Transfer menu}
+\label{menu:xfr}
+\includegraphics{img/xfr.png}
 
 \section{Windows}
 
