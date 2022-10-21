@@ -1,4 +1,8 @@
-# TopSky plugin for Portugal vACC
+# TopSky plugin for Portugal vACC 
+[![latest-version](https://img.shields.io/badge/version-2.0.0.beta2-green.svg)](https://github.com/pinatacolada/topskylppc/releases)  [![topsky-version](https://img.shields.io/badge/TopSky-2.4.1-blue.svg)](https://vats.im/TopSkyPlugin)
+[![gr-version](https://img.shields.io/badge/Ground%20Radar-1.5-blue.svg)](https://vats.im/GRplugin)
+[![cdm-version](https://img.shields.io/badge/CDM-2.0.12-blue.svg)](https://github.com/rpuig2001/CDM)
+[![afv-version](https://img.shields.io/badge/AFV-1.2.1-blue.svg)](https://audio.vatsim.net/docs/2.0/atc/euroscope)
 
 The TopSky plugin is developed and maintained by Juha Holopainen from VATSIM Scandinavia. It is an almost complete set of tag items, tag menus, graphical elements on the radar display and some additional functionality based around the real world TopSky ATM system. 
 
