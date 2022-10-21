@@ -494,9 +494,57 @@ For uncontrolled flights (VFR flights not in ASSUMED state), the colors are as f
 \\Otherwise     & “Unconcerned”     &
 \end{tabular}\\
 
-\section{Track Label Menus}
+\subsection{Aircraft position symbol}
+The position symbol is drawn at the latest known position of the aircraft. The color of the symbol is the
+flight sector color for an unselected track and “Track Highlight” for a selected one. A number of different
+symbols are available. To begin with, there are basic shapes that tell what kind of track is in question:\\
+
+\begin{tabular}{p{5cm}p{5cm}}
+\includegraphics{img/rps_fpasd.png} & Flight plan track (position is not based on surveillance data but calculated by EuroScope)
+\\\includegraphics{img/rps_coast.png} & Coasted track (no position updates in over 30 seconds, position no longer reliable)
+\\\includegraphics{img/rps_psr.png} & Primary radar track
+\\\includegraphics{img/rps_sec.png} & Secondary or combined radar track (uncontrolled)
+\\\includegraphics{img/rps_psr+ssr.png} & Secondary or combined radar track (controlled)
+\\ & ADS-B only track
+\end{tabular}\\
+
+An indication of an SPI (transponder ident) can be added to the secondary radar and ADS-B symbols. It
+draws a cross over the symbol and prints the text “SPI” above and to the right of the symbol:\\
+\begin{tabular}{p{5cm}p{5cm}}
+\includegraphics{img/rps_spi.png} & Secondary radar track without DAPs with Special Position Indication
+\end{tabular}\\
+For other than the flight plan and coasted track symbols, a divergence alert will be drawn in case of a RAM
+or CLAM alert. This is a circle drawn around the symbol (will not be drawn if SPI is active):\\
+\begin{tabular}{p{5cm}p{5cm}}
+\includegraphics{img/rps_divalert.png}& Secondary radar track without DAPs with divergence alert
+\end{tabular}\\
+
+\subsection{History dots}
+The history dots show the previous positions of the track. The number of displayed dots can be changed via
+the \textit{\titleref{win:tcw}}. The color of the dots is the flight sector color for an unselected track and “Track
+Highlight” for a selected one. History dots are not displayed for flight plan tracks.\\
+
+\subsection{Prediction Line}
+The prediction line draws the predicted ground track of the aircraft, based on its current track and ground
+speed. It is a two-color line, starting with “Track Default” at the position symbol and then alternating with “Track Highlight” with every segment representing one minute of flying time. The length of the prediction line can be
+changed for all tracks via the Track Control Window, or for a single track via the Prediction Line menu. The
+example below shows a selected track with 5 history dots and a 3-minute prediction line. Prediction lines
+are not displayed for flight plan tracks.\\
+\includegraphics{img/rps_predline+history_selected.png}\\
+
+\subsection{Track label}
+There are four types of track labels that can be displayed: Standard, Reduced, Extended and Uncorrelated.
+In addition, each label except the extended one has an unselected and a selected state, the selected state
+being shown when the mouse cursor is over the label.\\
+Basically, the Standard label is shown for aircraft that are in or will enter the active sector and the Reduced
+label for aircraft that will not enter the active sector. The Extended label can be opened from the Standard
+or Reduced label and stays open as long as the cursor is within the label area. The Uncorrelated label is
+shown for radar tracks that aren’t correlated with a flight plan.\\
+Refer to your setup specific documentation for detailed descriptions of the track labels.\\
 
 \section{Flight Leg}
+
+\section{Track Label Menus}
 
 \section{Windows}
 
