@@ -638,7 +638,7 @@ placed over it or if the default item is in the “More” folder, other folders
 
 \subsection{Callsign menu}
 \label{menu:cs}
-\subsection{Controlled Track}
+\subsection*{Controlled Track}
 \includegraphics{img/cm.png}
 \begin{tabular}{p{5cm}p{5cm}p{5cm}}
 Assume                      & Assumes track
@@ -680,7 +680,7 @@ track.
 in the VATSIM flight plan to VFR in order to make it uncontrolled. The displayed flight rules are not affected
 \medskip
 
-\subsection{Uncontrolled Track}
+\subsection*{Uncontrolled Track}
 \includegraphics{img/cmuncon.png}
 \begin{tabular}{p{5cm}p{5cm}p{5cm}}
 On Contact          & Sets track in On-Contact state (“Assumed” color, can’t be filtered, but still uncontrolled)
@@ -700,7 +700,7 @@ the VATSIM flight plan to IFR in order to make it controlled. The displayed flig
 \medskip
 
 
-\subsection{Uncorrelated Track}
+\subsection*{Uncorrelated Track}
 \includegraphics{img/cmuncor.png}
 \begin{tabular}{p{5cm}p{5cm}p{5cm}}
 Correlate       & Correlates the radar track with the next clicked “Callsign” field
@@ -751,14 +751,86 @@ The “Trf \& Release” option will show the release condition on the downstrea
 next controller is using this plugin, in other cases the transfer will be shown as a normal transfer.
 \end{Warn}
 
+\subsection{Request On Frequency message}
+\label{menu:rof}
 
+The ROF message can be used to send a request to the controller currently tracking an aircraft to transfer it
+to your frequency. For the message to succeed, you must be seen as the next controller for the tracking
+controller. When sent, the text “ROF” is displayed in the track label on the tracking controller’s screen.
 
+\begin{Warn}
+The “ROF” message is a feature specific to this plugin. It is an experimental feature and is not guaranteed to work all the time. When you send the message, check that it’s sent properly.
+\begin{enumerate}
+    \item A successfully sent message will be displayed in the \textit{\titleref{win:mow}}
+    \item If there is an error or the message fails to go through, a message will be put into the \textit{\titleref{win:pq}}
+\end{enumerate}
+\end{Warn}
 
+\subsection{Hold Menu}
+\label{menu:hold}
+\includegraphics{img/hold.png}
 
+The Hold menu allows you to enter a holding clearance (add the aircraft to the holding
+list). It displays for selection the points in the aircraft’s route that are ahead of its
+current position.
 
+Left-clicking the empty box below the waypoint list opens a text entry box to enter any
+holding point name.
 
+Left-clicking “Here” enters the present position coordinates as the holding point.
 
+The holding point is automatically sent to your other EuroScope instances with a small
+delay and can be sent to other controllers by pushing the flight strip as the information
+is stored there.
 
+\subsection{Manual Transfer Menu}
+\label{menu:mxfr}
+\includegraphics{img/mxfr.png}
+
+The Manual Transfer menu allows transferring the aircraft to any controller. In the
+SCHEDULED list are the controllers that are in the current sector sequence sorted in the
+order the aircraft is planned to enter the controllers’ sectors, with the next controller
+being the default item.
+
+When opened, the “More” list displays all the other controllers for selection. Click on a
+controller ID to start the transfer. For CPDLC connected aircraft, clicking on a controller
+ID opens the \textit{\titleref{menu:xfr}}
+
+\subsection{VCI Menu}
+\label{menu:vci}
+\includegraphics{img/vci.png}
+
+Available only for CPDLC-connected aircraft and when more than one frequency has
+been set up by the controller, the VCI menu allows sending a CPDLC “contact” or
+“monitor” message without initiating a transfer.
+
+The first button displays the primary frequency, left-clicking it will send the message
+with that frequency.
+
+Left-clicking the “Select Freq” button will open a text entry box to enter any other
+frequency. If a valid frequency (set up as XMT TXT in EuroScope’s Voice communication
+setup dialog) is entered, the message will be sent with that frequency.
+
+“Monitor” and “Contact” are used to select the type of message to be sent.
+
+\subsection{CPDLC Free Text Menu}
+\label{menu:dlftm}
+
+The CPDLC Free Text menu is used to send a free text CPDLC message to the aircraft. The menu contains
+pre-defined messages from a data file. Left-clicking on a message sends it.
+
+The menu closes when a message is sent or the cursor leaves the menu area.
+
+\subsection{Prediction Line Menu}
+\label{menu:prl}
+\includegraphics{img/prl.png}
+
+The Prediction Line menu allows displaying a PRL with a specific length for each aircraft
+even if the PRL selection is off in the Radar Menu.
+
+The default value is the set PRL value if available, otherwise the PRL length value from
+the Track Control Window. Changing the PRL length value in the \textit{\titleref{win:trackctl}}
+or changing the PRL setting in the \textit{\titleref{menu:radarmenu}} will delete all manually set PRL lengths.
 
 
 
