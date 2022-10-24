@@ -513,10 +513,10 @@ Not implemented (shows static values).
 \section{Track Presentation}
 The presentation of tracks consists of the following elements:
 \begin{itemize}
-\item{Aircraft position symbol}
-\item{History dots}
-\item{Prediction line}
-\item{Track label, joined to the position symbol with a leader line}
+    \item{Aircraft position symbol}
+    \item{History dots}
+    \item{Prediction line}
+    \item{Track label, joined to the position symbol with a leader line}
 \end{itemize}
 
 \subsection{Colors}
@@ -765,8 +765,8 @@ controller. When sent, the text “ROF” is displayed in the track label on the
 \begin{Warn}
 The “ROF” message is a feature specific to this plugin. It is an experimental feature and is not guaranteed to work all the time. When you send the message, check that it’s sent properly.
 \begin{enumerate}
-    \item A successfully sent message will be displayed in the \textit{\titleref{win:mow}}
-    \item If there is an error or the message fails to go through, a message will be put into the \textit{\titleref{win:pq}}
+        \item A successfully sent message will be displayed in the \textit{\titleref{win:mow}}
+        \item If there is an error or the message fails to go through, a message will be put into the \textit{\titleref{win:pq}}
 \end{enumerate}
 \end{Warn}
 
@@ -834,7 +834,7 @@ even if the PRL selection is off in the Radar Menu.
 
 The default value is the set PRL value if available, otherwise the PRL length value from
 the Track Control Window. Changing the PRL length value in the \textit{\titleref{win:trackctl}}
-or changing the PRL setting in the \textit{\titleref{menu:radarmenu}} will delete all manually set PRL lengths.
+or changing the PRL setting in the \textit{\titleref{menu:radarm}} will delete all manually set PRL lengths.
 
 \subsection{Sequence Number Menu}
 \label{menu:seq}
@@ -934,9 +934,9 @@ system units or the selected units for the aircraft. If this behavior is selecte
 toggled with the “NAUTICAL” / “METRIC” item. There are three ways to set the AFL using this menu:
 
 \begin{itemize}
-    \item Clicking a level value in the list
-    \item Clicking the text entry box below the level list and entering the value there
-    \item Clicking the right-pointing triangle to open a keyboard that can be used to type in the value using the mouse. “C” clears the entry and “Ok” sets the value.
+        \item Clicking a level value in the list
+        \item Clicking the text entry box below the level list and entering the value there
+        \item Clicking the right-pointing triangle to open a keyboard that can be used to type in the value using the mouse. “C” clears the entry and “Ok” sets the value.
 \end{itemize}
 
 Entering a metric value will also set the aircraft’s units to metric; a nautical value will set nautical units.
@@ -973,9 +973,9 @@ The list units can be toggled with the “NAUTICAL” / “METRIC” item. There
 ways to set the CFL using this menu:
 
 \begin{itemize}
-    \item Clicking a level value in the list or one of the two approach clearance items
-    \item Clicking the text entry box between the level list and the approach clearance item and entering the value there
-    \item Clicking the right-pointing triangle to open a keyboard that can be used to type in the value using the mouse. “C” clears the entry and “Ok” sets the value.
+        \item Clicking a level value in the list or one of the two approach clearance items
+        \item Clicking the text entry box between the level list and the approach clearance item and entering the value there
+        \item Clicking the right-pointing triangle to open a keyboard that can be used to type in the value using the mouse. “C” clears the entry and “Ok” sets the value.
 \end{itemize}
 
 Entering a metric value will set the aircraft’s units to metric; a nautical value will set
@@ -1034,9 +1034,9 @@ For CPDLC connected aircraft, the menu contains additional buttons:
 “R/T” and “CPDLC” select whether a heading/direct-to clearance is to be sent via radio
 or as a CPDLC message.
 \begin{itemize}
-    \item When a heading request downlink has been received, the “R/T” option is deselected
+        \item When a heading request downlink has been received, the “R/T” option is deselected
     and cannot be selected. The request must be replied to using CPDLC.
-    \item When a heading/direct-to clearance uplink has been sent, the “CPDLC” option is
+        \item When a heading/direct-to clearance uplink has been sent, the “CPDLC” option is
 deselected and cannot be selected. If a new heading/direct-to clearance must be sent
 before there is an answer to the uplink, it must be given via radio (doing so also closes
 the open uplink message).
@@ -1091,8 +1091,8 @@ To answer the RTI/TIP, left-click on the requested parameter shown above the tra
 The “RTI” and “TIP” messages are features specific to this plugin. They are experimental features not guaranteed to work all the time. When you send these messages, check that they are sent properly.
 
 \begin{itemize}
-    \item A successfully sent message will be displayed in the \textit{\titleref{win:mow}} and the requested parameter being shown above the track label
-    \item If there is an error or the message fails to go through, a message will be put into the \textit{\titleref{win:pq}}.
+        \item A successfully sent message will be displayed in the \textit{\titleref{win:mow}} and the requested parameter being shown above the track label
+        \item If there is an error or the message fails to go through, a message will be put into the \textit{\titleref{win:pq}}.
 \end{itemize}
 \end{Warn}
 
@@ -1149,8 +1149,8 @@ R/T” and “CPDLC” select whether a speed clearance is to be sent via radio 
 CPDLC message.
 
 \begin{itemize}
-\item When a speed request downlink has been received, the “R/T” option is deselected and cannot be selected. The request must be replied to using CPDLC.
-\item When a speed clearance uplink has been sent, the “CPDLC” option is selected and cannot be deselected. If a new speed clearance must be sent before there is an answer to the uplink, it must be given via radio (doing so also closes the open uplink message).
+    \item When a speed request downlink has been received, the “R/T” option is deselected and cannot be selected. The request must be replied to using CPDLC.
+    \item When a speed clearance uplink has been sent, the “CPDLC” option is selected and cannot be deselected. If a new speed clearance must be sent before there is an answer to the uplink, it must be given via radio (doing so also closes the open uplink message).
 \end{itemize}
 
 SBY” and “UNABLE” send the corresponding answers to a downlink speed request.
@@ -1259,6 +1259,163 @@ The departure sequence number is only stored locally, it is not sent to other co
 \end{Note}
 
 \section{Windows}
+The plugin includes a number of windows that are discussed in this chapter. All windows have the following common features:
+
+\begin{itemize}
+    \item Dragging the title bar using the left mouse button will move the window
+    \item Dragging the box in the bottom right corner with the left mouse button will resize the window
+    \item Left-clicking the top right corner will close the window
+    \item Left-clicking the title bar will position the window on the top of other windows
+    \item Right-clicking the title bar will position the window below other windows
+\end{itemize}
+
+While resizing the windows always starts from the bottom right corner, it is also possible to resize the window to the direction of the top and/or left edges. To do this, continue dragging the bottom right corner until the cursor goes past the top or left edge. As all windows have a defined minimum size, nothing will seem to happen once you reach the minimum size until the cursor crosses the opposite edge, but then the resize operation will continue normally.
+
+Some windows contain scrollbars to select values or change the items that are displayed:
+
+\begin{itemize}
+    \item Dragging a scroll bar slider using the left mouse button will move the slider
+    \item Left-clicking on the scrollbar background area outside the slider will move the slider by a predefined amount (in list windows, the view will be scrolled by the number of visible items)
+    \item Right-clicking on the scrollbar background area outside the slider will position the slider to the clicked position
+    \item Left-clicking on the arrow at the end of the slider will scroll the list by one line
+    \item The mouse wheel can be used to scroll some scrollbars (most of the ones that have defined steps for scrolling, i.e. those with the arrows at the ends)
+\end{itemize}
+
+Other window-specific mouse function areas are explained below. All functions use the left mouse button unless otherwise specified. For each window, the way(s) to open it are listed below the chapter title.
+
+\subsection{Radar Menu}
+\label{menu:radarm}
+<ALT> + Right-click anywhere on the radar screen background
+
+\includegraphics{img/radarmenu.png}
+
+\begin{tabular}{c c}
+    Radar Menu          & Toggles keeping the menu permanently displayed\\
+    Vector On/Off       & Toggles all prediction lines on/off\\
+    QDM                 & Starts a new QDM vector\\
+    SEP                 & Starts a new Minimum separation tool\\
+    Quick Look          & Toggles function to bypass all filters and show all track labels\\
+    Maps…               & Opens the Maps Window\\
+    Track Control…      & Opens the Track Control Window\\
+    View…               & Opens the View Window\\
+    Range XXX           & Opens the Zoom Window (XXX = distance: center -> right edge)\\
+    Altitude Filter X…  & Opens the Altitude Filtering Window, displays the filter status\\
+    SSR Filter X…       & Opens the SSR Code Filtering Window, displays the filter status\\
+    CJI Filter X…       & Opens the CJI Filtering Window, displays the filter status\\
+    LAT/LONG…           & Opens the Cursor Lat/Long Window\\
+    Find Track          & Not implemented\\
+    Scale Marker        & Toggles the Scale Marker on/off\\
+    Direction Finder    & Toggles the Direction Finder position circles or lines on/off\\
+\end{tabular}
+
+The Radar Menu closes when a selection is made or the mouse cursor leaves the menu area (unless the “Radar Menu” option is selected on).
+
+For all the filters, it is only possible to filter out unconcerned tracks. Aircraft with transponder codes 7500, 7600 and 7700 and tracks with an active STCA, MSAW, APW or DUPE alert are also excluded from filtering. If a filter is active, the filter title in the Radar Menu will be shown in “Selected” color.
+
+\subsection{QDM Vector}
+\label{qdm}
+
+To draw a new QDM vector:
+\begin{itemize}
+    \item Left-click on the “QDM” menu item
+    \item Left-click on the desired start point (radar track or fixed position)
+    \item Left-click on the desired end point (radar track or fixed position)
+\end{itemize}
+
+The vector’s data label is located at the end of the line. The available click spots for a radar track are the radar track position symbol and all its label items that have a mouse function.
+The line end positions will attach to defined points more easily than for a random position (there is a small click area centered on the defined points). The defined points are the following, and are searched in this order:
+
+\begin{itemize}
+    \item Radar track position symbols
+    \item VORs in the active sector file
+    \item NDBs in the active sector file
+    \item Fixes in the active sector file
+    \item Airports in the active sector file
+\end{itemize}
+
+Right-clicking will abort drawing the vector.
+To remove a QDM vector:
+
+\begin{itemize}
+    \item Right-click on either end point of the line (midpoint of the line for lines between two radar tracks)
+\end{itemize}
+
+To adjust a QDM vector:
+
+\begin{itemize}
+    \item Left-click on either end point. The selected end of the line will then attach to the mouse cursor.
+    \item Left-click on the new desired end point (radar track or fixed position)
+\end{itemize}
+
+\subsection{Scale Marker}
+\label{scale}
+
+Radar Menu -> [] Scale Marker
+
+\includegraphics{img/scale.png}
+
+Displays a range scale in the bottom right corner of the radar screen.
+
+\subsection{Minimum Separation Tool}
+\label{mmtool}
+
+The minimum separation tool displays the predicted minimum lateral separation between two radar tracks within the next 30 minutes, assuming both of them maintain their present ground tracks and speeds. Lines are drawn from the tracks’ present positions to the positions where the tracks are predicted to be at the time of the minimum separation.
+
+To draw minimum separation lines between two radar tracks:
+\begin{itemize}
+    \item Left-click on the “SEP” menu item
+    \item Left-click on the first radar track
+    \item Left-click on the second radar track
+\end{itemize}
+
+Right-clicking will abort drawing the lines. The available click spots for a radar track are the radar track position symbol and all its label items that have a mouse function.
+
+The minimum separation distance is by default displayed near the end of one of those lines. If the tracks are not converging, the lines will be drawn with an offline-defined length, and the label will display “DIV”.
+
+7 sets of lines can be simultaneously drawn (plus one from the CARD). When at least one set is drawn, a SEP List Window is opened:
+
+\includegraphics{img/seplist.png}
+
+The window lists the tracks, the minimum predicted separation, the time to the minimum separation, the line color and a locked/unlocked indicator for each set of lines.
+To remove the minimum separation lines:
+
+\begin{itemize}
+    \item Left-click on the colored box for that set of lines in the SEP List Window
+    \item Right-click on a line’s end point
+    \item Close the SEP List Window (this removes all minimum separation lines)
+\end{itemize}
+
+The lines will be automatically removed if one of the tracks is no longer available, or for unlocked lines, if the tracks start to diverge. If the tracks are diverging at the time the lines are created, they will be automatically locked.
+
+To lock/unlock a set of lines:
+
+\begin{itemize}
+    \item Left-click on the box right of the color indicator for that set of lines to toggle the locked/unlocked status. For a locked set of lines, the box will be filled.
+\end{itemize}
+
+To display vertical separation information on the lines:
+
+\begin{itemize}
+    \item Right-click on the colored box for a set of lines to enable vertical separation display.
+    \item Right-click again to hide the vertical separation labels
+    \item Right-click once again to disable the vertical separation display
+\end{itemize}
+
+The letter “V” is shown inside the box when activated (“v” when labels have been hidden), and on both lines, two points are displayed, the first showing the point where the tracks’ vertical separation is calculated to become smaller than an offline-defined value, and the second the point after that where it is calculated to become greater. 
+
+The calculation is done using the tracks’ current vertical speeds.
+
+\begin{itemize}
+    \item The vertical separation labels, when displayed, are similar to the minimum separation label but prefixed with “V”.
+    \item If one or both points are beyond the minimum separation point, their calculation is extended forward up to an offline-defined time value.
+    \item If a point is already passed or beyond the maximum displayed time, it will not be drawn.
+    \item If the end point is beyond the maximum displayed time, a line will be drawn using “C_Sep_Vert” color from the CPA to the end point or the maximum displayed time whichever is earlier.
+    \item If the tracks are not predicted to be separated by less than the defined value within the prediction time, “V=” is displayed left of the minimum separation label.
+\end{itemize}
+
+
+
+
 
 \subsection{Airspace Management Window}
 \label{menu:tsa}
@@ -1274,30 +1431,30 @@ An area’s activation status can be inactive, pre-active or active. A pre-activ
 
 The mouse click areas of the Airspace Management Window:
 \begin{itemize}[\textbullet] 
-    \item Sorting option text (e.g. “Start date/time”) Opens a pop-up menu to select a sorting option for the list 
-    \item Right-click to open an area pop-up menu
-    \item Other fields Left-click to edit field (when edit function active)
-    \item “Ok” button Applies the changes, closes the window
-    \item “Apply” button Applies the changes
-    \item “Cancel” button Cancels the changes 
+        \item Sorting option text (e.g. “Start date/time”) Opens a pop-up menu to select a sorting option for the list 
+        \item Right-click to open an area pop-up menu
+        \item Other fields Left-click to edit field (when edit function active)
+        \item “Ok” button Applies the changes, closes the window
+        \item “Apply” button Applies the changes
+        \item “Cancel” button Cancels the changes 
 \end{itemize}
 
 The sorting pop-up menu contains the following items:
 \begin{itemize}[\textbullet] 
-    \item Start Date Sorts based on the Start Date/Time, earliest first
-    \item Name Sorts alphabetically based on the Name field
-    \item Map Text Sorts alphabetically based on the Map Text field 
+        \item Start Date Sorts based on the Start Date/Time, earliest first
+        \item Name Sorts alphabetically based on the Name field
+        \item Map Text Sorts alphabetically based on the Map Text field 
 \end{itemize}
 With the area pop-up menu opened, the area text row background changes to black. The menu contains the following items:
 \begin{itemize}[\textbullet] 
-    \item ACTIVATE Clears any activation times and activates the area
-    \item DEACTIVATE Clears any activation times and deactivates the area
-    \item AUTO If an activation schedule is found in the area data file, sets the
-    \item area to be activated automatically
-    \item VALIDATE Not implemented
-    \item EDIT Allows to change the area parameters
-    \item COPY Not implemented
-    \item DELETE Clears any activation times, returns label and altitude limits to their default values and deactivates the area
+        \item ACTIVATE Clears any activation times and activates the area
+        \item DEACTIVATE Clears any activation times and deactivates the area
+        \item AUTO If an activation schedule is found in the area data file, sets the
+        \item area to be activated automatically
+        \item VALIDATE Not implemented
+        \item EDIT Allows to change the area parameters
+        \item COPY Not implemented
+        \item DELETE Clears any activation times, returns label and altitude limits to their default values and deactivates the area
 \end{itemize}
 After any selection from the pop-up menu, “Ok”, “Apply” or “Cancel” must be selected to apply or cancel the selection. 
 
