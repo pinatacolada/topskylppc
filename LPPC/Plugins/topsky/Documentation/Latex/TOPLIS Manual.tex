@@ -16,6 +16,10 @@
   {\begin{shaded}\marginnote{\fbox{Warning}}}
   {\end{shaded}}
 
+  \newenvironment{Note}
+  {\begin{shaded}\marginnote{\fbox{Note}}}
+  {\end{shaded}}
+
 \usepackage[
 breaklinks=true,colorlinks=true,
 %linkcolor=blue,urlcolor=blue,citecolor=blue,% PDF VIEW
@@ -149,7 +153,7 @@ Setup Menu allows for various adjustments. Each position will load its defined s
 Most used options are CPDLC Setting for CPDLC operations and Default Setting to reset options.
 \medskip
 
-\begin{tabular}{p{5cm}p{10cm}}
+\begin{tabular}{c c}
 - Unit Settings > & Opens the Unit Settings submenu
 \\- Default Setting & Resets all settings to their default values (keeps login callsign specific ones if they are active at the time). When clicked, a confirmation window will open, asking to confirm the reset.
 \\- Local Settings > & Opens the Local Settings submenu
@@ -174,7 +178,7 @@ Most used options are CPDLC Setting for CPDLC operations and Default Setting to 
 This submenu can be used to change the units used in the plugin. Any changes to the settings are session-
 specific only, so they will be lost when exiting EuroScope.
 
-\begin{tabular}{p{5cm}p{10cm}}
+\begin{tabular}{c c}
     \\- Altitude & Selects the units used for altitudes and vertical rates
     - Nautical (feet, feet per minute)
     - Metric (meters, meters per second)
@@ -194,7 +198,7 @@ This submenu allows changing some of the plugin’s settings. Any changes to the
 specific only, so they will be lost when exiting EuroScope.
 \medskip
 
-\begin{tabular}{p{5cm}p{10cm}}
+\begin{tabular}{c c}
 \\- Vertical reference    & Selects the pressure reference to be used at or below the
 transition altitude:
 • QNH Altitude above mean sea level
@@ -256,7 +260,7 @@ display METAR data
 \medskip
 
 \subsection*{RR Main submenu}
-\begin{tabular}{p{5cm}p{10cm}}
+\begin{tabular}{c c}
     - [] Rings On/Off & Toggles the range rings on/off
     \\- Point & Sets the rings centerpoint. Either click on the radar screen or
     enter the desired point in the text field. Fixes, VORs, NDBs and
@@ -290,7 +294,7 @@ Opens the \textit{\titleref{menu:fpsel}} and \textit{\titleref{menu:fpwin}}.
 \subsection{Tools menu}
 %TODO\includegraphics{img/tools.png}
 \medskip
-\begin{tabular}{p{5cm}p{10cm}}
+\begin{tabular}{c c}
 \\- Flight Plan Lists > & Opens the Flight Plan Lists submenu
 \\- CARD… & Opens the \textit{\titleref{win:card}}
 \\- SAP… & Opens the \textit{\titleref{win:sap}}
@@ -303,7 +307,7 @@ Opens the \textit{\titleref{menu:fpsel}} and \textit{\titleref{menu:fpwin}}.
 \medskip
 
 \subsection*{Flight Plan Lists submenu}
-\begin{tabular}{p{5cm}p{10cm}}
+\begin{tabular}{c c}
     - [] List options bar           & Toggles the display of list options on the Global Menu
     \\- Sector List…                & Opens the Sector List
     \\- [] Informed                 & Toggles the display of informed aircraft
@@ -355,7 +359,7 @@ filtered).
 \medskip
 
 \subsection*{CPDLC submenu}
-\begin{tabular}{p{5cm}p{10cm}}
+\begin{tabular}{c c}
 - Microphone Check      & Opens the \textit{\titleref{win:dlmcm}}
 \\- Current Messages…   & Opens the \textit{\titleref{win:dlcmw}}
 \\- History Messages…   & Opens the \textit{\titleref{win:dlhmw}}
@@ -364,7 +368,7 @@ filtered).
 \medskip
 
 \subsection{MET menu}
-\begin{tabular}{p{5cm}p{10cm}}
+\begin{tabular}{c c}
 - Messages… & Opens the \textit{\titleref{win:wxcmw}}
 \\- QNH/TL    & Opens the \textit{\titleref{win:wxqnh}}
 \end{tabular}
@@ -374,7 +378,7 @@ filtered).
 Not implemented (always shows a zero value).
 
 \subsection{Info menu}
-\begin{tabular}{p{5cm}p{10cm}}
+\begin{tabular}{c c}
 - General Information…      & Opens the \textit{\titleref{win:gi}}
 \\- Document Viewer…          & Opens the \textit{\titleref{win:dv}}
 \\- NOTAM…                    & Opens the \textit{\titleref{list:notam}}
@@ -392,7 +396,7 @@ menu is selected, only those categories will display the labels. The “Label”
 what information is shown on the corresponding labels. All the information is from the active sector file.\\
 
 \subsection{MSG menu}
-\begin{tabular}{p{5cm}p{10cm}}
+\begin{tabular}{c c}
 - Notepad…              & Opens the \textit{\titleref{win:notepad}}
 \\- Personal Queue…     & Opens the \textit{\titleref{win:pq}}
 \\- ATC Messages…       & Opens the \textit{\titleref{win:atcm}}
@@ -414,7 +418,7 @@ are boxed to display their click areas. Clicking on one will delete the note. Pr
 the “Delete...” menu item again will abort the operation.
 
 \subsection*{Text notes submenu}
-\begin{tabular}{p{5cm}p{10cm}}
+\begin{tabular}{c c}
 \\- Create…     & Creates a new text note
 \\- Delete…     & Deletes a single text note
 \\- Delete all  & Deletes all text notes
@@ -434,7 +438,7 @@ Plugin Status submenu for more detailed information on the problem(s). The numbe
 shown on “Global Menu Highlight” background when the window is not open.
 
 \subsection{STS menu}
-\begin{tabular}{p{5cm}p{10cm}}
+\begin{tabular}{c c}
 - Plugin Status >                & Opens the Plugin Status submenu
 \\- Safety Nets Status…            & Opens the \textit{\titleref{win:sn}}
 \\- Divergence Detection Status…   & Opens the \textit{\titleref{win:dds}}
@@ -450,14 +454,14 @@ shown on “Global Menu Highlight” background when the window is not open.
 Shows the version of the plugin as well as some information on the loaded data files. Each data file reports
 its state with one of the following indicators:
 
-\begin{tabular}{p{5cm}p{10cm}}
+\begin{tabular}{c c}
 - OK        & File contains usable information and no faults
 \\- NO DATA   & File not found or contains no usable information
 \\- BAD DATA  & File contains invalid data (in “Warning” color)
 \end{tabular}
 
 Depending on the file, there are one to three of the following buttons available:\\
-\begin{tabular}{p{5cm}p{10cm}}
+\begin{tabular}{c c}
 - Reload                    & Reloads the data file
 \\- View                    & Displays the data in the file on the radar display
 \\- Save (Areas)            & Saves a snapshot of the current area activation data
@@ -485,7 +489,7 @@ settings based on the actual login callsign.
 \medskip
 
 \subsection*{Supervisory submenu}
-\begin{tabular}{p{5cm}p{10cm}}
+\begin{tabular}{c c}
 - Operations Rate...     & Opens the \textit{\titleref{win:or}}
 \\- Predicted Traffic... & Opens the \textit{\titleref{win:pt}}
 \end{tabular}
@@ -518,7 +522,7 @@ The presentation of tracks consists of the following elements:
 \subsection{Colors}
 Most of the track presentation coloring depends on the flight sector state.
 \\For controlled flights (any IFR flight or a VFR flight in ASSUMED state), the colors are as follows:\\
-\begin{tabular}{p{5cm}p{5cm}p{5cm}}
+\begin{tabular}{c c c}
 \textbf{State}          & \textbf{Color}    & \textbf{Condition}
 \\Unconcerned           & “Unconcerned”     & Track will not enter the active sector
 \\Notified              & “Concerned”       & Track will enter the active sector (> 15 min)
@@ -534,7 +538,7 @@ arrival airport) defined in plugin data files. In this case it is drawn with one
 Coordinated tracks that have not departed yet will be shown as notified instead.\\
 
 For uncontrolled flights (VFR flights not in ASSUMED state), the colors are as follows:\\
-\begin{tabular}{p{5cm}p{5cm}p{5cm}}
+\begin{tabular}{c c c}
 \textbf{State}  & \textbf{Color}    & \textbf{Condition}
 \\On Contact    & “Assumed”         & Track is on-contact (a plugin custom state) with you
 \\Free          & “VFR”             & Track is not assumed or on-contact with anyone
@@ -546,7 +550,7 @@ The position symbol is drawn at the latest known position of the aircraft. The c
 flight sector color for an unselected track and “Track Highlight” for a selected one. A number of different
 symbols are available. To begin with, there are basic shapes that tell what kind of track is in question:
 
-\begin{tabular}{p{5cm}p{5cm}}
+\begin{tabular}{c c}
 \includegraphics{img/rps_fpasd.png} & Flight plan track (position is not based on surveillance data but calculated by EuroScope)
 \\\includegraphics{img/rps_coast.png} & Coasted track (no position updates in over 30 seconds, position no longer reliable)
 \\\includegraphics{img/rps_psr.png} & Primary radar track
@@ -558,14 +562,14 @@ symbols are available. To begin with, there are basic shapes that tell what kind
 An indication of an SPI (transponder ident) can be added to the secondary radar and ADS-B symbols. It
 draws a cross over the symbol and prints the text “SPI” above and to the right of the symbol:
 
-\begin{tabular}{p{5cm}p{5cm}}
+\begin{tabular}{c c}
 \includegraphics{img/rps_spi.png} & Secondary radar track without DAPs with Special Position Indication
 \end{tabular}
 
 For other than the flight plan and coasted track symbols, a divergence alert will be drawn in case of a RAM
 or CLAM alert. This is a circle drawn around the symbol (will not be drawn if SPI is active):
 
-\begin{tabular}{p{5cm}p{5cm}}
+\begin{tabular}{c c}
 \includegraphics{img/rps_divalert.png}& Secondary radar track without DAPs with divergence alert
 \end{tabular}
 \medskip
@@ -600,7 +604,7 @@ Refer to your setup specific documentation for detailed descriptions of the trac
 The Flight Leg displays the aircraft’s planned track in one-minute steps. Each one-minute-long part of the
 path is colored according to the results of the MTCD and SAP processing. The following colors are possible:
 \medskip
-\begin{tabular}{p{5cm}p{5cm}}
+\begin{tabular}{c c}
 “Urgency FL”        & MTCD and/or SAP conflic
 \\“Warning FL”      & MTCD and/or SAP risk
 \\“Potential FL”    & MTCD potential conflict
@@ -617,7 +621,7 @@ either automatically removed from display when the mouse cursor leaves the label
 manually toggled off, depending on the function that was used to display it.
 \medskip
 The label that’s shown on each route point includes the following predefined fields
-\begin{tabular}{p{5cm}p{5cm}}
+\begin{tabular}{c c}
 \includegraphics{img/fleto.png}     & Estimated Time Over the point
 \\\includegraphics{img/fltoc.png}   & Top of Climb
 \\\includegraphics{img/fltod.png}   & Top of Descent
@@ -640,7 +644,7 @@ placed over it or if the default item is in the “More” folder, other folders
 \label{menu:cs}
 \subsection*{Controlled Track}
 \includegraphics{img/cm.png}
-\begin{tabular}{p{5cm}p{5cm}p{5cm}}
+\begin{tabular}{c c c}
 Assume                      & Assumes track
 \\Refuse                    & Refuses the incoming transfer
 \\Transfer                  & Initiates a transfer to the next sector
@@ -682,7 +686,7 @@ in the VATSIM flight plan to VFR in order to make it uncontrolled. The displayed
 
 \subsection*{Uncontrolled Track}
 \includegraphics{img/cmuncon.png}
-\begin{tabular}{p{5cm}p{5cm}p{5cm}}
+\begin{tabular}{c c c}
 On Contact          & Sets track in On-Contact state (“Assumed” color, can’t be filtered, but still uncontrolled)
 \\Free              & Releases track
 \\Assume            & Assumes track*
@@ -702,7 +706,7 @@ the VATSIM flight plan to IFR in order to make it controlled. The displayed flig
 
 \subsection*{Uncorrelated Track}
 \includegraphics{img/cmuncor.png}
-\begin{tabular}{p{5cm}p{5cm}p{5cm}}
+\begin{tabular}{c c c}
 Correlate       & Correlates the radar track with the next clicked “Callsign” field
 \\Create APL    & Opens the \textit{\titleref{win:apl}}
 \\PRL           & Opens the \textit{\titleref{menu:plm}}
@@ -832,8 +836,427 @@ The default value is the set PRL value if available, otherwise the PRL length va
 the Track Control Window. Changing the PRL length value in the \textit{\titleref{win:trackctl}}
 or changing the PRL setting in the \textit{\titleref{menu:radarmenu}} will delete all manually set PRL lengths.
 
+\subsection{Sequence Number Menu}
+\label{menu:seq}
+\includegraphics{img/seq.png}
 
+This menu is used to set an arrival sequence number. Values from 1 to 50 are available.
 
+The sequence number will not be transmitted to other controllers except the next
+controller (during transfer) unless the flight strip is manually sent.
+
+\subsection{Waypoint Menu}
+\label{menu:wpt}
+\includegraphics{img/wpt.png}
+
+\begin{tabular}{c c}
+$\blacktriangle$  Routing & Opens the “COPN point” or “COPX point” submenu (EuroScope default item)
+\\$\blacktriangle$ Arrival & Opens the “Assign STAR” submenu (EuroScope default item)
+\\$\blacktriangle$ Departure & Opens the “Assign SID” submenu (EuroScope default item)
+\\$\blacktriangle$ TSA Hold & Opens the TSA Hold submenu (not available if a holding clearance is active)
+\\$\blacktriangle$ Hold & Opens the Hold submenu (not available if a TSA holding clearance is active)
+\end{tabular}
+
+This menu gives access to functions related to the route of the aircraft. It is used to assign
+direct-to clearances, departure and arrival routes, holding clearances, and to coordinate
+the sector entry/exit point.
+
+\includegraphics{img/wptyn.png}
+When an entry or exit coordination has been received, the menu opens looking like this
+instead. The options are:
+
+\begin{tabular}{c c}
+$\blacktriangle$ Routing    & Opens the “COPN point” or “COPX point” submenu (EuroScope default item)
+\\Accept                      & Accepts the coordination
+\\Reject                      & Rejects the coordination
+\end{tabular}
+
+The submenu opened with “Routing” offers the same possibilities to accept or reject the
+coordination, but also the possibility to counter-propose a different point.
+
+\includegraphics{img/wptdl.png}
+
+When the aircraft is CPDLC-connected and the coordination is an exit coordination, the
+menu offers a choice between “R/T” and “CPDLC”. The chosen option decides how an
+accepted coordination is communicated to the aircraft.
+
+With “CPDLC” selected, when “Accept” is clicked, in addition to the coordination being
+accepted, a “PROCEED DIRECT TO <point>” CPDLC message is sent to the aircraft.
+
+\includegraphics{img/wptroute.png}
+
+When a direct-to downlink request has been received, the menu can be used to answer it.
+
+\begin{tabular}{c c}
+Point name  & Sends a “PROCEED DIRECT TO <point>” CPDLC message
+\\SBY         & Sends a “STANDBY” CPDLC message
+\\UNABLE      & Sends an “UNABLE” CPDLC message
+\end{tabular}   
+
+The “R/T” / “CPDLC” selection is fixed to “CPDLC”.
+
+\begin{Warn}
+Clicking the point name will set the direct-to clearance without coordination
+\end{Warn}
+
+When there is no request in process and the aircraft has a direct-to point set, the menu
+can be used to send the clearance via CPDLC. In this case the menu opens like this except
+without the “SBY” and “UNABLE” buttons. Clicking the point name will send the
+“PROCEED DIRECT TO <point>” CPDLC message.
+
+\subsection*{TSA Hold Submenu}
+The TSA Hold submenu allows you to enter a clearance to enter an active military area. It displays the active
+and preactive TSA type areas. If a clearance already exists, the menu will only give the option to remove it
+with the “XHold” item.
+
+The clearance is automatically sent to your other EuroScope instances with a small delay and can be sent to
+other controllers by pushing the flight strip as the information is stored there. A TSA hold clearance will
+exclude the aircraft from all APW and SAP processing.
+
+\subsection*{TSA Hold Submenu}
+If a holding clearance already exists, the menu will only give the option to remove it with the “XHold” item.
+See \textit{\titleref{menu:hold}} for other details.
+
+\subsection{AFL Menu}
+\label{menu:afl}
+\includegraphics{img/afl.png}
+nautical units
+\includegraphics{img/aflm.png}
+metric units
+\includegraphics{img/kbd.png}
+keyboard
+
+This menu can be used to set the AFL value for aircraft that don’t have an altitude reporting transponder.
+The default value is the previously set manual AFL value if set, otherwise the CFL value.
+
+By default, the menu (as well as the AFL label item) is always showing nautical units, regardless of the
+system units or the selected units for the aircraft. If this behavior is selected off, the list units can be
+toggled with the “NAUTICAL” / “METRIC” item. There are three ways to set the AFL using this menu:
+
+\begin{itemize}
+    \item Clicking a level value in the list
+    \item Clicking the text entry box below the level list and entering the value there
+    \item Clicking the right-pointing triangle to open a keyboard that can be used to type in the value using the mouse. “C” clears the entry and “Ok” sets the value.
+\end{itemize}
+
+Entering a metric value will also set the aircraft’s units to metric; a nautical value will set nautical units.
+
+The accepted manual level entry formats for the AFL, CFL and RFL menus are as follows (“n” is a number):
+
+\begin{tabular}{c c}
+“Annn” or “nnn”         & Altitude in hundreds of feet
+\\“Mnnnn” or “nnnn”     & Altitude in tens of meters
+\\“Mnnnnn” or “nnnnn”   & Altitude in meters
+\\“Ennn”                & Height in hundreds of feet above aerodrome elevation
+\\“Ennnn”               & Height in tens of meters above aerodrome elevation
+\\“Ennnnn”              & Height in meters above aerodrome elevation
+\end{tabular}    
+
+Regardless of whether the entered value is in meters or feet, and altitude or height, it will be converted to altitude in feet and the result is then rounded to the nearest 100 feet.
+
+\subsection{CFL Menu}
+\label{menu:cfl}
+\includegraphics{img/cfl.png}
+
+In the track label the CFL menu is combined with the COPN altitude coordination menu
+and the CFL menu opens only when the aircraft is assumed. The default value is by
+default the XFL, but it can be changed to the current CFL or the RFL in the Local Settings
+menu. Altitudes up to the transition altitude are prefixed with “A” in the nautical units
+list and with “M” in the metric units list. QFE heights are prefixed with “E” in both lists.
+Selectable values are from 500ft to FL510 with 500ft intervals up to the transition
+altitude, then 1000ft intervals up to FL410 and 2000ft intervals above it.
+
+“Visual App” / “VA” and “Clear for App” / “CA” set the corresponding approach
+clearances.
+
+The list units can be toggled with the “NAUTICAL” / “METRIC” item. There are three
+ways to set the CFL using this menu:
+
+\begin{itemize}
+    \item Clicking a level value in the list or one of the two approach clearance items
+    \item Clicking the text entry box between the level list and the approach clearance item and entering the value there
+    \item Clicking the right-pointing triangle to open a keyboard that can be used to type in the value using the mouse. “C” clears the entry and “Ok” sets the value.
+\end{itemize}
+
+Entering a metric value will set the aircraft’s units to metric; a nautical value will set
+nautical units.
+
+The aircraft’s RFL is displayed in the place of the “NAUTICAL”/”METRIC” item with
+format “R<RFL>”. Left-clicking the button still has the same effect (changes the
+displayed units).
+
+\includegraphics{img/cfldl.png}
+
+For CPDLC connected aircraft, the menu contains “R/T” and “CPDLC” options to select
+whether a level clearance is to be sent via radio or as a CPDLC message.
+If a level request has been received from the aircraft, there are also “SBY” and
+“UNABLE” buttons to send those messages as a reply.
+- When a level request downlink has been received, the “R/T” option is deselected and
+cannot be selected. The request must be replied to using CPDLC.
+- When a level clearance uplink has been sent, the “CPDLC” option is deselected and
+cannot be selected. If a new level clearance must be sent before there is an answer to
+the uplink, it must be given via radio (doing so also closes the open uplink message).
+
+\subsection{RFL Menu}
+\label{menu:rfl}
+
+he RFL menu allows setting the requested flight level. The operation is similar to the
+AFL and CFL menus. The function for the “NEXT” button is not implemented.
+
+\subsection{AHDG Menu}
+\label{menu:ahdg}
+
+This menu includes items to set or clear an assigned heading or a direct route and to
+send a HOP. The initially highlighted heading value will be the closest one to the
+assigned heading if the aircraft has one, otherwise the closest one to the aircraft ground
+track (or the departure runway heading if the menu is opened from the DEP list).
+Clicking on a heading value will set it as the assigned heading. The assigned heading can
+also be set by typing it into the entry box, using the pop-up keyboard or by using the
+AHDG vector.
+
+“Clear” removes an assigned heading or a direct route. For CPDLC connected aircraft, it
+sends the “RESUME OWN NAVIGATION” CPDLC message if the “CPDLC” option is
+selected.
+
+“Point” lets you pick a direct-to point from the radar screen. Left-click on any point to
+set it as the direct-to point (available points are VORs, NDBs and waypoints, in that
+priority order). Pressing the [Esc] key or clicking on any clickable data field will abort the
+operation.
+
+“HOP”, “RTI” and “TIP” are coordination functions (see below for more information). To
+use them, first click on the function’s button and then select the desired value from the
+list (for HOP also “Point” is available).
+
+\includegraphics{img/ahdgdl.png}
+
+For CPDLC connected aircraft, the menu contains additional buttons:
+
+“R/T” and “CPDLC” select whether a heading/direct-to clearance is to be sent via radio
+or as a CPDLC message.
+\begin{itemize}
+    \item When a heading request downlink has been received, the “R/T” option is deselected
+    and cannot be selected. The request must be replied to using CPDLC.
+    \item When a heading/direct-to clearance uplink has been sent, the “CPDLC” option is
+deselected and cannot be selected. If a new heading/direct-to clearance must be sent
+before there is an answer to the uplink, it must be given via radio (doing so also closes
+the open uplink message).
+\end{itemize}
+
+“SBY” and “UNABLE” send the corresponding answers to a downlink heading request
+message.
+
+\begin{Warn}
+Clicking a point on the radar screen will set the direct-to clearance without coordination 
+\end{Warn}
+
+\subsection{Handover Proposal (HOP)}
+\label{win:hop}
+A Handover Proposal can be used to propose non-standard transfer parameters (AHDG/Direct-to and ASP)
+to the next sector. For the receiving controller a HOP is identified by coloring the callsign data field with
+“Proposition” color in the label. For the sending controller the Callsign field remains “Assumed” color and
+the Sector Indicator field is shown in “Proposition” color. Additionally, if there are proposed parameters
+they are also colored “Proposition” in both controllers’ labels.
+
+There are three ways to answer a HOP and all of them involve accepting all proposed parameters. If one or
+more parameters are not acceptable, coordination must be done to find acceptable parameters or to revert
+to standard ones. The available ways to accept the proposed parameters are:
+
+\begin{tabular}{c c}
+Callsign menu -> “Assume”               & Assumes the track
+\\Callsign menu -> “ROF”                & Sends a Request On Frequency message
+\\Combined Transfer menu -> “Accept”    &  Sends an Accept message
+\end{tabular}
+
+If the parameters are unacceptable to the receiving controller, the sending controller has the possibility to
+modify or clear them using the appropriate menus, or to cancel the whole HOP by assuming the track.
+
+\begin{Warn}
+A HOP will only be shown correctly for controllers using this plugin. To other controllers it will be shown as a normal transfer without any special coloring of any data fields. This combined with the three possible ways to answer the HOP require the sending controller to pay special attention to the track to see what the result is.   
+\end{Warn}
+
+\begin{Warn}
+If a HOP is sent to a manually selected controller, the next controller selection will be reset to the automatically calculated controller when an “ROF” or “Accept” answer is received. The correct controller must then be manually selected again for the transfer.   
+\end{Warn}
+
+\subsection{Request Tactical Instructions (RTI) / Tactical Instructions Proposal (TIP)}
+\label{win:rti}
+\label{win:tip}
+Certain tactical data (AHDG, ASP and ARC) can be coordinated using the RTI and TIP functions. Their only difference is that RTI is used for requesting the parameters when the aircraft is inbound to your sector and your sector is the next in the sector sequence, and TIP for propose the parameters to the next sector when the aircraft is assumed. Contrary to the HOP function, these coordinations can be refused using the system, and they do not offer the aircraft for transfer.
+
+When sent, the RTI/TIP is displayed on both controllers’ screens by displaying the requested parameter on line 0 of the track label in “Proposition” color.
+
+To answer the RTI/TIP, left-click on the requested parameter shown above the track label or the corresponding message in the \textit{\titleref{win:miw}}. This will open the \textit{\titleref{menu:ttm}}.
+
+\begin{Warn}
+The “RTI” and “TIP” messages are features specific to this plugin. They are experimental features not guaranteed to work all the time. When you send these messages, check that they are sent properly.
+
+\begin{itemize}
+    \item A successfully sent message will be displayed in the \textit{\titleref{win:mow}} and the requested parameter being shown above the track label
+    \item If there is an error or the message fails to go through, a message will be put into the \textit{\titleref{win:pq}}.
+\end{itemize}
+\end{Warn}
+
+\subsection{AHDG Vector}
+\label{menu:ahdgv}
+The AHDG vector is another way of setting an assigned heading for an aircraft. To use the vector, left-click on the radar position symbol of the aircraft. This will start drawing the vector. When you’re satisfied with the heading value, left-click again to set it. Right-clicking will abort drawing the vector.
+
+When the cursor is over a known point (VOR, NDB or waypoint), the name of that point is displayed instead of the heading value, and left-clicking will set a direct-to clearance to that point. To temporarily disable the known points functionality, keep the <ALT> key pressed while using the vector.
+
+\subsection{ARC Menu}
+\label{menu:arc}
+\includegraphics{img/arc.png}
+
+The ARC menu allows assigning a rate of climb or descent to the flight plan. Selectable
+rates are 500-5000 ft/min (displayed in 100’s of ft/min), or 5-25 m/s. The menu units are
+always the same as the units used for the aircraft in general.
+
+Left-clicking on a value assigns it. An assigned rate can be cleared by selecting the
+“Resume” item.
+
+By default, the “+” option is selected, meaning that the clearance is a minimum rate of
+climb or descent. Deselecting the “+” makes the clearance an exact rate, and selecting
+the “-” option makes the clearance a maximum rate.
+
+For “RTI” and “TIP” see the \textit{\titleref{menu:ahdg}}.
+
+\begin{Warn}
+The exact and maximum rate clearances are a feature specific to this plugin (the additional information is stored in the flight strip). To controllers not using the plugin, all assigned rate clearances will only show the rate value.
+Assigned rate clearances given by controllers not using the plugin will bedisplayed as minimum rate clearances.      
+\end{Warn}
+
+\subsection{ASP Menu}
+\label{menu:asp}
+\includegraphics{img/asp.png}
+\includegraphics{img/aspmach.png}
+The ASP menu allows setting an assigned speed or Mach number. The default value will be the closest value to the assigned one if set, otherwise the plugin will suggest the closest value to the aircraft’s present speed based on the ground speed (zero wind will be assumed). The menu will initially open in IAS mode if the aircraft’s CFL is below the IAS/Mach altitude value defined in the Local Settings (FL275 by default), and in Mach mode if above it. The selectable values range from 100 to 400 knots and from Ma0.50 to Ma1.00.
+
+The “+” and “-” options can be used to specify the clearance
+as a minimum/maximum speed.
+
+The “Resume” item clears an assigned value. For CPDLC connected aircraft, it sends the “RESUME NORMAL SPEED” CPDLC message if the “CPDLC” option is selected.
+
+For “HOP”, “RTI” and “TIP” see the \textit{\titleref{menu:ahdg}}.
+
+The “Resume” button below the list is replaced by a “HS” button. Clicking it will set a clearance for “high speed”, displayed as “HS” in the ASP label field (see track label definition in the local setup documentation for how to clear a value). In other setups a “high speed” clearance will show a value of 999 knots. For CPDLC connected aircraft, it sends the “NO SPEED RESTRICTION” CPDLC message if the “CPDLC” option is selected. The “Resume” button can be found at the bottom of the “More” list.
+
+Entering a metric value will set the aircraft’s units to metric; a nautical value will set
+nautical units.
+
+\includegraphics{img/aspmachdl.png}
+For CPDLC connected aircraft, the menu contains additional buttons:
+
+R/T” and “CPDLC” select whether a speed clearance is to be sent via radio or as a
+CPDLC message.
+
+\begin{itemize}
+\item When a speed request downlink has been received, the “R/T” option is deselected and cannot be selected. The request must be replied to using CPDLC.
+\item When a speed clearance uplink has been sent, the “CPDLC” option is selected and cannot be deselected. If a new speed clearance must be sent before there is an answer to the uplink, it must be given via radio (doing so also closes the open uplink message).
+\end{itemize}
+
+SBY” and “UNABLE” send the corresponding answers to a downlink speed request.
+
+\begin{Warn}
+The minimum and maximum speed clearances are a feature specific to this plugin (the additional information is stored in the flight strip). To controllers not using the plugin, all assigned speed clearances will only show the speed value. Assigned speed clearances given by controllers not using the plugin will be displayed as exact speed clearances.
+\end{Warn}
+
+\subsection{ASSR Menu}
+\label{menu:assr}
+\includegraphics{img/assr.png}
+
+The ASSR menu allows assigning an SSR code to the flight plan. To enter a new code, type it by left-clicking the numbers. “C” clears the entered value and “Ok” assigns the code if it’s a valid one. To get an automatically assigned code, clear the value and then left-click on “Ok” with the entry box left empty.
+
+Depending on the configuration, the assigned code may be a mode S conspicuity code. To force a discrete code, make a new assignment – either manual or automatic. If an automatic assignment is requested for a flight with the conspicuity code currently assigned, the new assignment will be a discrete code.
+
+\subsection{Combined Transfer Menu}
+\label{menu:ctm}
+\includegraphics{img/ctm.png}
+
+The Combined Transfer menu displays the proposed transfer parameters for a HOP. It is opened by clicking on the AHDG, ASP or COPN/COPX items in the track label or flight list, or the list row displaying the HOP message in the \textit{\titleref{win:miw}}.
+
+From top to bottom, the displayed values are the direct-to point, speed/Mach value, and the assigned heading value. If one or more of them are not proposed, the value will be replaced by the string “none” (the image above shows the menu for a HOP without any proposed parameters). Clicking on “Accept” will send a message to the upstream controller that the proposed parameters, if any, are all acceptable.
+
+\subsection{Tactical Transfer Menu}
+\label{menu:ttm}
+\includegraphics{img/ttm.png}
+
+The Tactical Transfer menu is used to accept, reject or apply tactical data (AHDG, ASP and/or ARC). It is opened by left-clicking on a proposed or accepted parameter in the track label. The menu displays all proposed (“Proposition” color) and accepted (sector state color) values.
+
+Clicking on “Accept” will accept all proposed values and “Reject” will reject them. The menu is then closed.
+
+Note that the menu displays both sent and received coordinations, but you can naturally only accept/reject the received ones and apply values for aircraft that are assumed.
+
+Once a value is accepted, the respective label field (e.g. AHDG) will be colored “Information” until the value is set to the accepted one.
+
+All tactical data coordinations (also any rejected ones) can be viewed in the \textit{\titleref{win:ttw}}, but they cannot be answered or applied there.
+
+\subsection{Aerodrome Menu}
+\label{menu:ad}
+\includegraphics{img/ad.png}
+
+The Aerodrome menu is used to select the aerodrome(s) for aerodrome related windows and functions. The list contains all aerodromes with runways defined in the active sector file. To select an aerodrome, left-click on it or type its identifier into the text entry box below the list.
+
+Selection of more than one aerodrome is possible when the menu was opened from the \textit{\titleref{win:wxm}}. In this case the “All” button is available and clicking on it will select all the aerodromes in the list.
+
+Clicking on “Ok” will confirm the selection(s) and close the menu.
+
+\subsection{NPT Menu}
+\label{menu:npt}
+\includegraphics{img/npt.png}
+
+The NPT menu is used to answer a direct-to downlink request using CPDLC. The menu
+contains three options:
+
+\begin{tabular}{c c}
+Point name  & Sends a “PROCEED DIRECT TO <point>” CPDLC message\\
+SBY         & Sends a “STANDBY” CPDLC message\\
+UNABLE      & Sends an “UNABLE” CPDLC message\\   
+\end{tabular}
+
+The menu closes when an option is selected or the cursor leaves the menu area. If the aircraft cannot be cleared direct to the requested point but to another one, the request must be answered with “UNABLE” and a separate direct-to clearance must be given.
+
+\begin{Warn}
+Clicking the point name will set the direct-to clearance without coordination
+\end{Warn}
+
+\subsection{CPDLC Emergency Acknowledgement Menu}
+\label{dleam}
+\includegraphics{img/dlmayday.png}
+
+When a CPDLC emergency message has been received, this menu is used to respond to it (if applicable), and then acknowledge the situation. When a reply is required, the menu button will read “ROGER”. Left-clicking on it will send the “ROGER” CPDLC message and close the menu. When opening the menu again (or when a reply was not required), the button reads “Ack”. Left-clicking on it will acknowledge the emergency. 
+
+The menu is closed when the “ROGER”/“Ack” button is clicked or the cursor leaves the menu area.
+
+\subsection{CPDLC Pilot Late Acknowledgement Menu}
+\label{dlplam}
+\includegraphics{img/dlplate.png}
+
+When there is no answer to a CPDLC uplink clearance, this menu can be used to resolve the situation. “Abort” discards the uplink and “Manual WILCO” simulates reception of a WILCO message.
+
+\subsection{Time Menu}
+\label{time}
+\includegraphics{img/etd.png}
+
+The Time menu is used to set/change the time value for ATD, EOBT, ETD and SLOT fields.
+Default values are:
+
+\begin{tabular}{c c}
+ATD     & Current time\\
+EOBT    & Current time\\
+ETD     & Current field value\\
+SLOT    & Current field value if any (ATD if different from ETD), current time otherwise\\
+\end{tabular}
+
+The up/down arrows are used to change the value, “Ok” sets the time.
+
+\subsection{Departure Sequence Menu}
+\label{dqm}
+\includegraphics{img/dsq.png}
+
+The DSQ menu is used to select a specific departure sequence number to a flight. The list includes the possible numbers, and the current number is highlighted. Left-clicking on a number sets it, “Clear” removes the flight from the departure sequence.
+
+\begin{Note}
+The departure sequence number is only stored locally, it is not sent to other controllers or even to other EuroScope instances.
+\end{Note}
 
 \section{Windows}
 
