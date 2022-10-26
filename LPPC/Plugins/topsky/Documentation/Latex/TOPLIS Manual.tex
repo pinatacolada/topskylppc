@@ -10,6 +10,7 @@
 \usepackage[percent]{overpic}
 \usepackage{amssymb}
 \usepackage{babel,xcolor,framed,marginnote,blindtext}
+\usepackage{longtable}
 \colorlet{shadecolor}{blue!10}
 
 \newenvironment{Warn}
@@ -2856,6 +2857,11 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
 \appendix
 
 \chapter{Label field descriptions}
+
+\begin{longtable}{l l l l}
+    Data field  & Description   & Comments                              & Color\\
+    $\bullet$   & Frequency     & “$\bullet$”, set from Callsign menu   & (color): Freq Indicator\\
+\end{longtable}
 
 \chapter{Color Values}
 
