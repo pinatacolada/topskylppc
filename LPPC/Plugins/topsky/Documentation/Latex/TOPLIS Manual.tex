@@ -288,7 +288,7 @@ Not operational.
 \subsection{AMS menu}
 \includegraphics{img/AMS.png}
 \medskip
-Opens the \textit{\titleref{menu:tsa}}.
+Opens the \textit{\titleref{win:amw}}.
 
 \subsection{FData menu}
 \includegraphics{img/FData.png}
@@ -1585,7 +1585,7 @@ The Raw Video Control Window closes when the mouse cursor leaves the window area
 The Raw Video Control Window controls the brightness (in general) and afterglow (how fast the radar returns fade) of the raw video radar data.
 
 \subsection{Airspace Management Window}
-\label{menu:tsa}
+\label{win:amw}
 
 Global Menu -> AMS -> TSA...
 
@@ -1777,6 +1777,7 @@ Left-clicking on the FRUL field toggles the flight rules between “I” (IFR) a
 When the APL is successfully created, it is automatically assumed or set as on-contact depending on the plugin setup.
 
 \subsection{Stack Manager Window}
+\label{win:smw}
 Holding List... -> “HPT” item
 
 \includegraphics{img/stackman.png}
@@ -2549,18 +2550,308 @@ The Departure Coordination Window can be used to set the clearance flag. The win
     Ok      & Applies any changes, sets the clearance flag and closes the window\\
 \end{tabular}
 
+\section{Aircraft Lists}
 
+\subsection{Sector List}
+\label{list:sector}
 
+Global Menu -> ControlTools/Tools -> Flight Plan Lists -> Sector List…
 
+The Sector List is a EuroScope-style list containing all departed controlled (all IFR, VFR only if ASSUMED) aircraft in the following states:
 
+\begin{itemize}
+    \item Informed (if corresponding selection made in the Global menu)
+    \item Concerned * (if corresponding selection made in the Global menu)
+    \item Coordinated
+    \item Transfer to me initiated
+    \item Assumed
+    \item Transfer from me initiated
+    \item Redundant (if corresponding selection made in the Global menu)
+\end{itemize}
 
-\section{Lists}
+* The display of concerned aircraft is limited to those entering the sector within 60 minutes by default.
+
+\subsection{Load Factor List}
+\label{list:load}
+
+Global Menu -> ControlTools/Tools -> Flight Plan Lists -> Load Factor List…
+
+The Load Factor List is a EuroScope-style list containing all departed controlled (all IFR, VFR only if ASSUMED) aircraft in the concerned state and all non-departed controlled aircraft in the concerned and coordinated states expected to enter the sector within 4 hours by default.
+
+\subsection{Uncontrolled List 1}
+\label{list:uncon1}
+
+Global Menu -> ControlTools/Tools -> Flight Plan Lists -> Main VFR List… / Uncontrolled List 1…
+
+The Main VFR List / Uncontrolled List 1 is a EuroScope-style list containing all or a subset of uncontrolled (VFR flights not in ASSUMED state) aircraft, depending on whether filters are set up.
+
+\subsection{Uncontrolled List 2}
+\label{list:uncon2}
+
+Global Menu -> ControlTools/Tools -> Flight Plan Lists -> Secondary VFR List… / Uncontrolled List 2…
+
+The Secondary VFR List / Uncontrolled List 2 is another VFR list to be used if different filtering options are needed.
+
+\subsection{ETWR List}
+\label{list:etwr}
+
+Global Menu -> ControlTools/Tools -> Flight Plan Lists -> ETWR List...
+
+The ETWR List is a EuroScope-style list containing notified and coordinated flights departing from specified airports
+
+\subsection{Resectorisation List}
+\label{list:resec}
+
+Global Menu -> ControlTools/Tools -> Flight Plan Lists -> Resectorisation List…
+
+The Resectorisation List is a EuroScope-style list containing all flights assumed or on-contact with specified LFUNCs (controller IDs).
+
+\subsection{Traffic Management List 1}
+\label{list:tml1}
+
+Global Menu -> ControlTools/Tools -> Flight Plan Lists -> Traffic Management List 1…
+
+The Traffic Management List 1 is a EuroScope-style list containing all uncontrolled flights and controlled flights at least in coordinated state with specified destinations, and routing via specified points. The ETO over the point (or ETA if no point specified) must be within 30 minutes, and the destination must be specified to include uncontrolled flights in the list.
+
+\subsection{Traffic Management List 2}
+\label{list:tml2}
+
+Global Menu -> ControlTools/Tools -> Flight Plan Lists -> Traffic Management List 2…
+
+The Traffic Management List 2 is another Traffic Management list to be used if different filtering options are needed.
+
+\subsection{Lost List}
+\label{list:lost}
+
+Global Menu -> ControlTools/Tools -> Flight Plan Lists -> Lost List…
+
+The list includes assumed flights that have previously been correlated to a radar track but radar contact has been lost. By default, the list opens automatically whenever a flight is added into it, and will be closed automatically when empty. If manually opened, the list cannot be manually closed until it is empty.
+
+\includegraphics{img/llist.png}
+
+The lost list contains the following fields:
+
+\begin{tabular}{l l l l}
+    Field                   & Type        & Left click                              & Right click\\
+    Callsign                & mandatory   & Open Callsign menu                      & -\\
+    N/ATYP                  & optional    & -                                       & -\\
+    AFL (last received)     & optional    & -                                       & Toggle route draw\\
+    CFL                     & optional    & Open CFL menu                           & Toggle route draw\\
+    ASSR                    & mandatory   & Open ASSR menu                          & -\\
+    FPASD                   & optional    & Toggle FPASD track (when globally off)  & -\\
+    Lost (time)             & optional    & -                                       & -\\
+\end{tabular}
+
+“View” opens the View menu:
+
+\begin{tabular}{l l}
+    Header      & Toggle visibility of the list header line\\
+    Standard    & Set the list in Standard mode (only mandatory fields shown)\\
+    Extended    & Set the list in Extended mode  \\
+\end{tabular}
+
+“Options” opens the Options menu to select which optional fields are shown in Extended mode. The “All” selection shows all fields without affecting the individual selections.
+
+The rows are sorted based on “Lost” time in descending order.
+
+With the plugin set up to automatically open the Lost List when not empty, when a flight is added into the Lost List, its FPASD selection is initially set to “on” regardless of the FPASD setting in the Global menu.
+
+\subsection{Holding List}
+\label{list:hold}
+
+The Holding List contains aircraft in the assumed, transfer initiated and on-contact with the position states that have been given a holding clearance. The list is automatically displayed whenever there is at least one aircraft in the list.
+
+\includegraphics{img/hlist.png}
+
+“View” opens the View menu which contains only one item, “Header”. It toggles the visibility of the list’s header line.
+
+“Options” is inaccessible as there are no selectable options in the holding list.
+
+The list sorting option is displayed next to the “Options” label. Clicking on it opens a menu to select between the following sorting options:
+
+\begin{tabular}{l l}
+    “ETO on Holding point”  & ETO at the holding point -> Holding point name -> Callsign\\
+    “Holding point”         & Holding point name -> CFL -> Callsign\\
+\end{tabular}
+
+The ETO column initially displays the estimated time over the holding fix. Once the aircraft enters the holding, the displayed time is fixed to the holding start time. For present position holds and holding points whose positions are unknown, the time when the holding clearance was given is displayed.
+
+\begin{tabular}{l l l}
+    Field                   & Left click                          & Right click\\
+    Label                   & Hide/display track label            & -\\
+    Callsign                & Open \textit{\titleref{menu:cs}}    & -\\
+    AFL                     & Open \textit{\titleref{menu:afl}}   & Toggle route draw\\
+    (attitude indicator)    & -                                   & -\\
+    CFL                     & Open \textit{\titleref{menu:cfl}}   & Toggle route draw\\
+    HPT                     & Open \textit{\titleref{win:smw}}    & -\\
+    ETO                     & -                                   & -\\ 
+\end{tabular}
+
+If a track label has been hidden, it will be automatically unhidden if the aircraft is cleared to leave the holding or an incoming coordination message for the flight is received.
 
 \section{Safety Nets}
 
+\subsection{AIW (Airspace Infringement Warning)}
+
+\subsection*{General}
+
+The AIW system warns if an uncontrolled aircraft is already inside or going to enter controlled airspace within a defined time. The system will only scan correlated radar tracks.
+
+\subsection*{Alert display}
+
+An alert is shown by displaying the text “AIW” in the ALRT track label field. Note that MSAW and APW alerts will have priority over an AIW alert. The AFL item is also colored “AIW Intrusion” and a one-minute- long prediction line is displayed in “AIW Intrusion” color regardless of the prediction line settings.
+
+
+\subsection{APW (Area Proximity Warning)}
+
+\subsection*{General}
+
+The APW system warns if an aircraft is inside or about to enter an active area it shouldn’t be entering (for example active danger, restricted and TSA areas). The position of the aircraft is only predicted in 30 second intervals for performance reasons so very short future intrusions may not be noticed by the system. The areas are defined in an external text file and activated in the \textit{\titleref{win:amw}}.
+
+\subsection*{Alert display}
+
+An alert is shown by coloring the CALLSIGN item background (plugin drawn windows) or the text itself (elsewhere where the plugin can’t control the background color) in “Warning” color unless the CALLSIGN item has been manually highlighted, and also by displaying the text “APW” in the ALRT track label field (an MSAW alert will have priority over an APW alert there).
+
+\subsection{MSAW (Minimum Safe Altitude Warning)}
+
+\subsection*{General}
+
+The MSAW system alerts when an aircraft is flying at an altitude below the minimum safe altitude. The minimum safe altitude data is read from an external file that has to be present for the system to give any warnings. There is an adjustable buffer value in the system that allows some altitude variation below the safe altitude to inhibit nuisance alerts for aircraft flying at the minimum safe altitude and not staying exactly at that altitude.
+
+\subsection*{Alert display}
+
+An alert is shown by displaying the text “MSAW” in the ALRT track label field.
+
+\subsection{STCA (Short Term Conflict Alert)}
+
+\subsection*{General}
+
+The STCA system is designed to alert the controller of a possible or actual loss of separation between aircraft. The alert is given a specified time (for example 90 seconds) before a loss of separation is predicted to happen, but it is dependent on the relative positions and movement of the aircraft. The alert will not be shown if both aircraft have STCA alerting inhibited (see the \textit{\titleref{win:snsw}}), are inside exclusion areas for parallel approaches, or when either aircraft is inside an active STCA inhibit area.
+
+In the vertical plane there is an option to always assume that an aircraft will level off at its cleared level. This will reduce the number of nuisance alerts caused by climbing and descending aircraft in busy airspace, but will delay the alert in case an aircraft continues through its cleared level. The alert will then be given only after the failure to level off is seen by the system.
+
+\subsection*{Alert display}
+
+An alert is shown by coloring the CALLSIGN item background (plugin drawn windows) or the text itself (elsewhere where the plugin can’t control the background color) in “Urgency” color. A one-minute-long prediction line is displayed in “Urgency” color regardless of the prediction line settings. 
+
+In addition to the above, the radar position symbol and history dots are displayed in “Urgency” color.
+
+An aural alert can also be generated if the corresponding plugin setting is enabled.
+
 \section{Monitoring Aids}
 
+\subsection{CLAM (Cleared Level Adherence Monitoring)}
+
+\subsection*{General}
+
+The CLAM system warns if an aircraft is not maintaining its cleared level and its vertical rate is not towards the cleared level. The alert is inhibited when the cleared level is lower than a defined value (100ft), and for aircraft in level flight, for a specified time (60 sec) after a new cleared level is set.
+
+\subsection*{Alert Display}
+
+An alert is shown by displaying a circle around the aircraft position symbol and the text “CLAM” in the ALRT track label field. Note that MSAW, APW and AIW alerts will have priority over a CLAM alert in the track label.
+
+\subsection{RAM (Route Adherence Monitoring)}
+
+\subsection*{General}
+
+The RAM system warns if an aircraft is deviating from its route by more than a defined distance (2nm). The alert is inhibited specific distances from the departure (30nm) and destination (30nm), and a larger cross-track error (5nm) is allowed near waypoints where the route makes a turn (over 10° course change).
+
+For aircraft on a direct-to clearance, the alert is given if the difference between the aircraft’s track and the direct track to the cleared point exceeds a set value (5°). After a direct-to clearance is given, the alert is inhibited for a specified time (60 sec) or until the aircraft’s track is towards the point, whichever happens first.
+
+\subsection*{Alert Display}
+
+An alert is shown by displaying a circle around the aircraft position symbol and the text “RAM” in the ALRT track label field. Note that an MSAW, APW, AIW and CLAM alerts will have priority over a RAM alert in the track label.
+
 \section{Flight Plan Conflict Probe}
+
+\subsection{MTCD (Medium Term Conflict Detection)}
+
+\subsection*{General}
+
+The MTCD system is a tool that enables the controller to predict possible future conflicts between aircraft. For performance reasons the maximum selectable look-ahead time (prediction time) is limited to 40 minutes and the separation distance that triggers the alert (prediction distance) to 20 nm. They can be set to any lower value, the defaults being 20 minutes and 8 nm.
+In the lateral plane the system works by checking the aircraft’s predicted route up to the defined prediction time and calculating if the separation with other aircraft will be less than the defined prediction distance.
+In the vertical plane, the plugin can be set up to use either of the two following setups (example predicted vertical path of a climbing track in black color, relevant levels in grey):
+
+\includegraphics{img/mtcdv.png}
+
+\begin{itemize}
+    \item Conflicts (area with red shading)
+    \begin{itemize}
+        \item detected within a specified buffer (default 4000ft) around the predicted vertical path of the aircraft between AFL and CFL/PEL
+        \item current clearances may lead to a loss of separation
+    \end{itemize}
+    \item Conflict risks (area with yellow shading)
+    \begin{itemize}
+        \item detected within the same buffer, but outside of the AFL-CFL/PEL level range
+        \item current clearances will not lead to a loss of separation, but clearing one of the tracks to another level may turn the risk into a conflict
+    \end{itemize}
+    \item Potential predicted conflicts (area with light red shading)
+    \begin{itemize}
+        \item detected for tracks with equal CFL/PEL values, after the level is calculated to have been reached, when the predicted path contains further climb/descent
+        \item at least one of the tracks must be in the assumed sector state
+        \item current clearances may lead to a loss of separation if further climb/descent is not given
+    \end{itemize}
+    \item Potential risks of conflict (area with light yellow shading)
+    \begin{itemize}
+        \item detected within a larger vertical buffer (default 10000ft) but within the minimum and maximum levels of the predicted vertical path
+    \end{itemize}
+    \item Potential conflicts (area with light blue shading)
+    \begin{itemize}
+        \item detected within the larger vertical buffer, outside of the minimum and maximum levels of the predicted vertical path
+    \end{itemize}
+\end{itemize}
+
+Optionally, the detection of potential predicted conflicts and potential risks of conflict can be disabled, in which case they will be converted to potential conflicts.
+
+For the predictions to be accurate, it’s very important to keep the CFL and the aircraft’s route updated at all times. MTCD can be disabled for aircraft that have an assigned heading or a RAM warning, as in those cases the system can’t predict the aircraft’s future positions. If it is enabled for them, the system assumes that the aircraft continues on its present track and ground speed for a specified time and stops the prediction there. The system is always disabled for flight plan tracks with an assigned heading.
+
+\subsection*{Conflict and risk display}
+
+If there is a conflict or potential predicted conflict for the aircraft within the set warning parameters (can be set to warn for risks as well), the following indications are shown. The default values are 10 minutes to loss of separation with a 7nm separation minimum.
+
+MTCD track label field Either “•” in “Urgency” color or “MTCD” in “Warning” color
+
+The MTCD conflicts are also displayed in the \textit{\titleref{win:card}}).
+
+\subsection{SAP (Segregated Area Probe)}
+
+\subsection*{General}
+
+Much like the MTCD system predicts future conflicts between aircraft, the SAP system predicts future intrusions into active areas. The system uses the same look-ahead time as the MTCD system. The future position predictions are done at one-minute intervals which means a very short intrusion into an active area may not be noticed by the system. The classification into risks and conflicts is the same as in MTCD: a conflict means that the current clearance may lead to the aircraft entering an active area, whereas a risk means that the current clearance will not lead to that but clearing the aircraft to its XFL or some other level beyond the current CFL may do so.
+
+As with MTCD, keeping the CFL and the aircraft’s route updated is important for the system’s operation. Like MTCD, SAP can be disabled for any aircraft that has an assigned heading or a RAM warning. If enabled, the prediction logic is the same as in the MTCD case. SAP is disabled for non-altitude reporting traffic that doesn’t have a manually set AFL.
+
+\subsection*{Conflict and Risk display on the track label}
+
+A conflict is shown by displaying the Military coordination indicator (“M”). The indicator can be set to warn for risks as well. Note that once the indicator is clicked and changes to inactive state, the system will not give further warnings for that aircraft as long as the indicator is in the inactive state. Click on the inactive indicator to re-arm the system once the aircraft has passed all the areas for which crossing clearance was given.
+
+SAP conflicts (optionally also risks) are also shown in the \textit{\titleref{win:sap}}).
+
+\chapter{Data stored in the flight strip annotation boxes}
+
+The plugin stores some data in the flight strip annotation boxes (the group of nine boxes in three columns on the right side of the strip). This enables you to send this data to the next controller, or any other controller by manually pushing the strip. EuroScope can be set to automatically push the strip to the next controller on handoff. In addition, the plugin automatically pushes the strip when a handoff proposal (HOP) is sent.
+
+The plugin needs to be able to use four of the nine boxes for its functions. They are the boxes in the bottom row as well as the right-most box in the center row, marked with X’s in the picture below. Do not manually edit those boxes or use them to store any other data. The other boxes, marked by minus signs, are currently not used by the plugin in any way.
+
+\includegraphics{img/strip.png}
+
+\chapter{Known issues}
+
+\subsection*{Airport and area hotspots block screen panning}
+
+If you happen to drag one of the airport or area hotspot symbols when trying to move the screen, the screen will not move.
+
+\subsection*{ROF/RTI/TIP message availability limited}
+
+As there is no real plugin-to-plugin communication available, the availability and success of sending the ROF, RTI and TIP messages is somewhat limited.
+
+\subsection*{Problems opening the Radar Menu}
+
+The default method of opening the Radar Menu (<ALT>+right-click) may not always work on Mac hardware. It’s possible to adjust the plugin settings to try another combination, but the easiest way is to insert the following line to the TopSkySettingsLocal.txt file:
+
+\verb|Shortcut\RadarMenu\Combo=0x00|
+
+The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
 
 \appendix
 
@@ -2569,6 +2860,22 @@ The Departure Coordination Window can be used to set the clearance flag. The win
 \chapter{Color Values}
 
 \chapter{Keyboard Shortcuts}
+
+Some plugin functions can be accessed using a keyboard shortcut. By default, each shortcut is a combination of two keys, with the first key needing to be down while the second is pressed to activate the function. The available shortcuts and their default keys are:
+
+\begin{tabular}{l l}
+    Open FPL Window for the selected flight                         <ALT> + <F>
+    Open FPL Selection Window                                       <ALT> + <E>
+    Start new QDM line                                              <ALT> + <Q>
+    Remove all QDM lines                                            <ALT> + <X>
+    Inhibit active filters for 5 seconds (Quick Look)               <ALT> + <U>
+    Display the Flight Leg for the selected flight for 5 seconds    <ALT> + <L>
+    Start a new minimum separation line                             <ALT> + <S>
+    Reposition cursor at the center of the radar screen             <ALT> + <C>    
+\end{tabular}
+
+“Selected flight” in the above means that the mouse cursor is over that flight’s track label. For the timed functions, activating the shortcut while the timer is running restarts the timer from zero.
+
 
 \bibliographystyle{unsrt}
 \bibliography{refs}
