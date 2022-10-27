@@ -13,6 +13,7 @@
 \usepackage{longtable}
 \usepackage{pdflscape}
 \usepackage{makecell}
+\usepackage{colortbl}
 
 \colorlet{shadecolor}{blue!10}
 
@@ -2857,7 +2858,6 @@ The default method of opening the Radar Menu (<ALT>+right-click) may not always 
 
 The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
 
-%\begin{landscape}
 \appendix
 \chapter{Label field descriptions}
 
@@ -2870,7 +2870,7 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
     \textbf{Color} \\ \hline
     \endhead
     • &
-      Frequency &
+    Frequency &
       “•”, set from Callsign menu &
       (color): Freq Indicator \\ \hline
     • &
@@ -3871,10 +3871,162 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       
       Unknown \\ \hline
     \end{longtable}
-%\end{landscape}
+
 \chapter{Color Values}
 
-
+\begin{longtable}{|p{4.5cm}|p{1.5cm}|p{4.5cm}|}
+  \hline
+  \textbf{Color name}                                 & \textbf{Color}                       & \textbf{Usage}                                        \\ \hline
+  \endhead
+  \textit{\textbf{Aircraft colors}} & & \\ \hline
+  Assumed                                    & \cellcolor[RGB]{220,220,220} & Labels, Tracks                               \\ \hline
+  CARD Mark All                              & \cellcolor[RGB]{255,125,125} & Labels                                       \\ \hline
+  CARD Mark Own                              & \cellcolor[RGB]{255,124,125} & Labels                                       \\ \hline
+  Concerned                                  & \cellcolor[RGB]{111,153,110} & Labels, Tracks                               \\ \hline
+  Coordination                               & \cellcolor[RGB]{150,215,150} & Labels, Tracks                               \\ \hline
+  Freq Indicator                             & \cellcolor[RGB]{114,136,255} & Labels                                       \\ \hline
+  Info Coord                                 & \cellcolor[RGB]{1,255,255} & Labels                                       \\ \hline
+  Information                                & \cellcolor[RGB]{40,210,40} & Labels, Windows                              \\ \hline
+  Informed 1                                 & \cellcolor[RGB]{175,125,175} & Labels, Tracks                               \\ \hline
+  Informed 2                                 & \cellcolor[RGB]{104,163,195} & Labels, Tracks                               \\ \hline
+  Informed 3                                 & \cellcolor[RGB]{147,124,108} & Labels, Tracks                               \\ \hline
+  Proposition Accepted                       & \cellcolor[RGB]{255,255,0} & Labels                                       \\ \hline
+  Proposition In                             & \cellcolor[RGB]{220,125,175} & Labels                                       \\ \hline
+  Proposition Out                            & \cellcolor[RGB]{220,125,175} & Labels                                       \\ \hline
+  Redundant                                  & \cellcolor[RGB]{185,140,89} & Labels, Tracks                               \\ \hline
+  Rwy Locked                                 & \cellcolor[RGB]{41,210,41} & Labels                                       \\ \hline
+  Sid Star Allocation                        & \cellcolor[RGB]{15,185,15} & Labels                                       \\ \hline
+  Sid Star No Allocation                     & \cellcolor[RGB]{14,170,14} & Labels                                       \\ \hline
+  Suite Highlight                            & \cellcolor[RGB]{0,220,255} & Labels                                       \\ \hline
+  Track Default                              & \cellcolor[RGB]{210,210,210} & Tracks                                       \\ \hline
+  Track Highlight                            & \cellcolor[RGB]{0,165,219} & Tracks (when selected)                       \\ \hline
+  Unconcerned                                & \cellcolor[RGB]{135,128,118} & Labels, Tracks                               \\ \hline
+  Unknown                                    & \cellcolor[RGB]{239,224,42} & Labels                                       \\ \hline
+  Urgency                                    & \cellcolor[RGB]{225,25,26} & Labels, STCA callsign background on plugin windows/lists         \\ \hline
+  VFR                                        & \cellcolor[RGB]{110,1,10} & Labels, Tracks                               \\ \hline
+  Warning                                    & \cellcolor[RGB]{240,225,41} & Labels, APW callsign background on plugin windows/lists, Windows \\ \hline
+  \textit{\textbf{CPDLC colors}}                               &                             &                                              \\ \hline
+  CPDLC Controller Late                      & \cellcolor[RGB]{170,78,39} & Labels, Windows                              \\ \hline
+  CPDLC Discarded                            & \cellcolor[RGB]{128,128,128} & Windows                                      \\ \hline
+  CPDLC DM Request                           & \cellcolor[RGB]{30,250,250} & Labels, Windows                              \\ \hline
+  CPDLC Failed                               & \cellcolor[RGB]{170,78,39} & Labels, Windows                              \\ \hline
+  CPDLC Pilot Late                           & \cellcolor[RGB]{170,78,40} & Labels, Windows                              \\ \hline
+  CPDLC Standby                              & \cellcolor[RGB]{170,78,39} & Labels, Windows                              \\ \hline
+  CPDLC UM Clearance                         & \cellcolor[RGB]{30,251,250} & Labels, Windows                              \\ \hline
+  CPDLC Unable                               & \cellcolor[RGB]{170,77,39} & Labels, Windows                              \\ \hline
+  CPDLC Urgency                              & \cellcolor[RGB]{226,25,25} & Labels, Windows                              \\ \hline
+  \textit{\textbf{Aircraft related items on the radar screen}} &                             &                                              \\ \hline
+  AIW intrusion                              & \cellcolor[RGB]{255,152,0} & AIW alert related items                      \\ \hline
+  CARD Min Sep                               & \cellcolor[RGB]{61,61,61} & CARD SEP Tool                                \\ \hline
+  Flight Leg                                 & \cellcolor[RGB]{170,231,197} & Part of flight leg without MTCD and SAP coverage                 \\ \hline
+  FPLSEP Tool 1                              & \cellcolor[RGB]{255,170,46} & Flight plan separation tool 1                \\ \hline
+  FPLSEP Tool 2                              & \cellcolor[RGB]{204,122,0} & Flight plan separation tool 2                \\ \hline
+  FPLSEP Tool 3                              & \cellcolor[RGB]{170,102,0} & Flight plan separation tool 3                \\ \hline
+  FPLSEP Tool 4                              & \cellcolor[RGB]{223,143,1} & Flight plan separation tool 4                \\ \hline
+  FPLSEP Tool 5                              & \cellcolor[RGB]{255,195,75} & Flight plan separation tool 5                \\ \hline
+  Heading Vector                             & \cellcolor[RGB]{170,232,197} & Heading vector                               \\ \hline
+  Information FL                             & \cellcolor[RGB]{41,245,41} & Part of flight leg with no MTCD or SAP problems                  \\ \hline
+  Potential FL                               & \cellcolor[RGB]{40,41,216} & Part of flight leg with MTCD or SAP potential conflict           \\ \hline
+  QDM                                        & \cellcolor[RGB]{215,190,163} & QDM vector                                   \\ \hline
+  SEP Tool 1                                 & \cellcolor[RGB]{153,217,234} & Minimum separation tool 1                    \\ \hline
+  SEP Tool 2                                 & \cellcolor[RGB]{255,153,184} & Minimum separation tool 2                    \\ \hline
+  SEP Tool 3                                 & \cellcolor[RGB]{255,209,143} & Minimum separation tool 3                    \\ \hline
+  SEP Tool 4                                 & \cellcolor[RGB]{197,64,212} & Minimum separation tool 4                    \\ \hline
+  SEP Tool 5                                 & \cellcolor[RGB]{140,140,255} & Minimum separation tool 5                    \\ \hline
+  SEP Tool 6                                 & \cellcolor[RGB]{120,140,255} & Minimum separation tool 6                    \\ \hline
+  SEP Tool 7                                 & \cellcolor[RGB]{90,1,255} & Minimum separation tool 7                    \\ \hline
+  SEP Vert                                   & \cellcolor[RGB]{90,1,100} & Extensions of minimum separation tools       \\ \hline
+  System Calculated TOC                      & \cellcolor[RGB]{170,230,197} & TOC symbol on flight leg                     \\ \hline
+  System Calculated TOD                      & \cellcolor[RGB]{170,231,197} & TOD symbol on flight leg                     \\ \hline
+  Urgency FL                                 & \cellcolor[RGB]{225,25,25} & Part of flight leg with MTCD or SAP conflict \\ \hline
+  Warning FL                                 & \cellcolor[RGB]{240,226,41} & Part of flight leg with MTCD or SAP risk     \\ \hline
+  \textit{\textbf{Map colors}}                                 &                             &                                              \\ \hline
+  Active Map                                 & \cellcolor[RGB]{198,174,58} & Active TSA map border                        \\ \hline
+  Active Map Type 1                          & \cellcolor[RGB]{87,87,164} & TSA map border/fill                          \\ \hline
+  Active Map Type 2                          & \cellcolor[RGB]{80,162,74} & TSA map border/fill                          \\ \hline
+  Active Map Type 3                          & \cellcolor[RGB]{179,180,180} & TSA map border/fill                          \\ \hline
+  Active Map Type 4                          & \cellcolor[RGB]{200,53,18} & TSA map border/fill                          \\ \hline
+  Active Map Type 5                          & \cellcolor[RGB]{198,174,58} & TSA map border/fill                          \\ \hline
+  Active Map Type 6                          & \cellcolor[RGB]{114,69,58} & TSA map border/fill                          \\ \hline
+  Active Map Type 7                          & \cellcolor[RGB]{138,20,12} & TSA map border/fill                          \\ \hline
+  Active Map Type 8                          & \cellcolor[RGB]{195,186,69} & TSA map border/fill                          \\ \hline
+  Active Map Type 9                          & \cellcolor[RGB]{220,125,25} & TSA map border/fill                          \\ \hline
+  Active Map Type 10                         & \cellcolor[RGB]{255,255,255} & TSA map border/fill                          \\ \hline
+  Active Map Type 11                         & \cellcolor[RGB]{51,134,49} & TSA map border/fill                          \\ \hline
+  Active Map Type 12                         & \cellcolor[RGB]{41,102,255} & TSA map border/fill                          \\ \hline
+  Active Map Type 13                         & \cellcolor[RGB]{100,160,100} & TSA map border/fill                          \\ \hline
+  Active Map Type 14                         & \cellcolor[RGB]{141,184,236} & TSA map border/fill                          \\ \hline
+  Active Map Type 15                         & \cellcolor[RGB]{227,213,29} & TSA map border/fill                          \\ \hline
+  Active Map Type 16                         & \cellcolor[RGB]{60,60,60} & TSA map border/fill                          \\ \hline
+  Active Map Type 17                         & \cellcolor[RGB]{155,155,155} & TSA map border/fill                          \\ \hline
+  Active Map Type 18                         & \cellcolor[RGB]{183,26,19} & TSA map border/fill                          \\ \hline
+  Active Map Type 19                         & \cellcolor[RGB]{120,91,65} & TSA map border/fill                          \\ \hline
+  Active Map Type 20                         & \cellcolor[RGB]{138,69,58} & TSA map border/fill                          \\ \hline
+  Active RD Infill Map                       & \cellcolor[RGB]{90,90,90} & Active R or D map fill                       \\ \hline
+  Active RD Map                              & \cellcolor[RGB]{150,41,43} & Active R or D map border                     \\ \hline
+  Active Text Map                            & \cellcolor[RGB]{190,190,190} & Active TSA map text                          \\ \hline
+  Auto Map Label                             & \cellcolor[RGB]{159,159,160} & Auto-generated maps                          \\ \hline
+  Auto Map Symbol                            & \cellcolor[RGB]{110,130,140} & Auto-generated maps                          \\ \hline
+  East NAT Map                               & \cellcolor[RGB]{180,180,1} & Auto-generated maps, maps                    \\ \hline
+  Map 1                                      & \cellcolor[RGB]{80,95,95} & Maps                                         \\ \hline
+  Map 2                                      & \cellcolor[RGB]{44,44,44} & Maps                                         \\ \hline
+  Map 3                                      & \cellcolor[RGB]{100,108,111} & Maps                                         \\ \hline
+  Map 4                                      & \cellcolor[RGB]{52,58,62} & Maps                                         \\ \hline
+  Map Hotspot                                & \cellcolor[RGB]{87,139,200} & Map hotspots                                 \\ \hline
+  Map Border                                 & \cellcolor[RGB]{134,134,135} & Maps                                         \\ \hline
+  Map Info                                   & \cellcolor[RGB]{150,150,150} & Range rings, range marker                    \\ \hline
+  Map Land                                   & \cellcolor[RGB]{140,140,0} & Maps                                         \\ \hline
+  Map Symbol                                 & \cellcolor[RGB]{110,130,140} & Maps                                         \\ \hline
+  Preactive Map                              & \cellcolor[RGB]{154,138,128} & Pre-active map border                        \\ \hline
+  Preactive Text Map                         & \cellcolor[RGB]{155,147,138} & Pre-active map text                          \\ \hline
+  Predisplay Map                             & \cellcolor[RGB]{175,130,130} & Pre-display map border                       \\ \hline
+  Rwy App Line Inuse                         & \cellcolor[RGB]{82,190,115} & Runway approach line for runways in use      \\ \hline
+  Rwy App Line Not Inuse                     & \cellcolor[RGB]{135,135,70} & Runway approach line for runways not in use                      \\ \hline
+  TSA Border Highlight                       & \cellcolor[RGB]{255,254,255} & Highlighted TSA map border                   \\ \hline
+  Weather Map                                & \cellcolor[RGB]{0,0,86} & Weather radar data                           \\ \hline
+  West NAT Map                               & \cellcolor[RGB]{40,140,255} & Auto-generated maps, maps                    \\ \hline
+  \textit{\textbf{Window and menu colors}}                     &                             &                                              \\ \hline
+  Arm                                        & \cellcolor[RGB]{97,97,97} & Inactive window texts                        \\ \hline
+  Map Bright                                 & \cellcolor[RGB]{52,58,62} & Stack Manager Window, VAW                    \\ \hline
+  Background                                 & \cellcolor[RGB]{74,80,85} & Background                                   \\ \hline
+  Border                                     & \cellcolor[RGB]{51,51,52} & Various lines in windows                     \\ \hline
+  BottomShadow                               & \cellcolor[RGB]{70,70,70} & 3D effects in windows                        \\ \hline
+  CARD Conflict Number                       & \cellcolor[RGB]{9,10,11} & CARD conflict numbers                        \\ \hline
+  CARD Time Vector                           & \cellcolor[RGB]{171,231,197} & CARD time vectors                            \\ \hline
+  Field Highlight                            & \cellcolor[RGB]{72,72,73} & Selected field                               \\ \hline
+  Flight Highlight                           & \cellcolor[RGB]{36,41,45} & Selected item                                \\ \hline
+  Foreground                                 & \cellcolor[RGB]{200,200,200} & Window titles, menu items, active texts, close/min/resize boxes  \\ \hline
+  Global Menu Highlight                      & \cellcolor[RGB]{1,165,219} & Highlighted items in the Global Menu         \\ \hline
+  Inactive Sector                            & \cellcolor[RGB]{74,80,85} & CARD and VAW background                      \\ \hline
+  LatLong Info                               & \cellcolor[RGB]{169,231,197} & Coordinate value in Lat/Long Window          \\ \hline
+  Overflown                                  & \cellcolor[RGB]{82,105,146} & Overflown points in Complete Route Window    \\ \hline
+  Potential                                  & \cellcolor[RGB]{41,40,216} & Potential conflicts in CARD/VAW              \\ \hline
+  Select                                     & \cellcolor[RGB]{151,215,150} & Selected radio buttons and selection boxes   \\ \hline
+  Selected                                   & \cellcolor[RGB]{61,121,148} & Active filters in Radar menu                 \\ \hline
+  Selected Group                             & \cellcolor[RGB]{226,210,210} & Group of TSA areas in multi edit mode        \\ \hline
+  Selected Period                            & \cellcolor[RGB]{255,255,41} & Active areas text in area window             \\ \hline
+  SMW Level Band                             & \cellcolor[RGB]{24,209,114} & AFL-CFL boxes in SMW                         \\ \hline
+  SMW Overflight                             & \cellcolor[RGB]{254,152,1} & Overflight lines in SMW                      \\ \hline
+  SMW Overlap                                & \cellcolor[RGB]{224,25,25} & Overlapping AFL-CFL boxes in SMW             \\ \hline
+  SMW Overlap Box                            & \cellcolor[RGB]{207,207,207} & Multiple same CFL’s box in SMW               \\ \hline
+  SMW Overshoot                              & \cellcolor[RGB]{239,224,40} & Level bust AFL-CFL boxes in SMW              \\ \hline
+  TopShadow                                  & \cellcolor[RGB]{155,158,159} & 3D effects in windows                        \\ \hline
+  Trough                                     & \cellcolor[RGB]{97,99,97} & Slider area background                       \\ \hline
+  TSA Active                                 & \cellcolor[RGB]{93,138,195} & Active areas background in area window       \\ \hline
+  TSA Filter                                 & \cellcolor[RGB]{255,253,255} & Active categories in area window             \\ \hline
+  TSA Preactive                              & \cellcolor[RGB]{132,142,139} & Pre-active areas background in area window   \\ \hline
+  VAW Profile                                & \cellcolor[RGB]{152,202,172} & Selected aircraft profile in VAW             \\ \hline
+  VAW Sector Limits                          & \cellcolor[RGB]{145,95,30} & Sector boundaries in VAW                     \\ \hline
+  VAW Track Position                         & \cellcolor[RGB]{219,219,219} & Selected aircraft position in VAW            \\ \hline
+  WM Active Fg                               & \cellcolor[RGB]{255,254,254} & Active window title text                     \\ \hline
+  WM Bg                                      & \cellcolor[RGB]{100,100,105} & Window title bar background                  \\ \hline
+  WM Border                                  & \cellcolor[RGB]{88,95,99} & Window border line                           \\ \hline
+  WM Fg                                      & \cellcolor[RGB]{180,184,181} & Window texts                                 \\ \hline
+  WM Frame                                   & \cellcolor[RGB]{88,95,99} & Window frame when dragging                   \\ \hline
+  \textit{\textbf{Other colors}}                               &                             &                                              \\ \hline
+  Standard Line RDF                          & \cellcolor[RGB]{11,12,19} & Direction Finder position circle or direction line               \\ \hline
+  Text Notes                                 & \cellcolor[RGB]{255,0,0} & Text notes \\ \hline                                 
+  \end{longtable}
 
 \chapter{Keyboard Shortcuts}
 
