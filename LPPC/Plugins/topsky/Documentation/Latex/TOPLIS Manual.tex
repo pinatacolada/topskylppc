@@ -288,53 +288,55 @@ display METAR data
 \medskip
 
 \subsection*{Direction Finder submenu}
+
 Not operational.
 
 \subsection{AMS menu}
+
 \includegraphics{img/AMS.png}
-\medskip
+
 Opens the \textit{\titleref{win:amw}}.
 
 \subsection{FData menu}
+
 \includegraphics{img/FData.png}
-\medskip
-Opens the \textit{\titleref{menu:fpsel}} and \textit{\titleref{menu:fpwin}}.
+
+Opens the \textit{\titleref{win:fpsw}} and \textit{\titleref{win:fpw}}.
 
 \subsection{Tools menu}
 
-\subsection{Tools menu}
 %TODO\includegraphics{img/tools.png}
-\medskip
+
 \begin{tabular}{l l}
 \\- Flight Plan Lists > & Opens the Flight Plan Lists submenu
 \\- CARD… & Opens the \textit{\titleref{win:card}}
 \\- SAP… & Opens the \textit{\titleref{win:sap}}
 \\- Vertical Aid Window… & Opens the \textit{\titleref{win:vaw}}
-\\- Message In… & Opens the \textit{\titleref{win:mi}}
-\\- Message Out… & Opens the \textit{\titleref{win:mo}}
+\\- Message In… & Opens the \textit{\titleref{win:miw}}
+\\- Message Out… & Opens the \textit{\titleref{win:mow}}
 \\- CPDLC > & Opens the CPDLC submenu
-\\- LAT/LONG… & Opens the \textit{\titleref{win:cur}}
+\\- LAT/LONG… & Opens the \textit{\titleref{win:latlon}}
 \end{tabular}
-\medskip
 
 \subsection*{Flight Plan Lists submenu}
+
 \begin{tabular}{l l}
     - [] List options bar           & Toggles the display of list options on the Global Menu
     \\- Sector List…                & Opens the Sector List
     \\- [] Informed                 & Toggles the display of informed aircraft
     \\- [] Concerned                & Toggles the display of concerned aircraft
     \\- [] Redundant                & Toggles the display of redundant aircraft
-    \\- Load Factor List…           & Opens the \textit{\titleref{list:lf}}
+    \\- Load Factor List…           & Opens the \textit{\titleref{list:load}}
     \\- ETWR List…                  & Opens the \textit{\titleref{list:etwr}}
     \\- <adep>                      & ETWR List departure airports filter
-    \\- Uncont. List 1…             & Opens the \textit{\titleref{list:ul1}}
+    \\- Uncont. List 1…             & Opens the \textit{\titleref{list:uncon1}}
     \\- <filter>                    & Uncontrolled 1 List state filter
     \\- <units>                     & Uncontrolled 1 List units filter
-    \\- Uncont. List 2…             & Opens the \textit{\titleref{list:ul2}}
+    \\- Uncont. List 2…             & Opens the \textit{\titleref{list:uncon2}}
     \\- <filter>                    & Uncontrolled 2 List state filter
     \\- <units>                     & Uncontrolled 2 List units filter
-    \\- Lost List…                  & Opens the \textit{\titleref{list:ll}}
-    \\- Resectorisation List…       & Opens the \textit{\titleref{list:rl}}
+    \\- Lost List…                  & Opens the \textit{\titleref{list:lost}}
+    \\- Resectorisation List…       & Opens the \textit{\titleref{list:resec}}
     \\- <lfunc>                     & Resectorisation List LFUNC filter
     \\- Traffic Mgmt. List 1…       & Opens the \textit{\titleref{list:tml1}}
     \\- <state>                     & Traffic Management List 1 flight plan state filter
@@ -371,7 +373,7 @@ filtered).
 
 \subsection*{CPDLC submenu}
 \begin{tabular}{l l}
-- Microphone Check      & Opens the \textit{\titleref{win:dlmcm}}
+- Microphone Check      & Opens the \textit{\titleref{menu:dlmcm}}
 \\- Current Messages…   & Opens the \textit{\titleref{win:dlcmw}}
 \\- History Messages…   & Opens the \textit{\titleref{win:dlhmw}}
 \end{tabular}
@@ -380,8 +382,8 @@ filtered).
 
 \subsection{MET menu}
 \begin{tabular}{l l}
-- Messages… & Opens the \textit{\titleref{win:wxcmw}}
-\\- QNH/TL    & Opens the \textit{\titleref{win:wxqnh}}
+- Messages… & Opens the \textit{\titleref{win:wxmw}}
+\\- QNH/TL    & Opens the \textit{\titleref{win:qnhtl}}
 \end{tabular}
 \medskip
 
@@ -390,9 +392,9 @@ Not implemented (always shows a zero value).
 
 \subsection{Info menu}
 \begin{tabular}{l l}
-- General Information…      & Opens the \textit{\titleref{win:gi}}
-\\- Document Viewer…          & Opens the \textit{\titleref{win:dv}}
-\\- NOTAM…                    & Opens the \textit{\titleref{list:notam}}
+- General Information…      & Opens the \textit{\titleref{win:geninfo}}
+\\- Document Viewer…          & Opens the \textit{\titleref{win:dvw}}
+\\- NOTAM…                    & Opens the \textit{\titleref{win:notamlw}}
 \\- Aerodrome…                & Opens the \textit{\titleref{menu:ad}}
 \\- LFUNC Frequency Plan…     & Opens the \textit{\titleref{win:lfunc}}
 \\- [] Airport labels         & Toggles airport labels selection
@@ -408,11 +410,11 @@ what information is shown on the corresponding labels. All the information is fr
 
 \subsection{MSG menu}
 \begin{tabular}{l l}
-- Notepad…              & Opens the \textit{\titleref{win:notepad}}
-\\- Personal Queue…     & Opens the \textit{\titleref{win:pq}}
-\\- ATC Messages…       & Opens the \textit{\titleref{win:atcm}}
-\\- Prim Freq Messages… & Opens the \textit{\titleref{win:pfm}}
-\\- NAT Track Messages… & Opens the \textit{\titleref{win:natm}}
+- Notepad…              & Opens the \textit{\titleref{win:note}}
+\\- Personal Queue…     & Opens the \textit{\titleref{win:pqw}}
+\\- ATC Messages…       & Opens the \textit{\titleref{win:atcmwm}}
+\\- Prim Freq Messages… & Opens the \textit{\titleref{win:pfmw}}
+\\- NAT Track Messages… & Opens the \textit{\titleref{win:nattmw}}
 \\- Text notes >        & Opens the Text notes submenu
 \end{tabular}
 
@@ -451,9 +453,9 @@ shown on “Global Menu Highlight” background when the window is not open.
 \subsection{STS menu}
 \begin{tabular}{l l}
 - Plugin Status >                & Opens the Plugin Status submenu
-\\- Safety Nets Status…            & Opens the \textit{\titleref{win:sn}}
-\\- Divergence Detection Status…   & Opens the \textit{\titleref{win:dds}}
-\\- MTCD Status…                   & Opens the \textit{\titleref{win:mtcds}}
+\\- Safety Nets Status…            & Opens the \textit{\titleref{win:snsw}}
+\\- Divergence Detection Status…   & Opens the \textit{\titleref{win:ddsw}}
+\\- MTCD Status…                   & Opens the \textit{\titleref{win:mtcdsw}}
 \\- CPDLC Default Status [ON/OFF]  & Toggles the CPDLC Default Status On/Off
 \\- Runway In Use                  & Opens the \textit{\titleref{menu:ad}}
 \\- Supervisory >                  & Opens the Supervisory submenu
@@ -601,41 +603,46 @@ are not displayed for flight plan tracks.
 
 \subsection{Track label}
 There are four types of track labels that can be displayed: Standard, Reduced, Extended and Uncorrelated.
+
 In addition, each label except the extended one has an unselected and a selected state, the selected state
 being shown when the mouse cursor is over the label.
 \medskip
+
 Basically, the Standard label is shown for aircraft that are in or will enter the active sector and the Reduced
 label for aircraft that will not enter the active sector. The Extended label can be opened from the Standard
 or Reduced label and stays open as long as the cursor is within the label area. The Uncorrelated label is
 shown for radar tracks that aren’t correlated with a flight plan.
 \medskip
+
 Refer to your setup specific documentation for detailed descriptions of the track labels.\\
 
 \section{Flight Leg}
 The Flight Leg displays the aircraft’s planned track in one-minute steps. Each one-minute-long part of the
 path is colored according to the results of the MTCD and SAP processing. The following colors are possible:
 \medskip
+
 \begin{tabular}{l l}
-“Urgency FL”        & MTCD and/or SAP conflic
-\\“Warning FL”      & MTCD and/or SAP risk
-\\“Potential FL”    & MTCD potential conflict
-\\“Information FL”  & MTCD and/or SAP processing available, no conflicts or risks detected
-\\“Flight Leg”      & No MTCD or SAP processing available for this part of the Flight Leg
+“Urgency FL”        & MTCD and/or SAP conflic\\
+“Warning FL”      & MTCD and/or SAP risk\\
+“Potential FL”    & MTCD potential conflict\\
+“Information FL”  & MTCD and/or SAP processing available, no conflicts or risks detected\\
+“Flight Leg”      & No MTCD or SAP processing available for this part of the Flight Leg\\
 \end{tabular}
 \medskip
+
 If the aircraft has an assigned heading or is not following its route, the predictions only go up to 10 minutes
 and assume the aircraft continues on its present ground track. In this case the predicted track is shown as a
 dashed line when the flight leg is displayed.
-\medskip
+
 The Flight Leg is displayed by clicking on various track label and list items depending on the setup and is
 either automatically removed from display when the mouse cursor leaves the label area or must be
 manually toggled off, depending on the function that was used to display it.
-\medskip
+
 The label that’s shown on each route point includes the following predefined fields
 \begin{tabular}{l l}
-\includegraphics{img/fleto.png}     & Estimated Time Over the point
-\\\includegraphics{img/fltoc.png}   & Top of Climb
-\\\includegraphics{img/fltod.png}   & Top of Descent
+\includegraphics{img/fleto.png}     & Estimated Time Over the point\\
+\includegraphics{img/fltoc.png}   & Top of Climb\\
+\includegraphics{img/fltod.png}   & Top of Descent\\
 \end{tabular}
 
 \section{Track Label Menus}
@@ -656,31 +663,31 @@ placed over it or if the default item is in the “More” folder, other folders
 \subsection*{Controlled Track}
 \includegraphics{img/cm.png}
 \begin{tabular}{l l l}
-Assume                      & Assumes track
-\\Refuse                    & Refuses the incoming transfer
-\\Transfer                  & Initiates a transfer to the next sector
-\\Trf \& Release             & Opens the \textit{\titleref{menu:trm}}
-\\ROF                       & Sends a \textit{\titleref{dl:rof}}
-\\(X)Freq                   & Toggles the Freq indicator
-\\(X)Highlight              & Toggles the Callsign highlight
-\\(X)S-Highlight            & Toggles the Callsign+AFL fields highlight
-\\PRL                       & Opens the \textit{\titleref{menu:plm}}
-\\(X)Hold                   & “Hold” opens the \textit{\titleref{menu:hold}}, “XHold” cancels a given holding clearance
-\\$\blacktriangledown$ More & Shows additional less frequently used options
-\\Manual Transfer           & Opens the \textit{\titleref{menu:mtm}}
-\\(X)Inbound Est            & Toggles the “Inbound Est” manual alert
-\\HOP                       & Initiates a \textit{\titleref{menu:hop}}
-\\(X)Mark                   & Toggles the Mark indicator
-\\(X)Couple                 & Uncorrelates/correlates the flight plan
-\\FPL…                      & Opens the \textit{\titleref{menu:fpl}}
-\\(X)Irregular              & Toggles the “Irregular” manual alert
-\\Start/End CPDLC           & Starts/Ends CPDLC connection with the aircraft
-\\VCI                       & Opens the \textit{\titleref{menu:vci}}
-\\Squawk Ident              & Sends a “SQUAWK IDENT” CPDLC message to the aircraft
-\\CPDLC Free Text           & Opens the \textit{\titleref{menu:dlftm}}
-\\Free                      & Releases track
-\\On Contact                & Sets track in On-Contact state*
-\\(X)Missed App             & Toggles the “Missed App” manual alert
+Assume                    & Assumes track\\
+Refuse                    & Refuses the incoming transfer\\
+Transfer                  & Initiates a transfer to the next sector\\
+Trf \& Release            & Opens the \textit{\titleref{menu:xfrrel}}\\
+ROF                       & Sends a \textit{\titleref{menu:rof}}\\
+(X)Freq                   & Toggles the Freq indicator\\
+(X)Highlight              & Toggles the Callsign highlight\\
+(X)S-Highlight            & Toggles the Callsign+AFL fields highlight\\
+PRL                       & Opens the \textit{\titleref{menu:prl}}\\
+(X)Hold                   & “Hold” opens the \textit{\titleref{menu:hold}}, “XHold” cancels a given holding clearance\\
+$\blacktriangledown$ More & Shows additional less frequently used options\\
+Manual Transfer           & Opens the \textit{\titleref{menu:mxfr}}\\
+(X)Inbound Est            & Toggles the “Inbound Est” manual alert\\
+HOP                       & Initiates a \textit{\titleref{win:hop}}\\
+(X)Mark                   & Toggles the Mark indicator\\
+(X)Couple                 & Uncorrelates/correlates the flight plan\\
+FPL…                      & Opens the \textit{\titleref{win:fpw}}\\
+(X)Irregular              & Toggles the “Irregular” manual alert\\
+Start/End CPDLC           & Starts/Ends CPDLC connection with the aircraft\\
+VCI                       & Opens the \textit{\titleref{menu:vci}}\\
+Squawk Ident              & Sends a “SQUAWK IDENT” CPDLC message to the aircraft\\
+CPDLC Free Text           & Opens the \textit{\titleref{menu:dlftm}}\\
+Free                      & Releases track\\
+On Contact                & Sets track in On-Contact state*\\
+(X)Missed App             & Toggles the “Missed App” manual alert\\
 \end{tabular}
 \medskip
 
@@ -705,8 +712,8 @@ On Contact          & Sets track in On-Contact state (“Assumed” color, can�
 \\(X)S-Highlight    & Toggles the Callsign+AFL fields highlight
 \\(X)Couple         & Uncorrelates/correlates the flight plan
 \\(X)Hold           & “Hold” opens the \textit{\titleref{menu:hold}}, “XHold” cancels a given holding clearance
-\\FPL...            & Opens the \textit{\titleref{menu:fpl}}
-\\PRL               & Opens the \textit{\titleref{menu:plm}}
+\\FPL...            & Opens the \textit{\titleref{win:fpw}}
+\\PRL               & Opens the \textit{\titleref{menu:prl}}
 \end{tabular}
 \medskip
 
@@ -720,7 +727,7 @@ the VATSIM flight plan to IFR in order to make it controlled. The displayed flig
 \begin{tabular}{l l l}
 Correlate       & Correlates the radar track with the next clicked “Callsign” field
 \\Create APL    & Opens the \textit{\titleref{win:apl}}
-\\PRL           & Opens the \textit{\titleref{menu:plm}}
+\\PRL           & Opens the \textit{\titleref{menu:prl}}
 \end{tabular}
 \medskip
 
@@ -777,7 +784,7 @@ controller. When sent, the text “ROF” is displayed in the track label on the
 The “ROF” message is a feature specific to this plugin. It is an experimental feature and is not guaranteed to work all the time. When you send the message, check that it’s sent properly.
 \begin{enumerate}
         \item A successfully sent message will be displayed in the \textit{\titleref{win:mow}}
-        \item If there is an error or the message fails to go through, a message will be put into the \textit{\titleref{win:pq}}
+        \item If there is an error or the message fails to go through, a message will be put into the \textit{\titleref{win:pqw}}
 \end{enumerate}
 \end{Warn}
 
@@ -785,54 +792,38 @@ The “ROF” message is a feature specific to this plugin. It is an experimenta
 \label{menu:hold}
 \includegraphics{img/hold.png}
 
-The Hold menu allows you to enter a holding clearance (add the aircraft to the holding
-list). It displays for selection the points in the aircraft’s route that are ahead of its
-current position.
+The Hold menu allows you to enter a holding clearance (add the aircraft to the holding list). It displays for selection the points in the aircraft’s route that are ahead of its current position.
 
-Left-clicking the empty box below the waypoint list opens a text entry box to enter any
-holding point name.
+Left-clicking the empty box below the waypoint list opens a text entry box to enter any holding point name.
 
 Left-clicking “Here” enters the present position coordinates as the holding point.
 
-The holding point is automatically sent to your other EuroScope instances with a small
-delay and can be sent to other controllers by pushing the flight strip as the information
-is stored there.
+The holding point is automatically sent to your other EuroScope instances with a small delay and can be sent to other controllers by pushing the flight strip as the information is stored there.
 
 \subsection{Manual Transfer Menu}
 \label{menu:mxfr}
 \includegraphics{img/mxfr.png}
 
-The Manual Transfer menu allows transferring the aircraft to any controller. In the
-SCHEDULED list are the controllers that are in the current sector sequence sorted in the
-order the aircraft is planned to enter the controllers’ sectors, with the next controller
-being the default item.
+The Manual Transfer menu allows transferring the aircraft to any controller. In the SCHEDULED list are the controllers that are in the current sector sequence sorted in the order the aircraft is planned to enter the controllers’ sectors, with the next controller being the default item.
 
-When opened, the “More” list displays all the other controllers for selection. Click on a
-controller ID to start the transfer. For CPDLC connected aircraft, clicking on a controller
-ID opens the \textit{\titleref{menu:xfr}}
+When opened, the “More” list displays all the other controllers for selection. Click on a controller ID to start the transfer. For CPDLC connected aircraft, clicking on a controller ID opens the \textit{\titleref{menu:xfr}}
 
 \subsection{VCI Menu}
 \label{menu:vci}
 \includegraphics{img/vci.png}
 
-Available only for CPDLC-connected aircraft and when more than one frequency has
-been set up by the controller, the VCI menu allows sending a CPDLC “contact” or
-“monitor” message without initiating a transfer.
+Available only for CPDLC-connected aircraft and when more than one frequency has been set up by the controller, the VCI menu allows sending a CPDLC “contact” or “monitor” message without initiating a transfer.
 
-The first button displays the primary frequency, left-clicking it will send the message
-with that frequency.
+The first button displays the primary frequency, left-clicking it will send the message with that frequency.
 
-Left-clicking the “Select Freq” button will open a text entry box to enter any other
-frequency. If a valid frequency (set up as XMT TXT in EuroScope’s Voice communication
-setup dialog) is entered, the message will be sent with that frequency.
+Left-clicking the “Select Freq” button will open a text entry box to enter any other frequency. If a valid frequency (set up as XMT TXT in EuroScope’s Voice communication setup dialog) is entered, the message will be sent with that frequency.
 
 “Monitor” and “Contact” are used to select the type of message to be sent.
 
 \subsection{CPDLC Free Text Menu}
 \label{menu:dlftm}
 
-The CPDLC Free Text menu is used to send a free text CPDLC message to the aircraft. The menu contains
-pre-defined messages from a data file. Left-clicking on a message sends it.
+The CPDLC Free Text menu is used to send a free text CPDLC message to the aircraft. The menu containsm pre-defined messages from a data file. Left-clicking on a message sends it.
 
 The menu closes when a message is sent or the cursor leaves the menu area.
 
@@ -840,12 +831,9 @@ The menu closes when a message is sent or the cursor leaves the menu area.
 \label{menu:prl}
 \includegraphics{img/prl.png}
 
-The Prediction Line menu allows displaying a PRL with a specific length for each aircraft
-even if the PRL selection is off in the Radar Menu.
+The Prediction Line menu allows displaying a PRL with a specific length for each aircraft even if the PRL selection is off in the Radar Menu.
 
-The default value is the set PRL value if available, otherwise the PRL length value from
-the Track Control Window. Changing the PRL length value in the \textit{\titleref{win:trackctl}}
-or changing the PRL setting in the \textit{\titleref{menu:radarm}} will delete all manually set PRL lengths.
+The default value is the set PRL value if available, otherwise the PRL length value from the Track Control Window. Changing the PRL length value in the \textit{\titleref{win:tcw}} or changing the PRL setting in the \textit{\titleref{menu:radarm}} will delete all manually set PRL lengths.
 
 \subsection{Sequence Number Menu}
 \label{menu:seq}
@@ -1103,7 +1091,7 @@ The “RTI” and “TIP” messages are features specific to this plugin. They 
 
 \begin{itemize}
         \item A successfully sent message will be displayed in the \textit{\titleref{win:mow}} and the requested parameter being shown above the track label
-        \item If there is an error or the message fails to go through, a message will be put into the \textit{\titleref{win:pq}}.
+        \item If there is an error or the message fails to go through, a message will be put into the \textit{\titleref{win:pqw}}.
 \end{itemize}
 \end{Warn}
 
@@ -1198,7 +1186,7 @@ Note that the menu displays both sent and received coordinations, but you can na
 
 Once a value is accepted, the respective label field (e.g. AHDG) will be colored “Information” until the value is set to the accepted one.
 
-All tactical data coordinations (also any rejected ones) can be viewed in the \textit{\titleref{win:ttw}}, but they cannot be answered or applied there.
+All tactical data coordinations (also any rejected ones) can be viewed in the \textit{\titleref{win:tiw}}, but they cannot be answered or applied there.
 
 \subsection{Aerodrome Menu}
 \label{menu:ad}
@@ -1206,7 +1194,7 @@ All tactical data coordinations (also any rejected ones) can be viewed in the \t
 
 The Aerodrome menu is used to select the aerodrome(s) for aerodrome related windows and functions. The list contains all aerodromes with runways defined in the active sector file. To select an aerodrome, left-click on it or type its identifier into the text entry box below the list.
 
-Selection of more than one aerodrome is possible when the menu was opened from the \textit{\titleref{win:wxm}}. In this case the “All” button is available and clicking on it will select all the aerodromes in the list.
+Selection of more than one aerodrome is possible when the menu was opened from the \textit{\titleref{win:wxmw}}. In this case the “All” button is available and clicking on it will select all the aerodromes in the list.
 
 Clicking on “Ok” will confirm the selection(s) and close the menu.
 
@@ -1479,7 +1467,7 @@ In addition to plugin defined maps, the window can be used to toggle the visibil
 
 The “AIRWAYS L” and “AIRWAYS H” folders present the airways organized into groups. The default group is “PERM”. An airway can be assigned to a custom named group by having the group name in parentheses in the airway name. Airways with “[1]”, “[2]” or “[3]” found in their names will be assigned to groups “CDR 1”, “CDR 2” and “CDR 3” respectively. Custom group names and the CDR numbers can be combined, for example airway segments named “A1(GRP)[1]” and “A2(GRP)[1]” in the sector file would be labeled “GRP CDR 1” in the maps list. Additionally, one map with the group’s name is created that contains all airways in the group regardless of the PERM or CDR status.
 
-NAT tracks extracted from downloaded track messages (see \textit{\titleref{win:ntmw}}) can be found in the “NAT” folder. Eastbound tracks are colored East NAT Map, westbound ones West NAT Map.
+NAT tracks extracted from downloaded track messages (see \textit{\titleref{win:nattmw}}) can be found in the “NAT” folder. Eastbound tracks are colored East NAT Map, westbound ones West NAT Map.
 
 The plugin data files may include additional data to the abovementioned sector file. If present, the data is activated and deactivated together with the sector file item when done via the Maps Window.
 
@@ -2470,7 +2458,7 @@ he numbers on the right side are the caution and warning limits. To change them,
 The two sliders change the traffic number and time scales.
 
 \subsection{Runway Approach Line Window}
-\label{win:rapw}
+\label{win:ralw}
 
 Global Menu -> Status/STS -> RWY line display... (opens the \textit{\titleref{menu:ad}} for airport selection)
 Radar screen -> right-click on Airport symbol drawn by the plugin’s “AD\_Hotspots” map...
@@ -3720,7 +3708,7 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       
       color of the  warning \\ \hline
     SID &
-      Assigned/planned SID &
+      Assigned or planned SID &
       SID identifier &
       If automatically assigned:  
       
@@ -3735,7 +3723,7 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       A number from 1 to 50 &
        \\ \hline
     STAR &
-      Assigned/planned STAR &
+      Assigned or planned STAR &
       STAR identifier &
       If automatically assigned:  
       
@@ -4033,14 +4021,12 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
 Some plugin functions can be accessed using a keyboard shortcut. By default, each shortcut is a combination of two keys, with the first key needing to be down while the second is pressed to activate the function. The available shortcuts and their default keys are:
 
 \begin{tabular}{l l}
-    Open FPL Window for the selected flight                         <ALT> + <F>
-    Open FPL Selection Window                                       <ALT> + <E>
-    Start new QDM line                                              <ALT> + <Q>
-    Remove all QDM lines                                            <ALT> + <X>
-    Inhibit active filters for 5 seconds (Quick Look)               <ALT> + <U>
-    Display the Flight Leg for the selected flight for 5 seconds    <ALT> + <L>
-    Start a new minimum separation line                             <ALT> + <S>
-    Reposition cursor at the center of the radar screen             <ALT> + <C>    
+    Open FPL Window for the selected flight                        & <ALT> + <F>\\
+    Open FPL Selection Window                                      & <ALT> + <E>\\
+    Start new QDM line                                             & <ALT> + <Q>\\
+    Inhibit active filters for 5 seconds (Quick Look)              & <ALT> + <U>\\
+    Start a new minimum separation line                            & <ALT> + <S>\\
+    Reposition cursor at the center of the radar screen            & <ALT> + <C>\\    
 \end{tabular}
 
 “Selected flight” in the above means that the mouse cursor is over that flight’s track label. For the timed functions, activating the shortcut while the timer is running restarts the timer from zero.
