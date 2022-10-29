@@ -3276,6 +3276,229 @@ It is possible to coordinate more than one value, either before or after the pre
 
 For example, if you send an RTI with AHDG 360 (as in the above example) and then send another with ASP 300 (either immediately or after the first coordination is answered), the label field on line 0 will only show the ASP proposal. When opening the Tactical Transfer menu, all the proposals and accepted values are shown. If more than one proposal is active, clicking on “Accept” or “Reject” will send the same answer to all of them. Therefore, it is recommended to wait for an answer until sending another proposal unless the intention of the proposal is to get “all or nothing”.
 
+\chapter{Datalink}
+
+\section{General}
+
+The TopSky plugin includes some datalink functionality. As there is no VATSIM standard for this, the plugin uses Hoppie’s ACARS network (\url{http://www.hoppie.nl/acars}). A separate password (logon code) is needed, and it can be requested from that site. Note that whereas the plugin includes everything that is necessary to utilize the ACARS network, pilots will have to install separate software in addition to their pilot clients.
+
+
+The plugin supports Departure Clearance (DCL and PDC) and Controller-Pilot Data Link Communications (CPDLC). DCL/PDC is discussed in chapter 1 and CPDLC in chapter 2.
+
+
+To start using the data link functions, first connect to the VATSIM network. Then connect to the Hoppie network:
+
+\begin{itemize}
+  \item Open the CPDLC Setting Window
+  \item Enter/check the login callsign
+  \item Enter your personal logon code
+  \item Select whether to provide CPDLC or DCL/PDC services or both
+  \item Left-click on the “Connect” button
+\end{itemize}
+
+Wait a moment to see if the connection is successful (the “Connect” button changes to “Online” with a green background, stays that way at least 10 seconds, and no error messages regarding the connection appear in the Personal Queue Window). The Hoppie logon code expires after 120 days of inactivity. If that happens, the connection will fail and a new logon code has to be requested.
+
+
+Only CTR and FSS stations should provide CPDLC services as it is a relatively slow communication method. When providing DCL/PDC only, the login callsign should be the airport identifier if possible. Also remember to advertise your login callsign in your controller information so the pilots will know that the service is available, there’s basically no other way for them to know about it.
+
+
+Failure messages regarding the connection will be put into the Personal Queue Window, and if the connection is lost, an error message dialog will be displayed in the center of the radar screen. Note that if multiple EuroScope instances are used, the proxy instances will not be able to access the CPDLC message windows or change the network connection status.
+
+
+Whereas the real CPDLC system consists mostly of pre-formatted messages, Hoppie’s network contains only free text messages. Free text messages are available in the real system as well but to minimize the risk of misunderstandings, they should not be used if a pre-formatted message is available.
+
+
+With no pre-formatted messages, the plugin will probably sometimes fail to parse the message contents correctly. The longer the message, the more likely it is that the parsing will go wrong. When in doubt, open the message in the CPDLC Current Message Window and see what it says.
+
+The example track labels and the data field colors in this document do not represent any specific setup and are only meant to highlight the items specific to each function. In the examples, aircraft ABC123 is assumed by you, the next controller is “IDA”, the aircraft is climbing through FL100, and its cleared level is FL180. This is the label before any messages arrive:
+
+\begin{tabular}{
+  >{\columncolor{C_Flight_Highlight}}l 
+  >{\columncolor{C_Flight_Highlight}}l
+  >{\columncolor{C_Flight_Highlight}}l }
+  {\color{C_Assumed} ABC123} & {\color{C_Coordination} IDA} & \\
+  {\color{C_Assumed} 100} & {\color{C_Assumed} $\blacktriangle$} & \\
+  {\color{C_Assumed} 180} & & \\         
+\end{tabular}
+
+When the aircraft requests to start a CPDLC connection, it sends a “REQUEST LOGON” message. The message is displayed in the CPDLC Current Message Window and the Callsign field gets blinking square brackets around it (not on proxy ES instances). The plugin automatically denies requests for aircraft not entering your sector. To approve the request, use the “Start CPDLC” button in the Callsign menu. To deny the request, left-click on the message in the CPDLC Current Message Window and select “UNABLE” (it is also possible to approve it there if necessary, but the Callsign menu is the primary way to do it.
+
+When the request has been accepted, the Callsign field will get steady square brackets around it. This indicates that the aircraft is CPDLC connected and you are able to exchange CPDLC messages with it.
+
+\begin{tabular}{
+  >{\columncolor{C_Flight_Highlight}}l 
+  >{\columncolor{C_Flight_Highlight}}l
+  >{\columncolor{C_Flight_Highlight}}l }
+  {\color{C_Assumed} [ABC123]} & {\color{C_Coordination} IDA} & \\
+  {\color{C_Assumed} 100} & {\color{C_Assumed} $\blacktriangle$} & \\
+  {\color{C_Assumed} 180} & & \\         
+\end{tabular}
+
+To terminate the CPDLC connection of an aircraft, use the “End CPDLC” button in the Callsign menu.
+
+Many CPDLC messages display information in the track labels, but it is good practice to keep the CPDLC Current Message Window open as there are some messages that are only displayed there, and it’s also the only place to check if the plugin interpreted the message correctly. It is found in the “ControlTools” or “Tools” menu, depending on the plugin version. Additionally, you may want to activate a warning sound when a new CPDLC, DCL or PDC message arrives. This is done in the “Settings” or “Setup” menu.
+
+CPDLC/DCL/PDC-related plugin windows and menus are shown in this document with bold text. For more information on them, refer to the General part of the plugin manual set.
+
+\begin{Note}
+  While it is possible to answer any message in the CPDLC Current Message Window using the “Manual Reply” option, the track label menus should always be used to answer correctly recognized messages, as using the manual reply method will not update the track label values.
+\end{Note}
+
+\section{Departure Clearance (DCL)}
+
+\subsection{General}
+
+The plugin supports three different ways to get a departure clearance by data link.
+ARINC-623 DCL is a service used in Europe and many other parts of the World. It is a direct ATC-to-pilot data link communication over the ACARS network.
+
+The departure clearance functionality is built into the Departure List (but all the messages are also displayed in the CPDLC message windows). A received clearance request is displayed in the list, and a clearance can be sent by opening a departure clearance menu from the Departure List.
+
+\subsection{DCL Sequence}
+
+\subsection*{Departure Clearance Request (RCD)}
+
+First, the aircraft sends a clearance request message (RCD). In the CPDLC message windows it looks like this:
+
+\begin{quote}
+  REQUEST PREDEP CLEARANCE ABC123 A320 TO ESSA AT EFHK STAND 22 ATIS PAPA
+\end{quote}
+
+\subsection*{Flight System Message (FSM)}
+
+If the request is correctly formatted, the plugin will automatically send a flight system message (FSM) as a reply (the plugin can be configured to not send this message though). Its content depends on whether everything is OK (flight plan found, departure airport set up to offer data link clearances, etc.). If so, the reply message to the aircraft will look like this:
+
+\begin{quote}
+  DEPART MESSAGE STATUS FSM 1312 160213 EFHK ABC123 RCD RECEIVED REQUEST BEING PROCESSED STANDBY 
+\end{quote}
+
+The List CLR tag item will show a “R” text in yellow (red if the request contained remarks text after the ATIS indicator, in this case see the message in the CPDLC Current Message Window). The text will start to blink two minutes before a timeout occurs if a clearance hasn’t been sent.
+
+If a clearance is not sent before the timeout occurs, the data link clearance request is automatically rejected and a message is sent to the aircraft to revert to voice procedures.
+
+\subsection*{Departure Clearance Message (CLD)}
+
+This is the first (and only) step that requires controller action. The clearance is sent using the Pre-Departure Clearance menu, opened using the Open PDC menu function. The clearance is sent using the “Send DCL” button, but the option to give the clearance by voice is always there as well (“Voice” rejects the data link clearance request and sends a message to the aircraft to revert to voice procedures). The sent clearance will look like this:
+
+\begin{quote}
+  EFHK PDC 001 CLD 1314 160213 EFHK PDC 001 ABC123 CLRD TO ESSA OFF 22R VIA VAGIP1N DCT ADIVO SQUAWK 4625 NEXT FREQ 121.800 QNH 1012
+\end{quote}
+
+Once the clearance is sent, the List CLR item will change to “ACK” or “A”, and will start to blink if there is no reply from the aircraft two minutes before a timeout occurs.
+
+
+If there is still no answer from the aircraft when the timeout occurs, the data link clearance is automatically rejected and a message is sent to the aircraft informing it that the received clearance has been cancelled.
+
+\subsection*{Departure Clearance Readback (CDA)}
+
+When the pilot acknowledges the clearance, in reality the aircraft system would send back a readback of the received clearance, which the ATC system would then compare to the sent clearance to check if it was received without errors. In the plugin, a clearance can be answered to with either “WILCO” to accept it or “UNABLE” to reject it.
+
+\subsection*{Flight System Message (FSM)}
+
+Once the plugin receives one of these replies, it changes the List CLR item to “OK” or a filled box (for WILCO) or clears it (for UNABLE), and a message is sent to the aircraft. For an accepted clearance it will look like this (the grey part is left out in the CPDLC message windows):
+
+\begin{quote}
+  ATC REQUEST STATUS FSM 1317 160213 EFHK ABC123 CDA RECEIVED CLEARANCE CONFIRMED 
+\end{quote}
+
+\subsection{Abnormal operations}
+
+Most failure cases result from the message not being correctly formatted, and the plugin failing to recognize it correctly. Regardless of whether the plugin recognizes the message as belonging to a departure clearance sequence, it will be put into the CPDLC Current Message Window, so keep an eye for new messages in it regularly (and archive old messages to keep only relevant messages displayed). In case the system fails, revert to voice/text communications.
+
+\section{Controller-Pilot Data Link Communications (CPDLC)}
+
+\subsection{General}
+
+CPDLC is a means of communication between controller and pilot, using data link for ATC communications. Much like using private chat, but more realistic, and with the extra advantage of displaying data on the track labels and flight lists as well.
+
+As the messages take significant amount of time to get through (receiving a reply to a clearance can take anything from seconds to a couple of minutes), using CPDLC should be limited to situations that are not time-critical. For this reason, it is mostly used in upper airspace area control sectors.
+
+The messages are grouped to dialogs (“discussions”), with an opening message and subsequent replies. Some messages do not need a reply, while for others a specific reply is expected. The available replies are set automatically, so only the correct type of reply can be sent.
+
+\subsection{Allowed message types}
+
+The plugin allows for the following types of messages:
+
+\begin{tabular}{l l}
+  Uplink & Downlink\\
+  Level clearance             & Level request\\
+  Heading clearance           & Heading request\\
+  Direct-to clearance         & Direct-to request\\
+  Speed clearance             & Speed request\\
+  Squawk code assignment      & Urgency (MAYDAY/PAN/SQ7500)\\
+  Squawk ident instruction    & Free text\\
+  Voice contact instruction   & \\
+  Free text                   & \\
+\end{tabular}
+
+\subsection{Non-allowed message types}
+
+The plugin does not allow the following downlink message types (will be automatically closed and a reply sent informing that the system does not support the message type):
+
+\begin{itemize}
+  \item Any requests containing “When can we expect”, “At pilots discretion” or “Own separation”
+  \item Level requests for a cruise climb, block level, or any level request tied to a position or time
+  \item Lateral requests for an offset, weather deviation or ground track
+  \item Speed requests to maintain a speed range
+  \item Voice contact requests
+  \item Requests for a procedure name and/or type
+  \item Position reports
+\end{itemize}
+
+Note that a non-allowed message type can be classified as “free text” by the plugin if the message parser doesn’t recognize it as a non-allowed type. In this case the automatic reply will not be sent and the message will be left waiting for an answer (if an answer is required).
+
+\subsection{Uplink clearance sequence}
+
+In this example a level clearance is used. The clearance is sent using the CFL menu. To send the clearance using CPDLC, check that the “CPDLC” option is selected. Depending on plugin settings and the aircraft’s altitude, by default it may be selected or deselected. Send the clearance by selecting a level value.
+
+In this case FL200 was selected, and the CPDLC message “CLIMB TO FL200” was sent to the aircraft. The uplinked value is shown in brackets and in “CPDLC UM Clearance” color:
+
+\begin{tabular}{
+  >{\columncolor{C_Flight_Highlight}}l 
+  >{\columncolor{C_Flight_Highlight}}l
+  >{\columncolor{C_Flight_Highlight}}l }
+  {\color{C_Assumed} [ABC123]} & {\color{C_Coordination} IDA} & \\
+  {\color{C_Assumed} 100} & {\color{C_Assumed} $\blacktriangle$} & \\
+  {\color{C_CPDLC_UM_Clearance} [200]} & & \\         
+\end{tabular}
+
+The aircraft has responded with “STANDBY”. The uplinked value changes to “CPDLC Standby” color, and a warning (can be acknowledged by left-clicking on it) is inserted above the label:
+
+\begin{tabular}{
+  >{\columncolor{C_Flight_Highlight}}l 
+  >{\columncolor{C_Flight_Highlight}}l
+  >{\columncolor{C_Flight_Highlight}}l }
+  {\color{C_CPDLC_Standby} CFL SBY} & & \\
+  {\color{C_Assumed} [ABC123]} & {\color{C_Coordination} IDA} & \\
+  {\color{C_Assumed} 100} & {\color{C_Assumed} $\blacktriangle$} & \\
+  {\color{C_CPDLC_Standby} [200]} & & \\         
+\end{tabular}
+
+The aircraft then eventually answers with “WILCO”. The CFL value is updated accordingly and the label field colors return to normal:
+
+\begin{tabular}{
+  >{\columncolor{C_Flight_Highlight}}l 
+  >{\columncolor{C_Flight_Highlight}}l
+  >{\columncolor{C_Flight_Highlight}}l }
+  {\color{C_Assumed} [ABC123]} & {\color{C_Coordination} IDA} & \\
+  {\color{C_Assumed} 100} & {\color{C_Assumed} $\blacktriangle$} & \\
+  {\color{C_Assumed} 200} & & \\         
+\end{tabular}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \chapter{Data stored in the flight strip annotation boxes}
