@@ -14,6 +14,17 @@
 \usepackage{pdflscape}
 \usepackage{makecell}
 \usepackage{colortbl}
+\usepackage{array}
+
+\usepackage{nicematrix,tikz}
+\usepackage{stix}
+\usepackage{xcolor}
+
+\usepackage{tabularray}
+
+\usepackage{datetime}
+
+\newcolumntype{t}{>{\tt}c}
 
 \colorlet{shadecolor}{blue!10}
 
@@ -24,6 +35,12 @@
   \newenvironment{Note}
   {\begin{shaded}\marginnote{\fbox{Note}}}
   {\end{shaded}}
+
+\newcommand{\Tonde}[1]{\left(#1\right)}
+
+\newdateformat{coverdate}{%
+  \monthname[\THEMONTH] \THEYEAR
+  }
 
 \usepackage[
 breaklinks=true,colorlinks=true,
@@ -110,7 +127,7 @@ Version 2.0
 
 \vspace{\fill}
 
-October 2022
+\coverdate\today
 
 %%%
 }%%%
@@ -140,66 +157,62 @@ The TopSky plugin (a.k.a. The Plugin Formerly Known As “EUROCAT 2000 E”) sta
 \includegraphics[width=15cm, keepaspectratio]{img/mainwindow.png}
 
 Euroscope should load with some preplaced windows similar to the above configuration
-\medskip
 
 Screen resolutions other than 1920x1080 will yield different results. Larger resolutions will bring preplaced windows towards the left and middle, while smaller resolutions may potentially place windows outside the screen. It is recommended for users experiencing difficulties related to their screen size to experiment and create custom settings in the TopSkySettingsLocal file containing revised window placements adjusted for their own screen. Refer to \texttt{\detokenize{TopSky_Developer_Guide_Settings.xlsx}} for available settings
-\medskip
 
 \section{Global Menu}
 \label{menu:global}
 \includegraphics{img/globalmenu.png}
-\medskip
+
 The Global Menu is located on the top edge of the radar screen. It displays the current UTC time and contains a number of submenus which are explained below.
 
 \subsection{Setup Menu}
 \label{menu:set}
 \includegraphics{img/Setup.png}
-\medskip
+
 Setup Menu allows for various adjustments. Each position will load its defined settings based on the active Primary Frequency.
-\medskip 
+
 Most used options are CPDLC Setting for CPDLC operations and Default Setting to reset options.
-\medskip
 
 \begin{tabular}{l l}
-- Unit Settings > & Opens the \textit{\titleref{menu:unitset}}
-\\- Default Setting & Resets all settings to their default values (keeps login callsign specific ones if they are active at the time). When clicked, a confirmation window will open, asking to confirm the reset.
-\\- Local Settings > & Opens the \textit{\titleref{menu:localset}}
-\\- Brightness Control > & Opens the \textit{\titleref{win:bcw}}
-\\- Sign In… & Loads personal settings. The settings are specified in the \texttt{\detokenize{TopSkySettingsLocal.txt}} data file. When clicked, a confirmation window will open, asking to confirm the settings change.
-\\- Sign Out… & Clears any personal settings and resets all settings to their default values. When clicked, a confirmation window will open, asking to confirm the settings change.
-\\- CPDLC Setting… & Opens the \textit{\titleref{win:dls}}
-\\- FPASD & Toggles on/off the display of flight plan tracks
-\\- PDC Audible alarm & Toggles on/off playing a sound for received PDC messages
-\\- CPDLC Audible alarm & Toggles on/off playing a sound for received CPDLC messages
-\\- STCA Audible alarm & Toggles on/off playing a sound for STCA alerts
-\\- APW Audible alarm & Toggles on/off playing a sound for APW alerts
-\\- AMID & Not implemented
-\\- Flight Leg & Toggles on/off the automatic display of the Flight Leg for a specified time when a track becomes assumed
-\\- DAPs in Menus & Toggles on/off the display of DAPs in menus
-\\- DAPs in Labels & Toggles on/off the display of DAPs in track labels
-\\- RR Main > & Opens the RR Main submenu
-\\- Direction Finder > & Opens the Direction Finder submenu
+- Unit Settings > & Opens the \textit{\titleref{menu:unitset}}\\
+- Default Setting & Resets all settings to their default values (keeps login callsign specific ones if they are active at the time). When clicked, a confirmation window will open, asking to confirm the reset.\\
+- Local Settings > & Opens the \textit{\titleref{menu:localset}}\\
+- Brightness Control > & Opens the \textit{\titleref{win:bcw}}\\
+- Sign In… & Loads personal settings. The settings are specified in the \texttt{\detokenize{TopSkySettingsLocal.txt}} data file. When clicked, a confirmation window will open, asking to confirm the settings change.\\
+- Sign Out… & Clears any personal settings and resets all settings to their default values. When clicked, a confirmation window will open, asking to confirm the settings change.\\
+- CPDLC Setting… & Opens the \textit{\titleref{win:dls}}\\
+- FPASD & Toggles on/off the display of flight plan tracks\\
+- PDC Audible alarm & Toggles on/off playing a sound for received PDC messages\\
+- CPDLC Audible alarm & Toggles on/off playing a sound for received CPDLC messages\\
+- STCA Audible alarm & Toggles on/off playing a sound for STCA alerts\\
+- APW Audible alarm & Toggles on/off playing a sound for APW alerts\\
+- AMID & Not implemented\\
+- Flight Leg & Toggles on/off the automatic display of the Flight Leg for a specified time when a track becomes assumed\\
+- DAPs in Menus & Toggles on/off the display of DAPs in menus\\
+- DAPs in Labels & Toggles on/off the display of DAPs in track labels\\
+- RR Main > & Opens the RR Main submenu\\
+- Direction Finder > & Opens the Direction Finder submenu\\
   \end{tabular}
 
 \subsection*{Unit Settings submenu}
 \label{menu:unitset}
 
-This submenu can be used to change the units used in the plugin. Any changes to the settings are session-
-specific only, so they will be lost when exiting EuroScope.
+This submenu can be used to change the units used in the plugin. Any changes to the settings are session- specific only, so they will be lost when exiting EuroScope.
 
 \begin{tabular}{l l}
-    \\- Altitude & Selects the units used for altitudes and vertical rates
-    - Nautical (feet, feet per minute)
-    - Metric (meters, meters per second)
-    \\- Flight level & Selects the units for flight levels – only applicable with metric altitudes
-    - Nautical (hundreds of feet)
-    - Metric (meters)
-    \\- Distance & Selects the units used for distances
-    - Nautical (nautical miles)
-    - Metric (kilometers)
-    \\- Speed & Selects the units used for speeds
-    - Nautical (knots)
-    - Metric (kilometers per hour)
+    - Altitude & Selects the units used for altitudes and vertical rates\\
+    - Nautical (feet, feet per minute)\\
+    - Metric (meters, meters per second)\\
+    - Flight level & Selects the units for flight levels – only applicable with metric altitudes\\
+    - Nautical (hundreds of feet)\\
+    - Metric (meters)\\
+    - Distance & Selects the units used for distances\\
+    - Nautical (nautical miles)\\
+    - Metric (kilometers)\\
+    - Speed & Selects the units used for speeds\\
+    - Nautical (knots)\\
+    - Metric (kilometers per hour)\\
 \end{tabular}
 
 \subsection*{Local Settings submenu}
@@ -209,83 +222,65 @@ This submenu allows changing some of the plugin’s settings. Any changes to the
 specific only, so they will be lost when exiting EuroScope.
 \medskip
 
-\begin{tabular}{l l}
-\\- Vertical reference    & Selects the pressure reference to be used at or below the
-transition altitude:
-• QNH Altitude above mean sea level
-• QFE Height above the aerodrome elevation
-(set/check it in the adjacent box)
-\\- Used equipment codes  & Selects whether to use or disregard the equipment codes
-found in the flight plans:
-• All Use all codes
-• ICAO Use all codes when specified in ICAO format
-• ICAO-alt As ICAO, but force transponder to report altitude
-• None Disregard all codes
-
-\\- ASSR codes    & Selects the transponder code source:
-• Plugin Plugin data file (reverts to ESE if no codes found)
-• ESE ESE file
-• Range Fixed code range
-\\- Groundspeed   & Selects whether to use pilot client reported ground speed or a
-plugin calculated value. Normally the reported value should be
-used as it is more accurate and stable, but some clients report
-wrong values. If that causes problems, you can try selecting the
-plugin calculated value instead
-\\- Transfer confirmation & Selects when to display the Transfer Confirmation Window:
-• On Always when CFL is not equal to XFL
-• NotRFL When CFL is not equal to XFL unless XFL = RFL
-• Off Never, any CFL value is OK
-\\- CFL menu default value    & Selects the default value for the CFL menu when it is opened:
-• XFL FSS or CTR: RFL if not yet reached, otherwise as below
-Other: The XFL value, or current CFL value with no XFL
-• CFL The current CFL value
-• RFL The RFL value
-\\- FPCP inhibit  & FPCP calculations start when tracks are within this time from
-entering active sector
-\\- STCA alert    & Selects which aircraft display the STCA alert:
-• All All aircraft
-• Own+Co Only assumed and coordinated aircraft
-• Own Only assumed aircraft
-\\- STCA alert sound  & Selects which STCA alerts trigger the alert sound:
-• All All alerts
-• Own+Co Only alerts with assumed and/or coordinated
-aircraft involved
-• Own Only alerts with assumed aircraft involved
-\\- APW alert & Selects which aircraft display the APW alert:
-• All All aircraft
-• Own+Co Only assumed and coordinated aircraft
-• Own Only assumed aircraft
-\\- APW alert sound   & Selects which STCA alerts trigger the alert sound:
-• All All alerts
-• Own+Co Only alerts for assumed or coordinated
-aircraft
-• Own Only alerts for assumed aircraft
-\\- METAR source  & Selects the METAR data source for the plugin windows that
-display METAR data
-\\- FPASD filter  & Allows filtering of displayed FPASD tracks based on sector state
-• Coord Display tracks at least in the coordinated state
-• Conc Display tracks at least in the concerned state
-• None Display all tracks
-
+\begin{tabular}{p{5cm} p{9cm}}
+- Vertical reference      & Selects the pressure reference to be used at or below the transition altitude:\\
+                          & \hspace{10pt}• QNH Altitude above mean sea level\\
+                          & \hspace{10pt}• QFE Height above the aerodrome elevation\\
+                          & (set/check it in the adjacent box)\\
+- Used equipment codes    & Selects whether to use or disregard the equipment codes found in the flight plans:\\
+                          & \hspace{10pt}• All Use all codes\\
+                          & \hspace{10pt}• ICAO Use all codes when specified in ICAO format\\
+                          & \hspace{10pt}• ICAO-alt As ICAO, but force transponder to report altitude\\
+                          & \hspace{10pt}• None Disregard all codes\\
+- ASSR codes              & Selects the transponder code source:\\
+                          & \hspace{10pt}• Plugin Plugin data file (reverts to ESE if no codes found)\\
+                          & \hspace{10pt}• ESE ESE file\\
+                          & \hspace{10pt}• Range Fixed code range\\
+- Groundspeed             & Selects whether to use pilot client reported ground speed or a plugin calculated value. Normally the reported value should be used as it is more accurate and stable, but some clients report wrong values. If that causes problems, you can try selecting the plugin calculated value instead\\ 
+- Transfer confirmation   & Selects when to display the Transfer Confirmation Window:\\
+                          & \hspace{10pt}• On Always when CFL is not equal to XFL\\
+                          & \hspace{10pt}• NotRFL When CFL is not equal to XFL unless XFL = RFL\\
+                          & \hspace{10pt}• Off Never, any CFL value is OK\\
+- CFL menu default value  & Selects the default value for the CFL menu when it is opened:\\
+                          & \hspace{10pt}• XFL FSS or CTR: RFL if not yet reached, otherwise as below\\
+                          & \hspace{10pt}• Other: The XFL value, or current CFL value with no XFL\\
+                          & \hspace{10pt}• CFL The current CFL value\\
+                          & \hspace{10pt}• RFL The RFL value\\
+- FPCP inhibit            & FPCP calculations start when tracks are within this time from entering active sector\\
+- STCA alert              & Selects which aircraft display the STCA alert:\\
+                          & \hspace{10pt}• All All aircraft\\
+                          & \hspace{10pt}• Own+Co Only assumed and coordinated aircraft\\
+                          & \hspace{10pt}• Own Only assumed aircraft\\
+- STCA alert sound        & Selects which STCA alerts trigger the alert sound:\\
+                          & \hspace{10pt}• All All alerts\\
+                          & \hspace{10pt}• Own+Co Only alerts with assumed and/or coordinated aircraft involved\\
+                          & \hspace{10pt}• Own Only alerts with assumed aircraft involved\\
+- APW alert               & Selects which aircraft display the APW alert:\\
+                          & \hspace{10pt}• All All aircraft\\
+                          & \hspace{10pt}• Own+Co Only assumed and coordinated aircraft\\
+                          & \hspace{10pt}• Own Only assumed aircraft\\
+- APW alert sound         & Selects which STCA alerts trigger the alert sound:\\
+                          & \hspace{10pt}• All All alerts\\
+                          & \hspace{10pt}• Own+Co Only alerts for assumed or coordinated\\
+                          & aircraft\\
+                          & \hspace{10pt}• Own Only alerts for assumed aircraft\\
+- METAR source            & Selects the METAR data source for the plugin windows that display METAR data\\
+- FPASD filter            & Allows filtering of displayed FPASD tracks based on sector state\\
+                          & \hspace{10pt}• Coord Display tracks at least in the coordinated state\\
+                          & \hspace{10pt}• Conc Display tracks at least in the concerned state\\
+                          & \hspace{10pt}• None Display all tracks\\
 \end{tabular}
 \medskip
 
 \subsection*{RR Main submenu}
 \begin{tabular}{l l}
-    - [] Rings On/Off & Toggles the range rings on/off
-    \\- Point & Sets the rings centerpoint. Either click on the radar screen or
-    enter the desired point in the text field. Fixes, VORs, NDBs and
-    airports from the active sector file can be used as well as
-    coordinates in the flight plan format (DD[N/S]DDD[E/W] or
-    DDMM[N/S]DDDMM[E/W], e.g. 60N025E or 0811S00300W).
-    Entering an empty text string resets the rings to be shown at
-    the radar screen centerpoint.
-    \\- Separation & Sets the separation between adjacent rings
-    \\- Number & Sets the number of rings drawn
-    \\- [] Highlight & Toggles highlight (drawn with solid line) of specified rings
-    \\- Step & Sets interval of highlighted rings
+    - [] Rings On/Off & Toggles the range rings on/off\\
+    - Point & Sets the rings centerpoint. Either click on the radar screen or enter the desired point in the text field. Fixes, VORs, NDBs and airports from the active sector file can be used as well as coordinates in the flight plan format (DD[N/S]DDD[E/W] or DDMM[N/S]DDDMM[E/W], e.g. 60N025E or 0811S00300W). Entering an empty text string resets the rings to be shown at the radar screen centerpoint.\\
+    - Separation & Sets the separation between adjacent rings\\
+    - Number & Sets the number of rings drawn\\
+    - [] Highlight & Toggles highlight (drawn with solid line) of specified rings\\
+    - Step & Sets interval of highlighted rings\\
 \end{tabular}
-\medskip
 
 \subsection*{Direction Finder submenu}
 
@@ -299,23 +294,19 @@ Opens the \textit{\titleref{win:amw}}.
 
 \subsection{FData menu}
 
-\includegraphics{img/FData.png}
-
 Opens the \textit{\titleref{win:fpsw}} and \textit{\titleref{win:fpw}}.
 
 \subsection{Tools menu}
 
-%TODO\includegraphics{img/tools.png}
-
 \begin{tabular}{l l}
-\\- Flight Plan Lists > & Opens the Flight Plan Lists submenu
-\\- CARD… & Opens the \textit{\titleref{win:card}}
-\\- SAP… & Opens the \textit{\titleref{win:sap}}
-\\- Vertical Aid Window… & Opens the \textit{\titleref{win:vaw}}
-\\- Message In… & Opens the \textit{\titleref{win:miw}}
-\\- Message Out… & Opens the \textit{\titleref{win:mow}}
-\\- CPDLC > & Opens the CPDLC submenu
-\\- LAT/LONG… & Opens the \textit{\titleref{win:latlon}}
+- Flight Plan Lists > & Opens the Flight Plan Lists submenu\\
+- CARD… & Opens the \textit{\titleref{win:card}}\\
+- SAP… & Opens the \textit{\titleref{win:sap}}\\
+- Vertical Aid Window… & Opens the \textit{\titleref{win:vaw}}\\
+- Message In… & Opens the \textit{\titleref{win:miw}}\\
+- Message Out… & Opens the \textit{\titleref{win:mow}}\\
+- CPDLC > & Opens the CPDLC submenu\\
+- LAT/LONG… & Opens the \textit{\titleref{win:latlon}}\\
 \end{tabular}
 
 \subsection*{Flight Plan Lists submenu}
@@ -347,66 +338,50 @@ Opens the \textit{\titleref{win:fpsw}} and \textit{\titleref{win:fpw}}.
     \\- <ades>                      & Traffic Management List 2 destination airports filter
     \\- <via>                       & Traffic Management List 2 route points filter
 \end{tabular}
-\medskip
 
-When enabled, the list options bar displays “Info Conc Redu Filter Filter” on the right edge of the Global
-Menu. The first three toggle the respective settings for the Sector List and are colored with the appropriate
-color when enabled, and the last two are displayed in “VFR” color when the corresponding
-Uncontrolled list is somehow filtered. Clicking on them opens the Flight Plan Lists submenu to change
-the filtering options.
-\medskip
-Left-clicking <filter> cycles through “ALL” (no filtering), “ON-CONTACT” (only tracks on-contact with
-anyone), “ON-CONTACT-PPOS” (only tracks on-contact with you) and “FREE” (only tracks in the free state).
-\medskip
-Left-clicking <units> opens a text entry box to enter a comma-separated list of aerodrome ICAO codes to
-filter the list. When entered, the list will display a flight only if one of the entered codes is its departure or
-destination, or the code is found in its scratchpad (OP-TEXT2).
-\medskip
+When enabled, the list options bar displays “Info Conc Redu Filter Filter” on the right edge of the Global Menu. The first three toggle the respective settings for the Sector List and are colored with the appropriate color when enabled, and the last two are displayed in “VFR” color when the corresponding Uncontrolled list is somehow filtered. Clicking on them opens the Flight Plan Lists submenu to change the filtering options.
 
-Left-clicking <lfunc>, <adep>, <ades> and <via> open text entry boxes to enter comma-separated lists for
-controlled ID’s, ICAO codes and point names respectively to filter the affected lists.
-\medskip
-Left-clicking <state> toggles between “ALL” (no filtering), “SIMUL+TERM” (not started flight plans filtered),
-“NOTST+SIMUL” (terminated flight plans filtered) and “SIMUL” (not started and terminated flight plans
-filtered).
-\medskip
+Left-clicking <filter> cycles through “ALL” (no filtering), “ON-CONTACT” (only tracks on-contact with anyone), “ON-CONTACT-PPOS” (only tracks on-contact with you) and “FREE” (only tracks in the free state).
+
+Left-clicking <units> opens a text entry box to enter a comma-separated list of aerodrome ICAO codes to filter the list. When entered, the list will display a flight only if one of the entered codes is its departure or destination, or the code is found in its scratchpad (OP-TEXT2).
+
+Left-clicking <lfunc>, <adep>, <ades> and <via> open text entry boxes to enter comma-separated lists for controlled ID’s, ICAO codes and point names respectively to filter the affected lists.
+
+Left-clicking <state> toggles between “ALL” (no filtering), “SIMUL+TERM” (not started flight plans filtered), “NOTST+SIMUL” (terminated flight plans filtered) and “SIMUL” (not started and terminated flight plans filtered).
 
 \subsection*{CPDLC submenu}
 \begin{tabular}{l l}
-- Microphone Check      & Opens the \textit{\titleref{menu:dlmcm}}
-\\- Current Messages…   & Opens the \textit{\titleref{win:dlcmw}}
-\\- History Messages…   & Opens the \textit{\titleref{win:dlhmw}}
+- Microphone Check      & Opens the \textit{\titleref{menu:dlmcm}}\\
+- Current Messages…   & Opens the \textit{\titleref{win:dlcmw}}\\
+- History Messages…   & Opens the \textit{\titleref{win:dlhmw}}\\
 \end{tabular}
-
-\medskip
 
 \subsection{MET menu}
+
 \begin{tabular}{l l}
-- Messages… & Opens the \textit{\titleref{win:wxmw}}
-\\- QNH/TL    & Opens the \textit{\titleref{win:qnhtl}}
+- Messages… & Opens the \textit{\titleref{win:wxmw}}\\
+- QNH/TL    & Opens the \textit{\titleref{win:qnhtl}}\\
 \end{tabular}
-\medskip
 
 \subsection{[0]}
+
 Not implemented (always shows a zero value).
 
 \subsection{Info menu}
+
 \begin{tabular}{l l}
-- General Information…      & Opens the \textit{\titleref{win:geninfo}}
-\\- Document Viewer…          & Opens the \textit{\titleref{win:dvw}}
-\\- NOTAM…                    & Opens the \textit{\titleref{win:notamlw}}
-\\- Aerodrome…                & Opens the \textit{\titleref{menu:ad}}
-\\- LFUNC Frequency Plan…     & Opens the \textit{\titleref{win:lfunc}}
-\\- [] Airport labels         & Toggles airport labels selection
-\\- [] Fix labels             & Toggles fix labels selection
-\\- [] NDB labels             & Toggles NDB labels selection
-\\- [] VOR labels             & Toggles VOR labels selection
+- General Information…      & Opens the \textit{\titleref{win:geninfo}}\\
+- Document Viewer…          & Opens the \textit{\titleref{win:dvw}}\\
+- NOTAM…                    & Opens the \textit{\titleref{win:notamlw}}\\
+- Aerodrome…                & Opens the \textit{\titleref{menu:ad}}\\
+- LFUNC Frequency Plan…     & Opens the \textit{\titleref{win:lfunc}}\\
+- [] Airport labels         & Toggles airport labels selection\\
+- [] Fix labels             & Toggles fix labels selection\\
+- [] NDB labels             & Toggles NDB labels selection\\
+- [] VOR labels             & Toggles VOR labels selection\\
 \end{tabular}
-\medskip
-When holding <ALT>, text labels will be displayed for airports, fixes, NDBs
-and VORs when the mouse cursor is placed over them. When one or more of the categories in the Info
-menu is selected, only those categories will display the labels. The “Label” buttons open submenus to select
-what information is shown on the corresponding labels. All the information is from the active sector file.\\
+
+When holding <ALT>, text labels will be displayed for airports, fixes, NDBs and VORs when the mouse cursor is placed over them. When one or more of the categories in the Info menu is selected, only those categories will display the labels. The “Label” buttons open submenus to select what information is shown on the corresponding labels. All the information is from the active sector file.
 
 \subsection{MSG menu}
 \begin{tabular}{l l}
@@ -418,17 +393,11 @@ what information is shown on the corresponding labels. All the information is fr
 \\- Text notes >        & Opens the Text notes submenu
 \end{tabular}
 
-\medskip
+It is possible to insert text notes on the radar screen to act as reminders. They will stay fixed at the geographical coordinates they are inserted to, the coordinates defining the center point of the note.
 
-It is possible to insert text notes on the radar screen to act as reminders. They will stay fixed at the
-geographical coordinates they are inserted to, the coordinates defining the center point of the note.
+When creating a note, a text entry field opens to enter the note text. When the [Enter] key is pressed, the note will be created at the current mouse cursor position.
 
-When creating a note, a text entry field opens to enter the note text. When the [Enter] key is pressed, the
-note will be created at the current mouse cursor position.
-
-The notes can be deleted one by one or all of them at the same time. When deleting one by one, the notes
-are boxed to display their click areas. Clicking on one will delete the note. Pressing the [Esc] key or selecting
-the “Delete...” menu item again will abort the operation.
+The notes can be deleted one by one or all of them at the same time. When deleting one by one, the notes are boxed to display their click areas. Clicking on one will delete the note. Pressing the [Esc] key or selecting the “Delete...” menu item again will abort the operation.
 
 \subsection*{Text notes submenu}
 \begin{tabular}{l l}
@@ -440,16 +409,9 @@ the “Delete...” menu item again will abort the operation.
 \medskip
 
 \subsection{[x]}
-Shows the number of high priority messages in the personal message queue. These are critical failures in
-the plugin code. Open the Personal Queue Window to view the messages. The number is limited to 99, and
-is shown on “Global Menu Highlight” background when the window is not open.
-
+Shows the number of high priority messages in the personal message queue. These are critical failures in the plugin code. Open the Personal Queue Window to view the messages. The number is limited to 99, and is shown on “Global Menu Highlight” background when the window is not open. 
 \subsection{[x]}
-Shows the number of low priority messages in the personal message queue. These are warnings about
-invalid data in the plugin data files. Open the Personal Queue Window to view the messages or see the
-Plugin Status submenu for more detailed information on the problem(s). The number is limited to 99, and is
-shown on “Global Menu Highlight” background when the window is not open.
-
+Shows the number of low priority messages in the personal message queue. These are warnings about invalid data in the plugin data files. Open the Personal Queue Window to view the messages or see the Plugin Status submenu for more detailed information on the problem(s). The number is limited to 99, and is shown on “Global Menu Highlight” background when the window is not open. 
 \subsection{STS menu}
 \begin{tabular}{l l}
 - Plugin Status >                & Opens the Plugin Status submenu
@@ -464,67 +426,58 @@ shown on “Global Menu Highlight” background when the window is not open.
 \medskip
 
 \subsection*{Plugin Status submenu}
-Shows the version of the plugin as well as some information on the loaded data files. Each data file reports
-its state with one of the following indicators:
+Shows the version of the plugin as well as some information on the loaded data files. Each data file reports its state with one of the following indicators:
 
 \begin{tabular}{l l}
-- OK        & File contains usable information and no faults
-\\- NO DATA   & File not found or contains no usable information
-\\- BAD DATA  & File contains invalid data (in “Warning” color)
+- OK        & File contains usable information and no faults\\
+- NO DATA   & File not found or contains no usable information\\
+- BAD DATA  & File contains invalid data (in “Warning” color)\\
 \end{tabular}
 
 Depending on the file, there are one to three of the following buttons available:\\
 \begin{tabular}{l l}
-- Reload                    & Reloads the data file
-\\- View                    & Displays the data in the file on the radar display
-\\- Save (Areas)            & Saves a snapshot of the current area activation data
-\\- Save set (Maps \& MapsL) & Saves a list of currently active radar screen specific maps
-\\- Load set (Maps \& MapsL) & Loads a saved list of active screen specific maps
+- Reload                    & Reloads the data file\\
+- View                    & Displays the data in the file on the radar display\\
+- Save (Areas)            & Saves a snapshot of the current area activation data\\
+- Save set (Maps \& MapsL) & Saves a list of currently active radar screen specific maps\\
+- Load set (Maps \& MapsL) & Loads a saved list of active screen specific maps\\
 \end{tabular}\\ 
 
-Left-clicking the Save button will save the currently set manual activation periods as well as the
-information if an area with automatic schedules is set to manual mode. The information is saved to the
-“TopSkyAreasManualAct.txt” file in the same folder as the plugin dll. If the file already exists, the plugin will
-ask for confirmation as the save operation will overwrite any existing data.
-\medskip
-Depending on the maps data file setup, the display state of some or all of the maps may be specific to each
-radar screen. The Save set and Load set functions can be used to transfer the display state of these maps
-from one radar screen to another.
-\medskip
-Right-clicking the Reload button for Settings \& SettingsL has a special purpose. It opens a text entry box to
-type in a callsign whose settings should be loaded instead of the real login callsign. When entered, the
-callsign will be displayed next to the “Reload” button, and whenever a VATSIM callsign change is detected,
-an information popup is displayed to remind that the plugin settings are still forced to the manually
-entered callsign. This feature can be used for example to use settings for different positions on different
-EuroScope instances when providing top-down services, or to use settings for a specific position when
-logged in with an observer/staff/supervisor callsign. Clearing the entered callsign reverts to using the
-settings based on the actual login callsign.
-\medskip
+Left-clicking the Save button will save the currently set manual activation periods as well as the information if an area with automatic schedules is set to manual mode. The information is saved to the “TopSkyAreasManualAct.txt” file in the same folder as the plugin dll. If the file already exists, the plugin will ask for confirmation as the save operation will overwrite any existing data. 
+
+Depending on the maps data file setup, the display state of some or all of the maps may be specific to each radar screen. The Save set and Load set functions can be used to transfer the display state of these maps from one radar screen to another.
+
+
+Right-clicking the Reload button for Settings \& SettingsL has a special purpose. It opens a text entry box to type in a callsign whose settings should be loaded instead of the real login callsign. When entered, the callsign will be displayed next to the “Reload” button, and whenever a VATSIM callsign change is detected, an information popup is displayed to remind that the plugin settings are still forced to the manually entered callsign. This feature can be used for example to use settings for different positions on different EuroScope instances when providing top-down services, or to use settings for a specific position when logged in with an observer/staff/supervisor callsign. Clearing the entered callsign reverts to using the settings based on the actual login callsign.
 
 \subsection*{Supervisory submenu}
 \begin{tabular}{l l}
-- Operations Rate...     & Opens the \textit{\titleref{win:or}}
-\\- Predicted Traffic... & Opens the \textit{\titleref{win:pt}}
+- Operations Rate...     & Opens the \textit{\titleref{win:or}}\\
+- Predicted Traffic... & Opens the \textit{\titleref{win:pt}}\\
 \end{tabular}
 \medskip 
 
 \subsection{RRxxx/Off}
+
 Opens the \textit{\titleref{menu:rr}}. If the rings are selected on,
+
 “xxx” displays the distance between consecutive rings, otherwise “Off”.
 
 \subsection{Mxxx-yyy}
+
 Displays the status of the filters. If any filter is enabled and Quick Look is not toggled on, the color of the
 text is “Global Menu Highlight”.
-\medskip
+
 Only the altitude filter status is shown. “xxx” displays the Lower filter value and “yyy” the Upper filter
 value, in hundreds of feet.
-\medskip
 
 \subsection{S000-999}
 Not implemented (shows static values).
 
 \section{Track Presentation}
+
 The presentation of tracks consists of the following elements:
+
 \begin{itemize}
     \item{Aircraft position symbol}
     \item{History dots}
@@ -533,8 +486,11 @@ The presentation of tracks consists of the following elements:
 \end{itemize}
 
 \subsection{Colors}
+
 Most of the track presentation coloring depends on the flight sector state.
-\\For controlled flights (any IFR flight or a VFR flight in ASSUMED state), the colors are as follows:\\
+
+For controlled flights (any IFR flight or a VFR flight in ASSUMED state), the colors are as follows:\\
+
 \begin{tabular}{l l l}
 \textbf{State}          & \textbf{Color}    & \textbf{Condition}
 \\Unconcerned           & “Unconcerned”     & Track will not enter the active sector
@@ -957,19 +913,11 @@ Regardless of whether the entered value is in meters or feet, and altitude or he
 \label{menu:cfl}
 \includegraphics{img/cfl.png}
 
-In the track label the CFL menu is combined with the COPN altitude coordination menu
-and the CFL menu opens only when the aircraft is assumed. The default value is by
-default the XFL, but it can be changed to the current CFL or the RFL in the Local Settings
-menu. Altitudes up to the transition altitude are prefixed with “A” in the nautical units
-list and with “M” in the metric units list. QFE heights are prefixed with “E” in both lists.
-Selectable values are from 500ft to FL510 with 500ft intervals up to the transition
-altitude, then 1000ft intervals up to FL410 and 2000ft intervals above it.
+In the track label the CFL menu is combined with the COPN altitude coordination menu and the CFL menu opens only when the aircraft is assumed. The default value is by default the XFL, but it can be changed to the current CFL or the RFL in the Local Settings menu. Altitudes up to the transition altitude are prefixed with “A” in the nautical units list and with “M” in the metric units list. QFE heights are prefixed with “E” in both lists. Selectable values are from 500ft to FL510 with 500ft intervals up to the transition altitude, then 1000ft intervals up to FL410 and 2000ft intervals above it. 
 
-“Visual App” / “VA” and “Clear for App” / “CA” set the corresponding approach
-clearances.
+“Visual App” / “VA” and “Clear for App” / “CA” set the corresponding approach clearances.
 
-The list units can be toggled with the “NAUTICAL” / “METRIC” item. There are three
-ways to set the CFL using this menu:
+The list units can be toggled with the “NAUTICAL” / “METRIC” item. There are three ways to set the CFL using this menu:
 
 \begin{itemize}
         \item Clicking a level value in the list or one of the two approach clearance items
@@ -977,30 +925,24 @@ ways to set the CFL using this menu:
         \item Clicking the right-pointing triangle to open a keyboard that can be used to type in the value using the mouse. “C” clears the entry and “Ok” sets the value.
 \end{itemize}
 
-Entering a metric value will set the aircraft’s units to metric; a nautical value will set
-nautical units.
+Entering a metric value will set the aircraft’s units to metric; a nautical value will set nautical units.
 
-The aircraft’s RFL is displayed in the place of the “NAUTICAL”/”METRIC” item with
-format “R<RFL>”. Left-clicking the button still has the same effect (changes the
-displayed units).
+The aircraft’s RFL is displayed in the place of the “NAUTICAL”/”METRIC” item with format “R<RFL>”. Left-clicking the button still has the same effect (changes the displayed units).
 
 \includegraphics{img/cfldl.png}
 
-For CPDLC connected aircraft, the menu contains “R/T” and “CPDLC” options to select
-whether a level clearance is to be sent via radio or as a CPDLC message.
-If a level request has been received from the aircraft, there are also “SBY” and
-“UNABLE” buttons to send those messages as a reply.
-- When a level request downlink has been received, the “R/T” option is deselected and
-cannot be selected. The request must be replied to using CPDLC.
-- When a level clearance uplink has been sent, the “CPDLC” option is deselected and
-cannot be selected. If a new level clearance must be sent before there is an answer to
-the uplink, it must be given via radio (doing so also closes the open uplink message).
+For CPDLC connected aircraft, the menu contains “R/T” and “CPDLC” options to select whether a level clearance is to be sent via radio or as a CPDLC message.
+
+If a level request has been received from the aircraft, there are also “SBY” and “UNABLE” buttons to send those messages as a reply.
+
+- When a level request downlink has been received, the “R/T” option is deselected and cannot be selected. The request must be replied to using CPDLC.
+
+- When a level clearance uplink has been sent, the “CPDLC” option is deselected and cannot be selected. If a new level clearance must be sent before there is an answer to the uplink, it must be given via radio (doing so also closes the open uplink message).
 
 \subsection{RFL Menu}
 \label{menu:rfl}
 
-he RFL menu allows setting the requested flight level. The operation is similar to the
-AFL and CFL menus. The function for the “NEXT” button is not implemented.
+The RFL menu allows setting the requested flight level. The operation is similar to the AFL and CFL menus. The function for the “NEXT” button is not implemented.
 
 \subsection{AHDG Menu}
 \label{menu:ahdg}
@@ -2819,6 +2761,136 @@ As with MTCD, keeping the CFL and the aircraft’s route updated is important fo
 A conflict is shown by displaying the Military coordination indicator (“M”). The indicator can be set to warn for risks as well. Note that once the indicator is clicked and changes to inactive state, the system will not give further warnings for that aircraft as long as the indicator is in the inactive state. Click on the inactive indicator to re-arm the system once the aircraft has passed all the areas for which crossing clearance was given.
 
 SAP conflicts (optionally also risks) are also shown in the \textit{\titleref{win:sap}}).
+
+\chapter{Coordination}
+
+\section{General}
+
+The TopSky plugin provides various ways to coordinate information between controllers. Some of them are standard EuroScope features, while others are plugin-specific.
+
+The example track labels do not represent any specific setup and are only meant to highlight the items specific to each function. In the examples, aircraft ABC123 is assumed by “transferring controller” and the next sector is referred to as “accepting controller”. For reference, the example labels would look like these before any coordination (coordination point TROIA, entry/exit level FL180):
+
+Transferring controller:
+
+\begin{tabular}{
+  >{\columncolor[RGB]{36,41,45}}l 
+  >{\columncolor[RGB]{36,41,45}}l
+  >{\columncolor[RGB]{36,41,45}}l }
+  {\color[RGB]{220,220,220} ABC123} & {\color[RGB]{150,215,150} IDA}       & {\color[RGB]{220,220,220} }      \\
+  {\color[RGB]{220,220,220} 100}    & {\color[RGB]{220,220,220} $\blacktriangle$} & {\color[RGB]{220,220,220} TROIA} \\
+  {\color[RGB]{220,220,220} 180}    & {\color[RGB]{220,220,220} }          & {\color[RGB]{220,220,220} }     
+\end{tabular}
+
+Accepting controller:
+
+\begin{tabular}{
+  >{\columncolor[RGB]{36,41,45}}l 
+  >{\columncolor[RGB]{36,41,45}}l
+  >{\columncolor[RGB]{36,41,45}}l }
+  {\color[RGB]{150,215,150} ABC123} & {\color[RGB]{150,215,150} IDT}       & {\color[RGB]{150,215,150} }      \\
+  {\color[RGB]{150,215,150} 100}    & {\color[RGB]{150,215,150} $\blacktriangle$} & {\color[RGB]{150,215,150} TROIA} \\
+  {\color[RGB]{150,215,150} 180}    & {\color[RGB]{150,215,150} }          & {\color[RGB]{150,215,150} }     
+\end{tabular}
+
+Some of the coordination functions (ROF, RTI and TIP) require very specific conditions to exist to be able to send the necessary messages between the controllers. The plugin attempts to check for this and either disables the function (grey text in the menu button) or creates a warning message if the conditions are lost during a coordination, but in some cases the coordination messages can get lost. In this case try the coordination again or manually coordinate.
+
+\section{PEL/COPN}
+
+A coordination is displayed by coloring the proposed values “Proposition In/Out” (depending on whether the coordination was sent or received) in the track label and the flight lists. Additionally, a message is displayed in the \textit{\titleref{win:miw}}) for received coordinations and in the \textit{\titleref{win:mow}}) for coordinations sent by you.
+
+To send a PEL (Planned Entry Level) coordination, left-click on the PEL value in the track label or a flight list. This opens the a menu to select a value. To send a COPN (Entry Point) coordination, left-click on the COPN value in the track label or a flight list. This opens the \textit{\titleref{menu:wpt}}). Select “Routing”. This opens a menu to select the desired point. Keep an eye for the answer as it can be a counter-proposal as well, so the color of the values staying white doesn’t necessarily mean the coordination hasn’t been answered!
+
+An example track label, showing both the PEL and COPN being coordinated:
+
+\begin{tabular}{
+  >{\columncolor[RGB]{36,41,45}}l 
+  >{\columncolor[RGB]{36,41,45}}l
+  >{\columncolor[RGB]{36,41,45}}l }
+  {\color[RGB]{150,215,150} ABC123} & {\color[RGB]{150,215,150} IDT}       & {\color[RGB]{150,215,150} }      \\
+  {\color[RGB]{150,215,150} 100}    & {\color[RGB]{150,215,150} $\blacktriangle$} & {\color[RGB]{225,130,180} TROIA} \\
+  {\color[RGB]{225,130,180} 180}    & {\color[RGB]{150,215,150} }          & {\color[RGB]{150,215,150} }     
+\end{tabular}
+
+To answer an incoming coordination, left-click on a proposed value or the corresponding message in the Message In Window. This opens a menu where you can select the response (Accept, Refuse or Change). After the response, the track label and lists display depend on the answer:
+
+\begin{tabular}{l l}
+  Accept: & Accepted values, sector state color\\
+  Refuse: & Original values, sector state color (due to EuroScope bug, should be “Warning”)\\
+  Change: & New proposed values in “Proposition Out”\\
+\end{tabular}
+
+\section{XFL/COPX}
+
+A coordination is displayed by coloring the proposed values “Proposition In/Out” (depending on whether the coordination was sent or received) in the track label and the flight lists. Additionally, a message is displayed in the \textit{\titleref{win:miw}}) for received coordinations and in the \textit{\titleref{win:mow}}) for coordinations sent by you.
+
+To send an XFL (Exit Flight Level) coordination, left-click on the XFL value in the track label or a flight list. This opens a menu to select a value. To send a COPX (Exit Point) coordination, left-click on the COPX value in the track label or a flight list. This opens the \textit{\titleref{menu:wpt}}). Select “Routing”. This opens a menu to select the desired point. Keep an eye for the answer as it can be a counter-proposal as well, so the color of the values staying white doesn’t necessarily mean the coordination hasn’t been answered!
+
+An example track label, showing both the XFL and COPX being coordinated:
+
+\begin{tabular}{
+  >{\columncolor[RGB]{36,41,45}}l 
+  >{\columncolor[RGB]{36,41,45}}l
+  >{\columncolor[RGB]{36,41,45}}l }
+  {\color[RGB]{220,220,220} ABC123} & {\color[RGB]{150,215,150} IDA}       & {\color[RGB]{220,220,220} }      \\
+  {\color[RGB]{220,220,220} 100}    & {\color[RGB]{220,220,220} $\blacktriangle$} & {\color[RGB]{225,130,180} TROIA} \\
+  {\color[RGB]{220,220,220} 180}    & {\color[RGB]{225,130,180} 200}          & {\color[RGB]{220,220,220} }     
+\end{tabular}
+
+To answer an incoming coordination, left-click on a proposed value or the corresponding message in the \textit{\titleref{win:miw}}). This opens a menu where you can select the response (Accept, Refuse or Change). After the response, the track label and lists display depend on the answer:
+
+\begin{tabular}{l l}
+  Accept: & Accepted values, sector state color\\
+  Refuse: & Original values, sector state color (due to EuroScope bug, should be “Warning”)\\
+  Change: & New proposed values in “Proposition Out”\\
+\end{tabular}
+
+\section{Releases}
+
+To communicate a release to the next controller, select the “Trf \& release” option instead of “Transfer” in the Callsign menu when transferring the aircraft. This opens the \textit{\titleref{menu:xfrrel}}) to select the desired release condition. The available choices are “Climb”, “Descent”, “Turn” and “Full”. Selecting an option will start the transfer with the selected release condition.
+
+The release will be displayed on line 0 of the track label (in “Proposition In/Out” during the transfer), showing the first letter of the release condition. The example labels below show a Full release:
+
+Transferring controller:
+
+\begin{tabular}{
+  >{\columncolor[RGB]{36,41,45}}l 
+  >{\columncolor[RGB]{36,41,45}}l
+  >{\columncolor[RGB]{36,41,45}}l }
+  {\color[RGB]{220,125,175} F} & {\color[RGB]{150,215,150} }       & {\color[RGB]{220,220,220} }      \\
+  {\color[RGB]{220,125,175} ABC123} & {\color[RGB]{220,125,175} IDA}       & {\color[RGB]{220,220,220} }      \\
+  {\color[RGB]{220,220,220} 100}    & {\color[RGB]{220,220,220} $\blacktriangle$} & {\color[RGB]{220,220,220} TROIA} \\
+  {\color[RGB]{220,220,220} 180}    & {\color[RGB]{220,220,220} }          & {\color[RGB]{220,220,220} }     
+\end{tabular}
+
+Accepting controller:
+
+\begin{tabular}{
+  >{\columncolor[RGB]{36,41,45}}l 
+  >{\columncolor[RGB]{36,41,45}}l
+  >{\columncolor[RGB]{36,41,45}}l }
+  {\color[RGB]{220,125,175} F} & {\color[RGB]{150,215,150} }       & {\color[RGB]{220,220,220} }      \\
+  {\color[RGB]{220,220,220} ABC123} & {\color[RGB]{220,220,220} IDT}       & {\color[RGB]{150,215,150} }      \\
+  {\color[RGB]{150,215,150} 100}    & {\color[RGB]{150,215,150} $\blacktriangle$} & {\color[RGB]{150,215,150} TROIA} \\
+  {\color[RGB]{150,215,150} 180}    & {\color[RGB]{150,215,150} }          & {\color[RGB]{150,215,150} }     
+\end{tabular}
+
+After the accepting controller assumes the aircraft, the release indicator changes to sector state color. It remains in the transferring controller’s label until it becomes unconcerned, and in the accepting controller’s label for 3 minutes.
+
+\begin{Note}
+  If a release is sent to a controller not using the TopSky plugin, it will only be displayed on your label. To the accepting controller it will look like a normal transfer.
+\end{Note}
+
+
+
+
+
+
+
+
+
+
+
+
 
 \chapter{Data stored in the flight strip annotation boxes}
 
