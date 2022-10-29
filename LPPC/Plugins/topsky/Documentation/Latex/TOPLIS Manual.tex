@@ -3484,22 +3484,128 @@ The aircraft then eventually answers with “WILCO”. The CFL value is updated 
   {\color{C_Assumed} 200} & & \\         
 \end{tabular}
 
+If the aircraft would have answered with “UNABLE”, a warning would have been inserted above the label:
 
+\begin{tabular}{
+  >{\columncolor{C_Flight_Highlight}}l 
+  >{\columncolor{C_Flight_Highlight}}l
+  >{\columncolor{C_Flight_Highlight}}l }
+  {\color{C_CPDLC_Standby} CFL UNA} & & \\
+  {\color{C_Assumed} [ABC123]} & {\color{C_Coordination} IDA} & \\
+  {\color{C_Assumed} 100} & {\color{C_Assumed} $\blacktriangle$} & \\
+  {\color{C_CPDLC_Standby} [200+]} & & \\         
+\end{tabular}
 
+The “+” after the level indicates that there is a reason in the answer message (for example “DUE TO PERFORMANCE”). Read the message in the CPDLC Current Message Window to find out what it is.
 
+Left-clicking on the warning acknowledges it and the original CFL value is again shown in the label:
 
+\begin{tabular}{
+  >{\columncolor{C_Flight_Highlight}}l 
+  >{\columncolor{C_Flight_Highlight}}l
+  >{\columncolor{C_Flight_Highlight}}l }
+  {\color{C_Assumed} [ABC123]} & {\color{C_Coordination} IDA} & \\
+  {\color{C_Assumed} 100} & {\color{C_Assumed} $\blacktriangle$} & \\
+  {\color{C_Assumed} 180} & & \\         
+\end{tabular}
 
+\subsection{Downlink request sequence}
 
+This example shows a level request.
 
+The aircraft has sent a level request for FL200. The value is shown in the PRFL (Pilot Requested Level) field
+in brackets and in “CPDLC DM Request” color:
 
+\begin{tabular}{
+  >{\columncolor{C_Flight_Highlight}}l 
+  >{\columncolor{C_Flight_Highlight}}l
+  >{\columncolor{C_Flight_Highlight}}l }
+  {\color{C_Assumed} [ABC123]} & {\color{C_Coordination} IDA} & \\
+  {\color{C_Assumed} 100} & {\color{C_Assumed} $\blacktriangle$} & \\
+  {\color{C_Assumed} 180} & {\color{C_CPDLC_DM_Request} [200]} & \\         
+\end{tabular}
 
+The responses to a level request are sent using the CFL menu, which offers the possibilities to respond with “STANDBY”, “UNABLE” or a level clearance (to the requested level or some other level). In the last case the sequence then changes to an uplink clearance – see above for details.
 
+\subsection{Abnormal operations}
 
+As with DCL messages, the most likely failure scenario is the plugin misinterpreting the contents of a received message, so keep an eye on the CPDLC Current Message Window. Some other failure scenarios are presented below.
 
+If the plugin has temporarily lost contact with the CPDLC server, “CPDLC COMM FAIL” will be inserted above the labels of all CPDLC connected aircraft in “CPDLC Failed” color:
 
+\begin{tabular}{
+  >{\columncolor{C_Flight_Highlight}}l 
+  >{\columncolor{C_Flight_Highlight}}l
+  >{\columncolor{C_Flight_Highlight}}l }
+  {\color{C_CPDLC_Standby} CPDLC COMM FAIL} & & \\
+  {\color{C_Assumed} [ABC123]} & {\color{C_Coordination} IDA} & \\
+  {\color{C_Assumed} 100} & {\color{C_Assumed} $\blacktriangle$} & \\
+  {\color{C_Assumed} 180} & & \\         
+\end{tabular}
 
+In case the server connection is not re-established within a certain time, the connection will be automatically closed and a warning message box will be presented. A new connection can be attempted at any time from the CPDLC Setting Window.
 
+During temporary connection issues and also when the connection is automatically closed, the “AGCS” system label in the General Information Window will be displayed with “Warning” color until a connection is re-established.
 
+If the CPDLC connection is terminated by the pilot, a “CPDLC P ABT” warning is inserted above the label in “CPDLC Failed” color:
+
+\begin{tabular}{
+  >{\columncolor{C_Flight_Highlight}}l 
+  >{\columncolor{C_Flight_Highlight}}l
+  >{\columncolor{C_Flight_Highlight}}l }
+  {\color{C_CPDLC_Standby} CPDLC P ABT} & & \\
+  {\color{C_Assumed} [ABC123]} & {\color{C_Coordination} IDA} & \\
+  {\color{C_Assumed} 100} & {\color{C_Assumed} $\blacktriangle$} & \\
+  {\color{C_Assumed} 180} & & \\         
+\end{tabular}
+
+Left-clicking on the warning acknowledges it.
+
+If an uplink clearance is not answered in time, a “<message type> P LATE” warning will be inserted above
+the label in “CPDLC Pilot Late” color:
+
+\begin{tabular}{
+  >{\columncolor{C_Flight_Highlight}}l 
+  >{\columncolor{C_Flight_Highlight}}l
+  >{\columncolor{C_Flight_Highlight}}l }
+  {\color{C_CPDLC_Pilot_Late} CPDLC P LATE} & & \\
+  {\color{C_Assumed} [ABC123]} & {\color{C_Coordination} IDA} & \\
+  {\color{C_Assumed} 100} & {\color{C_Assumed} $\blacktriangle$} & \\
+  {\color{C_Assumed} 180} & & \\         
+  {\color{C_CPDLC_Pilot_Late} [200]} & & \\         
+\end{tabular}
+
+Left-clicking on it opens a menu that gives options to either abort the clearance or answer it yourself with “WILCO” (after confirmation from the pilot of course).
+
+If sending an uplink clearance failed, a “<message type> ERR” warning will be inserted above the label in “CPDLC Failed” color:
+
+\begin{tabular}{
+  >{\columncolor{C_Flight_Highlight}}l 
+  >{\columncolor{C_Flight_Highlight}}l
+  >{\columncolor{C_Flight_Highlight}}l }
+  {\color{C_CPDLC_Failed} CPDLC ERR} & & \\
+  {\color{C_Assumed} [ABC123]} & {\color{C_Coordination} IDA} & \\
+  {\color{C_Assumed} 100} & {\color{C_Assumed} $\blacktriangle$} & \\
+  {\color{C_Assumed} 180} & & \\         
+  {\color{C_CPDLC_Failed} [200]} & & \\         
+\end{tabular}
+
+Left-clicking acknowledges the warning and aborts the clearance, displaying the previous value in the label.
+
+If an uplink clearance is sent successfully but you are not the currently active ATC unit in the aircraft’s CPDLC system, a “<message type> NOT CDA” warning will be inserted above the label in “CPDLC Failed” color:
+
+\begin{tabular}{
+  >{\columncolor{C_Flight_Highlight}}l 
+  >{\columncolor{C_Flight_Highlight}}l
+  >{\columncolor{C_Flight_Highlight}}l }
+  {\color{C_CPDLC_Failed} CPDLC NOT CDA} & & \\
+  {\color{C_Assumed} [ABC123]} & {\color{C_Coordination} IDA} & \\
+  {\color{C_Assumed} 100} & {\color{C_Assumed} $\blacktriangle$} & \\
+  {\color{C_Assumed} 180} & & \\         
+  {\color{C_CPDLC_Failed} [200]} & & \\         
+\end{tabular}
+
+Left-clicking acknowledges the warning and aborts the clearance, displaying the previous value in the label.
 
 \chapter{Data stored in the flight strip annotation boxes}
 
