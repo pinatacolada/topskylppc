@@ -24,6 +24,10 @@
 
 \usepackage{datetime}
 
+\newcounter{rowcounter}
+\newcommand{\nextrow}{\refstepcounter{rowcounter}}
+
+
 \newcolumntype{t}{>{\tt}c}
 
 \colorlet{shadecolor}{blue!10}
@@ -758,7 +762,7 @@ open folders within the menu. They show a filled triangle before the item name (
 closed, inverted if the folder is open). The “More” folder is opened automatically when the mouse cursor is
 placed over it or if the default item is in the “More” folder, other folders must be left-clicked to open.\\
 
-\subsection{Callsign menu}
+\subsection{Callsign Menu}
 \label{menu:cs}
 \subsection*{Controlled Track}
 \includegraphics{img/cm.png}
@@ -1147,8 +1151,8 @@ more parameters are not acceptable, coordination must be done to find acceptable
 to standard ones. The available ways to accept the proposed parameters are:
 
 \begin{tabular}{l l}
-Callsign menu -> “Assume”               & Assumes the track
-\\Callsign menu -> “ROF”                & Sends a Request On Frequency message
+\textit{\titleref{menu:cs}} -> “Assume”               & Assumes the track
+\\\textit{\titleref{menu:cs}} -> “ROF”                & Sends a Request On Frequency message
 \\Combined Transfer menu -> “Accept”    &  Sends an Accept message
 \end{tabular}
 
@@ -1733,7 +1737,7 @@ Clicking “Ok” will do the search and open the Flight Plan Window if it was c
 
 Global Menu -> FData -> Flight Plan Window… 
 Flight Plan Selection Window -> Create a list of one or more flight plans 
-Callsign menu -> More -> FPL… 
+\textit{\titleref{menu:cs}} -> More -> FPL… 
 “Open FPL Window” tag function
 
 \includegraphics{img/fpl.png}
@@ -1840,7 +1844,7 @@ Displays the expanded route of the FPL currently shown in the \textit{\titleref{
 \subsection{Create APL Window}
 \label{win:apl}
 
-Callsign menu (uncorrelated track only) -> “Create APL” item
+\textit{\titleref{menu:cs}} (uncorrelated track only) -> “Create APL” item
 
 \includegraphics{img/apl2.png}
 
@@ -1902,11 +1906,11 @@ Global Menu -> ControlTools/Tools -> CARD..
 
 The CARD window presents the MTCD conflicts and conflict risks. It also allows setting some of the related parameters. It is divided into two parts:
 
-On the left is the list area which includes all the detected conflicts and shows the concerned aircrafts’ callsigns. A conflict or potential predicted conflict has an “Urgency” colored label and a risk or potential risk of conflict has a “Warning” one. Potential conflicts are displayed with “Potential” colored labels. The conflict numbers are shown in “CARD Conflict Number” color. An “Urgency” colored background on a callsign means that the aircraft also has a Short Term Conflict Alert. A highlighted callsign will be highlighted in this list as well. An acknowledged conflict (shown in “Unconcerned” color) will not display the MTCD warning in the track label. An acknowledged problem will be automatically de-acknowledged if the predicted minimum separation decreases by a predefined amount.
+On the left is the list area which includes all the detected conflicts and shows the concerned aircrafts’ callsigns. A conflict or potential predicted conflict has an “Urgency” colored label and a risk or potential risk of conflict has a “Warning” one. Potential conflicts are displayed with “Potential” colored labels. The conflict numbers are shown in “CARD Conflict Number” color. An \hyperref[color:C_Urgency]{“Urgency”} colored background on a callsign means that the aircraft also has a Short Term Conflict Alert. A highlighted callsign will be highlighted in this list as well. An acknowledged conflict (shown in “Unconcerned” color) will not display the MTCD warning in the track label. An acknowledged problem will be automatically de-acknowledged if the predicted minimum separation decreases by a predefined amount.
 
 Hovering the mouse cursor over a conflict label will display the conflict on the radar screen.
 
-On the right is the graphical display area that gives an overview to the severity and timeframe for each conflict. On the vertical (distance) axis the conflicts are placed to the predicted minimum separation and on the horizontal (time) axis the label is placed so that the left edge of the conflict number is at the time of closest point of approach. A line in “CARD Time Vector” color, extending to the left from the label, marks the time when the separation will decrease below the prediction distance. For fast closure rates the time from prediction distance to CPA may be too short to display the line. The conflict labels have the same mouse functions as the ones in the list area. If the label position would be outside the maximum time displayed in the window, the label is positioned at the maximum displayed time with a “Foreground” colored edge.
+On the right is the graphical display area that gives an overview to the severity and timeframe for each conflict. On the vertical (distance) axis the conflicts are placed to the predicted minimum separation and on the horizontal (time) axis the label is placed so that the left edge of the conflict number is at the time of closest point of approach. A line in \hyperref[color:C_CARD_Time_Vector]{“CARD Time Vector”} color, extending to the left from the label, marks the time when the separation will decrease below the prediction distance. For fast closure rates the time from prediction distance to CPA may be too short to display the line. The conflict labels have the same mouse functions as the ones in the list area. If the label position would be outside the maximum time displayed in the window, the label is positioned at the maximum displayed time with a “Foreground” colored edge.
 The area below 5nm distance is drawn in “Field Highlight” color.
 
 The mouse click areas of the CARD window:
@@ -2135,7 +2139,7 @@ Global Menu -> ControlTools/Tools -> CPDLC -> Current Messages...
 
 \includegraphics{img/dlcmw.png}
 
-The CPDLC Current Message Window displays all sent and received CPDLC messages that have not been archived. Each line corresponds to one message, and contains the time the message was sent/received, the callsign of the aircraft, a filled triangle (pointing upward for uplink messages, downward for downlink messages) and the message text. If the message is too long to fit in the window, “…” is used to mark that there is more text in the message. Right-clicking on the message will open a small window that displays the entire message. The window will close automatically when the mouse cursor leaves its area.
+The \textit{\titleref{win:dlcmw}} displays all sent and received CPDLC messages that have not been archived. Each line corresponds to one message, and contains the time the message was sent/received, the callsign of the aircraft, a filled triangle (pointing upward for uplink messages, downward for downlink messages) and the message text. If the message is too long to fit in the window, “…” is used to mark that there is more text in the message. Right-clicking on the message will open a small window that displays the entire message. The window will close automatically when the mouse cursor leaves its area.
 
 The messages (for uplink clearances, also the responses) are color coded to display their status:
 
@@ -2712,7 +2716,7 @@ The lost list contains the following fields:
 
 \begin{tabular}{l l l l}
     Field                   & Type        & Left click                              & Right click\\
-    Callsign                & mandatory   & Open Callsign menu                      & -\\
+    Callsign                & mandatory   & Open \textit{\titleref{menu:cs}}                      & -\\
     N/ATYP                  & optional    & -                                       & -\\
     AFL (last received)     & optional    & -                                       & Toggle route draw\\
     CFL                     & optional    & Open CFL menu                           & Toggle route draw\\
@@ -2990,7 +2994,7 @@ To answer an incoming coordination, left-click on a proposed value or the corres
 
 \section{Releases}
 
-To communicate a release to the next controller, select the “Trf \& release” option instead of “Transfer” in the Callsign menu when transferring the aircraft. This opens the \textit{\titleref{menu:xfrrel}}) to select the desired release condition. The available choices are “Climb”, “Descent”, “Turn” and “Full”. Selecting an option will start the transfer with the selected release condition.
+To communicate a release to the next controller, select the “Trf \& release” option instead of “Transfer” in the \textit{\titleref{menu:cs}} when transferring the aircraft. This opens the \textit{\titleref{menu:xfrrel}}) to select the desired release condition. The available choices are “Climb”, “Descent”, “Turn” and “Full”. Selecting an option will start the transfer with the selected release condition.
 
 The release will be displayed on line 0 of the track label (in “Proposition In/Out” during the transfer), showing the first letter of the release condition. The example labels below show a Full release:
 
@@ -3028,7 +3032,7 @@ After the accepting controller assumes the aircraft, the release indicator chang
 
 The purpose of the HOP (Hand-Over Proposal) message is for the transferring controller to propose the flight for hand-over to the accepting controller, and/or to propose non-standard transfer conditions which require the approval of the accepting controller.
 
-To send a HOP without any transfer conditions, select the \textit{\titleref{win:hop}}) option in the Callsign menu.
+To send a HOP without any transfer conditions, select the \textit{\titleref{win:hop}}) option in the \textit{\titleref{menu:cs}}.
 
 To send a HOP with a transfer condition (assigned heading, direct-to point or assigned speed):
 
@@ -3079,7 +3083,7 @@ Accepting controller:
 The transferring controller should keep an eye on both the track label and the \textit{\titleref{win:miw}}) as there are three ways for the accepting controller to answer a HOP. In order of preference, they are:
 
 \begin{itemize}
-  \item From the Callsign menu, select “ROF”. This sends a ROF message to the transferring controller.
+  \item From the \textit{\titleref{menu:cs}}, select “ROF”. This sends a ROF message to the transferring controller.
   \begin{itemize}
     \item See \textit{\titleref{menu:rof}}) for indications
   \end{itemize}
@@ -3089,7 +3093,7 @@ The transferring controller should keep an eye on both the track label and the \
     \item A message is put into the Message In Window for the transferring controller
     \item A message is put into the Message Out Window for the accepting controller
   \end{itemize}
-  \item From the Callsign menu, select “Assume”. This assumes the aircraft (with the other two answers the aircraft remains assumed by the transferring controller)
+  \item From the \textit{\titleref{menu:cs}}, select “Assume”. This assumes the aircraft (with the other two answers the aircraft remains assumed by the transferring controller)
   \begin{itemize}
     \item The labels on both controllers’ screens return to normal sector state coloring
   \end{itemize}
@@ -3105,7 +3109,7 @@ The transferring controller should keep an eye on both the track label and the \
 
 The ROF (Request on Frequency) message is sent by the accepting controller to the transferring controller, when required, requesting the transferring controller to instruct the aircraft to change to the frequency of the accepting controller. The message may be used as a reply to HOP to signify the acceptance of the flight under the proposed conditions, or to request the early transfer of the flight.
 
-To send a ROF message, select the “ROF” option in the Callsign menu of the aircraft in question. The example label below shows the indications when the message is sent (there are no indications in the accepting controller’s track label):
+To send a ROF message, select the “ROF” option in the \textit{\titleref{menu:cs}} of the aircraft in question. The example label below shows the indications when the message is sent (there are no indications in the accepting controller’s track label):
 
 Transferring controller:
 
@@ -3280,37 +3284,33 @@ For example, if you send an RTI with AHDG 360 (as in the above example) and then
 
 \section{General}
 
-The TopSky plugin includes some datalink functionality. As there is no VATSIM standard for this, the plugin uses Hoppie’s ACARS network (\url{http://www.hoppie.nl/acars}). A separate password (logon code) is needed, and it can be requested from that site. Note that whereas the plugin includes everything that is necessary to utilize the ACARS network, pilots will have to install separate software in addition to their pilot clients.
+The TopSky plugin uses Hoppie’s ACARS network (\url{http://www.hoppie.nl/acars}). A separate password (logon code) is needed, and it can be requested from that site. 
 
-
-The plugin supports Departure Clearance (DCL and PDC) and Controller-Pilot Data Link Communications (CPDLC). DCL/PDC is discussed in chapter 1 and CPDLC in chapter 2.
-
+The plugin supports Departure Clearance (DCL) and Controller-Pilot Data Link Communications (CPDLC).
 
 To start using the data link functions, first connect to the VATSIM network. Then connect to the Hoppie network:
 
 \begin{itemize}
-  \item Open the CPDLC Setting Window
+  \item Open the \textit{\titleref{win:dls}}
   \item Enter/check the login callsign
   \item Enter your personal logon code
   \item Select whether to provide CPDLC or DCL/PDC services or both
   \item Left-click on the “Connect” button
 \end{itemize}
 
-Wait a moment to see if the connection is successful (the “Connect” button changes to “Online” with a green background, stays that way at least 10 seconds, and no error messages regarding the connection appear in the Personal Queue Window). The Hoppie logon code expires after 120 days of inactivity. If that happens, the connection will fail and a new logon code has to be requested.
+The “Connect” button will change to “Online” with a green background. Wait at least 10 seconds to see if the connection is successful. Error messages regarding the connection will be shown in the \textit{\titleref{win:pqw}}. 
 
+\begin{Warn}
+  Attempting to connect with a CPDLC login callsign that is already in use will not fail instantly, and may take up to 10 seconds for the error message to be added to the \textit{\titleref{win:pqw}}
+\end{Warn}
 
-Only CTR and FSS stations should provide CPDLC services as it is a relatively slow communication method. When providing DCL/PDC only, the login callsign should be the airport identifier if possible. Also remember to advertise your login callsign in your controller information so the pilots will know that the service is available, there’s basically no other way for them to know about it.
+The Hoppie logon code expires after 120 days of inactivity. If that happens, the connection will fail and a new logon code has to be requested.
 
+If the connection is lost, an error message dialog will be displayed in the center of the radar screen. Note that if multiple EuroScope instances are used, the proxy instances will not be able to access the CPDLC message windows or change the network connection status.
 
-Failure messages regarding the connection will be put into the Personal Queue Window, and if the connection is lost, an error message dialog will be displayed in the center of the radar screen. Note that if multiple EuroScope instances are used, the proxy instances will not be able to access the CPDLC message windows or change the network connection status.
+The plugin may sometimes fail to parse the message contents correctly. The longer the message, the more likely it is that the parsing will go wrong. When in doubt, open the message in the \textit{\titleref{win:dlcmw}}.
 
-
-Whereas the real CPDLC system consists mostly of pre-formatted messages, Hoppie’s network contains only free text messages. Free text messages are available in the real system as well but to minimize the risk of misunderstandings, they should not be used if a pre-formatted message is available.
-
-
-With no pre-formatted messages, the plugin will probably sometimes fail to parse the message contents correctly. The longer the message, the more likely it is that the parsing will go wrong. When in doubt, open the message in the CPDLC Current Message Window and see what it says.
-
-The example track labels and the data field colors in this document do not represent any specific setup and are only meant to highlight the items specific to each function. In the examples, aircraft ABC123 is assumed by you, the next controller is “IDA”, the aircraft is climbing through FL100, and its cleared level is FL180. This is the label before any messages arrive:
+The example track labels do not represent any specific setup and are only meant to highlight the items specific to each function. In the examples, aircraft ABC123 is assumed by you, the next controller is “IDA”, the aircraft is climbing through FL100, and its cleared level is FL180. This is the label before any messages arrive:
 
 \begin{tabular}{
   >{\columncolor{C_Flight_Highlight}}l 
@@ -3321,9 +3321,9 @@ The example track labels and the data field colors in this document do not repre
   {\color{C_Assumed} 180} & & \\         
 \end{tabular}
 
-When the aircraft requests to start a CPDLC connection, it sends a “REQUEST LOGON” message. The message is displayed in the CPDLC Current Message Window and the Callsign field gets blinking square brackets around it (not on proxy ES instances). The plugin automatically denies requests for aircraft not entering your sector. To approve the request, use the “Start CPDLC” button in the Callsign menu. To deny the request, left-click on the message in the CPDLC Current Message Window and select “UNABLE” (it is also possible to approve it there if necessary, but the Callsign menu is the primary way to do it.
+When the aircraft requests to start a CPDLC connection, it sends a “REQUEST LOGON” message. The message is displayed in the \textit{\titleref{win:dlcmw}} and the Callsign field gets blinking square brackets around it (not on proxy ES instances). The plugin automatically denies requests for aircraft not entering your sector. To approve the request, use the “Start CPDLC” button in the \textit{\titleref{menu:cs}}. To deny the request, left-click on the message in the \textit{\titleref{win:dlcmw}} and select “UNABLE”. It is also possible to accept if necessary, but the \textit{\titleref{menu:cs}} is the primary way to do it.
 
-When the request has been accepted, the Callsign field will get steady square brackets around it. This indicates that the aircraft is CPDLC connected and you are able to exchange CPDLC messages with it.
+When the request has been accepted, the Callsign field will get steady square brackets around it. This indicates that the aircraft is CPDLC connected and available to exchange CPDLC messages with.
 
 \begin{tabular}{
   >{\columncolor{C_Flight_Highlight}}l 
@@ -3334,75 +3334,91 @@ When the request has been accepted, the Callsign field will get steady square br
   {\color{C_Assumed} 180} & & \\         
 \end{tabular}
 
-To terminate the CPDLC connection of an aircraft, use the “End CPDLC” button in the Callsign menu.
-
-Many CPDLC messages display information in the track labels, but it is good practice to keep the CPDLC Current Message Window open as there are some messages that are only displayed there, and it’s also the only place to check if the plugin interpreted the message correctly. It is found in the “ControlTools” or “Tools” menu, depending on the plugin version. Additionally, you may want to activate a warning sound when a new CPDLC, DCL or PDC message arrives. This is done in the “Settings” or “Setup” menu.
-
-CPDLC/DCL/PDC-related plugin windows and menus are shown in this document with bold text. For more information on them, refer to the General part of the plugin manual set.
+To terminate the CPDLC connection of an aircraft, use the “End CPDLC” button in the \textit{\titleref{menu:cs}}.
 
 \begin{Note}
-  While it is possible to answer any message in the CPDLC Current Message Window using the “Manual Reply” option, the track label menus should always be used to answer correctly recognized messages, as using the manual reply method will not update the track label values.
+  While it is possible to answer any message in the \textit{\titleref{win:dlcmw}} using the “Manual Reply” option, the track label menus should always be used to answer correctly recognized messages, as using the manual reply method will not update the track label values.
 \end{Note}
 
 \section{Departure Clearance (DCL)}
 
 \subsection{General}
 
-The plugin supports three different ways to get a departure clearance by data link.
 ARINC-623 DCL is a service used in Europe and many other parts of the World. It is a direct ATC-to-pilot data link communication over the ACARS network.
 
-The departure clearance functionality is built into the Departure List (but all the messages are also displayed in the CPDLC message windows). A received clearance request is displayed in the list, and a clearance can be sent by opening a departure clearance menu from the Departure List.
+The departure clearance functionality is built into the Departure List. A received clearance request is displayed in the list, and a clearance can be sent by opening the \textit{\titleref{win:dlpdcw}} via left clicking the RWY or SID fields of the Departure List.
+
+The sequence of events related to a DCL request is detailed in the following section.
 
 \subsection{DCL Sequence}
 
 \subsection*{Departure Clearance Request (RCD)}
 
-First, the aircraft sends a clearance request message (RCD). In the CPDLC message windows it looks like this:
+The aircraft sends a clearance request message (RCD). The message is also shown in the \textit{\titleref{win:dlcmw}}:
 
 \begin{quote}
-  REQUEST PREDEP CLEARANCE ABC123 A320 TO ESSA AT EFHK STAND 22 ATIS PAPA
+  REQUEST PREDEP CLEARANCE ABC123 A320 TO ESSA AT LPPT STAND 221 ATIS PAPA
 \end{quote}
 
 \subsection*{Flight System Message (FSM)}
 
-If the request is correctly formatted, the plugin will automatically send a flight system message (FSM) as a reply (the plugin can be configured to not send this message though). Its content depends on whether everything is OK (flight plan found, departure airport set up to offer data link clearances, etc.). If so, the reply message to the aircraft will look like this:
+If the request is correctly formatted, the plugin will automatically send a flight system message (FSM) as a reply. Its content depends on whether all the requirements for a DCL are met (flight plan found, departure airport offers data link clearances, etc.). If so, the following reply message is sent to the aircraft:
 
 \begin{quote}
-  DEPART MESSAGE STATUS FSM 1312 160213 EFHK ABC123 RCD RECEIVED REQUEST BEING PROCESSED STANDBY 
+  DEPART MESSAGE STATUS FSM 1312 221113 LPPT ABC123 RCD RECEIVED REQUEST BEING PROCESSED STANDBY 
 \end{quote}
 
-The List CLR tag item will show a “R” text in yellow (red if the request contained remarks text after the ATIS indicator, in this case see the message in the CPDLC Current Message Window). The text will start to blink two minutes before a timeout occurs if a clearance hasn’t been sent.
+The List CLR tag item will show a “R” text in yellow (red if the request contained remarks text after the ATIS indicator. Check the message in the \textit{\titleref{win:dlcmw}}). The text will start to blink two minutes before a timeout occurs if a clearance hasn’t been sent.
 
 If a clearance is not sent before the timeout occurs, the data link clearance request is automatically rejected and a message is sent to the aircraft to revert to voice procedures.
 
-\subsection*{Departure Clearance Message (CLD)}
-
-This is the first (and only) step that requires controller action. The clearance is sent using the Pre-Departure Clearance menu, opened using the Open PDC menu function. The clearance is sent using the “Send DCL” button, but the option to give the clearance by voice is always there as well (“Voice” rejects the data link clearance request and sends a message to the aircraft to revert to voice procedures). The sent clearance will look like this:
-
 \begin{quote}
-  EFHK PDC 001 CLD 1314 160213 EFHK PDC 001 ABC123 CLRD TO ESSA OFF 22R VIA VAGIP1N DCT ADIVO SQUAWK 4625 NEXT FREQ 121.800 QNH 1012
+  RCD REJECTED REVERT TO VOICE PROCEDURES
 \end{quote}
 
-Once the clearance is sent, the List CLR item will change to “ACK” or “A”, and will start to blink if there is no reply from the aircraft two minutes before a timeout occurs.
+\subsection*{Departure Clearance Message (CLD)}
 
+The clearance is sent using the \textit{\titleref{win:dlpdcw}}), opened by left clicking the RWY or SID fields of the Departure List. 
+
+\begin{Note}
+  Due to system limitations, the current ATIS letter should be manually added to the RMK field of the DCL, in the "ATIS: X" format.
+\end{Note}
+
+The clearance is sent using the “Send DCL” button. “Voice” rejects the data link clearance request and sends a message to the aircraft to revert to voice procedures. 
+
+\begin{quote}
+  LPPT PDC 001 CLD 1314 221113 LPPT PDC 001 ABC123 CLRD TO ESSA OFF 02 VIA IXIDA5N SQUAWK 3251 ATIS:X QNH 1012
+\end{quote}
+
+Once the clearance is sent, the List CLR item will change to “A”, and will start to blink if there is no reply from the aircraft two minutes before a timeout occurs.
 
 If there is still no answer from the aircraft when the timeout occurs, the data link clearance is automatically rejected and a message is sent to the aircraft informing it that the received clearance has been cancelled.
 
+\begin{quote}
+  ACK NOT RECEIVED CLEARANCE CANCELLED REVERT TO VOICE PROCEDURES
+\end{quote}
+
 \subsection*{Departure Clearance Readback (CDA)}
 
-When the pilot acknowledges the clearance, in reality the aircraft system would send back a readback of the received clearance, which the ATC system would then compare to the sent clearance to check if it was received without errors. In the plugin, a clearance can be answered to with either “WILCO” to accept it or “UNABLE” to reject it.
+A clearance can be answered to with either “WILCO” to accept it or “UNABLE” to reject it.
 
 \subsection*{Flight System Message (FSM)}
 
-Once the plugin receives one of these replies, it changes the List CLR item to “OK” or a filled box (for WILCO) or clears it (for UNABLE), and a message is sent to the aircraft. For an accepted clearance it will look like this (the grey part is left out in the CPDLC message windows):
+Once a reply is received, the List CLR item changes to a filled box (for WILCO) or clears it (for UNABLE). A message is automatically sent to the aircraft.
 
 \begin{quote}
-  ATC REQUEST STATUS FSM 1317 160213 EFHK ABC123 CDA RECEIVED CLEARANCE CONFIRMED 
+  ATC REQUEST STATUS FSM 1317 221113 LPPT ABC123 CDA RECEIVED CLEARANCE CONFIRMED 
+\end{quote}
+
+If an UNABLE reply is received, clearance must then be negotiated and delivered by voice. A message is automatically sent to the aircraft.
+
+\begin{quote}
+  CONTACT ATC BY VOICE REFUSE NOT SUPPORTED BY DATALINK
 \end{quote}
 
 \subsection{Abnormal operations}
 
-Most failure cases result from the message not being correctly formatted, and the plugin failing to recognize it correctly. Regardless of whether the plugin recognizes the message as belonging to a departure clearance sequence, it will be put into the CPDLC Current Message Window, so keep an eye for new messages in it regularly (and archive old messages to keep only relevant messages displayed). In case the system fails, revert to voice/text communications.
+Most failure cases result from the message not being correctly formatted, and the plugin failing to recognize it correctly. Regardless of whether the plugin recognizes the message as belonging to a departure clearance sequence, it will be put into the \textit{\titleref{win:dlcmw}}. In case the system fails, revert to voice communications.
 
 \section{Controller-Pilot Data Link Communications (CPDLC)}
 
@@ -3496,7 +3512,7 @@ If the aircraft would have answered with “UNABLE”, a warning would have been
   {\color{C_CPDLC_Standby} [200+]} & & \\         
 \end{tabular}
 
-The “+” after the level indicates that there is a reason in the answer message (for example “DUE TO PERFORMANCE”). Read the message in the CPDLC Current Message Window to find out what it is.
+The “+” after the level indicates that there is a reason in the answer message (for example “DUE TO PERFORMANCE”). Read the message in the \textit{\titleref{win:dlcmw}} to find out what it is.
 
 Left-clicking on the warning acknowledges it and the original CFL value is again shown in the label:
 
@@ -3529,7 +3545,7 @@ The responses to a level request are sent using the CFL menu, which offers the p
 
 \subsection{Abnormal operations}
 
-As with DCL messages, the most likely failure scenario is the plugin misinterpreting the contents of a received message, so keep an eye on the CPDLC Current Message Window. Some other failure scenarios are presented below.
+As with DCL messages, the most likely failure scenario is the plugin misinterpreting the contents of a received message, so keep an eye on the \textit{\titleref{win:dlcmw}}. Some other failure scenarios are presented below.
 
 If the plugin has temporarily lost contact with the CPDLC server, “CPDLC COMM FAIL” will be inserted above the labels of all CPDLC connected aircraft in “CPDLC Failed” color:
 
@@ -3646,11 +3662,11 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
     \endhead
     • &
     Frequency &
-      “•”, set from Callsign menu &
+      “•”, set from \textit{\titleref{menu:cs}} &
       (color): Freq Indicator \\ \hline
     • &
       Mark &
-      “•”, set from Callsign menu &
+      “•”, set from \textit{\titleref{menu:cs}} &
       Information \\ \hline
     + &
       Field 18 information &
@@ -4232,7 +4248,7 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       Active state: Warning \\ \hline
     MALRT &
       Manual alerts &
-      Displays alerts entered via the  Callsign menu &
+      Displays alerts entered via the  \textit{\titleref{menu:cs}} &
       Warning \\ \hline
     MSAW &
       MSAW alert (see also ALRT) &
@@ -4651,156 +4667,156 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
 
 \begin{longtable}{|p{4.5cm}|p{1.5cm}|p{4.5cm}|}
   \hline
-  \textbf{Color name}             & \textbf{Color}                        & \textbf{Usage}                               \\ \hline
+  \textbf{Color name}                                                    & \textbf{Color}                        & \textbf{Usage}                               \\ \hline
   \endhead
-  \textit{\textbf{Aircraft colors}} &                                     &                                              \\ \hline
-  Assumed                         & \cellcolor{C_Assumed}                 & Labels, Tracks                               \\ \hline
-  CARD Mark All                   & \cellcolor{C_CARD_Mark_All}           & Labels                                       \\ \hline
-  CARD Mark Own                   & \cellcolor{C_CARD_Mark_Own}           & Labels                                       \\ \hline
-  Concerned                       & \cellcolor{C_Concerned}               & Labels, Tracks                               \\ \hline
-  Coordination                    & \cellcolor{C_Coordination}            & Labels, Tracks                               \\ \hline
-  Freq Indicator                  & \cellcolor{C_Freq_Indicator}          & Labels                                       \\ \hline
-  Info Coord                      & \cellcolor{C_Info_Coord}              & Labels                                       \\ \hline
-  Information                     & \cellcolor{C_Information}             & Labels, Windows                              \\ \hline
-  Informed 1                      & \cellcolor{C_Informed_1}              & Labels, Tracks                               \\ \hline
-  Informed 2                      & \cellcolor{C_Informed_2}              & Labels, Tracks                               \\ \hline
-  Informed 3                      & \cellcolor{C_Informed_3}              & Labels, Tracks                               \\ \hline
-  Proposition Accepted            & \cellcolor{C_Proposition_Accepted}    & Labels                                       \\ \hline
-  Proposition In                  & \cellcolor{C_Proposition_In}          & Labels                                       \\ \hline 
-  Proposition Out                 & \cellcolor{C_Proposition_Out}         & Labels                                       \\ \hline
-  Redundant                       & \cellcolor{C_Redundant}               & Labels, Tracks                               \\ \hline
-  Rwy Locked                      & \cellcolor{C_Rwy_Locked}              & Labels                                       \\ \hline
-  Sid Star Allocation             & \cellcolor{C_Sid_Star_Allocation}     & Labels                                       \\ \hline
-  Sid Star No Allocation          & \cellcolor{C_Sid_Star_No_Allocation}  & Labels                                       \\ \hline
-  Suite Highlight                 & \cellcolor{C_Suite_Highlight}         & Labels                                       \\ \hline
-  Track Default                   & \cellcolor{C_Track_Default}           & Tracks                                       \\ \hline
-  Track Highlight                 & \cellcolor{C_Track_Highlight}         & Tracks (when selected)                       \\ \hline
-  Unconcerned                     & \cellcolor{C_Unconcerned}             & Labels, Tracks                               \\ \hline
-  Unknown                         & \cellcolor{C_Unknown}                 & Labels                                       \\ \hline
-  Urgency                         & \cellcolor{C_Urgency}                 & Labels, STCA callsign background on plugin windows/lists \\ \hline
-  VFR                             & \cellcolor{C_VFR}                     & Labels, Tracks                               \\ \hline
-  Warning                         & \cellcolor{C_Warning}                 & Labels, APW callsign background on plugin windows/lists, Windows \\ \hline
-  \textit{\textbf{CPDLC colors}}  &                                       &                                              \\ \hline
-  CPDLC Controller Late           & \cellcolor{C_CPDLC_Controller_Late}   & Labels, Windows                              \\ \hline
-  CPDLC Discarded                 & \cellcolor{C_CPDLC_Discarded}         & Windows                                      \\ \hline
-  CPDLC DM Request                & \cellcolor{C_CPDLC_DM_Request}        & Labels, Windows                              \\ \hline
-  CPDLC Failed                    & \cellcolor{C_CPDLC_Failed}            & Labels, Windows                              \\ \hline
-  CPDLC Pilot Late                & \cellcolor{C_CPDLC_Pilot_Late}        & Labels, Windows                              \\ \hline
-  CPDLC Standby                   & \cellcolor{C_CPDLC_Standby}           & Labels, Windows                              \\ \hline
-  CPDLC UM Clearance              & \cellcolor{C_CPDLC_UM_Clearance}      & Labels, Windows                              \\ \hline
-  CPDLC Unable                    & \cellcolor{C_CPDLC_Unable}            & Labels, Windows                              \\ \hline
-  CPDLC Urgency                   & \cellcolor{C_CPDLC_Urgency}           & Labels, Windows                              \\ \hline
-  \textit{\textbf{Aircraft related items on the radar screen}} &          &                                              \\ \hline
-  AIW intrusion                   & \cellcolor{C_AIW_intrusion}           & AIW alert related items                      \\ \hline
-  CARD Min Sep                    & \cellcolor{C_CARD_Min_Sep}            & CARD SEP Tool                                \\ \hline
-  Flight Leg                      & \cellcolor{C_Flight_Leg}              & Part of flight leg without MTCD and SAP coverage \\ \hline
-  FPLSEP Tool 1                   & \cellcolor{C_FPLSEP_Tool_1}           & Flight plan separation tool 1                \\ \hline
-  FPLSEP Tool 2                   & \cellcolor{C_FPLSEP_Tool_2}           & Flight plan separation tool 2                \\ \hline
-  FPLSEP Tool 3                   & \cellcolor{C_FPLSEP_Tool_3}           & Flight plan separation tool 3                \\ \hline
-  FPLSEP Tool 4                   & \cellcolor{C_FPLSEP_Tool_4}           & Flight plan separation tool 4                \\ \hline
-  FPLSEP Tool 5                   & \cellcolor{C_FPLSEP_Tool_5}           & Flight plan separation tool 5                \\ \hline
-  Heading Vector                  & \cellcolor{C_Heading_Vector}          & Heading vector                               \\ \hline
-  Information FL                  & \cellcolor{C_Information_FL}          & Part of flight leg with no MTCD or SAP problems \\ \hline
-  Potential FL                    & \cellcolor{C_Potential_FL}            & Part of flight leg with MTCD or SAP potential conflict \\ \hline
-  QDM                             & \cellcolor{C_QDM}                     & QDM vector                                   \\ \hline
-  SEP Tool 1                      & \cellcolor{C_SEP_Tool_1}              & Minimum separation tool 1                    \\ \hline
-  SEP Tool 2                      & \cellcolor{C_SEP_Tool_2}              & Minimum separation tool 2                    \\ \hline
-  SEP Tool 3                      & \cellcolor{C_SEP_Tool_3}              & Minimum separation tool 3                    \\ \hline
-  SEP Tool 4                      & \cellcolor{C_SEP_Tool_4}              & Minimum separation tool 4                    \\ \hline
-  SEP Tool 5                      & \cellcolor{C_SEP_Tool_5}              & Minimum separation tool 5                    \\ \hline
-  SEP Tool 6                      & \cellcolor{C_SEP_Tool_6}              & Minimum separation tool 6                    \\ \hline
-  SEP Tool 7                      & \cellcolor{C_SEP_Tool_7}              & Minimum separation tool 7                    \\ \hline
-  SEP Vert                        & \cellcolor{C_SEP_Vert}                & Extensions of minimum separation tools       \\ \hline
-  System Calculated TOC           & \cellcolor{C_System_Calculated_TOC}   & TOC symbol on flight leg                     \\ \hline
-  System Calculated TOD           & \cellcolor{C_System_Calculated_TOD}   & TOD symbol on flight leg                     \\ \hline
-  Urgency FL                      & \cellcolor{C_Urgency_FL}              & Part of flight leg with MTCD or SAP conflict \\ \hline
-  Warning FL                      & \cellcolor{C_Warning_FL}              & Part of flight leg with MTCD or SAP risk     \\ \hline
-  \textit{\textbf{Map colors}}    &                                       &                                              \\ \hline
-  Active Map                      & \cellcolor{C_Active_Map}              & Active TSA map border                        \\ \hline
-  Active Map Type 1               & \cellcolor{C_Active_Map_Type_1}       & TSA map border/fill                          \\ \hline
-  Active Map Type 2               & \cellcolor{C_Active_Map_Type_2}       & TSA map border/fill                          \\ \hline
-  Active Map Type 3               & \cellcolor{C_Active_Map_Type_3}       & TSA map border/fill                          \\ \hline
-  Active Map Type 4               & \cellcolor{C_Active_Map_Type_4}       & TSA map border/fill                          \\ \hline
-  Active Map Type 5               & \cellcolor{C_Active_Map_Type_5}       & TSA map border/fill                          \\ \hline
-  Active Map Type 6               & \cellcolor{C_Active_Map_Type_6}       & TSA map border/fill                          \\ \hline
-  Active Map Type 7               & \cellcolor{C_Active_Map_Type_7}       & TSA map border/fill                          \\ \hline
-  Active Map Type 8               & \cellcolor{C_Active_Map_Type_8}       & TSA map border/fill                          \\ \hline
-  Active Map Type 9               & \cellcolor{C_Active_Map_Type_9}       & TSA map border/fill                          \\ \hline
-  Active Map Type 10              & \cellcolor{C_Active_Map_Type_10}      & TSA map border/fill                          \\ \hline
-  Active Map Type 11              & \cellcolor{C_Active_Map_Type_11}      & TSA map border/fill                          \\ \hline
-  Active Map Type 12              & \cellcolor{C_Active_Map_Type_12}      & TSA map border/fill                          \\ \hline
-  Active Map Type 13              & \cellcolor{C_Active_Map_Type_13}      & TSA map border/fill                          \\ \hline
-  Active Map Type 14              & \cellcolor{C_Active_Map_Type_14}      & TSA map border/fill                          \\ \hline
-  Active Map Type 15              & \cellcolor{C_Active_Map_Type_15}      & TSA map border/fill                          \\ \hline
-  Active Map Type 16              & \cellcolor{C_Active_Map_Type_16}      & TSA map border/fill                          \\ \hline
-  Active Map Type 17              & \cellcolor{C_Active_Map_Type_17}      & TSA map border/fill                          \\ \hline
-  Active Map Type 18              & \cellcolor{C_Active_Map_Type_18}      & TSA map border/fill                          \\ \hline
-  Active Map Type 19              & \cellcolor{C_Active_Map_Type_19}      & TSA map border/fill                          \\ \hline
-  Active Map Type 20              & \cellcolor{C_Active_Map_Type_20}      & TSA map border/fill                          \\ \hline
-  Active RD Infill Map            & \cellcolor{C_Active_RD_Infill_Map}    & Active R or D map fill                       \\ \hline
-  Active RD Map                   & \cellcolor{C_Active_RD_Map}           & Active R or D map border                     \\ \hline
-  Active Text Map                 & \cellcolor{C_Active_Text_Map}         & Active TSA map text                          \\ \hline
-  Auto Map Label                  & \cellcolor{C_Auto_Map_Label}          & Auto-generated maps                          \\ \hline
-  Auto Map Symbol                 & \cellcolor{C_Auto_Map_Symbol}         & Auto-generated maps                          \\ \hline
-  East NAT Map                    & \cellcolor{C_East_NAT_Map}            & Auto-generated maps, maps                    \\ \hline
-  Map 1                           & \cellcolor{C_Map_1}                   & Maps                                         \\ \hline
-  Map 2                           & \cellcolor{C_Map_2}                   & Maps                                         \\ \hline
-  Map 3                           & \cellcolor{C_Map_3}                   & Maps                                         \\ \hline
-  Map 4                           & \cellcolor{C_Map_4}                   & Maps                                         \\ \hline
-  Map Hotspot                     & \cellcolor{C_Map_Hotspot}             & Map hotspots                                 \\ \hline
-  Map Border                      & \cellcolor{C_Map_Border}              & Maps                                         \\ \hline
-  Map Info                        & \cellcolor{C_Map_Info}                & Range rings, range marker                    \\ \hline
-  Map Land                        & \cellcolor{C_Map_Land}                & Maps                                         \\ \hline
-  Map Symbol                      & \cellcolor{C_Map_Symbol}              & Maps                                         \\ \hline
-  Preactive Map                   & \cellcolor{C_Preactive_Map}           & Pre-active map border                        \\ \hline
-  Preactive Text Map              & \cellcolor{C_Preactive_Text_Map}      & Pre-active map text                          \\ \hline
-  Predisplay Map                  & \cellcolor{C_Predisplay_Map}          & Pre-display map border                       \\ \hline
-  Rwy App Line Inuse              & \cellcolor{C_Rwy_App_Line_Inuse}      & Runway approach line for runways in use      \\ \hline
-  Rwy App Line Not Inuse          & \cellcolor{C_Rwy_App_Line_Not_Inuse}  & Runway approach line for runways not in use  \\ \hline
-  TSA Border Highlight            & \cellcolor{C_TSA_Border_Highlight}    & Highlighted TSA map border                   \\ \hline
-  Weather Map                     & \cellcolor{C_Weather_Map}             & Weather radar data                           \\ \hline
-  West NAT Map                    & \cellcolor{C_West_NAT_Map}            & Auto-generated maps, maps                    \\ \hline
-  \textit{\textbf{Window and menu colors}} &                              &                                              \\ \hline
-  Arm                             & \cellcolor{C_Arm}                     & Inactive window texts                        \\ \hline
-  Map Bright                      & \cellcolor{C_Map_Bright}              & Stack Manager Window, VAW                    \\ \hline
-  Background                      & \cellcolor{C_Background}              & Background                                   \\ \hline
-  Border                          & \cellcolor{C_Border}                  & Various lines in windows                     \\ \hline
-  BottomShadow                    & \cellcolor{C_BottomShadow}            & 3D effects in windows                        \\ \hline
-  CARD Conflict Number            & \cellcolor{C_CARD_Conflict_Number}    & CARD conflict numbers                        \\ \hline
-  CARD Time Vector                & \cellcolor{C_CARD_Time_Vector}        & CARD time vectors                            \\ \hline
-  Field Highlight                 & \cellcolor{C_Field_Highlight}         & Selected field                               \\ \hline
-  Flight Highlight                & \cellcolor{C_Flight_Highlight}        & Selected item                                \\ \hline
-  Foreground                      & \cellcolor{C_Foreground}              & Window titles, menu items, active texts, close/min/resize boxes \\ \hline
-  Global Menu Highlight           & \cellcolor{C_Global_Menu_Highlight}   & Highlighted items in the Global Menu         \\ \hline
-  Inactive Sector                 & \cellcolor{C_Inactive_Sector}         & CARD and VAW background                      \\ \hline
-  LatLong Info                    & \cellcolor{C_LatLong_Info}            & Coordinate value in Lat/Long Window          \\ \hline
-  Overflown                       & \cellcolor{C_Overflown}               & Overflown points in Complete Route Window    \\ \hline
-  Potential                       & \cellcolor{C_Potential}               & Potential conflicts in CARD/VAW              \\ \hline
-  Select                          & \cellcolor{C_Select}                  & Selected radio buttons and selection boxes   \\ \hline
-  Selected                        & \cellcolor{C_Selected}                & Active filters in Radar menu                 \\ \hline
-  Selected Group                  & \cellcolor{C_Selected_Group}          & Group of TSA areas in multi edit mode        \\ \hline
-  Selected Period                 & \cellcolor{C_Selected_Period}         & Active areas text in area window             \\ \hline
-  SMW Level Band                  & \cellcolor{C_SMW_Level_Band}          & AFL-CFL boxes in SMW                         \\ \hline
-  SMW Overflight                  & \cellcolor{C_SMW_Overflight}          & Overflight lines in SMW                      \\ \hline
-  SMW Overlap                     & \cellcolor{C_SMW_Overlap}             & Overlapping AFL-CFL boxes in SMW             \\ \hline
-  SMW Overlap Box                 & \cellcolor{C_SMW_Overlap_Box}         & Multiple same CFL’s box in SMW               \\ \hline
-  SMW Overshoot                   & \cellcolor{C_SMW_Overshoot}           & Level bust AFL-CFL boxes in SMW              \\ \hline
-  TopShadow                       & \cellcolor{C_TopShadow}               & 3D effects in windows                        \\ \hline
-  Trough                          & \cellcolor{C_Trough}                  & Slider area background                       \\ \hline
-  TSA Active                      & \cellcolor{C_TSA_Active}              & Active areas background in area window       \\ \hline
-  TSA Filter                      & \cellcolor{C_TSA_Filter}              & Active categories in area window             \\ \hline
-  TSA Preactive                   & \cellcolor{C_TSA_Preactive}           & Pre-active areas background in area window   \\ \hline
-  VAW Profile                     & \cellcolor{C_VAW_Profile}             & Selected aircraft profile in VAW             \\ \hline
-  VAW Sector Limits               & \cellcolor{C_VAW_Sector_Limits}       & Sector boundaries in VAW                     \\ \hline
-  VAW Track Position              & \cellcolor{C_VAW_Track_Position}      & Selected aircraft position in VAW            \\ \hline
-  WM Active Fg                    & \cellcolor{C_WM_Active_Fg}            & Active window title text                     \\ \hline
-  WM Bg                           & \cellcolor{C_WM_Bg}                   & Window title bar background                  \\ \hline
-  WM Border                       & \cellcolor{C_WM_Border}               & Window border line                           \\ \hline
-  WM Fg                           & \cellcolor{C_WM_Fg}                   & Window texts                                 \\ \hline
-  WM Frame                        & \cellcolor{C_WM_Frame}                & Window frame when dragging                   \\ \hline
-  \textit{\textbf{Other colors}}  &                                       &                                              \\ \hline
-  Standard Line RDF               & \cellcolor{C_Standard_Line_RDF}       & Direction Finder position circle or direction line \\ \hline
-  Text Notes                      & \cellcolor{C_Text_Notes}              & Text notes                                   \\ \hline                                 
+  \textit{\textbf{Aircraft colors}}                                      &                                       &                                              \\ \hline
+  \nextrow \label{color:C_Assumed} Assumed                               & \cellcolor{C_Assumed}                 & Labels, Tracks                               \\ \hline
+  \nextrow \label{color:C_CARD_Mark_All} CARD Mark All                   & \cellcolor{C_CARD_Mark_All}           & Labels                                       \\ \hline
+  \nextrow \label{color:C_CARD_Mark_Own} CARD Mark Own                   & \cellcolor{C_CARD_Mark_Own}           & Labels                                       \\ \hline
+  \nextrow \label{color:C_Concerned} Concerned                           & \cellcolor{C_Concerned}               & Labels, Tracks                               \\ \hline
+  \nextrow \label{color:C_Coordination} Coordination                     & \cellcolor{C_Coordination}            & Labels, Tracks                               \\ \hline
+  \nextrow \label{color:C_Freq_Indicator} Freq Indicator                 & \cellcolor{C_Freq_Indicator}          & Labels                                       \\ \hline
+  \nextrow \label{color:C_Info_Coord} Info Coord                         & \cellcolor{C_Info_Coord}              & Labels                                       \\ \hline
+  \nextrow \label{color:C_Information} Information                       & \cellcolor{C_Information}             & Labels, Windows                              \\ \hline
+  \nextrow \label{color:C_Informed_1} Informed 1                         & \cellcolor{C_Informed_1}              & Labels, Tracks                               \\ \hline
+  \nextrow \label{color:C_Informed_2} Informed 2                         & \cellcolor{C_Informed_2}              & Labels, Tracks                               \\ \hline
+  \nextrow \label{color:C_Informed_3} Informed 3                         & \cellcolor{C_Informed_3}              & Labels, Tracks                               \\ \hline
+  \nextrow \label{color:C_Proposition_Accepted} Proposition Accepted     & \cellcolor{C_Proposition_Accepted}    & Labels                                       \\ \hline
+  \nextrow \label{color:C_Proposition_In} Proposition In                 & \cellcolor{C_Proposition_In}          & Labels                                       \\ \hline 
+  \nextrow \label{color:C_Proposition_Out} Proposition Out               & \cellcolor{C_Proposition_Out}         & Labels                                       \\ \hline
+  \nextrow \label{color:C_Redundant} Redundant                           & \cellcolor{C_Redundant}               & Labels, Tracks                               \\ \hline
+  \nextrow \label{color:C_Rwy_Locked} Rwy Locked                         & \cellcolor{C_Rwy_Locked}              & Labels                                       \\ \hline
+  \nextrow \label{color:C_Sid_Star_Allocation} Sid Star Allocation       & \cellcolor{C_Sid_Star_Allocation}     & Labels                                       \\ \hline
+  \nextrow \label{color:C_Sid_Star_No_Allocation} Sid Star No Allocation & \cellcolor{C_Sid_Star_No_Allocation}  & Labels                                       \\ \hline
+  \nextrow \label{color:C_Suite_Highlight} Suite Highlight               & \cellcolor{C_Suite_Highlight}         & Labels                                       \\ \hline
+  \nextrow \label{color:C_Track_Default} Track Default                   & \cellcolor{C_Track_Default}           & Tracks                                       \\ \hline
+  \nextrow \label{color:C_Track_Highlight} Track Highlight               & \cellcolor{C_Track_Highlight}         & Tracks (when selected)                       \\ \hline
+  \nextrow \label{color:C_Unconcerned} Unconcerned                       & \cellcolor{C_Unconcerned}             & Labels, Tracks                               \\ \hline
+  \nextrow \label{color:C_Unknown} Unknown                               & \cellcolor{C_Unknown}                 & Labels                                       \\ \hline
+  \nextrow \label{color:C_Urgency} Urgency                               & \cellcolor{C_Urgency}                 & Labels, STCA callsign background on plugin windows/lists \\ \hline
+  \nextrow \label{color:C_VFR} VFR                                       & \cellcolor{C_VFR}                     & Labels, Tracks                               \\ \hline
+  \nextrow \label{color:C_Warning} Warning                               & \cellcolor{C_Warning}                 & Labels, APW callsign background on plugin windows/lists, Windows \\ \hline
+  \nextrow \textit{\textbf{CPDLC colors}}                                &                                       &                                              \\ \hline
+  \nextrow \label{color:C_CPDLC_Controller_Late} CPDLC Controller Late   & \cellcolor{C_CPDLC_Controller_Late}   & Labels, Windows                              \\ \hline
+  \nextrow \label{color:C_CPDLC_Discarded} CPDLC Discarded               & \cellcolor{C_CPDLC_Discarded}         & Windows                                      \\ \hline
+  \nextrow \label{color:C_CPDLC_DM_Request} CPDLC DM Request             & \cellcolor{C_CPDLC_DM_Request}        & Labels, Windows                              \\ \hline
+  \nextrow \label{color:C_CPDLC_Failed} CPDLC Failed                     & \cellcolor{C_CPDLC_Failed}            & Labels, Windows                              \\ \hline
+  \nextrow \label{color:C_CPDLC_Pilot_Late} CPDLC Pilot Late             & \cellcolor{C_CPDLC_Pilot_Late}        & Labels, Windows                              \\ \hline
+  \nextrow \label{color:C_CPDLC_Standby} CPDLC Standby                   & \cellcolor{C_CPDLC_Standby}           & Labels, Windows                              \\ \hline
+  \nextrow \label{color:C_CPDLC_UM_Clearance} CPDLC UM Clearance         & \cellcolor{C_CPDLC_UM_Clearance}      & Labels, Windows                              \\ \hline
+  \nextrow \label{color:C_CPDLC_Unable} CPDLC Unable                     & \cellcolor{C_CPDLC_Unable}            & Labels, Windows                              \\ \hline
+  \nextrow \label{color:C_CPDLC_Urgency} CPDLC Urgency                   & \cellcolor{C_CPDLC_Urgency}           & Labels, Windows                              \\ \hline
+  \nextrow \textit{\textbf{Aircraft related items on the radar screen}}  &                                       &                                              \\ \hline
+  \nextrow \label{color:C_AIW_intrusion} AIW intrusion                   & \cellcolor{C_AIW_intrusion}           & AIW alert related items                      \\ \hline
+  \nextrow \label{color:C_CARD_Min_Sep} CARD Min Sep                     & \cellcolor{C_CARD_Min_Sep}            & CARD SEP Tool                                \\ \hline
+  \nextrow \label{color:C_Flight_Leg} Flight Leg                         & \cellcolor{C_Flight_Leg}              & Part of flight leg without MTCD and SAP coverage \\ \hline
+  \nextrow \label{color:C_FPLSEP_Tool_1} FPLSEP Tool 1                   & \cellcolor{C_FPLSEP_Tool_1}           & Flight plan separation tool 1                \\ \hline
+  \nextrow \label{color:C_FPLSEP_Tool_2} FPLSEP Tool 2                   & \cellcolor{C_FPLSEP_Tool_2}           & Flight plan separation tool 2                \\ \hline
+  \nextrow \label{color:C_FPLSEP_Tool_3} FPLSEP Tool 3                   & \cellcolor{C_FPLSEP_Tool_3}           & Flight plan separation tool 3                \\ \hline
+  \nextrow \label{color:C_FPLSEP_Tool_4} FPLSEP Tool 4                   & \cellcolor{C_FPLSEP_Tool_4}           & Flight plan separation tool 4                \\ \hline
+  \nextrow \label{color:C_FPLSEP_Tool_5} FPLSEP Tool 5                   & \cellcolor{C_FPLSEP_Tool_5}           & Flight plan separation tool 5                \\ \hline
+  \nextrow \label{color:C_Heading_Vector} Heading Vector                 & \cellcolor{C_Heading_Vector}          & Heading vector                               \\ \hline
+  \nextrow \label{color:C_Information_FL} Information FL                 & \cellcolor{C_Information_FL}          & Part of flight leg with no MTCD or SAP problems \\ \hline
+  \nextrow \label{color:C_Potential_FL} Potential FL                     & \cellcolor{C_Potential_FL}            & Part of flight leg with MTCD or SAP potential conflict \\ \hline
+  \nextrow \label{color:C_QDM} QDM                                       & \cellcolor{C_QDM}                     & QDM vector                                   \\ \hline
+  \nextrow \label{color:C_SEP_Tool_1} SEP Tool 1                         & \cellcolor{C_SEP_Tool_1}              & Minimum separation tool 1                    \\ \hline
+  \nextrow \label{color:C_SEP_Tool_2} SEP Tool 2                         & \cellcolor{C_SEP_Tool_2}              & Minimum separation tool 2                    \\ \hline
+  \nextrow \label{color:C_SEP_Tool_3} SEP Tool 3                         & \cellcolor{C_SEP_Tool_3}              & Minimum separation tool 3                    \\ \hline
+  \nextrow \label{color:C_SEP_Tool_4} SEP Tool 4                         & \cellcolor{C_SEP_Tool_4}              & Minimum separation tool 4                    \\ \hline
+  \nextrow \label{color:C_SEP_Tool_5} SEP Tool 5                         & \cellcolor{C_SEP_Tool_5}              & Minimum separation tool 5                    \\ \hline
+  \nextrow \label{color:C_SEP_Tool_6} SEP Tool 6                         & \cellcolor{C_SEP_Tool_6}              & Minimum separation tool 6                    \\ \hline
+  \nextrow \label{color:C_SEP_Tool_7} SEP Tool 7                         & \cellcolor{C_SEP_Tool_7}              & Minimum separation tool 7                    \\ \hline
+  \nextrow \label{color:C_SEP_Vert} SEP Vert                             & \cellcolor{C_SEP_Vert}                & Extensions of minimum separation tools       \\ \hline
+  \nextrow \label{color:C_System_Calculated_TOC} System Calculated TOC   & \cellcolor{C_System_Calculated_TOC}   & TOC symbol on flight leg                     \\ \hline
+  \nextrow \label{color:C_System_Calculated_TOD} System Calculated TOD   & \cellcolor{C_System_Calculated_TOD}   & TOD symbol on flight leg                     \\ \hline
+  \nextrow \label{color:C_Urgency_FL} Urgency FL                         & \cellcolor{C_Urgency_FL}              & Part of flight leg with MTCD or SAP conflict \\ \hline
+  \nextrow \label{color:C_Warning_FL} Warning FL                         & \cellcolor{C_Warning_FL}              & Part of flight leg with MTCD or SAP risk     \\ \hline
+  \nextrow \textit{\textbf{Map colors}}                                  &                                       &                                              \\ \hline
+  \nextrow \label{color:C_Active_Map} Active Map                         & \cellcolor{C_Active_Map}              & Active TSA map border                        \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_1} Active Map Type 1           & \cellcolor{C_Active_Map_Type_1}       & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_2} Active Map Type 2           & \cellcolor{C_Active_Map_Type_2}       & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_3} Active Map Type 3           & \cellcolor{C_Active_Map_Type_3}       & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_4} Active Map Type 4           & \cellcolor{C_Active_Map_Type_4}       & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_5} Active Map Type 5           & \cellcolor{C_Active_Map_Type_5}       & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_6} Active Map Type 6           & \cellcolor{C_Active_Map_Type_6}       & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_7} Active Map Type 7           & \cellcolor{C_Active_Map_Type_7}       & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_8} Active Map Type 8           & \cellcolor{C_Active_Map_Type_8}       & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_9} Active Map Type 9           & \cellcolor{C_Active_Map_Type_9}       & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_10} Active Map Type 10         & \cellcolor{C_Active_Map_Type_10}      & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_11} Active Map Type 11         & \cellcolor{C_Active_Map_Type_11}      & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_12} Active Map Type 12         & \cellcolor{C_Active_Map_Type_12}      & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_13} Active Map Type 13         & \cellcolor{C_Active_Map_Type_13}      & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_14} Active Map Type 14         & \cellcolor{C_Active_Map_Type_14}      & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_15} Active Map Type 15         & \cellcolor{C_Active_Map_Type_15}      & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_16} Active Map Type 16         & \cellcolor{C_Active_Map_Type_16}      & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_17} Active Map Type 17         & \cellcolor{C_Active_Map_Type_17}      & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_18} Active Map Type 18         & \cellcolor{C_Active_Map_Type_18}      & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_19} Active Map Type 19         & \cellcolor{C_Active_Map_Type_19}      & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_Map_Type_20} Active Map Type 20         & \cellcolor{C_Active_Map_Type_20}      & TSA map border/fill                          \\ \hline
+  \nextrow \label{color:C_Active_RD_Infill_Map} Active RD Infill Map     & \cellcolor{C_Active_RD_Infill_Map}    & Active R or D map fill                       \\ \hline
+  \nextrow \label{color:C_Active_RD_Map} Active RD Map                   & \cellcolor{C_Active_RD_Map}           & Active R or D map border                     \\ \hline
+  \nextrow \label{color:C_Active_Text_Map} Active Text Map               & \cellcolor{C_Active_Text_Map}         & Active TSA map text                          \\ \hline
+  \nextrow \label{color:C_Auto_Map_Label} Auto Map Label                 & \cellcolor{C_Auto_Map_Label}          & Auto-generated maps                          \\ \hline
+  \nextrow \label{color:C_Auto_Map_Symbol} Auto Map Symbol               & \cellcolor{C_Auto_Map_Symbol}         & Auto-generated maps                          \\ \hline
+  \nextrow \label{color:C_East_NAT_Map} East NAT Map                     & \cellcolor{C_East_NAT_Map}            & Auto-generated maps, maps                    \\ \hline
+  \nextrow \label{color:C_Map_1} Map 1                                   & \cellcolor{C_Map_1}                   & Maps                                         \\ \hline
+  \nextrow \label{color:C_Map_2} Map 2                                   & \cellcolor{C_Map_2}                   & Maps                                         \\ \hline
+  \nextrow \label{color:C_Map_3} Map 3                                   & \cellcolor{C_Map_3}                   & Maps                                         \\ \hline
+  \nextrow \label{color:C_Map_4} Map 4                                   & \cellcolor{C_Map_4}                   & Maps                                         \\ \hline
+  \nextrow \label{color:C_Map_Hotspot} Map Hotspot                       & \cellcolor{C_Map_Hotspot}             & Map hotspots                                 \\ \hline
+  \nextrow \label{color:C_Map_Border} Map Border                         & \cellcolor{C_Map_Border}              & Maps                                         \\ \hline
+  \nextrow \label{color:C_Map_Info} Map Info                             & \cellcolor{C_Map_Info}                & Range rings, range marker                    \\ \hline
+  \nextrow \label{color:C_Map_Land} Map Land                             & \cellcolor{C_Map_Land}                & Maps                                         \\ \hline
+  \nextrow \label{color:C_Map_Symbol} Map Symbol                         & \cellcolor{C_Map_Symbol}              & Maps                                         \\ \hline
+  \nextrow \label{color:C_Preactive_Map} Preactive Map                   & \cellcolor{C_Preactive_Map}           & Pre-active map border                        \\ \hline
+  \nextrow \label{color:C_Preactive_Text_Map} Preactive Text Map         & \cellcolor{C_Preactive_Text_Map}      & Pre-active map text                          \\ \hline
+  \nextrow \label{color:C_Predisplay_Map} Predisplay Map                 & \cellcolor{C_Predisplay_Map}          & Pre-display map border                       \\ \hline
+  \nextrow \label{color:C_Rwy_App_Line_Inuse} Rwy App Line Inuse         & \cellcolor{C_Rwy_App_Line_Inuse}      & Runway approach line for runways in use      \\ \hline
+  \nextrow \label{color:C_Rwy_App_Line_Not_Inuse} Rwy App Line Not Inuse & \cellcolor{C_Rwy_App_Line_Not_Inuse}  & Runway approach line for runways not in use  \\ \hline
+  \nextrow \label{color:C_TSA_Border_Highlight} TSA Border Highlight     & \cellcolor{C_TSA_Border_Highlight}    & Highlighted TSA map border                   \\ \hline
+  \nextrow \label{color:C_Weather_Map} Weather Map                       & \cellcolor{C_Weather_Map}             & Weather radar data                           \\ \hline
+  \nextrow \label{color:C_West_NAT_Map} West NAT Map                     & \cellcolor{C_West_NAT_Map}            & Auto-generated maps, maps                    \\ \hline
+  \nextrow \textit{\textbf{Window and menu colors}}                      &                                       &                                              \\ \hline
+  \nextrow \label{color:C_Arm} Arm                                       & \cellcolor{C_Arm}                     & Inactive window texts                        \\ \hline
+  \nextrow \label{color:C_Map_Bright} Map Bright                         & \cellcolor{C_Map_Bright}              & Stack Manager Window, VAW                    \\ \hline
+  \nextrow \label{color:C_Background} Background                         & \cellcolor{C_Background}              & Background                                   \\ \hline
+  \nextrow \label{color:C_Border} Border                                 & \cellcolor{C_Border}                  & Various lines in windows                     \\ \hline
+  \nextrow \label{color:C_BottomShadow} BottomShadow                     & \cellcolor{C_BottomShadow}            & 3D effects in windows                        \\ \hline
+  \nextrow \label{color:C_CARD_Conflict_Number} CARD Conflict Number     & \cellcolor{C_CARD_Conflict_Number}    & CARD conflict numbers                        \\ \hline
+  \nextrow \label{color:C_CARD_Time_Vector} CARD Time Vector             & \cellcolor{C_CARD_Time_Vector}        & CARD time vectors                            \\ \hline
+  \nextrow \label{color:C_Field_Highlight} Field Highlight               & \cellcolor{C_Field_Highlight}         & Selected field                               \\ \hline
+  \nextrow \label{color:C_Flight_Highlight} Flight Highlight             & \cellcolor{C_Flight_Highlight}        & Selected item                                \\ \hline
+  \nextrow \label{color:C_Foreground} Foreground                         & \cellcolor{C_Foreground}              & Window titles, menu items, active texts, close/min/resize boxes \\ \hline
+  \nextrow \label{color:C_Global_Menu_Highlight} Global Menu Highlight   & \cellcolor{C_Global_Menu_Highlight}   & Highlighted items in the Global Menu         \\ \hline
+  \nextrow \label{color:C_Inactive_Sector} Inactive Sector               & \cellcolor{C_Inactive_Sector}         & CARD and VAW background                      \\ \hline
+  \nextrow \label{color:C_LatLong_Info} LatLong Info                     & \cellcolor{C_LatLong_Info}            & Coordinate value in Lat/Long Window          \\ \hline
+  \nextrow \label{color:C_Overflown} Overflown                           & \cellcolor{C_Overflown}               & Overflown points in Complete Route Window    \\ \hline
+  \nextrow \label{color:C_Potential} Potential                           & \cellcolor{C_Potential}               & Potential conflicts in CARD/VAW              \\ \hline
+  \nextrow \label{color:C_Select} Select                                 & \cellcolor{C_Select}                  & Selected radio buttons and selection boxes   \\ \hline
+  \nextrow \label{color:C_Selected} Selected                             & \cellcolor{C_Selected}                & Active filters in Radar menu                 \\ \hline
+  \nextrow \label{color:C_Selected_Group} Selected Group                 & \cellcolor{C_Selected_Group}          & Group of TSA areas in multi edit mode        \\ \hline
+  \nextrow \label{color:C_Selected_Period} Selected Period               & \cellcolor{C_Selected_Period}         & Active areas text in area window             \\ \hline
+  \nextrow \label{color:C_SMW_Level_Band} SMW Level Band                 & \cellcolor{C_SMW_Level_Band}          & AFL-CFL boxes in SMW                         \\ \hline
+  \nextrow \label{color:C_SMW_Overflight} SMW Overflight                 & \cellcolor{C_SMW_Overflight}          & Overflight lines in SMW                      \\ \hline
+  \nextrow \label{color:C_SMW_Overlap} SMW Overlap                       & \cellcolor{C_SMW_Overlap}             & Overlapping AFL-CFL boxes in SMW             \\ \hline
+  \nextrow \label{color:C_SMW_Overlap_Box} SMW Overlap Box               & \cellcolor{C_SMW_Overlap_Box}         & Multiple same CFL’s box in SMW               \\ \hline
+  \nextrow \label{color:C_SMW_Overshoot} SMW Overshoot                   & \cellcolor{C_SMW_Overshoot}           & Level bust AFL-CFL boxes in SMW              \\ \hline
+  \nextrow \label{color:C_TopShadow} TopShadow                           & \cellcolor{C_TopShadow}               & 3D effects in windows                        \\ \hline
+  \nextrow \label{color:C_Trough} Trough                                 & \cellcolor{C_Trough}                  & Slider area background                       \\ \hline
+  \nextrow \label{color:C_TSA_Active} TSA Active                         & \cellcolor{C_TSA_Active}              & Active areas background in area window       \\ \hline
+  \nextrow \label{color:C_TSA_Filter} TSA Filter                         & \cellcolor{C_TSA_Filter}              & Active categories in area window             \\ \hline
+  \nextrow \label{color:C_TSA_Preactive} TSA Preactive                   & \cellcolor{C_TSA_Preactive}           & Pre-active areas background in area window   \\ \hline
+  \nextrow \label{color:C_VAW_Profile} VAW Profile                       & \cellcolor{C_VAW_Profile}             & Selected aircraft profile in VAW             \\ \hline
+  \nextrow \label{color:C_VAW_Sector_Limits} VAW Sector Limits           & \cellcolor{C_VAW_Sector_Limits}       & Sector boundaries in VAW                     \\ \hline
+  \nextrow \label{color:C_VAW_Track_Position} VAW Track Position         & \cellcolor{C_VAW_Track_Position}      & Selected aircraft position in VAW            \\ \hline
+  \nextrow \label{color:C_WM_Active_Fg} WM Active Fg                     & \cellcolor{C_WM_Active_Fg}            & Active window title text                     \\ \hline
+  \nextrow \label{color:C_WM_Bg} WM Bg                                   & \cellcolor{C_WM_Bg}                   & Window title bar background                  \\ \hline
+  \nextrow \label{color:C_WM_Border} WM Border                           & \cellcolor{C_WM_Border}               & Window border line                           \\ \hline
+  \nextrow \label{color:C_WM_Fg} WM Fg                                   & \cellcolor{C_WM_Fg}                   & Window texts                                 \\ \hline
+  \nextrow \label{color:C_WM_Frame} WM Frame                             & \cellcolor{C_WM_Frame}                & Window frame when dragging                   \\ \hline
+  \nextrow \textit{\textbf{Other colors}}                                &                                       &                                              \\ \hline
+  \nextrow \label{color:C_Standard_Line_RDF} Standard Line RDF           & \cellcolor{C_Standard_Line_RDF}       & Direction Finder position circle or direction line \\ \hline
+  \nextrow \label{color:C_Text_Notes} Text Notes                         & \cellcolor{C_Text_Notes}              & Text notes                                   \\ \hline                                 
 \end{longtable}
 
 \chapter{Keyboard Shortcuts}
@@ -4823,4 +4839,3 @@ Some plugin functions can be accessed using a keyboard shortcut. By default, eac
 \bibliography{refs}
 
 \end{document}
-
