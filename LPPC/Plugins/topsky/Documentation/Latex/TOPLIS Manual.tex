@@ -297,7 +297,7 @@ Version 2.0
 \chapter{Introduction}
 
 \section{Disclaimer}
-Although - as its name suggests - the plugin is based on TOPLIS and the TopSky ATM system, it is in no way affiliated with or endorsed by Thales Group or NAV Portugal. Similarities between plugin features and the real system are not entirely coincidental, but the plugin can not be used as a real world training aid.
+Although - as its name suggests - the TopSky plugin is based on TOPLIS and the TopSky ATM system, it is in no way affiliated with or endorsed by Thales Group or NAV Portugal. Similarities between plugin features and the real system are not entirely coincidental, but the plugin can not be used as a real world training aid.
 
 \section{Foreword}
 EuroScope, a controller client developed by Gergely Csernák for the VATSIM network, was first released for public use in September 2007. One of the biggest changes in version 3.1 was the possibility for the user community to customize the program to an even higher degree than was possible before by writing their own plugins that can be used to alter the way information is presented and even create completely new functionality into the program. This allowed creating very detailed simulations of all kinds of ATC systems without making the main program overly complex. Version 3.2 expands on these possibilities, making it possible to create even better plugins.
@@ -349,7 +349,7 @@ Most used options are CPDLC Setting for CPDLC operations and Default Setting to 
 \subsection*{Unit Settings submenu}
 \label{menu:unitset}
 
-This submenu can be used to change the units used in the plugin. Any changes to the settings are session- specific only, so they will be lost when exiting EuroScope.
+This submenu can be used to change the units used in TopSky. Any changes to the settings are session- specific only, so they will be lost when exiting EuroScope.
 
 \begin{tabular}{l l}
     - Altitude & Selects the units used for altitudes and vertical rates\\
@@ -369,7 +369,7 @@ This submenu can be used to change the units used in the plugin. Any changes to 
 \subsection*{Local Settings submenu}
 \label{menu:localset}
 
-This submenu allows changing some of the plugin’s settings. Any changes to the settings are session-
+This submenu allows changing some of TopSky’s settings. Any changes to the settings are session-
 specific only, so they will be lost when exiting EuroScope.
 \medskip
 
@@ -387,7 +387,7 @@ specific only, so they will be lost when exiting EuroScope.
                           & \hspace{10pt}• Plugin Plugin data file (reverts to ESE if no codes found)\\
                           & \hspace{10pt}• ESE ESE file\\
                           & \hspace{10pt}• Range Fixed code range\\
-- Groundspeed             & Selects whether to use pilot client reported ground speed or a plugin calculated value. Normally the reported value should be used as it is more accurate and stable, but some clients report wrong values. If that causes problems, you can try selecting the plugin calculated value instead\\ 
+- Groundspeed             & Selects whether to use pilot client reported ground speed or a plugin calculated value. Normally the reported value should be used as it is more accurate and stable, but some clients report wrong values. If that causes problems, you can try selecting TopSky calculated value instead\\ 
 - Transfer confirmation   & Selects when to display the Transfer Confirmation Window:\\
                           & \hspace{10pt}• On Always when CFL is not equal to XFL\\
                           & \hspace{10pt}• NotRFL When CFL is not equal to XFL unless XFL = RFL\\
@@ -415,7 +415,7 @@ specific only, so they will be lost when exiting EuroScope.
                           & \hspace{10pt}• Own+Co Only alerts for assumed or coordinated\\
                           & aircraft\\
                           & \hspace{10pt}• Own Only alerts for assumed aircraft\\
-- METAR source            & Selects the METAR data source for the plugin windows that display METAR data\\
+- METAR source            & Selects the METAR data source for TopSky windows that display METAR data\\
 - FPASD filter            & Allows filtering of displayed FPASD tracks based on sector state\\
                           & \hspace{10pt}• Coord Display tracks at least in the coordinated state\\
                           & \hspace{10pt}• Conc Display tracks at least in the concerned state\\
@@ -560,9 +560,9 @@ The notes can be deleted one by one or all of them at the same time. When deleti
 \medskip
 
 \subsection{[x]}
-Shows the number of high priority messages in the personal message queue. These are critical failures in the plugin code. Open the Personal Queue Window to view the messages. The number is limited to 99, and is shown on “Global Menu Highlight” background when the window is not open. 
+Shows the number of high priority messages in the personal message queue. These are critical failures in TopSky code. Open the Personal Queue Window to view the messages. The number is limited to 99, and is shown on “Global Menu Highlight” background when the window is not open. 
 \subsection{[x]}
-Shows the number of low priority messages in the personal message queue. These are warnings about invalid data in the plugin data files. Open the Personal Queue Window to view the messages or see the Plugin Status submenu for more detailed information on the problem(s). The number is limited to 99, and is shown on “Global Menu Highlight” background when the window is not open. 
+Shows the number of low priority messages in the personal message queue. These are warnings about invalid data in TopSky data files. Open the Personal Queue Window to view the messages or see TopSky Status submenu for more detailed information on the problem(s). The number is limited to 99, and is shown on “Global Menu Highlight” background when the window is not open. 
 \subsection{STS menu}
 \begin{tabular}{l l}
 - Plugin Status >                & Opens the Plugin Status submenu
@@ -577,7 +577,7 @@ Shows the number of low priority messages in the personal message queue. These a
 \medskip
 
 \subsection*{Plugin Status submenu}
-Shows the version of the plugin as well as some information on the loaded data files. Each data file reports its state with one of the following indicators:
+Shows the version of TopSky as well as some information on the loaded data files. Each data file reports its state with one of the following indicators:
 
 \begin{tabular}{l l}
 - OK        & File contains usable information and no faults\\
@@ -594,12 +594,12 @@ Depending on the file, there are one to three of the following buttons available
 - Load set (Maps \& MapsL) & Loads a saved list of active screen specific maps\\
 \end{tabular}\\ 
 
-Left-clicking the Save button will save the currently set manual activation periods as well as the information if an area with automatic schedules is set to manual mode. The information is saved to the “TopSkyAreasManualAct.txt” file in the same folder as the plugin dll. If the file already exists, the plugin will ask for confirmation as the save operation will overwrite any existing data. 
+Left-clicking the Save button will save the currently set manual activation periods as well as the information if an area with automatic schedules is set to manual mode. The information is saved to the “TopSkyAreasManualAct.txt” file in the same folder as TopSky dll. If the file already exists, TopSky will ask for confirmation as the save operation will overwrite any existing data. 
 
 Depending on the maps data file setup, the display state of some or all of the maps may be specific to each radar screen. The Save set and Load set functions can be used to transfer the display state of these maps from one radar screen to another.
 
 
-Right-clicking the Reload button for Settings \& SettingsL has a special purpose. It opens a text entry box to type in a callsign whose settings should be loaded instead of the real login callsign. When entered, the callsign will be displayed next to the “Reload” button, and whenever a VATSIM callsign change is detected, an information popup is displayed to remind that the plugin settings are still forced to the manually entered callsign. This feature can be used for example to use settings for different positions on different EuroScope instances when providing top-down services, or to use settings for a specific position when logged in with an observer/staff/supervisor callsign. Clearing the entered callsign reverts to using the settings based on the actual login callsign.
+Right-clicking the Reload button for Settings \& SettingsL has a special purpose. It opens a text entry box to type in a callsign whose settings should be loaded instead of the real login callsign. When entered, the callsign will be displayed next to the “Reload” button, and whenever a VATSIM callsign change is detected, an information popup is displayed to remind that TopSky settings are still forced to the manually entered callsign. This feature can be used for example to use settings for different positions on different EuroScope instances when providing top-down services, or to use settings for a specific position when logged in with an observer/staff/supervisor callsign. Clearing the entered callsign reverts to using the settings based on the actual login callsign.
 
 \subsection*{Supervisory submenu}
 \begin{tabular}{l l}
@@ -1212,15 +1212,15 @@ the “-” option makes the clearance a maximum rate.
 For “RTI” and “TIP” see the \textit{\titleref{menu:ahdg}}.
 
 \begin{Warn}
-The exact and maximum rate clearances are a feature specific to this plugin (the additional information is stored in the flight strip). To controllers not using the plugin, all assigned rate clearances will only show the rate value.
-Assigned rate clearances given by controllers not using the plugin will bedisplayed as minimum rate clearances.      
+The exact and maximum rate clearances are a feature specific to this plugin (the additional information is stored in the flight strip). To controllers not using TopSky, all assigned rate clearances will only show the rate value.
+Assigned rate clearances given by controllers not using TopSky will be displayed as minimum rate clearances.      
 \end{Warn}
 
 \subsection{ASP Menu}
 \label{menu:asp}
 \includegraphics{img/asp.png}
 \includegraphics{img/aspmach.png}
-The ASP menu allows setting an assigned speed or Mach number. The default value will be the closest value to the assigned one if set, otherwise the plugin will suggest the closest value to the aircraft’s present speed based on the ground speed (zero wind will be assumed). The menu will initially open in IAS mode if the aircraft’s CFL is below the IAS/Mach altitude value defined in the Local Settings (FL275 by default), and in Mach mode if above it. The selectable values range from 100 to 400 knots and from Ma0.50 to Ma1.00.
+The ASP menu allows setting an assigned speed or Mach number. The default value will be the closest value to the assigned one if set, otherwise TopSky will suggest the closest value to the aircraft’s present speed based on the ground speed (zero wind will be assumed). The menu will initially open in IAS mode if the aircraft’s CFL is below the IAS/Mach altitude value defined in the Local Settings (FL275 by default), and in Mach mode if above it. The selectable values range from 100 to 400 knots and from Ma0.50 to Ma1.00.
 
 The “+” and “-” options can be used to specify the clearance
 as a minimum/maximum speed.
@@ -1248,7 +1248,7 @@ CPDLC message.
 SBY” and “UNABLE” send the corresponding answers to a downlink speed request.
 
 \begin{Warn}
-The minimum and maximum speed clearances are a feature specific to this plugin (the additional information is stored in the flight strip). To controllers not using the plugin, all assigned speed clearances will only show the speed value. Assigned speed clearances given by controllers not using the plugin will be displayed as exact speed clearances.
+The minimum and maximum speed clearances are a feature specific to this plugin (the additional information is stored in the flight strip). To controllers not using TopSky, all assigned speed clearances will only show the speed value. Assigned speed clearances given by controllers not using TopSky will be displayed as exact speed clearances.
 \end{Warn}
 
 \subsection{ASSR Menu}
@@ -1351,7 +1351,7 @@ The departure sequence number is only stored locally, it is not sent to other co
 \end{Note}
 
 \section{Windows}
-The plugin includes a number of windows that are discussed in this chapter. All windows have the following common features:
+TopSky includes a number of windows that are discussed in this chapter. All windows have the following common features:
 
 \begin{itemize}
     \item Dragging the title bar using the left mouse button will move the window
@@ -1556,20 +1556,20 @@ The “AD\_Hotspots” map in the “Aerodromes” folder is an automatically cr
 
 The “AIRPORTS”, “FIXES” (fixes with numbers filtered out), “FIXES ALL”, “NDBS” and “VORS” maps (and their “+ L” counterparts) in the “MISC” folder are automatically generated maps that contain the corresponding items with and without text labels from the active sector file. The color used for the symbols is “Auto Map Symbol” and for the labels “Auto Map Label”. Depending on the sector file setup, there can also be one or more maps named “FIXES GRP” (where “GRP” is a group name given in the sector file). These are actually NDBs or VORs in the sector file. To create such a group, put a fake navaid with the name “!GRP!” in the sector file, where “GRP” is the desired group name. All following navaids of that type will be put in the “FIXES GRP” map. The same group name can only be used once in a sector file. The items in these maps will look like the items in the “NDBS” or “VORS” maps, depending on which section the items are placed in the sector file.
 
-In addition to plugin defined maps, the window can be used to toggle the visibility of some elements from the active sector file. These are “ARTCC HIGH”, “ARTCC”, “ARTCC LOW”, “AIRWAYS H”, “AIRWAYS L”, “SID”, “STAR”, “GEO”, “REGIONS” and “FREE TEXT”. The elements from the sector file will not show the black background when active as the plugin does not know their state. The names of these elements will be shown in grey letters to serve as reminders about this limitation.
+In addition to plugin defined maps, the window can be used to toggle the visibility of some elements from the active sector file. These are “ARTCC HIGH”, “ARTCC”, “ARTCC LOW”, “AIRWAYS H”, “AIRWAYS L”, “SID”, “STAR”, “GEO”, “REGIONS” and “FREE TEXT”. The elements from the sector file will not show the black background when active as TopSky does not know their state. The names of these elements will be shown in grey letters to serve as reminders about this limitation.
 
 The “AIRWAYS L” and “AIRWAYS H” folders present the airways organized into groups. The default group is “PERM”. An airway can be assigned to a custom named group by having the group name in parentheses in the airway name. Airways with “[1]”, “[2]” or “[3]” found in their names will be assigned to groups “CDR 1”, “CDR 2” and “CDR 3” respectively. Custom group names and the CDR numbers can be combined, for example airway segments named “A1(GRP)[1]” and “A2(GRP)[1]” in the sector file would be labeled “GRP CDR 1” in the maps list. Additionally, one map with the group’s name is created that contains all airways in the group regardless of the PERM or CDR status.
 
 NAT tracks extracted from downloaded track messages (see \textit{\titleref{win:nattmw}}) can be found in the “NAT” folder. Eastbound tracks are colored East NAT Map, westbound ones West NAT Map.
 
-The plugin data files may include additional data to the abovementioned sector file. If present, the data is activated and deactivated together with the sector file item when done via the Maps Window.
+TopSky data files may include additional data to the abovementioned sector file. If present, the data is activated and deactivated together with the sector file item when done via the Maps Window.
 
 \subsection{Track Control Window}
 \label{win:tcw}
 
 Radar Menu -> Track Control...
 
-The Track Control Window is used to set track and track label related options. Note that the PRL/Vector selection must be on in the Radar Menu to see the prediction lines. The Track Control Window closes when the mouse cursor leaves the window area. The selections are specific to the radar screen they are made on but whenever the plugin settings are reloaded either automatically (sign in/out, login callsign change when signed in) or manually the selections on all radar screens will revert to the default values.
+The Track Control Window is used to set track and track label related options. Note that the PRL/Vector selection must be on in the Radar Menu to see the prediction lines. The Track Control Window closes when the mouse cursor leaves the window area. The selections are specific to the radar screen they are made on but whenever TopSky settings are reloaded either automatically (sign in/out, login callsign change when signed in) or manually the selections on all radar screens will revert to the default values.
 
 \includegraphics{img/trackctl.png}
 
@@ -1634,7 +1634,7 @@ Global Menu -> Setup -> Brightness Control...
 
 \includegraphics{img/bright.png}
 
-The Brightness Control Window allows setting the brightness for some screen colors. The Map background slider only controls the plugin created maps.
+The Brightness Control Window allows setting the brightness for some screen colors. The Map background slider only controls TopSky created maps.
 
 \subsection{CPDLC Setting Window}
 \label{win:dls}
@@ -1645,7 +1645,7 @@ Global Menu -> Setup -> CPDLC Setting...
 
 The CPDLC Setting Window is used to begin/end the connection to the CPDLC network, and change some CPDLC related settings.
 
-The “Connect” button becomes available once you are connected to the VATSIM network as a controller and both the Login (four-character callsign used for the CPDLC connection) and the Logon Code (your personal password to the Hoppie network) have been entered. Left-clicking on it connects the plugin to the CPDLC network. Once a connection has been established, the button background color changes to Information and the button text changes to “Online”. Once connected, left-clicking on the button disconnects the plugin from the CPDLC network.
+The “Connect” button becomes available once you are connected to the VATSIM network as a controller and both the Login (four-character callsign used for the CPDLC connection) and the Logon Code (your personal password to the Hoppie network) have been entered. Left-clicking on it connects TopSky to the CPDLC network. Once a connection has been established, the button background color changes to Information and the button text changes to “Online”. Once connected, left-clicking on the button disconnects TopSky from the CPDLC network.
 
 \begin{Note}
     It is possible to have the Logon Code pre-filled by creating a text file called “TopSkyCPDLChoppieCode.txt” in the same folder as the plugin dll (TopSky.dll). The file should contain only the logon code, nothing else. As the file contains your personal logon code, do not share it.
@@ -1655,7 +1655,7 @@ If the VATSIM callsign is known when the window is opened, the CPDLC login calls
 
 The “CPDLC” and “DCL/PDC” selections are used to define the offered services. For CTR and FSS logins both are selected by default, for others only “DCL/PDC” is selected.
 
-Sending a clearance via CPDLC can be the default setting in some of the plugin menus. For this to happen, the aircraft must be above the “Min Level” (FL) specified here, the selection button for the menu in question must be on, and the CPDLC Default Status (in Global Menu->Status/STS) must be “On”. The “DCT” option does not do anything at the moment (DCT clearance via CPDLC is given using the “Point” option in the AHDG menu, so the “AHDG” option controls that as well). “Auto-accept logon” automatically accepts valid logon requests from tracks above “Min Level”.
+Sending a clearance via CPDLC can be the default setting in some of TopSky menus. For this to happen, the aircraft must be above the “Min Level” (FL) specified here, the selection button for the menu in question must be on, and the CPDLC Default Status (in Global Menu->Status/STS) must be “On”. The “DCT” option does not do anything at the moment (DCT clearance via CPDLC is given using the “Point” option in the AHDG menu, so the “AHDG” option controls that as well). “Auto-accept logon” automatically accepts valid logon requests from tracks above “Min Level”.
 
 When making changes to the “Min Level” or the menu selections, the “Ok” and “Cancel” buttons become active. Left-click on “Ok” to apply the changes or “Cancel” to abort.
 
@@ -1831,7 +1831,7 @@ The following buttons are available:
     Cancel      & Cancel any changes and quit the current operation\\
 \end{tabular}
 
-In the plugin the only difference between an APL and an FPL is that an APL can only contain the Callsign. If it contains any other information (controller-assigned values such as ASSR, CFL, etc. are not taken into account), it will be considered to be an FPL.
+In TopSky the only difference between an APL and an FPL is that an APL can only contain the Callsign. If it contains any other information (controller-assigned values such as ASSR, CFL, etc. are not taken into account), it will be considered to be an FPL.
 
 For the accepted CFL entry formats, see \textit{\titleref{menu:afl}}.
 
@@ -1860,7 +1860,7 @@ If the SSR field is left empty, a code will be automatically assigned from a ded
 For the accepted CFL entry formats, see \textit{\titleref{menu:afl}}.
 
 Left-clicking on the FRUL field toggles the flight rules between “I” (IFR) and “V” (VFR).
-When the APL is successfully created, it is automatically assumed or set as on-contact depending on the plugin setup.
+When the APL is successfully created, it is automatically assumed or set as on-contact depending on TopSky setup.
 
 \subsection{Stack Manager Window}
 \label{win:smw}
@@ -1949,7 +1949,7 @@ From the “View” menu it is possible to toggle various MTCD related options:
     Future              & Toggles whether flight plan tracks are considered for MTCD (flight plan tracks must be at least in the coordinated state regardless of the “Notif” and “Unco" selections)\\
 \end{tabular}
 
-* The availability of these items in the menu depends on the plugin setup
+* The availability of these items in the menu depends on TopSky setup
 
 From the “Mark/ACK” menu it is possible to toggle conflict-specific options:
 
@@ -1997,7 +1997,7 @@ From the “View” menu it is possible to toggle various MTCD related:
     Unco                    & Toggles whether unconcerned tracks are shown\\
 \end{tabular}
 
-* The availability of these items in the menu depends on the plugin setup
+* The availability of these items in the menu depends on TopSky setup
 
 The PEL and XFL values are displayed in “Coordination” color, or in “Proposition” if being coordinated. After a refused coordination, the original value is shown in “Warning” color. The CFL value is displayed as a horizontal line across the screen.
 
@@ -2232,7 +2232,7 @@ The Weather Messages Window displays weather related messages. By default, METAR
 
 By default, with the “METAR/SPECI” option button chosen, this window displays the METARs you have requested from the VATSIM server (i.e. [F2] <icao>) and any METARs EuroScope requests automatically. Whenever a new METAR is received from the server it is added to the list (an old METAR is removed when a newer one is received from the same station). New METARs and TAFs are displayed in “Warning” color until the mouse cursor is positioned on them (for the decoded METAR, this applies only for the first row).
 
-In addition, the window can display SIGMETs, SNOWTAMs and TAFs. The SIGMETs are retrieved when the “SIGMET” button is selected for the first time. Selecting the “SNOWTAM” or “TAF” option will open the \textit{\titleref{menu:ad}} where the desired stations must be selected. SNOWTAM data is downloaded together with the NOTAMs (as of writing this, they are not included in the data and hence unavailable for the plugin). If the plugin is configured to use a non-VATSIM METAR source, the METAR/SPECI list behaves the same way as the TAF list (stations must be selected from a list). The messages are automatically updated at specified intervals - the status bar at the bottom displays the remaining time to the next automatic update when the mouse cursor is over the window area.
+In addition, the window can display SIGMETs, SNOWTAMs and TAFs. The SIGMETs are retrieved when the “SIGMET” button is selected for the first time. Selecting the “SNOWTAM” or “TAF” option will open the \textit{\titleref{menu:ad}} where the desired stations must be selected. SNOWTAM data is downloaded together with the NOTAMs (as of writing this, they are not included in the data and hence unavailable for TopSky). If TopSky is configured to use a non-VATSIM METAR source, the METAR/SPECI list behaves the same way as the TAF list (stations must be selected from a list). The messages are automatically updated at specified intervals - the status bar at the bottom displays the remaining time to the next automatic update when the mouse cursor is over the window area.
 
 The messages are sorted alphabetically by the station identifier in the list.
 
@@ -2287,7 +2287,7 @@ The window displays the QNH values and corresponding transition levels for those
 
 \includegraphics{img/geninfo.png}
 
-The General Information Window displays basic information on the system state. The following functionality is implemented in the plugin:
+The General Information Window displays basic information on the system state. The following functionality is implemented in TopSky:
 
 \begin{tabular}{l l}
     mode                & “Free”, “Operational”, “Proxy”, “Replay” or “Training” depending on the connection method \\
@@ -2407,7 +2407,7 @@ Global Menu -> Messages/MSG -> Personal Queue...
 
 \includegraphics{img/pq.png}
 
-The Personal Queue Window displays warning messages related to the plugin’s operation: high priority messages informing about potential critical failures in the plugin code, and low priority messages informing about faults in the plugin’s external data files or timeout alerts for coordination messages.
+The Personal Queue Window displays warning messages related to TopSky’s operation: high priority messages informing about potential critical failures in TopSky code, and low priority messages informing about faults in TopSky’s external data files or timeout alerts for coordination messages.
 
 The window currently only displays “ALERT” type messages, and the origin for them is always empty. The time field displays the UTC time when the currently viewed message was created.
 
@@ -2505,7 +2505,7 @@ All changes must be applied using the buttons below to take effect.
 \label{win:riuw}
 
 Global Menu -> Status/STS -> Runway In Use...
-Radar screen -> middle-click on Airport symbol drawn by the plugin’s “AD\_Hotspots” map...
+Radar screen -> middle-click on Airport symbol drawn by TopSky’s “AD\_Hotspots” map...
 
 \includegraphics{img/rwy.png}
 
@@ -2554,7 +2554,7 @@ The two sliders change the traffic number and time scales.
 \label{win:ralw}
 
 Global Menu -> Status/STS -> RWY line display... (opens the \textit{\titleref{menu:ad}} for airport selection)
-Radar screen -> right-click on Airport symbol drawn by the plugin’s “AD\_Hotspots” map...
+Radar screen -> right-click on Airport symbol drawn by TopSky’s “AD\_Hotspots” map...
 
 \includegraphics{img/rwydsp.png}
 
@@ -2740,7 +2740,7 @@ The lost list contains the following fields:
 
 The rows are sorted based on “Lost” time in descending order.
 
-With the plugin set up to automatically open the Lost List when not empty, when a flight is added into the Lost List, its FPASD selection is initially set to “on” regardless of the FPASD setting in the Global menu.
+With TopSky set up to automatically open the Lost List when not empty, when a flight is added into the Lost List, its FPASD selection is initially set to “on” regardless of the FPASD setting in the Global menu.
 
 \subsection{Holding List}
 \label{list:hold}
@@ -2796,7 +2796,7 @@ The APW system warns if an aircraft is inside or about to enter an active area i
 
 \subsection*{Alert display}
 
-An alert is shown by coloring the CALLSIGN item background (plugin drawn windows) or the text itself (elsewhere where the plugin can’t control the background color) in “Warning” color unless the CALLSIGN item has been manually highlighted, and also by displaying the text “APW” in the ALRT track label field (an MSAW alert will have priority over an APW alert there).
+An alert is shown by coloring the CALLSIGN item background (plugin drawn windows) or the text itself (elsewhere where TopSky can’t control the background color) in “Warning” color unless the CALLSIGN item has been manually highlighted, and also by displaying the text “APW” in the ALRT track label field (an MSAW alert will have priority over an APW alert there).
 
 \subsection{MSAW (Minimum Safe Altitude Warning)}
 
@@ -2818,7 +2818,7 @@ In the vertical plane there is an option to always assume that an aircraft will 
 
 \subsection*{Alert display}
 
-An alert is shown by coloring the CALLSIGN item background (plugin drawn windows) or the text itself (elsewhere where the plugin can’t control the background color) in “Urgency” color. A one-minute-long prediction line is displayed in “Urgency” color regardless of the prediction line settings. 
+An alert is shown by coloring the CALLSIGN item background (plugin drawn windows) or the text itself (elsewhere where TopSky can’t control the background color) in “Urgency” color. A one-minute-long prediction line is displayed in “Urgency” color regardless of the prediction line settings. 
 
 In addition to the above, the radar position symbol and history dots are displayed in “Urgency” color.
 
@@ -2856,7 +2856,7 @@ An alert is shown by displaying a circle around the aircraft position symbol and
 
 The MTCD system is a tool that enables the controller to predict possible future conflicts between aircraft. For performance reasons the maximum selectable look-ahead time (prediction time) is limited to 40 minutes and the separation distance that triggers the alert (prediction distance) to 20 nm. They can be set to any lower value, the defaults being 20 minutes and 8 nm.
 In the lateral plane the system works by checking the aircraft’s predicted route up to the defined prediction time and calculating if the separation with other aircraft will be less than the defined prediction distance.
-In the vertical plane, the plugin can be set up to use either of the two following setups (example predicted vertical path of a climbing track in black color, relevant levels in grey):
+In the vertical plane, TopSky can be set up to use either of the two following setups (example predicted vertical path of a climbing track in black color, relevant levels in grey):
 
 \includegraphics{img/mtcdv.png}
 
@@ -2943,7 +2943,7 @@ Accepting controller:
   {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }     
 \end{tabular}
 
-Some of the coordination functions (ROF, RTI and TIP) require very specific conditions to exist to be able to send the necessary messages between the controllers. The plugin attempts to check for this and either disables the function (grey text in the menu button) or creates a warning message if the conditions are lost during a coordination, but in some cases the coordination messages can get lost. In this case try the coordination again or manually coordinate.
+Some of the coordination functions (ROF, RTI and TIP) require very specific conditions to exist to be able to send the necessary messages between the controllers. TopSky attempts to check for this and either disables the function (grey text in the menu button) or creates a warning message if the conditions are lost during a coordination, but in some cases the coordination messages can get lost. In this case try the coordination again or manually coordinate.
 
 \section{PEL/COPN}
 
@@ -3289,7 +3289,7 @@ For example, if you send an RTI with AHDG 360 (as in the above example) and then
 
 The TopSky plugin uses Hoppie’s ACARS network (\url{http://www.hoppie.nl/acars}). A separate password (logon code) is needed, and it can be requested from that site. 
 
-The plugin supports Departure Clearance (DCL) and Controller-Pilot Data Link Communications (CPDLC).
+TopSky supports Departure Clearance (DCL) and Controller-Pilot Data Link Communications (CPDLC).
 
 To start using the data link functions, first connect to the VATSIM network. Then connect to the Hoppie network:
 
@@ -3311,7 +3311,7 @@ The Hoppie logon code expires after 120 days of inactivity. If that happens, the
 
 If the connection is lost, an error message dialog will be displayed in the center of the radar screen. Note that if multiple EuroScope instances are used, the proxy instances will not be able to access the CPDLC message windows or change the network connection status.
 
-The plugin may sometimes fail to parse the message contents correctly. The longer the message, the more likely it is that the parsing will go wrong. When in doubt, open the message in the \textit{\titleref{win:dlcmw}}.
+TopSky may sometimes fail to parse the message contents correctly. The longer the message, the more likely it is that the parsing will go wrong. When in doubt, open the message in the \textit{\titleref{win:dlcmw}}.
 
 The example track labels do not represent any specific setup and are only meant to highlight the items specific to each function. In the examples, aircraft ABC123 is assumed by you, the next controller is “IDA”, the aircraft is climbing through FL100, and its cleared level is FL180. This is the label before any messages arrive:
 
@@ -3324,7 +3324,7 @@ The example track labels do not represent any specific setup and are only meant 
   {\color{Assumed} 180} & & \\         
 \end{tabular}
 
-When the aircraft requests to start a CPDLC connection, it sends a “REQUEST LOGON” message. The message is displayed in the \textit{\titleref{win:dlcmw}} and the Callsign field gets blinking square brackets around it (not on proxy ES instances). The plugin automatically denies requests for aircraft not entering your sector. To approve the request, use the “Start CPDLC” button in the \textit{\titleref{menu:cs}}. To deny the request, left-click on the message in the \textit{\titleref{win:dlcmw}} and select “UNABLE”. It is also possible to accept if necessary, but the \textit{\titleref{menu:cs}} is the primary way to do it.
+When the aircraft requests to start a CPDLC connection, it sends a “REQUEST LOGON” message. The message is displayed in the \textit{\titleref{win:dlcmw}} and the Callsign field gets blinking square brackets around it (not on proxy ES instances). TopSky automatically denies requests for aircraft not entering your sector. To approve the request, use the “Start CPDLC” button in the \textit{\titleref{menu:cs}}. To deny the request, left-click on the message in the \textit{\titleref{win:dlcmw}} and select “UNABLE”. It is also possible to accept if necessary, but the \textit{\titleref{menu:cs}} is the primary way to do it.
 
 When the request has been accepted, the Callsign field will get steady square brackets around it. This indicates that the aircraft is CPDLC connected and available to exchange CPDLC messages with.
 
@@ -3365,7 +3365,7 @@ The aircraft sends a clearance request message (RCD). The message is also shown 
 
 \subsection*{Flight System Message (FSM)}
 
-If the request is correctly formatted, the plugin will automatically send a flight system message (FSM) as a reply. Its content depends on whether all the requirements for a DCL are met (flight plan found, departure airport offers data link clearances, etc.). If so, the following reply message is sent to the aircraft:
+If the request is correctly formatted, TopSky will automatically send a flight system message (FSM) as a reply. Its content depends on whether all the requirements for a DCL are met (flight plan found, departure airport offers data link clearances, etc.). If so, the following reply message is sent to the aircraft:
 
 \begin{quote}
   DEPART MESSAGE STATUS FSM 1312 221113 LPPT ABC123 RCD RECEIVED REQUEST BEING PROCESSED STANDBY 
@@ -3421,7 +3421,7 @@ If an UNABLE reply is received, clearance must then be negotiated and delivered 
 
 \subsection{Abnormal operations}
 
-Most failure cases result from the message not being correctly formatted, and the plugin failing to recognize it correctly. Regardless of whether the plugin recognizes the message as belonging to a departure clearance sequence, it will be put into the \textit{\titleref{win:dlcmw}}. In case the system fails, revert to voice communications.
+Most failure cases result from the message not being correctly formatted, and TopSky failing to recognize it correctly. Regardless of whether TopSky recognizes the message as belonging to a departure clearance sequence, it will be put into the \textit{\titleref{win:dlcmw}}. In case the system fails, revert to voice communications.
 
 \section{Controller-Pilot Data Link Communications (CPDLC)}
 \label{cpdlc}
@@ -3438,7 +3438,7 @@ The messages are grouped to dialogs, with an opening message and subsequent repl
 \subsection{Allowed message types}
 \label{cpdlc:amt}
 
-The plugin allows for the following types of messages:
+TopSky allows for the following types of messages:
 
 \begin{tabular}{l l}
   Uplink                      & Downlink\\
@@ -3455,7 +3455,7 @@ The plugin allows for the following types of messages:
 \subsection{Non-allowed message types}
 \label{cpdlc:nmt}
 
-The plugin does not allow the following downlink message types. They will be automatically closed and a reply sent informing that the system does not support the message type:
+TopSky does not allow the following downlink message types. They will be automatically closed and a reply sent informing that the system does not support the message type:
 
 \begin{itemize}
   \item Any requests containing “When can we expect”, “At pilots discretion” or “Own separation”
@@ -3467,7 +3467,7 @@ The plugin does not allow the following downlink message types. They will be aut
   \item Position reports
 \end{itemize}
 
-Note that a non-allowed message type can be classified as “free text” by the plugin if the message parser doesn’t recognize it as a non-allowed type. In this case the automatic reply will not be sent and the message may be left waiting for an answer if an answer is required.
+Note that a non-allowed message type can be classified as “free text” by TopSky if the message parser doesn’t recognize it as a non-allowed type. In this case the automatic reply will not be sent and the message may be left waiting for an answer if an answer is required.
 
 \subsection{Uplink clearance sequence}
 \label{cpdlc:ucs}
@@ -3554,9 +3554,9 @@ The responses to a level request are sent using the \textit{\titleref{menu:cfl}}
 \subsection{Abnormal operations}
 \label{cpdlc:abn}
 
-As with DCL messages, the most likely failure scenario is the plugin misinterpreting the contents of a received message, which can be verified on the \textit{\titleref{win:dlcmw}}. Some other failure scenarios are presented below.
+As with DCL messages, the most likely failure scenario is TopSky misinterpreting the contents of a received message, which can be verified on the \textit{\titleref{win:dlcmw}}. Some other failure scenarios are presented below.
 
-If the plugin has temporarily lost contact with the CPDLC server, “CPDLC COMM FAIL” will be inserted in line 0 of the labels of all CPDLC connected aircraft in \colorref{color:CPDLC Failed} color:
+If TopSky has temporarily lost contact with the CPDLC server, “CPDLC COMM FAIL” will be inserted in line 0 of the labels of all CPDLC connected aircraft in \colorref{color:CPDLC Failed} color:
 
 \begin{tabular}{
   >{\columncolor{Flight Highlight}}l 
@@ -3633,9 +3633,9 @@ Left-clicking acknowledges the warning and aborts the clearance, displaying the 
 
 \chapter{Data stored in the flight strip annotation boxes}
 
-The plugin stores some data in the flight strip annotation boxes (the group of nine boxes in three columns on the right side of the strip). This enables you to send this data to the next controller, or any other controller by manually pushing the strip. EuroScope can be set to automatically push the strip to the next controller on handoff. In addition, the plugin automatically pushes the strip when a handoff proposal (HOP) is sent.
+TopSky stores some data in the flight strip annotation boxes (the group of nine boxes in three columns on the right side of the strip). This enables you to send this data to the next controller, or any other controller by manually pushing the strip. EuroScope can be set to automatically push the strip to the next controller on handoff. In addition, TopSky automatically pushes the strip when a handoff proposal (HOP) is sent.
 
-The plugin needs to be able to use four of the nine boxes for its functions. They are the boxes in the bottom row as well as the right-most box in the center row, marked with X’s in the picture below. Do not manually edit those boxes or use them to store any other data. The other boxes, marked by minus signs, are currently not used by the plugin in any way.
+TopSky needs to be able to use four of the nine boxes for its functions. They are the boxes in the bottom row as well as the right-most box in the center row, marked with X’s in the picture below. Do not manually edit those boxes or use them to store any other data. The other boxes, marked by minus signs, are currently not used by TopSky in any way.
 
 \includegraphics{img/strip.png}
 
@@ -3651,7 +3651,7 @@ As there is no real plugin-to-plugin communication available, the availability a
 
 \subsection*{Problems opening the Radar Menu}
 
-The default method of opening the Radar Menu (<ALT>+right-click) may not always work on Mac hardware. It’s possible to adjust the plugin settings to try another combination, but the easiest way is to insert the following line to the TopSkySettingsLocal.txt file:
+The default method of opening the Radar Menu (<ALT>+right-click) may not always work on Mac hardware. It’s possible to adjust TopSky settings to try another combination, but the easiest way is to insert the following line to the TopSkySettingsLocal.txt file:
 
 \verb|Shortcut\RadarMenu\Combo=0x00|
 
