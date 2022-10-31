@@ -942,7 +942,7 @@ Clicking a point on the radar screen will set the direct-to clearance without co
 
 \subsection{Handover Proposal (HOP)}
 \label{win:hop}
-A Handover Proposal can be used to propose non-standard transfer parameters (AHDG/Direct-to and ASP) to the next sector. For the receiving controller a HOP is identified by coloring the callsign data field with “Proposition” color in the label. For the sending controller the Callsign field remains “Assumed” color and the Sector Indicator field is shown in “Proposition” color. Additionally, if there are proposed parameters they are also colored “Proposition” in both controllers’ labels.
+A Handover Proposal can be used to propose non-standard transfer parameters (AHDG/Direct-to and ASP) to the next sector. For the receiving controller a HOP is identified by coloring the callsign data field with \colorref{color:Proposition} color in the label. For the sending controller the Callsign field remains “Assumed” color and the Sector Indicator field is shown in \colorref{color:Proposition} color. Additionally, if there are proposed parameters they are also colored “Proposition” in both controllers’ labels.
 
 There are three ways to answer a HOP and all of them involve accepting all proposed parameters. If one or more parameters are not acceptable, coordination must be done to find acceptable parameters or to revert to standard ones. The available ways to accept the proposed parameters are:
 
@@ -967,7 +967,7 @@ If a HOP is sent to a manually selected controller, the next controller selectio
 \label{win:tip}
 Certain tactical data (AHDG, ASP and ARC) can be coordinated using the RTI and TIP functions. Their only difference is that RTI is used for requesting the parameters when the aircraft is inbound to your sector and your sector is the next in the sector sequence, and TIP for propose the parameters to the next sector when the aircraft is assumed. Contrary to the HOP function, these coordinations can be refused using the system, and they do not offer the aircraft for transfer.
 
-When sent, the RTI/TIP is displayed on both controllers’ screens by displaying the requested parameter on line 0 of the track label in “Proposition” color.
+When sent, the RTI/TIP is displayed on both controllers’ screens by displaying the requested parameter on line 0 of the track label in \colorref{color:Proposition} color.
 
 To answer the RTI/TIP, left-click on the requested parameter shown above the track label or the corresponding message in the \textit{\titleref{win:miw}}. This will open the \textit{\titleref{menu:ttm}}.
 
@@ -1059,7 +1059,7 @@ From top to bottom, the displayed values are the direct-to point, speed/Mach val
 \label{menu:ttm}
 \includegraphics{img/ttm.png}
 
-The Tactical Transfer menu is used to accept, reject or apply tactical data (AHDG, ASP and/or ARC). It is opened by left-clicking on a proposed or accepted parameter in the track label. The menu displays all proposed (“Proposition” color) and accepted (sector state color) values.
+The Tactical Transfer menu is used to accept, reject or apply tactical data (AHDG, ASP and/or ARC). It is opened by left-clicking on a proposed or accepted parameter in the track label. The menu displays all proposed (\colorref{color:Proposition} color) and accepted (sector state color) values.
 
 Clicking on “Accept” will accept all proposed values and “Reject” will reject them. The menu is then closed.
 
@@ -1808,7 +1808,7 @@ The window is split into three columns:
 
 The window displays the aircraft labels at their cleared flight levels. For each aircraft the callsign, the vertical speed arrow if not in level flight (“\#” in \colorref{color:Warning} color for aircraft without altitude information), the RVSM capability indicator if applicable, and the CFL is displayed. If there are more than one aircraft with the same CFL, only one callsign will be shown. A “ + ” symbol in \colorref{color:SMW Overlap Box} color after the CFL value indicates that there are more flights to be displayed. Clicking on the symbol will display a window with all the callsigns with that CFL.
 
-For each aircraft an altitude box will be drawn that extends from AFL to CFL. Normally the color of the box is “SMW Level Band”, but in the Hold and Leave Hold columns if it is closer than 300ft or overlaps any other aircraft’s box, the color will be “SMW Overlap”. For an aircraft with a CLAM alert, the box will be in “SMW Overshoot” color. A flight level reserved for an overflight is shown in “SMW Overflight” color. The altitude box of aircraft in the Leave Hold column extends into the Hold column as well.
+For each aircraft an altitude box will be drawn that extends from AFL to CFL. Normally the color of the box is \colorref{color:SMW Level Band}, but in the Hold and Leave Hold columns if it is closer than 300ft or overlaps any other aircraft’s box, the color will be \colorref{color:SMW Overlap}. For an aircraft with a CLAM alert, the box will be in \colorref{color:SMW Overshoot} color. A flight level reserved for an overflight is shown in \colorref{color:SMW Overflight} color. The altitude box of aircraft in the Leave Hold column extends into the Hold column as well.
 
 Aircraft will be automatically removed from the Leave Hold column after 10 minutes, but they can also be manually removed by right-clicking the callsign.
 
@@ -1836,12 +1836,12 @@ The mouse click areas of the Stack Manager Window:
 
 The CARD window presents the MTCD conflicts and conflict risks. It also allows setting some of the related parameters. It is divided into two parts:
 
-On the left is the list area which includes all the detected conflicts and shows the concerned aircrafts’ callsigns. A conflict or potential predicted conflict has an \colorref{color:Urgency} colored label and a risk or potential risk of conflict has a “Warning” one. Potential conflicts are displayed with “Potential” colored labels. The conflict numbers are shown in “CARD Conflict Number” color. An \colorref{color:Urgency} colored background on a callsign means that the aircraft also has a Short Term Conflict Alert. A highlighted callsign will be highlighted in this list as well. An acknowledged conflict (shown in “Unconcerned” color) will not display the MTCD warning in the track label. An acknowledged problem will be automatically de-acknowledged if the predicted minimum separation decreases by a predefined amount.
+On the left is the list area which includes all the detected conflicts and shows the concerned aircrafts’ callsigns. A conflict or potential predicted conflict has an \colorref{color:Urgency} colored label and a risk or potential risk of conflict has a \colorref{color:Warning} one. Potential conflicts are displayed with \colorref{color:Potential} colored labels. The conflict numbers are shown in \colorref{color:CARD Conflict Number} color. An \colorref{color:Urgency} colored background on a callsign means that the aircraft also has a Short Term Conflict Alert. A highlighted callsign will be highlighted in this list as well. An acknowledged conflict (shown in \colorref{color:Unconcerned} color) will not display the MTCD warning in the track label. An acknowledged problem will be automatically de-acknowledged if the predicted minimum separation decreases by a predefined amount.
 
 Hovering the mouse cursor over a conflict label will display the conflict on the radar screen.
 
-On the right is the graphical display area that gives an overview to the severity and timeframe for each conflict. On the vertical (distance) axis the conflicts are placed to the predicted minimum separation and on the horizontal (time) axis the label is placed so that the left edge of the conflict number is at the time of closest point of approach. A line in \colorref{color:CARD Time Vector} color, extending to the left from the label, marks the time when the separation will decrease below the prediction distance. For fast closure rates the time from prediction distance to CPA may be too short to display the line. The conflict labels have the same mouse functions as the ones in the list area. If the label position would be outside the maximum time displayed in the window, the label is positioned at the maximum displayed time with a “Foreground” colored edge.
-The area below 5nm distance is drawn in “Field Highlight” color.
+On the right is the graphical display area that gives an overview to the severity and timeframe for each conflict. On the vertical (distance) axis the conflicts are placed to the predicted minimum separation and on the horizontal (time) axis the label is placed so that the left edge of the conflict number is at the time of closest point of approach. A line in \colorref{color:CARD Time Vector} color, extending to the left from the label, marks the time when the separation will decrease below the prediction distance. For fast closure rates the time from prediction distance to CPA may be too short to display the line. The conflict labels have the same mouse functions as the ones in the list area. If the label position would be outside the maximum time displayed in the window, the label is positioned at the maximum displayed time with a \colorref{color:Foreground} colored edge.
+The area below 5nm distance is drawn in \colorref{color:Field Highlight} color.
 
 The mouse click areas of the CARD window:
 
@@ -1926,7 +1926,7 @@ From the “View” menu it is possible to toggle various MTCD related:
 
 * The availability of these items in the menu depends on TopSky setup
 
-The PEL and XFL values are displayed in “Coordination” color, or in “Proposition” if being coordinated. After a refused coordination, the original value is shown in \colorref{color:Warning} color. The CFL value is displayed as a horizontal line across the screen.
+The PEL and XFL values are displayed in \colorref{color:Coordination} color, or in “Proposition” if being coordinated. After a refused coordination, the original value is shown in \colorref{color:Warning} color. The CFL value is displayed as a horizontal line across the screen.
 
 \subsection{Message In Window}
 \label{win:miw}
@@ -2525,7 +2525,7 @@ The Pre-Departure Clearance Window is used to issue departure clearances, either
 
 The NPT, NFREQ, DFREQ, START and RMK fields are only displayed if a datalink clearance has been requested and the clearance format (defined in the CPDLC data file) includes them.
 
-The RWY field text is displayed in “Proposition” color if the clearance has not yet been issued and the selected runway is not active for departure. The CFL level background is displayed in \colorref{color:Warning} color for DEL/GND/TWR/APP/DEP controllers when it is above XFL, and for CTR/FSS controllers when it is above PEL.
+The RWY field text is displayed in \colorref{color:Proposition In} color if the clearance has not yet been issued and the selected runway is not active for departure. The CFL level background is displayed in \colorref{color:Warning} color for DEL/GND/TWR/APP/DEP controllers when it is above XFL, and for CTR/FSS controllers when it is above PEL.
 
 When the datalink clearance format includes the possibility to switch between “track” and “heading” modes, the “AHDG” label is displayed as a button. Left-click on it to toggle between “AHDG” and “TRACK”.
 
