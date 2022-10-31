@@ -622,11 +622,9 @@ Opens the \textit{\titleref{menu:rr}}. If the rings are selected on,
 
 \subsection{Mxxx-yyy}
 
-Displays the status of the filters. If any filter is enabled and Quick Look is not toggled on, the color of the
-text is “Global Menu Highlight”.
+Displays the status of the filters. If any filter is enabled and Quick Look is not toggled on, the color of the text is “Global Menu Highlight”.
 
-Only the altitude filter status is shown. “xxx” displays the Lower filter value and “yyy” the Upper filter
-value, in hundreds of feet.
+Only the altitude filter status is shown. “xxx” displays the Lower filter value and “yyy” the Upper filter value, in hundreds of feet.
 
 \subsection{S000-999}
 Not implemented (shows static values).
@@ -650,43 +648,41 @@ For controlled flights (any IFR flight or a VFR flight in ASSUMED state), the co
 
 \begin{tabular}{l l l}
 \textbf{State}          & \textbf{Color}    & \textbf{Condition}
-\\Unconcerned           & “Unconcerned”     & Track will not enter the active sector
-\\Notified              & “Concerned”       & Track will enter the active sector (> 15 min)
-\\Coordinated           & “Coordination”    & Track will enter the active sector (< 15 min)
-\\Assumed               & “Assumed”         & Track is assumed
-\\Transfer Initiated    & “Assumed”         & Track is being transferred to the next controller
-\\Redundant             & “Redundant”       & Track has been transferred to the next controller but is still inside the active sector
+\\Unconcerned           & \colorref{color:Unconcerned}     & Track will not enter the active sector
+\\Notified              & \colorref{color:Concerned}       & Track will enter the active sector (> 15 min)
+\\Coordinated           & \colorref{color:Coordination}    & Track will enter the active sector (< 15 min)
+\\Assumed               & \colorref{color:Assumed}         & Track is assumed
+\\Transfer Initiated    & \colorref{color:Assumed}         & Track is being transferred to the next controller
+\\Redundant             & \colorref{color:Redundant}       & Track has been transferred to the next controller but is still inside the active sector
 \end{tabular}
 
-An unconcerned track can be highlighted based on rules (a combination of departure airport, route and
-arrival airport) defined in plugin data files. In this case it is drawn with one of the three “Informed” colors.\\
+An unconcerned track can be highlighted based on rules (a combination of departure airport, route and arrival airport) defined in plugin data files. In this case it is drawn with one of the three “Informed” colors.
 
-Coordinated tracks that have not departed yet will be shown as notified instead.\\
+Coordinated tracks that have not departed yet will be shown as notified instead.
 
-For uncontrolled flights (VFR flights not in ASSUMED state), the colors are as follows:\\
+For uncontrolled flights (VFR flights not in ASSUMED state), the colors are as follows:
+
 \begin{tabular}{l l l}
-\textbf{State}  & \textbf{Color}    & \textbf{Condition}
-\\On Contact    & “Assumed”         & Track is on-contact (a plugin custom state) with you
-\\Free          & “VFR”             & Track is not assumed or on-contact with anyone
-\\Otherwise     & “Unconcerned”     &
+\textbf{State}  & \textbf{Color}             & \textbf{Condition}\\
+On Contact      & \colorref{color:Assumed}         & Track is on-contact (a plugin custom state) with you\\
+Free            & \colorref{color:VFR}             & Track is not assumed or on-contact with anyone\\
+Otherwise       & \colorref{color:Unconcerned}     &\\
 \end{tabular}
 
 \subsection{Aircraft position symbol}
-The position symbol is drawn at the latest known position of the aircraft. The color of the symbol is the
-flight sector color for an unselected track and “Track Highlight” for a selected one. A number of different
-symbols are available. To begin with, there are basic shapes that tell what kind of track is in question:
+
+The position symbol is drawn at the latest known position of the aircraft. The color of the symbol is the flight sector color for an unselected track and “Track Highlight” for a selected one. A number of different symbols are available. To begin with, there are basic shapes that tell what kind of track is in question:
 
 \begin{tabular}{l l}
-\includegraphics{img/rps_fpasd.png} & Flight plan track (position is not based on surveillance data but calculated by EuroScope)
-\\\includegraphics{img/rps_coast.png} & Coasted track (no position updates in over 30 seconds, position no longer reliable)
-\\\includegraphics{img/rps_psr.png} & Primary radar track
-\\\includegraphics{img/rps_sec.png} & Secondary or combined radar track (uncontrolled)
-\\\includegraphics{img/rps_psr+ssr.png} & Secondary or combined radar track (controlled)
-\\ & ADS-B only track
+\includegraphics{img/rps_fpasd.png} & Flight plan track (position is not based on surveillance data but calculated by EuroScope)\\
+\includegraphics{img/rps_coast.png} & Coasted track (no position updates in over 30 seconds, position no longer reliable)\\
+\includegraphics{img/rps_psr.png} & Primary radar track\\
+\includegraphics{img/rps_sec.png} & Secondary or combined radar track (uncontrolled)\\
+\includegraphics{img/rps_psr+ssr.png} & Secondary or combined radar track (controlled)\\
+ & ADS-B only track\\
 \end{tabular}
 
-An indication of an SPI (transponder ident) can be added to the secondary radar and ADS-B symbols. It
-draws a cross over the symbol and prints the text “SPI” above and to the right of the symbol:
+An indication of an SPI (transponder ident) can be added to the secondary radar and ADS-B symbols. It draws a cross over the symbol and prints the text “SPI” above and to the right of the symbol:
 
 \begin{tabular}{l l}
 \includegraphics{img/rps_spi.png} & Secondary radar track without DAPs with Special Position Indication
@@ -698,54 +694,39 @@ or CLAM alert. This is a circle drawn around the symbol (will not be drawn if SP
 \begin{tabular}{l l}
 \includegraphics{img/rps_divalert.png}& Secondary radar track without DAPs with divergence alert
 \end{tabular}
-\medskip
 
 \subsection{History dots}
-The history dots show the previous positions of the track. The number of displayed dots can be changed via
-the \textit{\titleref{win:tcw}}. The color of the dots is the flight sector color for an unselected track and “Track
-Highlight” for a selected one. History dots are not displayed for flight plan tracks.\\
+
+The history dots show the previous positions of the track. The number of displayed dots can be changed via the \textit{\titleref{win:tcw}}. The color of the dots is the flight sector color for an unselected track and \colorref{color:Track Highlight} for a selected one. History dots are not displayed for flight plan tracks.
 
 \subsection{Prediction Line}
-The prediction line draws the predicted ground track of the aircraft, based on its current track and ground
-speed. It is a two-color line, starting with “Track Default” at the position symbol and then alternating with “Track Highlight” with every segment representing one minute of flying time. The length of the prediction line can be
-changed for all tracks via the Track Control Window, or for a single track via the Prediction Line menu. The
-example below shows a selected track with 5 history dots and a 3-minute prediction line. Prediction lines
-are not displayed for flight plan tracks.
+
+The prediction line draws the predicted ground track of the aircraft, based on its current track and ground speed. It is a two-color line, starting with “Track Default” at the position symbol and then alternating with “Track Highlight” with every segment representing one minute of flying time. The length of the prediction line can be changed for all tracks via the Track Control Window, or for a single track via the Prediction Line menu. The example below shows a selected track with 5 history dots and a 3-minute prediction line. Prediction lines are not displayed for flight plan tracks.
 
 \includegraphics{img/rps_predline+history_selected.png}
 
 \subsection{Track label}
 There are four types of track labels that can be displayed: Standard, Reduced, Extended and Uncorrelated.
 
-In addition, each label except the extended one has an unselected and a selected state, the selected state
-being shown when the mouse cursor is over the label.
-\medskip
+In addition, each label except the extended one has an unselected and a selected state, the selected state being shown when the mouse cursor is over the label.
 
-Basically, the Standard label is shown for aircraft that are in or will enter the active sector and the Reduced
-label for aircraft that will not enter the active sector. The Extended label can be opened from the Standard
-or Reduced label and stays open as long as the cursor is within the label area. The Uncorrelated label is
-shown for radar tracks that aren’t correlated with a flight plan.
-\medskip
+Basically, the Standard label is shown for aircraft that are in or will enter the active sector and the Reduced label for aircraft that will not enter the active sector. The Extended label can be opened from the Standard or Reduced label and stays open as long as the cursor is within the label area. The Uncorrelated label is shown for radar tracks that aren’t correlated with a flight plan.
 
-Refer to your setup specific documentation for detailed descriptions of the track labels.\\
+Refer to your setup specific documentation for detailed descriptions of the track labels.
 
 \section{Track Label Menus}
-These menus are opened from track label fields or flight lists. Except for the confirmation windows, they
-are closed automatically when a menu option is chosen or the mouse cursor leaves the menu area. Menu
-items shown with (X) represent an item that has an activated and a deactivated state. With the item
-activated, the item name is shown prefixed with the letter “X”. The mouse wheel can be used to scroll the
-selection lists in the menus.
 
-Many of the menus have a default item or value, displayed with inverse video. The menu usually opens so
-that the default value is located under the mouse cursor for easy selection. Some menus contain items that
-open folders within the menu. They show a filled triangle before the item name (upright if the folder is
-closed, inverted if the folder is open). The “More” folder is opened automatically when the mouse cursor is
-placed over it or if the default item is in the “More” folder, other folders must be left-clicked to open.\\
+These menus are opened from track label fields or flight lists. Except for the confirmation windows, they are closed automatically when a menu option is chosen or the mouse cursor leaves the menu area. Menu items shown with (X) represent an item that has an activated and a deactivated state. With the item activated, the item name is shown prefixed with the letter “X”. The mouse wheel can be used to scroll the selection lists in the menus.
+
+Many of the menus have a default item or value, displayed with inverse video. The menu usually opens so that the default value is located under the mouse cursor for easy selection. Some menus contain items that open folders within the menu. They show a filled triangle before the item name (upright if the folder is closed, inverted if the folder is open). The “More” folder is opened automatically when the mouse cursor is placed over it or if the default item is in the “More” folder, other folders must be left-clicked to open.
 
 \subsection{Callsign Menu}
 \label{menu:cs}
+
 \subsection*{Controlled Track}
+
 \includegraphics{img/cm.png}
+
 \begin{tabular}{l l l}
 Assume                    & Assumes track\\
 Refuse                    & Refuses the incoming transfer\\
@@ -775,19 +756,14 @@ On Contact                & Sets track in On-Contact state*\\
 \end{tabular}
 \medskip
 
-Besides the manual alerts, none of the selectable toggle options in this menu will be transmitted to other
-controllers, but the “Mark”, “Freq” and highlight selections will be seen in your other EuroScope instances.
-A holding clearance is transmitted to the next controller when transferring the track. To correlate a flight
-plan, first click on the “Correlate” item, and then click on the radar position symbol of the desired radar
-track.
-\medskip
+Besides the manual alerts, none of the selectable toggle options in this menu will be transmitted to other controllers, but the “Mark”, “Freq” and highlight selections will be seen in your other EuroScope instances. A holding clearance is transmitted to the next controller when transferring the track. To correlate a flight plan, first click on the “Correlate” item, and then click on the radar position symbol of the desired radar track.
 
-*Clicking “On Contact” for a track with “Y” or “Z” flight rules will also automatically change the flight rules
-in the VATSIM flight plan to VFR in order to make it uncontrolled. The displayed flight rules are not affected
-\medskip
+*Clicking “On Contact” for a track with “Y” or “Z” flight rules will also automatically change the flight rules in the VATSIM flight plan to VFR in order to make it uncontrolled. The displayed flight rules are not affected
 
 \subsection*{Uncontrolled Track}
+
 \includegraphics{img/cmuncon.png}
+
 \begin{tabular}{l l l}
 On Contact          & Sets track in On-Contact state (“Assumed” color, can’t be filtered, but still uncontrolled)
 \\Free              & Releases track
@@ -799,15 +775,14 @@ On Contact          & Sets track in On-Contact state (“Assumed” color, can�
 \\FPL...            & Opens the \textit{\titleref{win:fpw}}
 \\PRL               & Opens the \textit{\titleref{menu:prl}}
 \end{tabular}
-\medskip
 
-*Clicking “Assume” for a track with “Y” or “Z” flight rules will also automatically change the flight rules in
-the VATSIM flight plan to IFR in order to make it controlled. The displayed flight rules are not affected.
-\medskip
+*Clicking “Assume” for a track with “Y” or “Z” flight rules will also automatically change the flight rules in the VATSIM flight plan to IFR in order to make it controlled. The displayed flight rules are not affected.
 
 
 \subsection*{Uncorrelated Track}
+
 \includegraphics{img/cmuncor.png}
+
 \begin{tabular}{l l l}
 Correlate       & Correlates the radar track with the next clicked “Callsign” field
 \\Create APL    & Opens the \textit{\titleref{win:apl}}
@@ -817,52 +792,44 @@ Correlate       & Correlates the radar track with the next clicked “Callsign�
 
 \subsection{Transfer menu}
 \label{menu:xfr}
-\includegraphics{img/xfr.png}
-For CPDLC connected aircraft, the menu contains options related to the transfer. Left-
-clicking on the frequency button initiates the transfer (and sends the CPDLC message if
-selected).
 
-“Monitor” / “Contact” select which of the two CPDLC message types will be sent.\\
-“R/T” / “CPDLC” select whether the transfer instruction is given via radio or as a CPDLC
-message.
+\includegraphics{img/xfr.png}
+
+For CPDLC connected aircraft, the menu contains options related to the transfer. Left- clicking on the frequency button initiates the transfer (and sends the CPDLC message if selected).
+
+“Monitor” / “Contact” select which of the two CPDLC message types will be sent.
+
+“R/T” / “CPDLC” select whether the transfer instruction is given via radio or as a CPDLC message.
 
 \subsection{Transfer Confirmation Window}
 \label{win:xfrconfirm}
+
 \includegraphics{img/xfrconfirm.png}
-If an aircraft has a defined XFL value and hasn’t been cleared to it (CFL is not equal to XFL), attempting to
-transfer the aircraft will open a Transfer Confirmation Window in the middle of the radar screen. While the
-window is open it will block all other attempts to click on items elsewhere on the radar screen. Either click
-on “Transfer” to transfer the aircraft regardless of the situation, or “Cancel” to cancel the transfer.\\
+
+If an aircraft has a defined XFL value and hasn’t been cleared to it (CFL is not equal to XFL), attempting to transfer the aircraft will open a Transfer Confirmation Window in the middle of the radar screen. While the window is open it will block all other attempts to click on items elsewhere on the radar screen. Either click on “Transfer” to transfer the aircraft regardless of the situation, or “Cancel” to cancel the transfer.
 
 \subsection{Transfer \& Release menu}
 \label{menu:xfrrel}
+
 \includegraphics{img/xfrrel.png}
-The Transfer \& Release menu allows specifying a release condition for a track to be
-transferred. The transfer is initiated after selecting the desired condition (climb, descent,
-turn or full). The release will be shown on line 0 of the track label (C for climb, D for
-descent, T for turn and F for full). The transferring controller will see the label item until
-the track becomes unconcerned. The receiving controller will see the item for 3 minutes
-after the track is assumed.
+
+The Transfer \& Release menu allows specifying a release condition for a track to be transferred. The transfer is initiated after selecting the desired condition (climb, descent, turn or full). The release will be shown on line 0 of the track label (C for climb, D for descent, T for turn and F for full). The transferring controller will see the label item until the track becomes unconcerned. The receiving controller will see the item for 3 minutes after the track is assumed.
 
 \includegraphics{img/xfrrel.png}
 For CPDLC connected aircraft, the menu contains options related to the transfer:
 
 “Monitor” / “Contact” select which of the two CPDLC message types will be sent.
 
-“R/T” / “CPDLC” select whether the transfer instruction is given via radio or as a CPDLC
-message.
+“R/T” / “CPDLC” select whether the transfer instruction is given via radio or as a CPDLC message.
 
 \begin{Warn}
-The “Trf \& Release” option will show the release condition on the downstream side only if the
-next controller is using this plugin, in other cases the transfer will be shown as a normal transfer.
+The “Trf \& Release” option will show the release condition on the downstream side only if the next controller is using this plugin, in other cases the transfer will be shown as a normal transfer.
 \end{Warn}
 
 \subsection{Request On Frequency message}
 \label{menu:rof}
 
-The ROF message can be used to send a request to the controller currently tracking an aircraft to transfer it
-to your frequency. For the message to succeed, you must be seen as the next controller for the tracking
-controller. When sent, the text “ROF” is displayed in the track label on the tracking controller’s screen.
+The ROF message can be used to send a request to the controller currently tracking an aircraft to transfer it to your frequency. For the message to succeed, you must be seen as the next controller for the tracking controller. When sent, the text “ROF” is displayed in the track label on the tracking controller’s screen.
 
 \begin{Warn}
 The “ROF” message is a feature specific to this plugin. It is an experimental feature and is not guaranteed to work all the time. When you send the message, check that it’s sent properly.
@@ -874,6 +841,7 @@ The “ROF” message is a feature specific to this plugin. It is an experimenta
 
 \subsection{Hold Menu}
 \label{menu:hold}
+
 \includegraphics{img/hold.png}
 
 The Hold menu allows you to enter a holding clearance (add the aircraft to the holding list). It displays for selection the points in the aircraft’s route that are ahead of its current position.
@@ -886,6 +854,7 @@ The holding point is automatically sent to your other EuroScope instances with a
 
 \subsection{Manual Transfer Menu}
 \label{menu:mxfr}
+
 \includegraphics{img/mxfr.png}
 
 The Manual Transfer menu allows transferring the aircraft to any controller. In the SCHEDULED list are the controllers that are in the current sector sequence sorted in the order the aircraft is planned to enter the controllers’ sectors, with the next controller being the default item.
@@ -894,6 +863,7 @@ When opened, the “More” list displays all the other controllers for selectio
 
 \subsection{VCI Menu}
 \label{menu:vci}
+
 \includegraphics{img/vci.png}
 
 Available only for CPDLC-connected aircraft and when more than one frequency has been set up by the controller, the VCI menu allows sending a CPDLC “contact” or “monitor” message without initiating a transfer.
@@ -913,6 +883,7 @@ The menu closes when a message is sent or the cursor leaves the menu area.
 
 \subsection{Prediction Line Menu}
 \label{menu:prl}
+
 \includegraphics{img/prl.png}
 
 The Prediction Line menu allows displaying a PRL with a specific length for each aircraft even if the PRL selection is off in the Radar Menu.
@@ -921,6 +892,7 @@ The default value is the set PRL value if available, otherwise the PRL length va
 
 \subsection{Sequence Number Menu}
 \label{menu:seq}
+
 \includegraphics{img/seq.png}
 
 This menu is used to set an arrival sequence number. Values from 1 to 50 are available.
@@ -930,6 +902,7 @@ controller (during transfer) unless the flight strip is manually sent.
 
 \subsection{Waypoint Menu}
 \label{menu:wpt}
+
 \includegraphics{img/wpt.png}
 
 \begin{tabular}{l l}
@@ -940,13 +913,10 @@ $\blacktriangle$  Routing & Opens the “COPN point” or “COPX point” subme
 \\$\blacktriangle$ Hold & Opens the Hold submenu (not available if a TSA holding clearance is active)
 \end{tabular}
 
-This menu gives access to functions related to the route of the aircraft. It is used to assign
-direct-to clearances, departure and arrival routes, holding clearances, and to coordinate
-the sector entry/exit point.
+This menu gives access to functions related to the route of the aircraft. It is used to assign direct-to clearances, departure and arrival routes, holding clearances, and to coordinate the sector entry/exit point.
 
 \includegraphics{img/wptyn.png}
-When an entry or exit coordination has been received, the menu opens looking like this
-instead. The options are:
+When an entry or exit coordination has been received, the menu opens looking like this instead. The options are:
 
 \begin{tabular}{l l}
 $\blacktriangle$ Routing    & Opens the “COPN point” or “COPX point” submenu (EuroScope default item)
@@ -954,17 +924,13 @@ $\blacktriangle$ Routing    & Opens the “COPN point” or “COPX point” sub
 \\Reject                      & Rejects the coordination
 \end{tabular}
 
-The submenu opened with “Routing” offers the same possibilities to accept or reject the
-coordination, but also the possibility to counter-propose a different point.
+The submenu opened with “Routing” offers the same possibilities to accept or reject the coordination, but also the possibility to counter-propose a different point.
 
 \includegraphics{img/wptdl.png}
 
-When the aircraft is CPDLC-connected and the coordination is an exit coordination, the
-menu offers a choice between “R/T” and “CPDLC”. The chosen option decides how an
-accepted coordination is communicated to the aircraft.
+When the aircraft is CPDLC-connected and the coordination is an exit coordination, the menu offers a choice between “R/T” and “CPDLC”. The chosen option decides how an accepted coordination is communicated to the aircraft.
 
-With “CPDLC” selected, when “Accept” is clicked, in addition to the coordination being
-accepted, a “PROCEED DIRECT TO <point>” CPDLC message is sent to the aircraft.
+With “CPDLC” selected, when “Accept” is clicked, in addition to the coordination being accepted, a “PROCEED DIRECT TO <point>” CPDLC message is sent to the aircraft.
 
 \includegraphics{img/wptroute.png}
 
@@ -982,19 +948,12 @@ The “R/T” / “CPDLC” selection is fixed to “CPDLC”.
 Clicking the point name will set the direct-to clearance without coordination
 \end{Warn}
 
-When there is no request in process and the aircraft has a direct-to point set, the menu
-can be used to send the clearance via CPDLC. In this case the menu opens like this except
-without the “SBY” and “UNABLE” buttons. Clicking the point name will send the
-“PROCEED DIRECT TO <point>” CPDLC message.
+When there is no request in process and the aircraft has a direct-to point set, the menu can be used to send the clearance via CPDLC. In this case the menu opens like this except without the “SBY” and “UNABLE” buttons. Clicking the point name will send the “PROCEED DIRECT TO <point>” CPDLC message.
 
 \subsection*{TSA Hold Submenu}
-The TSA Hold submenu allows you to enter a clearance to enter an active military area. It displays the active
-and preactive TSA type areas. If a clearance already exists, the menu will only give the option to remove it
-with the “XHold” item.
+The TSA Hold submenu allows you to enter a clearance to enter an active military area. It displays the active and preactive TSA type areas. If a clearance already exists, the menu will only give the option to remove it with the “XHold” item.
 
-The clearance is automatically sent to your other EuroScope instances with a small delay and can be sent to
-other controllers by pushing the flight strip as the information is stored there. A TSA hold clearance will
-exclude the aircraft from all APW and SAP processing.
+The clearance is automatically sent to your other EuroScope instances with a small delay and can be sent to other controllers by pushing the flight strip as the information is stored there. A TSA hold clearance will exclude the aircraft from all APW and SAP processing.
 
 \subsection*{TSA Hold Submenu}
 If a holding clearance already exists, the menu will only give the option to remove it with the “XHold” item.
@@ -1010,11 +969,10 @@ metric units
 keyboard
 
 This menu can be used to set the AFL value for aircraft that don’t have an altitude reporting transponder.
+
 The default value is the previously set manual AFL value if set, otherwise the CFL value.
 
-By default, the menu (as well as the AFL label item) is always showing nautical units, regardless of the
-system units or the selected units for the aircraft. If this behavior is selected off, the list units can be
-toggled with the “NAUTICAL” / “METRIC” item. There are three ways to set the AFL using this menu:
+By default, the menu (as well as the AFL label item) is always showing nautical units, regardless of the system units or the selected units for the aircraft. If this behavior is selected off, the list units can be toggled with the “NAUTICAL” / “METRIC” item. There are three ways to set the AFL using this menu:
 
 \begin{itemize}
         \item Clicking a level value in the list
@@ -1075,40 +1033,23 @@ The RFL menu allows setting the requested flight level. The operation is similar
 \subsection{AHDG Menu}
 \label{menu:ahdg}
 
-This menu includes items to set or clear an assigned heading or a direct route and to
-send a HOP. The initially highlighted heading value will be the closest one to the
-assigned heading if the aircraft has one, otherwise the closest one to the aircraft ground
-track (or the departure runway heading if the menu is opened from the DEP list).
-Clicking on a heading value will set it as the assigned heading. The assigned heading can
-also be set by typing it into the entry box, using the pop-up keyboard or by using the
-AHDG vector.
+This menu includes items to set or clear an assigned heading or a direct route and to send a HOP. The initially highlighted heading value will be the closest one to the assigned heading if the aircraft has one, otherwise the closest one to the aircraft ground track (or the departure runway heading if the menu is opened from the DEP list). Clicking on a heading value will set it as the assigned heading. The assigned heading can also be set by typing it into the entry box, using the pop-up keyboard or by using the AHDG vector.
 
-“Clear” removes an assigned heading or a direct route. For CPDLC connected aircraft, it
-sends the “RESUME OWN NAVIGATION” CPDLC message if the “CPDLC” option is
-selected.
+“Clear” removes an assigned heading or a direct route. For CPDLC connected aircraft, it sends the “RESUME OWN NAVIGATION” CPDLC message if the “CPDLC” option is selected.
 
-“Point” lets you pick a direct-to point from the radar screen. Left-click on any point to
-set it as the direct-to point (available points are VORs, NDBs and waypoints, in that
-priority order). Pressing the [Esc] key or clicking on any clickable data field will abort the
-operation.
+“Point” lets you pick a direct-to point from the radar screen. Left-click on any point to set it as the direct-to point (available points are VORs, NDBs and waypoints, in that priority order). Pressing the [Esc] key or clicking on any clickable data field will abort the operation.
 
-“HOP”, “RTI” and “TIP” are coordination functions (see below for more information). To
-use them, first click on the function’s button and then select the desired value from the
-list (for HOP also “Point” is available).
+“HOP”, “RTI” and “TIP” are coordination functions (see below for more information). To use them, first click on the function’s button and then select the desired value from the list (for HOP also “Point” is available).
 
 \includegraphics{img/ahdgdl.png}
 
 For CPDLC connected aircraft, the menu contains additional buttons:
 
-“R/T” and “CPDLC” select whether a heading/direct-to clearance is to be sent via radio
-or as a CPDLC message.
+“R/T” and “CPDLC” select whether a heading/direct-to clearance is to be sent via radio or as a CPDLC message.
 \begin{itemize}
         \item When a heading request downlink has been received, the “R/T” option is deselected
     and cannot be selected. The request must be replied to using CPDLC.
-        \item When a heading/direct-to clearance uplink has been sent, the “CPDLC” option is
-deselected and cannot be selected. If a new heading/direct-to clearance must be sent
-before there is an answer to the uplink, it must be given via radio (doing so also closes
-the open uplink message).
+        \item When a heading/direct-to clearance uplink has been sent, the “CPDLC” option is deselected and cannot be selected. If a new heading/direct-to clearance must be sent before there is an answer to the uplink, it must be given via radio (doing so also closes the open uplink message).
 \end{itemize}
 
 “SBY” and “UNABLE” send the corresponding answers to a downlink heading request
@@ -1120,15 +1061,9 @@ Clicking a point on the radar screen will set the direct-to clearance without co
 
 \subsection{Handover Proposal (HOP)}
 \label{win:hop}
-A Handover Proposal can be used to propose non-standard transfer parameters (AHDG/Direct-to and ASP)
-to the next sector. For the receiving controller a HOP is identified by coloring the callsign data field with
-“Proposition” color in the label. For the sending controller the Callsign field remains “Assumed” color and
-the Sector Indicator field is shown in “Proposition” color. Additionally, if there are proposed parameters
-they are also colored “Proposition” in both controllers’ labels.
+A Handover Proposal can be used to propose non-standard transfer parameters (AHDG/Direct-to and ASP) to the next sector. For the receiving controller a HOP is identified by coloring the callsign data field with “Proposition” color in the label. For the sending controller the Callsign field remains “Assumed” color and the Sector Indicator field is shown in “Proposition” color. Additionally, if there are proposed parameters they are also colored “Proposition” in both controllers’ labels.
 
-There are three ways to answer a HOP and all of them involve accepting all proposed parameters. If one or
-more parameters are not acceptable, coordination must be done to find acceptable parameters or to revert
-to standard ones. The available ways to accept the proposed parameters are:
+There are three ways to answer a HOP and all of them involve accepting all proposed parameters. If one or more parameters are not acceptable, coordination must be done to find acceptable parameters or to revert to standard ones. The available ways to accept the proposed parameters are:
 
 \begin{tabular}{l l}
 \textit{\titleref{menu:cs}} -> “Assume”               & Assumes the track
@@ -1136,8 +1071,7 @@ to standard ones. The available ways to accept the proposed parameters are:
 \\Combined Transfer menu -> “Accept”    &  Sends an Accept message
 \end{tabular}
 
-If the parameters are unacceptable to the receiving controller, the sending controller has the possibility to
-modify or clear them using the appropriate menus, or to cancel the whole HOP by assuming the track.
+If the parameters are unacceptable to the receiving controller, the sending controller has the possibility to modify or clear them using the appropriate menus, or to cancel the whole HOP by assuming the track.
 
 \begin{Warn}
 A HOP will only be shown correctly for controllers using this plugin. To other controllers it will be shown as a normal transfer without any special coloring of any data fields. This combined with the three possible ways to answer the HOP require the sending controller to pay special attention to the track to see what the result is.   
@@ -1175,21 +1109,17 @@ When the cursor is over a known point (VOR, NDB or waypoint), the name of that p
 \label{menu:arc}
 \includegraphics{img/arc.png}
 
-The ARC menu allows assigning a rate of climb or descent to the flight plan. Selectable
-rates are 500-5000 ft/min (displayed in 100’s of ft/min), or 5-25 m/s. The menu units are
-always the same as the units used for the aircraft in general.
+The ARC menu allows assigning a rate of climb or descent to the flight plan. Selectable rates are 500-5000 ft/min (displayed in 100’s of ft/min), or 5-25 m/s. The menu units are always the same as the units used for the aircraft in general.
 
-Left-clicking on a value assigns it. An assigned rate can be cleared by selecting the
-“Resume” item.
+Left-clicking on a value assigns it. An assigned rate can be cleared by selecting the “Resume” item.
 
-By default, the “+” option is selected, meaning that the clearance is a minimum rate of
-climb or descent. Deselecting the “+” makes the clearance an exact rate, and selecting
-the “-” option makes the clearance a maximum rate.
+By default, the “+” option is selected, meaning that the clearance is a minimum rate of climb or descent. Deselecting the “+” makes the clearance an exact rate, and selecting the “-” option makes the clearance a maximum rate.
 
 For “RTI” and “TIP” see the \textit{\titleref{menu:ahdg}}.
 
 \begin{Warn}
 The exact and maximum rate clearances are a feature specific to this plugin (the additional information is stored in the flight strip). To controllers not using TopSky, all assigned rate clearances will only show the rate value.
+
 Assigned rate clearances given by controllers not using TopSky will be displayed as minimum rate clearances.      
 \end{Warn}
 
@@ -1326,6 +1256,145 @@ The DSQ menu is used to select a specific departure sequence number to a flight.
 \begin{Note}
 The departure sequence number is only stored locally, it is not sent to other controllers or even to other EuroScope instances.
 \end{Note}
+
+\section{Aircraft Lists}
+
+\subsection{Sector List}
+\label{list:sector}
+
+Global Menu -> Tools -> Flight Plan Lists -> Sector List…
+
+The Sector List is a EuroScope-style list containing all departed controlled (all IFR, VFR only if ASSUMED) aircraft in the following states:
+
+\begin{itemize}
+    \item Informed (if corresponding selection made in the Global menu)
+    \item Concerned * (if corresponding selection made in the Global menu)
+    \item Coordinated
+    \item Transfer to me initiated
+    \item Assumed
+    \item Transfer from me initiated
+    \item Redundant (if corresponding selection made in the Global menu)
+\end{itemize}
+
+* The display of concerned aircraft is limited to those entering the sector within 60 minutes by default.
+
+\subsection{Load Factor List}
+\label{list:load}
+
+Global Menu -> Tools -> Flight Plan Lists -> Load Factor List…
+
+The Load Factor List is a EuroScope-style list containing all departed controlled (all IFR, VFR only if ASSUMED) aircraft in the concerned state and all non-departed controlled aircraft in the concerned and coordinated states expected to enter the sector within 4 hours by default.
+
+\subsection{Uncontrolled List 1}
+\label{list:uncon1}
+
+Global Menu -> Tools -> Flight Plan Lists -> Main VFR List… / Uncontrolled List 1…
+
+The Main VFR List / Uncontrolled List 1 is a EuroScope-style list containing all or a subset of uncontrolled (VFR flights not in ASSUMED state) aircraft, depending on whether filters are set up.
+
+\subsection{Uncontrolled List 2}
+\label{list:uncon2}
+
+Global Menu -> Tools -> Flight Plan Lists -> Secondary VFR List… / Uncontrolled List 2…
+
+The Secondary VFR List / Uncontrolled List 2 is another VFR list to be used if different filtering options are needed.
+
+\subsection{ETWR List}
+\label{list:etwr}
+
+Global Menu -> Tools -> Flight Plan Lists -> ETWR List...
+
+The ETWR List is a EuroScope-style list containing notified and coordinated flights departing from specified airports
+
+\subsection{Resectorisation List}
+\label{list:resec}
+
+Global Menu -> Tools -> Flight Plan Lists -> Resectorisation List…
+
+The Resectorisation List is a EuroScope-style list containing all flights assumed or on-contact with specified LFUNCs (controller IDs).
+
+\subsection{Traffic Management List 1}
+\label{list:tml1}
+
+Global Menu -> Tools -> Flight Plan Lists -> Traffic Management List 1…
+
+The Traffic Management List 1 is a EuroScope-style list containing all uncontrolled flights and controlled flights at least in coordinated state with specified destinations, and routing via specified points. The ETO over the point (or ETA if no point specified) must be within 30 minutes, and the destination must be specified to include uncontrolled flights in the list.
+
+\subsection{Traffic Management List 2}
+\label{list:tml2}
+
+Global Menu -> Tools -> Flight Plan Lists -> Traffic Management List 2…
+
+The Traffic Management List 2 is another Traffic Management list to be used if different filtering options are needed.
+
+\subsection{Lost List}
+\label{list:lost}
+
+Global Menu -> Tools -> Flight Plan Lists -> Lost List…
+
+The list includes assumed flights that have previously been correlated to a radar track but radar contact has been lost. By default, the list opens automatically whenever a flight is added into it, and will be closed automatically when empty. If manually opened, the list cannot be manually closed until it is empty.
+
+\includegraphics{img/llist.png}
+
+The lost list contains the following fields:
+
+\begin{tabular}{l l l l}
+    Field                   & Type        & Left click                              & Right click\\
+    Callsign                & mandatory   & Open \textit{\titleref{menu:cs}}                      & -\\
+    N/ATYP                  & optional    & -                                       & -\\
+    AFL (last received)     & optional    & -                                       & Toggle route draw\\
+    CFL                     & optional    & Open CFL menu                           & Toggle route draw\\
+    ASSR                    & mandatory   & Open ASSR menu                          & -\\
+    FPASD                   & optional    & Toggle FPASD track (when globally off)  & -\\
+    Lost (time)             & optional    & -                                       & -\\
+\end{tabular}
+
+“View” opens the View menu:
+
+\begin{tabular}{l l}
+    Header      & Toggle visibility of the list header line\\
+    Standard    & Set the list in Standard mode (only mandatory fields shown)\\
+    Extended    & Set the list in Extended mode  \\
+\end{tabular}
+
+“Options” opens the Options menu to select which optional fields are shown in Extended mode. The “All” selection shows all fields without affecting the individual selections.
+
+The rows are sorted based on “Lost” time in descending order.
+
+With TopSky set up to automatically open the Lost List when not empty, when a flight is added into the Lost List, its FPASD selection is initially set to “on” regardless of the FPASD setting in the Global menu.
+
+\subsection{Holding List}
+\label{list:hold}
+
+The Holding List contains aircraft in the assumed, transfer initiated and on-contact with the position states that have been given a holding clearance. The list is automatically displayed whenever there is at least one aircraft in the list.
+
+\includegraphics{img/hlist.png}
+
+“View” opens the View menu which contains only one item, “Header”. It toggles the visibility of the list’s header line.
+
+“Options” is inaccessible as there are no selectable options in the holding list.
+
+The list sorting option is displayed next to the “Options” label. Clicking on it opens a menu to select between the following sorting options:
+
+\begin{tabular}{l l}
+    “ETO on Holding point”  & ETO at the holding point -> Holding point name -> Callsign\\
+    “Holding point”         & Holding point name -> CFL -> Callsign\\
+\end{tabular}
+
+The ETO column initially displays the estimated time over the holding fix. Once the aircraft enters the holding, the displayed time is fixed to the holding start time. For present position holds and holding points whose positions are unknown, the time when the holding clearance was given is displayed.
+
+\begin{tabular}{l l l}
+    Field                   & Left click                          & Right click\\
+    Label                   & Hide/display track label            & -\\
+    Callsign                & Open \textit{\titleref{menu:cs}}    & -\\
+    AFL                     & Open \textit{\titleref{menu:afl}}   & Toggle route draw\\
+    (attitude indicator)    & -                                   & -\\
+    CFL                     & Open \textit{\titleref{menu:cfl}}   & Toggle route draw\\
+    HPT                     & Open \textit{\titleref{win:smw}}    & -\\
+    ETO                     & -                                   & -\\ 
+\end{tabular}
+
+If a track label has been hidden, it will be automatically unhidden if the aircraft is cleared to leave the holding or an incoming coordination message for the flight is received.
 
 \section{Windows}
 TopSky includes a number of windows that are discussed in this chapter. All windows have the following common features:
@@ -1632,7 +1701,7 @@ If the VATSIM callsign is known when the window is opened, the CPDLC login calls
 
 The “CPDLC” and “DCL/PDC” selections are used to define the offered services. For CTR and FSS logins both are selected by default, for others only “DCL/PDC” is selected.
 
-Sending a clearance via CPDLC can be the default setting in some of TopSky menus. For this to happen, the aircraft must be above the “Min Level” (FL) specified here, the selection button for the menu in question must be on, and the CPDLC Default Status (in Global Menu->Status/STS) must be “On”. The “DCT” option does not do anything at the moment (DCT clearance via CPDLC is given using the “Point” option in the AHDG menu, so the “AHDG” option controls that as well). “Auto-accept logon” automatically accepts valid logon requests from tracks above “Min Level”.
+Sending a clearance via CPDLC can be the default setting in some of TopSky menus. For this to happen, the aircraft must be above the “Min Level” (FL) specified here, the selection button for the menu in question must be on, and the CPDLC Default Status (in Global Menu->STS) must be “On”. The “DCT” option does not do anything at the moment (DCT clearance via CPDLC is given using the “Point” option in the AHDG menu, so the “AHDG” option controls that as well). “Auto-accept logon” automatically accepts valid logon requests from tracks above “Min Level”.
 
 When making changes to the “Min Level” or the menu selections, the “Ok” and “Cancel” buttons become active. Left-click on “Ok” to apply the changes or “Cancel” to abort.
 
@@ -1880,7 +1949,7 @@ The mouse click areas of the Stack Manager Window:
 \subsection{CARD}
 \label{win:card}
 
-Global Menu -> ControlTools/Tools -> CARD..
+Global Menu -> Tools -> CARD..
 
 \includegraphics{img/card.png}
 
@@ -1940,7 +2009,7 @@ From the “Mark/ACK” menu it is possible to toggle conflict-specific options:
 \subsection{SAP Window}
 \label{win:sap}
 
-Global Menu -> ControlTools/Tools -> SAP...
+Global Menu -> Tools -> SAP...
 
 \includegraphics{img/sap.png}
 
@@ -1949,7 +2018,7 @@ The SAP window lists the aircraft that have SAP conflicts (can be set to also sh
 \subsection{Vertical Aid Window}
 \label{win:vaw}
 
-Global Menu -> ControlTools/Tools -> Vertical Aid Window...
+Global Menu -> Tools -> Vertical Aid Window...
 
 \includegraphics{img/vaw.png}
 
@@ -1981,7 +2050,7 @@ The PEL and XFL values are displayed in “Coordination” color, or in “Propo
 \subsection{Message In Window}
 \label{win:miw}
 
-Global Menu -> ControlTools/Tools -> Message In...
+Global Menu -> Tools -> Message In...
 
 \includegraphics{img/miw.png}
 
@@ -2050,7 +2119,7 @@ The available message types are:
 \subsection{Message Out Window}
 \label{win:mow}
 
-Global Menu -> ControlTools/Tools -> Message Out...
+Global Menu -> Tools -> Message Out...
 
 \includegraphics{img/mow.png}
 
@@ -2104,7 +2173,7 @@ The available message types are:
 \subsection{Microphone Check Menu}
 \label{menu:dlmcm}
 
-Global Menu -> ControlTools/Tools -> CPDLC -> Microphone Check
+Global Menu -> Tools -> CPDLC -> Microphone Check
 
 \includegraphics{img/dlmicchk.png}
 
@@ -2115,7 +2184,7 @@ The menu closes when a frequency is selected or the cursor leaves the menu area.
 \subsection{CPDLC Current Message Window}
 \label{win:dlcmw}
 
-Global Menu -> ControlTools/Tools -> CPDLC -> Current Messages...
+Global Menu -> Tools -> CPDLC -> Current Messages...
 
 \includegraphics{img/dlcmw.png}
 
@@ -2182,7 +2251,7 @@ The window closes automatically when the message is sent or the mouse cursor lea
 \subsection{CPDLC History Message Window}
 \label{win:dlhmw}
 
-Global Menu -> ControlTools/Tools -> CPDLC -> History Messages...
+Global Menu -> Tools -> CPDLC -> History Messages...
 
 \includegraphics{img/dlhmw.png}
 
@@ -2192,7 +2261,7 @@ Current Message Window.
 \subsection{Cursor Lat/Long Window}
 \label{win:latlon}
 
-Global Menu -> ControlTools/Tools -> LAT/LONG...
+Global Menu -> Tools -> LAT/LONG...
 
 \includegraphics{img/latlon.png}
 
@@ -2371,7 +2440,7 @@ The LFUNC Frequency Plan Window displays the currently online controllers and th
 \subsection{Notepad Window}
 \label{win:note}
 
-Global Menu -> Messages/MSG -> Notepad...
+Global Menu -> MSG -> Notepad...
 
 \includegraphics{img/note.png}
 
@@ -2380,7 +2449,7 @@ The Notepad Windows can be used to display any user entered text. Multiple Notep
 \subsection{Personal Queue Window}
 \label{win:pqw}
 
-Global Menu -> Messages/MSG -> Personal Queue...
+Global Menu -> MSG -> Personal Queue...
 
 \includegraphics{img/pq.png}
 
@@ -2394,8 +2463,8 @@ The high priority messages are always displayed first. Only when there are no mo
 \label{win:atcmw}
 \label{win:pfmw}
 
-Global Menu -> Messages/MSG -> ATC Messages...
-Global Menu -> Messages/MSG -> Prim Freq Messages...
+Global Menu -> MSG -> ATC Messages...
+Global Menu -> MSG -> Prim Freq Messages...
 
 \includegraphics{img/atc.png}
 
@@ -2406,7 +2475,7 @@ New incoming messages are displayed in \colorref{color:Warning} color until left
 \subsection{NAT Track Messages Window}
 \label{win:nattmw}
 
-Global Menu -> Messages/MSG -> NAT Track Messages...
+Global Menu -> MSG -> NAT Track Messages...
 
 \includegraphics{img/nat.png}
 
@@ -2415,7 +2484,7 @@ The NAT Track Messages Window displays the downloaded track messages. The messag
 \subsection{Safety Nets Status Window}
 \label{win:snsw}
 
-Global Menu -> Status/STS -> Safety Nets Status...
+Global Menu -> STS -> Safety Nets Status...
 
 \includegraphics{img/snets.png}
 
@@ -2435,7 +2504,7 @@ All changes to the window must be applied using the buttons in the bottom of the
 \subsection{Divergence Detection Status Window}
 \label{win:ddsw}
 
-Global Menu -> Status/STS -> Divergence Detection Status...
+Global Menu -> STS -> Divergence Detection Status...
 
 \includegraphics{img/divsts.png}
 
@@ -2450,7 +2519,7 @@ Allows setting the status for the RAM and CLAM alerting. The “On/Off” button
 \subsection{MTCD Status Window}
 \label{win:mtcdsw}
 
-Global Menu -> Status/STS -> MTCD Status...
+Global Menu -> STS -> MTCD Status...
 
 \includegraphics{img/mtcd.png}
 
@@ -2481,7 +2550,7 @@ All changes must be applied using the buttons below to take effect.
 \subsection{Runway in Use Window}
 \label{win:riuw}
 
-Global Menu -> Status/STS -> Runway In Use...
+Global Menu -> STS -> Runway In Use...
 Radar screen -> middle-click on Airport symbol drawn by TopSky’s “AD\_Hotspots” map...
 
 \includegraphics{img/rwy.png}
@@ -2517,7 +2586,7 @@ The numbers on the right side are the caution and warning limits. The rates are 
 \subsection{Predicted Traffic Window}
 \label{win:ptw}
 
-Global Menu -> Status/STS -> Supervisory -> Predicted Traffic...
+Global Menu -> STS -> Supervisory -> Predicted Traffic...
 
 The Predicted Traffic Window shows the number of aircraft that are predicted to be inside a specified controller’s airspace. The data is displayed in 5-minute steps and shown up to 5 hours into the future. The prediction is based on the sector ownership and the aircraft tracks are as calculated by EuroScope.
 
@@ -2530,7 +2599,7 @@ The two sliders change the traffic number and time scales.
 \subsection{Runway Approach Line Window}
 \label{win:ralw}
 
-Global Menu -> Status/STS -> RWY line display... (opens the \textit{\titleref{menu:ad}} for airport selection)
+Global Menu -> STS -> RWY line display... (opens the \textit{\titleref{menu:ad}} for airport selection)
 Radar screen -> right-click on Airport symbol drawn by TopSky’s “AD\_Hotspots” map...
 
 \includegraphics{img/rwydsp.png}
@@ -2612,145 +2681,6 @@ The Departure Coordination Window can be used to set the clearance flag. The win
     Cancel  & Disregards any changes, closes the window\\
     Ok      & Applies any changes, sets the clearance flag and closes the window\\
 \end{tabular}
-
-\section{Aircraft Lists}
-
-\subsection{Sector List}
-\label{list:sector}
-
-Global Menu -> ControlTools/Tools -> Flight Plan Lists -> Sector List…
-
-The Sector List is a EuroScope-style list containing all departed controlled (all IFR, VFR only if ASSUMED) aircraft in the following states:
-
-\begin{itemize}
-    \item Informed (if corresponding selection made in the Global menu)
-    \item Concerned * (if corresponding selection made in the Global menu)
-    \item Coordinated
-    \item Transfer to me initiated
-    \item Assumed
-    \item Transfer from me initiated
-    \item Redundant (if corresponding selection made in the Global menu)
-\end{itemize}
-
-* The display of concerned aircraft is limited to those entering the sector within 60 minutes by default.
-
-\subsection{Load Factor List}
-\label{list:load}
-
-Global Menu -> ControlTools/Tools -> Flight Plan Lists -> Load Factor List…
-
-The Load Factor List is a EuroScope-style list containing all departed controlled (all IFR, VFR only if ASSUMED) aircraft in the concerned state and all non-departed controlled aircraft in the concerned and coordinated states expected to enter the sector within 4 hours by default.
-
-\subsection{Uncontrolled List 1}
-\label{list:uncon1}
-
-Global Menu -> ControlTools/Tools -> Flight Plan Lists -> Main VFR List… / Uncontrolled List 1…
-
-The Main VFR List / Uncontrolled List 1 is a EuroScope-style list containing all or a subset of uncontrolled (VFR flights not in ASSUMED state) aircraft, depending on whether filters are set up.
-
-\subsection{Uncontrolled List 2}
-\label{list:uncon2}
-
-Global Menu -> ControlTools/Tools -> Flight Plan Lists -> Secondary VFR List… / Uncontrolled List 2…
-
-The Secondary VFR List / Uncontrolled List 2 is another VFR list to be used if different filtering options are needed.
-
-\subsection{ETWR List}
-\label{list:etwr}
-
-Global Menu -> ControlTools/Tools -> Flight Plan Lists -> ETWR List...
-
-The ETWR List is a EuroScope-style list containing notified and coordinated flights departing from specified airports
-
-\subsection{Resectorisation List}
-\label{list:resec}
-
-Global Menu -> ControlTools/Tools -> Flight Plan Lists -> Resectorisation List…
-
-The Resectorisation List is a EuroScope-style list containing all flights assumed or on-contact with specified LFUNCs (controller IDs).
-
-\subsection{Traffic Management List 1}
-\label{list:tml1}
-
-Global Menu -> ControlTools/Tools -> Flight Plan Lists -> Traffic Management List 1…
-
-The Traffic Management List 1 is a EuroScope-style list containing all uncontrolled flights and controlled flights at least in coordinated state with specified destinations, and routing via specified points. The ETO over the point (or ETA if no point specified) must be within 30 minutes, and the destination must be specified to include uncontrolled flights in the list.
-
-\subsection{Traffic Management List 2}
-\label{list:tml2}
-
-Global Menu -> ControlTools/Tools -> Flight Plan Lists -> Traffic Management List 2…
-
-The Traffic Management List 2 is another Traffic Management list to be used if different filtering options are needed.
-
-\subsection{Lost List}
-\label{list:lost}
-
-Global Menu -> ControlTools/Tools -> Flight Plan Lists -> Lost List…
-
-The list includes assumed flights that have previously been correlated to a radar track but radar contact has been lost. By default, the list opens automatically whenever a flight is added into it, and will be closed automatically when empty. If manually opened, the list cannot be manually closed until it is empty.
-
-\includegraphics{img/llist.png}
-
-The lost list contains the following fields:
-
-\begin{tabular}{l l l l}
-    Field                   & Type        & Left click                              & Right click\\
-    Callsign                & mandatory   & Open \textit{\titleref{menu:cs}}                      & -\\
-    N/ATYP                  & optional    & -                                       & -\\
-    AFL (last received)     & optional    & -                                       & Toggle route draw\\
-    CFL                     & optional    & Open CFL menu                           & Toggle route draw\\
-    ASSR                    & mandatory   & Open ASSR menu                          & -\\
-    FPASD                   & optional    & Toggle FPASD track (when globally off)  & -\\
-    Lost (time)             & optional    & -                                       & -\\
-\end{tabular}
-
-“View” opens the View menu:
-
-\begin{tabular}{l l}
-    Header      & Toggle visibility of the list header line\\
-    Standard    & Set the list in Standard mode (only mandatory fields shown)\\
-    Extended    & Set the list in Extended mode  \\
-\end{tabular}
-
-“Options” opens the Options menu to select which optional fields are shown in Extended mode. The “All” selection shows all fields without affecting the individual selections.
-
-The rows are sorted based on “Lost” time in descending order.
-
-With TopSky set up to automatically open the Lost List when not empty, when a flight is added into the Lost List, its FPASD selection is initially set to “on” regardless of the FPASD setting in the Global menu.
-
-\subsection{Holding List}
-\label{list:hold}
-
-The Holding List contains aircraft in the assumed, transfer initiated and on-contact with the position states that have been given a holding clearance. The list is automatically displayed whenever there is at least one aircraft in the list.
-
-\includegraphics{img/hlist.png}
-
-“View” opens the View menu which contains only one item, “Header”. It toggles the visibility of the list’s header line.
-
-“Options” is inaccessible as there are no selectable options in the holding list.
-
-The list sorting option is displayed next to the “Options” label. Clicking on it opens a menu to select between the following sorting options:
-
-\begin{tabular}{l l}
-    “ETO on Holding point”  & ETO at the holding point -> Holding point name -> Callsign\\
-    “Holding point”         & Holding point name -> CFL -> Callsign\\
-\end{tabular}
-
-The ETO column initially displays the estimated time over the holding fix. Once the aircraft enters the holding, the displayed time is fixed to the holding start time. For present position holds and holding points whose positions are unknown, the time when the holding clearance was given is displayed.
-
-\begin{tabular}{l l l}
-    Field                   & Left click                          & Right click\\
-    Label                   & Hide/display track label            & -\\
-    Callsign                & Open \textit{\titleref{menu:cs}}    & -\\
-    AFL                     & Open \textit{\titleref{menu:afl}}   & Toggle route draw\\
-    (attitude indicator)    & -                                   & -\\
-    CFL                     & Open \textit{\titleref{menu:cfl}}   & Toggle route draw\\
-    HPT                     & Open \textit{\titleref{win:smw}}    & -\\
-    ETO                     & -                                   & -\\ 
-\end{tabular}
-
-If a track label has been hidden, it will be automatically unhidden if the aircraft is cleared to leave the holding or an incoming coordination message for the flight is received.
 
 \section{Flight Leg}
 The Flight Leg displays the aircraft’s planned track in one-minute steps. Each one-minute-long part of the
