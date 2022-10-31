@@ -3572,7 +3572,7 @@ In case the server connection is not re-established within a certain time, the c
 
 During temporary connection issues and also when the connection is automatically closed, the “AGCS” system label in the \textit{\titleref{win:geninfo}} will be displayed with \colorref{color:Warning} color until a connection is re-established.
 
-If the CPDLC connection is terminated by the pilot, a “CPDLC P ABT” warning is inserted above the label in “CPDLC Failed” color:
+If the CPDLC connection is terminated by the pilot, a “CPDLC P ABT” warning is inserted in line 0 of the label in \colorref{color:CPDLC Failed} color:
 
 \begin{tabular}{
   >{\columncolor{Flight Highlight}}l 
@@ -3586,8 +3586,7 @@ If the CPDLC connection is terminated by the pilot, a “CPDLC P ABT” warning 
 
 Left-clicking on the warning acknowledges it.
 
-If an uplink clearance is not answered in time, a “<message type> P LATE” warning will be inserted above
-the label in “CPDLC Pilot Late” color:
+If an uplink clearance is not answered in time, a “<message type> P LATE” warning will be inserted in line 0 of the label in \colorref{color:CPDLC Pilot Late} color:
 
 \begin{tabular}{
   >{\columncolor{Flight Highlight}}l 
@@ -3600,9 +3599,9 @@ the label in “CPDLC Pilot Late” color:
   {\color{CPDLC Pilot Late} [200]} & & \\         
 \end{tabular}
 
-Left-clicking on it opens a menu that gives options to either abort the clearance or answer it yourself with “WILCO” (after confirmation from the pilot of course).
+Left-clicking on it opens a menu with options to either abort the clearance or manually mark it as aswered with “WILCO”. Manually marking should be done only after a satisfactory readback is obtained by voice.
 
-If sending an uplink clearance failed, a “<message type> ERR” warning will be inserted above the label in “CPDLC Failed” color:
+If sending an uplink clearance failed, a “<message type> ERR” warning will be inserted in line 0 of the label in \colorref{color:CPDLC Failed} color:
 
 \begin{tabular}{
   >{\columncolor{Flight Highlight}}l 
@@ -3617,7 +3616,7 @@ If sending an uplink clearance failed, a “<message type> ERR” warning will b
 
 Left-clicking acknowledges the warning and aborts the clearance, displaying the previous value in the label.
 
-If an uplink clearance is sent successfully but you are not the currently active ATC unit in the aircraft’s CPDLC system, a “<message type> NOT CDA” warning will be inserted above the label in “CPDLC Failed” color:
+If an uplink clearance is sent successfully but you are not the Current Data Unit in the aircraft’s CPDLC system, a “<message type> NOT CDA” warning will be inserted in line 0 of the label in \colorref{color:CPDLC Failed}:
 
 \begin{tabular}{
   >{\columncolor{Flight Highlight}}l 
