@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper,oldfontcommands]{memoir}
+\documentclass[11pt,a4paper]{memoir}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{microtype}
@@ -213,10 +213,10 @@ bookmarks=true,bookmarksopenlevel=2]{hyperref}
 %\linespread{1.3}
 
 %%% CHAPTER'S STYLE
-\chapterstyle{ell}
+%\chapterstyle{bianchi}
 %\chapterstyle{ger}
 %\chapterstyle{madsen}
-%\chapterstyle{ell}
+\chapterstyle{ell}
 %%% STYLE OF SECTIONS, SUBSECTIONS, AND SUBSUBSECTIONS
 \setsecheadstyle{\Large\bfseries\sffamily\raggedright}
 \setsubsecheadstyle{\large\bfseries\sffamily\raggedright}
@@ -301,6 +301,7 @@ Although - as its name suggests - the TopSky plugin is based on TOPLIS and the T
 
 \section{Foreword}
 EuroScope, a controller client developed by Gergely Csernák for the VATSIM network, was first released for public use in September 2007. One of the biggest changes in version 3.1 was the possibility for the user community to customize the program to an even higher degree than was possible before by writing their own plugins that can be used to alter the way information is presented and even create completely new functionality into the program. This allowed creating very detailed simulations of all kinds of ATC systems without making the main program overly complex. Version 3.2 expands on these possibilities, making it possible to create even better plugins.
+
 The TopSky plugin (a.k.a. The Plugin Formerly Known As “EUROCAT 2000 E”) started out as a very small project to create a couple of customized aircraft tag items, but as more information about the real system and the possibilities with the plugin development became available, it slowly grew to include an almost complete set of tag items, tag menus, graphical elements on the radar display and some additional functionality.
 
 \chapter{System Description}
@@ -424,6 +425,7 @@ specific only, so they will be lost when exiting EuroScope.
 \medskip
 
 \subsection*{RR Main submenu}
+\label{menu:rr}
 \begin{tabular}{l l}
     - [] Rings On/Off & Toggles the range rings on/off\\
     - Point & Sets the rings centerpoint. Either click on the radar screen or enter the desired point in the text field. Fixes, VORs, NDBs and airports from the active sector file can be used as well as coordinates in the flight plan format (DD[N/S]DDD[E/W] or DDMM[N/S]DDDMM[E/W], e.g. 60N025E or 0811S00300W). Entering an empty text string resets the rings to be shown at the radar screen centerpoint.\\
@@ -463,34 +465,34 @@ Opens the \textit{\titleref{win:fpsw}} and \textit{\titleref{win:fpw}}.
 \subsection*{Flight Plan Lists submenu}
 
 \begin{tabular}{l l}
-    - [] List options bar           & Toggles the display of list options on the Global Menu
-    \\- Sector List…                & Opens the Sector List
-    \\- [] Informed                 & Toggles the display of informed aircraft
-    \\- [] Concerned                & Toggles the display of concerned aircraft
-    \\- [] Redundant                & Toggles the display of redundant aircraft
-    \\- Load Factor List…           & Opens the \textit{\titleref{list:load}}
-    \\- ETWR List…                  & Opens the \textit{\titleref{list:etwr}}
-    \\- <adep>                      & ETWR List departure airports filter
-    \\- Uncont. List 1…             & Opens the \textit{\titleref{list:uncon1}}
-    \\- <filter>                    & Uncontrolled 1 List state filter
-    \\- <units>                     & Uncontrolled 1 List units filter
-    \\- Uncont. List 2…             & Opens the \textit{\titleref{list:uncon2}}
-    \\- <filter>                    & Uncontrolled 2 List state filter
-    \\- <units>                     & Uncontrolled 2 List units filter
-    \\- Lost List…                  & Opens the \textit{\titleref{list:lost}}
-    \\- Resectorisation List…       & Opens the \textit{\titleref{list:resec}}
-    \\- <lfunc>                     & Resectorisation List LFUNC filter
-    \\- Traffic Mgmt. List 1…       & Opens the \textit{\titleref{list:tml1}}
-    \\- <state>                     & Traffic Management List 1 flight plan state filter
-    \\- <ades>                      & Traffic Management List 1 destination airports filter
-    \\- <via>                       & Traffic Management List 1 route points filter
-    \\- Traffic Mgmt. List 2…       & Opens the \textit{\titleref{list:tml2}}
-    \\- <state>                     & Traffic Management List 2 flight plan state filter
-    \\- <ades>                      & Traffic Management List 2 destination airports filter
-    \\- <via>                       & Traffic Management List 2 route points filter
+    - [] List options bar           & Toggles the display of list options on the Global Menu\\
+    - Sector List…                & Opens the Sector List\\
+    - [] Informed                 & Toggles the display of informed aircraft\\
+    - [] Concerned                & Toggles the display of concerned aircraft\\
+    - [] Redundant                & Toggles the display of redundant aircraft\\
+    - Load Factor List…           & Opens the \textit{\titleref{list:load}}\\
+    - ETWR List…                  & Opens the \textit{\titleref{list:etwr}}\\
+    - <adep>                      & ETWR List departure airports filter\\
+    - Uncont. List 1…             & Opens the \textit{\titleref{list:uncon1}}\\
+    - <filter>                    & Uncontrolled 1 List state filter\\
+    - <units>                     & Uncontrolled 1 List units filter\\
+    - Uncont. List 2…             & Opens the \textit{\titleref{list:uncon2}}\\
+    - <filter>                    & Uncontrolled 2 List state filter\\
+    - <units>                     & Uncontrolled 2 List units filter\\
+    - Lost List…                  & Opens the \textit{\titleref{list:lost}}\\
+    - Resectorisation List…       & Opens the \textit{\titleref{list:resec}}\\
+    - <lfunc>                     & Resectorisation List LFUNC filter\\
+    - Traffic Mgmt. List 1…       & Opens the \textit{\titleref{list:tml1}}\\
+    - <state>                     & Traffic Management List 1 flight plan state filter\\
+    - <ades>                      & Traffic Management List 1 destination airports filter\\
+    - <via>                       & Traffic Management List 1 route points filter\\
+    - Traffic Mgmt. List 2…       & Opens the \textit{\titleref{list:tml2}}\\
+    - <state>                     & Traffic Management List 2 flight plan state filter\\
+    - <ades>                      & Traffic Management List 2 destination airports filter\\
+    - <via>                       & Traffic Management List 2 route points filter\\
 \end{tabular}
 
-When enabled, the list options bar displays “Info Conc Redu Filter Filter” on the right edge of the Global Menu. The first three toggle the respective settings for the Sector List and are colored with the appropriate color when enabled, and the last two are displayed in “VFR” color when the corresponding Uncontrolled list is somehow filtered. Clicking on them opens the Flight Plan Lists submenu to change the filtering options.
+When enabled, the list options bar displays “Info Conc Redu Filter Filter” on the right edge of the Global Menu. The first three toggle the respective settings for the Sector List and are colored with the appropriate color when enabled, and the last two are displayed in \colorref{color:VFR} color when the corresponding Uncontrolled list is somehow filtered. Clicking on them opens the Flight Plan Lists submenu to change the filtering options.
 
 Left-clicking <filter> cycles through “ALL” (no filtering), “ON-CONTACT” (only tracks on-contact with anyone), “ON-CONTACT-PPOS” (only tracks on-contact with you) and “FREE” (only tracks in the free state).
 
@@ -535,10 +537,11 @@ Not implemented (always shows a zero value).
 When holding <ALT>, text labels will be displayed for airports, fixes, NDBs and VORs when the mouse cursor is placed over them. When one or more of the categories in the Info menu is selected, only those categories will display the labels. The “Label” buttons open submenus to select what information is shown on the corresponding labels. All the information is from the active sector file.
 
 \subsection{MSG menu}
+
 \begin{tabular}{l l}
 - Notepad…              & Opens the \textit{\titleref{win:note}}
 \\- Personal Queue…     & Opens the \textit{\titleref{win:pqw}}
-\\- ATC Messages…       & Opens the \textit{\titleref{win:atcmwm}}
+\\- ATC Messages…       & Opens the \textit{\titleref{win:atcmw}}
 \\- Prim Freq Messages… & Opens the \textit{\titleref{win:pfmw}}
 \\- NAT Track Messages… & Opens the \textit{\titleref{win:nattmw}}
 \\- Text notes >        & Opens the Text notes submenu
@@ -551,17 +554,18 @@ When creating a note, a text entry field opens to enter the note text. When the 
 The notes can be deleted one by one or all of them at the same time. When deleting one by one, the notes are boxed to display their click areas. Clicking on one will delete the note. Pressing the [Esc] key or selecting the “Delete...” menu item again will abort the operation.
 
 \subsection*{Text notes submenu}
+
 \begin{tabular}{l l}
 \\- Create…     & Creates a new text note
 \\- Delete…     & Deletes a single text note
 \\- Delete all  & Deletes all text notes
 \end{tabular}
 
-\medskip
-
 \subsection{[x]}
+
 Shows the number of high priority messages in the personal message queue. These are critical failures in TopSky code. Open the Personal Queue Window to view the messages. The number is limited to 99, and is shown on “Global Menu Highlight” background when the window is not open. 
 \subsection{[x]}
+
 Shows the number of low priority messages in the personal message queue. These are warnings about invalid data in TopSky data files. Open the Personal Queue Window to view the messages or see TopSky Status submenu for more detailed information on the problem(s). The number is limited to 99, and is shown on “Global Menu Highlight” background when the window is not open. 
 \subsection{STS menu}
 \begin{tabular}{l l}
@@ -582,10 +586,11 @@ Shows the version of TopSky as well as some information on the loaded data files
 \begin{tabular}{l l}
 - OK        & File contains usable information and no faults\\
 - NO DATA   & File not found or contains no usable information\\
-- BAD DATA  & File contains invalid data (in “Warning” color)\\
+- BAD DATA  & File contains invalid data (in \colorref{color:Warning} color)\\
 \end{tabular}
 
-Depending on the file, there are one to three of the following buttons available:\\
+Depending on the file, there are one to three of the following buttons available:
+
 \begin{tabular}{l l}
 - Reload                    & Reloads the data file\\
 - View                    & Displays the data in the file on the radar display\\
@@ -602,9 +607,10 @@ Depending on the maps data file setup, the display state of some or all of the m
 Right-clicking the Reload button for Settings \& SettingsL has a special purpose. It opens a text entry box to type in a callsign whose settings should be loaded instead of the real login callsign. When entered, the callsign will be displayed next to the “Reload” button, and whenever a VATSIM callsign change is detected, an information popup is displayed to remind that TopSky settings are still forced to the manually entered callsign. This feature can be used for example to use settings for different positions on different EuroScope instances when providing top-down services, or to use settings for a specific position when logged in with an observer/staff/supervisor callsign. Clearing the entered callsign reverts to using the settings based on the actual login callsign.
 
 \subsection*{Supervisory submenu}
+
 \begin{tabular}{l l}
-- Operations Rate...     & Opens the \textit{\titleref{win:or}}\\
-- Predicted Traffic... & Opens the \textit{\titleref{win:pt}}\\
+- Operations Rate...     & Opens the \textit{\titleref{win:orw}}\\
+- Predicted Traffic... & Opens the \textit{\titleref{win:ptw}}\\
 \end{tabular}
 \medskip 
 
@@ -722,35 +728,6 @@ shown for radar tracks that aren’t correlated with a flight plan.
 \medskip
 
 Refer to your setup specific documentation for detailed descriptions of the track labels.\\
-
-\section{Flight Leg}
-The Flight Leg displays the aircraft’s planned track in one-minute steps. Each one-minute-long part of the
-path is colored according to the results of the MTCD and SAP processing. The following colors are possible:
-\medskip
-
-\begin{tabular}{l l}
-“Urgency FL”        & MTCD and/or SAP conflic\\
-“Warning FL”      & MTCD and/or SAP risk\\
-“Potential FL”    & MTCD potential conflict\\
-“Information FL”  & MTCD and/or SAP processing available, no conflicts or risks detected\\
-“Flight Leg”      & No MTCD or SAP processing available for this part of the Flight Leg\\
-\end{tabular}
-\medskip
-
-If the aircraft has an assigned heading or is not following its route, the predictions only go up to 10 minutes
-and assume the aircraft continues on its present ground track. In this case the predicted track is shown as a
-dashed line when the flight leg is displayed.
-
-The Flight Leg is displayed by clicking on various track label and list items depending on the setup and is
-either automatically removed from display when the mouse cursor leaves the label area or must be
-manually toggled off, depending on the function that was used to display it.
-
-The label that’s shown on each route point includes the following predefined fields
-\begin{tabular}{l l}
-\includegraphics{img/fleto.png}     & Estimated Time Over the point\\
-\includegraphics{img/fltoc.png}   & Top of Climb\\
-\includegraphics{img/fltod.png}   & Top of Descent\\
-\end{tabular}
 
 \section{Track Label Menus}
 These menus are opened from track label fields or flight lists. Except for the confirmation windows, they
@@ -1879,7 +1856,7 @@ The window is split into three columns:
     Leave Hold:         & Aircraft cleared to leave the holding\\   
 \end{tabular}
 
-The window displays the aircraft labels at their cleared flight levels. For each aircraft the callsign, the vertical speed arrow if not in level flight (“\#” in “Warning” color for aircraft without altitude information), the RVSM capability indicator if applicable, and the CFL is displayed. If there are more than one aircraft with the same CFL, only one callsign will be shown. A “ + ” symbol in “SMW Overlap Box” color after the CFL value indicates that there are more flights to be displayed. Clicking on the symbol will display a window with all the callsigns with that CFL.
+The window displays the aircraft labels at their cleared flight levels. For each aircraft the callsign, the vertical speed arrow if not in level flight (“\#” in \colorref{color:Warning} color for aircraft without altitude information), the RVSM capability indicator if applicable, and the CFL is displayed. If there are more than one aircraft with the same CFL, only one callsign will be shown. A “ + ” symbol in “SMW Overlap Box” color after the CFL value indicates that there are more flights to be displayed. Clicking on the symbol will display a window with all the callsigns with that CFL.
 
 For each aircraft an altitude box will be drawn that extends from AFL to CFL. Normally the color of the box is “SMW Level Band”, but in the Hold and Leave Hold columns if it is closer than 300ft or overlaps any other aircraft’s box, the color will be “SMW Overlap”. For an aircraft with a CLAM alert, the box will be in “SMW Overshoot” color. A flight level reserved for an overflight is shown in “SMW Overflight” color. The altitude box of aircraft in the Leave Hold column extends into the Hold column as well.
 
@@ -1909,7 +1886,7 @@ Global Menu -> ControlTools/Tools -> CARD..
 
 The CARD window presents the MTCD conflicts and conflict risks. It also allows setting some of the related parameters. It is divided into two parts:
 
-On the left is the list area which includes all the detected conflicts and shows the concerned aircrafts’ callsigns. A conflict or potential predicted conflict has an “Urgency” colored label and a risk or potential risk of conflict has a “Warning” one. Potential conflicts are displayed with “Potential” colored labels. The conflict numbers are shown in “CARD Conflict Number” color. An \colorref{color:Urgency} colored background on a callsign means that the aircraft also has a Short Term Conflict Alert. A highlighted callsign will be highlighted in this list as well. An acknowledged conflict (shown in “Unconcerned” color) will not display the MTCD warning in the track label. An acknowledged problem will be automatically de-acknowledged if the predicted minimum separation decreases by a predefined amount.
+On the left is the list area which includes all the detected conflicts and shows the concerned aircrafts’ callsigns. A conflict or potential predicted conflict has an \colorref{color:Urgency} colored label and a risk or potential risk of conflict has a “Warning” one. Potential conflicts are displayed with “Potential” colored labels. The conflict numbers are shown in “CARD Conflict Number” color. An \colorref{color:Urgency} colored background on a callsign means that the aircraft also has a Short Term Conflict Alert. A highlighted callsign will be highlighted in this list as well. An acknowledged conflict (shown in “Unconcerned” color) will not display the MTCD warning in the track label. An acknowledged problem will be automatically de-acknowledged if the predicted minimum separation decreases by a predefined amount.
 
 Hovering the mouse cursor over a conflict label will display the conflict on the radar screen.
 
@@ -1999,7 +1976,7 @@ From the “View” menu it is possible to toggle various MTCD related:
 
 * The availability of these items in the menu depends on TopSky setup
 
-The PEL and XFL values are displayed in “Coordination” color, or in “Proposition” if being coordinated. After a refused coordination, the original value is shown in “Warning” color. The CFL value is displayed as a horizontal line across the screen.
+The PEL and XFL values are displayed in “Coordination” color, or in “Proposition” if being coordinated. After a refused coordination, the original value is shown in \colorref{color:Warning} color. The CFL value is displayed as a horizontal line across the screen.
 
 \subsection{Message In Window}
 \label{win:miw}
@@ -2230,7 +2207,7 @@ Global Menu -> MET -> Messages...
 
 The Weather Messages Window displays weather related messages. By default, METAR/SPECI messages are shown. To view other types of messages, left-click on the desired option button (the “LLF” and “AIREP” options are not available).
 
-By default, with the “METAR/SPECI” option button chosen, this window displays the METARs you have requested from the VATSIM server (i.e. [F2] <icao>) and any METARs EuroScope requests automatically. Whenever a new METAR is received from the server it is added to the list (an old METAR is removed when a newer one is received from the same station). New METARs and TAFs are displayed in “Warning” color until the mouse cursor is positioned on them (for the decoded METAR, this applies only for the first row).
+By default, with the “METAR/SPECI” option button chosen, this window displays the METARs you have requested from the VATSIM server (i.e. [F2] <icao>) and any METARs EuroScope requests automatically. Whenever a new METAR is received from the server it is added to the list (an old METAR is removed when a newer one is received from the same station). New METARs and TAFs are displayed in \colorref{color:Warning} color until the mouse cursor is positioned on them (for the decoded METAR, this applies only for the first row).
 
 In addition, the window can display SIGMETs, SNOWTAMs and TAFs. The SIGMETs are retrieved when the “SIGMET” button is selected for the first time. Selecting the “SNOWTAM” or “TAF” option will open the \textit{\titleref{menu:ad}} where the desired stations must be selected. SNOWTAM data is downloaded together with the NOTAMs (as of writing this, they are not included in the data and hence unavailable for TopSky). If TopSky is configured to use a non-VATSIM METAR source, the METAR/SPECI list behaves the same way as the TAF list (stations must be selected from a list). The messages are automatically updated at specified intervals - the status bar at the bottom displays the remaining time to the next automatic update when the mouse cursor is over the window area.
 
@@ -2295,14 +2272,14 @@ The General Information Window displays basic information on the system state. T
     QNH                 & Shows the local QNH value (below the “Normal” item when available)\\
     CPDLC Def           & Displays the state of the CPDLC Default setting\\
     FPASD               & Displays the state of the FPASD setting Alert\\
-    Alert functions     & Status of the alert functions. The function name is shown in “Warning” color if selected off or there’s a fault in the data file.\\
+    Alert functions     & Status of the alert functions. The function name is shown in \colorref{color:Warning} color if selected off or there’s a fault in the data file.\\
     CCAMS               & Plugin selected as the code source:\\
-                        & $\bullet$ “Urgency” color if the SSR data file contains no codes\\
-                        & $\bullet$ “Warning” color if simulated traffic is not downloaded\\
+                        & $\bullet$ \colorref{color:Urgency} color if the SSR data file contains no codes\\
+                        & $\bullet$ \colorref{color:Warning} color if simulated traffic is not downloaded\\
                         & ESE file or fixed range selected as the code source:\\
-                        & $\bullet$ “Warning” color\\
-    AGCS                & “Warning” color if Hoppie datalink comms are failed\\
-    MTCD                & “Warning” color if prediction time is set to zero    \\
+                        & $\bullet$ \colorref{color:Warning} color\\
+    AGCS                & \colorref{color:Warning} color if Hoppie datalink comms are failed\\
+    MTCD                & \colorref{color:Warning} color if prediction time is set to zero    \\
 \end{tabular}
 
 \subsection{Document Viewer Window}
@@ -2424,7 +2401,7 @@ Global Menu -> Messages/MSG -> Prim Freq Messages...
 
 These windows display up to 99 last messages transmitted on the relevant text channel (“ATC” or the primary frequency). Each message line displays a time stamp, the sender callsign (blank if you) and the message itself.
 
-New incoming messages are displayed in “Warning” color until left-clicked to mark them as read. Left-double-clicking on any message will mark all messages in the window read. The windows do not resize automatically to show all the messages in them, but the number in the title bar shows the total number of messages in the window. If the window is not wide enough to fit a complete message, it will display “…” in the end to indicate that there is more information. Holding a mouse button down on a message will display the entire message.
+New incoming messages are displayed in \colorref{color:Warning} color until left-clicked to mark them as read. Left-double-clicking on any message will mark all messages in the window read. The windows do not resize automatically to show all the messages in them, but the number in the title bar shows the total number of messages in the window. If the window is not wide enough to fit a complete message, it will display “…” in the end to indicate that there is more information. Holding a mouse button down on a message will display the entire message.
 
 \subsection{NAT Track Messages Window}
 \label{win:nattmw}
@@ -2526,7 +2503,7 @@ The “Dep” and “Arr” buttons control whether departures and/or arrivals s
 
 The “RWY” label allows entering one or more runway identifiers to filter traffic based on the assigned runway.
 
-The numbers on the right side are the caution and warning limits. The rates are color coded so that a rate at or below the caution limit will be shown in “Information” color, a rate above that but at or below the warning limit in “Warning” and a rate above that in “Urgency”. When both arrivals and departures are selected for display, the departures are shown with a hatched color.
+The numbers on the right side are the caution and warning limits. The rates are color coded so that a rate at or below the caution limit will be shown in \colorref{color:Information} color, a rate above that but at or below the warning limit in “Warning” and a rate above that in “Urgency”. When both arrivals and departures are selected for display, the departures are shown with a hatched color.
 
 \begin{tabular}{l l}
     ICAO        & Enter airport identifier\\
@@ -2546,7 +2523,7 @@ The Predicted Traffic Window shows the number of aircraft that are predicted to 
 
 A number of these windows can be opened to simultaneously view multiple controllers’ situation. In the area below the title bar, the left side shows the controller ID whose traffic is being monitored (a gray label “ID” is shown if no controller ID is selected yet). Left-click on the text to enter a new ID.
 T
-he numbers on the right side are the caution and warning limits. To change them, left-click on them and re-enter in the same format (warning can’t be lower than caution; numbers must be separated by a forward slash). The traffic numbers are color coded so that a number at or below the caution limit will be shown in “Information” color, a number above that but at or below the warning limit in “Warning” and a number above that in “Urgency”.
+he numbers on the right side are the caution and warning limits. To change them, left-click on them and re-enter in the same format (warning can’t be lower than caution; numbers must be separated by a forward slash). The traffic numbers are color coded so that a number at or below the caution limit will be shown in \colorref{color:Information} color, a number above that but at or below the warning limit in “Warning” and a number above that in “Urgency”.
 
 The two sliders change the traffic number and time scales.
 
@@ -2597,7 +2574,7 @@ The Pre-Departure Clearance Window is used to issue departure clearances, either
 
 The NPT, NFREQ, DFREQ, START and RMK fields are only displayed if a datalink clearance has been requested and the clearance format (defined in the CPDLC data file) includes them.
 
-The RWY field text is displayed in “Proposition” color if the clearance has not yet been issued and the selected runway is not active for departure. The CFL level background is displayed in “Warning” color for DEL/GND/TWR/APP/DEP controllers when it is above XFL, and for CTR/FSS controllers when it is above PEL.
+The RWY field text is displayed in “Proposition” color if the clearance has not yet been issued and the selected runway is not active for departure. The CFL level background is displayed in \colorref{color:Warning} color for DEL/GND/TWR/APP/DEP controllers when it is above XFL, and for CTR/FSS controllers when it is above PEL.
 
 When the datalink clearance format includes the possibility to switch between “track” and “heading” modes, the “AHDG” label is displayed as a button. Left-click on it to toggle between “AHDG” and “TRACK”.
 
@@ -2775,6 +2752,36 @@ The ETO column initially displays the estimated time over the holding fix. Once 
 
 If a track label has been hidden, it will be automatically unhidden if the aircraft is cleared to leave the holding or an incoming coordination message for the flight is received.
 
+\section{Flight Leg}
+The Flight Leg displays the aircraft’s planned track in one-minute steps. Each one-minute-long part of the
+path is colored according to the results of the MTCD and SAP processing. The following colors are possible:
+\medskip
+
+\begin{tabular}{l l}
+\colorref{color:Urgency FL}      & MTCD and/or SAP conflic\\
+\colorref{color:Warning FL}      & MTCD and/or SAP risk\\
+\colorref{color:Potential FL}    & MTCD potential conflict\\
+\colorref{color:Information FL}  & MTCD and/or SAP processing available, no conflicts or risks detected\\
+\colorref{color:Flight Leg}      & No MTCD or SAP processing available for this part of the Flight Leg\\
+\end{tabular}
+\medskip
+
+If the aircraft has an assigned heading or is not following its route, the predictions only go up to 10 minutes
+and assume the aircraft continues on its present ground track. In this case the predicted track is shown as a
+dashed line when the flight leg is displayed.
+
+The Flight Leg is displayed by clicking on various track label and list items depending on the setup and is
+either automatically removed from display when the mouse cursor leaves the label area or must be
+manually toggled off, depending on the function that was used to display it.
+
+The label that’s shown on each route point includes the following predefined fields
+
+\begin{tabular}{l l}
+\includegraphics{img/fleto.png}     & Estimated Time Over the point\\
+\includegraphics{img/fltoc.png}   & Top of Climb\\
+\includegraphics{img/fltod.png}   & Top of Descent\\
+\end{tabular}
+
 \section{Safety Nets}
 
 \subsection{AIW (Airspace Infringement Warning)}
@@ -2796,7 +2803,7 @@ The APW system warns if an aircraft is inside or about to enter an active area i
 
 \subsection*{Alert display}
 
-An alert is shown by coloring the CALLSIGN item background (plugin drawn windows) or the text itself (elsewhere where TopSky can’t control the background color) in “Warning” color unless the CALLSIGN item has been manually highlighted, and also by displaying the text “APW” in the ALRT track label field (an MSAW alert will have priority over an APW alert there).
+An alert is shown by coloring the CALLSIGN item background (plugin drawn windows) or the text itself (elsewhere where TopSky can’t control the background color) in \colorref{color:Warning} color unless the CALLSIGN item has been manually highlighted, and also by displaying the text “APW” in the ALRT track label field (an MSAW alert will have priority over an APW alert there).
 
 \subsection{MSAW (Minimum Safe Altitude Warning)}
 
@@ -2818,9 +2825,9 @@ In the vertical plane there is an option to always assume that an aircraft will 
 
 \subsection*{Alert display}
 
-An alert is shown by coloring the CALLSIGN item background (plugin drawn windows) or the text itself (elsewhere where TopSky can’t control the background color) in “Urgency” color. A one-minute-long prediction line is displayed in “Urgency” color regardless of the prediction line settings. 
+An alert is shown by coloring the CALLSIGN item background (plugin drawn windows) or the text itself (elsewhere where TopSky can’t control the background color) in \colorref{color:Urgency} color. A one-minute-long prediction line is displayed in \colorref{color:Urgency} color regardless of the prediction line settings. 
 
-In addition to the above, the radar position symbol and history dots are displayed in “Urgency” color.
+In addition to the above, the radar position symbol and history dots are displayed in \colorref{color:Urgency} color.
 
 An aural alert can also be generated if the corresponding plugin setting is enabled.
 
@@ -2895,7 +2902,7 @@ For the predictions to be accurate, it’s very important to keep the CFL and th
 
 If there is a conflict or potential predicted conflict for the aircraft within the set warning parameters (can be set to warn for risks as well), the following indications are shown. The default values are 10 minutes to loss of separation with a 7nm separation minimum.
 
-MTCD track label field Either “•” in “Urgency” color or “MTCD” in “Warning” color
+MTCD track label field Either “•” in \colorref{color:Urgency} color or “MTCD” in \colorref{color:Warning} color
 
 The MTCD conflicts are also displayed in the \textit{\titleref{win:card}}).
 
@@ -3052,7 +3059,7 @@ The example labels below show a HOP with an assigned heading proposal:
 Transferring controller:
 
 \begin{itemize}
-  \item SI item and any proposed values in “Proposition Out” color
+  \item SI item and any proposed values in \colorref{color:Proposition Out} color
   \item Message in Message Out Window
 \end{itemize}
 
@@ -3069,7 +3076,7 @@ Transferring controller:
 Accepting controller:
 
 \begin{itemize}
-  \item Callsign item and any proposed values in “Proposition In” color
+  \item Callsign item and any proposed values in \colorref{color:Proposition In} color
   \item Message in Message In Window
 \end{itemize}
 
@@ -3117,7 +3124,7 @@ To send a ROF message, select the “ROF” option in the \textit{\titleref{menu
 Transferring controller:
 
 \begin{itemize}
-  \item ROF text in “Proposition In” color
+  \item ROF text in \colorref{color:Proposition In} color
   \item Message in Message In Window
 \end{itemize}
 
@@ -3134,21 +3141,21 @@ Transferring controller:
 Accepting controller:
 
 \begin{itemize}
-  \item ROF text in “Proposition Out” color
+  \item ROF text in \colorref{color:Proposition Out} color
   \item Message in Message Out Window
 \end{itemize}
 
 The indications are removed when a “Transfer”, “Trf \& release” or “HOP” is performed.
 
 \begin{Note}
-  If a ROF is sent to a controller not using the TopSky plugin or the message fails to go through, an error message will be put into the Personal Queue Window. The message counter in the Global Menu will be highlighted in “Warning” color if the window is not open.
+  If a ROF is sent to a controller not using the TopSky plugin or the message fails to go through, an error message will be put into the Personal Queue Window. The message counter in the Global Menu will be highlighted in \colorref{color:Warning} color if the window is not open.
 \end{Note}
 
 \section{RTI/TIP}
 
 These messages are used to request/propose the transfer of a flight on an assigned heading, speed or rate of climb/descent. RTI (Request Tactical Instructions) is a request initiated by the accepting controller and TIP (Tactical Instructions Proposal) a proposal initiated by the transferring controller.
 
-In the examples below the RTI message is used. For the TIP message, the indications and actions are the same, only the roles are reversed – the transferring controller sends and the accepting controller answers the message, so the “Proposition” color used will be the other one, and the message will appear in the other Message Window.
+In the examples below the RTI message is used. For the TIP message, the indications and actions are the same, only the roles are reversed – the transferring controller sends and the accepting controller answers the message, so the message will appear in the other Message Window.
 
 To send the RTI message:
 
@@ -3162,7 +3169,7 @@ When the message is sent, the following indications are shown:
 Transferring controller:
 
 \begin{itemize}
-  \item Proposed value in “Proposition In” color
+  \item Proposed value in \colorref{color:Proposition In} color
   \item Message in Message In Window
 \end{itemize}
 
@@ -3179,7 +3186,7 @@ Transferring controller:
 Accepting controller:
 
 \begin{itemize}
-  \item Proposed value in “Proposition Out” color
+  \item Proposed value in \colorref{color:Proposition Out} color
   \item Message in Message Out Window
 \end{itemize}
 
@@ -3199,7 +3206,7 @@ Transferring controller:
 
 \begin{itemize}
   \item Accepted value in sector state color
-  \item Relevant label field value in “Information” color (until the accepted value is set)
+  \item Relevant label field value in \colorref{color:Information} color (until the accepted value is set)
   \item Message in Message Out Window
 \end{itemize}
 
@@ -3218,7 +3225,7 @@ Accepting controller:
 
 \begin{itemize}
   \item Accepted value in sector state color
-  \item Relevant label field value in “Information” color (until the accepted value is set)
+  \item Relevant label field value in \colorref{color:Information} color (until the accepted value is set)
   \item Message in Message In Window
 \end{itemize}
 
@@ -3240,7 +3247,7 @@ On the other hand, if “Reject” is chosen, the menu closes the indications ar
 Transferring controller:
 
 \begin{itemize}
-  \item Rejected value in “Warning” color
+  \item Rejected value in \colorref{color:Warning} color
   \item Message in Message Out Window
 \end{itemize}
 
@@ -3257,7 +3264,7 @@ Transferring controller:
 Accepting controller:
 
 \begin{itemize}
-  \item Rejected value in “Warning” color
+  \item Rejected value in \colorref{color:Warning} color
   \item Message in Message In Window
 \end{itemize}
 
@@ -3279,7 +3286,7 @@ A rejected coordination value will be removed from the label after a specified t
 
 \section{Coordinating more than one value}
 
-It is possible to coordinate more than one value, either before or after the previous proposal has been answered. It is important to note that the label field on line 0 will only show the last proposal or answer. Regardless of this, all the relevant label fields will have the “Information” color for accepted but not yet set values.
+It is possible to coordinate more than one value, either before or after the previous proposal has been answered. It is important to note that the label field on line 0 will only show the last proposal or answer. Regardless of this, all the relevant label fields will have the \colorref{color:Information} color for accepted but not yet set values.
 
 For example, if you send an RTI with AHDG 360 (as in the above example) and then send another with ASP 300 (either immediately or after the first coordination is answered), the label field on line 0 will only show the ASP proposal. When opening the Tactical Transfer menu, all the proposals and accepted values are shown. If more than one proposal is active, clicking on “Accept” or “Reject” will send the same answer to all of them. Therefore, it is recommended to wait for an answer until sending another proposal unless the intention of the proposal is to get “all or nothing”.
 
