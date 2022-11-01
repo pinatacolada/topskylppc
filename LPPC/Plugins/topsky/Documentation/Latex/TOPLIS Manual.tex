@@ -28,10 +28,14 @@
 
 \usepackage{topskycolors}
 
+\usepackage{enumitem}
+
 \newcounter{rowcounter}
 \newcommand{\nextrow}{\refstepcounter{rowcounter}}
 
 \newcommand{\colorref}[1]{\textit{\hyperref[#1]{\StrDel{#1}{color:}}}}
+
+\newcommand{\tagref}[1]{\textit{\hyperref[#1]{\StrDel{#1}{tag:}}}}
 
 \newcolumntype{t}{>{\tt}c}
 
@@ -594,6 +598,73 @@ In addition, each label except the extended one has an unselected and a selected
 Basically, the Standard label is shown for aircraft that are in or will enter the active sector and the Reduced label for aircraft that will not enter the active sector. The Extended label can be opened from the Standard or Reduced label and stays open as long as the cursor is within the label area. The Uncorrelated label is shown for radar tracks that aren’t correlated with a flight plan.
 
 Refer to your setup specific documentation for detailed descriptions of the track labels.
+
+\section{Track Labels}
+\label{tlabel}
+
+Unselected Track:
+
+\begin{enumerate}[label=Line \arabic*]
+  \item \tagref{tag:CPDLC E}
+\end{enumerate}
+
+\begin{enumerate}[label=Line \arabic*]
+  \item 
+\end{enumerate}
+
+Selected Track:
+
+\begin{enumerate}[label=Line \arabic*]
+  \item 
+\end{enumerate}
+
+\subsection{Standard Track Label}
+\label{tlabel:std}
+
+Unselected Track:
+
+\begin{enumerate}[label=Line \arabic*]
+  \item 
+\end{enumerate}
+
+Selected Track:
+
+\begin{enumerate}[label=Line \arabic*]
+  \item 
+\end{enumerate}
+
+\subsection{Reduced Track Label}
+\label{tlabel:red}
+
+Unselected Track:
+
+\begin{enumerate}[label=Line \arabic*]
+  \item 
+\end{enumerate}
+
+Selected Track:
+
+\begin{enumerate}[label=Line \arabic*]
+  \item 
+\end{enumerate}
+
+\subsection{Extended Track Label}
+\label{tlabel:ext}
+
+\begin{enumerate}[label=Line \arabic*]
+  \item 
+\end{enumerate}
+
+\subsection{Uncoupled Track Label}
+\label{tlabel:unc}
+
+\subsection{Minimised Track Label}
+\label{tlabel:min}
+
+\subsection{Label Compaction}
+\label{tlabel:comp}
+
+
 
 \section{Track Label Menus}
 
@@ -1613,7 +1684,7 @@ Altitudes are shown in hundreds of feet if at or below the transition altitude, 
 An area’s activation status can be inactive, pre-active or active. A pre-active area is an area that will become active within 30 minutes and is shown in yellow text on a gray background. An active area is shown with yellow text on a blue background. The APW system will not alert for a pre-active area, but for the SAP system a pre-active area is considered as being active.
 
 The mouse click areas of the Airspace Management Window:
-\begin{itemize}[\textbullet] 
+\begin{itemize} 
         \item Sorting option text (e.g. “Start date/time”) Opens a pop-up menu to select a sorting option for the list 
         \item Right-click to open an area pop-up menu
         \item Other fields Left-click to edit field (when edit function active)
@@ -1623,13 +1694,13 @@ The mouse click areas of the Airspace Management Window:
 \end{itemize}
 
 The sorting pop-up menu contains the following items:
-\begin{itemize}[\textbullet] 
+\begin{itemize}
         \item Start Date Sorts based on the Start Date/Time, earliest first
         \item Name Sorts alphabetically based on the Name field
         \item Map Text Sorts alphabetically based on the Map Text field 
 \end{itemize}
 With the area pop-up menu opened, the area text row background changes to black. The menu contains the following items:
-\begin{itemize}[\textbullet] 
+\begin{itemize}
         \item ACTIVATE Clears any activation times and activates the area
         \item DEACTIVATE Clears any activation times and deactivates the area
         \item AUTO If an activation schedule is found in the area data file, sets the
@@ -3865,7 +3936,7 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       Coordination refused: 
       
       Warning \\ \hline
-    CPDLC\_E &
+    \nextrow \label{tag:CPDLC E} CPDLC\_E &
       CPDLC Emergency &
       CPDLC emergency messages: 
       
