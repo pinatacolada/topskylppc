@@ -1027,7 +1027,7 @@ Clicking a point on the radar screen will set the direct-to clearance without co
 
 \subsection{Handover Proposal (HOP)}
 \label{win:hop}
-A Handover Proposal can be used to propose non-standard transfer parameters (AHDG/Direct-to and ASP) to the next sector. For the receiving controller a HOP is identified by coloring the callsign data field with \colorref{color:Proposition} color in the label. For the sending controller the Callsign field remains “Assumed” color and the Sector Indicator field is shown in \colorref{color:Proposition} color. Additionally, if there are proposed parameters they are also colored “Proposition” in both controllers’ labels.
+A Handover Proposal can be used to propose non-standard transfer parameters (AHDG/Direct-to and ASP) to the next sector. For the receiving controller a HOP is identified by coloring the callsign data field with \colorref{color:Proposition In} color in the label. For the sending controller the Callsign field remains “Assumed” color and the Sector Indicator field is shown in \colorref{color:Proposition In} color. Additionally, if there are proposed parameters they are also colored “Proposition” in both controllers’ labels.
 
 There are three ways to answer a HOP and all of them involve accepting all proposed parameters. If one or more parameters are not acceptable, coordination must be done to find acceptable parameters or to revert to standard ones. The available ways to accept the proposed parameters are:
 
@@ -1052,7 +1052,7 @@ If a HOP is sent to a manually selected controller, the next controller selectio
 \label{win:tip}
 Certain tactical data (AHDG, ASP and ARC) can be coordinated using the RTI and TIP functions. Their only difference is that RTI is used for requesting the parameters when the aircraft is inbound to your sector and your sector is the next in the sector sequence, and TIP for propose the parameters to the next sector when the aircraft is assumed. Contrary to the HOP function, these coordinations can be refused using the system, and they do not offer the aircraft for transfer.
 
-When sent, the RTI/TIP is displayed on both controllers’ screens by displaying the requested parameter on line 0 of the track label in \colorref{color:Proposition} color.
+When sent, the RTI/TIP is displayed on both controllers’ screens by displaying the requested parameter on line 0 of the track label in \colorref{color:Proposition In} color.
 
 To answer the RTI/TIP, left-click on the requested parameter shown above the track label or the corresponding message in the \textit{\titleref{win:miw}}. This will open the \textit{\titleref{menu:ttm}}.
 
@@ -1144,7 +1144,7 @@ From top to bottom, the displayed values are the direct-to point, speed/Mach val
 \label{menu:ttm}
 \includegraphics{img/ttm.png}
 
-The Tactical Transfer menu is used to accept, reject or apply tactical data (AHDG, ASP and/or ARC). It is opened by left-clicking on a proposed or accepted parameter in the track label. The menu displays all proposed (\colorref{color:Proposition} color) and accepted (sector state color) values.
+The Tactical Transfer menu is used to accept, reject or apply tactical data (AHDG, ASP and/or ARC). It is opened by left-clicking on a proposed or accepted parameter in the track label. The menu displays all proposed (\colorref{color:Proposition In} color) and accepted (sector state color) values.
 
 Clicking on “Accept” will accept all proposed values and “Reject” will reject them. The menu is then closed.
 
@@ -3572,27 +3572,31 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
     \textbf{Comments} &
     \textbf{Color} \\ \hline
     \endhead
-    • &
+    Frequency dot \nextrow \label{tag:Frequency dot} &
     Frequency &
-      “•”, set from \textit{\titleref{menu:cs}} &
-      (color): Freq Indicator \\ \hline
-    • &
+      “•”, set from \textit{\titleref{menu:cs}} 
+
+      Used to highlight a particular flight &
+      \colorref{color:Freq Indicator} \\ \hline
+    Mark dot \nextrow \label{tag:Mark dot}&
       Mark &
-      “•”, set from \textit{\titleref{menu:cs}} &
-      Information \\ \hline
-    + &
+      “•”, set from \textit{\titleref{menu:cs}} 
+      
+      Used to highlight a particular flight &
+      \colorref{color:Information} \\ \hline
+    +  \nextrow \label{tag:+}&
       Field 18 information &
       “+” if “STS/” found in FPL remarks field &
        \\ \hline
-    * &
+    * \nextrow \label{tag:*}&
       Unit &
       “*” if label units are different from  the system units &
-      Warning \\ \hline
-    A &
+      \colorref{color:Warning} \\ \hline
+    A \nextrow \label{tag:A}&
       Manual alerts &
       “A” if Manual alert(s) active &
-      Warning \\ \hline
-    a &
+      \colorref{color:Warning} \\ \hline
+    a \nextrow \label{tag:a}&
       Attitude indicator &
       Climbing: up arrow 
       
@@ -3600,15 +3604,15 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       
       Level flight or unknown: blank & 
       \\ \hline
-    ADEP &
+    ADEP \nextrow \label{tag:ADEP}&
       Departure aerodrome &
       ICAO code, 4 characters &
        \\ \hline
-    ADES &
+    ADES \nextrow \label{tag:ADES}&
       Destination aerodrome &
       ICAO code, 4 characters &
        \\ \hline
-    AFL &
+    AFL \nextrow \label{tag:AFL}&
       Actual Flight Level &
       FL’s with 3 digits
 
@@ -3617,14 +3621,14 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       Heights “E”+ 2 digits, in hundreds of feet 
       
          &
-      AIW: AIW intrusion 
+      AIW: \colorref{color:AIW intrusion} 
       
-      Manually set: Warning 
+      Manually set: \colorref{color:Warning} 
       
-      Mark All: CARD Mark All 
+      Mark All: \colorref{color:CARD Mark All} 
       
-      S-Highlight: Suite Highlight \\ \hline
-    AHDG &
+      S-Highlight: \colorref{color:Suite Highlight} \\ \hline
+    AHDG \nextrow \label{tag:AHDG}&
       Assigned heading &
       List: 
       
@@ -3650,55 +3654,55 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
      
       DEP list: 
       Does not display the  brackets for CPDLC status. &
-      If a value is assigned and  HOP: Proposition 
+      If a value is assigned and  HOP: \colorref{color:Proposition In} 
       \bigskip
 
-      If a tactical coordination value is accepted but not  set: Information 
+      If a tactical coordination value is accepted but not  set: \colorref{color:Information} 
       \bigskip
 
-      If a CPDLC uplink message  has been sent:  CPDLC UM Clearance 
+      If a CPDLC uplink message  has been sent:  \colorref{color:CPDLC UM Clearance} 
       \bigskip
       
-      If a CPDLC downlink  message has been  received:  CPDLC DM Request 
+      If a CPDLC downlink  message has been  received:  \colorref{color:CPDLC DM Request} 
       \bigskip
       
-      If controller timeout has expired following a CPDLC downlink request:  CPDLC Controller Late 
+      If controller timeout has expired following a CPDLC downlink request:  \colorref{color:CPDLC Controller Late} 
       \bigskip
       
       If a CPDLC warning has  been raised: color of the  warning \\ \hline
-    AIW &
+    AIW \nextrow \label{tag:AIW}&
       AIW alert (see also ALRT) &
       “AIW” &
-      AIW intrusion \\ \hline
-    ALRT &
+      \colorref{color:AIW intrusion} \\ \hline
+    ALRT \nextrow \label{tag:ALRT}&
       Alert message &
       “MSAW”, “APW”, “AIW”, “CLAM”,  “RAM” or  “DUPE” (in this priority order) &
-      MSAW, APW and MTCD: Warning 
+      MSAW, APW and MTCD: \colorref{color:Warning} 
       
-      AIW: AIW intrusion \\ \hline
-    ALT1 &
+      AIW: \colorref{color:AIW intrusion} \\ \hline
+    ALT1 \nextrow \label{tag:ALT1}&
       Alternate aerodrome 1 &
       ICAO code, 4 characters &
        \\ \hline
-    ALT2 &
+    ALT2 \nextrow \label{tag:ALT2}&
       Alternate aerodrome 2 &
       Second alternate can be set by  inserting “ALT2/XXXX” into  the FPL remarks field &
        \\ \hline
-    APW &
+    APW \nextrow \label{tag:APW}&
       APW alert (see also ALRT) &
       “APW” &
-      Warning \\ \hline
-    ARC &
+      \colorref{color:Warning} \\ \hline
+    ARC \nextrow \label{tag:ARC}&
       Assigned vertical rate &
       “R” + 2 digits, in 100’s of ft/min &
-      If a value is assigned and  HOP: Proposition 
+      If a value is assigned and  HOP: \colorref{color:Proposition In} 
       
-      If a tactical coordination value is accepted but not set: Information \\ \hline
-    ARWY &
+      If a tactical coordination value is accepted but not set: \colorref{color:Information} \\ \hline
+    ARWY \nextrow \label{tag:ARWY}&
       Arrival runway &
       Arrival runway identifier &
       If manually assigned: Rwy Locked \\ \hline
-    ASP &
+    ASP \nextrow \label{tag:ASP}&
       Assigned speed &
       Mach “M”+ 2 digits
       \bigskip
@@ -3710,23 +3714,23 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       \bigskip
       
       If a speed clearance or request is in  progress via CPDLC, displays  “{[}speed{]}”, followed by “+” if the  request or answer contains a reason. &
-      If a value is assigned and  HOP: Proposition 
+      If a value is assigned and  HOP: \colorref{color:Proposition In} 
       \smallskip
 
-      If a tactical coordination  value is accepted but not  set: Information 
+      If a tactical coordination  value is accepted but not  set: \colorref{color:Information} 
       \smallskip
       
-      If a CPDLC uplink message  has been sent:  CPDLC UM Clearance 
+      If a CPDLC uplink message  has been sent:  \colorref{color:CPDLC UM Clearance} 
       \smallskip
       
-      If a CPDLC downlink  message has been  received:  CPDLC DM Request 
+      If a CPDLC downlink  message has been  received:  \colorref{color:CPDLC DM Request} 
       \smallskip
       
-      If controller timeout has expired following a CPDLC  downlink request:  CPDLC Controller Late 
+      If controller timeout has expired following a CPDLC  downlink request:  \colorref{color:CPDLC Controller Late} 
       \smallskip
       
       If a CPDLC warning has  been raised: color of the  warning \\ \hline
-    ASSR &
+    ASSR \nextrow \label{tag:ASSR}&
       Assigned mode 3/A code &
       4 digits or “A”+ 4 digits. 
       \bigskip
@@ -3737,29 +3741,29 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       DEP list:
       
       Does not display the  brackets for CPDLC status. &
-      If different than TSSR:  Warning 
+      If different than TSSR:  \colorref{color:Warning} 
       \smallskip
 
-      If a CPDLC uplink message  has been sent:  CPDLC UM Clearance 
+      If a CPDLC uplink message  has been sent:  \colorref{color:CPDLC UM Clearance} 
       \smallskip
       
       If a CPDLC warning has  been raised: color of the  warning \\ \hline
-    ATD &
+    ATD \nextrow \label{tag:ATD}&
       Actual Time of Departure &
       UTC time in “HHMM” format &
        \\ \hline
-    ATYP &
+    ATYP \nextrow \label{tag:ATYP}&
       Aircraft type &
       Type with max 4 characters &
-      If highlighted: Warning \\ \hline
-    ATYP/W &
+      If highlighted: \colorref{color:Warning} \\ \hline
+    ATYP/W \nextrow \label{tag:ATYP/W}&
       Aircraft type / Wake  Turbulence Category &
       Type with max 4 characters + “/” +  WTC (“L”, “M”, “H”, “J” or “?”) &
-      If highlighted: Warning \\ \hline
-    C &
+      If highlighted: \colorref{color:Warning} \\ \hline
+    C \nextrow \label{tag:C}&
       Inbound clearance &
       “C” if ADES needs inbound clearance &
-      Active state: Information \\ \hline
+      Active state: \colorref{color:Information} \\ \hline
     CALLSIGN &
       Callsign &
       If more than one aircraft, suffixed  by “+”. 
@@ -3771,25 +3775,25 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       If the flight is CPDLC connected, the callsign is displayed in brackets. &
       Priority order: 
       
-      STCA alert: Urgency 
+      STCA alert: \colorref{color:Urgency} 
       
-      HOP in: Proposition 
+      HOP in: \colorref{color:Proposition In} 
       
-      Mark Own: CARD Mark Own 
+      Mark Own: \colorref{color:CARD Mark Own} 
       
       Highlight: Warning 
       
-      Mark All: CARD Mark All 
+      Mark All: \colorref{color:CARD Mark All} 
       
-      S-Highlight: Suite Highlight 
+      S-Highlight: \colorref{color:Suite Highlight} 
       \bigskip
 
       If none of the above: 
       
-      Transfer in: Assumed 
+      Transfer in: \colorref{color:Assumed} 
       
-      Transfer out: Redundant \\ \hline
-    CFL &
+      Transfer out: \colorref{color:Redundant} \\ \hline
+    CFL \nextrow \label{tag:CFL}&
       Cleared Flight Level &
       “CA” if Clear for App flag set
       
@@ -3811,13 +3815,13 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       
       For CTR, if CFL \textgreater PEL,  for others if CFL \textgreater XFL: 
       
-      Warning 
+      \colorref{color:Warning} 
       \bigskip
       
-      If a CPDLC uplink message  has been sent:  CPDLC UM Clearance 
+      If a CPDLC uplink message  has been sent:  \colorref{color:CPDLC UM Clearance} 
       
       If a CPDLC warning has  been raised: color of the  warning \\ \hline
-    CFL/PEL &
+    CFL/PEL \nextrow \label{tag:CFL/PEL}&
       Cleared Flight Level or  Planned Entry Level &
       PEL is shown for flights in  “coordinated” and “ongoing coordination” states, CFL otherwise. 
       \bigskip 
@@ -3841,32 +3845,32 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       
       Ongoing coordination:  
       
-      Proposition 
+      \colorref{color:Proposition In} 
       
       Change just before ETN: 
       
-      Info Coord 
+      \colorref{color:Info Coord} 
       
       Coordination refused: 
       
-      Warning
+      \colorref{color:Warning}
       \bigskip 
       
       CFL: 
       
       If a CPDLC uplink message  has been sent:  
       
-      CPDLC UM Clearance 
+      \colorref{color:CPDLC UM Clearance} 
       
       If a CPDLC downlink  message has been  received:  
       
-      CPDLC DM Request 
+      \colorref{color:CPDLC DM Request} 
       \bigskip
       
       If a CPDLC warning has  been raised: 
       
       color of the  warning \\ \hline
-    CLR &
+    CLR \nextrow \label{tag:CLR}&
       Clearance received flag &
       If no clearance received and no data  link clearance in progress: 
       
@@ -3889,39 +3893,39 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       \bigskip
 
       “R” and “A” are  blinking when less than 2 minutes  are remaining to timeout &
-      “R”: When request contains  free text: Urgency 
+      “R”: When request contains  free text: \colorref{color:Urgency} 
       
-      Otherwise: Warning 
+      Otherwise: \colorref{color:Warning} 
 
       \bigskip
       
-      “A”: When blinking: Warning \\ \hline
-    COM &
+      “A”: When blinking: \colorref{color:Warning} \\ \hline
+    COM \nextrow \label{tag:COM}&
       Communication type &
       “r” if voice receive only “t” if text only &
-      Warning \\ \hline
-    COMP\_CS &
+      \colorref{color:Warning} \\ \hline
+    COMP\_CS \nextrow \label{tag:COMP CS}&
       ICAO RTF callsign &
       The decoded ICAO RTF callsign 
       
       “???” if not in database &
        \\ \hline
-    COORD &
+    COORD \nextrow \label{tag:COORD}&
       Coordination message &
       “ROF” if a Request On Frequency message has been received from  the next sector  
       \bigskip
 
       The last changed tactical coordination parameter value (AHDG, ASP or ARC) &
-      Proposed: Proposition 
+      Proposed: \colorref{color:Proposition In} 
       
-      Rejected: Warning \\ \hline
-    COPN &
+      Rejected: \colorref{color:Warning} \\ \hline
+    COPN \nextrow \label{tag:COPN}&
       Entry point &
        &
-      Ongoing coordination:  Proposition 
+      Ongoing coordination:  \colorref{color:Proposition In} 
       
-      Coordination refused: Warning \\ \hline
-    COPX &
+      Coordination refused: \colorref{color:Warning} \\ \hline
+    COPX \nextrow \label{tag:COPX}&
       Exit point &
       DEP list: 
       
@@ -3931,10 +3935,10 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       (with holding): 
       
       A holding clearance is displayed if  there is no coordination. It shows  the holding point name + “ H” or for  lat/lon point holdings, “POS H”. For a TSA Hold clearance, the area  name is shown. &
-      Ongoing coordination: Proposition 
+      Ongoing coordination: \colorref{color:Proposition In} 
       
-      Coordination refused: Warning \\ \hline
-    COPN/COPX &
+      Coordination refused: \colorref{color:Warning} \\ \hline
+    COPN/COPX \nextrow \label{tag:COPN/COPX}&
       Entry point or Exit point &
       COPN is shown for flights in  “coordinated” and “ongoing coordination” states, COPX in “assumed”, “transfer  initiated” and “redundant” phases. 
       \bigskip
@@ -3944,19 +3948,19 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       A holding clearance is displayed if  there is no coordination. It shows  the holding point name + “ H” or for  lat/lon point holdings, “POS H”. For a TSA Hold clearance, the area  name is shown. &
       Ongoing coordination: 
       
-      Proposition 
+      \colorref{color:Proposition In} 
       \bigskip
       
       Coordination refused: 
       
-      Warning \\ \hline
+      \colorref{color:Warning} \\ \hline
     \nextrow \label{tag:CPDLC E} CPDLC\_E &
       CPDLC Emergency &
       CPDLC emergency messages: 
       
       “SQ7500”, “{[}MAYDAY{]}”, or “{[}PAN{]}” &
-      Urgency \\ \hline
-    CPDLC\_W &
+      \colorref{color:Urgency} \\ \hline
+    CPDLC\_W \nextrow \label{tag:CPDLC W}&
       CPDLC Warning &
       CPDLC warning messages: 
       
@@ -3986,88 +3990,88 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       “VCI” for communication transfer &
       “COMM FAIL”,  “ERR” or “NOT CDA”:  
       
-      CPDLC Failed 
+      \colorref{color:CPDLC Failed} 
       \bigskip
 
       “UNA”:  
       
-      CPDLC Unable 
+      \colorref{color:CPDLC Unable} 
       \bigskip
 
       “SBY”:  
       
-      CPDLC Standby 
+      \colorref{color:CPDLC Standby} 
       
       \bigskip
       
       “P LATE”:  
       
-      CPDLC Pilot Late \\ \hline
-    CRC &
+      \colorref{color:CPDLC Pilot Late} \\ \hline
+    CRC \nextrow \label{tag:CRC}&
       Computed vertical rate &
       2 digits, in 100’s of ft/min 
          
       Value preceded by “C” for climbing,  “D” for descending &
        \\ \hline
-    DHDG &
+    DHDG \nextrow \label{tag:DHDG}&
       Downloaded heading &
       Magnetic heading as downloaded  from the aircraft via mode S DAPs.  
       
       “H” + 3 digits. &
        \\ \hline
-    DIAS &
+    DIAS \nextrow \label{tag:DIAS}&
       Downloaded indicated airspeed &
       Indicated airspeed as downloaded  from the aircraft via mode S DAPs.  
       
       Blank, not available on VATSIM. &
        \\ \hline
-    DMACH &
+    DMACH \nextrow \label{tag:DMACH}&
       Downloaded Mach number &
       Mach number as downloaded from the aircraft via mode S DAPs. 
       
       Blank, not available on VATSIM. &
        \\ \hline
-    DRC &
+    DRC \nextrow \label{tag:DRC}&
       Downloaded rate of  climb/descent &
       Rate of climb/descent as downloaded from the aircraft via mode S DAPs. 
       
       Not available on  VATSIM (computed rate displayed instead, see CRC). &
        \\ \hline
-    DRWY &
+    DRWY \nextrow \label{tag:DRWY}&
       Departure runway &
       Departure runway identifier &
       DEP list: 
       
       Clearance flag not set:  
       
-      Proposition 
+      \colorref{color:Proposition In} 
       
       Clearance flag set: 
       
-      Information \\ \hline
-    DSFL &
+      \colorref{color:Information} \\ \hline
+    DSFL \nextrow \label{tag:DSFL}&
       Downloaded selected  flight level &
       Selected flight level as downloaded from the aircraft via mode S DAPs.  
       
       Blank, not available on VATSIM. &
        \\ \hline
-    DSQ &
+    DSQ \nextrow \label{tag:DSQ}&
       Departure sequence number &
        &
        \\ \hline
-    EET &
+    EET \nextrow \label{tag:EET}&
       Estimated Elapsed Time &
       “HHMM” &
        \\ \hline
-    EMRG &
+    EMRG \nextrow \label{tag:EMRG}&
       Emergency &
       “HI” for squawk 7500
       
       “CF” for squawk 7600,
       
       “EM” for squawk 7700 &
-      Urgency \\ \hline
-    EQUIP &
+      \colorref{color:Urgency} \\ \hline
+    EQUIP \nextrow \label{tag:EQUIP}&
       FPL equipment field &
       Rough conversion to ICAO FPL 
       
@@ -4077,7 +4081,7 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
        \\ \hline
     EST/DEP/
     
-    ABT &
+    ABT \nextrow \label{tag:EST/DEP/ABT}&
       Manual departure &
       “EST” when clearance flag not set and ground state not “DEPA”
       \bigskip
@@ -4090,63 +4094,63 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       
       “ABT” when departed &
        \\ \hline
-    ETA &
+    ETA \nextrow \label{tag:ETA}&
       Estimated Time of Arrival &
       UTC time in “HHMM” format or  “HOLD” if flight in holding state &
        \\ \hline
-    ETD &
+    ETD \nextrow \label{tag:ETD}&
       Estimated Time of  Departure &
       UTC time in “HHMM” format &
        \\ \hline
-    ETD/ATD &
+    ETD/ATD \nextrow \label{tag:ETD/ATD}&
       Estimated Time of Departure or Actual Time  of Departure &
       For a departed aircraft, shows the  actual departure, otherwise the estimated departure time.  
       
       “HHMM”, both times taken from  the FPL data &
        \\ \hline
-    ETN &
+    ETN \nextrow \label{tag:ETN}&
       Estimated time over  COPN or sector entry  time if no COPN &
       UTC time in “HHMM” format (sector entry): always entry time &
        \\ \hline
-    ETOHP &
+    ETOHP \nextrow \label{tag:ETOHP}&
       Estimated time over holding point or holding  start time &
       UTC time in “HHMM” format &
        \\ \hline
-    ETX &
+    ETX \nextrow \label{tag:ETX}&
       Estimated time over  COPX or sector exit time  if no COPX &
       UTC time in “HHMM” format (sector exit): always exit time &
        \\ \hline
-    FCOPX &
+    FCOPX \nextrow \label{tag:FCOPX}&
       FIR COPX point &
        &
        \\ \hline
-    FIELD15 &
+    FIELD15 \nextrow \label{tag:FIELD15}&
       Speed/Level/Route &
       The flight plan field 15 data (TAS,  RFL and route). Max 360 characters &
        \\ \hline
-    FIELD18 &
+    FIELD18 \nextrow \label{tag:FILED18}&
       Other information &
       The flight plan field 18 data  (remarks). Max 360 characters &
        \\ \hline
-    FLTADD &
+    FLTADD \nextrow \label{tag:FLTADD}&
       Mode S transponder  address &
       Mode S transponder hex address &
        \\ \hline
     FLTID &
-      Aircraft identification &
+      Aircraft identification \nextrow \label{tag:FLTID}&
       Callsign as received via mode S &
        \\ \hline
     GS &
-      Ground Speed &
+      Ground Speed \nextrow \label{tag:GS}&
       "N"+3 digits, in knots &
-      If highlighted: Warning \\ \hline
-    HP &
+      If highlighted: \colorref{color:Warning} \\ \hline
+    HP \nextrow \label{tag:HP}&
       Holding point &
       Holding point name or for lat/lon  point holdings, “POS”. 
       
       For a TSA Hold clearance, the area  name is shown. &
        \\ \hline
-    I &
+    I \nextrow \label{tag:I}&
       Flight information &
       “I” if OP\_TEXT has data &
        \\ \hline
@@ -4154,23 +4158,23 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       Label hidden flag &
       “$\blacksquare$” if label displayed, “$\square$” if label hidden &
        \\ \hline
-    M &
+    M \nextrow \label{tag:M}&
       Military coordination &
       “M” if military coordination is  required &
-      Active state: Warning \\ \hline
-    MALRT &
+      Active state: \colorref{color:Warning} \\ \hline
+    MALRT \nextrow \label{tag:MALRT}&
       Manual alerts &
       Displays alerts entered via the  \textit{\titleref{menu:cs}} &
-      Warning \\ \hline
-    MSAW &
+      \colorref{color:Warning} \\ \hline
+    MSAW \nextrow \label{tag:MSAW}&
       MSAW alert (see also ALRT) &
       “MSAW” &
-      Warning \\ \hline
-    MTCD &
+      \colorref{color:Warning} \\ \hline
+    MTCD \nextrow \label{tag:MTCD}&
       MTCD indicator &
       “•” if aircraft has an MTCD problem &
-      Urgency \\ \hline
-    N/ATYP &
+      \colorref{color:Urgency} \\ \hline
+    N/ATYP \nextrow \label{tag:N/ATYP}&
       Number of aircraft /  Aircraft type &
       Unselected label: 
       
@@ -4183,8 +4187,8 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       \bigskip
 
       Number can be set by prefixing the aircraft type in the FPL by “X/”  where X is the number (max 99) &
-      If highlighted: Warning \\ \hline
-    NPT &
+      If highlighted: \colorref{color:Warning} \\ \hline
+    NPT \nextrow \label{tag:NPT}&
       Next route point &
       When a DCT request or clearance  via CPDLC is in progress: 
       
@@ -4194,23 +4198,23 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       Otherwise: Next point on the route &
       If a CPDLC uplink message  has been sent:  
       
-      CPDLC UM Clearance 
+      \colorref{color:CPDLC UM Clearance} 
       \bigskip
 
       If a CPDLC downlink  message has been  received:  
       
-      CPDLC DM Request 
+      \colorref{color:CPDLC DM Request} 
       \bigskip
       
       If controller timeout has expired following a CPDLC downlink request:  
       
-      CPDLC Controller Late 
+      \colorref{color:CPDLC Controller Late} 
       \bigskip
       
       If a CPDLC warning has  been raised: 
       
       color of the  warning \\ \hline
-    NRAC &
+    NRAC \nextrow \label{tag:NRAC}&
       Number of aircraft &
       Number from 2 to 99 
       \bigskip
@@ -4224,31 +4228,31 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       
       Number can be set by prefixing the  aircraft type in the FPL by “X/”  where X is the number (max 99). &
        \\ \hline
-    NSSR &
+    NSSR \nextrow \label{tag:NSSR}&
       SSR warning &
       Displays ASSR if different from TSSR &
       If a CPDLC uplink message  has been sent:  
       
-      CPDLC UM Clearance 
+      \colorref{color:CPDLC UM Clearance} 
       \bigskip
       
       If a CPDLC warning has been raised: 
       
       color of the  warning \\ \hline
-    OP\_TEXT &
+    OP\_TEXT \nextrow \label{tag:OP TEXT}&
       Flight information message &
       User entered text, stored in the flight strip &
        \\ \hline
-    OP\_TEXT2 &
+    OP\_TEXT2 \nextrow \label{tag:OP TEXT2}&
       OP\_TEXT2 message &
       User entered text, stored in the scratchpad &
        \\ \hline
     P &
-      No P-RNAV/RNAV1 capability &
+      No P-RNAV/RNAV1 capability \nextrow \label{tag:p}&
       “P” if aircraft equipment is not indicating P-RNAV/RNAV1 capability and destination has arrival  procedures requiring it &
-      Information \\ \hline
+      \colorref{color:Information} \\ \hline
     PEL &
-      Planned Entry Level &
+      Planned Entry Level \nextrow \label{tag:PEL}&
       “CA” if Clear for App set
       
       “VA” if Visual App flag set
@@ -4256,53 +4260,53 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       See AFL field for number format. &
       Ongoing coordination:
       
-      Proposition 
+      \colorref{color:Proposition In} 
       \bigskip
       
       Change just before ETN: 
       
-      Info Coord 
+      \colorref{color:Info Coord} 
       \bigskip
       
       Coordination refused: 
       
-      Warning \\ \hline
-    PFREQ &
+      \colorref{color:Warning} \\ \hline
+    PFREQ \nextrow \label{tag:PFREQ}&
       Pilot monitored frequency &
       Displays your primary frequency  when transfer of communications  was done via CPDLC using the  MONITOR option &
       CPDLC DM Request \\ \hline
-    PRFL &
+    PRFL \nextrow \label{tag:PRFL}&
       RFL requested by pilot via  CPDLC &
       Displays “{[}requested level{]}”,  followed by “+” if the request  contains a reason (i.e. DUE TO  something) &
       If a CPDLC downlink  message has been  received:  
       
-      CPDLC DM Request 
+      \colorref{color:CPDLC DM Request} 
       \bigskip
       
       If controller timeout has expired following a CPDLC downlink request:
       
-      CPDLC Controller Late 
+      \colorref{color:CPDLC Controller Late} 
       \bigskip
       
       If a CPDLC warning has been raised: 
       
       color of the warning \\ \hline
-    PSSR &
+    PSSR \nextrow \label{tag:PSSR}&
       Previous mode 3/A code &
       If not known, shows ASSR if  available. Format as ASSR field. &
        \\ \hline
-    R &
+    R \nextrow \label{tag:R}&
       No B-RNAV/RNAV5  capability &
       “R” if aircraft equipment is not  indicating B-RNAV/RNAV5 capability &
       Not equipped:
       
-      Urgency
+      \colorref{color:Urgency}
       \bigskip 
       
       Unknown: 
       
-      Unknown \\ \hline
-    RFL &
+      \colorref{color:Unknown} \\ \hline
+    RFL \nextrow \label{tag:RFL}&
       Requested Flight Level &
       See AFL field for format 
       \bigskip
@@ -4317,18 +4321,18 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       
       If a CPDLC downlink  message has been  received:  
       
-      CPDLC DM Request 
+      \colorref{color:CPDLC DM Request} 
       \bigskip
       
       If controller timeout has expired following a CPDLC downlink request:
       
-      CPDLC Controller Late 
+      \colorref{color:CPDLC Controller Late} 
       \bigskip
       
       If a CPDLC warning has  been raised: 
       
       color of the  warning \\ \hline
-    RI &
+    RI \nextrow \label{tag:RI}&
       Release Indicator &
       “F” fully released 
       
@@ -4342,8 +4346,8 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       Incoming release disappears 3 min after track is assumed, outgoing when track is no longer redundant. &
       During transfer:  
       
-      Proposition \\ \hline
-    ROUTE &
+      \colorref{color:Proposition In} \\ \hline
+    ROUTE \nextrow \label{tag:ROUTE}&
       Flight plan route &
       DEP list 
       
@@ -4364,11 +4368,11 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       
       - first 30/45 characters (2 or 3 parts) &
        \\ \hline
-    S &
+    S \nextrow \label{tag:S}&
       Mode S mismatch indicator &
       “S” if downloaded callsign is different than coupled flight plan callsign &
-      Warning \\ \hline
-    SI &
+      \colorref{color:Warning} \\ \hline
+    SI \nextrow \label{tag:SI}&
       Sector Indicator &
       Assumed track: 
       
@@ -4401,74 +4405,74 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       
       Outgoing HOP: 
       
-      Proposition 
+      \colorref{color:Proposition In} 
       \bigskip
       
       Manually changed next sector: 
       
-      Warning 
+      \colorref{color:Warning} 
       \bigskip
       
       Normal next sector:
       
-      Coordination 
+      \colorref{color:Coordination} 
       \bigskip
       
       If a CPDLC communications transfer uplink message has been sent:  
       
-      CPDLC UM Clearance 
+      \colorref{color:CPDLC UM Clearance} 
       \bigskip
       
       If a CPDLC warning has been raised: 
       
       color of the  warning \\ \hline
-    SID &
+    SID \nextrow \label{tag:SID}&
       Assigned or planned SID &
       SID identifier &
       If automatically assigned:  
       
-      Sid Star No Allocation 
+      \colorref{color:Sid Star No Allocation} 
       \bigskip
       
       If manually assigned: 
       
-      Sid Star Allocation \\ \hline
-    SQ &
+      \colorref{color:Sid Star Allocation} \\ \hline
+    SQ \nextrow \label{tag:SQ}&
       Arrival sequence number &
       A number from 1 to 50 &
        \\ \hline
-    STAR &
+    STAR \nextrow \label{tag:STAR}&
       Assigned or planned STAR &
       STAR identifier &
       If automatically assigned:  
       
-      Sid Star No Allocation 
+      \colorref{color:Sid Star No Allocation} 
       \bigskip
       
       If manually assigned: 
       
-      Sid Star Allocation \\ \hline
-    STS &
+      \colorref{color:Sid Star Allocation} \\ \hline
+    STS \nextrow \label{tag:STS}&
       Ground state &
       EuroScope default ground state &
        \\ \hline
-    TAS &
+    TAS \nextrow \label{tag:TAS}&
       Flight Plan TAS &
       See GS field for format &
        \\ \hline
-    TEXT2 &
+    TEXT2 \nextrow \label{tag:TEXT2}&
       OP-TEXT2 message &
       If more than 10 characters, then shows first 9 + “>” &
        \\ \hline
-    TRACK &
+    TRACK \nextrow \label{tag:TRACK}&
       Ground track &
       “T” + the aircraft’s current ground track in degrees magnetic &
        \\ \hline
-    TSSR &
+    TSSR \nextrow \label{tag:TSSR}&
       Aircraft transponded  mode 3/A code &
       4 digits or “A”+ 4 digits &
        \\ \hline
-    V &
+    V \nextrow \label{tag:V}&
       Flight rules &
       “V” if VFR
       
@@ -4476,23 +4480,23 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       
       “Z” if first VFR and later IFR &
        \\ \hline
-    W &
+    W \nextrow \label{tag:W}&
       No RVSM capability &
       “W” if aircraft equipment is not  indicating RVSM capability &
       Not equipped: 
       
-      Urgency 
+      \colorref{color:Urgency} 
       \bigskip
       
       Exempt: 
       
-      Information 
+      \colorref{color:Information} 
       \bigskip
       
       Unknown: 
       
-      Unknown \\ \hline
-    WTC &
+      \colorref{color:Unknown} \\ \hline
+    WTC \nextrow \label{tag:WTC}&
       Wake turbulence  category &
       “J” for Super
       
@@ -4510,8 +4514,8 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       Only displayed if not medium unless the field is highlighted &
       If highlighted: 
       
-      Warning \\ \hline
-    /WTC &
+      \colorref{color:Warning} \\ \hline
+    /WTC \nextrow \label{tag:/WTC}&
       Wake turbulence  category &
       “/J” for Super
       
@@ -4529,8 +4533,8 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       Only displayed if not medium unless the field is highlighted &
       If highlighted: 
       
-      Warning \\ \hline
-    XFL &
+      \colorref{color:Warning} \\ \hline
+    XFL \nextrow \label{tag:XFL}&
       Exit Flight Level &
       “CA” if Clear for App set
       
@@ -4551,28 +4555,28 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       Otherwise displays XFL. &
       Ongoing coordination:  
       
-      Proposition 
+      \colorref{color:Proposition In} 
       \bigskip
       
       Coordination refused: 
       
-      Warning \\ \hline
-    Y &
+      \colorref{color:Warning} \\ \hline
+    Y \nextrow \label{tag:Y}&
       No 8.33kHz capability &
       “Y” if aircraft equipment is not  indicating 8.33kHz capability &
       Not equipped: 
       
-      Urgency 
+      \colorref{color:Urgency} 
       \bigskip
       
       Exempt: 
       
-      Information 
+      \colorref{color:Information} 
       \bigskip
       
       Unknown: 
       
-      Unknown \\ \hline
+      \colorref{color:Unknown} \\ \hline
     \end{longtable}
 
 \chapter{Color Values}
