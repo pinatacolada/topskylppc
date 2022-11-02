@@ -602,36 +602,17 @@ Refer to your setup specific documentation for detailed descriptions of the trac
 \section{Track Labels}
 \label{tlabel}
 
-Unselected Track:
-
-\begin{enumerate}[label=Line \arabic*]
-  \setcounter{enumi}{-1}
-  \item \tagref{tag:CPDLC E}
-  \item MTCD
-\end{enumerate}
-
-Selected Track:
-
-\begin{enumerate}[label=Line \arabic*]
-  \setcounter{enumi}{-1}
-  \item 
-\end{enumerate}
-
 \subsection{Standard Track Label}
 \label{tlabel:std}
 
-Unselected Track:
-
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item 
-\end{enumerate}
-
-Selected Track:
-
-\begin{enumerate}[label=Line \arabic*]
-  \setcounter{enumi}{-1}
-  \item 
+  \item \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:RI} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC W} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
+  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:*} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
+  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL}
+  \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX}
+  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
+  \item \tagref{tag:OP TEXT}  
 \end{enumerate}
 
 \subsection{Reduced Track Label}
@@ -3764,7 +3745,7 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       Inbound clearance &
       “C” if ADES needs inbound clearance &
       Active state: \colorref{color:Information} \\ \hline
-    CALLSIGN &
+    CALLSIGN \nextrow\label{tag:CALLSIGN} &
       Callsign &
       If more than one aircraft, suffixed  by “+”. 
       \bigskip
@@ -4248,7 +4229,7 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
       User entered text, stored in the scratchpad &
        \\ \hline
     P &
-      No P-RNAV/RNAV1 capability \nextrow \label{tag:p}&
+      No P-RNAV/RNAV1 capability \nextrow \label{tag:P}&
       “P” if aircraft equipment is not indicating P-RNAV/RNAV1 capability and destination has arrival  procedures requiring it &
       \colorref{color:Information} \\ \hline
     PEL &
