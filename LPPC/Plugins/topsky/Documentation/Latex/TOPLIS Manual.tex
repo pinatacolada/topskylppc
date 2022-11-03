@@ -590,25 +590,35 @@ The prediction line draws the predicted ground track of the aircraft, based on i
 
 \includegraphics{img/rps_predline+history_selected.png}
 
-\subsection{Track label}
-There are four types of track labels that can be displayed: Standard, Reduced, Extended and Uncorrelated.
-
-In addition, each label except the extended one has an unselected and a selected state, the selected state being shown when the mouse cursor is over the label.
-
-Basically, the Standard label is shown for aircraft that are in or will enter the active sector and the Reduced label for aircraft that will not enter the active sector. The Extended label can be opened from the Standard or Reduced label and stays open as long as the cursor is within the label area. The Uncorrelated label is shown for radar tracks that aren’t correlated with a flight plan.
-
-Refer to your setup specific documentation for detailed descriptions of the track labels.
-
 \section{Track Labels}
 \label{tlabel}
+
+There are four types of track labels that can be displayed: Standard, Reduced, Extended and Uncoupled.
+
+In addition, each label except the extended one has an unselected and a selected state, the selected state being shown when the mouse cursor is over the label.
 
 \subsection{Standard Track Label}
 \label{tlabel:std}
 
+The Standard label is shown for aircraft that are in or will enter the active sector.
+
+\subsection*{Unselected Track}
+
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:RI} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC W} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
-  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:*} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
+  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:RI} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC W} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
+  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
+  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL}
+  \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX}
+  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
+\end{enumerate}
+
+\subsection*{Selected Track}
+
+\begin{enumerate}[label=Line \arabic*]
+  \setcounter{enumi}{-1}
+  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:RI} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC W} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
+  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
   \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL}
   \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX}
   \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
@@ -616,45 +626,87 @@ Refer to your setup specific documentation for detailed descriptions of the trac
 \end{enumerate}
 
 \subsection{Reduced Track Label}
+
+The Reduced label for aircraft that will not enter the active sector. Flights in Free, Initial, Notified or Unconcerned are automatically displayed with a Reduced Track Label. 
+
 \label{tlabel:red}
 
-Unselected Track:
+\subsection*{Unselected Track}
 
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item 
+  \item \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Mark dot} \tagref{tag:S} \tagref{tag:EMRG}  
+  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
+  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES}
+  \item \tagref{tag:TRACK} \tagref{tag:FCOPX}
+  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
 \end{enumerate}
 
-Selected Track:
+\subsection*{Selected Track}
 
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item 
+  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Mark dot} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:NSSR} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
+  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
+  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL}
+  \item \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:FCOPX}
+  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
+  \item \tagref{tag:OP TEXT}  
 \end{enumerate}
 
 \subsection{Extended Track Label}
 \label{tlabel:ext}
 
+The Extended label can be opened from the Standard or Reduced label by right clicking on the \tagref{tag:CALLSIGN} item, and stays open as long as the cursor is within the label area.
+
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item 
+  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:RI} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC W} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
+  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \hfill \tagref{tag:TSSR} \tagref{tag:ASSR} \tagref{tag:PSSR}
+  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:TRACK} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL} \hfill \tagref{tag:FLTID} \tagref{tag:FLTADD}
+  \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX}
+  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
+  \item \tagref{tag:COMP CS}
+  \item \tagref{tag:ADEP} \tagref{tag:ETD/ATD} \tagref{tag:ADES} \tagref{tag:EET}
+  \item \tagref{tag:FIELD15}
+  \item \tagref{tag:FILED18}
+  \item \tagref{tag:MALRT}
+  \item \tagref{tag:OP TEXT}
+  \item \tagref{tag:OP TEXT2}
 \end{enumerate}
 
 \subsection{Uncoupled Track Label}
 \label{tlabel:unc}
 
-\begin{enumerate}[label=Line \arabic*]
-  \setcounter{enumi}{-1}
-  \item 
-\end{enumerate}
+The Uncoupled label is shown for radar tracks that aren’t correlated with a flight plan.
 
-\subsection{Minimised Track Label}
-\label{tlabel:min}
+\subsection*{Unselected Track}
 
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item 
+  \item \tagref{tag:ALRT} \tagref{tag:EMRG}
+  \item \tagref{FLTID} or \tagref{tag:TSSR}  
+  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:GS}
+  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
 \end{enumerate}
+
+\begin{Note}
+  \tagref{FLTID} is displayed on line 1 only if a valid Mode-S Aircraft Identification is received. Otherwise, TSSR is displayed instead
+\end{Note}
+
+\subsection*{Selected Track}
+
+\begin{enumerate}[label=Line \arabic*]
+  \setcounter{enumi}{-1}
+  \item \tagref{tag:ALRT} \tagref{tag:EMRG}
+  \item \tagref{tag:FLTID} \tagref{tag:TSSR}
+  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:GS}
+  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
+\end{enumerate}
+
+\begin{Note}
+  \tagref{tag:FLTID} is displayed on line 1 only if a valid Mode-S Aircraft Identification is received. Otherwise, only TSSR is displayed
+\end{Note}
 
 \subsection{Label Compaction}
 \label{tlabel:comp}
