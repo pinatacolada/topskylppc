@@ -37,6 +37,8 @@
 
 \newcommand{\tagref}[1]{\textit{\hyperref[#1]{\StrDel{#1}{tag:}}}}
 
+\newcommand{\winref}[1]{\textit{\titleref{#1}}}
+
 \newcolumntype{t}{>{\tt}c}
 
 \colorlet{shadecolor}{blue!10}
@@ -541,22 +543,20 @@ Transfer Initiated    & \colorref{color:Assumed}         & Track is being transf
 Redundant             & \colorref{color:Redundant}       & Track has been transferred to the next controller but is still inside the active sector\\
 \end{tabular}
 
-An unconcerned track can be highlighted based on rules (a combination of departure airport, route and arrival airport) defined in plugin data files. In this case it is drawn with one of the three “Informed” colors.
-
 Coordinated tracks that have not departed yet will be shown as notified instead.
 
 For uncontrolled flights (VFR flights not in ASSUMED state), the colors are as follows:
 
 \begin{tabular}{l l l}
 \textbf{State}  & \textbf{Color}             & \textbf{Condition}\\
-On Contact      & \colorref{color:Assumed}         & Track is on-contact (a plugin custom state) with you\\
+On Contact      & \colorref{color:Assumed}         & Track is on-contact with you\\
 Free            & \colorref{color:VFR}             & Track is not assumed or on-contact with anyone\\
 Otherwise       & \colorref{color:Unconcerned}     &\\
 \end{tabular}
 
 \subsection{Aircraft position symbol}
 
-The position symbol is drawn at the latest known position of the aircraft. The color of the symbol is the flight sector color for an unselected track and “Track Highlight” for a selected one. A number of different symbols are available. To begin with, there are basic shapes that tell what kind of track is in question:
+The position symbol is drawn at the latest known position of the aircraft. The color of the symbol is the flight sector color for an unselected track and \colorref{color:Track Highlight} for a selected one. A number of different symbols are available. 
 
 \begin{tabular}{l l}
 \includegraphics{img/rps_fpasd.png} & Flight plan track (position is not based on surveillance data but calculated by EuroScope)\\
@@ -586,7 +586,9 @@ The history dots show the previous positions of the track. The number of display
 
 \subsection{Prediction Line}
 
-The prediction line draws the predicted ground track of the aircraft, based on its current track and ground speed. It is a two-color line, starting with “Track Default” at the position symbol and then alternating with “Track Highlight” with every segment representing one minute of flying time. The length of the prediction line can be changed for all tracks via the Track Control Window, or for a single track via the Prediction Line menu. The example below shows a selected track with 5 history dots and a 3-minute prediction line. Prediction lines are not displayed for flight plan tracks.
+The prediction line draws the predicted ground track of the aircraft, based on its current track and ground speed. It is a two-color line, starting with \colorref{color:Track Default} at the position symbol and then alternating with \colorref{color:Track Highlight} with every segment representing one minute of flying time. 
+
+The length of the prediction line can be changed for all tracks via the \winref{win:tcw}, or for a single track via the \winref{menu:prl}. The example below shows a selected track with 5 history dots and a 3-minute prediction line. Prediction lines are not displayed for flight plan tracks.
 
 \includegraphics{img/rps_predline+history_selected.png}
 
