@@ -1,0 +1,9 @@
+markdown: GFM
+theme: jekyll-theme-minimal
+title: Portugal vACC Euroscope Installation Guide
+
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
