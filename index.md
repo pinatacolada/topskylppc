@@ -1,9 +1,9 @@
 ---
 ---
 
-Welcome to My Home Page
+Download and install Euroscope from https://www.euroscope.hu/install/EuroScopeSetup32.msi
 
-{% assign date = '2020-04-13T10:20:00Z' %}
+Download Euroscope Beta r34 from https://www.euroscope.hu/install/EuroScopeBeta32a34.zip
 
-- Original date - {{ date }}
-- With timeago filter - {{ date | timeago }}
+Unzip the contents of the beta on top of your Euroscope installation. Overwrite the existing files. By default Euroscope will install in 'C:\Program Files (x86)\EuroScope'
+
