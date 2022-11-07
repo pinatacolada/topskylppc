@@ -183,7 +183,199 @@ The TopSky plugin (a.k.a. The Plugin Formerly Known As “EUROCAT 2000 E”) sta
 
 Euroscope should load with some preplaced windows similar to the above configuration
 
-Screen resolutions other than 1920x1080 will yield different results. Larger resolutions will bring preplaced windows towards the left and middle, while smaller resolutions may potentially place windows outside the screen. It is recommended for users experiencing difficulties related to their screen size to experiment and create custom settings in the TopSkySettingsLocal file containing revised window placements adjusted for their own screen. Refer to \texttt{\detokenize{TopSky_Developer_Guide_Settings.xlsx}} for available settings
+\begin{Note}
+Screen resolutions other than 1920x1080 will yield different results. Larger resolutions will bring preplaced windows towards the left and middle, while smaller resolutions may potentially place windows outside the screen. It is recommended for users experiencing difficulties related to their screen size to experiment and create custom settings in the TopSkySettingsLocal file containing revised window placements adjusted for their own screen. Refer to \texttt{\detokenize{TopSky_Developer_Guide_Settings.xlsx}} for available settings  
+\end{Note}
+
+\section{Track Presentation}
+
+The presentation of tracks consists of the following elements:
+
+\begin{itemize}
+    \item{Aircraft position symbol}
+    \item{History dots}
+    \item{Prediction line}
+    \item{Track label, joined to the position symbol with a leader line}
+\end{itemize}
+
+\section{Sector States}
+
+Depending on a set of conditions and relationships, each Flight Plan is defined as being in a certain state relative to each airspace volume. This is the so called Sector State. As a given flight progresses along its route it will go through a series of diferent Sector States relative to a given airspace volume. 
+
+There are 8 different Sector States. Track presentation coloring depends on the flight sector state:
+
+\begin{tabular}{l l l}
+  \textbf{State}          & \textbf{Color}    & \textbf{Condition}\\
+  Unconcerned           & \cellcolor{Flight Highlight}\color{Unconcerned}Unconcerned     & Track will not enter the active sector\\
+  Notified              & \colorref{color:Concerned}       & Track will enter the active sector (> 15 min)\\
+  Coordinated           & \colorref{color:Coordination}    & Track will enter the active sector (< 15 min)\\
+  Assumed               & \colorref{color:Assumed}         & Track is assumed\\
+  On Contact            & \colorref{color:Assumed}         & Track is on-contact with you\\
+  Transfer Initiated    & \colorref{color:Assumed}         & Track is being transferred to the next controller\\
+  Redundant             & \colorref{color:Redundant}       & Track has been transferred to the next controller but is still inside the active sector\\
+  Free                  & \colorref{color:VFR}             & Track is not assumed or on-contact with anyone\\
+\end{tabular}
+
+Coordinated tracks that have not departed yet are shown as Notified.
+
+\subsection{Aircraft position symbol}
+
+The position symbol is drawn at the latest known position of the aircraft. The color of the symbol is the flight sector color for an unselected track and \colorref{color:Track Highlight} for a selected one. A number of different symbols are available. 
+
+\begin{tabular}{l l}
+\image{img/rps_fpasd.png} & Flight plan track (position is not based on surveillance data but calculated by EuroScope)\\
+\image{img/rps_coast.png} & Coasted track (no position updates in over 30 seconds, position no longer reliable)\\
+\image{img/rps_psr.png} & Primary radar track\\
+\image{img/rps_sec.png} & Secondary or combined radar track (uncontrolled)\\
+\image{img/rps_psr+ssr.png} & Secondary or combined radar track (controlled)\\
+ & ADS-B only track\\
+\end{tabular}
+
+An indication of an SPI (transponder ident) can be added to the secondary radar and ADS-B symbols. It draws a cross over the symbol and prints the text “SPI” above and to the right of the symbol:
+
+\begin{tabular}{l l}
+\image{img/rps_spi.png} & Secondary radar track without DAPs with Special Position Indication
+\end{tabular}
+
+For other than the flight plan and coasted track symbols, a divergence alert will be drawn in case of a RAM
+or CLAM alert. This is a circle drawn around the symbol (will not be drawn if SPI is active):
+
+\begin{tabular}{l l}
+\image{img/rps_divalert.png}& Secondary radar track without DAPs with divergence alert
+\end{tabular}
+
+\subsection{History dots}
+
+The history dots show the previous positions of the track. The number of displayed dots can be changed via the \textit{\titleref{win:tcw}}. The color of the dots is the flight sector color for an unselected track and \colorref{color:Track Highlight} for a selected one. History dots are not displayed for flight plan tracks.
+
+\subsection{Prediction Line}
+
+The prediction line draws the predicted ground track of the aircraft, based on its current track and ground speed. It is a two-color line, starting with \colorref{color:Track Default} at the position symbol and then alternating with \colorref{color:Track Highlight} with every segment representing one minute of flying time. 
+
+The length of the prediction line can be changed for all tracks via the \winref{win:tcw}, or for a single track via the \winref{menu:prl}. The example below shows a selected track with 5 history dots and a 3-minute prediction line. Prediction lines are not displayed for flight plan tracks.
+
+\image{img/rps_predline+history_selected.png}
+
+\section{Track Labels}
+\label{tlabel}
+
+There are four types of track labels that can be displayed: Standard, Reduced, Extended and Uncoupled.
+
+In addition, each label except the extended one has an unselected and a selected state, the selected state being shown when the mouse cursor is over the label.
+
+\subsection{Standard Track Label}
+\label{tlabel:std}
+
+The Standard label is shown for aircraft that are in or will enter the active sector.
+
+\subsection*{Unselected Track}
+
+\begin{enumerate}[label=Line \arabic*]
+  \setcounter{enumi}{-1}
+  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:RI} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC W} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
+  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
+  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL}
+  \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX}
+  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
+\end{enumerate}
+
+\subsection*{Selected Track}
+
+\begin{enumerate}[label=Line \arabic*]
+  \setcounter{enumi}{-1}
+  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:RI} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC W} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
+  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
+  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL}
+  \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX}
+  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
+  \item \tagref{tag:OP TEXT}  
+\end{enumerate}
+
+\subsection{Reduced Track Label}
+
+The Reduced label for aircraft that will not enter the active sector. Flights in Free, Initial, Notified or Unconcerned are automatically displayed with a Reduced Track Label. 
+
+\label{tlabel:red}
+
+\subsection*{Unselected Track}
+
+\begin{enumerate}[label=Line \arabic*]
+  \setcounter{enumi}{-1}
+  \item \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Mark dot} \tagref{tag:S} \tagref{tag:EMRG}  
+  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
+  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES}
+  \item \tagref{tag:TRACK} \tagref{tag:FCOPX}
+  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
+\end{enumerate}
+
+\subsection*{Selected Track}
+
+\begin{enumerate}[label=Line \arabic*]
+  \setcounter{enumi}{-1}
+  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Mark dot} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:NSSR} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
+  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
+  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL}
+  \item \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:FCOPX}
+  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
+  \item \tagref{tag:OP TEXT}  
+\end{enumerate}
+
+\subsection{Extended Track Label}
+\label{tlabel:ext}
+
+The Extended label can be opened from the Standard or Reduced label by right clicking on the \tagref{tag:CALLSIGN} item, and stays open as long as the cursor is within the label area.
+
+\begin{enumerate}[label=Line \arabic*]
+  \setcounter{enumi}{-1}
+  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:RI} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC W} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
+  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \hfill \tagref{tag:TSSR} \tagref{tag:ASSR} \tagref{tag:PSSR}
+  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:TRACK} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL} \hfill \tagref{tag:FLTID} \tagref{tag:FLTADD}
+  \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX}
+  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
+  \item \tagref{tag:COMP CS}
+  \item \tagref{tag:ADEP} \tagref{tag:ETD/ATD} \tagref{tag:ADES} \tagref{tag:EET}
+  \item \tagref{tag:FIELD15}
+  \item \tagref{tag:FILED18}
+  \item \tagref{tag:MALRT}
+  \item \tagref{tag:OP TEXT}
+  \item \tagref{tag:OP TEXT2}
+\end{enumerate}
+
+\subsection{Uncoupled Track Label}
+\label{tlabel:unc}
+
+The Uncoupled label is shown for radar tracks that aren’t correlated with a flight plan.
+
+\subsection*{Unselected Track}
+
+\begin{enumerate}[label=Line \arabic*]
+  \setcounter{enumi}{-1}
+  \item \tagref{tag:ALRT} \tagref{tag:EMRG}
+  \item \tagref{tag:FLTID} or \tagref{tag:TSSR}  
+  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:GS}
+  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
+\end{enumerate}
+
+\begin{Note}
+  \tagref{tag:FLTID} is displayed on line 1 only if a valid Mode-S Aircraft Identification is received. Otherwise, TSSR is displayed instead
+\end{Note}
+
+\subsection*{Selected Track}
+
+\begin{enumerate}[label=Line \arabic*]
+  \setcounter{enumi}{-1}
+  \item \tagref{tag:ALRT} \tagref{tag:EMRG}
+  \item \tagref{tag:FLTID} \tagref{tag:TSSR}
+  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:GS}
+  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
+\end{enumerate}
+
+\begin{Note}
+  \tagref{tag:FLTID} is displayed on line 1 only if a valid Mode-S Aircraft Identification is received. Otherwise, only TSSR is displayed
+\end{Note}
+
+\subsection{Label Compaction}
+\label{tlabel:comp}
 
 \section{Global Menu}
 \label{menu:global}
@@ -520,203 +712,6 @@ Only the altitude filter status is shown. “xxx” displays the Lower filter va
 
 \subsection{S000-999}
 Not implemented (shows static values).
-
-\section{Track Presentation}
-
-The presentation of tracks consists of the following elements:
-
-\begin{itemize}
-    \item{Aircraft position symbol}
-    \item{History dots}
-    \item{Prediction line}
-    \item{Track label, joined to the position symbol with a leader line}
-\end{itemize}
-
-\subsection{Colors}
-
-Most of the track presentation coloring depends on the flight sector state.
-
-For controlled flights (any IFR flight or a VFR flight in ASSUMED state), the colors are as follows:
-
-\begin{tabular}{l l l}
-\textbf{State}          & \textbf{Color}    & \textbf{Condition}\\
-Unconcerned           & \colorref{color:Unconcerned}     & Track will not enter the active sector\\
-Notified              & \colorref{color:Concerned}       & Track will enter the active sector (> 15 min)\\
-Coordinated           & \colorref{color:Coordination}    & Track will enter the active sector (< 15 min)\\
-Assumed               & \colorref{color:Assumed}         & Track is assumed\\
-Transfer Initiated    & \colorref{color:Assumed}         & Track is being transferred to the next controller\\
-Redundant             & \colorref{color:Redundant}       & Track has been transferred to the next controller but is still inside the active sector\\
-\end{tabular}
-
-Coordinated tracks that have not departed yet will be shown as notified instead.
-
-For uncontrolled flights (VFR flights not in ASSUMED state), the colors are as follows:
-
-\begin{tabular}{l l l}
-\textbf{State}  & \textbf{Color}             & \textbf{Condition}\\
-On Contact      & \colorref{color:Assumed}         & Track is on-contact with you\\
-Free            & \colorref{color:VFR}             & Track is not assumed or on-contact with anyone\\
-Otherwise       & \colorref{color:Unconcerned}     &\\
-\end{tabular}
-
-\subsection{Aircraft position symbol}
-
-The position symbol is drawn at the latest known position of the aircraft. The color of the symbol is the flight sector color for an unselected track and \colorref{color:Track Highlight} for a selected one. A number of different symbols are available. 
-
-\begin{tabular}{l l}
-\image{img/rps_fpasd.png} & Flight plan track (position is not based on surveillance data but calculated by EuroScope)\\
-\image{img/rps_coast.png} & Coasted track (no position updates in over 30 seconds, position no longer reliable)\\
-\image{img/rps_psr.png} & Primary radar track\\
-\image{img/rps_sec.png} & Secondary or combined radar track (uncontrolled)\\
-\image{img/rps_psr+ssr.png} & Secondary or combined radar track (controlled)\\
- & ADS-B only track\\
-\end{tabular}
-
-An indication of an SPI (transponder ident) can be added to the secondary radar and ADS-B symbols. It draws a cross over the symbol and prints the text “SPI” above and to the right of the symbol:
-
-\begin{tabular}{l l}
-\image{img/rps_spi.png} & Secondary radar track without DAPs with Special Position Indication
-\end{tabular}
-
-For other than the flight plan and coasted track symbols, a divergence alert will be drawn in case of a RAM
-or CLAM alert. This is a circle drawn around the symbol (will not be drawn if SPI is active):
-
-\begin{tabular}{l l}
-\image{img/rps_divalert.png}& Secondary radar track without DAPs with divergence alert
-\end{tabular}
-
-\subsection{History dots}
-
-The history dots show the previous positions of the track. The number of displayed dots can be changed via the \textit{\titleref{win:tcw}}. The color of the dots is the flight sector color for an unselected track and \colorref{color:Track Highlight} for a selected one. History dots are not displayed for flight plan tracks.
-
-\subsection{Prediction Line}
-
-The prediction line draws the predicted ground track of the aircraft, based on its current track and ground speed. It is a two-color line, starting with \colorref{color:Track Default} at the position symbol and then alternating with \colorref{color:Track Highlight} with every segment representing one minute of flying time. 
-
-The length of the prediction line can be changed for all tracks via the \winref{win:tcw}, or for a single track via the \winref{menu:prl}. The example below shows a selected track with 5 history dots and a 3-minute prediction line. Prediction lines are not displayed for flight plan tracks.
-
-\image{img/rps_predline+history_selected.png}
-
-\section{Track Labels}
-\label{tlabel}
-
-There are four types of track labels that can be displayed: Standard, Reduced, Extended and Uncoupled.
-
-In addition, each label except the extended one has an unselected and a selected state, the selected state being shown when the mouse cursor is over the label.
-
-\subsection{Standard Track Label}
-\label{tlabel:std}
-
-The Standard label is shown for aircraft that are in or will enter the active sector.
-
-\subsection*{Unselected Track}
-
-\begin{enumerate}[label=Line \arabic*]
-  \setcounter{enumi}{-1}
-  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:RI} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC W} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
-  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
-  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL}
-  \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX}
-  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
-\end{enumerate}
-
-\subsection*{Selected Track}
-
-\begin{enumerate}[label=Line \arabic*]
-  \setcounter{enumi}{-1}
-  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:RI} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC W} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
-  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
-  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL}
-  \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX}
-  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
-  \item \tagref{tag:OP TEXT}  
-\end{enumerate}
-
-\subsection{Reduced Track Label}
-
-The Reduced label for aircraft that will not enter the active sector. Flights in Free, Initial, Notified or Unconcerned are automatically displayed with a Reduced Track Label. 
-
-\label{tlabel:red}
-
-\subsection*{Unselected Track}
-
-\begin{enumerate}[label=Line \arabic*]
-  \setcounter{enumi}{-1}
-  \item \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Mark dot} \tagref{tag:S} \tagref{tag:EMRG}  
-  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
-  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES}
-  \item \tagref{tag:TRACK} \tagref{tag:FCOPX}
-  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
-\end{enumerate}
-
-\subsection*{Selected Track}
-
-\begin{enumerate}[label=Line \arabic*]
-  \setcounter{enumi}{-1}
-  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Mark dot} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:NSSR} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
-  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
-  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL}
-  \item \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:FCOPX}
-  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
-  \item \tagref{tag:OP TEXT}  
-\end{enumerate}
-
-\subsection{Extended Track Label}
-\label{tlabel:ext}
-
-The Extended label can be opened from the Standard or Reduced label by right clicking on the \tagref{tag:CALLSIGN} item, and stays open as long as the cursor is within the label area.
-
-\begin{enumerate}[label=Line \arabic*]
-  \setcounter{enumi}{-1}
-  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:RI} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC W} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
-  \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \hfill \tagref{tag:TSSR} \tagref{tag:ASSR} \tagref{tag:PSSR}
-  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:TRACK} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL} \hfill \tagref{tag:FLTID} \tagref{tag:FLTADD}
-  \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX}
-  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
-  \item \tagref{tag:COMP CS}
-  \item \tagref{tag:ADEP} \tagref{tag:ETD/ATD} \tagref{tag:ADES} \tagref{tag:EET}
-  \item \tagref{tag:FIELD15}
-  \item \tagref{tag:FILED18}
-  \item \tagref{tag:MALRT}
-  \item \tagref{tag:OP TEXT}
-  \item \tagref{tag:OP TEXT2}
-\end{enumerate}
-
-\subsection{Uncoupled Track Label}
-\label{tlabel:unc}
-
-The Uncoupled label is shown for radar tracks that aren’t correlated with a flight plan.
-
-\subsection*{Unselected Track}
-
-\begin{enumerate}[label=Line \arabic*]
-  \setcounter{enumi}{-1}
-  \item \tagref{tag:ALRT} \tagref{tag:EMRG}
-  \item \tagref{tag:FLTID} or \tagref{tag:TSSR}  
-  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:GS}
-  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
-\end{enumerate}
-
-\begin{Note}
-  \tagref{tag:FLTID} is displayed on line 1 only if a valid Mode-S Aircraft Identification is received. Otherwise, TSSR is displayed instead
-\end{Note}
-
-\subsection*{Selected Track}
-
-\begin{enumerate}[label=Line \arabic*]
-  \setcounter{enumi}{-1}
-  \item \tagref{tag:ALRT} \tagref{tag:EMRG}
-  \item \tagref{tag:FLTID} \tagref{tag:TSSR}
-  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:GS}
-  \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
-\end{enumerate}
-
-\begin{Note}
-  \tagref{tag:FLTID} is displayed on line 1 only if a valid Mode-S Aircraft Identification is received. Otherwise, only TSSR is displayed
-\end{Note}
-
-\subsection{Label Compaction}
-\label{tlabel:comp}
 
 
 
