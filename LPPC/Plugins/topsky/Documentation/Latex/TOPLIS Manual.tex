@@ -30,6 +30,8 @@
 
 \usepackage{enumitem}
 
+\usepackage[export]{adjustbox}
+
 \newcounter{rowcounter}
 \newcommand{\nextrow}{\refstepcounter{rowcounter}}
 
@@ -39,11 +41,15 @@
 
 \newcommand{\winref}[1]{\textit{\titleref{#1}}}
 
+\newcommand{\image}[1]{\includegraphics[max height=10cm,max width=\textwidth]{#1}}
+
 \newcolumntype{t}{>{\tt}c}
 
 \colorlet{shadecolor}{blue!10}
 
-
+\makeatletter
+\def\maxwidth#1{\ifdim\Gin@nat@width>#1 #1\else\Gin@nat@width\fi}
+\makeatother
 
 
 \newenvironment{Warn}
@@ -126,7 +132,7 @@ bookmarks=true,bookmarksopenlevel=2]{hyperref}
 ~\vspace{\fill}
 
 {\huge 
-\includegraphics{img/logo.png}\\
+\image{img/logo.png}\\
 TOPLIS
 }
 
@@ -173,7 +179,7 @@ The TopSky plugin (a.k.a. The Plugin Formerly Known As “EUROCAT 2000 E”) sta
 
 \chapter{System Description}
 \section{Main Window}
-\includegraphics[width=15cm, keepaspectratio]{img/mainwindow.png}
+\image{img/mainwindow.png}
 
 Euroscope should load with some preplaced windows similar to the above configuration
 
@@ -181,13 +187,13 @@ Screen resolutions other than 1920x1080 will yield different results. Larger res
 
 \section{Global Menu}
 \label{menu:global}
-\includegraphics{img/globalmenu.png}
+\image{img/globalmenu.png}
 
 The Global Menu is located on the top edge of the radar screen. It displays the current UTC time and contains a number of submenus which are explained below.
 
 \subsection{Setup Menu}
 \label{menu:set}
-\includegraphics{img/Setup.png}
+\image{img/Setup.png}
 
 Setup Menu allows for various adjustments. Each position will load its defined settings based on the active Primary Frequency.
 
@@ -310,7 +316,7 @@ Not operational.
 \subsection{AMS menu}
 \label{menu:ams}
 
-\includegraphics{img/AMS.png}
+\image{img/AMS.png}
 
 Opens the \textit{\titleref{win:amw}}.
 
@@ -500,7 +506,6 @@ Right-clicking the Reload button for Settings \& SettingsL has a special purpose
 \medskip 
 
 \subsection{RRxxx/Off}
-\label{menu:rr}
 
 Opens the \textit{\titleref{menu:rr}}. If the rings are selected on,
 
@@ -559,25 +564,25 @@ Otherwise       & \colorref{color:Unconcerned}     &\\
 The position symbol is drawn at the latest known position of the aircraft. The color of the symbol is the flight sector color for an unselected track and \colorref{color:Track Highlight} for a selected one. A number of different symbols are available. 
 
 \begin{tabular}{l l}
-\includegraphics{img/rps_fpasd.png} & Flight plan track (position is not based on surveillance data but calculated by EuroScope)\\
-\includegraphics{img/rps_coast.png} & Coasted track (no position updates in over 30 seconds, position no longer reliable)\\
-\includegraphics{img/rps_psr.png} & Primary radar track\\
-\includegraphics{img/rps_sec.png} & Secondary or combined radar track (uncontrolled)\\
-\includegraphics{img/rps_psr+ssr.png} & Secondary or combined radar track (controlled)\\
+\image{img/rps_fpasd.png} & Flight plan track (position is not based on surveillance data but calculated by EuroScope)\\
+\image{img/rps_coast.png} & Coasted track (no position updates in over 30 seconds, position no longer reliable)\\
+\image{img/rps_psr.png} & Primary radar track\\
+\image{img/rps_sec.png} & Secondary or combined radar track (uncontrolled)\\
+\image{img/rps_psr+ssr.png} & Secondary or combined radar track (controlled)\\
  & ADS-B only track\\
 \end{tabular}
 
 An indication of an SPI (transponder ident) can be added to the secondary radar and ADS-B symbols. It draws a cross over the symbol and prints the text “SPI” above and to the right of the symbol:
 
 \begin{tabular}{l l}
-\includegraphics{img/rps_spi.png} & Secondary radar track without DAPs with Special Position Indication
+\image{img/rps_spi.png} & Secondary radar track without DAPs with Special Position Indication
 \end{tabular}
 
 For other than the flight plan and coasted track symbols, a divergence alert will be drawn in case of a RAM
 or CLAM alert. This is a circle drawn around the symbol (will not be drawn if SPI is active):
 
 \begin{tabular}{l l}
-\includegraphics{img/rps_divalert.png}& Secondary radar track without DAPs with divergence alert
+\image{img/rps_divalert.png}& Secondary radar track without DAPs with divergence alert
 \end{tabular}
 
 \subsection{History dots}
@@ -590,7 +595,7 @@ The prediction line draws the predicted ground track of the aircraft, based on i
 
 The length of the prediction line can be changed for all tracks via the \winref{win:tcw}, or for a single track via the \winref{menu:prl}. The example below shows a selected track with 5 history dots and a 3-minute prediction line. Prediction lines are not displayed for flight plan tracks.
 
-\includegraphics{img/rps_predline+history_selected.png}
+\image{img/rps_predline+history_selected.png}
 
 \section{Track Labels}
 \label{tlabel}
@@ -687,13 +692,13 @@ The Uncoupled label is shown for radar tracks that aren’t correlated with a fl
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
   \item \tagref{tag:ALRT} \tagref{tag:EMRG}
-  \item \tagref{FLTID} or \tagref{tag:TSSR}  
+  \item \tagref{tag:FLTID} or \tagref{tag:TSSR}  
   \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:GS}
   \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
 \end{enumerate}
 
 \begin{Note}
-  \tagref{FLTID} is displayed on line 1 only if a valid Mode-S Aircraft Identification is received. Otherwise, TSSR is displayed instead
+  \tagref{tag:FLTID} is displayed on line 1 only if a valid Mode-S Aircraft Identification is received. Otherwise, TSSR is displayed instead
 \end{Note}
 
 \subsection*{Selected Track}
@@ -726,7 +731,7 @@ Many of the menus have a default item or value, displayed with inverse video. Th
 
 \subsection*{Controlled Track}
 
-\includegraphics{img/cm.png}
+\image{img/cm.png}
 
 \begin{tabular}{l l l}
 Assume                    & Assumes track\\
@@ -763,10 +768,10 @@ Besides the manual alerts, none of the selectable toggle options in this menu wi
 
 \subsection*{Uncontrolled Track}
 
-\includegraphics{img/cmuncon.png}
+\image{img/cmuncon.png}
 
 \begin{tabular}{l l l}
-On Contact          & Sets track in On-Contact state (“Assumed” color, can’t be filtered, but still uncontrolled)
+On Contact          & Sets track in On-Contact state (\colorref{color:Assumed} color, can’t be filtered, but still uncontrolled)
 \\Free              & Releases track
 \\Assume            & Assumes track*
 \\(X)Highlight      & Toggles the Callsign highlight
@@ -782,7 +787,7 @@ On Contact          & Sets track in On-Contact state (“Assumed” color, can�
 
 \subsection*{Uncorrelated Track}
 
-\includegraphics{img/cmuncor.png}
+\image{img/cmuncor.png}
 
 \begin{tabular}{l l l}
 Correlate       & Correlates the radar track with the next clicked “Callsign” field
@@ -794,7 +799,7 @@ Correlate       & Correlates the radar track with the next clicked “Callsign�
 \subsection{Transfer menu}
 \label{menu:xfr}
 
-\includegraphics{img/xfr.png}
+\image{img/xfr.png}
 
 For CPDLC connected aircraft, the menu contains options related to the transfer. Left- clicking on the frequency button initiates the transfer (and sends the CPDLC message if selected).
 
@@ -805,18 +810,19 @@ For CPDLC connected aircraft, the menu contains options related to the transfer.
 \subsection{Transfer Confirmation Window}
 \label{win:xfrconfirm}
 
-\includegraphics{img/xfrconfirm.png}
+\image{img/xfrconfirm.png}
 
 If an aircraft has a defined XFL value and hasn’t been cleared to it (CFL is not equal to XFL), attempting to transfer the aircraft will open a Transfer Confirmation Window in the middle of the radar screen. While the window is open it will block all other attempts to click on items elsewhere on the radar screen. Either click on “Transfer” to transfer the aircraft regardless of the situation, or “Cancel” to cancel the transfer.
 
 \subsection{Transfer \& Release menu}
 \label{menu:xfrrel}
 
-\includegraphics{img/xfrrel.png}
+\image{img/xfrrel.png}
 
 The Transfer \& Release menu allows specifying a release condition for a track to be transferred. The transfer is initiated after selecting the desired condition (climb, descent, turn or full). The release will be shown on line 0 of the track label (C for climb, D for descent, T for turn and F for full). The transferring controller will see the label item until the track becomes unconcerned. The receiving controller will see the item for 3 minutes after the track is assumed.
 
-\includegraphics{img/xfrrel.png}
+\image{img/xfrrel.png}
+
 For CPDLC connected aircraft, the menu contains options related to the transfer:
 
 “Monitor” / “Contact” select which of the two CPDLC message types will be sent.
@@ -843,7 +849,7 @@ The “ROF” message is a feature specific to this plugin. It is an experimenta
 \subsection{Hold Menu}
 \label{menu:hold}
 
-\includegraphics{img/hold.png}
+\image{img/hold.png}
 
 The Hold menu allows you to enter a holding clearance (add the aircraft to the holding list). It displays for selection the points in the aircraft’s route that are ahead of its current position.
 
@@ -856,7 +862,7 @@ The holding point is automatically sent to your other EuroScope instances with a
 \subsection{Manual Transfer Menu}
 \label{menu:mxfr}
 
-\includegraphics{img/mxfr.png}
+\image{img/mxfr.png}
 
 The Manual Transfer menu allows transferring the aircraft to any controller. In the SCHEDULED list are the controllers that are in the current sector sequence sorted in the order the aircraft is planned to enter the controllers’ sectors, with the next controller being the default item.
 
@@ -865,7 +871,7 @@ When opened, the “More” list displays all the other controllers for selectio
 \subsection{VCI Menu}
 \label{menu:vci}
 
-\includegraphics{img/vci.png}
+\image{img/vci.png}
 
 Available only for CPDLC-connected aircraft and when more than one frequency has been set up by the controller, the VCI menu allows sending a CPDLC “contact” or “monitor” message without initiating a transfer.
 
@@ -885,7 +891,7 @@ The menu closes when a message is sent or the cursor leaves the menu area.
 \subsection{Prediction Line Menu}
 \label{menu:prl}
 
-\includegraphics{img/prl.png}
+\image{img/prl.png}
 
 The Prediction Line menu allows displaying a PRL with a specific length for each aircraft even if the PRL selection is off in the Radar Menu.
 
@@ -894,7 +900,7 @@ The default value is the set PRL value if available, otherwise the PRL length va
 \subsection{Sequence Number Menu}
 \label{menu:seq}
 
-\includegraphics{img/seq.png}
+\image{img/seq.png}
 
 This menu is used to set an arrival sequence number. Values from 1 to 50 are available.
 
@@ -904,7 +910,7 @@ controller (during transfer) unless the flight strip is manually sent.
 \subsection{Waypoint Menu}
 \label{menu:wpt}
 
-\includegraphics{img/wpt.png}
+\image{img/wpt.png}
 
 \begin{tabular}{l l}
 $\blacktriangle$  Routing & Opens the “COPN point” or “COPX point” submenu (EuroScope default item)
@@ -916,7 +922,8 @@ $\blacktriangle$  Routing & Opens the “COPN point” or “COPX point” subme
 
 This menu gives access to functions related to the route of the aircraft. It is used to assign direct-to clearances, departure and arrival routes, holding clearances, and to coordinate the sector entry/exit point.
 
-\includegraphics{img/wptyn.png}
+\image{img/wptyn.png}
+
 When an entry or exit coordination has been received, the menu opens looking like this instead. The options are:
 
 \begin{tabular}{l l}
@@ -927,13 +934,13 @@ $\blacktriangle$ Routing    & Opens the “COPN point” or “COPX point” sub
 
 The submenu opened with “Routing” offers the same possibilities to accept or reject the coordination, but also the possibility to counter-propose a different point.
 
-\includegraphics{img/wptdl.png}
+\image{img/wptdl.png}
 
 When the aircraft is CPDLC-connected and the coordination is an exit coordination, the menu offers a choice between “R/T” and “CPDLC”. The chosen option decides how an accepted coordination is communicated to the aircraft.
 
 With “CPDLC” selected, when “Accept” is clicked, in addition to the coordination being accepted, a “PROCEED DIRECT TO <point>” CPDLC message is sent to the aircraft.
 
-\includegraphics{img/wptroute.png}
+\image{img/wptroute.png}
 
 When a direct-to downlink request has been received, the menu can be used to answer it.
 
@@ -962,11 +969,11 @@ See \textit{\titleref{menu:hold}} for other details.
 
 \subsection{AFL Menu}
 \label{menu:afl}
-\includegraphics{img/afl.png}
+\image{img/afl.png}
 nautical units
-\includegraphics{img/aflm.png}
+\image{img/aflm.png}
 metric units
-\includegraphics{img/kbd.png}
+\image{img/kbd.png}
 keyboard
 
 This menu can be used to set the AFL value for aircraft that don’t have an altitude reporting transponder.
@@ -998,7 +1005,7 @@ Regardless of whether the entered value is in meters or feet, and altitude or he
 
 \subsection{CFL Menu}
 \label{menu:cfl}
-\includegraphics{img/cfl.png}
+\image{img/cfl.png}
 
 In the track label the CFL menu is combined with the COPN altitude coordination menu and the CFL menu opens only when the aircraft is assumed. The default value is by default the XFL, but it can be changed to the current CFL or the RFL in the Local Settings menu. Altitudes up to the transition altitude are prefixed with “A” in the nautical units list and with “M” in the metric units list. QFE heights are prefixed with “E” in both lists. Selectable values are from 500ft to FL510 with 500ft intervals up to the transition altitude, then 1000ft intervals up to FL410 and 2000ft intervals above it. 
 
@@ -1016,7 +1023,7 @@ Entering a metric value will set the aircraft’s units to metric; a nautical va
 
 The aircraft’s RFL is displayed in the place of the “NAUTICAL”/”METRIC” item with format “R<RFL>”. Left-clicking the button still has the same effect (changes the displayed units).
 
-\includegraphics{img/cfldl.png}
+\image{img/cfldl.png}
 
 For CPDLC connected aircraft, the menu contains “R/T” and “CPDLC” options to select whether a level clearance is to be sent via radio or as a CPDLC message.
 
@@ -1042,7 +1049,7 @@ This menu includes items to set or clear an assigned heading or a direct route a
 
 “HOP”, “RTI” and “TIP” are coordination functions (see below for more information). To use them, first click on the function’s button and then select the desired value from the list (for HOP also “Point” is available).
 
-\includegraphics{img/ahdgdl.png}
+\image{img/ahdgdl.png}
 
 For CPDLC connected aircraft, the menu contains additional buttons:
 
@@ -1108,7 +1115,7 @@ When the cursor is over a known point (VOR, NDB or waypoint), the name of that p
 
 \subsection{ARC Menu}
 \label{menu:arc}
-\includegraphics{img/arc.png}
+\image{img/arc.png}
 
 The ARC menu allows assigning a rate of climb or descent to the flight plan. Selectable rates are 500-5000 ft/min (displayed in 100’s of ft/min), or 5-25 m/s. The menu units are always the same as the units used for the aircraft in general.
 
@@ -1126,8 +1133,9 @@ Assigned rate clearances given by controllers not using TopSky will be displayed
 
 \subsection{ASP Menu}
 \label{menu:asp}
-\includegraphics{img/asp.png}
-\includegraphics{img/aspmach.png}
+\image{img/asp.png}
+\image{img/aspmach.png}
+
 The ASP menu allows setting an assigned speed or Mach number. The default value will be the closest value to the assigned one if set, otherwise TopSky will suggest the closest value to the aircraft’s present speed based on the ground speed (zero wind will be assumed). The menu will initially open in IAS mode if the aircraft’s CFL is below the IAS/Mach altitude value defined in the Local Settings (FL275 by default), and in Mach mode if above it. The selectable values range from 100 to 400 knots and from Ma0.50 to Ma1.00.
 
 The “+” and “-” options can be used to specify the clearance
@@ -1142,7 +1150,7 @@ The “Resume” button below the list is replaced by a “HS” button. Clickin
 Entering a metric value will set the aircraft’s units to metric; a nautical value will set
 nautical units.
 
-\includegraphics{img/aspmachdl.png}
+\image{img/aspmachdl.png}
 For CPDLC connected aircraft, the menu contains additional buttons:
 
 R/T” and “CPDLC” select whether a speed clearance is to be sent via radio or as a
@@ -1161,7 +1169,7 @@ The minimum and maximum speed clearances are a feature specific to this plugin (
 
 \subsection{ASSR Menu}
 \label{menu:assr}
-\includegraphics{img/assr.png}
+\image{img/assr.png}
 
 The ASSR menu allows assigning an SSR code to the flight plan. To enter a new code, type it by left-clicking the numbers. “C” clears the entered value and “Ok” assigns the code if it’s a valid one. To get an automatically assigned code, clear the value and then left-click on “Ok” with the entry box left empty.
 
@@ -1169,7 +1177,7 @@ Depending on the configuration, the assigned code may be a mode S conspicuity co
 
 \subsection{Combined Transfer Menu}
 \label{menu:ctm}
-\includegraphics{img/ctm.png}
+\image{img/ctm.png}
 
 The Combined Transfer menu displays the proposed transfer parameters for a HOP. It is opened by clicking on the AHDG, ASP or COPN/COPX items in the track label or flight list, or the list row displaying the HOP message in the \textit{\titleref{win:miw}}.
 
@@ -1177,7 +1185,7 @@ From top to bottom, the displayed values are the direct-to point, speed/Mach val
 
 \subsection{Tactical Transfer Menu}
 \label{menu:ttm}
-\includegraphics{img/ttm.png}
+\image{img/ttm.png}
 
 The Tactical Transfer menu is used to accept, reject or apply tactical data (AHDG, ASP and/or ARC). It is opened by left-clicking on a proposed or accepted parameter in the track label. The menu displays all proposed (\colorref{color:Proposition In} color) and accepted (sector state color) values.
 
@@ -1191,7 +1199,7 @@ All tactical data coordinations (also any rejected ones) can be viewed in the \t
 
 \subsection{Aerodrome Menu}
 \label{menu:ad}
-\includegraphics{img/ad.png}
+\image{img/ad.png}
 
 The Aerodrome menu is used to select the aerodrome(s) for aerodrome related windows and functions. The list contains all aerodromes with runways defined in the active sector file. To select an aerodrome, left-click on it or type its identifier into the text entry box below the list.
 
@@ -1201,7 +1209,7 @@ Clicking on “Ok” will confirm the selection(s) and close the menu.
 
 \subsection{NPT Menu}
 \label{menu:npt}
-\includegraphics{img/npt.png}
+\image{img/npt.png}
 
 The NPT menu is used to answer a direct-to downlink request using CPDLC. The menu
 contains three options:
@@ -1220,7 +1228,7 @@ Clicking the point name will set the direct-to clearance without coordination
 
 \subsection{CPDLC Emergency Acknowledgement Menu}
 \label{dleam}
-\includegraphics{img/dlmayday.png}
+\image{img/dlmayday.png}
 
 When a CPDLC emergency message has been received, this menu is used to respond to it (if applicable), and then acknowledge the situation. When a reply is required, the menu button will read “ROGER”. Left-clicking on it will send the “ROGER” CPDLC message and close the menu. When opening the menu again (or when a reply was not required), the button reads “Ack”. Left-clicking on it will acknowledge the emergency. 
 
@@ -1228,13 +1236,13 @@ The menu is closed when the “ROGER”/“Ack” button is clicked or the curso
 
 \subsection{CPDLC Pilot Late Acknowledgement Menu}
 \label{dlplam}
-\includegraphics{img/dlplate.png}
+\image{img/dlplate.png}
 
 When there is no answer to a CPDLC uplink clearance, this menu can be used to resolve the situation. “Abort” discards the uplink and “Manual WILCO” simulates reception of a WILCO message.
 
 \subsection{Time Menu}
 \label{time}
-\includegraphics{img/etd.png}
+\image{img/etd.png}
 
 The Time menu is used to set/change the time value for ATD, EOBT, ETD and SLOT fields.
 Default values are:
@@ -1250,7 +1258,7 @@ The up/down arrows are used to change the value, “Ok” sets the time.
 
 \subsection{Departure Sequence Menu}
 \label{dqm}
-\includegraphics{img/dsq.png}
+\image{img/dsq.png}
 
 The DSQ menu is used to select a specific departure sequence number to a flight. The list includes the possible numbers, and the current number is highlighted. Left-clicking on a number sets it, “Clear” removes the flight from the departure sequence.
 
@@ -1335,7 +1343,7 @@ The Traffic Management List 2 is another Traffic Management list to be used if d
 
 The list includes assumed flights that have previously been correlated to a radar track but radar contact has been lost. By default, the list opens automatically whenever a flight is added into it, and will be closed automatically when empty. If manually opened, the list cannot be manually closed until it is empty.
 
-\includegraphics{img/llist.png}
+\image{img/llist.png}
 
 The lost list contains the following fields:
 
@@ -1369,7 +1377,7 @@ With TopSky set up to automatically open the Lost List when not empty, when a fl
 
 The Holding List contains aircraft in the assumed, transfer initiated and on-contact with the position states that have been given a holding clearance. The list is automatically displayed whenever there is at least one aircraft in the list.
 
-\includegraphics{img/hlist.png}
+\image{img/hlist.png}
 
 “View” opens the View menu which contains only one item, “Header”. It toggles the visibility of the list’s header line.
 
@@ -1426,7 +1434,7 @@ Other window-specific mouse function areas are explained below. All functions us
 \label{menu:radarm}
 <ALT> + Right-click anywhere on the radar screen background
 
-\includegraphics{img/radarmenu.png}
+\image{img/radarmenu.png}
 
 \begin{tabular}{l l}
     Radar Menu          & Toggles keeping the menu permanently displayed\\
@@ -1489,9 +1497,9 @@ To adjust a QDM vector:
 \subsection{Scale Marker}
 \label{scale}
 
-Radar Menu -> [] Scale Marker
+\textit{\titleref{menu:radarm}} -> [] Scale Marker
 
-\includegraphics{img/scale.png}
+\image{img/scale.png}
 
 Displays a range scale in the bottom right corner of the radar screen.
 
@@ -1513,7 +1521,7 @@ The minimum separation distance is by default displayed near the end of one of t
 
 7 sets of lines can be simultaneously drawn (plus one from the CARD). When at least one set is drawn, a SEP List Window is opened:
 
-\includegraphics{img/seplist.png}
+\image{img/seplist.png}
 
 The window lists the tracks, the minimum predicted separation, the time to the minimum separation, the line color and a locked/unlocked indicator for each set of lines.
 To remove the minimum separation lines:
@@ -1554,25 +1562,26 @@ The calculation is done using the tracks’ current vertical speeds.
 
 \subsection{View Window}
 \label{win:view}
-Radar Menu -> View...
-\includegraphics{img/viewmenu.png}
+\textit{\titleref{menu:radarm}} -> View...
+
+\image{img/viewmenu.png}
 
 The View Window lists the available views. To select a view, left-click on it. The radar screen will be refreshed to show the required area. The first three views, labeled “1”, “2” and “3” are views that can be defined on the fly. To define a view for one of them, set the screen area as desired and then right-click on the number. The number will then change to “Foreground” color to indicate that it has a view defined for it. An already defined view (“1”, “2” or “3”) can be redefined to show a different screen area just by defining it again with a right-click.
 
 \subsection{Zoom Window}
 \label{win:zoom}
-Radar Menu -> Range XXX
+\textit{\titleref{menu:radarm}} -> Range XXX
 
-\includegraphics{img/zoom.png}
+\image{img/zoom.png}
 
 The Zoom Window displays and enables to change the radar screen range.
 
 \subsection{Maps Windows}
 \label{win:mapsw}
 
-Radar Menu -> Maps...
+\textit{\titleref{menu:radarm}} -> Maps...
 
-\includegraphics{img/mapsmenu.png}
+\image{img/mapsmenu.png}
 
 The Maps Window closes when the mouse cursor leaves the window area. If this is not desired, there is a
 hidden click spot in the top right corner of the menu (where the “close” button would be). Left-clicking in
@@ -1614,11 +1623,11 @@ TopSky data files may include additional data to the abovementioned sector file.
 \subsection{Track Control Window}
 \label{win:tcw}
 
-Radar Menu -> Track Control...
+\textit{\titleref{menu:radarm}} -> Track Control...
 
 The Track Control Window is used to set track and track label related options. Note that the PRL/Vector selection must be on in the Radar Menu to see the prediction lines. The Track Control Window closes when the mouse cursor leaves the window area. The selections are specific to the radar screen they are made on but whenever TopSky settings are reloaded either automatically (sign in/out, login callsign change when signed in) or manually the selections on all radar screens will revert to the default values.
 
-\includegraphics{img/trackctl.png}
+\image{img/trackctl.png}
 
 \begin{tabular}{l l}
     Vector          & Sets the length of the prediction line in minutes\\
@@ -1636,20 +1645,20 @@ Regardless of the settings here, the necessary label fields will be displayed in
 \subsection{Altitude Filtering Window}
 \label{win:afw}
 
-Radar Menu -> Altitude Filter [ON/OFF]...
+\textit{\titleref{menu:radarm}} -> Altitude Filter [ON/OFF]...
 
 The Altitude Filtering Window is used to filter the displayed track labels based on the aircrafts’ altitudes. It closes when the mouse cursor leaves the window area.
 
-\includegraphics{img/altfil.png}
+\image{img/altfil.png}
 
 To set the filtering limits, values from -1200ft to FL660 are available with 100ft steps up to 5000ft, then with 500ft steps up to FL660. Select the level and click on the filter on/off button to activate the limit. There are separate on/off buttons for the upper and lower limits, and it is possible to activate either one or both of them. Values at or below the transition altitude are considered to be altitudes (for example with a transition altitude of 5000ft, “050” means 5000ft and “055” means FL55).
 
 \subsection{CJI Filtering Window}
 \label{win:cji}
 
-Radar Menu -> CJI Filter [ON/OFF]...
+\textit{\titleref{menu:radarm}} -> CJI Filter [ON/OFF]...
 
-\includegraphics{img/cji.png}
+\image{img/cji.png}
 
 The CJI Filtering Window closes when the mouse cursor leaves the window area.
 
@@ -1660,9 +1669,9 @@ Clicking “All” will filter all controllers, and clicking “None” will cle
 \subsection{SSR Code Filtering Window}
 \label{win:ssr}
 
-Radar Menu -> SSR Filter [ON/OFF]...
+\textit{\titleref{menu:radarm}} -> SSR Filter [ON/OFF]...
 
-\includegraphics{img/ssrfil.png}
+\image{img/ssrfil.png}
 
 The SSR Code Filtering Window is used to filter the displayed track labels based on the aircrafts’ SSR codes. Four different codes or code ranges can be set. The boxes on the left side of the window are the code range start boxes. The input syntax is a valid SSR code to be filtered. If filtering a range of codes is needed, enter the last two digits of the last code in the range to the box on the right. Entering an empty string will clear the box. For example, to filter codes 1400-1427, enter “1400” into one of the four boxes on the left and then “27” into the box next to it. Set the filter on by clicking on the filter on/off button.
 
@@ -1679,7 +1688,7 @@ All changes to the window must be applied using the buttons in the bottom of the
 
 \textit{\titleref{menu:global}} Setup -> Brightness Control...
 
-\includegraphics{img/bright.png}
+\image{img/bright.png}
 
 The Brightness Control Window allows setting the brightness for some screen colors. The Map background slider only controls TopSky created maps.
 
@@ -1688,7 +1697,7 @@ The Brightness Control Window allows setting the brightness for some screen colo
 
 \textit{\titleref{menu:global}} Setup -> CPDLC Setting...
 
-\includegraphics{img/dlsetup.png}
+\image{img/dlsetup.png}
 
 The CPDLC Setting Window is used to begin/end the connection to the CPDLC network, and change some CPDLC related settings.
 
@@ -1711,7 +1720,7 @@ When making changes to the “Min Level” or the menu selections, the “Ok” 
 
 \textit{\titleref{menu:global}} Setup -> Raw Video Control...
 
-\includegraphics{img/rawvideo.png}
+\image{img/rawvideo.png}
 
 The Raw Video Control Window closes when the mouse cursor leaves the window area.
 
@@ -1722,7 +1731,7 @@ The Raw Video Control Window controls the brightness (in general) and afterglow 
 
 \textit{\titleref{menu:global}} AMS -> TSA...
 
-\includegraphics{img/tsa.png}
+\image{img/tsa.png}
 
 This window is used for the activation and deactivation of the areas for the APW and SAP functionality. Each area can have a start time and/or an end time defined for its activation, or it can be activated without any time limits, making it active until deactivated manually. Additionally, lower and upper altitude limits are given. An area can have activation schedules defined in the area data file. Such areas will be automatically activated as long as their “Auto” option is selected ( “A” in the “Auto” column). The “Auto” option cannot be selected for areas that don’t have an activation schedule defined in the area data file.
 
@@ -1776,7 +1785,7 @@ Preactive and active areas are displayed on the radar screen. The area border is
 
 \textit{\titleref{menu:global}} FlightData/FData -> Flight Plan Selection...
 
-\includegraphics{img/fpsel.png}
+\image{img/fpsel.png}
 
 The Flight Plan Selection window is used to search for flight plans based on any combination of callsign, assigned transponder code and departure airport. All flight plans that are a match with all given information will be listed in the \textit{\titleref{win:fpw}}. and can be viewed using its “Prev” and “Next” buttons.
 
@@ -1790,7 +1799,7 @@ Flight Plan Selection Window -> Create a list of one or more flight plans
 \textit{\titleref{menu:cs}} -> More -> FPL… 
 “Open FPL Window” tag function
 
-\includegraphics{img/fpl.png}
+\image{img/fpl.png}
 
 The Flight Plan Window displays flight plan data as well as some system data related to the flight plan. It also allows creating new flight plans and modifying existing ones. The data in the window is not refreshed automatically; the time when the data was fetched is displayed in the top left corner.
 
@@ -1887,7 +1896,7 @@ For the accepted CFL entry formats, see \textit{\titleref{menu:afl}}.
 
 Flight Plan Window -> “RTE” button
 
-\includegraphics{img/route.png}
+\image{img/route.png}
 
 Displays the expanded route of the FPL currently shown in the \textit{\titleref{win:fpw}}. Already passed points are shown with “Overflown” color background. Points still ahead show the estimated time over the point and the calculated flight level (as calculated by EuroScope) below the point name.
 
@@ -1896,7 +1905,7 @@ Displays the expanded route of the FPL currently shown in the \textit{\titleref{
 
 \textit{\titleref{menu:cs}} (uncorrelated track only) -> “Create APL” item
 
-\includegraphics{img/apl2.png}
+\image{img/apl2.png}
 
 The bottom area of the window will show status and error messages.
 
@@ -1913,7 +1922,7 @@ When the APL is successfully created, it is automatically assumed or set as on-c
 \label{win:smw}
 Holding List... -> “HPT” item
 
-\includegraphics{img/stackman.png}
+\image{img/stackman.png}
 
 To help with controlling holding aircraft, Stack Manager Windows can be opened. They give a quick look into the vertical positions of aircraft that have been given a holding clearance to the holding fix associated with the window in question.
 
@@ -1952,7 +1961,7 @@ The mouse click areas of the Stack Manager Window:
 
 \textit{\titleref{menu:global}} Tools -> CARD..
 
-\includegraphics{img/card.png}
+\image{img/card.png}
 
 The CARD window presents the MTCD conflicts and conflict risks. It also allows setting some of the related parameters. It is divided into two parts:
 
@@ -2012,7 +2021,7 @@ From the “Mark/ACK” menu it is possible to toggle conflict-specific options:
 
 \textit{\titleref{menu:global}} Tools -> SAP...
 
-\includegraphics{img/sap.png}
+\image{img/sap.png}
 
 The SAP window lists the aircraft that have SAP conflicts (can be set to also show risks). The list shows the aircraft callsign, the area it will enter and the coordinates and the time when it will enter it. Only the first entered area will be shown if the aircraft is predicted to enter more than one active area. Placing the mouse cursor over an aircraft line will show the aircraft’s route on the radar screen up to the first point of entering an active area or the first point where there is a risk of doing so if risks are selected to be displayed on the window. The list is sorted according to the entry time field, with the earliest time on top.
 
@@ -2021,7 +2030,7 @@ The SAP window lists the aircraft that have SAP conflicts (can be set to also sh
 
 \textit{\titleref{menu:global}} Tools -> Vertical Aid Window...
 
-\includegraphics{img/vaw.png}
+\image{img/vaw.png}
 
 The Vertical Aid Window shows the predicted vertical trajectory of the selected aircraft (ASEL), starting from its current position (marked with a dot in “VAW Track Position” color), and the trajectories of all aircraft conflicting with it. The trajectories are displayed as calculated by EuroScope. The background color of the path area is by default the “Inactive Sector” color, but for the time the aircraft is predicted to be inside your sector the color will be the “Active Sector” color. Other sector boundary crossings are displayed with vertical lines in “VAW Sector Limits” color. The trajectory of the ASEL aircraft is drawn in “VAW Profile” color and the conflicting aircrafts’ trajectories in “Urgency” (conflict or potential predicted conflict), “Warning” (risk or potential risk of conflict) or “Potential” (potential).
 
@@ -2053,7 +2062,7 @@ The PEL and XFL values are displayed in \colorref{color:Coordination} color, or 
 
 \textit{\titleref{menu:global}} Tools -> Message In...
 
-\includegraphics{img/miw.png}
+\image{img/miw.png}
 
 The Message In Window shows received coordination messages, sorted by time, with the newest ones at the top of the list. For the ones requiring an answer, it is possible to send it either from this window, the aircraft track label or any aircraft list where the relevant items are displayed. The messages will be automatically removed from the list when the track becomes Unconcerned, or for some messages, also based on a specific event.
 
@@ -2122,7 +2131,7 @@ The available message types are:
 
 \textit{\titleref{menu:global}} Tools -> Message Out...
 
-\includegraphics{img/mow.png}
+\image{img/mow.png}
 
 The Message Out Window shows the coordination messages you have sent, sorted by time, with the newest ones at the top of the list. The messages will be automatically removed when the track becomes Unconcerned. To manually remove a line, left-click on it.
 
@@ -2176,7 +2185,7 @@ The available message types are:
 
 \textit{\titleref{menu:global}} Tools -> CPDLC -> Microphone Check
 
-\includegraphics{img/dlmicchk.png}
+\image{img/dlmicchk.png}
 
 The Microphone Check menu is used to send a “CHECK STUCK MICROPHONE <frequency>” CPDLC message to all CPDLC connected aircraft when a stuck mic is suspected. The menu lists all frequencies selected for XMT TXT in EuroScope; left-clicking on one sends the messages. Manual frequency entry is not available.
 
@@ -2187,7 +2196,7 @@ The menu closes when a frequency is selected or the cursor leaves the menu area.
 
 \textit{\titleref{menu:global}} Tools -> CPDLC -> Current Messages...
 
-\includegraphics{img/dlcmw.png}
+\image{img/dlcmw.png}
 
 The \textit{\titleref{win:dlcmw}} displays all sent and received CPDLC messages that have not been archived. Each line corresponds to one message, and contains the time the message was sent/received, the callsign of the aircraft, a filled triangle (pointing upward for uplink messages, downward for downlink messages) and the message text. If the message is too long to fit in the window, “…” is used to mark that there is more text in the message. Right-clicking on the message will open a small window that displays the entire message. The window will close automatically when the mouse cursor leaves its area.
 
@@ -2254,7 +2263,7 @@ The window closes automatically when the message is sent or the mouse cursor lea
 
 \textit{\titleref{menu:global}} Tools -> CPDLC -> History Messages...
 
-\includegraphics{img/dlhmw.png}
+\image{img/dlhmw.png}
 
 The CPDLC History Message Window contains CPDLC messages that have been archived from the CPDLC
 Current Message Window.
@@ -2264,7 +2273,7 @@ Current Message Window.
 
 \textit{\titleref{menu:global}} Tools -> LAT/LONG...
 
-\includegraphics{img/latlon.png}
+\image{img/latlon.png}
 
 Displays the latitude and longitude values of the cursor position.
 
@@ -2273,7 +2282,7 @@ Displays the latitude and longitude values of the cursor position.
 
 \textit{\titleref{menu:global}} MET -> Messages...
 
-\includegraphics{img/wxmsg.png}
+\image{img/wxmsg.png}
 
 The Weather Messages Window displays weather related messages. By default, METAR/SPECI messages are shown. To view other types of messages, left-click on the desired option button (the “LLF” and “AIREP” options are not available).
 
@@ -2325,14 +2334,14 @@ To remove a METAR/SIGMET/TAF from the window:
 
 \textit{\titleref{menu:global}} MET -> QNH/TL...
 
-\includegraphics{img/qnhtl.png}
+\image{img/qnhtl.png}
 
 The window displays the QNH values and corresponding transition levels for those airports that have a METAR displayed in the \textit{\titleref{win:wxmw}}. The transition level tables are defined in a data file, and if a table can’t be found for an airport in the list, a transition level will not be shown. The buttons in the window have no functionality.
 
 \subsection{General Information Window}
 \label{win:geninfo}
 
-\includegraphics{img/geninfo.png}
+\image{img/geninfo.png}
 
 The General Information Window displays basic information on the system state. The following functionality is implemented in TopSky:
 
@@ -2355,9 +2364,9 @@ The General Information Window displays basic information on the system state. T
 \subsection{Document Viewer Window}
 \label{win:dvw}
 
-\textit{\titleref{menu:global}} Info -> Document Viewer...
+\textit{\titleref{menu:global}} -> Info -> Document Viewer...
 
-\includegraphics{img/doc.png}
+\image{img/doc.png}
 
 The Document Viewer Window is used to browse and search for information in specific data files
 
@@ -2395,9 +2404,9 @@ The information can be filtered using the “Filter” box. The list will only d
 \subsection{NOTAM List Window}
 \label{win:notamlw}
 
-\textit{\titleref{menu:global}} Info -> NOTAM...
+\textit{\titleref{menu:global}} -> Info -> NOTAM...
 
-\includegraphics{img/notamlist.png}
+\image{img/notamlist.png}
 
 The NOTAM List Window displays a list of received NOTAMs. The NOTAMs are retrieved when the window is first opened and the list will take a couple of seconds to populate. The NOTAMs are automatically updated every two hours. Each NOTAM shows the following information:
 
@@ -2417,9 +2426,9 @@ The NOTAM List is automatically displayed at startup in order to fetch the curre
 \subsection{Aerodrome Window}
 \label{win:adw}
 
-\textit{\titleref{menu:global}} Info -> Aerodrome...
+\textit{\titleref{menu:global}} -> Info -> Aerodrome...
 
-\includegraphics{img/adinfo.png}
+\image{img/adinfo.png}
 
 The Aerodrome Window displays information about the selected airport.
 
@@ -2432,9 +2441,9 @@ The bottom part of the window displays the arrival and departure runway allocati
 \subsection{LFUNC Frequency Plan Window}
 \label{win:lfunc}
 
-\textit{\titleref{menu:global}} Info -> LFUNC Frequency Plan...
+\textit{\titleref{menu:global}} -> Info -> LFUNC Frequency Plan...
 
-\includegraphics{img/lfunc.png}
+\image{img/lfunc.png}
 
 The LFUNC Frequency Plan Window displays the currently online controllers and their primary frequencies as well as their CPDLC logon callsigns where applicable.
 
@@ -2443,7 +2452,7 @@ The LFUNC Frequency Plan Window displays the currently online controllers and th
 
 \textit{\titleref{menu:global}} MSG -> Notepad...
 
-\includegraphics{img/note.png}
+\image{img/note.png}
 
 The Notepad Windows can be used to display any user entered text. Multiple Notepad Windows can be opened simultaneously. To enter new text or edit the existing one, click on the window area. The text will be automatically wrapped, and if necessary, the “|” character can be used to force a line break. If the window is not large enough to fit all the entered text, it will display “…” in the end to indicate that there is more information.
 
@@ -2452,7 +2461,7 @@ The Notepad Windows can be used to display any user entered text. Multiple Notep
 
 \textit{\titleref{menu:global}} MSG -> Personal Queue...
 
-\includegraphics{img/pq.png}
+\image{img/pq.png}
 
 The Personal Queue Window displays warning messages related to TopSky’s operation: high priority messages informing about potential critical failures in TopSky code, and low priority messages informing about faults in TopSky’s external data files or timeout alerts for coordination messages.
 
@@ -2468,7 +2477,7 @@ The high priority messages are always displayed first. Only when there are no mo
 
 \textit{\titleref{menu:global}} MSG -> Prim Freq Messages...
 
-\includegraphics{img/atc.png}
+\image{img/atc.png}
 
 These windows display up to 99 last messages transmitted on the relevant text channel (“ATC” or the primary frequency). Each message line displays a time stamp, the sender callsign (blank if you) and the message itself.
 
@@ -2479,7 +2488,7 @@ New incoming messages are displayed in \colorref{color:Warning} color until left
 
 \textit{\titleref{menu:global}} MSG -> NAT Track Messages...
 
-\includegraphics{img/nat.png}
+\image{img/nat.png}
 
 The NAT Track Messages Window displays the downloaded track messages. The messages are downloaded when the window is opened the first time and then updated hourly. The tracks extracted from the messages can be displayed on the radar screen – they are placed to a “NAT” folder in the \textit{\titleref{win:mapsw}}. Any named waypoints in the tracks that cannot be found in the active sector file are just skipped so the displayed tracks may not be accurate. The track letter is added to the name of the first and last waypoints in parentheses, so a missing track letter is a sure sign of at least some waypoints missing.
 
@@ -2488,7 +2497,7 @@ The NAT Track Messages Window displays the downloaded track messages. The messag
 
 \textit{\titleref{menu:global}} STS -> Safety Nets Status...
 
-\includegraphics{img/snets.png}
+\image{img/snets.png}
 
 Allows setting the status for the STCA, MSAW, APW and AIW systems. The “On/Off” buttons control the corresponding system’s status.
 
@@ -2508,7 +2517,7 @@ All changes to the window must be applied using the buttons in the bottom of the
 
 \textit{\titleref{menu:global}} STS -> Divergence Detection Status...
 
-\includegraphics{img/divsts.png}
+\image{img/divsts.png}
 
 Allows setting the status for the RAM and CLAM alerting. The “On/Off” buttons control the corresponding system’s status. All changes must be applied using the buttons below to take effect.
 
@@ -2523,7 +2532,7 @@ Allows setting the status for the RAM and CLAM alerting. The “On/Off” button
 
 \textit{\titleref{menu:global}} STS -> MTCD Status...
 
-\includegraphics{img/mtcd.png}
+\image{img/mtcd.png}
 
 Allows setting the status for the MTCD system. The “On/Off” button controls the system’s status.
 
@@ -2555,14 +2564,14 @@ All changes must be applied using the buttons below to take effect.
 \textit{\titleref{menu:global}} STS -> Runway In Use...
 Radar screen -> middle-click on Airport symbol drawn by TopSky’s “AD\_Hotspots” map...
 
-\includegraphics{img/rwy.png}
+\image{img/rwy.png}
 
 The Runway In Use Window displays the arrival and departure runway allocation at the selected airport. Left-clicking on the airport ICAO code opens the \textit{\titleref{menu:ad}} to select another airport. The runway selections are read-only in this window.
 
 \subsection{Operations Rate Window}
 \label{win:orw}
 
-\includegraphics{img/opsrate.png}
+\image{img/opsrate.png}
 
 The Operations Rate Window displays the predicted hourly operations rate at a specified airport. The data is displayed in 5-minute steps and shown up to 5 hours into the future. The arrival prediction is based on aircraft tracks as calculated by EuroScope. The departures are predicted to depart immediately if their ground status is set to “DEPA”, earliest in 5 minutes if “TAXI” and earliest in 10 minutes if “PUSH”, with a maximum departure rate of one aircraft per minute.
 
@@ -2604,7 +2613,7 @@ The two sliders change the traffic number and time scales.
 \textit{\titleref{menu:global}} STS -> RWY line display... (opens the \textit{\titleref{menu:ad}} for airport selection)
 Radar screen -> right-click on Airport symbol drawn by TopSky’s “AD\_Hotspots” map...
 
-\includegraphics{img/rwydsp.png}
+\image{img/rwydsp.png}
 
 To open the window from the radar screen, right-click on an airport symbol (+) on the radar screen (for the click spots to be active, the “AD\_Hotspots” map in the “Aerodromes” folder of the \textit{\titleref{win:mapsw}} must be active). Only those airports with runways specified have active click spots.
 
@@ -2617,7 +2626,7 @@ The window contains selection buttons to toggle the display of the approach line
 
 “Open Tactical Info Window” tag function
 
-\includegraphics{img/tiw.png}
+\image{img/tiw.png}
 
 The Tactical Info Window displays coordinated tactical data (AHDG, ASP and/or ARC). Proposed data is in “Proposition”, rejected data in “Warning” and accepted data in sector state color. This window only displays the information; to answer or apply the data use the \textit{\titleref{menu:ttm}}.
 
@@ -2626,7 +2635,7 @@ The Tactical Info Window displays coordinated tactical data (AHDG, ASP and/or AR
 
 “Open PDC Window” tag function
 
-\includegraphics{img/dcl.png}
+\image{img/dcl.png}
 
 The Pre-Departure Clearance Window is used to issue departure clearances, either via R/T or datalink. The following data fields are displayed for review:
 
@@ -2672,7 +2681,7 @@ The “Send DCL” and “Ok” buttons are active when at least the “RWY”, 
 
 “Toggle EST/DEP/ABT” function (when clearance flag not set and ground state not “DEPA”)
 
-\includegraphics{img/dcw.png}
+\image{img/dcw.png}
 
 The Departure Coordination Window can be used to set the clearance flag. The window displays the aircraft callsign, departure runway and SID and allows setting the CFL, ASSR and EOBT values.
 
@@ -2709,9 +2718,9 @@ manually toggled off, depending on the function that was used to display it.
 The label that’s shown on each route point includes the following predefined fields
 
 \begin{tabular}{l l}
-\includegraphics{img/fleto.png}     & Estimated Time Over the point\\
-\includegraphics{img/fltoc.png}   & Top of Climb\\
-\includegraphics{img/fltod.png}   & Top of Descent\\
+\image{img/fleto.png}     & Estimated Time Over the point\\
+\image{img/fltoc.png}   & Top of Climb\\
+\image{img/fltod.png}   & Top of Descent\\
 \end{tabular}
 
 \section{Safety Nets}
@@ -2797,7 +2806,7 @@ The MTCD system is a tool that enables the controller to predict possible future
 In the lateral plane the system works by checking the aircraft’s predicted route up to the defined prediction time and calculating if the separation with other aircraft will be less than the defined prediction distance.
 In the vertical plane, TopSky can be set up to use either of the two following setups (example predicted vertical path of a climbing track in black color, relevant levels in grey):
 
-\includegraphics{img/mtcdv.png}
+\image{img/mtcdv.png}
 
 \begin{itemize}
     \item Conflicts (area with red shading)
@@ -3576,7 +3585,7 @@ TopSky stores some data in the flight strip annotation boxes (the group of nine 
 
 TopSky needs to be able to use four of the nine boxes for its functions. They are the boxes in the bottom row as well as the right-most box in the center row, marked with X’s in the picture below. Do not manually edit those boxes or use them to store any other data. The other boxes, marked by minus signs, are currently not used by TopSky in any way.
 
-\includegraphics{img/strip.png}
+\image{img/strip.png}
 
 \chapter{Known issues}
 
