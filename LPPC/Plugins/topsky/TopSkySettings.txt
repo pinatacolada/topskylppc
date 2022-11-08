@@ -35,6 +35,7 @@ AIW_Inhibit_ActiveAreas=1
 AIW_FlightRules=1
 AIW_Floor=1500
 
+APW_VFR=1
 APW_PredictionTime=120
 APW_WarningTime=120
 APW_WarningTime_Imm=110
