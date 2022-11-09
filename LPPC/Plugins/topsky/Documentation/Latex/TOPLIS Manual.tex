@@ -16,6 +16,7 @@
 \usepackage{colortbl}
 \usepackage{array}
 
+
 \usepackage{nicematrix,tikz}
 \usepackage{stix}
 \usepackage{xcolor}
@@ -32,12 +33,22 @@
 
 \usepackage[export]{adjustbox}
 
+\usepackage{utfsym}
+
+\usepackage{multirow}
+
+\usepackage{float}
+
 \newcounter{rowcounter}
 \newcommand{\nextrow}{\refstepcounter{rowcounter}}
 
 \newcommand{\colorref}[1]{\textit{\hyperref[#1]{\StrDel{#1}{color:}}}}
 
+\newcommand{\colortabex}[1]{\cellcolor{Flight Highlight}\color{#1}\colorref{color:#1}}
+
 \newcommand{\tagref}[1]{\textit{\hyperref[#1]{\StrDel{#1}{tag:}}}}
+
+\newcommand{\stateref}[1]{\textit{\hyperref[state:#1]{#1}}}
 
 \newcommand{\winref}[1]{\textit{\titleref{#1}}}
 
@@ -69,7 +80,7 @@
 \usepackage[
 breaklinks=true,colorlinks=true,
 %linkcolor=blue,urlcolor=blue,citecolor=blue,% PDF VIEW
-linkcolor=black,urlcolor=black,citecolor=black,% PRINT
+linkcolor=.,urlcolor=black,citecolor=black,% PRINT
 bookmarks=true,bookmarksopenlevel=2]{hyperref}
 
 \usepackage{geometry}
@@ -178,6 +189,7 @@ EuroScope, a controller client developed by Gergely Csernák for the VATSIM netw
 The TopSky plugin (a.k.a. The Plugin Formerly Known As “EUROCAT 2000 E”) started out as a very small project to create a couple of customized aircraft tag items, but as more information about the real system and the possibilities with the plugin development became available, it slowly grew to include an almost complete set of tag items, tag menus, graphical elements on the radar display and some additional functionality.
 
 \chapter{System Description}
+
 \section{Main Window}
 \image{img/mainwindow.png}
 
@@ -187,17 +199,6 @@ Euroscope should load with some preplaced windows similar to the above configura
 Screen resolutions other than 1920x1080 will yield different results. Larger resolutions will bring preplaced windows towards the left and middle, while smaller resolutions may potentially place windows outside the screen. It is recommended for users experiencing difficulties related to their screen size to experiment and create custom settings in the TopSkySettingsLocal file containing revised window placements adjusted for their own screen. Refer to \texttt{\detokenize{TopSky_Developer_Guide_Settings.xlsx}} for available settings  
 \end{Note}
 
-\section{Track Presentation}
-
-The presentation of tracks consists of the following elements:
-
-\begin{itemize}
-    \item{Aircraft position symbol}
-    \item{History dots}
-    \item{Prediction line}
-    \item{Track label, joined to the position symbol with a leader line}
-\end{itemize}
-
 \section{Sector States}
 
 Depending on a set of conditions and relationships, each Flight Plan is defined as being in a certain state relative to each airspace volume. This is the so called Sector State. As a given flight progresses along its route it will go through a series of diferent Sector States relative to a given airspace volume. 
@@ -205,30 +206,130 @@ Depending on a set of conditions and relationships, each Flight Plan is defined 
 There are 8 different Sector States. Track presentation coloring depends on the flight sector state:
 
 \begin{tabular}{l l l}
-  \textbf{State}          & \textbf{Color}    & \textbf{Condition}\\
-  Unconcerned           & \cellcolor{Flight Highlight}\color{Unconcerned}Unconcerned     & Track will not enter the active sector\\
-  Notified              & \colorref{color:Concerned}       & Track will enter the active sector (> 15 min)\\
-  Coordinated           & \colorref{color:Coordination}    & Track will enter the active sector (< 15 min)\\
-  Assumed               & \colorref{color:Assumed}         & Track is assumed\\
-  On Contact            & \colorref{color:Assumed}         & Track is on-contact with you\\
-  Transfer Initiated    & \colorref{color:Assumed}         & Track is being transferred to the next controller\\
-  Redundant             & \colorref{color:Redundant}       & Track has been transferred to the next controller but is still inside the active sector\\
-  Free                  & \colorref{color:VFR}             & Track is not assumed or on-contact with anyone\\
+  \textbf{State}                                                  & \textbf{Color}               & \textbf{Condition}\\
+  Unconcerned \nextrow \label{state:Unconcerned}                  & \colortabex{Unconcerned}     & Track will not enter the active sector\\
+  Notified \nextrow \label{state:Notified}                        & \colortabex{Concerned}       & Track will enter the active sector (> 15 min)\\
+  Coordinated \nextrow \label{state:Coordinated}                  & \colortabex{Coordination}    & Track will enter the active sector (< 15 min)\\
+  Assumed \nextrow \label{state:Assumed}                          & \colortabex{Assumed}         & Track is assumed\\
+  On Contact \nextrow \label{state:On Contact}                    & \colortabex{Assumed}         & Track is on-contact with you\\
+  Transfer Initiated \nextrow \label{state:Transfer Initiated}    & \colortabex{Assumed}         & Track is being transferred to the next controller\\
+  Redundant \nextrow \label{state:Redundant}                      & \colortabex{Redundant}       & Track has been transferred to the next controller but is still inside the active sector\\
+  Free \nextrow \label{state:Free}                                & \colortabex{Unconcerned}     & Track is not assumed or on-contact with anyone\\
 \end{tabular}
 
-Coordinated tracks that have not departed yet are shown as Notified.
+Sector States are used to control label construction, placement in lists, filtering, coloring, Safety Net parameters and availability. For example, a Flight Plan in the \stateref{On Contact} state will not trigger an APW warning until already being inside a TSA and will be shown in the \winref{list:uncon}. The same flight but in the \stateref{Assumed} state will trigger the APW warning when less than 3nm of a TSA and will not be shown in the \winref{list:uncon}.
 
-\subsection{Aircraft position symbol}
+\stateref{Coordinated} tracks that have not departed yet are displayed as \stateref{Notified}.
 
-The position symbol is drawn at the latest known position of the aircraft. The color of the symbol is the flight sector color for an unselected track and \colorref{color:Track Highlight} for a selected one. A number of different symbols are available. 
+\subsection*{Examples}
 
-\begin{tabular}{l l}
-\image{img/rps_fpasd.png} & Flight plan track (position is not based on surveillance data but calculated by EuroScope)\\
-\image{img/rps_coast.png} & Coasted track (no position updates in over 30 seconds, position no longer reliable)\\
-\image{img/rps_psr.png} & Primary radar track\\
-\image{img/rps_sec.png} & Secondary or combined radar track (uncontrolled)\\
-\image{img/rps_psr+ssr.png} & Secondary or combined radar track (controlled)\\
- & ADS-B only track\\
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    Sector            & LEM                                                               & NORL               & CENL                & SULL                \\ \hline
+    Aircraft Position & \begin{tabular}[c]{@{}c@{}}\usym{2708}\\ >15 minutes\end{tabular} &                    &                     &                     \\ \hline
+    Sector State      & -                                                                 & \stateref{Notified} & \stateref{Notified} & \stateref{Notified} \\ \hline
+    \end{tabular}
+    \caption{Flight Plan still faraway inside LEM crossing NORL, CENL and SULL}
+    \label{tab:state-example-faraway}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  Sector            & LEM                                                               & NORL               & CENL                & SULL                \\ \hline
+  Aircraft Position & \begin{tabular}[c]{@{}c@{}}\usym{2708}\\ <15 minutes\end{tabular} &                    &                     &                     \\ \hline
+  Sector State      & -                                                                 & \stateref{Coordinated} & \stateref{Notified} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan entering NORL in less than 15 minutes}
+  \label{tab:state-example-entry}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Sector                                  & NORL               & CENL                & SULL                \\ \hline
+  Aircraft Position                       & \usym{2708}        &                     &                     \\ \hline
+  Sector State                            & \stateref{Assumed} & \stateref{Notified} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan assumed by NORL}
+  \label{tab:state-example-assumed}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Sector                                  & NORL               & CENL                & SULL                \\ \hline
+  Aircraft Position                       & \usym{2708}        &                     &                     \\ \hline
+  Sector State                            & \stateref{Assumed} & \stateref{Coordinated} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan assumed by NORL and less than 15 minutes to CENL}
+  \label{tab:state-example-norlexit}
+\end{table}
+    
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Sector                                  & NORL                 & CENL               & SULL                \\ \hline
+  Aircraft Position                       &                      & \usym{2708}        &                     \\ \hline
+  Sector State                            & \stateref{Redundant} & \stateref{Assumed} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan transferred from NORL to CENL and less than 15 minutes to SULL}
+  \label{tab:state-example-cenl}
+\end{table}
+  
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Sector                                  & NORL                 & CENL               & SULL                \\ \hline
+  Aircraft Position                       &                      & \usym{2708}        &                     \\ \hline
+  Sector State                            & \stateref{Unconcerned} & \stateref{Redundant} & \stateref{Assumed} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan transferred from CENL to SULL}
+  \label{tab:state-example-exit}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  Sector            & LEM                                                               & NORL               & CENL                & SULL                \\ \hline
+  Aircraft Position & \begin{tabular}[c]{@{}c@{}}\usym{2708}\\ >15 minutes\end{tabular} &                    &                     &                     \\ \hline
+  Sector State      & -                                                                 & \stateref{Unconcerned} & \stateref{Unconcerned} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan in LEM and will only cross SULL}
+  \label{tab:state-example-sullonly}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  Sector            & LEM   & NORL                    & CENL                    & SULL                  \\ \hline
+  Aircraft Position &       &                         &                         &                       \\ \hline
+  Sector State      & -     & \stateref{Unconcerned}  & \stateref{Unconcerned}  & \stateref{Unconcerned}\\ \hline
+  \end{tabular}
+  \caption{Flight Plan does not enter any sector}
+  \label{tab:state-example-avoid}
+\end{table}
+
+\section{Aircraft position symbol}
+
+The position symbol is drawn at the latest known position of the aircraft. The color of the symbol is the flight sector color for an unselected track and \colorref{color:Track Highlight} for a selected one.
+
+\begin{tabular}{l l l}
+\image{img/rps_fpasd.png}     & Flight plan track                   & Position is not based on surveillance data but calculated by EuroScope \\
+\image{img/rps_coast.png}     & Coasted track                       & No position updates in over 30 seconds, position no longer reliable \\
+\image{img/rps_psr.png}       & Primary radar track                 & \\
+\image{img/rps_sec.png}       & Secondary or combined radar track   & Uncontrolled flight\\
+\image{img/rps_psr+ssr.png}   & Secondary or combined radar track   & Controlled flight \\
+%                              & ADS-B only track                    & \\
 \end{tabular}
 
 An indication of an SPI (transponder ident) can be added to the secondary radar and ADS-B symbols. It draws a cross over the symbol and prints the text “SPI” above and to the right of the symbol:
@@ -543,10 +644,10 @@ Opens the \textit{\titleref{win:fpsw}} and \textit{\titleref{win:fpw}}.
     - Load Factor List…           & Opens the \textit{\titleref{list:load}}\\
     - ETWR List…                  & Opens the \textit{\titleref{list:etwr}}\\
     - <adep>                      & ETWR List departure airports filter\\
-    - Uncont. List 1…             & Opens the \textit{\titleref{list:uncon1}}\\
+    - Uncont. List 1…             & Opens the \textit{\titleref{list:uncon}}\\
     - <filter>                    & Uncontrolled 1 List state filter\\
     - <units>                     & Uncontrolled 1 List units filter\\
-    - Uncont. List 2…             & Opens the \textit{\titleref{list:uncon2}}\\
+    - Uncont. List 2…             & Opens the \textit{\titleref{list:uncon}}\\
     - <filter>                    & Uncontrolled 2 List state filter\\
     - <units>                     & Uncontrolled 2 List units filter\\
     - Lost List…                  & Opens the \textit{\titleref{list:lost}}\\
@@ -1289,19 +1390,14 @@ The Sector List is a EuroScope-style list containing all departed controlled (al
 
 The Load Factor List is a EuroScope-style list containing all departed controlled (all IFR, VFR only if ASSUMED) aircraft in the concerned state and all non-departed controlled aircraft in the concerned and coordinated states expected to enter the sector within 4 hours by default.
 
-\subsection{Uncontrolled List 1}
-\label{list:uncon1}
+\subsection{Uncontrolled Lists}
+\label{list:uncon}
 
-\textit{\titleref{menu:global}} Tools -> Flight Plan Lists -> Main VFR List… / Uncontrolled List 1…
+\textit{\titleref{menu:global}} Tools -> Flight Plan Lists -> Uncontrolled List 1/2…
 
-The Main VFR List / Uncontrolled List 1 is a EuroScope-style list containing all or a subset of uncontrolled (VFR flights not in ASSUMED state) aircraft, depending on whether filters are set up.
+The Uncontrolled List is a EuroScope-style list containing all or a subset of Uncontrolled aircraft, depending on whether filters are set up.
 
-\subsection{Uncontrolled List 2}
-\label{list:uncon2}
-
-\textit{\titleref{menu:global}} Tools -> Flight Plan Lists -> Secondary VFR List… / Uncontrolled List 2…
-
-The Secondary VFR List / Uncontrolled List 2 is another VFR list to be used if different filtering options are needed.
+Up to 2 lists can be displayed. Each list may be configured with different filtering options.
 
 \subsection{ETWR List}
 \label{list:etwr}
@@ -1317,19 +1413,14 @@ The ETWR List is a EuroScope-style list containing notified and coordinated flig
 
 The Resectorisation List is a EuroScope-style list containing all flights assumed or on-contact with specified LFUNCs (controller IDs).
 
-\subsection{Traffic Management List 1}
+\subsection{Traffic Management Lists}
 \label{list:tml1}
 
-\textit{\titleref{menu:global}} Tools -> Flight Plan Lists -> Traffic Management List 1…
+\textit{\titleref{menu:global}} Tools -> Flight Plan Lists -> Traffic Management List 1/2…
 
-The Traffic Management List 1 is a EuroScope-style list containing all uncontrolled flights and controlled flights at least in coordinated state with specified destinations, and routing via specified points. The ETO over the point (or ETA if no point specified) must be within 30 minutes, and the destination must be specified to include uncontrolled flights in the list.
+The Traffic Management List is a EuroScope-style list containing all Uncontrolled and Controlled flights at least in Coordinated State with specified destinations, and routing via specified points. The ETO over the point (or ETA if no point specified) must be within 30 minutes, and the destination must be specified to include uncontrolled flights in the list.
 
-\subsection{Traffic Management List 2}
-\label{list:tml2}
-
-\textit{\titleref{menu:global}} Tools -> Flight Plan Lists -> Traffic Management List 2…
-
-The Traffic Management List 2 is another Traffic Management list to be used if different filtering options are needed.
+Up to 2 lists can be displayed. Each list may be configured with different filtering options.
 
 \subsection{Lost List}
 \label{list:lost}
