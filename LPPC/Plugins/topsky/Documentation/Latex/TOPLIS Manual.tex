@@ -135,8 +135,8 @@ bookmarks=true,bookmarksopenlevel=2]{hyperref}
 \makeoddhead{plain}{}{}{}
 
 
-\maxsecnumdepth{subsection} % chapters, sections, and subsections are numbered
-\maxtocdepth{subsection} % chapters, sections, and subsections are in the Table of Contents
+\maxsecnumdepth{subsubsection} % chapters, sections, and subsections are numbered
+\maxtocdepth{subsubsection} % chapters, sections, and subsections are in the Table of Contents
 
 
 %%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
@@ -204,25 +204,29 @@ EuroScope, a controller client developed by Gergely Csernák for the VATSIM netw
 
 The TopSky plugin (a.k.a. The Plugin Formerly Known As “EUROCAT 2000 E”) started out as a very small project to create a couple of customized aircraft tag items, but as more information about the real system and the possibilities with the plugin development became available, it slowly grew to include an almost complete set of tag items, tag menus, graphical elements on the radar display and some additional functionality.
 
-\chapter{System Description}
+\chapter{Systems}
 
 \section{Sector States}
 
 Depending on a set of conditions and relationships, each Flight Plan is defined as being in a certain state relative to each airspace volume. This is the so called Sector State. As a given flight progresses along its route it will go through a series of diferent Sector States relative to a given airspace volume. 
 
-There are 8 different Sector States. Track presentation coloring depends on the flight sector state:
+Track presentation coloring depends on the flight sector state:
 
-\begin{tabular}{l l l}
-  \textbf{State}                                                  & \textbf{Color}               & \textbf{Condition}\\
-  Unconcerned \nextrow \label{state:Unconcerned}                  & \colortabex{Unconcerned}     & Track will not enter the active sector\\
-  Notified \nextrow \label{state:Notified}                        & \colortabex{Concerned}       & Track will enter the active sector (> 15 min)\\
-  Coordinated \nextrow \label{state:Coordinated}                  & \colortabex{Coordination}    & Track will enter the active sector (< 15 min)\\
-  Assumed \nextrow \label{state:Assumed}                          & \colortabex{Assumed}         & Track is assumed\\
-  On Contact \nextrow \label{state:On Contact}                    & \colortabex{Assumed}         & Track is on-contact with you\\
-  Transfer Initiated \nextrow \label{state:Transfer Initiated}    & \colortabex{Assumed}         & Track is being transferred to the next controller\\
-  Redundant \nextrow \label{state:Redundant}                      & \colortabex{Redundant}       & Track has been transferred to the next controller but is still inside the active sector\\
-  Free \nextrow \label{state:Free}                                & \colortabex{Unconcerned}     & Track is not assumed or on-contact with anyone\\
+\begin{center}
+\begin{tabular}{| p{2.5cm} p{2.5cm} p{8cm} |}
+  \hline
+  \textbf{State}                                                  & \textbf{Color}               & \textbf{Condition}\\ \hline
+  Initial (Unconcerned) \nextrow \label{state:Unconcerned}        & \colortabex{Unconcerned}     & Track will not enter the active sector\\ \hline
+  Free (Unconcerned)\nextrow \label{state:Free}                   & \colortabex{Unconcerned}     & Track is not assumed or on-contact with anyone\\ \hline
+  Notified \nextrow \label{state:Notified}                        & \colortabex{Concerned}       & Track will enter the active sector (> 15 min)\\ \hline
+  Coordinated \nextrow \label{state:Coordinated}                  & \colortabex{Coordination}    & Track will enter the active sector (< 15 min)\\ \hline
+  Assumed \nextrow \label{state:Assumed}                          & \colortabex{Assumed}         & Track is assumed\\ \hline
+  On Contact \nextrow \label{state:On Contact}                    & \colortabex{Assumed}         & Track is on-contact with you. Flight is considered as Uncontrolled\\ \hline
+  Transfer Initiated                                              & \colortabex{Assumed}         & Track is being transferred to the next controller. \tagref{tag:CALLSIGN} and \tagref{tag:SI} are colored in \colorref{color:Redundant} color\\ \hline
+  Redundant \nextrow \label{state:Redundant}                      & \colortabex{Redundant}       & Track has been transferred to the next controller but is still inside the active sector\\ \hline
+  Informed                                                        & \colortabex{Informed 1}      & Track will not enter the active sector but is relevant to it\\ \hline
 \end{tabular}
+\end{center}
 
 Sector States are used to control label construction, placement in lists, filtering, coloring, Safety Net parameters and availability. For example, a Flight Plan in the \stateref{On Contact} state will not trigger an APW warning until already being inside a TSA and will be shown in the \winref{list:uncon}. The same flight but in the \stateref{Assumed} state will trigger the APW warning when less than 3nm of a TSA and will not be shown in the \winref{list:uncon}.
 
@@ -463,6 +467,1738 @@ As with MTCD, keeping the CFL and the aircraft’s route updated is important fo
 A conflict is shown by displaying the Military coordination indicator (“M”). The indicator can be set to warn for risks as well. Note that once the indicator is clicked and changes to inactive state, the system will not give further warnings for that aircraft as long as the indicator is in the inactive state. Click on the inactive indicator to re-arm the system once the aircraft has passed all the areas for which crossing clearance was given.
 
 SAP conflicts (optionally also risks) are also shown in the \textit{\titleref{win:sap}}).
+
+\section{Datalink}
+
+TopSky uses \textit{\href{http://www.hoppie.nl/acars}{Hoppie’s ACARS network}}. A separate password (logon code) is needed, and it can be \textit{\href{https://www.hoppie.nl/acars/system/register.html}{requested from that site}}. 
+
+TopSky supports Departure Clearance (DCL) and Controller-Pilot Data Link Communications (CPDLC).
+
+To start using the data link functions, first connect to the VATSIM network. Then connect to the Hoppie network:
+
+\begin{itemize}
+  \item Open the \textit{\titleref{win:dls}}
+  \item Enter/check the login callsign
+  \item Enter your personal logon code
+  \item Select whether to provide CPDLC or DCL/PDC services or both
+  \item Left-click on the “Connect” button
+\end{itemize}
+
+The “Connect” button will change to “Online” with a green background. Wait at least 10 seconds to see if the connection is successful. Error messages regarding the connection will be shown in the \textit{\titleref{win:pqw}}. 
+
+\begin{Warn}
+  Attempting to connect with a CPDLC login callsign that is already in use will not fail instantly, and may take up to 10 seconds for the error message to be added to the \textit{\titleref{win:pqw}}
+\end{Warn}
+
+The Hoppie logon code expires after 120 days of inactivity. If that happens, the connection will fail and a new logon code has to be requested.
+
+If the connection is lost, an error message dialog will be displayed in the center of the radar screen. Note that if multiple EuroScope instances are used, the proxy instances will not be able to access the CPDLC message windows or change the network connection status.
+
+TopSky may sometimes fail to parse the message contents correctly. The longer the message, the more likely it is that the parsing will go wrong. When in doubt, open the message in the \textit{\titleref{win:dlcmw}}.
+
+The example track labels do not represent any specific setup and are only meant to highlight the items specific to each function. In the examples, aircraft ABC123 is assumed by you, the next controller is “IDA”, the aircraft is climbing through FL100, and its cleared level is FL180. This is the label before any messages arrive:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Assumed} ABC123} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & & \\         
+\end{tabular}
+
+When the aircraft requests to start a CPDLC connection, it sends a “REQUEST LOGON” message. The message is displayed in the \textit{\titleref{win:dlcmw}} and the Callsign field gets blinking square brackets around it (not on proxy ES instances). TopSky automatically denies requests for aircraft not entering your sector. To approve the request, use the “Start CPDLC” button in the \textit{\titleref{menu:cs}}. To deny the request, left-click on the message in the \textit{\titleref{win:dlcmw}} and select “UNABLE”. It is also possible to accept if necessary, but the \textit{\titleref{menu:cs}} is the primary way to do it.
+
+When the request has been accepted, the Callsign field will get steady square brackets around it. This indicates that the aircraft is CPDLC connected and available to exchange CPDLC messages with.
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & & \\         
+\end{tabular}
+
+To terminate the CPDLC connection of an aircraft, use the “End CPDLC” button in the \textit{\titleref{menu:cs}}.
+
+\begin{Note}
+  While it is possible to answer any message in the \textit{\titleref{win:dlcmw}} using the “Manual Reply” option, the track label menus should always be used to answer correctly recognized messages, as using the manual reply method will not update the track label values.
+\end{Note}
+
+\subsection{Departure Clearance (DCL)}
+
+ARINC-623 DCL is a service used in Europe and many other parts of the World. It is a direct ATC-to-pilot data link communication over the ACARS network.
+
+The departure clearance functionality is built into the Departure List. A received clearance request is displayed in the list, and a clearance can be sent by opening the \textit{\titleref{win:dlpdcw}} via left clicking the RWY or SID fields of the Departure List.
+
+A DCL follows a chronological sequence of events that must be completed in order to communicate a clearance.
+
+\subsubsection{Departure Clearance Request (RCD)}
+
+The aircraft sends a clearance request message (RCD). The message is also shown in the \textit{\titleref{win:dlcmw}}:
+
+\begin{quote}
+  REQUEST PREDEP CLEARANCE ABC123 A320 TO ESSA AT LPPT STAND 221 ATIS PAPA
+\end{quote}
+
+\subsubsection{Flight System Message (FSM)}
+
+If the request is correctly formatted, TopSky will automatically send a flight system message (FSM) as a reply. Its content depends on whether all the requirements for a DCL are met (flight plan found, departure airport offers data link clearances, etc.). If so, the following reply message is sent to the aircraft:
+
+\begin{quote}
+  DEPART MESSAGE STATUS FSM 1312 221113 LPPT ABC123 RCD RECEIVED REQUEST BEING PROCESSED STANDBY 
+\end{quote}
+
+The List CLR tag item will show a “R” text in yellow (red if the request contained remarks text after the ATIS indicator. Check the message in the \textit{\titleref{win:dlcmw}}). The text will start to blink two minutes before a timeout occurs if a clearance hasn’t been sent.
+
+If a clearance is not sent before the timeout occurs, the data link clearance request is automatically rejected and a message is sent to the aircraft to revert to voice procedures.
+
+\begin{quote}
+  RCD REJECTED REVERT TO VOICE PROCEDURES
+\end{quote}
+
+\subsubsection{Departure Clearance Message (CLD)}
+
+The clearance is sent using the \textit{\titleref{win:dlpdcw}}), opened by left clicking the RWY or SID fields of the Departure List. 
+
+\begin{Note}
+  Due to system limitations, the current ATIS letter should be manually added to the RMK field of the DCL, in the "ATIS: X" format.
+\end{Note}
+
+The clearance is sent using the “Send DCL” button. “Voice” rejects the data link clearance request and sends a message to the aircraft to revert to voice procedures. 
+
+\begin{quote}
+  LPPT PDC 001 CLD 1314 221113 LPPT PDC 001 ABC123 CLRD TO ESSA OFF 02 VIA IXIDA5N SQUAWK 3251 ATIS:X QNH 1012
+\end{quote}
+
+Once the clearance is sent, the List CLR item will change to “A”, and will start to blink if there is no reply from the aircraft two minutes before a timeout occurs.
+
+If there is still no answer from the aircraft when the timeout occurs, the data link clearance is automatically rejected and a message is sent to the aircraft informing it that the received clearance has been cancelled.
+
+\begin{quote}
+  ACK NOT RECEIVED CLEARANCE CANCELLED REVERT TO VOICE PROCEDURES
+\end{quote}
+
+\subsubsection{Departure Clearance Readback (CDA)}
+
+A clearance can be answered to with either “WILCO” to accept it or “UNABLE” to reject it.
+
+\subsubsection{Flight System Message (FSM)}
+
+Once a reply is received, the List CLR item changes to a filled box (for WILCO) or clears it (for UNABLE). A message is automatically sent to the aircraft.
+
+\begin{quote}
+  ATC REQUEST STATUS FSM 1317 221113 LPPT ABC123 CDA RECEIVED CLEARANCE CONFIRMED 
+\end{quote}
+
+If an UNABLE reply is received, clearance must then be negotiated and delivered by voice. A message is automatically sent to the aircraft.
+
+\begin{quote}
+  CONTACT ATC BY VOICE REFUSE NOT SUPPORTED BY DATALINK
+\end{quote}
+
+\subsubsection{Abnormal operations}
+
+Most failure cases result from the message not being correctly formatted, and TopSky failing to recognize it correctly. Regardless of whether TopSky recognizes the message as belonging to a departure clearance sequence, it will be put into the \textit{\titleref{win:dlcmw}}. In case the system fails, revert to voice communications.
+
+\subsection{Controller-Pilot Data Link Communications (CPDLC)}
+\label{cpdlc}
+
+CPDLC is a means of communication between controller and pilot, using data link for ATC communications, and with the extra advantage of displaying data on the track labels and flight lists as well.
+
+As the messages take significant amount of time to get through (receiving a reply to a clearance can take anything from seconds to a couple of minutes), using CPDLC should be limited to situations that are not time-critical. For this reason, it is mostly used in upper airspace area control sectors.
+
+The messages are grouped to dialogs, with an opening message and subsequent replies. Some messages do not need a reply, while for others a specific reply is expected. The available replies are set automatically, so only the correct type of reply can be sent.
+
+\subsubsection{Allowed message types}
+\label{cpdlc:amt}
+
+TopSky allows for the following types of messages:
+
+\begin{tabular}{l l}
+  Uplink                      & Downlink\\
+  Level clearance             & Level request\\
+  Heading clearance           & Heading request\\
+  Direct-to clearance         & Direct-to request\\
+  Speed clearance             & Speed request\\
+  Squawk code assignment      & Urgency (MAYDAY/PAN/SQ7500)\\
+  Squawk ident instruction    & Free text\\
+  Voice contact instruction   & \\
+  Free text                   & \\
+\end{tabular}
+
+\subsubsection{Non-allowed message types}
+\label{cpdlc:nmt}
+
+TopSky does not allow the following downlink message types. They will be automatically closed and a reply sent informing that the system does not support the message type:
+
+\begin{itemize}
+  \item Any requests containing “When can we expect”, “At pilots discretion” or “Own separation”
+  \item Level requests for a cruise climb, block level, or any level request tied to a position or time
+  \item Lateral requests for an offset, weather deviation or ground track
+  \item Speed requests to maintain a speed range
+  \item Voice contact requests
+  \item Requests for a procedure name and/or type
+  \item Position reports
+\end{itemize}
+
+Note that a non-allowed message type can be classified as “free text” by TopSky if the message parser doesn’t recognize it as a non-allowed type. In this case the automatic reply will not be sent and the message may be left waiting for an answer if an answer is required.
+
+\subsubsection{Uplink clearance sequence}
+\label{cpdlc:ucs}
+
+In this example a level clearance is used. The clearance is sent using the \textit{\titleref{menu:cfl}}. To send the clearance using CPDLC, check that the “CPDLC” option is selected. Depending on the aircraft’s altitude, by default it may be selected or deselected. Send the clearance by selecting a level value.
+
+In this case FL200 was selected, and the CPDLC message “CLIMB TO FL200” was sent to the aircraft. The uplinked value is shown in brackets and in \colorref{color:CPDLC UM Clearance} color:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{CPDLC UM Clearance} [200]} & & \\         
+\end{tabular}
+
+The aircraft has responded with “STANDBY”. The uplinked value changes to \colorref{color:CPDLC Standby} color, and a warning is inserted on line 0 of the label. The warning can be acknowledged by left-clicking on it:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{CPDLC Standby} CFL SBY} & & \\
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{CPDLC Standby} [200]} & & \\         
+\end{tabular}
+
+The aircraft then eventually answers with “WILCO”. The CFL value is updated accordingly and the label field colors return to normal:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 200} & & \\         
+\end{tabular}
+
+If the aircraft answers with “UNABLE”, a warning is inserted in line 0 of the label:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{CPDLC Standby} CFL UNA} & & \\
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{CPDLC Standby} [200+]} & & \\         
+\end{tabular}
+
+The “+” after the level indicates that there is a reason in the answer message, for example “DUE TO PERFORMANCE”. The reason given is only accessible from the \textit{\titleref{win:dlcmw}}.
+
+Left-clicking on the warning acknowledges it and the original CFL value is again shown in the label:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & & \\         
+\end{tabular}
+
+\subsubsection{Downlink request sequence}
+\label{cpdlc:drs}
+
+This example shows a level request.
+
+The aircraft has sent a level request for FL200. The value is shown in the PRFL (Pilot Requested Level) field in brackets and in \colorref{color:CPDLC DM Request} color:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & {\color{CPDLC DM Request} [200]} & \\         
+\end{tabular}
+
+The responses to a level request are sent using the \textit{\titleref{menu:cfl}}, which offers the possibilities to respond with “STANDBY”, “UNABLE” or a level clearance. In the last case the sequence then changes to an \textit{\titleref{cpdlc:ucs}}.
+
+\subsubsection{Abnormal operations}
+\label{cpdlc:abn}
+
+As with DCL messages, the most likely failure scenario is TopSky misinterpreting the contents of a received message, which can be verified on the \textit{\titleref{win:dlcmw}}. Some other failure scenarios are presented below.
+
+If TopSky has temporarily lost contact with the CPDLC server, “CPDLC COMM FAIL” will be inserted in line 0 of the labels of all CPDLC connected aircraft in \colorref{color:CPDLC Failed} color:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{CPDLC Standby} CPDLC COMM FAIL} & & \\
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & & \\         
+\end{tabular}
+
+In case the server connection is not re-established within a certain time, the connection will be automatically closed and a warning message box will be presented. A new connection can be attempted at any time from the \textit{\titleref{win:dls}}.
+
+During temporary connection issues and also when the connection is automatically closed, the “AGCS” system label in the \textit{\titleref{win:geninfo}} will be displayed with \colorref{color:Warning} color until a connection is re-established.
+
+If the CPDLC connection is terminated by the pilot, a “CPDLC P ABT” warning is inserted in line 0 of the label in \colorref{color:CPDLC Failed} color:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{CPDLC Standby} CPDLC P ABT} & & \\
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & & \\         
+\end{tabular}
+
+Left-clicking on the warning acknowledges it.
+
+If an uplink clearance is not answered in time, a “<message type> P LATE” warning will be inserted in line 0 of the label in \colorref{color:CPDLC Pilot Late} color:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{CPDLC Pilot Late} CPDLC P LATE} & & \\
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & & \\         
+  {\color{CPDLC Pilot Late} [200]} & & \\         
+\end{tabular}
+
+Left-clicking on it opens a menu with options to either abort the clearance or manually mark it as aswered with “WILCO”. Manually marking should be done only after a satisfactory readback is obtained by voice.
+
+If sending an uplink clearance failed, a “<message type> ERR” warning will be inserted in line 0 of the label in \colorref{color:CPDLC Failed} color:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{CPDLC Failed} CPDLC ERR} & & \\
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & & \\         
+  {\color{CPDLC Failed} [200]} & & \\         
+\end{tabular}
+
+Left-clicking acknowledges the warning and aborts the clearance, displaying the previous value in the label.
+
+If an uplink clearance is sent successfully but you are not the Current Data Unit in the aircraft’s CPDLC system, a “<message type> NOT CDA” warning will be inserted in line 0 of the label in \colorref{color:CPDLC Failed}:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{CPDLC Failed} CPDLC NOT CDA} & & \\
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & & \\         
+  {\color{CPDLC Failed} [200]} & & \\         
+\end{tabular}
+
+Left-clicking acknowledges the warning and aborts the clearance, displaying the previous value in the label.
+\section{Coordination}
+
+TopSky provides various ways to coordinate information between controllers.
+
+The example track labels do not represent any specific setup and are only meant to highlight the items specific to each function. In the examples, aircraft ABC123 is assumed by “transferring controller” and the next sector is referred to as “accepting controller”. For reference, the example labels would look like these before any coordination (coordination point TROIA, entry/exit level FL180):
+
+Transferring controller:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Assumed} ABC123} & {\color{Coordination} IDA}       & {\color{Assumed} }      \\
+  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
+  {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }     
+\end{tabular}
+
+Accepting controller:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Coordination} ABC123} & {\color{Coordination} IDT}       & {\color{Coordination} }      \\
+  {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
+  {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }     
+\end{tabular}
+
+Some of the coordination functions (ROF, RTI and TIP) require very specific conditions to exist to be able to send the necessary messages between the controllers. TopSky attempts to check for this and either disables the function (grey text in the menu button) or creates a warning message if the conditions are lost during a coordination, but in some cases the coordination messages can get lost. In this case try the coordination again or manually coordinate.
+
+\subsection{PEL/COPN}
+
+A coordination is displayed by coloring the proposed values “Proposition In/Out” (depending on whether the coordination was sent or received) in the track label and the flight lists. Additionally, a message is displayed in the \textit{\titleref{win:miw}}) for received coordinations and in the \textit{\titleref{win:mow}}) for coordinations sent by you.
+
+To send a PEL (Planned Entry Level) coordination, left-click on the PEL value in the track label or a flight list. This opens the a menu to select a value. To send a COPN (Entry Point) coordination, left-click on the COPN value in the track label or a flight list. This opens the \textit{\titleref{menu:wpt}}). Select “Routing”. This opens a menu to select the desired point. Keep an eye for the answer as it can be a counter-proposal as well, so the color of the values staying white doesn’t necessarily mean the coordination hasn’t been answered!
+
+An example track label, showing both the PEL and COPN being coordinated:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Coordination} ABC123} & {\color{Coordination} IDT}       & {\color{Coordination} }      \\
+  {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color[RGB]{225,130,180} TROIA} \\
+  {\color[RGB]{225,130,180} 180}    & {\color{Coordination} }          & {\color{Coordination} }     
+\end{tabular}
+
+To answer an incoming coordination, left-click on a proposed value or the corresponding message in the \textit{\titleref{win:miw}}). This opens a menu where you can select the response (Accept, Refuse or Change). After the response, the track label and lists display depend on the answer:
+
+\begin{tabular}{l l}
+  Accept: & Accepted values, sector state color\\
+  Refuse: & Original values, sector state color (due to EuroScope bug, should be “Warning”)\\
+  Change: & New proposed values in “Proposition Out”\\
+\end{tabular}
+
+\subsection{XFL/COPX}
+
+A coordination is displayed by coloring the proposed values “Proposition In/Out” (depending on whether the coordination was sent or received) in the track label and the flight lists. Additionally, a message is displayed in the \textit{\titleref{win:miw}}) for received coordinations and in the \textit{\titleref{win:mow}}) for coordinations sent by you.
+
+To send an XFL (Exit Flight Level) coordination, left-click on the XFL value in the track label or a flight list. This opens a menu to select a value. To send a COPX (Exit Point) coordination, left-click on the COPX value in the track label or a flight list. This opens the \textit{\titleref{menu:wpt}}). Select “Routing”. This opens a menu to select the desired point. Keep an eye for the answer as it can be a counter-proposal as well, so the color of the values staying white doesn’t necessarily mean the coordination hasn’t been answered!
+
+An example track label, showing both the XFL and COPX being coordinated:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Assumed} ABC123} & {\color{Coordination} IDA}       & {\color{Assumed} }      \\
+  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color[RGB]{225,130,180} TROIA} \\
+  {\color{Assumed} 180}    & {\color[RGB]{225,130,180} 200}          & {\color{Assumed} }     
+\end{tabular}
+
+To answer an incoming coordination, left-click on a proposed value or the corresponding message in the \textit{\titleref{win:miw}}). This opens a menu where you can select the response (Accept, Refuse or Change). After the response, the track label and lists display depend on the answer:
+
+\begin{tabular}{l l}
+  Accept: & Accepted values, sector state color\\
+  Refuse: & Original values, sector state color (due to EuroScope bug, should be “Warning”)\\
+  Change: & New proposed values in “Proposition Out”\\
+\end{tabular}
+
+\subsection{Releases}
+
+To communicate a release to the next controller, select the “Trf \& release” option instead of “Transfer” in the \textit{\titleref{menu:cs}} when transferring the aircraft. This opens the \textit{\titleref{menu:xfrrel}}) to select the desired release condition. The available choices are “Climb”, “Descent”, “Turn” and “Full”. Selecting an option will start the transfer with the selected release condition.
+
+The release will be displayed on line 0 of the track label (in “Proposition In/Out” during the transfer), showing the first letter of the release condition. The example labels below show a Full release:
+
+Transferring controller:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Proposition In} F} & {\color{Coordination} }       & {\color{Assumed} }      \\
+  {\color{Proposition In} ABC123} & {\color{Proposition In} IDA}       & {\color{Assumed} }      \\
+  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
+  {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }     
+\end{tabular}
+
+Accepting controller:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Proposition In} F} & {\color{Coordination} }       & {\color{Assumed} }      \\
+  {\color{Assumed} ABC123} & {\color{Assumed} IDT}       & {\color{Coordination} }      \\
+  {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
+  {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }     
+\end{tabular}
+
+After the accepting controller assumes the aircraft, the release indicator changes to sector state color. It remains in the transferring controller’s label until it becomes unconcerned, and in the accepting controller’s label for 3 minutes.
+
+\begin{Note}
+  If a release is sent to a controller not using the TopSky plugin, it will only be displayed on your label. To the accepting controller it will look like a normal transfer.
+\end{Note}
+
+\subsection{HOP}
+
+The purpose of the HOP (Hand-Over Proposal) message is for the transferring controller to propose the flight for hand-over to the accepting controller, and/or to propose non-standard transfer conditions which require the approval of the accepting controller.
+
+To send a HOP without any transfer conditions, select the \textit{\titleref{win:hop}}) option in the \textit{\titleref{menu:cs}}.
+
+To send a HOP with a transfer condition (assigned heading, direct-to point or assigned speed):
+
+\begin{enumerate}
+  \item open the AHDG or ASP menu and select the "HOP" option (found in the “More” folder)
+  \begin{itemize}
+    \item See \textit{\titleref{win:hop}}) for indications
+  \end{itemize}
+  \item select the desired value (to select a direct-to point, select the “Point” option in the AHDG menu and then left-click on the point on the radar screen
+\end{enumerate}
+
+The example labels below show a HOP with an assigned heading proposal:
+
+Transferring controller:
+
+\begin{itemize}
+  \item SI item and any proposed values in \colorref{color:Proposition Out} color
+  \item Message in Message Out Window
+\end{itemize}
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Assumed} ABC123} & {\color{Proposition In} IDA}       & {\color{Assumed} }\\
+  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA}\\
+  {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }\\  
+  {\color{Proposition In} H360}    & {\color{Assumed} }          & {\color{Assumed} }\\  
+\end{tabular}
+
+Accepting controller:
+
+\begin{itemize}
+  \item Callsign item and any proposed values in \colorref{color:Proposition In} color
+  \item Message in Message In Window
+\end{itemize}
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Proposition In} ABC123} & {\color{Coordination} IDT}       & {\color{Coordination} }\\
+  {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA}\\
+  {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }\\
+  {\color{Proposition In} H360}    & {\color{Coordination} }          & {\color{Coordination} }\\      
+\end{tabular}
+
+The transferring controller should keep an eye on both the track label and the \textit{\titleref{win:miw}}) as there are three ways for the accepting controller to answer a HOP. In order of preference, they are:
+
+\begin{itemize}
+  \item From the \textit{\titleref{menu:cs}}, select “ROF”. This sends a ROF message to the transferring controller.
+  \begin{itemize}
+    \item See \textit{\titleref{menu:rof}}) for indications
+  \end{itemize}
+  \item Left-click on the AHDG, ASP or COPN item. This opens the \textit{\titleref{menu:ctm}}). In it, select “Accept”. This sends an Accept message to the transferring controller.
+  \begin{itemize}
+    \item The labels on both controllers’ screens return to normal sector state coloring
+    \item A message is put into the Message In Window for the transferring controller
+    \item A message is put into the Message Out Window for the accepting controller
+  \end{itemize}
+  \item From the \textit{\titleref{menu:cs}}, select “Assume”. This assumes the aircraft (with the other two answers the aircraft remains assumed by the transferring controller)
+  \begin{itemize}
+    \item The labels on both controllers’ screens return to normal sector state coloring
+  \end{itemize}
+\end{itemize}
+
+\begin{Note}
+  If a HOP is sent to a controller not using the TopSky plugin, it will only be displayed on your label. To the accepting controller it will look like a normal transfer. Any proposed values will be shown also on the accepting controller’s label but they will not be colored as proposals.
+
+  If a HOP is sent to a manually selected controller and is answered by either “Accept” or “ROF”, the next controller is reset to the automatically calculated one. The correct controller needs to be manually selected again before transferring the aircraft.
+\end{Note}
+
+\subsection{ROF}
+
+The ROF (Request on Frequency) message is sent by the accepting controller to the transferring controller, when required, requesting the transferring controller to instruct the aircraft to change to the frequency of the accepting controller. The message may be used as a reply to HOP to signify the acceptance of the flight under the proposed conditions, or to request the early transfer of the flight.
+
+To send a ROF message, select the “ROF” option in the \textit{\titleref{menu:cs}} of the aircraft in question. The example label below shows the indications when the message is sent (there are no indications in the accepting controller’s track label):
+
+Transferring controller:
+
+\begin{itemize}
+  \item ROF text in \colorref{color:Proposition In} color
+  \item Message in Message In Window
+\end{itemize}
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Proposition In} ROF} & {\color{Coordination} }       & {\color{Assumed} }      \\
+  {\color{Assumed} ABC123} & {\color{Coordination} IDA}       & {\color{Assumed} }      \\
+  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
+  {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }     
+\end{tabular}
+
+Accepting controller:
+
+\begin{itemize}
+  \item ROF text in \colorref{color:Proposition Out} color
+  \item Message in Message Out Window
+\end{itemize}
+
+The indications are removed when a “Transfer”, “Trf \& release” or “HOP” is performed.
+
+\begin{Note}
+  If a ROF is sent to a controller not using the TopSky plugin or the message fails to go through, an error message will be put into the Personal Queue Window. The message counter in the Global Menu will be highlighted in \colorref{color:Warning} color if the window is not open.
+\end{Note}
+
+\subsection{RTI/TIP}
+
+These messages are used to request/propose the transfer of a flight on an assigned heading, speed or rate of climb/descent. RTI (Request Tactical Instructions) is a request initiated by the accepting controller and TIP (Tactical Instructions Proposal) a proposal initiated by the transferring controller.
+
+In the examples below the RTI message is used. For the TIP message, the indications and actions are the same, only the roles are reversed – the transferring controller sends and the accepting controller answers the message, so the message will appear in the other Message Window.
+
+To send the RTI message:
+
+\begin{enumerate}
+  \item open the AHDG, ASP or ARC menu and select the “RTI” option (found in the “More” folder) 
+  \item select the desired value in the list (the “Point” option in the AHDG menu can’t be chosen)
+\end{enumerate}
+
+When the message is sent, the following indications are shown:
+
+Transferring controller:
+
+\begin{itemize}
+  \item Proposed value in \colorref{color:Proposition In} color
+  \item Message in Message In Window
+\end{itemize}
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Proposition In} H360} & {\color{Assumed} }       & {\color{Assumed} }      \\
+  {\color{Assumed} ABC123} & {\color{Coordination} IDA}       & {\color{Assumed} }      \\
+  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
+  {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }     
+\end{tabular}
+
+Accepting controller:
+
+\begin{itemize}
+  \item Proposed value in \colorref{color:Proposition Out} color
+  \item Message in Message Out Window
+\end{itemize}
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Proposition Out} H360} & {\color{Coordination} }       & {\color{Coordination} }      \\
+  {\color{Coordination} ABC123} & {\color{Coordination} IDT}       & {\color{Coordination} }      \\
+  {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
+  {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }     
+\end{tabular}
+
+To answer the message, left-click on the proposed value on line 0. This opens the \textit{\titleref{menu:ttm}}) where you can either accept or reject the proposal. When clicking on “Accept”, the menu closes and the following indications are displayed:
+
+Transferring controller:
+
+\begin{itemize}
+  \item Accepted value in sector state color
+  \item Relevant label field value in \colorref{color:Information} color (until the accepted value is set)
+  \item Message in Message Out Window
+\end{itemize}
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Assumed} H360} & {\color{Assumed} }       & {\color{Assumed} }      \\
+  {\color{Assumed} ABC123} & {\color{Coordination} IDA}       & {\color{Assumed} }      \\
+  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
+  {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }\\     
+  {\color{Information} AHDG}    & {\color{Assumed} }          & {\color{Assumed} }     
+\end{tabular}
+
+Accepting controller:
+
+\begin{itemize}
+  \item Accepted value in sector state color
+  \item Relevant label field value in \colorref{color:Information} color (until the accepted value is set)
+  \item Message in Message In Window
+\end{itemize}
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Coordination} H360} & {\color{Coordination} }       & {\color{Coordination} }      \\
+  {\color{Coordination} ABC123} & {\color{Coordination} IDT}       & {\color{Coordination} }      \\
+  {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
+  {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }  \\   
+  {\color{Information} AHDG}    & {\color{Coordination} }          & {\color{Coordination} }  \\   
+\end{tabular}
+
+When the accepted value has been set (either by going back to the Tactical Transfer menu and selecting “Apply” or setting the value some other way), the label field returns to the sector state color.
+
+On the other hand, if “Reject” is chosen, the menu closes the indications are as follows:
+
+Transferring controller:
+
+\begin{itemize}
+  \item Rejected value in \colorref{color:Warning} color
+  \item Message in Message Out Window
+\end{itemize}
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Warning} H360} & {\color{Assumed} }       & {\color{Assumed} }      \\
+  {\color{Assumed} ABC123} & {\color{Coordination} IDA}       & {\color{Assumed} }      \\
+  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
+  {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }\\         
+\end{tabular}
+
+Accepting controller:
+
+\begin{itemize}
+  \item Rejected value in \colorref{color:Warning} color
+  \item Message in Message In Window
+\end{itemize}
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Warning} H360} & {\color{Coordination} }       & {\color{Coordination} }      \\
+  {\color{Coordination} ABC123} & {\color{Coordination} IDT}       & {\color{Coordination} }      \\
+  {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
+  {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }  \\     
+\end{tabular}
+
+A rejected coordination value will be removed from the label after a specified time (60 seconds by default)
+
+\begin{Note}
+  If an RTI or TIP is sent to a controller not using the TopSky plugin or the message fails to go through, an error message will be put into the Personal Queue Window. The message counter in the Global Menu will be highlighted if the window is not open.
+\end{Note}
+
+\subsection{Coordinating more than one value}
+
+It is possible to coordinate more than one value, either before or after the previous proposal has been answered. It is important to note that the label field on line 0 will only show the last proposal or answer. Regardless of this, all the relevant label fields will have the \colorref{color:Information} color for accepted but not yet set values.
+
+For example, if you send an RTI with AHDG 360 (as in the above example) and then send another with ASP 300 (either immediately or after the first coordination is answered), the label field on line 0 will only show the ASP proposal. When opening the Tactical Transfer menu, all the proposals and accepted values are shown. If more than one proposal is active, clicking on “Accept” or “Reject” will send the same answer to all of them. Therefore, it is recommended to wait for an answer until sending another proposal unless the intention of the proposal is to get “all or nothing”.
+
+\section{Label field descriptions}
+
+\renewcommand*{\arraystretch}{1.6}
+\begin{longtable}{|p{2.5cm}|p{2.5cm}|p{4.5cm}|p{4.5cm}|}
+    \hline
+    \textbf{Data field} &
+    \textbf{Description} &
+    \textbf{Comments} &
+    \textbf{Color} \\ \hline
+    \endhead
+    Frequency dot \nextrow \label{tag:Frequency dot} &
+    Frequency &
+      “•”, set from \textit{\titleref{menu:cs}} 
+
+      Used to highlight a particular flight &
+      \colorref{color:Freq Indicator} \\ \hline
+    Mark dot \nextrow \label{tag:Mark dot}&
+      Mark &
+      “•”, set from \textit{\titleref{menu:cs}} 
+      
+      Used to highlight a particular flight &
+      \colorref{color:Information} \\ \hline
+    +  \nextrow \label{tag:+}&
+      Field 18 information &
+      “+” if “STS/” found in FPL remarks field &
+       \\ \hline
+    * \nextrow \label{tag:*}&
+      Unit &
+      “*” if label units are different from  the system units &
+      \colorref{color:Warning} \\ \hline
+    A \nextrow \label{tag:A}&
+      Manual alerts &
+      “A” if Manual alert(s) active &
+      \colorref{color:Warning} \\ \hline
+    a \nextrow \label{tag:a}&
+      Attitude indicator &
+      Climbing: up arrow 
+      
+      Descending: down arrow 
+      
+      Level flight or unknown: blank & 
+      \\ \hline
+    ADEP \nextrow \label{tag:ADEP}&
+      Departure aerodrome &
+      ICAO code, 4 characters &
+       \\ \hline
+    ADES \nextrow \label{tag:ADES}&
+      Destination aerodrome &
+      ICAO code, 4 characters &
+       \\ \hline
+    AFL \nextrow \label{tag:AFL}&
+      Actual Flight Level &
+      FL’s with 3 digits
+
+      Altitudes “A”+ 2 digits
+
+      Heights “E”+ 2 digits, in hundreds of feet 
+      
+         &
+      AIW: \colorref{color:AIW intrusion} 
+      
+      Manually set: \colorref{color:Warning} 
+      
+      Mark All: \colorref{color:CARD Mark All} 
+      
+      S-Highlight: \colorref{color:Suite Highlight} \\ \hline
+    AHDG \nextrow \label{tag:AHDG}&
+      Assigned heading &
+      List: 
+      
+      Assigned heading (“H” + 3 digits) or  direct-to point name 
+      \bigskip
+      
+      Unselected label: 
+      
+      - Assigned heading 
+      
+      - Direct-to point name (hidden when  direct to COPX) 
+      \bigskip
+      
+      Selected label: 
+      
+      - Assigned heading 
+      
+      - Direct-to point name 
+      \bigskip
+      
+      If a heading clearance or request is  in progress via CPDLC, displays  “{[}heading{]}”, followed by “+” if the  request or answer contains a reason(i.e. DUE TO something). 
+      \bigskip
+     
+      DEP list: 
+      Does not display the  brackets for CPDLC status. &
+      If a value is assigned and  HOP: \colorref{color:Proposition In} 
+      \bigskip
+
+      If a tactical coordination value is accepted but not  set: \colorref{color:Information} 
+      \bigskip
+
+      If a CPDLC uplink message  has been sent:  \colorref{color:CPDLC UM Clearance} 
+      \bigskip
+      
+      If a CPDLC downlink  message has been  received:  \colorref{color:CPDLC DM Request} 
+      \bigskip
+      
+      If controller timeout has expired following a CPDLC downlink request:  \colorref{color:CPDLC Controller Late} 
+      \bigskip
+      
+      If a CPDLC warning has  been raised: color of the  warning \\ \hline
+    AIW \nextrow \label{tag:AIW}&
+      AIW alert (see also ALRT) &
+      “AIW” &
+      \colorref{color:AIW intrusion} \\ \hline
+    ALRT \nextrow \label{tag:ALRT}&
+      Alert message &
+      “MSAW”, “APW”, “AIW”, “CLAM”,  “RAM” or  “DUPE” (in this priority order) &
+      MSAW, APW and MTCD: \colorref{color:Warning} 
+      
+      AIW: \colorref{color:AIW intrusion} \\ \hline
+    ALT1 \nextrow \label{tag:ALT1}&
+      Alternate aerodrome 1 &
+      ICAO code, 4 characters &
+       \\ \hline
+    ALT2 \nextrow \label{tag:ALT2}&
+      Alternate aerodrome 2 &
+      Second alternate can be set by  inserting “ALT2/XXXX” into  the FPL remarks field &
+       \\ \hline
+    APW \nextrow \label{tag:APW}&
+      APW alert (see also ALRT) &
+      “APW” &
+      \colorref{color:Warning} \\ \hline
+    ARC \nextrow \label{tag:ARC}&
+      Assigned vertical rate &
+      “R” + 2 digits, in 100’s of ft/min &
+      If a value is assigned and  HOP: \colorref{color:Proposition In} 
+      
+      If a tactical coordination value is accepted but not set: \colorref{color:Information} \\ \hline
+    ARWY \nextrow \label{tag:ARWY}&
+      Arrival runway &
+      Arrival runway identifier &
+      If manually assigned: Rwy Locked \\ \hline
+    ASP \nextrow \label{tag:ASP}&
+      Assigned speed &
+      Mach “M”+ 2 digits
+      \bigskip
+
+      “HS” for high speed clearance 
+      \bigskip
+
+      Speed 2 digits, in 10’s of knots
+      \bigskip
+      
+      If a speed clearance or request is in  progress via CPDLC, displays  “{[}speed{]}”, followed by “+” if the  request or answer contains a reason. &
+      If a value is assigned and  HOP: \colorref{color:Proposition In} 
+      \smallskip
+
+      If a tactical coordination  value is accepted but not  set: \colorref{color:Information} 
+      \smallskip
+      
+      If a CPDLC uplink message  has been sent:  \colorref{color:CPDLC UM Clearance} 
+      \smallskip
+      
+      If a CPDLC downlink  message has been  received:  \colorref{color:CPDLC DM Request} 
+      \smallskip
+      
+      If controller timeout has expired following a CPDLC  downlink request:  \colorref{color:CPDLC Controller Late} 
+      \smallskip
+      
+      If a CPDLC warning has  been raised: color of the  warning \\ \hline
+    ASSR \nextrow \label{tag:ASSR}&
+      Assigned mode 3/A code &
+      4 digits or “A”+ 4 digits. 
+      \bigskip
+
+      If a SQUAWK SSR message is in  progress via CPDLC, displays the  code in brackets, followed by “+” if  the answer contains a reason. 
+      \bigskip
+
+      DEP list:
+      
+      Does not display the  brackets for CPDLC status. &
+      If different than TSSR:  \colorref{color:Warning} 
+      \smallskip
+
+      If a CPDLC uplink message  has been sent:  \colorref{color:CPDLC UM Clearance} 
+      \smallskip
+      
+      If a CPDLC warning has  been raised: color of the  warning \\ \hline
+    ATD \nextrow \label{tag:ATD}&
+      Actual Time of Departure &
+      UTC time in “HHMM” format &
+       \\ \hline
+    ATYP \nextrow \label{tag:ATYP}&
+      Aircraft type &
+      Type with max 4 characters &
+      If highlighted: \colorref{color:Warning} \\ \hline
+    ATYP/W \nextrow \label{tag:ATYP/W}&
+      Aircraft type / Wake  Turbulence Category &
+      Type with max 4 characters + “/” +  WTC (“L”, “M”, “H”, “J” or “?”) &
+      If highlighted: \colorref{color:Warning} \\ \hline
+    C \nextrow \label{tag:C}&
+      Inbound clearance &
+      “C” if ADES needs inbound clearance &
+      Active state: \colorref{color:Information} \\ \hline
+    CALLSIGN \nextrow\label{tag:CALLSIGN} &
+      Callsign &
+      If more than one aircraft, suffixed  by “+”. 
+      \bigskip
+      
+      If correlated to a primary  track or to a secondary track with  no ASSR code and a non-discrete  TSSR code, suffixed by “*”. 
+      \bigskip
+      
+      If the flight is CPDLC connected, the callsign is displayed in brackets. &
+      Priority order: 
+      
+      STCA alert: \colorref{color:Urgency} 
+      
+      HOP in: \colorref{color:Proposition In} 
+      
+      Mark Own: \colorref{color:CARD Mark Own} 
+      
+      Highlight: Warning 
+      
+      Mark All: \colorref{color:CARD Mark All} 
+      
+      S-Highlight: \colorref{color:Suite Highlight} 
+      \bigskip
+
+      If none of the above: 
+      
+      Transfer in: \colorref{color:Assumed} 
+      
+      Transfer out: \colorref{color:Redundant} \\ \hline
+    CFL \nextrow \label{tag:CFL}&
+      Cleared Flight Level &
+      “CA” if Clear for App flag set
+      
+      “VA” if Visual App flag set
+      \bigskip
+
+      See AFL field for number format. 
+      \bigskip
+      
+      Unselected label: Not shown if equal to AFL 
+      \bigskip
+
+      If a level clearance is in progress via  CPDLC, displays “{[}level{]}”, followed  by “+” if the answer contains a  reason (i.e. DUE TO something). 
+      \bigskip
+
+      DEP list:
+      Does not display the  brackets for CPDLC status. &
+      DEP list: 
+      
+      For CTR, if CFL \textgreater PEL,  for others if CFL \textgreater XFL: 
+      
+      \colorref{color:Warning} 
+      \bigskip
+      
+      If a CPDLC uplink message  has been sent:  \colorref{color:CPDLC UM Clearance} 
+      
+      If a CPDLC warning has  been raised: color of the  warning \\ \hline
+    CFL/PEL \nextrow \label{tag:CFL/PEL}&
+      Cleared Flight Level or  Planned Entry Level &
+      PEL is shown for flights in  “coordinated” and “ongoing coordination” states, CFL otherwise. 
+      \bigskip 
+      
+      “CA” if Clear for App flag set
+      
+      “VA” if Visual App flag set
+      
+      See AFL field for number format.
+      \bigskip 
+      
+      Unselected label: 
+      
+      PEL: Not shown if equal to AFL and no ongoing coordination. 
+      
+      CFL: Not shown if equal to AFL 
+      \bigskip
+      
+      If a level clearance is in progress via  CPDLC, displays “{[}level{]}”, followed  by “+” if the answer contains a  reason (i.e. DUE TO something). &
+      PEL: 
+      
+      Ongoing coordination:  
+      
+      \colorref{color:Proposition In} 
+      
+      Change just before ETN: 
+      
+      \colorref{color:Info Coord} 
+      
+      Coordination refused: 
+      
+      \colorref{color:Warning}
+      \bigskip 
+      
+      CFL: 
+      
+      If a CPDLC uplink message  has been sent:  
+      
+      \colorref{color:CPDLC UM Clearance} 
+      
+      If a CPDLC downlink  message has been  received:  
+      
+      \colorref{color:CPDLC DM Request} 
+      \bigskip
+      
+      If a CPDLC warning has  been raised: 
+      
+      color of the  warning \\ \hline
+    CLR \nextrow \label{tag:CLR}&
+      Clearance received flag &
+      If no clearance received and no data  link clearance in progress: 
+      
+      "$\square$" 
+      \bigskip
+      
+      If clearance requested via data link: 
+      
+      “R” 
+      \bigskip
+
+      If waiting for answer from the  aircraft for a sent data link  clearance: 
+      
+      “A” 
+      \bigskip
+
+      If clearance received: 
+      
+      "$\blacksquare$" 
+      \bigskip
+
+      “R” and “A” are  blinking when less than 2 minutes  are remaining to timeout &
+      “R”: When request contains  free text: \colorref{color:Urgency} 
+      
+      Otherwise: \colorref{color:Warning} 
+
+      \bigskip
+      
+      “A”: When blinking: \colorref{color:Warning} \\ \hline
+    COM \nextrow \label{tag:COM}&
+      Communication type &
+      “r” if voice receive only “t” if text only &
+      \colorref{color:Warning} \\ \hline
+    COMP\_CS \nextrow \label{tag:COMP CS}&
+      ICAO RTF callsign &
+      The decoded ICAO RTF callsign 
+      
+      “???” if not in database &
+       \\ \hline
+    COORD \nextrow \label{tag:COORD}&
+      Coordination message &
+      “ROF” if a Request On Frequency message has been received from  the next sector  
+      \bigskip
+
+      The last changed tactical coordination parameter value (AHDG, ASP or ARC) &
+      Proposed: \colorref{color:Proposition In} 
+      
+      Rejected: \colorref{color:Warning} \\ \hline
+    COPN \nextrow \label{tag:COPN}&
+      Entry point &
+       &
+      Ongoing coordination:  \colorref{color:Proposition In} 
+      
+      Coordination refused: \colorref{color:Warning} \\ \hline
+    COPX \nextrow \label{tag:COPX}&
+      Exit point &
+      DEP list: 
+      
+      If logged in as CTR and flight not inside active sector, displays COPN 
+      \bigskip
+
+      (with holding): 
+      
+      A holding clearance is displayed if  there is no coordination. It shows  the holding point name + “ H” or for  lat/lon point holdings, “POS H”. For a TSA Hold clearance, the area  name is shown. &
+      Ongoing coordination: \colorref{color:Proposition In} 
+      
+      Coordination refused: \colorref{color:Warning} \\ \hline
+    COPN/COPX \nextrow \label{tag:COPN/COPX}&
+      Entry point or Exit point &
+      COPN is shown for flights in  “coordinated” and “ongoing coordination” states, COPX in “assumed”, “transfer  initiated” and “redundant” phases. 
+      \bigskip
+
+      (with holding): 
+      
+      A holding clearance is displayed if  there is no coordination. It shows  the holding point name + “ H” or for  lat/lon point holdings, “POS H”. For a TSA Hold clearance, the area  name is shown. &
+      Ongoing coordination: 
+      
+      \colorref{color:Proposition In} 
+      \bigskip
+      
+      Coordination refused: 
+      
+      \colorref{color:Warning} \\ \hline
+    \nextrow \label{tag:CPDLC E} CPDLC\_E &
+      CPDLC Emergency &
+      CPDLC emergency messages: 
+      
+      “SQ7500”, “{[}MAYDAY{]}”, or “{[}PAN{]}” &
+      \colorref{color:Urgency} \\ \hline
+    CPDLC\_W \nextrow \label{tag:CPDLC W}&
+      CPDLC Warning &
+      CPDLC warning messages: 
+      
+      “COMM FAIL” for network failure 
+      
+      "<type> ERR” for message failure 
+      "<type> NOT CDA” for NOT CURRENT  DATA AUTHORITY response 
+      "<type> P LATE” for timeout 
+      "<type> SBY” for STANDBY response 
+      "<type> UNA” for UNABLE response    
+      \bigskip
+      
+      <type> is the type of message: 
+      
+      “AHDG” for heading clearance 
+      
+      “CFL” for level clearance 
+      
+      “COF” for communication transfer 
+      
+      “DCT” for direct-to clearance 
+      
+      “SQI” for SQUAWK IDENT message 
+      
+      “SSR” for SQUAWK SSR message 
+      
+      “VCI” for communication transfer &
+      “COMM FAIL”,  “ERR” or “NOT CDA”:  
+      
+      \colorref{color:CPDLC Failed} 
+      \bigskip
+
+      “UNA”:  
+      
+      \colorref{color:CPDLC Unable} 
+      \bigskip
+
+      “SBY”:  
+      
+      \colorref{color:CPDLC Standby} 
+      
+      \bigskip
+      
+      “P LATE”:  
+      
+      \colorref{color:CPDLC Pilot Late} \\ \hline
+    CRC \nextrow \label{tag:CRC}&
+      Computed vertical rate &
+      2 digits, in 100’s of ft/min 
+         
+      Value preceded by “C” for climbing,  “D” for descending &
+       \\ \hline
+    DHDG \nextrow \label{tag:DHDG}&
+      Downloaded heading &
+      Magnetic heading as downloaded  from the aircraft via mode S DAPs.  
+      
+      “H” + 3 digits. &
+       \\ \hline
+    DIAS \nextrow \label{tag:DIAS}&
+      Downloaded indicated airspeed &
+      Indicated airspeed as downloaded  from the aircraft via mode S DAPs.  
+      
+      Blank, not available on VATSIM. &
+       \\ \hline
+    DMACH \nextrow \label{tag:DMACH}&
+      Downloaded Mach number &
+      Mach number as downloaded from the aircraft via mode S DAPs. 
+      
+      Blank, not available on VATSIM. &
+       \\ \hline
+    DRC \nextrow \label{tag:DRC}&
+      Downloaded rate of  climb/descent &
+      Rate of climb/descent as downloaded from the aircraft via mode S DAPs. 
+      
+      Not available on  VATSIM (computed rate displayed instead, see CRC). &
+       \\ \hline
+    DRWY \nextrow \label{tag:DRWY}&
+      Departure runway &
+      Departure runway identifier &
+      DEP list: 
+      
+      Clearance flag not set:  
+      
+      \colorref{color:Proposition In} 
+      
+      Clearance flag set: 
+      
+      \colorref{color:Information} \\ \hline
+    DSFL \nextrow \label{tag:DSFL}&
+      Downloaded selected  flight level &
+      Selected flight level as downloaded from the aircraft via mode S DAPs.  
+      
+      Blank, not available on VATSIM. &
+       \\ \hline
+    DSQ \nextrow \label{tag:DSQ}&
+      Departure sequence number &
+       &
+       \\ \hline
+    EET \nextrow \label{tag:EET}&
+      Estimated Elapsed Time &
+      “HHMM” &
+       \\ \hline
+    EMRG \nextrow \label{tag:EMRG}&
+      Emergency &
+      “HI” for squawk 7500
+      
+      “CF” for squawk 7600,
+      
+      “EM” for squawk 7700 &
+      \colorref{color:Urgency} \\ \hline
+    EQUIP \nextrow \label{tag:EQUIP}&
+      FPL equipment field &
+      Rough conversion to ICAO FPL 
+      
+      (COM/NAV): COM/NAV equipment 
+      
+      (SUR): “/” + surveillance equipment &
+       \\ \hline
+    EST/DEP/
+    
+    ABT \nextrow \label{tag:EST/DEP/ABT}&
+      Manual departure &
+      “EST” when clearance flag not set and ground state not “DEPA”
+      \bigskip
+
+      “DEP” when clearance flag set or ground state 
+      \bigskip
+      
+      “DEPA” but not yet departed
+      \bigskip
+      
+      “ABT” when departed &
+       \\ \hline
+    ETA \nextrow \label{tag:ETA}&
+      Estimated Time of Arrival &
+      UTC time in “HHMM” format or  “HOLD” if flight in holding state &
+       \\ \hline
+    ETD \nextrow \label{tag:ETD}&
+      Estimated Time of  Departure &
+      UTC time in “HHMM” format &
+       \\ \hline
+    ETD/ATD \nextrow \label{tag:ETD/ATD}&
+      Estimated Time of Departure or Actual Time  of Departure &
+      For a departed aircraft, shows the  actual departure, otherwise the estimated departure time.  
+      
+      “HHMM”, both times taken from  the FPL data &
+       \\ \hline
+    ETN \nextrow \label{tag:ETN}&
+      Estimated time over  COPN or sector entry  time if no COPN &
+      UTC time in “HHMM” format (sector entry): always entry time &
+       \\ \hline
+    ETOHP \nextrow \label{tag:ETOHP}&
+      Estimated time over holding point or holding  start time &
+      UTC time in “HHMM” format &
+       \\ \hline
+    ETX \nextrow \label{tag:ETX}&
+      Estimated time over  COPX or sector exit time  if no COPX &
+      UTC time in “HHMM” format (sector exit): always exit time &
+       \\ \hline
+    FCOPX \nextrow \label{tag:FCOPX}&
+      FIR COPX point &
+       &
+       \\ \hline
+    FIELD15 \nextrow \label{tag:FIELD15}&
+      Speed/Level/Route &
+      The flight plan field 15 data (TAS,  RFL and route). Max 360 characters &
+       \\ \hline
+    FIELD18 \nextrow \label{tag:FILED18}&
+      Other information &
+      The flight plan field 18 data  (remarks). Max 360 characters &
+       \\ \hline
+    FLTADD \nextrow \label{tag:FLTADD}&
+      Mode S transponder  address &
+      Mode S transponder hex address &
+       \\ \hline
+    FLTID &
+      Aircraft identification \nextrow \label{tag:FLTID}&
+      Callsign as received via mode S &
+       \\ \hline
+    GS &
+      Ground Speed \nextrow \label{tag:GS}&
+      "N"+3 digits, in knots &
+      If highlighted: \colorref{color:Warning} \\ \hline
+    HP \nextrow \label{tag:HP}&
+      Holding point &
+      Holding point name or for lat/lon  point holdings, “POS”. 
+      
+      For a TSA Hold clearance, the area  name is shown. &
+       \\ \hline
+    I \nextrow \label{tag:I}&
+      Flight information &
+      “I” if OP\_TEXT has data &
+       \\ \hline
+    Label &
+      Label hidden flag &
+      “$\blacksquare$” if label displayed, “$\square$” if label hidden &
+       \\ \hline
+    M \nextrow \label{tag:M}&
+      Military coordination &
+      “M” if military coordination is  required &
+      Active state: \colorref{color:Warning} \\ \hline
+    MALRT \nextrow \label{tag:MALRT}&
+      Manual alerts &
+      Displays alerts entered via the  \textit{\titleref{menu:cs}} &
+      \colorref{color:Warning} \\ \hline
+    MSAW \nextrow \label{tag:MSAW}&
+      MSAW alert (see also ALRT) &
+      “MSAW” &
+      \colorref{color:Warning} \\ \hline
+    MTCD \nextrow \label{tag:MTCD}&
+      MTCD indicator &
+      “•” if aircraft has an MTCD problem &
+      \colorref{color:Urgency} \\ \hline
+    N/ATYP \nextrow \label{tag:N/ATYP}&
+      Number of aircraft /  Aircraft type &
+      Unselected label: 
+      
+      Number range 2 - 99 
+      \bigskip
+      
+      Selected label or List: 
+      
+      Number range 1 - 99 
+      \bigskip
+
+      Number can be set by prefixing the aircraft type in the FPL by “X/”  where X is the number (max 99) &
+      If highlighted: \colorref{color:Warning} \\ \hline
+    NPT \nextrow \label{tag:NPT}&
+      Next route point &
+      When a DCT request or clearance  via CPDLC is in progress: 
+      
+      Displays the point name followed by  “+” if the request contains a reason  (i.e. DUE TO something) 
+      \bigskip
+
+      Otherwise: Next point on the route &
+      If a CPDLC uplink message  has been sent:  
+      
+      \colorref{color:CPDLC UM Clearance} 
+      \bigskip
+
+      If a CPDLC downlink  message has been  received:  
+      
+      \colorref{color:CPDLC DM Request} 
+      \bigskip
+      
+      If controller timeout has expired following a CPDLC downlink request:  
+      
+      \colorref{color:CPDLC Controller Late} 
+      \bigskip
+      
+      If a CPDLC warning has  been raised: 
+      
+      color of the  warning \\ \hline
+    NRAC \nextrow \label{tag:NRAC}&
+      Number of aircraft &
+      Number from 2 to 99 
+      \bigskip
+      
+      Extended label: 
+      
+      “n” if 1 
+      
+      Other label or (List): blank if 1 
+      \bigskip
+      
+      Number can be set by prefixing the  aircraft type in the FPL by “X/”  where X is the number (max 99). &
+       \\ \hline
+    NSSR \nextrow \label{tag:NSSR}&
+      SSR warning &
+      Displays ASSR if different from TSSR &
+      If a CPDLC uplink message  has been sent:  
+      
+      \colorref{color:CPDLC UM Clearance} 
+      \bigskip
+      
+      If a CPDLC warning has been raised: 
+      
+      color of the  warning \\ \hline
+    OP\_TEXT \nextrow \label{tag:OP TEXT}&
+      Flight information message &
+      User entered text, stored in the flight strip &
+       \\ \hline
+    OP\_TEXT2 \nextrow \label{tag:OP TEXT2}&
+      OP\_TEXT2 message &
+      User entered text, stored in the scratchpad &
+       \\ \hline
+    P &
+      No P-RNAV/RNAV1 capability \nextrow \label{tag:P}&
+      “P” if aircraft equipment is not indicating P-RNAV/RNAV1 capability and destination has arrival  procedures requiring it &
+      \colorref{color:Information} \\ \hline
+    PEL &
+      Planned Entry Level \nextrow \label{tag:PEL}&
+      “CA” if Clear for App set
+      
+      “VA” if Visual App flag set
+      
+      See AFL field for number format. &
+      Ongoing coordination:
+      
+      \colorref{color:Proposition In} 
+      \bigskip
+      
+      Change just before ETN: 
+      
+      \colorref{color:Info Coord} 
+      \bigskip
+      
+      Coordination refused: 
+      
+      \colorref{color:Warning} \\ \hline
+    PFREQ \nextrow \label{tag:PFREQ}&
+      Pilot monitored frequency &
+      Displays your primary frequency  when transfer of communications  was done via CPDLC using the  MONITOR option &
+      CPDLC DM Request \\ \hline
+    PRFL \nextrow \label{tag:PRFL}&
+      RFL requested by pilot via  CPDLC &
+      Displays “{[}requested level{]}”,  followed by “+” if the request  contains a reason (i.e. DUE TO  something) &
+      If a CPDLC downlink  message has been  received:  
+      
+      \colorref{color:CPDLC DM Request} 
+      \bigskip
+      
+      If controller timeout has expired following a CPDLC downlink request:
+      
+      \colorref{color:CPDLC Controller Late} 
+      \bigskip
+      
+      If a CPDLC warning has been raised: 
+      
+      color of the warning \\ \hline
+    PSSR \nextrow \label{tag:PSSR}&
+      Previous mode 3/A code &
+      If not known, shows ASSR if  available. Format as ASSR field. &
+       \\ \hline
+    R \nextrow \label{tag:R}&
+      No B-RNAV/RNAV5  capability &
+      “R” if aircraft equipment is not  indicating B-RNAV/RNAV5 capability &
+      Not equipped:
+      
+      \colorref{color:Urgency}
+      \bigskip 
+      
+      Unknown: 
+      
+      \colorref{color:Unknown} \\ \hline
+    RFL \nextrow \label{tag:RFL}&
+      Requested Flight Level &
+      See AFL field for format 
+      \bigskip
+      
+      List: 
+      
+      If an RFL request is in progress via CPDLC, displays “{[}requested level{]}”, followed by “+” if the request contains a reason (i.e. DUE TO  something). 
+      \bigskip
+      
+      DEP list does not display the  brackets for CPDLC status. &
+      In flight lists: 
+      
+      If a CPDLC downlink  message has been  received:  
+      
+      \colorref{color:CPDLC DM Request} 
+      \bigskip
+      
+      If controller timeout has expired following a CPDLC downlink request:
+      
+      \colorref{color:CPDLC Controller Late} 
+      \bigskip
+      
+      If a CPDLC warning has  been raised: 
+      
+      color of the  warning \\ \hline
+    RI \nextrow \label{tag:RI}&
+      Release Indicator &
+      “F” fully released 
+      
+      “C” released for climb 
+      
+      “D” released for descent 
+      
+      “T” released for turns 
+      \bigskip
+      
+      Incoming release disappears 3 min after track is assumed, outgoing when track is no longer redundant. &
+      During transfer:  
+      
+      \colorref{color:Proposition In} \\ \hline
+    ROUTE \nextrow \label{tag:ROUTE}&
+      Flight plan route &
+      DEP list 
+      
+      - part 1 shows first 15 characters, part 2 characters 16-30 
+      \bigskip
+      
+      If departing from defined airports: 
+      
+      - first 30/45 characters (2 or 3 parts) 
+      \bigskip
+      
+      If arriving at a clearance flag airport: 
+      
+      - last 30/45 characters (2 or 3 parts) 
+      \bigskip
+      
+      Else: 
+      
+      - first 30/45 characters (2 or 3 parts) &
+       \\ \hline
+    S \nextrow \label{tag:S}&
+      Mode S mismatch indicator &
+      “S” if downloaded callsign is different than coupled flight plan callsign &
+      \colorref{color:Warning} \\ \hline
+    SI \nextrow \label{tag:SI}&
+      Sector Indicator &
+      Assumed track: 
+      
+      Next sector identifier or frequency.  
+      \bigskip
+      
+      Displayed in brackets if a  communications transfer is in  progress via CPDLC, followed by “+”  if the answer contains a reason. The frequency  display is forced on during a  transfer via CPDLC. 
+      \bigskip
+      
+      Other tracks: 
+      
+      Tracking controller identifier or  frequency. 
+      \bigskip
+      
+      List: Frequency display is not possible 
+      \bigskip
+      
+      DEP list: Does not display the  brackets for CPDLC status. 
+      \bigskip
+      
+      Current: Displays always the  current tracking controller id 
+      \bigskip
+      
+      Previous: Displays the current tracking controller id unless it is you or the track is in redundant state 
+      \bigskip
+      
+      Next: Displays the next controller id when assumed, or current when in redundant state &
+      Priority order: 
+      \bigskip
+      
+      Outgoing HOP: 
+      
+      \colorref{color:Proposition In} 
+      \bigskip
+      
+      Manually changed next sector: 
+      
+      \colorref{color:Warning} 
+      \bigskip
+      
+      Normal next sector:
+      
+      \colorref{color:Coordination} 
+      \bigskip
+      
+      If a CPDLC communications transfer uplink message has been sent:  
+      
+      \colorref{color:CPDLC UM Clearance} 
+      \bigskip
+      
+      If a CPDLC warning has been raised: 
+      
+      color of the  warning \\ \hline
+    SID \nextrow \label{tag:SID}&
+      Assigned or planned SID &
+      SID identifier &
+      If automatically assigned:  
+      
+      \colorref{color:Sid Star No Allocation} 
+      \bigskip
+      
+      If manually assigned: 
+      
+      \colorref{color:Sid Star Allocation} \\ \hline
+    SQ \nextrow \label{tag:SQ}&
+      Arrival sequence number &
+      A number from 1 to 50 &
+       \\ \hline
+    STAR \nextrow \label{tag:STAR}&
+      Assigned or planned STAR &
+      STAR identifier &
+      If automatically assigned:  
+      
+      \colorref{color:Sid Star No Allocation} 
+      \bigskip
+      
+      If manually assigned: 
+      
+      \colorref{color:Sid Star Allocation} \\ \hline
+    STS \nextrow \label{tag:STS}&
+      Ground state &
+      EuroScope default ground state &
+       \\ \hline
+    TAS \nextrow \label{tag:TAS}&
+      Flight Plan TAS &
+      See GS field for format &
+       \\ \hline
+    TEXT2 \nextrow \label{tag:TEXT2}&
+      OP-TEXT2 message &
+      If more than 10 characters, then shows first 9 + “>” &
+       \\ \hline
+    TRACK \nextrow \label{tag:TRACK}&
+      Ground track &
+      “T” + the aircraft’s current ground track in degrees magnetic &
+       \\ \hline
+    TSSR \nextrow \label{tag:TSSR}&
+      Aircraft transponded  mode 3/A code &
+      4 digits or “A”+ 4 digits &
+       \\ \hline
+    V \nextrow \label{tag:V}&
+      Flight rules &
+      “V” if VFR
+      
+      “Y” if first IFR and later VFR
+      
+      “Z” if first VFR and later IFR &
+       \\ \hline
+    W \nextrow \label{tag:W}&
+      No RVSM capability &
+      “W” if aircraft equipment is not  indicating RVSM capability &
+      Not equipped: 
+      
+      \colorref{color:Urgency} 
+      \bigskip
+      
+      Exempt: 
+      
+      \colorref{color:Information} 
+      \bigskip
+      
+      Unknown: 
+      
+      \colorref{color:Unknown} \\ \hline
+    WTC \nextrow \label{tag:WTC}&
+      Wake turbulence  category &
+      “J” for Super
+      
+      “H” for Heavy
+      
+      “M” for Medium
+      
+      “L” for Light 
+      
+      “?” for unknown 
+      \bigskip
+      
+      Unselected label: 
+      
+      Only displayed if not medium unless the field is highlighted &
+      If highlighted: 
+      
+      \colorref{color:Warning} \\ \hline
+    /WTC \nextrow \label{tag:/WTC}&
+      Wake turbulence  category &
+      “/J” for Super
+      
+      “/H” for Heavy
+      
+      “/M” for Medium
+      
+      “/L” for Light 
+      
+      “?” for unknown 
+      \bigskip
+      
+      Unselected label: 
+      
+      Only displayed if not medium unless the field is highlighted &
+      If highlighted: 
+      
+      \colorref{color:Warning} \\ \hline
+    XFL \nextrow \label{tag:XFL}&
+      Exit Flight Level &
+      “CA” if Clear for App set
+      
+      “VA” if Visual App flag set
+      
+      See AFL field for number format. 
+      \bigskip
+      
+      Unselected label: 
+      
+      Not shown if equal to CFL/PEL and  no ongoing coordination. 
+      \bigskip
+      
+      DEP list: 
+      
+      If logged in as CTR and flight not  inside active sector, displays PEL.  
+      
+      Otherwise displays XFL. &
+      Ongoing coordination:  
+      
+      \colorref{color:Proposition In} 
+      \bigskip
+      
+      Coordination refused: 
+      
+      \colorref{color:Warning} \\ \hline
+    Y \nextrow \label{tag:Y}&
+      No 8.33kHz capability &
+      “Y” if aircraft equipment is not  indicating 8.33kHz capability &
+      Not equipped: 
+      
+      \colorref{color:Urgency} 
+      \bigskip
+      
+      Exempt: 
+      
+      \colorref{color:Information} 
+      \bigskip
+      
+      Unknown: 
+      
+      \colorref{color:Unknown} \\ \hline
+    \end{longtable}
+
+\section{Data stored in the flight strip annotation boxes}
+
+TopSky stores some data in the flight strip annotation boxes (the group of nine boxes in three columns on the right side of the strip). This enables you to send this data to the next controller, or any other controller by manually pushing the strip. EuroScope can be set to automatically push the strip to the next controller on handoff. In addition, TopSky automatically pushes the strip when a handoff proposal (HOP) is sent.
+
+TopSky needs to be able to use four of the nine boxes for its functions. They are the boxes in the bottom row as well as the right-most box in the center row, marked with X’s in the picture below. Do not manually edit those boxes or use them to store any other data. The other boxes, marked by minus signs, are currently not used by TopSky in any way.
+
+\image{img/strip.png}
+    
 
 \chapter{User Interface}
 
@@ -973,6 +2709,22 @@ The Uncoupled label is shown for radar tracks that aren’t correlated with a fl
 
 \subsection{Label Compaction}
 \label{tlabel:comp}
+
+Label fields may be supressed in certain conditions. This is called Label Compaction.
+
+Label Compaction only occurs in unselected labels. When a field is supressed, the remaining fields to the right will move left to the supressed field position. If all fields in a line are supressed, the next line is moved up to the supressed line position. Values being coordinated are exempted from Label Compaction.
+
+The following Label Compaction rules are in place:
+
+\begin{itemize}
+  \item If a field is empty it is supressed
+  \item If AFL is the same as CFL, CFL is supressed
+  \item If AFL is the same as CFL and XFL, CFL and XFL are supressed
+  \item If AFL is the same as CFL, but different from XFL, only CFL is supressed
+  \item If AFL is different from CFL, and CFL is the same as XFL, XFL is supressed
+  \item If AFL is different from CFL, and CFL is different from XFL, no field is supressed
+  \item If FCOPX is the same as NPT, NPT is supressed
+\end{itemize}
 
 \section{Track Label Menus}
 
@@ -2967,1769 +4719,22 @@ The label that’s shown on each route point includes the following predefined f
 \image{img/fltod.png}   & Top of Descent\\
 \end{tabular}
 
-\chapter{Coordination}
+\section{Keyboard Shortcuts}
 
-\section{General}
-
-The TopSky plugin provides various ways to coordinate information between controllers. Some of them are standard EuroScope features, while others are plugin-specific.
-
-The example track labels do not represent any specific setup and are only meant to highlight the items specific to each function. In the examples, aircraft ABC123 is assumed by “transferring controller” and the next sector is referred to as “accepting controller”. For reference, the example labels would look like these before any coordination (coordination point TROIA, entry/exit level FL180):
-
-Transferring controller:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Assumed} ABC123} & {\color{Coordination} IDA}       & {\color{Assumed} }      \\
-  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
-  {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }     
-\end{tabular}
-
-Accepting controller:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Coordination} ABC123} & {\color{Coordination} IDT}       & {\color{Coordination} }      \\
-  {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
-  {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }     
-\end{tabular}
-
-Some of the coordination functions (ROF, RTI and TIP) require very specific conditions to exist to be able to send the necessary messages between the controllers. TopSky attempts to check for this and either disables the function (grey text in the menu button) or creates a warning message if the conditions are lost during a coordination, but in some cases the coordination messages can get lost. In this case try the coordination again or manually coordinate.
-
-\section{PEL/COPN}
-
-A coordination is displayed by coloring the proposed values “Proposition In/Out” (depending on whether the coordination was sent or received) in the track label and the flight lists. Additionally, a message is displayed in the \textit{\titleref{win:miw}}) for received coordinations and in the \textit{\titleref{win:mow}}) for coordinations sent by you.
-
-To send a PEL (Planned Entry Level) coordination, left-click on the PEL value in the track label or a flight list. This opens the a menu to select a value. To send a COPN (Entry Point) coordination, left-click on the COPN value in the track label or a flight list. This opens the \textit{\titleref{menu:wpt}}). Select “Routing”. This opens a menu to select the desired point. Keep an eye for the answer as it can be a counter-proposal as well, so the color of the values staying white doesn’t necessarily mean the coordination hasn’t been answered!
-
-An example track label, showing both the PEL and COPN being coordinated:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Coordination} ABC123} & {\color{Coordination} IDT}       & {\color{Coordination} }      \\
-  {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color[RGB]{225,130,180} TROIA} \\
-  {\color[RGB]{225,130,180} 180}    & {\color{Coordination} }          & {\color{Coordination} }     
-\end{tabular}
-
-To answer an incoming coordination, left-click on a proposed value or the corresponding message in the \textit{\titleref{win:miw}}). This opens a menu where you can select the response (Accept, Refuse or Change). After the response, the track label and lists display depend on the answer:
+Some plugin functions can be accessed using a keyboard shortcut. By default, each shortcut is a combination of two keys, with the first key needing to be down while the second is pressed to activate the function. The available shortcuts and their default keys are:
 
 \begin{tabular}{l l}
-  Accept: & Accepted values, sector state color\\
-  Refuse: & Original values, sector state color (due to EuroScope bug, should be “Warning”)\\
-  Change: & New proposed values in “Proposition Out”\\
+    Open FPL Window for the selected flight                        & <ALT> + <F>\\
+    Open FPL Selection Window                                      & <ALT> + <E>\\
+    Start new QDM line                                             & <ALT> + <Q>\\
+    Inhibit active filters for 5 seconds (Quick Look)              & <ALT> + <U>\\
+    Start a new minimum separation line                            & <ALT> + <S>\\
+    Reposition cursor at the center of the radar screen            & <ALT> + <C>\\    
 \end{tabular}
 
-\section{XFL/COPX}
+“Selected flight” in the above means that the mouse cursor is over that flight’s track label. For the timed functions, activating the shortcut while the timer is running restarts the timer from zero.
 
-A coordination is displayed by coloring the proposed values “Proposition In/Out” (depending on whether the coordination was sent or received) in the track label and the flight lists. Additionally, a message is displayed in the \textit{\titleref{win:miw}}) for received coordinations and in the \textit{\titleref{win:mow}}) for coordinations sent by you.
-
-To send an XFL (Exit Flight Level) coordination, left-click on the XFL value in the track label or a flight list. This opens a menu to select a value. To send a COPX (Exit Point) coordination, left-click on the COPX value in the track label or a flight list. This opens the \textit{\titleref{menu:wpt}}). Select “Routing”. This opens a menu to select the desired point. Keep an eye for the answer as it can be a counter-proposal as well, so the color of the values staying white doesn’t necessarily mean the coordination hasn’t been answered!
-
-An example track label, showing both the XFL and COPX being coordinated:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Assumed} ABC123} & {\color{Coordination} IDA}       & {\color{Assumed} }      \\
-  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color[RGB]{225,130,180} TROIA} \\
-  {\color{Assumed} 180}    & {\color[RGB]{225,130,180} 200}          & {\color{Assumed} }     
-\end{tabular}
-
-To answer an incoming coordination, left-click on a proposed value or the corresponding message in the \textit{\titleref{win:miw}}). This opens a menu where you can select the response (Accept, Refuse or Change). After the response, the track label and lists display depend on the answer:
-
-\begin{tabular}{l l}
-  Accept: & Accepted values, sector state color\\
-  Refuse: & Original values, sector state color (due to EuroScope bug, should be “Warning”)\\
-  Change: & New proposed values in “Proposition Out”\\
-\end{tabular}
-
-\section{Releases}
-
-To communicate a release to the next controller, select the “Trf \& release” option instead of “Transfer” in the \textit{\titleref{menu:cs}} when transferring the aircraft. This opens the \textit{\titleref{menu:xfrrel}}) to select the desired release condition. The available choices are “Climb”, “Descent”, “Turn” and “Full”. Selecting an option will start the transfer with the selected release condition.
-
-The release will be displayed on line 0 of the track label (in “Proposition In/Out” during the transfer), showing the first letter of the release condition. The example labels below show a Full release:
-
-Transferring controller:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Proposition In} F} & {\color{Coordination} }       & {\color{Assumed} }      \\
-  {\color{Proposition In} ABC123} & {\color{Proposition In} IDA}       & {\color{Assumed} }      \\
-  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
-  {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }     
-\end{tabular}
-
-Accepting controller:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Proposition In} F} & {\color{Coordination} }       & {\color{Assumed} }      \\
-  {\color{Assumed} ABC123} & {\color{Assumed} IDT}       & {\color{Coordination} }      \\
-  {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
-  {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }     
-\end{tabular}
-
-After the accepting controller assumes the aircraft, the release indicator changes to sector state color. It remains in the transferring controller’s label until it becomes unconcerned, and in the accepting controller’s label for 3 minutes.
-
-\begin{Note}
-  If a release is sent to a controller not using the TopSky plugin, it will only be displayed on your label. To the accepting controller it will look like a normal transfer.
-\end{Note}
-
-\section{HOP}
-
-The purpose of the HOP (Hand-Over Proposal) message is for the transferring controller to propose the flight for hand-over to the accepting controller, and/or to propose non-standard transfer conditions which require the approval of the accepting controller.
-
-To send a HOP without any transfer conditions, select the \textit{\titleref{win:hop}}) option in the \textit{\titleref{menu:cs}}.
-
-To send a HOP with a transfer condition (assigned heading, direct-to point or assigned speed):
-
-\begin{enumerate}
-  \item open the AHDG or ASP menu and select the "HOP" option (found in the “More” folder)
-  \begin{itemize}
-    \item See \textit{\titleref{win:hop}}) for indications
-  \end{itemize}
-  \item select the desired value (to select a direct-to point, select the “Point” option in the AHDG menu and then left-click on the point on the radar screen
-\end{enumerate}
-
-The example labels below show a HOP with an assigned heading proposal:
-
-Transferring controller:
-
-\begin{itemize}
-  \item SI item and any proposed values in \colorref{color:Proposition Out} color
-  \item Message in Message Out Window
-\end{itemize}
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Assumed} ABC123} & {\color{Proposition In} IDA}       & {\color{Assumed} }\\
-  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA}\\
-  {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }\\  
-  {\color{Proposition In} H360}    & {\color{Assumed} }          & {\color{Assumed} }\\  
-\end{tabular}
-
-Accepting controller:
-
-\begin{itemize}
-  \item Callsign item and any proposed values in \colorref{color:Proposition In} color
-  \item Message in Message In Window
-\end{itemize}
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Proposition In} ABC123} & {\color{Coordination} IDT}       & {\color{Coordination} }\\
-  {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA}\\
-  {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }\\
-  {\color{Proposition In} H360}    & {\color{Coordination} }          & {\color{Coordination} }\\      
-\end{tabular}
-
-The transferring controller should keep an eye on both the track label and the \textit{\titleref{win:miw}}) as there are three ways for the accepting controller to answer a HOP. In order of preference, they are:
-
-\begin{itemize}
-  \item From the \textit{\titleref{menu:cs}}, select “ROF”. This sends a ROF message to the transferring controller.
-  \begin{itemize}
-    \item See \textit{\titleref{menu:rof}}) for indications
-  \end{itemize}
-  \item Left-click on the AHDG, ASP or COPN item. This opens the \textit{\titleref{menu:ctm}}). In it, select “Accept”. This sends an Accept message to the transferring controller.
-  \begin{itemize}
-    \item The labels on both controllers’ screens return to normal sector state coloring
-    \item A message is put into the Message In Window for the transferring controller
-    \item A message is put into the Message Out Window for the accepting controller
-  \end{itemize}
-  \item From the \textit{\titleref{menu:cs}}, select “Assume”. This assumes the aircraft (with the other two answers the aircraft remains assumed by the transferring controller)
-  \begin{itemize}
-    \item The labels on both controllers’ screens return to normal sector state coloring
-  \end{itemize}
-\end{itemize}
-
-\begin{Note}
-  If a HOP is sent to a controller not using the TopSky plugin, it will only be displayed on your label. To the accepting controller it will look like a normal transfer. Any proposed values will be shown also on the accepting controller’s label but they will not be colored as proposals.
-
-  If a HOP is sent to a manually selected controller and is answered by either “Accept” or “ROF”, the next controller is reset to the automatically calculated one. The correct controller needs to be manually selected again before transferring the aircraft.
-\end{Note}
-
-\section{ROF}
-
-The ROF (Request on Frequency) message is sent by the accepting controller to the transferring controller, when required, requesting the transferring controller to instruct the aircraft to change to the frequency of the accepting controller. The message may be used as a reply to HOP to signify the acceptance of the flight under the proposed conditions, or to request the early transfer of the flight.
-
-To send a ROF message, select the “ROF” option in the \textit{\titleref{menu:cs}} of the aircraft in question. The example label below shows the indications when the message is sent (there are no indications in the accepting controller’s track label):
-
-Transferring controller:
-
-\begin{itemize}
-  \item ROF text in \colorref{color:Proposition In} color
-  \item Message in Message In Window
-\end{itemize}
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Proposition In} ROF} & {\color{Coordination} }       & {\color{Assumed} }      \\
-  {\color{Assumed} ABC123} & {\color{Coordination} IDA}       & {\color{Assumed} }      \\
-  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
-  {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }     
-\end{tabular}
-
-Accepting controller:
-
-\begin{itemize}
-  \item ROF text in \colorref{color:Proposition Out} color
-  \item Message in Message Out Window
-\end{itemize}
-
-The indications are removed when a “Transfer”, “Trf \& release” or “HOP” is performed.
-
-\begin{Note}
-  If a ROF is sent to a controller not using the TopSky plugin or the message fails to go through, an error message will be put into the Personal Queue Window. The message counter in the Global Menu will be highlighted in \colorref{color:Warning} color if the window is not open.
-\end{Note}
-
-\section{RTI/TIP}
-
-These messages are used to request/propose the transfer of a flight on an assigned heading, speed or rate of climb/descent. RTI (Request Tactical Instructions) is a request initiated by the accepting controller and TIP (Tactical Instructions Proposal) a proposal initiated by the transferring controller.
-
-In the examples below the RTI message is used. For the TIP message, the indications and actions are the same, only the roles are reversed – the transferring controller sends and the accepting controller answers the message, so the message will appear in the other Message Window.
-
-To send the RTI message:
-
-\begin{enumerate}
-  \item open the AHDG, ASP or ARC menu and select the “RTI” option (found in the “More” folder) 
-  \item select the desired value in the list (the “Point” option in the AHDG menu can’t be chosen)
-\end{enumerate}
-
-When the message is sent, the following indications are shown:
-
-Transferring controller:
-
-\begin{itemize}
-  \item Proposed value in \colorref{color:Proposition In} color
-  \item Message in Message In Window
-\end{itemize}
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Proposition In} H360} & {\color{Assumed} }       & {\color{Assumed} }      \\
-  {\color{Assumed} ABC123} & {\color{Coordination} IDA}       & {\color{Assumed} }      \\
-  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
-  {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }     
-\end{tabular}
-
-Accepting controller:
-
-\begin{itemize}
-  \item Proposed value in \colorref{color:Proposition Out} color
-  \item Message in Message Out Window
-\end{itemize}
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Proposition Out} H360} & {\color{Coordination} }       & {\color{Coordination} }      \\
-  {\color{Coordination} ABC123} & {\color{Coordination} IDT}       & {\color{Coordination} }      \\
-  {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
-  {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }     
-\end{tabular}
-
-To answer the message, left-click on the proposed value on line 0. This opens the \textit{\titleref{menu:ttm}}) where you can either accept or reject the proposal. When clicking on “Accept”, the menu closes and the following indications are displayed:
-
-Transferring controller:
-
-\begin{itemize}
-  \item Accepted value in sector state color
-  \item Relevant label field value in \colorref{color:Information} color (until the accepted value is set)
-  \item Message in Message Out Window
-\end{itemize}
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Assumed} H360} & {\color{Assumed} }       & {\color{Assumed} }      \\
-  {\color{Assumed} ABC123} & {\color{Coordination} IDA}       & {\color{Assumed} }      \\
-  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
-  {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }\\     
-  {\color{Information} AHDG}    & {\color{Assumed} }          & {\color{Assumed} }     
-\end{tabular}
-
-Accepting controller:
-
-\begin{itemize}
-  \item Accepted value in sector state color
-  \item Relevant label field value in \colorref{color:Information} color (until the accepted value is set)
-  \item Message in Message In Window
-\end{itemize}
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Coordination} H360} & {\color{Coordination} }       & {\color{Coordination} }      \\
-  {\color{Coordination} ABC123} & {\color{Coordination} IDT}       & {\color{Coordination} }      \\
-  {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
-  {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }  \\   
-  {\color{Information} AHDG}    & {\color{Coordination} }          & {\color{Coordination} }  \\   
-\end{tabular}
-
-When the accepted value has been set (either by going back to the Tactical Transfer menu and selecting “Apply” or setting the value some other way), the label field returns to the sector state color.
-
-On the other hand, if “Reject” is chosen, the menu closes the indications are as follows:
-
-Transferring controller:
-
-\begin{itemize}
-  \item Rejected value in \colorref{color:Warning} color
-  \item Message in Message Out Window
-\end{itemize}
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Warning} H360} & {\color{Assumed} }       & {\color{Assumed} }      \\
-  {\color{Assumed} ABC123} & {\color{Coordination} IDA}       & {\color{Assumed} }      \\
-  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
-  {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }\\         
-\end{tabular}
-
-Accepting controller:
-
-\begin{itemize}
-  \item Rejected value in \colorref{color:Warning} color
-  \item Message in Message In Window
-\end{itemize}
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Warning} H360} & {\color{Coordination} }       & {\color{Coordination} }      \\
-  {\color{Coordination} ABC123} & {\color{Coordination} IDT}       & {\color{Coordination} }      \\
-  {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
-  {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }  \\     
-\end{tabular}
-
-A rejected coordination value will be removed from the label after a specified time (60 seconds by default)
-
-\begin{Note}
-  If an RTI or TIP is sent to a controller not using the TopSky plugin or the message fails to go through, an error message will be put into the Personal Queue Window. The message counter in the Global Menu will be highlighted if the window is not open.
-\end{Note}
-
-\section{Coordinating more than one value}
-
-It is possible to coordinate more than one value, either before or after the previous proposal has been answered. It is important to note that the label field on line 0 will only show the last proposal or answer. Regardless of this, all the relevant label fields will have the \colorref{color:Information} color for accepted but not yet set values.
-
-For example, if you send an RTI with AHDG 360 (as in the above example) and then send another with ASP 300 (either immediately or after the first coordination is answered), the label field on line 0 will only show the ASP proposal. When opening the Tactical Transfer menu, all the proposals and accepted values are shown. If more than one proposal is active, clicking on “Accept” or “Reject” will send the same answer to all of them. Therefore, it is recommended to wait for an answer until sending another proposal unless the intention of the proposal is to get “all or nothing”.
-
-\chapter{Datalink}
-
-\section{General}
-
-The TopSky plugin uses Hoppie’s ACARS network (\url{http://www.hoppie.nl/acars}). A separate password (logon code) is needed, and it can be requested from that site. 
-
-TopSky supports Departure Clearance (DCL) and Controller-Pilot Data Link Communications (CPDLC).
-
-To start using the data link functions, first connect to the VATSIM network. Then connect to the Hoppie network:
-
-\begin{itemize}
-  \item Open the \textit{\titleref{win:dls}}
-  \item Enter/check the login callsign
-  \item Enter your personal logon code
-  \item Select whether to provide CPDLC or DCL/PDC services or both
-  \item Left-click on the “Connect” button
-\end{itemize}
-
-The “Connect” button will change to “Online” with a green background. Wait at least 10 seconds to see if the connection is successful. Error messages regarding the connection will be shown in the \textit{\titleref{win:pqw}}. 
-
-\begin{Warn}
-  Attempting to connect with a CPDLC login callsign that is already in use will not fail instantly, and may take up to 10 seconds for the error message to be added to the \textit{\titleref{win:pqw}}
-\end{Warn}
-
-The Hoppie logon code expires after 120 days of inactivity. If that happens, the connection will fail and a new logon code has to be requested.
-
-If the connection is lost, an error message dialog will be displayed in the center of the radar screen. Note that if multiple EuroScope instances are used, the proxy instances will not be able to access the CPDLC message windows or change the network connection status.
-
-TopSky may sometimes fail to parse the message contents correctly. The longer the message, the more likely it is that the parsing will go wrong. When in doubt, open the message in the \textit{\titleref{win:dlcmw}}.
-
-The example track labels do not represent any specific setup and are only meant to highlight the items specific to each function. In the examples, aircraft ABC123 is assumed by you, the next controller is “IDA”, the aircraft is climbing through FL100, and its cleared level is FL180. This is the label before any messages arrive:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Assumed} ABC123} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & & \\         
-\end{tabular}
-
-When the aircraft requests to start a CPDLC connection, it sends a “REQUEST LOGON” message. The message is displayed in the \textit{\titleref{win:dlcmw}} and the Callsign field gets blinking square brackets around it (not on proxy ES instances). TopSky automatically denies requests for aircraft not entering your sector. To approve the request, use the “Start CPDLC” button in the \textit{\titleref{menu:cs}}. To deny the request, left-click on the message in the \textit{\titleref{win:dlcmw}} and select “UNABLE”. It is also possible to accept if necessary, but the \textit{\titleref{menu:cs}} is the primary way to do it.
-
-When the request has been accepted, the Callsign field will get steady square brackets around it. This indicates that the aircraft is CPDLC connected and available to exchange CPDLC messages with.
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & & \\         
-\end{tabular}
-
-To terminate the CPDLC connection of an aircraft, use the “End CPDLC” button in the \textit{\titleref{menu:cs}}.
-
-\begin{Note}
-  While it is possible to answer any message in the \textit{\titleref{win:dlcmw}} using the “Manual Reply” option, the track label menus should always be used to answer correctly recognized messages, as using the manual reply method will not update the track label values.
-\end{Note}
-
-\section{Departure Clearance (DCL)}
-
-\subsection{General}
-
-ARINC-623 DCL is a service used in Europe and many other parts of the World. It is a direct ATC-to-pilot data link communication over the ACARS network.
-
-The departure clearance functionality is built into the Departure List. A received clearance request is displayed in the list, and a clearance can be sent by opening the \textit{\titleref{win:dlpdcw}} via left clicking the RWY or SID fields of the Departure List.
-
-The sequence of events related to a DCL request is detailed in the following section.
-
-\subsection{DCL Sequence}
-
-\subsection*{Departure Clearance Request (RCD)}
-
-The aircraft sends a clearance request message (RCD). The message is also shown in the \textit{\titleref{win:dlcmw}}:
-
-\begin{quote}
-  REQUEST PREDEP CLEARANCE ABC123 A320 TO ESSA AT LPPT STAND 221 ATIS PAPA
-\end{quote}
-
-\subsection*{Flight System Message (FSM)}
-
-If the request is correctly formatted, TopSky will automatically send a flight system message (FSM) as a reply. Its content depends on whether all the requirements for a DCL are met (flight plan found, departure airport offers data link clearances, etc.). If so, the following reply message is sent to the aircraft:
-
-\begin{quote}
-  DEPART MESSAGE STATUS FSM 1312 221113 LPPT ABC123 RCD RECEIVED REQUEST BEING PROCESSED STANDBY 
-\end{quote}
-
-The List CLR tag item will show a “R” text in yellow (red if the request contained remarks text after the ATIS indicator. Check the message in the \textit{\titleref{win:dlcmw}}). The text will start to blink two minutes before a timeout occurs if a clearance hasn’t been sent.
-
-If a clearance is not sent before the timeout occurs, the data link clearance request is automatically rejected and a message is sent to the aircraft to revert to voice procedures.
-
-\begin{quote}
-  RCD REJECTED REVERT TO VOICE PROCEDURES
-\end{quote}
-
-\subsection*{Departure Clearance Message (CLD)}
-
-The clearance is sent using the \textit{\titleref{win:dlpdcw}}), opened by left clicking the RWY or SID fields of the Departure List. 
-
-\begin{Note}
-  Due to system limitations, the current ATIS letter should be manually added to the RMK field of the DCL, in the "ATIS: X" format.
-\end{Note}
-
-The clearance is sent using the “Send DCL” button. “Voice” rejects the data link clearance request and sends a message to the aircraft to revert to voice procedures. 
-
-\begin{quote}
-  LPPT PDC 001 CLD 1314 221113 LPPT PDC 001 ABC123 CLRD TO ESSA OFF 02 VIA IXIDA5N SQUAWK 3251 ATIS:X QNH 1012
-\end{quote}
-
-Once the clearance is sent, the List CLR item will change to “A”, and will start to blink if there is no reply from the aircraft two minutes before a timeout occurs.
-
-If there is still no answer from the aircraft when the timeout occurs, the data link clearance is automatically rejected and a message is sent to the aircraft informing it that the received clearance has been cancelled.
-
-\begin{quote}
-  ACK NOT RECEIVED CLEARANCE CANCELLED REVERT TO VOICE PROCEDURES
-\end{quote}
-
-\subsection*{Departure Clearance Readback (CDA)}
-
-A clearance can be answered to with either “WILCO” to accept it or “UNABLE” to reject it.
-
-\subsection*{Flight System Message (FSM)}
-
-Once a reply is received, the List CLR item changes to a filled box (for WILCO) or clears it (for UNABLE). A message is automatically sent to the aircraft.
-
-\begin{quote}
-  ATC REQUEST STATUS FSM 1317 221113 LPPT ABC123 CDA RECEIVED CLEARANCE CONFIRMED 
-\end{quote}
-
-If an UNABLE reply is received, clearance must then be negotiated and delivered by voice. A message is automatically sent to the aircraft.
-
-\begin{quote}
-  CONTACT ATC BY VOICE REFUSE NOT SUPPORTED BY DATALINK
-\end{quote}
-
-\subsection{Abnormal operations}
-
-Most failure cases result from the message not being correctly formatted, and TopSky failing to recognize it correctly. Regardless of whether TopSky recognizes the message as belonging to a departure clearance sequence, it will be put into the \textit{\titleref{win:dlcmw}}. In case the system fails, revert to voice communications.
-
-\section{Controller-Pilot Data Link Communications (CPDLC)}
-\label{cpdlc}
-
-\subsection{General}
-\label{cpdlc:gen}
-
-CPDLC is a means of communication between controller and pilot, using data link for ATC communications, and with the extra advantage of displaying data on the track labels and flight lists as well.
-
-As the messages take significant amount of time to get through (receiving a reply to a clearance can take anything from seconds to a couple of minutes), using CPDLC should be limited to situations that are not time-critical. For this reason, it is mostly used in upper airspace area control sectors.
-
-The messages are grouped to dialogs, with an opening message and subsequent replies. Some messages do not need a reply, while for others a specific reply is expected. The available replies are set automatically, so only the correct type of reply can be sent.
-
-\subsection{Allowed message types}
-\label{cpdlc:amt}
-
-TopSky allows for the following types of messages:
-
-\begin{tabular}{l l}
-  Uplink                      & Downlink\\
-  Level clearance             & Level request\\
-  Heading clearance           & Heading request\\
-  Direct-to clearance         & Direct-to request\\
-  Speed clearance             & Speed request\\
-  Squawk code assignment      & Urgency (MAYDAY/PAN/SQ7500)\\
-  Squawk ident instruction    & Free text\\
-  Voice contact instruction   & \\
-  Free text                   & \\
-\end{tabular}
-
-\subsection{Non-allowed message types}
-\label{cpdlc:nmt}
-
-TopSky does not allow the following downlink message types. They will be automatically closed and a reply sent informing that the system does not support the message type:
-
-\begin{itemize}
-  \item Any requests containing “When can we expect”, “At pilots discretion” or “Own separation”
-  \item Level requests for a cruise climb, block level, or any level request tied to a position or time
-  \item Lateral requests for an offset, weather deviation or ground track
-  \item Speed requests to maintain a speed range
-  \item Voice contact requests
-  \item Requests for a procedure name and/or type
-  \item Position reports
-\end{itemize}
-
-Note that a non-allowed message type can be classified as “free text” by TopSky if the message parser doesn’t recognize it as a non-allowed type. In this case the automatic reply will not be sent and the message may be left waiting for an answer if an answer is required.
-
-\subsection{Uplink clearance sequence}
-\label{cpdlc:ucs}
-
-In this example a level clearance is used. The clearance is sent using the \textit{\titleref{menu:cfl}}. To send the clearance using CPDLC, check that the “CPDLC” option is selected. Depending on the aircraft’s altitude, by default it may be selected or deselected. Send the clearance by selecting a level value.
-
-In this case FL200 was selected, and the CPDLC message “CLIMB TO FL200” was sent to the aircraft. The uplinked value is shown in brackets and in \colorref{color:CPDLC UM Clearance} color:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{CPDLC UM Clearance} [200]} & & \\         
-\end{tabular}
-
-The aircraft has responded with “STANDBY”. The uplinked value changes to \colorref{color:CPDLC Standby} color, and a warning is inserted on line 0 of the label. The warning can be acknowledged by left-clicking on it:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Standby} CFL SBY} & & \\
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{CPDLC Standby} [200]} & & \\         
-\end{tabular}
-
-The aircraft then eventually answers with “WILCO”. The CFL value is updated accordingly and the label field colors return to normal:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 200} & & \\         
-\end{tabular}
-
-If the aircraft answers with “UNABLE”, a warning is inserted in line 0 of the label:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Standby} CFL UNA} & & \\
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{CPDLC Standby} [200+]} & & \\         
-\end{tabular}
-
-The “+” after the level indicates that there is a reason in the answer message, for example “DUE TO PERFORMANCE”. The reason given is only accessible from the \textit{\titleref{win:dlcmw}}.
-
-Left-clicking on the warning acknowledges it and the original CFL value is again shown in the label:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & & \\         
-\end{tabular}
-
-\subsection{Downlink request sequence}
-\label{cpdlc:drs}
-
-This example shows a level request.
-
-The aircraft has sent a level request for FL200. The value is shown in the PRFL (Pilot Requested Level) field in brackets and in \colorref{color:CPDLC DM Request} color:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & {\color{CPDLC DM Request} [200]} & \\         
-\end{tabular}
-
-The responses to a level request are sent using the \textit{\titleref{menu:cfl}}, which offers the possibilities to respond with “STANDBY”, “UNABLE” or a level clearance. In the last case the sequence then changes to an \textit{\titleref{cpdlc:ucs}}.
-
-\subsection{Abnormal operations}
-\label{cpdlc:abn}
-
-As with DCL messages, the most likely failure scenario is TopSky misinterpreting the contents of a received message, which can be verified on the \textit{\titleref{win:dlcmw}}. Some other failure scenarios are presented below.
-
-If TopSky has temporarily lost contact with the CPDLC server, “CPDLC COMM FAIL” will be inserted in line 0 of the labels of all CPDLC connected aircraft in \colorref{color:CPDLC Failed} color:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Standby} CPDLC COMM FAIL} & & \\
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & & \\         
-\end{tabular}
-
-In case the server connection is not re-established within a certain time, the connection will be automatically closed and a warning message box will be presented. A new connection can be attempted at any time from the \textit{\titleref{win:dls}}.
-
-During temporary connection issues and also when the connection is automatically closed, the “AGCS” system label in the \textit{\titleref{win:geninfo}} will be displayed with \colorref{color:Warning} color until a connection is re-established.
-
-If the CPDLC connection is terminated by the pilot, a “CPDLC P ABT” warning is inserted in line 0 of the label in \colorref{color:CPDLC Failed} color:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Standby} CPDLC P ABT} & & \\
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & & \\         
-\end{tabular}
-
-Left-clicking on the warning acknowledges it.
-
-If an uplink clearance is not answered in time, a “<message type> P LATE” warning will be inserted in line 0 of the label in \colorref{color:CPDLC Pilot Late} color:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Pilot Late} CPDLC P LATE} & & \\
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & & \\         
-  {\color{CPDLC Pilot Late} [200]} & & \\         
-\end{tabular}
-
-Left-clicking on it opens a menu with options to either abort the clearance or manually mark it as aswered with “WILCO”. Manually marking should be done only after a satisfactory readback is obtained by voice.
-
-If sending an uplink clearance failed, a “<message type> ERR” warning will be inserted in line 0 of the label in \colorref{color:CPDLC Failed} color:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Failed} CPDLC ERR} & & \\
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & & \\         
-  {\color{CPDLC Failed} [200]} & & \\         
-\end{tabular}
-
-Left-clicking acknowledges the warning and aborts the clearance, displaying the previous value in the label.
-
-If an uplink clearance is sent successfully but you are not the Current Data Unit in the aircraft’s CPDLC system, a “<message type> NOT CDA” warning will be inserted in line 0 of the label in \colorref{color:CPDLC Failed}:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Failed} CPDLC NOT CDA} & & \\
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & & \\         
-  {\color{CPDLC Failed} [200]} & & \\         
-\end{tabular}
-
-Left-clicking acknowledges the warning and aborts the clearance, displaying the previous value in the label.
-
-\chapter{Data stored in the flight strip annotation boxes}
-
-TopSky stores some data in the flight strip annotation boxes (the group of nine boxes in three columns on the right side of the strip). This enables you to send this data to the next controller, or any other controller by manually pushing the strip. EuroScope can be set to automatically push the strip to the next controller on handoff. In addition, TopSky automatically pushes the strip when a handoff proposal (HOP) is sent.
-
-TopSky needs to be able to use four of the nine boxes for its functions. They are the boxes in the bottom row as well as the right-most box in the center row, marked with X’s in the picture below. Do not manually edit those boxes or use them to store any other data. The other boxes, marked by minus signs, are currently not used by TopSky in any way.
-
-\image{img/strip.png}
-
-\chapter{Known issues}
-
-\subsection*{Airport and area hotspots block screen panning}
-
-If you happen to drag one of the airport or area hotspot symbols when trying to move the screen, the screen will not move.
-
-\subsection*{ROF/RTI/TIP message availability limited}
-
-As there is no real plugin-to-plugin communication available, the availability and success of sending the ROF, RTI and TIP messages is somewhat limited.
-
-\subsection*{Problems opening the Radar Menu}
-
-The default method of opening the Radar Menu (<ALT>+right-click) may not always work on Mac hardware. It’s possible to adjust TopSky settings to try another combination, but the easiest way is to insert the following line to the TopSkySettingsLocal.txt file:
-
-\verb|Shortcut\RadarMenu\Combo=0x00|
-
-The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
-
-\appendix
-\chapter{Label field descriptions}
-
-\renewcommand*{\arraystretch}{1.6}
-\begin{longtable}{|p{2.5cm}|p{2.5cm}|p{4.5cm}|p{4.5cm}|}
-    \hline
-    \textbf{Data field} &
-    \textbf{Description} &
-    \textbf{Comments} &
-    \textbf{Color} \\ \hline
-    \endhead
-    Frequency dot \nextrow \label{tag:Frequency dot} &
-    Frequency &
-      “•”, set from \textit{\titleref{menu:cs}} 
-
-      Used to highlight a particular flight &
-      \colorref{color:Freq Indicator} \\ \hline
-    Mark dot \nextrow \label{tag:Mark dot}&
-      Mark &
-      “•”, set from \textit{\titleref{menu:cs}} 
-      
-      Used to highlight a particular flight &
-      \colorref{color:Information} \\ \hline
-    +  \nextrow \label{tag:+}&
-      Field 18 information &
-      “+” if “STS/” found in FPL remarks field &
-       \\ \hline
-    * \nextrow \label{tag:*}&
-      Unit &
-      “*” if label units are different from  the system units &
-      \colorref{color:Warning} \\ \hline
-    A \nextrow \label{tag:A}&
-      Manual alerts &
-      “A” if Manual alert(s) active &
-      \colorref{color:Warning} \\ \hline
-    a \nextrow \label{tag:a}&
-      Attitude indicator &
-      Climbing: up arrow 
-      
-      Descending: down arrow 
-      
-      Level flight or unknown: blank & 
-      \\ \hline
-    ADEP \nextrow \label{tag:ADEP}&
-      Departure aerodrome &
-      ICAO code, 4 characters &
-       \\ \hline
-    ADES \nextrow \label{tag:ADES}&
-      Destination aerodrome &
-      ICAO code, 4 characters &
-       \\ \hline
-    AFL \nextrow \label{tag:AFL}&
-      Actual Flight Level &
-      FL’s with 3 digits
-
-      Altitudes “A”+ 2 digits
-
-      Heights “E”+ 2 digits, in hundreds of feet 
-      
-         &
-      AIW: \colorref{color:AIW intrusion} 
-      
-      Manually set: \colorref{color:Warning} 
-      
-      Mark All: \colorref{color:CARD Mark All} 
-      
-      S-Highlight: \colorref{color:Suite Highlight} \\ \hline
-    AHDG \nextrow \label{tag:AHDG}&
-      Assigned heading &
-      List: 
-      
-      Assigned heading (“H” + 3 digits) or  direct-to point name 
-      \bigskip
-      
-      Unselected label: 
-      
-      - Assigned heading 
-      
-      - Direct-to point name (hidden when  direct to COPX) 
-      \bigskip
-      
-      Selected label: 
-      
-      - Assigned heading 
-      
-      - Direct-to point name 
-      \bigskip
-      
-      If a heading clearance or request is  in progress via CPDLC, displays  “{[}heading{]}”, followed by “+” if the  request or answer contains a reason(i.e. DUE TO something). 
-      \bigskip
-     
-      DEP list: 
-      Does not display the  brackets for CPDLC status. &
-      If a value is assigned and  HOP: \colorref{color:Proposition In} 
-      \bigskip
-
-      If a tactical coordination value is accepted but not  set: \colorref{color:Information} 
-      \bigskip
-
-      If a CPDLC uplink message  has been sent:  \colorref{color:CPDLC UM Clearance} 
-      \bigskip
-      
-      If a CPDLC downlink  message has been  received:  \colorref{color:CPDLC DM Request} 
-      \bigskip
-      
-      If controller timeout has expired following a CPDLC downlink request:  \colorref{color:CPDLC Controller Late} 
-      \bigskip
-      
-      If a CPDLC warning has  been raised: color of the  warning \\ \hline
-    AIW \nextrow \label{tag:AIW}&
-      AIW alert (see also ALRT) &
-      “AIW” &
-      \colorref{color:AIW intrusion} \\ \hline
-    ALRT \nextrow \label{tag:ALRT}&
-      Alert message &
-      “MSAW”, “APW”, “AIW”, “CLAM”,  “RAM” or  “DUPE” (in this priority order) &
-      MSAW, APW and MTCD: \colorref{color:Warning} 
-      
-      AIW: \colorref{color:AIW intrusion} \\ \hline
-    ALT1 \nextrow \label{tag:ALT1}&
-      Alternate aerodrome 1 &
-      ICAO code, 4 characters &
-       \\ \hline
-    ALT2 \nextrow \label{tag:ALT2}&
-      Alternate aerodrome 2 &
-      Second alternate can be set by  inserting “ALT2/XXXX” into  the FPL remarks field &
-       \\ \hline
-    APW \nextrow \label{tag:APW}&
-      APW alert (see also ALRT) &
-      “APW” &
-      \colorref{color:Warning} \\ \hline
-    ARC \nextrow \label{tag:ARC}&
-      Assigned vertical rate &
-      “R” + 2 digits, in 100’s of ft/min &
-      If a value is assigned and  HOP: \colorref{color:Proposition In} 
-      
-      If a tactical coordination value is accepted but not set: \colorref{color:Information} \\ \hline
-    ARWY \nextrow \label{tag:ARWY}&
-      Arrival runway &
-      Arrival runway identifier &
-      If manually assigned: Rwy Locked \\ \hline
-    ASP \nextrow \label{tag:ASP}&
-      Assigned speed &
-      Mach “M”+ 2 digits
-      \bigskip
-
-      “HS” for high speed clearance 
-      \bigskip
-
-      Speed 2 digits, in 10’s of knots
-      \bigskip
-      
-      If a speed clearance or request is in  progress via CPDLC, displays  “{[}speed{]}”, followed by “+” if the  request or answer contains a reason. &
-      If a value is assigned and  HOP: \colorref{color:Proposition In} 
-      \smallskip
-
-      If a tactical coordination  value is accepted but not  set: \colorref{color:Information} 
-      \smallskip
-      
-      If a CPDLC uplink message  has been sent:  \colorref{color:CPDLC UM Clearance} 
-      \smallskip
-      
-      If a CPDLC downlink  message has been  received:  \colorref{color:CPDLC DM Request} 
-      \smallskip
-      
-      If controller timeout has expired following a CPDLC  downlink request:  \colorref{color:CPDLC Controller Late} 
-      \smallskip
-      
-      If a CPDLC warning has  been raised: color of the  warning \\ \hline
-    ASSR \nextrow \label{tag:ASSR}&
-      Assigned mode 3/A code &
-      4 digits or “A”+ 4 digits. 
-      \bigskip
-
-      If a SQUAWK SSR message is in  progress via CPDLC, displays the  code in brackets, followed by “+” if  the answer contains a reason. 
-      \bigskip
-
-      DEP list:
-      
-      Does not display the  brackets for CPDLC status. &
-      If different than TSSR:  \colorref{color:Warning} 
-      \smallskip
-
-      If a CPDLC uplink message  has been sent:  \colorref{color:CPDLC UM Clearance} 
-      \smallskip
-      
-      If a CPDLC warning has  been raised: color of the  warning \\ \hline
-    ATD \nextrow \label{tag:ATD}&
-      Actual Time of Departure &
-      UTC time in “HHMM” format &
-       \\ \hline
-    ATYP \nextrow \label{tag:ATYP}&
-      Aircraft type &
-      Type with max 4 characters &
-      If highlighted: \colorref{color:Warning} \\ \hline
-    ATYP/W \nextrow \label{tag:ATYP/W}&
-      Aircraft type / Wake  Turbulence Category &
-      Type with max 4 characters + “/” +  WTC (“L”, “M”, “H”, “J” or “?”) &
-      If highlighted: \colorref{color:Warning} \\ \hline
-    C \nextrow \label{tag:C}&
-      Inbound clearance &
-      “C” if ADES needs inbound clearance &
-      Active state: \colorref{color:Information} \\ \hline
-    CALLSIGN \nextrow\label{tag:CALLSIGN} &
-      Callsign &
-      If more than one aircraft, suffixed  by “+”. 
-      \bigskip
-      
-      If correlated to a primary  track or to a secondary track with  no ASSR code and a non-discrete  TSSR code, suffixed by “*”. 
-      \bigskip
-      
-      If the flight is CPDLC connected, the callsign is displayed in brackets. &
-      Priority order: 
-      
-      STCA alert: \colorref{color:Urgency} 
-      
-      HOP in: \colorref{color:Proposition In} 
-      
-      Mark Own: \colorref{color:CARD Mark Own} 
-      
-      Highlight: Warning 
-      
-      Mark All: \colorref{color:CARD Mark All} 
-      
-      S-Highlight: \colorref{color:Suite Highlight} 
-      \bigskip
-
-      If none of the above: 
-      
-      Transfer in: \colorref{color:Assumed} 
-      
-      Transfer out: \colorref{color:Redundant} \\ \hline
-    CFL \nextrow \label{tag:CFL}&
-      Cleared Flight Level &
-      “CA” if Clear for App flag set
-      
-      “VA” if Visual App flag set
-      \bigskip
-
-      See AFL field for number format. 
-      \bigskip
-      
-      Unselected label: Not shown if equal to AFL 
-      \bigskip
-
-      If a level clearance is in progress via  CPDLC, displays “{[}level{]}”, followed  by “+” if the answer contains a  reason (i.e. DUE TO something). 
-      \bigskip
-
-      DEP list:
-      Does not display the  brackets for CPDLC status. &
-      DEP list: 
-      
-      For CTR, if CFL \textgreater PEL,  for others if CFL \textgreater XFL: 
-      
-      \colorref{color:Warning} 
-      \bigskip
-      
-      If a CPDLC uplink message  has been sent:  \colorref{color:CPDLC UM Clearance} 
-      
-      If a CPDLC warning has  been raised: color of the  warning \\ \hline
-    CFL/PEL \nextrow \label{tag:CFL/PEL}&
-      Cleared Flight Level or  Planned Entry Level &
-      PEL is shown for flights in  “coordinated” and “ongoing coordination” states, CFL otherwise. 
-      \bigskip 
-      
-      “CA” if Clear for App flag set
-      
-      “VA” if Visual App flag set
-      
-      See AFL field for number format.
-      \bigskip 
-      
-      Unselected label: 
-      
-      PEL: Not shown if equal to AFL and no ongoing coordination. 
-      
-      CFL: Not shown if equal to AFL 
-      \bigskip
-      
-      If a level clearance is in progress via  CPDLC, displays “{[}level{]}”, followed  by “+” if the answer contains a  reason (i.e. DUE TO something). &
-      PEL: 
-      
-      Ongoing coordination:  
-      
-      \colorref{color:Proposition In} 
-      
-      Change just before ETN: 
-      
-      \colorref{color:Info Coord} 
-      
-      Coordination refused: 
-      
-      \colorref{color:Warning}
-      \bigskip 
-      
-      CFL: 
-      
-      If a CPDLC uplink message  has been sent:  
-      
-      \colorref{color:CPDLC UM Clearance} 
-      
-      If a CPDLC downlink  message has been  received:  
-      
-      \colorref{color:CPDLC DM Request} 
-      \bigskip
-      
-      If a CPDLC warning has  been raised: 
-      
-      color of the  warning \\ \hline
-    CLR \nextrow \label{tag:CLR}&
-      Clearance received flag &
-      If no clearance received and no data  link clearance in progress: 
-      
-      "$\square$" 
-      \bigskip
-      
-      If clearance requested via data link: 
-      
-      “R” 
-      \bigskip
-
-      If waiting for answer from the  aircraft for a sent data link  clearance: 
-      
-      “A” 
-      \bigskip
-
-      If clearance received: 
-      
-      "$\blacksquare$" 
-      \bigskip
-
-      “R” and “A” are  blinking when less than 2 minutes  are remaining to timeout &
-      “R”: When request contains  free text: \colorref{color:Urgency} 
-      
-      Otherwise: \colorref{color:Warning} 
-
-      \bigskip
-      
-      “A”: When blinking: \colorref{color:Warning} \\ \hline
-    COM \nextrow \label{tag:COM}&
-      Communication type &
-      “r” if voice receive only “t” if text only &
-      \colorref{color:Warning} \\ \hline
-    COMP\_CS \nextrow \label{tag:COMP CS}&
-      ICAO RTF callsign &
-      The decoded ICAO RTF callsign 
-      
-      “???” if not in database &
-       \\ \hline
-    COORD \nextrow \label{tag:COORD}&
-      Coordination message &
-      “ROF” if a Request On Frequency message has been received from  the next sector  
-      \bigskip
-
-      The last changed tactical coordination parameter value (AHDG, ASP or ARC) &
-      Proposed: \colorref{color:Proposition In} 
-      
-      Rejected: \colorref{color:Warning} \\ \hline
-    COPN \nextrow \label{tag:COPN}&
-      Entry point &
-       &
-      Ongoing coordination:  \colorref{color:Proposition In} 
-      
-      Coordination refused: \colorref{color:Warning} \\ \hline
-    COPX \nextrow \label{tag:COPX}&
-      Exit point &
-      DEP list: 
-      
-      If logged in as CTR and flight not inside active sector, displays COPN 
-      \bigskip
-
-      (with holding): 
-      
-      A holding clearance is displayed if  there is no coordination. It shows  the holding point name + “ H” or for  lat/lon point holdings, “POS H”. For a TSA Hold clearance, the area  name is shown. &
-      Ongoing coordination: \colorref{color:Proposition In} 
-      
-      Coordination refused: \colorref{color:Warning} \\ \hline
-    COPN/COPX \nextrow \label{tag:COPN/COPX}&
-      Entry point or Exit point &
-      COPN is shown for flights in  “coordinated” and “ongoing coordination” states, COPX in “assumed”, “transfer  initiated” and “redundant” phases. 
-      \bigskip
-
-      (with holding): 
-      
-      A holding clearance is displayed if  there is no coordination. It shows  the holding point name + “ H” or for  lat/lon point holdings, “POS H”. For a TSA Hold clearance, the area  name is shown. &
-      Ongoing coordination: 
-      
-      \colorref{color:Proposition In} 
-      \bigskip
-      
-      Coordination refused: 
-      
-      \colorref{color:Warning} \\ \hline
-    \nextrow \label{tag:CPDLC E} CPDLC\_E &
-      CPDLC Emergency &
-      CPDLC emergency messages: 
-      
-      “SQ7500”, “{[}MAYDAY{]}”, or “{[}PAN{]}” &
-      \colorref{color:Urgency} \\ \hline
-    CPDLC\_W \nextrow \label{tag:CPDLC W}&
-      CPDLC Warning &
-      CPDLC warning messages: 
-      
-      “COMM FAIL” for network failure 
-      
-      "<type> ERR” for message failure 
-      "<type> NOT CDA” for NOT CURRENT  DATA AUTHORITY response 
-      "<type> P LATE” for timeout 
-      "<type> SBY” for STANDBY response 
-      "<type> UNA” for UNABLE response    
-      \bigskip
-      
-      <type> is the type of message: 
-      
-      “AHDG” for heading clearance 
-      
-      “CFL” for level clearance 
-      
-      “COF” for communication transfer 
-      
-      “DCT” for direct-to clearance 
-      
-      “SQI” for SQUAWK IDENT message 
-      
-      “SSR” for SQUAWK SSR message 
-      
-      “VCI” for communication transfer &
-      “COMM FAIL”,  “ERR” or “NOT CDA”:  
-      
-      \colorref{color:CPDLC Failed} 
-      \bigskip
-
-      “UNA”:  
-      
-      \colorref{color:CPDLC Unable} 
-      \bigskip
-
-      “SBY”:  
-      
-      \colorref{color:CPDLC Standby} 
-      
-      \bigskip
-      
-      “P LATE”:  
-      
-      \colorref{color:CPDLC Pilot Late} \\ \hline
-    CRC \nextrow \label{tag:CRC}&
-      Computed vertical rate &
-      2 digits, in 100’s of ft/min 
-         
-      Value preceded by “C” for climbing,  “D” for descending &
-       \\ \hline
-    DHDG \nextrow \label{tag:DHDG}&
-      Downloaded heading &
-      Magnetic heading as downloaded  from the aircraft via mode S DAPs.  
-      
-      “H” + 3 digits. &
-       \\ \hline
-    DIAS \nextrow \label{tag:DIAS}&
-      Downloaded indicated airspeed &
-      Indicated airspeed as downloaded  from the aircraft via mode S DAPs.  
-      
-      Blank, not available on VATSIM. &
-       \\ \hline
-    DMACH \nextrow \label{tag:DMACH}&
-      Downloaded Mach number &
-      Mach number as downloaded from the aircraft via mode S DAPs. 
-      
-      Blank, not available on VATSIM. &
-       \\ \hline
-    DRC \nextrow \label{tag:DRC}&
-      Downloaded rate of  climb/descent &
-      Rate of climb/descent as downloaded from the aircraft via mode S DAPs. 
-      
-      Not available on  VATSIM (computed rate displayed instead, see CRC). &
-       \\ \hline
-    DRWY \nextrow \label{tag:DRWY}&
-      Departure runway &
-      Departure runway identifier &
-      DEP list: 
-      
-      Clearance flag not set:  
-      
-      \colorref{color:Proposition In} 
-      
-      Clearance flag set: 
-      
-      \colorref{color:Information} \\ \hline
-    DSFL \nextrow \label{tag:DSFL}&
-      Downloaded selected  flight level &
-      Selected flight level as downloaded from the aircraft via mode S DAPs.  
-      
-      Blank, not available on VATSIM. &
-       \\ \hline
-    DSQ \nextrow \label{tag:DSQ}&
-      Departure sequence number &
-       &
-       \\ \hline
-    EET \nextrow \label{tag:EET}&
-      Estimated Elapsed Time &
-      “HHMM” &
-       \\ \hline
-    EMRG \nextrow \label{tag:EMRG}&
-      Emergency &
-      “HI” for squawk 7500
-      
-      “CF” for squawk 7600,
-      
-      “EM” for squawk 7700 &
-      \colorref{color:Urgency} \\ \hline
-    EQUIP \nextrow \label{tag:EQUIP}&
-      FPL equipment field &
-      Rough conversion to ICAO FPL 
-      
-      (COM/NAV): COM/NAV equipment 
-      
-      (SUR): “/” + surveillance equipment &
-       \\ \hline
-    EST/DEP/
-    
-    ABT \nextrow \label{tag:EST/DEP/ABT}&
-      Manual departure &
-      “EST” when clearance flag not set and ground state not “DEPA”
-      \bigskip
-
-      “DEP” when clearance flag set or ground state 
-      \bigskip
-      
-      “DEPA” but not yet departed
-      \bigskip
-      
-      “ABT” when departed &
-       \\ \hline
-    ETA \nextrow \label{tag:ETA}&
-      Estimated Time of Arrival &
-      UTC time in “HHMM” format or  “HOLD” if flight in holding state &
-       \\ \hline
-    ETD \nextrow \label{tag:ETD}&
-      Estimated Time of  Departure &
-      UTC time in “HHMM” format &
-       \\ \hline
-    ETD/ATD \nextrow \label{tag:ETD/ATD}&
-      Estimated Time of Departure or Actual Time  of Departure &
-      For a departed aircraft, shows the  actual departure, otherwise the estimated departure time.  
-      
-      “HHMM”, both times taken from  the FPL data &
-       \\ \hline
-    ETN \nextrow \label{tag:ETN}&
-      Estimated time over  COPN or sector entry  time if no COPN &
-      UTC time in “HHMM” format (sector entry): always entry time &
-       \\ \hline
-    ETOHP \nextrow \label{tag:ETOHP}&
-      Estimated time over holding point or holding  start time &
-      UTC time in “HHMM” format &
-       \\ \hline
-    ETX \nextrow \label{tag:ETX}&
-      Estimated time over  COPX or sector exit time  if no COPX &
-      UTC time in “HHMM” format (sector exit): always exit time &
-       \\ \hline
-    FCOPX \nextrow \label{tag:FCOPX}&
-      FIR COPX point &
-       &
-       \\ \hline
-    FIELD15 \nextrow \label{tag:FIELD15}&
-      Speed/Level/Route &
-      The flight plan field 15 data (TAS,  RFL and route). Max 360 characters &
-       \\ \hline
-    FIELD18 \nextrow \label{tag:FILED18}&
-      Other information &
-      The flight plan field 18 data  (remarks). Max 360 characters &
-       \\ \hline
-    FLTADD \nextrow \label{tag:FLTADD}&
-      Mode S transponder  address &
-      Mode S transponder hex address &
-       \\ \hline
-    FLTID &
-      Aircraft identification \nextrow \label{tag:FLTID}&
-      Callsign as received via mode S &
-       \\ \hline
-    GS &
-      Ground Speed \nextrow \label{tag:GS}&
-      "N"+3 digits, in knots &
-      If highlighted: \colorref{color:Warning} \\ \hline
-    HP \nextrow \label{tag:HP}&
-      Holding point &
-      Holding point name or for lat/lon  point holdings, “POS”. 
-      
-      For a TSA Hold clearance, the area  name is shown. &
-       \\ \hline
-    I \nextrow \label{tag:I}&
-      Flight information &
-      “I” if OP\_TEXT has data &
-       \\ \hline
-    Label &
-      Label hidden flag &
-      “$\blacksquare$” if label displayed, “$\square$” if label hidden &
-       \\ \hline
-    M \nextrow \label{tag:M}&
-      Military coordination &
-      “M” if military coordination is  required &
-      Active state: \colorref{color:Warning} \\ \hline
-    MALRT \nextrow \label{tag:MALRT}&
-      Manual alerts &
-      Displays alerts entered via the  \textit{\titleref{menu:cs}} &
-      \colorref{color:Warning} \\ \hline
-    MSAW \nextrow \label{tag:MSAW}&
-      MSAW alert (see also ALRT) &
-      “MSAW” &
-      \colorref{color:Warning} \\ \hline
-    MTCD \nextrow \label{tag:MTCD}&
-      MTCD indicator &
-      “•” if aircraft has an MTCD problem &
-      \colorref{color:Urgency} \\ \hline
-    N/ATYP \nextrow \label{tag:N/ATYP}&
-      Number of aircraft /  Aircraft type &
-      Unselected label: 
-      
-      Number range 2 - 99 
-      \bigskip
-      
-      Selected label or List: 
-      
-      Number range 1 - 99 
-      \bigskip
-
-      Number can be set by prefixing the aircraft type in the FPL by “X/”  where X is the number (max 99) &
-      If highlighted: \colorref{color:Warning} \\ \hline
-    NPT \nextrow \label{tag:NPT}&
-      Next route point &
-      When a DCT request or clearance  via CPDLC is in progress: 
-      
-      Displays the point name followed by  “+” if the request contains a reason  (i.e. DUE TO something) 
-      \bigskip
-
-      Otherwise: Next point on the route &
-      If a CPDLC uplink message  has been sent:  
-      
-      \colorref{color:CPDLC UM Clearance} 
-      \bigskip
-
-      If a CPDLC downlink  message has been  received:  
-      
-      \colorref{color:CPDLC DM Request} 
-      \bigskip
-      
-      If controller timeout has expired following a CPDLC downlink request:  
-      
-      \colorref{color:CPDLC Controller Late} 
-      \bigskip
-      
-      If a CPDLC warning has  been raised: 
-      
-      color of the  warning \\ \hline
-    NRAC \nextrow \label{tag:NRAC}&
-      Number of aircraft &
-      Number from 2 to 99 
-      \bigskip
-      
-      Extended label: 
-      
-      “n” if 1 
-      
-      Other label or (List): blank if 1 
-      \bigskip
-      
-      Number can be set by prefixing the  aircraft type in the FPL by “X/”  where X is the number (max 99). &
-       \\ \hline
-    NSSR \nextrow \label{tag:NSSR}&
-      SSR warning &
-      Displays ASSR if different from TSSR &
-      If a CPDLC uplink message  has been sent:  
-      
-      \colorref{color:CPDLC UM Clearance} 
-      \bigskip
-      
-      If a CPDLC warning has been raised: 
-      
-      color of the  warning \\ \hline
-    OP\_TEXT \nextrow \label{tag:OP TEXT}&
-      Flight information message &
-      User entered text, stored in the flight strip &
-       \\ \hline
-    OP\_TEXT2 \nextrow \label{tag:OP TEXT2}&
-      OP\_TEXT2 message &
-      User entered text, stored in the scratchpad &
-       \\ \hline
-    P &
-      No P-RNAV/RNAV1 capability \nextrow \label{tag:P}&
-      “P” if aircraft equipment is not indicating P-RNAV/RNAV1 capability and destination has arrival  procedures requiring it &
-      \colorref{color:Information} \\ \hline
-    PEL &
-      Planned Entry Level \nextrow \label{tag:PEL}&
-      “CA” if Clear for App set
-      
-      “VA” if Visual App flag set
-      
-      See AFL field for number format. &
-      Ongoing coordination:
-      
-      \colorref{color:Proposition In} 
-      \bigskip
-      
-      Change just before ETN: 
-      
-      \colorref{color:Info Coord} 
-      \bigskip
-      
-      Coordination refused: 
-      
-      \colorref{color:Warning} \\ \hline
-    PFREQ \nextrow \label{tag:PFREQ}&
-      Pilot monitored frequency &
-      Displays your primary frequency  when transfer of communications  was done via CPDLC using the  MONITOR option &
-      CPDLC DM Request \\ \hline
-    PRFL \nextrow \label{tag:PRFL}&
-      RFL requested by pilot via  CPDLC &
-      Displays “{[}requested level{]}”,  followed by “+” if the request  contains a reason (i.e. DUE TO  something) &
-      If a CPDLC downlink  message has been  received:  
-      
-      \colorref{color:CPDLC DM Request} 
-      \bigskip
-      
-      If controller timeout has expired following a CPDLC downlink request:
-      
-      \colorref{color:CPDLC Controller Late} 
-      \bigskip
-      
-      If a CPDLC warning has been raised: 
-      
-      color of the warning \\ \hline
-    PSSR \nextrow \label{tag:PSSR}&
-      Previous mode 3/A code &
-      If not known, shows ASSR if  available. Format as ASSR field. &
-       \\ \hline
-    R \nextrow \label{tag:R}&
-      No B-RNAV/RNAV5  capability &
-      “R” if aircraft equipment is not  indicating B-RNAV/RNAV5 capability &
-      Not equipped:
-      
-      \colorref{color:Urgency}
-      \bigskip 
-      
-      Unknown: 
-      
-      \colorref{color:Unknown} \\ \hline
-    RFL \nextrow \label{tag:RFL}&
-      Requested Flight Level &
-      See AFL field for format 
-      \bigskip
-      
-      List: 
-      
-      If an RFL request is in progress via CPDLC, displays “{[}requested level{]}”, followed by “+” if the request contains a reason (i.e. DUE TO  something). 
-      \bigskip
-      
-      DEP list does not display the  brackets for CPDLC status. &
-      In flight lists: 
-      
-      If a CPDLC downlink  message has been  received:  
-      
-      \colorref{color:CPDLC DM Request} 
-      \bigskip
-      
-      If controller timeout has expired following a CPDLC downlink request:
-      
-      \colorref{color:CPDLC Controller Late} 
-      \bigskip
-      
-      If a CPDLC warning has  been raised: 
-      
-      color of the  warning \\ \hline
-    RI \nextrow \label{tag:RI}&
-      Release Indicator &
-      “F” fully released 
-      
-      “C” released for climb 
-      
-      “D” released for descent 
-      
-      “T” released for turns 
-      \bigskip
-      
-      Incoming release disappears 3 min after track is assumed, outgoing when track is no longer redundant. &
-      During transfer:  
-      
-      \colorref{color:Proposition In} \\ \hline
-    ROUTE \nextrow \label{tag:ROUTE}&
-      Flight plan route &
-      DEP list 
-      
-      - part 1 shows first 15 characters, part 2 characters 16-30 
-      \bigskip
-      
-      If departing from defined airports: 
-      
-      - first 30/45 characters (2 or 3 parts) 
-      \bigskip
-      
-      If arriving at a clearance flag airport: 
-      
-      - last 30/45 characters (2 or 3 parts) 
-      \bigskip
-      
-      Else: 
-      
-      - first 30/45 characters (2 or 3 parts) &
-       \\ \hline
-    S \nextrow \label{tag:S}&
-      Mode S mismatch indicator &
-      “S” if downloaded callsign is different than coupled flight plan callsign &
-      \colorref{color:Warning} \\ \hline
-    SI \nextrow \label{tag:SI}&
-      Sector Indicator &
-      Assumed track: 
-      
-      Next sector identifier or frequency.  
-      \bigskip
-      
-      Displayed in brackets if a  communications transfer is in  progress via CPDLC, followed by “+”  if the answer contains a reason. The frequency  display is forced on during a  transfer via CPDLC. 
-      \bigskip
-      
-      Other tracks: 
-      
-      Tracking controller identifier or  frequency. 
-      \bigskip
-      
-      List: Frequency display is not possible 
-      \bigskip
-      
-      DEP list: Does not display the  brackets for CPDLC status. 
-      \bigskip
-      
-      Current: Displays always the  current tracking controller id 
-      \bigskip
-      
-      Previous: Displays the current tracking controller id unless it is you or the track is in redundant state 
-      \bigskip
-      
-      Next: Displays the next controller id when assumed, or current when in redundant state &
-      Priority order: 
-      \bigskip
-      
-      Outgoing HOP: 
-      
-      \colorref{color:Proposition In} 
-      \bigskip
-      
-      Manually changed next sector: 
-      
-      \colorref{color:Warning} 
-      \bigskip
-      
-      Normal next sector:
-      
-      \colorref{color:Coordination} 
-      \bigskip
-      
-      If a CPDLC communications transfer uplink message has been sent:  
-      
-      \colorref{color:CPDLC UM Clearance} 
-      \bigskip
-      
-      If a CPDLC warning has been raised: 
-      
-      color of the  warning \\ \hline
-    SID \nextrow \label{tag:SID}&
-      Assigned or planned SID &
-      SID identifier &
-      If automatically assigned:  
-      
-      \colorref{color:Sid Star No Allocation} 
-      \bigskip
-      
-      If manually assigned: 
-      
-      \colorref{color:Sid Star Allocation} \\ \hline
-    SQ \nextrow \label{tag:SQ}&
-      Arrival sequence number &
-      A number from 1 to 50 &
-       \\ \hline
-    STAR \nextrow \label{tag:STAR}&
-      Assigned or planned STAR &
-      STAR identifier &
-      If automatically assigned:  
-      
-      \colorref{color:Sid Star No Allocation} 
-      \bigskip
-      
-      If manually assigned: 
-      
-      \colorref{color:Sid Star Allocation} \\ \hline
-    STS \nextrow \label{tag:STS}&
-      Ground state &
-      EuroScope default ground state &
-       \\ \hline
-    TAS \nextrow \label{tag:TAS}&
-      Flight Plan TAS &
-      See GS field for format &
-       \\ \hline
-    TEXT2 \nextrow \label{tag:TEXT2}&
-      OP-TEXT2 message &
-      If more than 10 characters, then shows first 9 + “>” &
-       \\ \hline
-    TRACK \nextrow \label{tag:TRACK}&
-      Ground track &
-      “T” + the aircraft’s current ground track in degrees magnetic &
-       \\ \hline
-    TSSR \nextrow \label{tag:TSSR}&
-      Aircraft transponded  mode 3/A code &
-      4 digits or “A”+ 4 digits &
-       \\ \hline
-    V \nextrow \label{tag:V}&
-      Flight rules &
-      “V” if VFR
-      
-      “Y” if first IFR and later VFR
-      
-      “Z” if first VFR and later IFR &
-       \\ \hline
-    W \nextrow \label{tag:W}&
-      No RVSM capability &
-      “W” if aircraft equipment is not  indicating RVSM capability &
-      Not equipped: 
-      
-      \colorref{color:Urgency} 
-      \bigskip
-      
-      Exempt: 
-      
-      \colorref{color:Information} 
-      \bigskip
-      
-      Unknown: 
-      
-      \colorref{color:Unknown} \\ \hline
-    WTC \nextrow \label{tag:WTC}&
-      Wake turbulence  category &
-      “J” for Super
-      
-      “H” for Heavy
-      
-      “M” for Medium
-      
-      “L” for Light 
-      
-      “?” for unknown 
-      \bigskip
-      
-      Unselected label: 
-      
-      Only displayed if not medium unless the field is highlighted &
-      If highlighted: 
-      
-      \colorref{color:Warning} \\ \hline
-    /WTC \nextrow \label{tag:/WTC}&
-      Wake turbulence  category &
-      “/J” for Super
-      
-      “/H” for Heavy
-      
-      “/M” for Medium
-      
-      “/L” for Light 
-      
-      “?” for unknown 
-      \bigskip
-      
-      Unselected label: 
-      
-      Only displayed if not medium unless the field is highlighted &
-      If highlighted: 
-      
-      \colorref{color:Warning} \\ \hline
-    XFL \nextrow \label{tag:XFL}&
-      Exit Flight Level &
-      “CA” if Clear for App set
-      
-      “VA” if Visual App flag set
-      
-      See AFL field for number format. 
-      \bigskip
-      
-      Unselected label: 
-      
-      Not shown if equal to CFL/PEL and  no ongoing coordination. 
-      \bigskip
-      
-      DEP list: 
-      
-      If logged in as CTR and flight not  inside active sector, displays PEL.  
-      
-      Otherwise displays XFL. &
-      Ongoing coordination:  
-      
-      \colorref{color:Proposition In} 
-      \bigskip
-      
-      Coordination refused: 
-      
-      \colorref{color:Warning} \\ \hline
-    Y \nextrow \label{tag:Y}&
-      No 8.33kHz capability &
-      “Y” if aircraft equipment is not  indicating 8.33kHz capability &
-      Not equipped: 
-      
-      \colorref{color:Urgency} 
-      \bigskip
-      
-      Exempt: 
-      
-      \colorref{color:Information} 
-      \bigskip
-      
-      Unknown: 
-      
-      \colorref{color:Unknown} \\ \hline
-    \end{longtable}
-
-\chapter{Color Values}
+\section{Color Values}
 
 \begin{longtable}{|p{4.5cm}|p{1.5cm}|p{4.5cm}|}
   \hline
@@ -4885,23 +4890,30 @@ The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
   \nextrow \label{color:Text Notes} Text Notes                         & \cellcolor{Text Notes}              & Text notes                                   \\ \hline                                 
 \end{longtable}
 
-\chapter{Keyboard Shortcuts}
+\chapter{Known issues}
 
-Some plugin functions can be accessed using a keyboard shortcut. By default, each shortcut is a combination of two keys, with the first key needing to be down while the second is pressed to activate the function. The available shortcuts and their default keys are:
+\section{GitHub Repository}
+TOPLIS is maintained in the \textit{\href{https://github.com/pinatacolada/topskylppc}{topskylppc GitHub repository}}. An up to date list of known issues can be checked on the \textit{\href{https://github.com/pinatacolada/topskylppc/issues}{issues page}}, aswell as reporting new ones.
 
-\begin{tabular}{l l}
-    Open FPL Window for the selected flight                        & <ALT> + <F>\\
-    Open FPL Selection Window                                      & <ALT> + <E>\\
-    Start new QDM line                                             & <ALT> + <Q>\\
-    Inhibit active filters for 5 seconds (Quick Look)              & <ALT> + <U>\\
-    Start a new minimum separation line                            & <ALT> + <S>\\
-    Reposition cursor at the center of the radar screen            & <ALT> + <C>\\    
-\end{tabular}
+\section{Airport and area hotspots block screen panning}
 
-“Selected flight” in the above means that the mouse cursor is over that flight’s track label. For the timed functions, activating the shortcut while the timer is running restarts the timer from zero.
+If you happen to drag one of the airport or area hotspot symbols when trying to move the screen, the screen will not move.
+
+\section{ROF/RTI/TIP message availability limited}
+
+As there is no real plugin-to-plugin communication available, the availability and success of sending the ROF, RTI and TIP messages is somewhat limited.
+
+\section{Problems opening the Radar Menu}
+
+The default method of opening the Radar Menu (<ALT>+right-click) may not always work on Mac hardware. It’s possible to adjust TopSky settings to try another combination, but the easiest way is to insert the following line to the TopSkySettingsLocal.txt file:
+
+\verb|Shortcut\RadarMenu\Combo=0x00|
+
+The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
 
 
-\bibliographystyle{unsrt}
-\bibliography{refs}
+
+\appendix
+
 
 \end{document}
