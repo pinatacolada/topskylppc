@@ -46,9 +46,11 @@
 \newcounter{rowcounter}
 \newcommand{\nextrow}{\refstepcounter{rowcounter}}
 
-\newcommand{\colorref}[1]{\textit{\hyperref[#1]{\StrDel{#1}{color:}}}}
+\newcommand{\colorref}[1]{{\textit{\hyperref[#1]{\StrDel{#1}{color:}}}}}
 
 \newcommand{\colortabex}[1]{\cellcolor{Flight Highlight}\color{#1}\colorref{color:#1}}
+
+\newcommand{\colortab}[1]{\cellcolor{Flight Highlight}\color{#1}}
 
 \newcommand{\tagref}[1]{\textit{\hyperref[#1]{\StrDel{#1}{tag:}}}}
 
@@ -1188,7 +1190,7 @@ For example, if you send an RTI with AHDG 360 (as in the above example) and then
     Frequency &
       “•”, set from \textit{\titleref{menu:cs}} 
 
-      Used to highlight a particular flight &
+      Used to highlight a flight operating in a frequency other than the Sector Primary &
       \colorref{color:Freq Indicator} \\ \hline
     Mark dot \nextrow \label{tag:Mark dot}&
       Mark &
@@ -1289,7 +1291,7 @@ For example, if you send an RTI with AHDG 360 (as in the above example) and then
     ALRT \nextrow \label{tag:ALRT}&
       Alert message &
       “MSAW”, “APW”, “AIW”, “CLAM”,  “RAM” or  “DUPE” (in this priority order) &
-      MSAW, APW and MTCD: \colorref{color:Warning} 
+      MSAW and APW: \colorref{color:Warning} 
       
       AIW: \colorref{color:AIW intrusion} \\ \hline
     ALT1 \nextrow \label{tag:ALT1}&
@@ -2707,10 +2709,53 @@ The Uncoupled label is shown for radar tracks that aren’t correlated with a fl
   \tagref{tag:FLTID} is displayed on line 1 only if a valid Mode-S Aircraft Identification is received. Otherwise, only TSSR is displayed
 \end{Note}
 
+\subsection{Line 0}
+Line 0 is constructed solely of indicators and warnings. Line 0 is only displayed when at least one of these indicators is active.
+
+\begin{longtable}[c]{|l|p{8cm}|p{2cm}|}
+  \hline
+  Example Indication               & Description                                                                                                                 & Label item        \\
+  \endfirsthead
+  %
+  \endhead
+  \hline
+  \colortab{Assumed}V              & Y, Y or Z Flight Rules, same color as Track Label                                                                           & \tagref{tag:V}             \\ \hline
+  \colortab{Warning}MSAW           & Minimum Safe Altitude Warning                                                                                               & \tagref{tag:ALRT}          \\ \hline
+  \colortab{Warning}APW            & Area Proximity Warning                                                                                                      & \tagref{tag:ALRT}          \\ \hline
+  \colortab{AIW intrusion}AIW      & Area Intrusion Warning                                                                                                      & \tagref{tag:ALRT}          \\ \hline
+  \colortab{Assumed}CLAM           & Cleared Level Adherence Monitoring, same color as Track Label                                                               & \tagref{tag:ALRT}          \\ \hline
+  \colortab{Assumed}RAM            & Route Adherence Monitoring, same color as Track Label                                                                       & \tagref{tag:ALRT}          \\ \hline
+  \colortab{Warning}DUPE           & Duplicate SSR code                                                                                                          & \tagref{tag:ALRT}          \\ \hline
+  \colortab{Urgency}W              & RVSM Not Equipped                                                                                                           & \tagref{tag:W}             \\ \hline
+  \colortab{Information}W          & RVSM Exempt                                                                                                                 & \tagref{tag:W}             \\ \hline
+  \colortab{Unknown}W              & RVSM Unknown                                                                                                                & \tagref{tag:W}             \\ \hline
+  \colortab{Urgency}Y              & 8.33 Not Equipped                                                                                                           & \tagref{tag:Y}             \\ \hline
+  \colortab{Information}Y          & 8.33 Exempt                                                                                                                 & \tagref{tag:Y}             \\ \hline
+  \colortab{Unknown}Y              & 8.33 Unknown                                                                                                                & \tagref{tag:Y}             \\ \hline
+  \colortab{Urgency}R              & RNAV5 Not Equipped                                                                                                          & \tagref{tag:R}             \\ \hline
+  \colortab{Unknown}R              & RNAV5 Unknown                                                                                                               & \tagref{tag:R}             \\ \hline
+  \colortab{Information}P          & RNAV1 Not Equipped                                                                                                          & \tagref{tag:P}             \\ \hline
+  \colortab{Warning}M              & Military Coordination Required flag                                                                                         & \tagref{tag:M}             \\ \hline
+  \colortab{Information}$\bullet$  & Mark dot, used to highlight a certain flight by the ATC                                                                     & \tagref{tag:Mark dot}      \\ \hline
+  \colortab{Assumed}$\bullet$      & Frequency dot, used to highlight a flight operating in a frequency other than the Sector Primary, same color as Track Label & \tagref{tag:Frequency dot} \\ \hline
+  \colortab{Warning}A              & Manual alert(s) active                                                                                                      & \tagref{tag:A}             \\ \hline
+  \colortab{Assumed}+              & STS/ found in FPL remarks field, same color as Track Label                                                                  & \tagref{tag:+}             \\ \hline
+  \colortab{Assumed}I              & OP\_TEXT has data, same color as Track Label                                                                                & \tagref{tag:I}             \\ \hline
+  \colortab{Warning}S              & Mode S Callsign is different from coupled Flight Plan Callsign                                                              & \tagref{tag:S}             \\ \hline
+  \colortab{Urgency}EM             & “HI” for A7500, “CF” for A7600, “EM” for A7700                                                                              & \tagref{tag:EMRG}          \\ \hline
+  \colortab{Proposition In}H270    & Value in coordination, or ROF if a Request On Frequency message is received                                                 & \tagref{tag:COORD}         \\ \hline
+  \colortab{Assumed}3223           & Displays ASSR if different from TSSR, same color as Track Label                                                             & \tagref{tag:NSSR}          \\ \hline
+  \colortab{CPDLC Pilot Late}CPDLC P LATE     & CPDLC Warning messages                                                                                           & \tagref{tag:CPDLC W}       \\ \hline
+  \colortab{Urgency}[MAYDAY]       & CPDLC Emergency Downlink                                                                                                    & \tagref{tag:CPDLC E}       \\ \hline
+  \colortab{Assumed}TEXT2          & User entered text visible to everyone, same color as Track Label                                                            & \tagref{tag:OP TEXT2}      \\ \hline
+  \caption{Line 0 Indications}
+  \label{tab:line0}\\
+  \end{longtable}
+
 \subsection{Label Compaction}
 \label{tlabel:comp}
 
-Label fields may be supressed in certain conditions. This is called Label Compaction.
+Label fields may be automatically supressed in certain conditions. This is called Label Compaction.
 
 Label Compaction only occurs in unselected labels. When a field is supressed, the remaining fields to the right will move left to the supressed field position. If all fields in a line are supressed, the next line is moved up to the supressed line position. Values being coordinated are exempted from Label Compaction.
 
