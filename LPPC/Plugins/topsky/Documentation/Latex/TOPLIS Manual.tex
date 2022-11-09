@@ -39,6 +39,10 @@
 
 \usepackage{float}
 
+\usepackage{sidecap}
+
+\usepackage{graphicx,capt-of}
+
 \newcounter{rowcounter}
 \newcommand{\nextrow}{\refstepcounter{rowcounter}}
 
@@ -53,6 +57,17 @@
 \newcommand{\winref}[1]{\textit{\titleref{#1}}}
 
 \newcommand{\image}[1]{\includegraphics[max height=10cm,max width=\textwidth]{#1}}
+
+\newcommand\capdimage[2]{
+\begin{center}
+\hspace{1em}%
+\vtop{%
+\centering
+\includegraphics{#1}%
+\captionof{figure}{#2}%
+}%
+\end{center}
+\ignorespaces}
 
 \newcolumntype{t}{>{\tt}c}
 
@@ -93,8 +108,9 @@ bookmarks=true,bookmarksopenlevel=2]{hyperref}
 %left=20mm,right=20mm,
 %bindingoffset=10mm, top=25mm,bottom=25mm}
 
-\OnehalfSpacing
+%\OnehalfSpacing
 %\linespread{1.3}
+\setlength{\parindent}{0pt}
 
 %%% CHAPTER'S STYLE
 %\chapterstyle{bianchi}
@@ -276,25 +292,25 @@ Sector States are used to control label construction, placement in lists, filter
   \begin{tabular}{|c|c|c|c|}
   \hline
   Sector                                  & NORL                 & CENL               & SULL                \\ \hline
-  Aircraft Position                       &                      & \usym{2708}        &                     \\ \hline
+  Aircraft Position                       & \usym{2708}          &         &                     \\ \hline
   Sector State                            & \stateref{Redundant} & \stateref{Assumed} & \stateref{Notified} \\ \hline
   \end{tabular}
-  \caption{Flight Plan transferred from NORL to CENL and less than 15 minutes to SULL}
+  \caption{Flight Plan transferred from NORL to CENL but still inside of NORL airspace}
   \label{tab:state-example-cenl}
 \end{table}
-  
+
 \begin{table}[H]
   \centering
   \begin{tabular}{|c|c|c|c|}
   \hline
-  Sector                                  & NORL                 & CENL               & SULL                \\ \hline
-  Aircraft Position                       &                      & \usym{2708}        &                     \\ \hline
-  Sector State                            & \stateref{Unconcerned} & \stateref{Redundant} & \stateref{Assumed} \\ \hline
+  Sector                                  & NORL                   & CENL               & SULL                \\ \hline
+  Aircraft Position                       &                        & \usym{2708}        &                     \\ \hline
+  Sector State                            & \stateref{Unconcerned} & \stateref{Assumed} & \stateref{Notified} \\ \hline
   \end{tabular}
-  \caption{Flight Plan transferred from CENL to SULL}
-  \label{tab:state-example-exit}
+  \caption{Flight Plan assumed by CENL and has left NORL airspace}
+  \label{tab:state-example-cenlentry}
 \end{table}
-
+  
 \begin{table}[H]
   \centering
   \begin{tabular}{|c|c|c|c|c|}
@@ -319,31 +335,35 @@ Sector States are used to control label construction, placement in lists, filter
   \label{tab:state-example-avoid}
 \end{table}
 
-\section{Aircraft position symbol}
+\section{Aircraft Position Symbol}
 
 The position symbol is drawn at the latest known position of the aircraft. The color of the symbol is the flight sector color for an unselected track and \colorref{color:Track Highlight} for a selected one.
 
-\begin{tabular}{l l l}
-\image{img/rps_fpasd.png}     & Flight plan track                   & Position is not based on surveillance data but calculated by EuroScope \\
-\image{img/rps_coast.png}     & Coasted track                       & No position updates in over 30 seconds, position no longer reliable \\
-\image{img/rps_psr.png}       & Primary radar track                 & \\
-\image{img/rps_sec.png}       & Secondary or combined radar track   & Uncontrolled flight\\
-\image{img/rps_psr+ssr.png}   & Secondary or combined radar track   & Controlled flight \\
-%                              & ADS-B only track                    & \\
-\end{tabular}
+\begin{center}
+  \begin{minipage}[b]{0.1\textwidth}\end{minipage}\hfill 
+  \begin{minipage}[b]{0.1\textwidth}\capdimage{img/rps_psr.png}{Primary radar track}\end{minipage}\hfill 
+  \begin{minipage}[b]{0.1\textwidth}\capdimage{img/rps_psr+ssr.png}{Controlled Secondary or Combined radar track}\end{minipage}\hfill  
+  \begin{minipage}[b]{0.1\textwidth}\capdimage{img/rps_sec.png}{Uncontrolled Secondary or Combined radar track}\end{minipage}\hfill 
+  \begin{minipage}[b]{0.1\textwidth}\capdimage{img/rps_adsb.png}{ADS-B only track}\end{minipage}\hfill
+  \begin{minipage}[b]{0.1\textwidth}\end{minipage}\hfill 
+\end{center}  
+
+If a surveillance track does not receive position updates in over 30 seconds it becomes a Coasted track, position is no longer reliable.
+
+\capdimage{img/rps_coast.png}{Coasted track}
+
+If a Coasted track does not receive position updates for long enough, or it has originated outside of surveillance coverage, it becomes a FPASD track. FPASD tracks are not based on surveillance data but estimated based on Flight Plan data.
+
+\capdimage{img/rps_fpasd.png}{FPASD track}
 
 An indication of an SPI (transponder ident) can be added to the secondary radar and ADS-B symbols. It draws a cross over the symbol and prints the text “SPI” above and to the right of the symbol:
 
-\begin{tabular}{l l}
-\image{img/rps_spi.png} & Secondary radar track without DAPs with Special Position Indication
-\end{tabular}
+\capdimage{img/rps_spi.png}{Secondary radar track without DAPs with Special Position Indication}  
 
-For other than the flight plan and coasted track symbols, a divergence alert will be drawn in case of a RAM
-or CLAM alert. This is a circle drawn around the symbol (will not be drawn if SPI is active):
+Except for the FPASD and Coasted tracks, a divergence alert will be drawn in case of a RAM
+or CLAM alert. This is a circle drawn around the symbol. Tracks with SPI active will not display this symbol.
 
-\begin{tabular}{l l}
-\image{img/rps_divalert.png}& Secondary radar track without DAPs with divergence alert
-\end{tabular}
+\capdimage{img/rps_divalert.png}{Uncontrolled Secondary radar track with divergence alert}
 
 \subsection{History dots}
 
@@ -353,9 +373,9 @@ The history dots show the previous positions of the track. The number of display
 
 The prediction line draws the predicted ground track of the aircraft, based on its current track and ground speed. It is a two-color line, starting with \colorref{color:Track Default} at the position symbol and then alternating with \colorref{color:Track Highlight} with every segment representing one minute of flying time. 
 
-The length of the prediction line can be changed for all tracks via the \winref{win:tcw}, or for a single track via the \winref{menu:prl}. The example below shows a selected track with 5 history dots and a 3-minute prediction line. Prediction lines are not displayed for flight plan tracks.
+The default lenght of the prediction line is 2 minutes, and can be changed for all tracks via the \winref{win:tcw}, or for a single track via the \winref{menu:prl}. Prediction lines are not displayed for flight plan tracks.
 
-\image{img/rps_predline+history_selected.png}
+\capdimage{img/rps_predline+history_selected.png}{Selected track with 5 history dots and a 3-minute prediction line}
 
 \section{Track Labels}
 \label{tlabel}
