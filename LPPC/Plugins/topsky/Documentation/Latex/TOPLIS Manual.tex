@@ -60,6 +60,10 @@
 
 \newcommand{\image}[1]{\includegraphics[max height=10cm,max width=\textwidth]{#1}}
 
+\newcommand{\drawtag}[3]{\node[draw,red,minimum height=0.55cm,minimum width=#1] at (#2) (#3) {}}
+
+\newcommand{\drawtagdesc}[4]{\node[draw,black,thick,text width=#1] at (#2) (#3) {#4};}
+
 \newcommand\capdimage[2]{
 \begin{center}
 \hspace{1em}%
@@ -2725,7 +2729,7 @@ The Uncoupled label is shown for radar tracks that aren’t correlated with a fl
 
 \capdimage{img/labelunc.png}{Selected Uncoupled Track}
 
-\subsection{Line 0}
+\subsection{Line 0 Construction}
 Line 0 is constructed solely of indicators and warnings. Line 0 is only displayed when at least one of these indicators is active.
 
 \begin{longtable}[c]{|l|p{8cm}|p{2cm}|}
@@ -2767,6 +2771,159 @@ Line 0 is constructed solely of indicators and warnings. Line 0 is only displaye
   \caption{Line 0 Indications}
   \label{tab:line0}\\
   \end{longtable}
+
+\subsection{Label Interaction}
+
+Label items may be interacted with either with a left or a right click.
+
+\subsubsection{Line 0}
+
+\subsubsection{Line 1}
+
+\begin{center}
+\begin{tikzpicture}
+  \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelsel.png}};
+  %0,0-10.4-2.6
+
+  \drawtag{2.3cm}{1.35,2.15}{callsign};
+  \drawtagdesc{4cm}{0,4}{lcallsign}{L: Open \winref{menu:cs} \\R: Open Extended Tag};
+  \draw[red,very thick] (callsign) -- (lcallsign);
+  
+  \drawtag{0.7cm}{3,2.15}{si};
+  \drawtagdesc{2cm}{3.5,4}{lsi}{L: Open SI Menu\\R: Toggle SI Frequency};
+  \draw[red,very thick] (si) -- (lsi);
+  
+  \drawtag{1.3cm}{4.3,2.15}{atyp};
+  \drawtagdesc{3cm}{6.5,4}{latyp}{L: Toggle ATYP highlight\\R: Toggle ATYP display};
+  \draw[red,very thick] (atyp) -- (latyp);
+
+  \drawtag{0.4cm}{5.35,2.15}{wtc};
+  \drawtagdesc{3cm}{10,4}{lwtc}{L: Toggle WTC highlight\\R: Toggle WTC display};
+  \draw[red,very thick] (wtc.south east) -- (lwtc);
+\end{tikzpicture}
+\end{center}
+
+\begin{Note}
+  Not shown in the above example: When \tagref{tag:PFREQ} is displayed R: Acknowledge PFREQ warning
+\end{Note}
+
+\subsubsection{Line 2}
+
+\begin{center}
+\begin{tikzpicture}
+  \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelsel.png}};
+  %0,0-10.4-2.6
+
+  \drawtag{1cm}{0.7,1.6}{afl};
+  \drawtagdesc{2cm}{-1.5,1.6}{lafl}{L:Open \winref{menu:afl}};
+  \draw[red,very thick] (afl) -- (lafl);
+
+  \drawtag{1cm}{2,1.6}{cfl};
+  \drawtagdesc{2cm}{-2,3.2}{lcfl}{L:Open \winref{menu:cfl}};
+  \draw[red,very thick] (cfl) -- (lcfl);
+
+  \drawtag{1.35cm}{3.35,1.6}{gs};
+  \drawtagdesc{2cm}{0.5,4}{lgs}{L: Toggle GS highlight\\R: Toggle GS display};
+  \draw[red,very thick] (gs) -- (lgs);
+
+  \drawtag{1.7cm}{5.1,1.6}{NPT};
+  \drawtagdesc{3cm}{3.5,4}{lnpt}{L: Open \winref{menu:wpt}\\R: Open \winref{win:dlcmw}};
+  \draw[red,very thick] (NPT) -- (lnpt);
+
+  \drawtag{1.35cm}{6.8,1.6}{ades};
+  \drawtagdesc{3cm}{7,4}{lades}{L: Open \winref{win:fpw}\\R: Toggle ADES display};
+  \draw[red,very thick] (ades) -- (lades);
+
+  \drawtag{1cm}{8.2,1.6}{rfl};
+  \drawtagdesc{3cm}{10.5,4}{lrfl}{L: Open \winref{menu:rfl}\\R: Open \winref{win:dlcmw}};
+  \draw[red,very thick] (rfl) -- (lrfl);
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{Line 3}
+
+\begin{center}
+\begin{tikzpicture}
+  \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelsel.png}};
+  %0,0-10.4-2.6
+
+  \drawtag{1cm}{0.7,1.05}{xfl};
+  \drawtagdesc{2cm}{-1.5,1.05}{lxfl}{L:Open XFL Menu};
+  \draw[red,very thick] (xfl) -- (lxfl);
+
+  \drawtag{1.35cm}{3.65,1.05}{ahdg};
+  \drawtagdesc{2cm}{0.5,4}{lahdg}{L: Open \winref{menu:ahdg}};
+  \draw[red,very thick] (ahdg) -- (lahdg);
+
+  \drawtag{1cm}{5,1.05}{asp};
+  \drawtagdesc{3cm}{3.5,4}{lasp}{L: Open \winref{menu:asp}\\R: Clear ASP value};
+  \draw[red,very thick] (asp) -- (lasp);
+
+  \drawtag{1cm}{6.25,1.05}{arc};
+  \drawtagdesc{3cm}{7,4}{larc}{L: Open \winref{menu:arc}};
+  \draw[red,very thick] (arc) -- (larc);
+
+  \drawtag{1.35cm}{7.7,1.05}{copn};
+  \drawtagdesc{3cm}{10.5,4}{lcopn}{L: Open \winref{menu:wpt}\\R: Toggle Flight Leg display};
+  \draw[red,very thick] (copn) -- (lcopn);
+
+  \drawtag{1.7cm}{9.4,1.05}{fcopx};
+  \drawtagdesc{2cm}{12,1.05}{lfcopx}{R: Toggle Flight Leg display};
+  \draw[red,very thick] (fcopx) -- (lfcopx);
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{Line 4}
+
+\begin{center}
+\begin{tikzpicture}
+  \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelsel.png}};
+  %0,0-10.4-2.6
+
+  \drawtag{1.35cm}{0.85,0.5}{dhdg};
+  \drawtag{0.7cm}{2.1,0.5}{drc};
+  \drawtagdesc{2cm}{1.5,-1}{ldap}{R: Toggle associated DAP display};
+  \draw[red,very thick] (dhdg) -- (ldap);
+  \draw[red,very thick] (drc) -- (ldap);
+  
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{Extended Label}
+
+The Extended label is constructed of extra elements when compared to a Standard Selected label, some of which are interactable. These extra elements that are interactable are detailed below. The remaining elements function the same as in the Standard Selected label.
+
+\begin{center}
+\begin{tikzpicture}
+  \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelext.png}};
+  %0,0-10.4-2.6
+
+  \drawtag{1cm}{7.65,3.7}{assr};
+  \drawtagdesc{4cm}{10,5.5}{lassr}{L: Open \winref{menu:assr} \\R: Send Squawk CPDLC message};
+  \draw[red,very thick] (assr) -- (lassr);
+  
+  \drawtag{0.7cm}{1.5,1.8}{atd};
+  \drawtagdesc{2cm}{-2,4}{latd}{L: Open \winref{menu:tm}};
+  \draw[red,very thick] (atd) -- (latd);
+  
+  \drawtag{1cm}{2.5,1.8}{ades};
+  \drawtagdesc{3cm}{1.5,5.5}{lades}{L: Open \winref{win:fpw}\\R: Toggle ADES display};
+  \draw[red,very thick] (ades) -- (lades);
+
+  \drawtag{0.7cm}{3.5,1.8}{wtc};
+  \drawtagdesc{3cm}{5.5,5.5}{lwtc}{L: Open \winref{win:fpw}};
+  \draw[red,very thick] (wtc) -- (lwtc);
+
+  \drawtag{1.7cm}{0.9,0.8}{opt};
+  \drawtagdesc{3cm}{-2,2}{lopt}{L: Edit OP\_TEXT};
+  \draw[red,very thick] (opt) -- (lopt);
+
+  \drawtag{1.7cm}{0.9,0.25}{opt2};
+  \drawtagdesc{2cm}{-2,0.6}{lopt2}{L: Edit OP\_TEXT2};
+  \draw[red,very thick] (opt2) -- (lopt2);
+\end{tikzpicture}
+\end{center}
+
 
 \subsection{Label Compaction}
 \label{tlabel:comp}
@@ -3294,7 +3451,7 @@ Clicking the point name will set the direct-to clearance without coordination
 \end{Warn}
 
 \subsection{CPDLC Emergency Acknowledgement Menu}
-\label{dleam}
+\label{menu:dleam}
 \image{img/dlmayday.png}
 
 When a CPDLC emergency message has been received, this menu is used to respond to it (if applicable), and then acknowledge the situation. When a reply is required, the menu button will read “ROGER”. Left-clicking on it will send the “ROGER” CPDLC message and close the menu. When opening the menu again (or when a reply was not required), the button reads “Ack”. Left-clicking on it will acknowledge the emergency. 
@@ -3302,13 +3459,13 @@ When a CPDLC emergency message has been received, this menu is used to respond t
 The menu is closed when the “ROGER”/“Ack” button is clicked or the cursor leaves the menu area.
 
 \subsection{CPDLC Pilot Late Acknowledgement Menu}
-\label{dlplam}
+\label{menu:dlplam}
 \image{img/dlplate.png}
 
 When there is no answer to a CPDLC uplink clearance, this menu can be used to resolve the situation. “Abort” discards the uplink and “Manual WILCO” simulates reception of a WILCO message.
 
 \subsection{Time Menu}
-\label{time}
+\label{menu:tm}
 \image{img/etd.png}
 
 The Time menu is used to set/change the time value for ATD, EOBT, ETD and SLOT fields.
@@ -3324,7 +3481,7 @@ SLOT    & Current field value if any (ATD if different from ETD), current time o
 The up/down arrows are used to change the value, “Ok” sets the time.
 
 \subsection{Departure Sequence Menu}
-\label{dqm}
+\label{menu:dqm}
 \image{img/dsq.png}
 
 The DSQ menu is used to select a specific departure sequence number to a flight. The list includes the possible numbers, and the current number is highlighted. Left-clicking on a number sets it, “Clear” removes the flight from the departure sequence.
