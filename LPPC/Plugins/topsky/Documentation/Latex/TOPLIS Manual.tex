@@ -2732,6 +2732,8 @@ The Uncoupled label is shown for radar tracks that aren’t correlated with a fl
 \subsection{Line 0 Construction}
 Line 0 is constructed solely of indicators and warnings. Line 0 is only displayed when at least one of these indicators is active.
 
+\capdimage{img/label01}{Example label with several line 0 alerts}
+
 \begin{longtable}[c]{|l|p{8cm}|p{2cm}|}
   \hline
   Example Indication               & Description                                                                                                                 & Label item        \\
@@ -2746,6 +2748,7 @@ Line 0 is constructed solely of indicators and warnings. Line 0 is only displaye
   \colortab{Assumed}CLAM           & Cleared Level Adherence Monitoring, same color as Track Label                                                               & \tagref{tag:ALRT}          \\ \hline
   \colortab{Assumed}RAM            & Route Adherence Monitoring, same color as Track Label                                                                       & \tagref{tag:ALRT}          \\ \hline
   \colortab{Warning}DUPE           & Duplicate SSR code                                                                                                          & \tagref{tag:ALRT}          \\ \hline
+  \colortab{Warning}/t             & Communication Type Indicator                                                                                                & \tagref{tag:COM}          \\ \hline
   \colortab{Urgency}W              & RVSM Not Equipped                                                                                                           & \tagref{tag:W}             \\ \hline
   \colortab{Information}W          & RVSM Exempt                                                                                                                 & \tagref{tag:W}             \\ \hline
   \colortab{Unknown}W              & RVSM Unknown                                                                                                                & \tagref{tag:W}             \\ \hline
@@ -2777,6 +2780,51 @@ Line 0 is constructed solely of indicators and warnings. Line 0 is only displaye
 Label items may be interacted with either with a left or a right click.
 
 \subsubsection{Line 0}
+
+\begin{center}
+\begin{tikzpicture}
+  \node[,anchor=west,draw,text=Assumed,fill=Flight Highlight,minimum height=0.55cm] at (0,0) () {\texttt{V \textcolor{Warning}{APW} \textcolor{Warning}{/t} \textcolor{Urgency}{W Y R} \textcolor{Information}{P} \textcolor{Warning}{M} \textcolor{Information}{$\bullet$} $\bullet$ \textcolor{Warning}{A} + I \textcolor{Warning}{S} \textcolor{Urgency}{EM} \textcolor{Proposition In}{F100} 3223 \textcolor{CPDLC Pilot Late}{CPDLC P LATE} \textcolor{Urgency}{[MAYDAY]} DIV}};
+
+  \drawtag{0.7cm}{0.95,0}{alrt};
+  \drawtagdesc{4cm}{2,-2}{lext}{R: Open Extended label};
+  \draw[red,very thick] (alrt) -- (lext);
+
+  \drawtag{0.6cm}{1.8,0}{com};
+  \drawtagdesc{4cm}{1.8,4}{lcom}{L: Open Communication Type Menu};
+  \draw[red,very thick] (com) -- (lcom);
+
+  \drawtag{0.4cm}{4.2,0}{m};
+  \drawtagdesc{4cm}{4.2,2}{lm}{L: Toggle Military Coordination Flag\\R: Toggle Flight Leg display};
+  \draw[red,very thick] (m) -- (lm);
+
+  \drawtag{0.4cm}{5.4,0}{a};
+  \draw[red,very thick] (a.south west) -- (lext);
+
+  \drawtag{0.27cm}{6.3,0}{i};
+  \draw[red,very thick] (i.south west) -- (lext);
+
+  \drawtag{1cm}{8.25,0}{coord};
+  \drawtagdesc{4cm}{6.5,-2}{lcoord}{R: Open \winref{menu:ttm}};
+  \draw[red,very thick] (coord) -- (lcoord);
+
+  \drawtag{1cm}{9.4,0}{nssr};
+  \drawtagdesc{4cm}{8.8,2}{lnssr}{L: Open \winref{menu:assr}\\R: Send CPDLC squawk message};
+  \draw[red,very thick] (nssr) -- (lnssr);
+
+  \drawtag{3cm}{11.5,0}{dlw};
+  \drawtagdesc{4cm}{11.5,-2}{ldlw}{L: CPDLC Warning functions\\R: Open \winref{win:dlcmw}};
+  \draw[red,very thick] (dlw) -- (ldlw);
+
+  \drawtag{2cm}{14.1,0}{dle};
+  \drawtagdesc{4cm}{13.5,2}{ldle}{L: Open \winref{menu:dleam}};
+  \draw[red,very thick] (dle) -- (ldle);
+
+  \drawtag{0.8cm}{15.5,0}{opt2};
+  \drawtagdesc{3.3cm}{14.15,4}{lopt2}{L: Edit OP\_TEXT2};
+  \draw[red,very thick] (opt2.north east) -- (lopt2.south east);
+
+\end{tikzpicture}
+\end{center}
 
 \subsubsection{Line 1}
 
@@ -2812,7 +2860,6 @@ Label items may be interacted with either with a left or a right click.
 \begin{center}
 \begin{tikzpicture}
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelsel.png}};
-  %0,0-10.4-2.6
 
   \drawtag{1cm}{0.7,1.6}{afl};
   \drawtagdesc{2cm}{-1.5,1.6}{lafl}{L:Open \winref{menu:afl}};
@@ -2845,7 +2892,6 @@ Label items may be interacted with either with a left or a right click.
 \begin{center}
 \begin{tikzpicture}
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelsel.png}};
-  %0,0-10.4-2.6
 
   \drawtag{1cm}{0.7,1.05}{xfl};
   \drawtagdesc{2cm}{-1.5,1.05}{lxfl}{L:Open XFL Menu};
@@ -2878,7 +2924,6 @@ Label items may be interacted with either with a left or a right click.
 \begin{center}
 \begin{tikzpicture}
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelsel.png}};
-  %0,0-10.4-2.6
 
   \drawtag{1.35cm}{0.85,0.5}{dhdg};
   \drawtag{0.7cm}{2.1,0.5}{drc};
@@ -2896,7 +2941,6 @@ The Extended label is constructed of extra elements when compared to a Standard 
 \begin{center}
 \begin{tikzpicture}
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelext.png}};
-  %0,0-10.4-2.6
 
   \drawtag{1cm}{7.65,3.7}{assr};
   \drawtagdesc{4cm}{10,5.5}{lassr}{L: Open \winref{menu:assr} \\R: Send Squawk CPDLC message};
@@ -2918,9 +2962,25 @@ The Extended label is constructed of extra elements when compared to a Standard 
   \drawtagdesc{3cm}{-2,2}{lopt}{L: Edit OP\_TEXT};
   \draw[red,very thick] (opt) -- (lopt);
 
-  \drawtag{1.7cm}{0.9,0.25}{opt2};
+  \drawtag{2cm}{1,0.25}{opt2};
   \drawtagdesc{2cm}{-2,0.6}{lopt2}{L: Edit OP\_TEXT2};
   \draw[red,very thick] (opt2) -- (lopt2);
+\end{tikzpicture}
+\end{center}
+
+\subsubsection{Uncoupled Label}
+
+\begin{center}
+\begin{tikzpicture}
+  \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.2\textwidth]{img/labelunc.png}};
+
+  \drawtag{1.2cm}{2.5,0.9}{callsign};
+  \drawtagdesc{3.8cm}{1.6,2.3}{lcallsign}{L: Open \winref{menu:cs}};
+  \draw[red,very thick] (callsign) -- (lcallsign);
+  
+  \drawtag{1.6cm}{0.95,0.9}{tssr};
+  \draw[red,very thick] (tssr) -- (lcallsign);
+
 \end{tikzpicture}
 \end{center}
 
@@ -2930,7 +2990,7 @@ The Extended label is constructed of extra elements when compared to a Standard 
 
 Label fields may be automatically supressed in certain conditions. This is called Label Compaction.
 
-Label Compaction only occurs in unselected labels. When a field is supressed, the remaining fields to the right will move left to the supressed field position. If all fields in a line are supressed, the next line is moved up to the supressed line position. Values being coordinated are exempted from Label Compaction.
+Label Compaction only occurs in unselected labels. When a field is supressecallsignd, the remaining fields to the right will move left to the supressed field position. If all fields in a line are supressed, the next line is moved up to the supressed line position. Values being coordinated are exempted from Label Compaction.
 
 The following Label Compaction rules are in place:
 
@@ -3497,19 +3557,21 @@ The departure sequence number is only stored locally, it is not sent to other co
 
 \textit{\titleref{menu:global}} Tools -> Flight Plan Lists -> Sector List…
 
-The Sector List is a EuroScope-style list containing all departed controlled (all IFR, VFR only if ASSUMED) aircraft in the following states:
+The Sector List contains all departed controlled aircraft in the following states:
 
 \begin{itemize}
-    \item Informed (if corresponding selection made in the Global menu)
-    \item Concerned * (if corresponding selection made in the Global menu)
+    \item Informed\footnotemark[1]
+    \item Concerned\footnotemark[1]\footnotemark[2]
     \item Coordinated
     \item Transfer to me initiated
     \item Assumed
     \item Transfer from me initiated
-    \item Redundant (if corresponding selection made in the Global menu)
+    \item Redundant\footnotemark[1]
 \end{itemize}
 
-* The display of concerned aircraft is limited to those entering the sector within 60 minutes by default.
+\footnotetext[1]{If corresponding selection made in the Global menu}
+
+\footnotetext[2]{The display of concerned aircraft is limited to those entering the sector within 60 minutes}
 
 \subsection{Load Factor List}
 \label{list:load}
