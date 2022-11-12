@@ -232,6 +232,12 @@ It also allows the exchange of more accurate departure information, particularly
 
 \subsection{Operation}
 
+The A-CDM plugin operates in a Master-Slave topology, in which the "CDM Master" will calculate the required data and distribute to the slaved CDM positions. Due to this, it is mandatory that the "Master" ATC is the one at the lowest position, such as Delivery.
+
+\begin{Warn}
+  IF THERE IS NO ACTIVE "CDM MASTER" THE PLUGIN WILL NOT BE OPERATIONAL
+\end{Warn}
+
 Each departure follows a timeline of events from the moment a Flight Plan is submitted until the flight is airborne. These events are called "Milestones".
 
 \medskip
