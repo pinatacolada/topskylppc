@@ -43,8 +43,12 @@
 
 \usepackage{graphicx,capt-of}
 
+\usepackage{biblatex}
+\addbibresource{refs.bib}
+
 \usepackage[scaled]{helvet}
 \renewcommand\familydefault{\sfdefault} 
+\renewcommand*{\arraystretch}{1.6}
 
 \newcounter{rowcounter}
 \newcommand{\nextrow}{\refstepcounter{rowcounter}}
@@ -205,615 +209,172 @@ Version 2.0
 \chapter{Introduction}
 
 \section{Disclaimer}
+
 Although - as its name suggests - the TopSky plugin is based on TOPLIS and the TopSky ATM system, it is in no way affiliated with or endorsed by Thales Group or NAV Portugal. Similarities between plugin features and the real system are not entirely coincidental, but the plugin can not be used as a real world training aid.
 
 \section{Foreword}
+
 EuroScope, a controller client developed by Gergely Csernák for the VATSIM network, was first released for public use in September 2007. One of the biggest changes in version 3.1 was the possibility for the user community to customize the program to an even higher degree than was possible before by writing their own plugins that can be used to alter the way information is presented and even create completely new functionality into the program. This allowed creating very detailed simulations of all kinds of ATC systems without making the main program overly complex. Version 3.2 expands on these possibilities, making it possible to create even better plugins.
 
-The TopSky plugin (a.k.a. The Plugin Formerly Known As “EUROCAT 2000 E”) started out as a very small project to create a couple of customized aircraft tag items, but as more information about the real system and the possibilities with the plugin development became available, it slowly grew to include an almost complete set of tag items, tag menus, graphical elements on the radar display and some additional functionality.
+The base TopSky plugin is developed by Juha Holopainen of VATSIM Scandinavia. The TopSky plugin (a.k.a. The Plugin Formerly Known As “EUROCAT 2000 E”) started out as a very small project to create a couple of customized aircraft tag items, but as more information about the real system and the possibilities with the plugin development became available, it slowly grew to include an almost complete set of tag items, tag menus, graphical elements on the radar display and some additional functionality.\cite{topskygen}
+
+The A-CDM plugin is developed by Roger Puig of VatSpa. CDM is an Euroscope plugin based on the real life CDM tool that allows us to improve the departure flows at airports.\cite{cdm}
+
+
 
 \chapter{Systems}
 
-\section{Sector States}
+\section{A-CDM}
 
-Depending on a set of conditions and relationships, each Flight Plan is defined as being in a certain state relative to each airspace volume. This is the so called Sector State. As a given flight progresses along its route it will go through a series of diferent Sector States relative to a given airspace volume. 
+Airport CDM (A-CDM) aims to improve the efficiency and resilience of airport operations by optimising the use of resources and improving the predictability of air traffic. 
 
-Track presentation coloring depends on the flight sector state:
+It also allows the exchange of more accurate departure information, particularly target take-off times, with the European ATFCM network, leading to improved en-route and sectoral planning.\cite{eurocontrol}
 
-\begin{center}
-\begin{tabular}{| p{2.5cm} p{2.5cm} p{8cm} |}
+\subsection{Operation}
+
+Each departure follows a timeline of events from the moment a Flight Plan is submitted until the flight is airborne. These events are called "Milestones".
+
+\medskip
+
+Every Flight Plan should have a meaningfull Estimated Off Block Time (EOBT, also known as ETD). The EOBT is the starting point for the A-CDM calculation from which A-CDM will set the Target Off Block Time (TOBT) equal to. If the ATC notices TOBT is not meaningfull (already in the past or too far into the future) it must be updated.
+
+\medskip
+
+A-CDM will calculate a Target Take Off Time (TTOT) based on the TOBT, current departure rate, known traffic and Flow Restrictions. Each TTOT is separated from other TTOTs by the ammount of time required in order to achieve the maximum defined departure rate. During moments of high traffic that, without a regulation, would exceed the airport departure rate capacity, the system will delay the TTOT in order to meet the required departure rate. 
+
+Based on the Departure Stand and Runway, the system calculates an Estimated Taxi Out Time (EXOT). Then, the system subtracts TTOT-EXOT. The result is the Target Start-up Time (TSAT). TSAT may never be earlier than TOBT. 
+
+\medskip
+
+Thus the difference between TSAT and TOBT is the delay the flight will experience on the ground.
+
+\medskip
+
+During times of extraordinary demand, a Calculated Take-Off Time (CTOT) may be issued for a certain flight. The A-CDM operation remains the same, with the exception that it will try to set TTOT to within the CTOT window.
+
+\subsection{A-CDM field descriptions}
+
+\begin{longtable}{|p{2.5cm}|p{2.5cm}|p{4.5cm}|p{4.5cm}|}
   \hline
-  \textbf{State}                                                  & \textbf{Color}               & \textbf{Condition}\\ \hline
-  Initial (Unconcerned) \nextrow \label{state:Unconcerned}        & \colortabex{Unconcerned}     & Track will not enter the active sector\\ \hline
-  Free (Unconcerned)\nextrow \label{state:Free}                   & \colortabex{Unconcerned}     & Track is not assumed or on-contact with anyone\\ \hline
-  Notified \nextrow \label{state:Notified}                        & \colortabex{Concerned}       & Track will enter the active sector (> 15 min)\\ \hline
-  Coordinated \nextrow \label{state:Coordinated}                  & \colortabex{Coordination}    & Track will enter the active sector (< 15 min)\\ \hline
-  Assumed \nextrow \label{state:Assumed}                          & \colortabex{Assumed}         & Track is assumed\\ \hline
-  On Contact \nextrow \label{state:On Contact}                    & \colortabex{Assumed}         & Track is on-contact with you. Flight is considered as Uncontrolled\\ \hline
-  Transfer Initiated                                              & \colortabex{Assumed}         & Track is being transferred to the next controller. \tagref{tag:CALLSIGN} and \tagref{tag:SI} are colored in \colorref{color:Redundant} color\\ \hline
-  Redundant \nextrow \label{state:Redundant}                      & \colortabex{Redundant}       & Track has been transferred to the next controller but is still inside the active sector\\ \hline
-  Informed                                                        & \colortabex{Informed 1}      & Track will not enter the active sector but is relevant to it\\ \hline
-\end{tabular}
-\end{center}
+  \textbf{Data field}             &  \textbf{Description}     &  \textbf{Comments}                    &  \textbf{Color} \\ \hline  \endhead
+  A \nextrow \label{tag:cdm:A}&  
+    Alert & 
+      Flashes A if the aircraft is waiting for an action&
+        \colorref{color:color5}\\ \hline
 
-Sector States are used to control label construction, placement in lists, filtering, coloring, Safety Net parameters and availability. For example, a Flight Plan in the \stateref{On Contact} state will not trigger an APW warning until already being inside a TSA and will be shown in the \winref{list:uncon}. The same flight but in the \stateref{Assumed} state will trigger the APW warning when less than 3nm of a TSA and will not be shown in the \winref{list:uncon}.
+  ASAT \nextrow \label{tag:cdm:ASAT}&  
+    Actual Start-Up Approval Time &
+        Automatically records time of Start-Up Approval when inputting a Start-Up, Pushback, Taxi or DEPA Ground Status &   
+          \colorref{color:color12} \\ \hline
 
-\stateref{Coordinated} tracks that have not departed yet are displayed as \stateref{Notified}.
-
-\subsection*{Examples}
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|c|c|c|c|c|}
-    \hline
-    Sector            & LEM                                                               & NORL               & CENL                & SULL                \\ \hline
-    Aircraft Position & \begin{tabular}[c]{@{}c@{}}\usym{2708}\\ >15 minutes\end{tabular} &                    &                     &                     \\ \hline
-    Sector State      & -                                                                 & \stateref{Notified} & \stateref{Notified} & \stateref{Notified} \\ \hline
-    \end{tabular}
-    \caption{Flight Plan still faraway inside LEM crossing NORL, CENL and SULL}
-    \label{tab:state-example-faraway}
-\end{table}
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|c|c|c|c|c|}
-  \hline
-  Sector            & LEM                                                               & NORL               & CENL                & SULL                \\ \hline
-  Aircraft Position & \begin{tabular}[c]{@{}c@{}}\usym{2708}\\ <15 minutes\end{tabular} &                    &                     &                     \\ \hline
-  Sector State      & -                                                                 & \stateref{Coordinated} & \stateref{Notified} & \stateref{Notified} \\ \hline
-  \end{tabular}
-  \caption{Flight Plan entering NORL in less than 15 minutes}
-  \label{tab:state-example-entry}
-\end{table}
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|c|c|c|c|}
-  \hline
-  Sector                                  & NORL               & CENL                & SULL                \\ \hline
-  Aircraft Position                       & \usym{2708}        &                     &                     \\ \hline
-  Sector State                            & \stateref{Assumed} & \stateref{Notified} & \stateref{Notified} \\ \hline
-  \end{tabular}
-  \caption{Flight Plan assumed by NORL}
-  \label{tab:state-example-assumed}
-\end{table}
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|c|c|c|c|}
-  \hline
-  Sector                                  & NORL               & CENL                & SULL                \\ \hline
-  Aircraft Position                       & \usym{2708}        &                     &                     \\ \hline
-  Sector State                            & \stateref{Assumed} & \stateref{Coordinated} & \stateref{Notified} \\ \hline
-  \end{tabular}
-  \caption{Flight Plan assumed by NORL and less than 15 minutes to CENL}
-  \label{tab:state-example-norlexit}
-\end{table}
-    
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|c|c|c|c|}
-  \hline
-  Sector                                  & NORL                 & CENL               & SULL                \\ \hline
-  Aircraft Position                       & \usym{2708}          &         &                     \\ \hline
-  Sector State                            & \stateref{Redundant} & \stateref{Assumed} & \stateref{Notified} \\ \hline
-  \end{tabular}
-  \caption{Flight Plan transferred from NORL to CENL but still inside of NORL airspace}
-  \label{tab:state-example-cenl}
-\end{table}
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|c|c|c|c|}
-  \hline
-  Sector                                  & NORL                   & CENL               & SULL                \\ \hline
-  Aircraft Position                       &                        & \usym{2708}        &                     \\ \hline
-  Sector State                            & \stateref{Unconcerned} & \stateref{Assumed} & \stateref{Notified} \\ \hline
-  \end{tabular}
-  \caption{Flight Plan assumed by CENL and has left NORL airspace}
-  \label{tab:state-example-cenlentry}
-\end{table}
+  ASRT \nextrow \label{tag:cdm:ASRT}&  
+    Actual Start-Up Request Time &
+        Used to record time of Ready or Start-Up Request &   
+          \colorref{color:color10} \\ \hline
   
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|c|c|c|c|c|}
-  \hline
-  Sector            & LEM                                                               & NORL               & CENL                & SULL                \\ \hline
-  Aircraft Position & \begin{tabular}[c]{@{}c@{}}\usym{2708}\\ >15 minutes\end{tabular} &                    &                     &                     \\ \hline
-  Sector State      & -                                                                 & \stateref{Unconcerned} & \stateref{Unconcerned} & \stateref{Notified} \\ \hline
-  \end{tabular}
-  \caption{Flight Plan in LEM and will only cross SULL}
-  \label{tab:state-example-sullonly}
-\end{table}
+  CTOT \nextrow \label{tag:cdm:CTOT}&  
+      Calculated Take Off Time&
+        Flow restrictions create CTOTs to planes afected with published MDIs from ECFMP &   
+            \colorref{color:color11} \\ \hline
 
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|c|c|c|c|c|}
-  \hline
-  Sector            & LEM   & NORL                    & CENL                    & SULL                  \\ \hline
-  Aircraft Position &       &                         &                         &                       \\ \hline
-  Sector State      & -     & \stateref{Unconcerned}  & \stateref{Unconcerned}  & \stateref{Unconcerned}\\ \hline
-  \end{tabular}
-  \caption{Flight Plan does not enter any sector}
-  \label{tab:state-example-avoid}
-\end{table}
+  E \nextrow \label{tag:cdm:E}&  
+    State & 
+      Depending on aircraft timming:
 
-\section{Safety Nets}
+      P: EOBT more than 35 minutes in the future
 
-\subsection{AIW (Airspace Infringement Warning)}
+      C: EOBT is less than 35min and TSAT not expired
 
-\subsection*{General}
+      I: TSAT expired &
+        \\ \hline            
 
-The AIW system warns if an uncontrolled aircraft is already inside or going to enter controlled airspace within a defined time. The system will only scan correlated radar tracks.
+            
+  EOBT \nextrow \label{tag:cdm:EOBT}&  
+    Estimated Off Block Time & 
+      Same time as Flight Plan ETD or EOBT &
+        \colorref{color:color8} 
 
-\subsection*{Alert display}
+        \smallskip
 
-An alert is shown by displaying the text “AIW” in the ALRT track label field. Note that MSAW and APW alerts will have priority over an AIW alert. The AFL item is also colored “AIW Intrusion” and a one-minute- long prediction line is displayed in “AIW Intrusion” color regardless of the prediction line settings.
+        If a new EOBT is submitted by the pilot, and EOBT is different than TOBT:
 
+        \colorref{color:color4} \\ \hline
 
-\subsection{APW (Area Proximity Warning)}
+  Ready \nextrow \label{tag:cdm:Ready}&  
+    Ready State Flag&
+        Used to signal Ready state. Setting Ready also records time of Ready or Start-Up Request &   
+          Ready:
+          
+          \colorref{color:color1} 
+          
+          \smallskip
 
-\subsection*{General}
+          Not Ready:
+          
+          \colorref{color:color7}\\ \hline
 
-The APW system warns if an aircraft is inside or about to enter an active area it shouldn’t be entering (for example active danger, restricted and TSA areas). The position of the aircraft is only predicted in 30 second intervals for performance reasons so very short future intrusions may not be noticed by the system. The areas are defined in an external text file and activated in the \textit{\titleref{win:amw}}.
+  TOBT \nextrow \label{tag:cdm:TOBT}&  
+    Target Off Block Time & 
+      On receipt of a new Flight Plan, TOBT is set to the same time as EOBT. 
 
-\subsection*{Alert display}
+      \smallskip
 
-An alert is shown by coloring the CALLSIGN item background (plugin drawn windows) or the text itself (elsewhere where TopSky can’t control the background color) in \colorref{color:Warning} color unless the CALLSIGN item has been manually highlighted, and also by displaying the text “APW” in the ALRT track label field (an MSAW alert will have priority over an APW alert there).
+      If the Flight Plan is updated with a new EOBT, TOBT will not change automatically. 
 
-\subsection{MSAW (Minimum Safe Altitude Warning)}
+      If required, TOBT may be manually updated using the Edit TOBT function &
+        From TOBT-35 to TOBT-5
 
-\subsection*{General}
+        \colorref{color:color2} 
 
-The MSAW system alerts when an aircraft is flying at an altitude below the minimum safe altitude. The minimum safe altitude data is read from an external file that has to be present for the system to give any warnings. There is an adjustable buffer value in the system that allows some altitude variation below the safe altitude to inhibit nuisance alerts for aircraft flying at the minimum safe altitude and not staying exactly at that altitude.
+        \smallskip
 
-\subsection*{Alert display}
+        From TOBT-5 to TOBT+5:
 
-An alert is shown by displaying the text “MSAW” in the ALRT track label field.
+        \colorref{color:color1} \\ \hline
 
-\subsection{STCA (Short Term Conflict Alert)}
+  TSAC \nextrow \label{tag:cdm:TSAC}&  
+    Target Start-Up Approval Communicated Time&
+      Used to note down Start-Up Approval Time &   
+       If inside TSAT window:
 
-\subsection*{General}
+       \colorref{color:color1}
 
-The STCA system is designed to alert the controller of a possible or actual loss of separation between aircraft. The alert is given a specified time (for example 90 seconds) before a loss of separation is predicted to happen, but it is dependent on the relative positions and movement of the aircraft. The alert will not be shown if both aircraft have STCA alerting inhibited (see the \textit{\titleref{win:snsw}}), are inside exclusion areas for parallel approaches, or when either aircraft is inside an active STCA inhibit area.
+       If outside TSAT window:
 
-In the vertical plane there is an option to always assume that an aircraft will level off at its cleared level. This will reduce the number of nuisance alerts caused by climbing and descending aircraft in busy airspace, but will delay the alert in case an aircraft continues through its cleared level. The alert will then be given only after the failure to level off is seen by the system.
+       \colorref{color:color4} \\ \hline
 
-\subsection*{Alert display}
+  TSAT \nextrow \label{tag:cdm:TSAT}&  
+    Target Startup Time & 
+      TTOT - EXOT &   
+        From EOBT-35 to TSAT-5:
+        
+        \colorref{color:color2}
 
-An alert is shown by coloring the CALLSIGN item background (plugin drawn windows) or the text itself (elsewhere where TopSky can’t control the background color) in \colorref{color:Urgency} color. A one-minute-long prediction line is displayed in \colorref{color:Urgency} color regardless of the prediction line settings. 
+        \smallskip
 
-In addition to the above, the radar position symbol and history dots are displayed in \colorref{color:Urgency} color.
+        From TSAT-5 to TSAT+5:
 
-An aural alert can also be generated if the corresponding plugin setting is enabled.
+        \colorref{color:color1}
 
-\section{Monitoring Aids}
+        \smallskip
 
-\subsection{CLAM (Cleared Level Adherence Monitoring)}
+        From TSAT+5 to TSAT+6:
 
-\subsection*{General}
+        \colorref{color:color5}
 
-The CLAM system warns if an aircraft is not maintaining its cleared level and its vertical rate is not towards the cleared level. The alert is inhibited when the cleared level is lower than a defined value (100ft), and for aircraft in level flight, for a specified time (60 sec) after a new cleared level is set.
+        \smallskip
 
-\subsection*{Alert Display}
+        After TSAT+6:
+        
+        \colorref{color:color2}\\ \hline
 
-An alert is shown by displaying a circle around the aircraft position symbol and the text “CLAM” in the ALRT track label field. Note that MSAW, APW and AIW alerts will have priority over a CLAM alert in the track label.
+  TTOT \nextrow \label{tag:cdm:TTOT}&  
+    Target Take Off Time &
+      &   
+        \colorref{color:color9}\\ \hline
 
-\subsection{RAM (Route Adherence Monitoring)}
+\end{longtable}
 
-\subsection*{General}
-
-The RAM system warns if an aircraft is deviating from its route by more than a defined distance (2nm). The alert is inhibited specific distances from the departure (30nm) and destination (30nm), and a larger cross-track error (5nm) is allowed near waypoints where the route makes a turn (over 10° course change).
-
-For aircraft on a direct-to clearance, the alert is given if the difference between the aircraft’s track and the direct track to the cleared point exceeds a set value (5°). After a direct-to clearance is given, the alert is inhibited for a specified time (60 sec) or until the aircraft’s track is towards the point, whichever happens first.
-
-\subsection*{Alert Display}
-
-An alert is shown by displaying a circle around the aircraft position symbol and the text “RAM” in the ALRT track label field. Note that an MSAW, APW, AIW and CLAM alerts will have priority over a RAM alert in the track label.
-
-\section{Flight Plan Conflict Probe}
-
-\subsection{MTCD (Medium Term Conflict Detection)}
-
-\subsection*{General}
-
-The MTCD system is a tool that enables the controller to predict possible future conflicts between aircraft. For performance reasons the maximum selectable look-ahead time (prediction time) is limited to 40 minutes and the separation distance that triggers the alert (prediction distance) to 20 nm. They can be set to any lower value, the defaults being 20 minutes and 8 nm.
-In the lateral plane the system works by checking the aircraft’s predicted route up to the defined prediction time and calculating if the separation with other aircraft will be less than the defined prediction distance.
-In the vertical plane, TopSky can be set up to use either of the two following setups (example predicted vertical path of a climbing track in black color, relevant levels in grey):
-
-\image{img/mtcdv.png}
-
-\begin{itemize}
-    \item Conflicts (area with red shading)
-    \begin{itemize}
-        \item detected within a specified buffer (default 4000ft) around the predicted vertical path of the aircraft between AFL and CFL/PEL
-        \item current clearances may lead to a loss of separation
-    \end{itemize}
-    \item Conflict risks (area with yellow shading)
-    \begin{itemize}
-        \item detected within the same buffer, but outside of the AFL-CFL/PEL level range
-        \item current clearances will not lead to a loss of separation, but clearing one of the tracks to another level may turn the risk into a conflict
-    \end{itemize}
-    \item Potential predicted conflicts (area with light red shading)
-    \begin{itemize}
-        \item detected for tracks with equal CFL/PEL values, after the level is calculated to have been reached, when the predicted path contains further climb/descent
-        \item at least one of the tracks must be in the assumed sector state
-        \item current clearances may lead to a loss of separation if further climb/descent is not given
-    \end{itemize}
-    \item Potential risks of conflict (area with light yellow shading)
-    \begin{itemize}
-        \item detected within a larger vertical buffer (default 10000ft) but within the minimum and maximum levels of the predicted vertical path
-    \end{itemize}
-    \item Potential conflicts (area with light blue shading)
-    \begin{itemize}
-        \item detected within the larger vertical buffer, outside of the minimum and maximum levels of the predicted vertical path
-    \end{itemize}
-\end{itemize}
-
-Optionally, the detection of potential predicted conflicts and potential risks of conflict can be disabled, in which case they will be converted to potential conflicts.
-
-For the predictions to be accurate, it’s very important to keep the CFL and the aircraft’s route updated at all times. MTCD can be disabled for aircraft that have an assigned heading or a RAM warning, as in those cases the system can’t predict the aircraft’s future positions. If it is enabled for them, the system assumes that the aircraft continues on its present track and ground speed for a specified time and stops the prediction there. The system is always disabled for flight plan tracks with an assigned heading.
-
-\subsection*{Conflict and risk display}
-
-If there is a conflict or potential predicted conflict for the aircraft within the set warning parameters (can be set to warn for risks as well), the following indications are shown. The default values are 10 minutes to loss of separation with a 7nm separation minimum.
-
-MTCD track label field Either “•” in \colorref{color:Urgency} color or “MTCD” in \colorref{color:Warning} color
-
-The MTCD conflicts are also displayed in the \textit{\titleref{win:card}}).
-
-\subsection{SAP (Segregated Area Probe)}
-
-\subsection*{General}
-
-Much like the MTCD system predicts future conflicts between aircraft, the SAP system predicts future intrusions into active areas. The system uses the same look-ahead time as the MTCD system. The future position predictions are done at one-minute intervals which means a very short intrusion into an active area may not be noticed by the system. The classification into risks and conflicts is the same as in MTCD: a conflict means that the current clearance may lead to the aircraft entering an active area, whereas a risk means that the current clearance will not lead to that but clearing the aircraft to its XFL or some other level beyond the current CFL may do so.
-
-As with MTCD, keeping the CFL and the aircraft’s route updated is important for the system’s operation. Like MTCD, SAP can be disabled for any aircraft that has an assigned heading or a RAM warning. If enabled, the prediction logic is the same as in the MTCD case. SAP is disabled for non-altitude reporting traffic that doesn’t have a manually set AFL.
-
-\subsection*{Conflict and Risk display on the track label}
-
-A conflict is shown by displaying the Military coordination indicator (“M”). The indicator can be set to warn for risks as well. Note that once the indicator is clicked and changes to inactive state, the system will not give further warnings for that aircraft as long as the indicator is in the inactive state. Click on the inactive indicator to re-arm the system once the aircraft has passed all the areas for which crossing clearance was given.
-
-SAP conflicts (optionally also risks) are also shown in the \textit{\titleref{win:sap}}).
-
-\section{Datalink}
-
-TopSky uses \textit{\href{http://www.hoppie.nl/acars}{Hoppie’s ACARS network}}. A separate password (logon code) is needed, and it can be \textit{\href{https://www.hoppie.nl/acars/system/register.html}{requested from that site}}. 
-
-TopSky supports Departure Clearance (DCL) and Controller-Pilot Data Link Communications (CPDLC).
-
-To start using the data link functions, first connect to the VATSIM network. Then connect to the Hoppie network:
-
-\begin{itemize}
-  \item Open the \textit{\titleref{win:dls}}
-  \item Enter/check the login callsign
-  \item Enter your personal logon code
-  \item Select whether to provide CPDLC or DCL/PDC services or both
-  \item Left-click on the “Connect” button
-\end{itemize}
-
-The “Connect” button will change to “Online” with a green background. Wait at least 10 seconds to see if the connection is successful. Error messages regarding the connection will be shown in the \textit{\titleref{win:pqw}}. 
-
-\begin{Warn}
-  Attempting to connect with a CPDLC login callsign that is already in use will not fail instantly, and may take up to 10 seconds for the error message to be added to the \textit{\titleref{win:pqw}}
-\end{Warn}
-
-The Hoppie logon code expires after 120 days of inactivity. If that happens, the connection will fail and a new logon code has to be requested.
-
-If the connection is lost, an error message dialog will be displayed in the center of the radar screen. Note that if multiple EuroScope instances are used, the proxy instances will not be able to access the CPDLC message windows or change the network connection status.
-
-TopSky may sometimes fail to parse the message contents correctly. The longer the message, the more likely it is that the parsing will go wrong. When in doubt, open the message in the \textit{\titleref{win:dlcmw}}.
-
-The example track labels do not represent any specific setup and are only meant to highlight the items specific to each function. In the examples, aircraft ABC123 is assumed by you, the next controller is “IDA”, the aircraft is climbing through FL100, and its cleared level is FL180. This is the label before any messages arrive:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Assumed} ABC123} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & & \\         
-\end{tabular}
-
-When the aircraft requests to start a CPDLC connection, it sends a “REQUEST LOGON” message. The message is displayed in the \textit{\titleref{win:dlcmw}} and the Callsign field gets blinking square brackets around it (not on proxy ES instances). TopSky automatically denies requests for aircraft not entering your sector. To approve the request, use the “Start CPDLC” button in the \textit{\titleref{menu:cs}}. To deny the request, left-click on the message in the \textit{\titleref{win:dlcmw}} and select “UNABLE”. It is also possible to accept if necessary, but the \textit{\titleref{menu:cs}} is the primary way to do it.
-
-When the request has been accepted, the Callsign field will get steady square brackets around it. This indicates that the aircraft is CPDLC connected and available to exchange CPDLC messages with.
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & & \\         
-\end{tabular}
-
-To terminate the CPDLC connection of an aircraft, use the “End CPDLC” button in the \textit{\titleref{menu:cs}}.
-
-\begin{Note}
-  While it is possible to answer any message in the \textit{\titleref{win:dlcmw}} using the “Manual Reply” option, the track label menus should always be used to answer correctly recognized messages, as using the manual reply method will not update the track label values.
-\end{Note}
-
-\subsection{Departure Clearance (DCL)}
-
-ARINC-623 DCL is a service used in Europe and many other parts of the World. It is a direct ATC-to-pilot data link communication over the ACARS network.
-
-The departure clearance functionality is built into the Departure List. A received clearance request is displayed in the list, and a clearance can be sent by opening the \textit{\titleref{win:dlpdcw}} via left clicking the RWY or SID fields of the Departure List.
-
-A DCL follows a chronological sequence of events that must be completed in order to communicate a clearance.
-
-\subsubsection{Departure Clearance Request (RCD)}
-
-The aircraft sends a clearance request message (RCD). The message is also shown in the \textit{\titleref{win:dlcmw}}:
-
-\begin{quote}
-  REQUEST PREDEP CLEARANCE ABC123 A320 TO ESSA AT LPPT STAND 221 ATIS PAPA
-\end{quote}
-
-\subsubsection{Flight System Message (FSM)}
-
-If the request is correctly formatted, TopSky will automatically send a flight system message (FSM) as a reply. Its content depends on whether all the requirements for a DCL are met (flight plan found, departure airport offers data link clearances, etc.). If so, the following reply message is sent to the aircraft:
-
-\begin{quote}
-  DEPART MESSAGE STATUS FSM 1312 221113 LPPT ABC123 RCD RECEIVED REQUEST BEING PROCESSED STANDBY 
-\end{quote}
-
-The List CLR tag item will show a “R” text in yellow (red if the request contained remarks text after the ATIS indicator. Check the message in the \textit{\titleref{win:dlcmw}}). The text will start to blink two minutes before a timeout occurs if a clearance hasn’t been sent.
-
-If a clearance is not sent before the timeout occurs, the data link clearance request is automatically rejected and a message is sent to the aircraft to revert to voice procedures.
-
-\begin{quote}
-  RCD REJECTED REVERT TO VOICE PROCEDURES
-\end{quote}
-
-\subsubsection{Departure Clearance Message (CLD)}
-
-The clearance is sent using the \textit{\titleref{win:dlpdcw}}), opened by left clicking the RWY or SID fields of the Departure List. 
-
-\begin{Note}
-  Due to system limitations, the current ATIS letter should be manually added to the RMK field of the DCL, in the "ATIS: X" format.
-\end{Note}
-
-The clearance is sent using the “Send DCL” button. “Voice” rejects the data link clearance request and sends a message to the aircraft to revert to voice procedures. 
-
-\begin{quote}
-  LPPT PDC 001 CLD 1314 221113 LPPT PDC 001 ABC123 CLRD TO ESSA OFF 02 VIA IXIDA5N SQUAWK 3251 ATIS:X QNH 1012
-\end{quote}
-
-Once the clearance is sent, the List CLR item will change to “A”, and will start to blink if there is no reply from the aircraft two minutes before a timeout occurs.
-
-If there is still no answer from the aircraft when the timeout occurs, the data link clearance is automatically rejected and a message is sent to the aircraft informing it that the received clearance has been cancelled.
-
-\begin{quote}
-  ACK NOT RECEIVED CLEARANCE CANCELLED REVERT TO VOICE PROCEDURES
-\end{quote}
-
-\subsubsection{Departure Clearance Readback (CDA)}
-
-A clearance can be answered to with either “WILCO” to accept it or “UNABLE” to reject it.
-
-\subsubsection{Flight System Message (FSM)}
-
-Once a reply is received, the List CLR item changes to a filled box (for WILCO) or clears it (for UNABLE). A message is automatically sent to the aircraft.
-
-\begin{quote}
-  ATC REQUEST STATUS FSM 1317 221113 LPPT ABC123 CDA RECEIVED CLEARANCE CONFIRMED 
-\end{quote}
-
-If an UNABLE reply is received, clearance must then be negotiated and delivered by voice. A message is automatically sent to the aircraft.
-
-\begin{quote}
-  CONTACT ATC BY VOICE REFUSE NOT SUPPORTED BY DATALINK
-\end{quote}
-
-\subsubsection{Abnormal operations}
-
-Most failure cases result from the message not being correctly formatted, and TopSky failing to recognize it correctly. Regardless of whether TopSky recognizes the message as belonging to a departure clearance sequence, it will be put into the \textit{\titleref{win:dlcmw}}. In case the system fails, revert to voice communications.
-
-\subsection{Controller-Pilot Data Link Communications (CPDLC)}
-\label{cpdlc}
-
-CPDLC is a means of communication between controller and pilot, using data link for ATC communications, and with the extra advantage of displaying data on the track labels and flight lists as well.
-
-As the messages take significant amount of time to get through (receiving a reply to a clearance can take anything from seconds to a couple of minutes), using CPDLC should be limited to situations that are not time-critical. For this reason, it is mostly used in upper airspace area control sectors.
-
-The messages are grouped to dialogs, with an opening message and subsequent replies. Some messages do not need a reply, while for others a specific reply is expected. The available replies are set automatically, so only the correct type of reply can be sent.
-
-\subsubsection{Allowed message types}
-\label{cpdlc:amt}
-
-TopSky allows for the following types of messages:
-
-\begin{tabular}{l l}
-  Uplink                      & Downlink\\
-  Level clearance             & Level request\\
-  Heading clearance           & Heading request\\
-  Direct-to clearance         & Direct-to request\\
-  Speed clearance             & Speed request\\
-  Squawk code assignment      & Urgency (MAYDAY/PAN/SQ7500)\\
-  Squawk ident instruction    & Free text\\
-  Voice contact instruction   & \\
-  Free text                   & \\
-\end{tabular}
-
-\subsubsection{Non-allowed message types}
-\label{cpdlc:nmt}
-
-TopSky does not allow the following downlink message types. They will be automatically closed and a reply sent informing that the system does not support the message type:
-
-\begin{itemize}
-  \item Any requests containing “When can we expect”, “At pilots discretion” or “Own separation”
-  \item Level requests for a cruise climb, block level, or any level request tied to a position or time
-  \item Lateral requests for an offset, weather deviation or ground track
-  \item Speed requests to maintain a speed range
-  \item Voice contact requests
-  \item Requests for a procedure name and/or type
-  \item Position reports
-\end{itemize}
-
-Note that a non-allowed message type can be classified as “free text” by TopSky if the message parser doesn’t recognize it as a non-allowed type. In this case the automatic reply will not be sent and the message may be left waiting for an answer if an answer is required.
-
-\subsubsection{Uplink clearance sequence}
-\label{cpdlc:ucs}
-
-In this example a level clearance is used. The clearance is sent using the \textit{\titleref{menu:cfl}}. To send the clearance using CPDLC, check that the “CPDLC” option is selected. Depending on the aircraft’s altitude, by default it may be selected or deselected. Send the clearance by selecting a level value.
-
-In this case FL200 was selected, and the CPDLC message “CLIMB TO FL200” was sent to the aircraft. The uplinked value is shown in brackets and in \colorref{color:CPDLC UM Clearance} color:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{CPDLC UM Clearance} [200]} & & \\         
-\end{tabular}
-
-The aircraft has responded with “STANDBY”. The uplinked value changes to \colorref{color:CPDLC Standby} color, and a warning is inserted on line 0 of the label. The warning can be acknowledged by left-clicking on it:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Standby} CFL SBY} & & \\
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{CPDLC Standby} [200]} & & \\         
-\end{tabular}
-
-The aircraft then eventually answers with “WILCO”. The CFL value is updated accordingly and the label field colors return to normal:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 200} & & \\         
-\end{tabular}
-
-If the aircraft answers with “UNABLE”, a warning is inserted in line 0 of the label:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Standby} CFL UNA} & & \\
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{CPDLC Standby} [200+]} & & \\         
-\end{tabular}
-
-The “+” after the level indicates that there is a reason in the answer message, for example “DUE TO PERFORMANCE”. The reason given is only accessible from the \textit{\titleref{win:dlcmw}}.
-
-Left-clicking on the warning acknowledges it and the original CFL value is again shown in the label:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & & \\         
-\end{tabular}
-
-\subsubsection{Downlink request sequence}
-\label{cpdlc:drs}
-
-This example shows a level request.
-
-The aircraft has sent a level request for FL200. The value is shown in the PRFL (Pilot Requested Level) field in brackets and in \colorref{color:CPDLC DM Request} color:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & {\color{CPDLC DM Request} [200]} & \\         
-\end{tabular}
-
-The responses to a level request are sent using the \textit{\titleref{menu:cfl}}, which offers the possibilities to respond with “STANDBY”, “UNABLE” or a level clearance. In the last case the sequence then changes to an \textit{\titleref{cpdlc:ucs}}.
-
-\subsubsection{Abnormal operations}
-\label{cpdlc:abn}
-
-As with DCL messages, the most likely failure scenario is TopSky misinterpreting the contents of a received message, which can be verified on the \textit{\titleref{win:dlcmw}}. Some other failure scenarios are presented below.
-
-If TopSky has temporarily lost contact with the CPDLC server, “CPDLC COMM FAIL” will be inserted in line 0 of the labels of all CPDLC connected aircraft in \colorref{color:CPDLC Failed} color:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Standby} CPDLC COMM FAIL} & & \\
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & & \\         
-\end{tabular}
-
-In case the server connection is not re-established within a certain time, the connection will be automatically closed and a warning message box will be presented. A new connection can be attempted at any time from the \textit{\titleref{win:dls}}.
-
-During temporary connection issues and also when the connection is automatically closed, the “AGCS” system label in the \textit{\titleref{win:geninfo}} will be displayed with \colorref{color:Warning} color until a connection is re-established.
-
-If the CPDLC connection is terminated by the pilot, a “CPDLC P ABT” warning is inserted in line 0 of the label in \colorref{color:CPDLC Failed} color:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Standby} CPDLC P ABT} & & \\
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & & \\         
-\end{tabular}
-
-Left-clicking on the warning acknowledges it.
-
-If an uplink clearance is not answered in time, a “<message type> P LATE” warning will be inserted in line 0 of the label in \colorref{color:CPDLC Pilot Late} color:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Pilot Late} CPDLC P LATE} & & \\
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & & \\         
-  {\color{CPDLC Pilot Late} [200]} & & \\         
-\end{tabular}
-
-Left-clicking on it opens a menu with options to either abort the clearance or manually mark it as aswered with “WILCO”. Manually marking should be done only after a satisfactory readback is obtained by voice.
-
-If sending an uplink clearance failed, a “<message type> ERR” warning will be inserted in line 0 of the label in \colorref{color:CPDLC Failed} color:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Failed} CPDLC ERR} & & \\
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & & \\         
-  {\color{CPDLC Failed} [200]} & & \\         
-\end{tabular}
-
-Left-clicking acknowledges the warning and aborts the clearance, displaying the previous value in the label.
-
-If an uplink clearance is sent successfully but you are not the Current Data Unit in the aircraft’s CPDLC system, a “<message type> NOT CDA” warning will be inserted in line 0 of the label in \colorref{color:CPDLC Failed}:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Failed} CPDLC NOT CDA} & & \\
-  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
-  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
-  {\color{Assumed} 180} & & \\         
-  {\color{CPDLC Failed} [200]} & & \\         
-\end{tabular}
-
-Left-clicking acknowledges the warning and aborts the clearance, displaying the previous value in the label.
 \section{Coordination}
 
 TopSky provides various ways to coordinate information between controllers.
@@ -1182,9 +743,421 @@ It is possible to coordinate more than one value, either before or after the pre
 
 For example, if you send an RTI with AHDG 360 (as in the above example) and then send another with ASP 300 (either immediately or after the first coordination is answered), the label field on line 0 will only show the ASP proposal. When opening the Tactical Transfer menu, all the proposals and accepted values are shown. If more than one proposal is active, clicking on “Accept” or “Reject” will send the same answer to all of them. Therefore, it is recommended to wait for an answer until sending another proposal unless the intention of the proposal is to get “all or nothing”.
 
+\subsection{Data stored in the flight strip annotation boxes}
+
+TopSky stores some data in the flight strip annotation boxes (the group of nine boxes in three columns on the right side of the strip). This enables you to send this data to the next controller, or any other controller by manually pushing the strip. In addition, TopSky automatically pushes the strip when a handoff proposal (HOP) is sent.
+
+TopSky needs to be able to use four of the nine boxes for its functions. They are the boxes in the bottom row as well as the right-most box in the center row, marked with X’s in the picture below. Do not manually edit those boxes or use them to store any other data. The other boxes, marked by minus signs, are currently not used by TopSky in any way.
+
+\image{img/strip.png}
+
+\section{Datalink}
+
+TopSky uses \textit{\href{http://www.hoppie.nl/acars}{Hoppie’s ACARS network}}. A separate password (logon code) is needed, and it can be \textit{\href{https://www.hoppie.nl/acars/system/register.html}{requested from that site}}. 
+
+TopSky supports Departure Clearance (DCL) and Controller-Pilot Data Link Communications (CPDLC).
+
+To start using the data link functions, first connect to the VATSIM network. Then connect to the Hoppie network:
+
+\begin{itemize}
+  \item Open the \textit{\titleref{win:dls}}
+  \item Enter/check the login callsign
+  \item Enter your personal logon code
+  \item Select whether to provide CPDLC or DCL/PDC services or both
+  \item Left-click on the “Connect” button
+\end{itemize}
+
+The “Connect” button will change to “Online” with a green background. Wait at least 10 seconds to see if the connection is successful. Error messages regarding the connection will be shown in the \textit{\titleref{win:pqw}}. 
+
+\begin{Warn}
+  Attempting to connect with a CPDLC login callsign that is already in use will not fail instantly, and may take up to 10 seconds for the error message to be added to the \textit{\titleref{win:pqw}}
+\end{Warn}
+
+The Hoppie logon code expires after 120 days of inactivity. If that happens, the connection will fail and a new logon code has to be requested.
+
+If the connection is lost, an error message dialog will be displayed in the center of the radar screen. Note that if multiple EuroScope instances are used, the proxy instances will not be able to access the CPDLC message windows or change the network connection status.
+
+TopSky may sometimes fail to parse the message contents correctly. The longer the message, the more likely it is that the parsing will go wrong. When in doubt, open the message in the \textit{\titleref{win:dlcmw}}.
+
+The example track labels do not represent any specific setup and are only meant to highlight the items specific to each function. In the examples, aircraft ABC123 is assumed by you, the next controller is “IDA”, the aircraft is climbing through FL100, and its cleared level is FL180. This is the label before any messages arrive:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Assumed} ABC123} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & & \\         
+\end{tabular}
+
+When the aircraft requests to start a CPDLC connection, it sends a “REQUEST LOGON” message. The message is displayed in the \textit{\titleref{win:dlcmw}} and the Callsign field gets blinking square brackets around it (not on proxy ES instances). TopSky automatically denies requests for aircraft not entering your sector. To approve the request, use the “Start CPDLC” button in the \textit{\titleref{menu:cs}}. To deny the request, left-click on the message in the \textit{\titleref{win:dlcmw}} and select “UNABLE”. It is also possible to accept if necessary, but the \textit{\titleref{menu:cs}} is the primary way to do it.
+
+When the request has been accepted, the Callsign field will get steady square brackets around it. This indicates that the aircraft is CPDLC connected and available to exchange CPDLC messages with.
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & & \\         
+\end{tabular}
+
+To terminate the CPDLC connection of an aircraft, use the “End CPDLC” button in the \textit{\titleref{menu:cs}}.
+
+\begin{Note}
+  While it is possible to answer any message in the \textit{\titleref{win:dlcmw}} using the “Manual Reply” option, the track label menus should always be used to answer correctly recognized messages, as using the manual reply method will not update the track label values.
+\end{Note}
+
+\subsection{Departure Clearance (DCL)}
+
+ARINC-623 DCL is a service used in Europe and many other parts of the World. It is a direct ATC-to-pilot data link communication over the ACARS network.
+
+The departure clearance functionality is built into the Departure List. A received clearance request is displayed in the list, and a clearance can be sent by opening the \textit{\titleref{win:dlpdcw}} via left clicking the RWY or SID fields of the Departure List.
+
+A DCL follows a chronological sequence of events that must be completed in order to communicate a clearance.
+
+\subsubsection{Departure Clearance Request (RCD)}
+
+The aircraft sends a clearance request message (RCD). The message is also shown in the \textit{\titleref{win:dlcmw}}:
+
+\begin{quote}
+  REQUEST PREDEP CLEARANCE ABC123 A320 TO ESSA AT LPPT STAND 221 ATIS PAPA
+\end{quote}
+
+\subsubsection{Flight System Message (FSM)}
+
+If the request is correctly formatted, TopSky will automatically send a flight system message (FSM) as a reply. Its content depends on whether all the requirements for a DCL are met (flight plan found, departure airport offers data link clearances, etc.). If so, the following reply message is sent to the aircraft:
+
+\begin{quote}
+  DEPART MESSAGE STATUS FSM 1312 221113 LPPT ABC123 RCD RECEIVED REQUEST BEING PROCESSED STANDBY 
+\end{quote}
+
+The List CLR tag item will show a “R” text in yellow (red if the request contained remarks text after the ATIS indicator. Check the message in the \textit{\titleref{win:dlcmw}}). The text will start to blink two minutes before a timeout occurs if a clearance hasn’t been sent.
+
+If a clearance is not sent before the timeout occurs, the data link clearance request is automatically rejected and a message is sent to the aircraft to revert to voice procedures.
+
+\begin{quote}
+  RCD REJECTED REVERT TO VOICE PROCEDURES
+\end{quote}
+
+\subsubsection{Departure Clearance Message (CLD)}
+
+The clearance is sent using the \textit{\titleref{win:dlpdcw}}), opened by left clicking the RWY or SID fields of the Departure List. 
+
+\begin{Note}
+  Due to system limitations, the current ATIS letter should be manually added to the RMK field of the DCL, in the "ATIS: X" format.
+\end{Note}
+
+The clearance is sent using the “Send DCL” button. “Voice” rejects the data link clearance request and sends a message to the aircraft to revert to voice procedures. 
+
+\begin{quote}
+  LPPT PDC 001 CLD 1314 221113 LPPT PDC 001 ABC123 CLRD TO ESSA OFF 02 VIA IXIDA5N SQUAWK 3251 ATIS:X QNH 1012
+\end{quote}
+
+Once the clearance is sent, the List CLR item will change to “A”, and will start to blink if there is no reply from the aircraft two minutes before a timeout occurs.
+
+If there is still no answer from the aircraft when the timeout occurs, the data link clearance is automatically rejected and a message is sent to the aircraft informing it that the received clearance has been cancelled.
+
+\begin{quote}
+  ACK NOT RECEIVED CLEARANCE CANCELLED REVERT TO VOICE PROCEDURES
+\end{quote}
+
+\subsubsection{Departure Clearance Readback (CDA)}
+
+A clearance can be answered to with either “WILCO” to accept it or “UNABLE” to reject it.
+
+\subsubsection{Flight System Message (FSM)}
+
+Once a reply is received, the List CLR item changes to a filled box (for WILCO) or clears it (for UNABLE). A message is automatically sent to the aircraft.
+
+\begin{quote}
+  ATC REQUEST STATUS FSM 1317 221113 LPPT ABC123 CDA RECEIVED CLEARANCE CONFIRMED 
+\end{quote}
+
+If an UNABLE reply is received, clearance must then be negotiated and delivered by voice. A message is automatically sent to the aircraft.
+
+\begin{quote}
+  CONTACT ATC BY VOICE REFUSE NOT SUPPORTED BY DATALINK
+\end{quote}
+
+\subsubsection{Abnormal operations}
+
+Most failure cases result from the message not being correctly formatted, and TopSky failing to recognize it correctly. Regardless of whether TopSky recognizes the message as belonging to a departure clearance sequence, it will be put into the \textit{\titleref{win:dlcmw}}. In case the system fails, revert to voice communications.
+
+\subsection{Controller-Pilot Data Link Communications (CPDLC)}
+\label{cpdlc}
+
+CPDLC is a means of communication between controller and pilot, using data link for ATC communications, and with the extra advantage of displaying data on the track labels and flight lists as well.
+
+As the messages take significant amount of time to get through (receiving a reply to a clearance can take anything from seconds to a couple of minutes), using CPDLC should be limited to situations that are not time-critical. For this reason, it is mostly used in upper airspace area control sectors.
+
+The messages are grouped to dialogs, with an opening message and subsequent replies. Some messages do not need a reply, while for others a specific reply is expected. The available replies are set automatically, so only the correct type of reply can be sent.
+
+\subsubsection{Allowed message types}
+\label{cpdlc:amt}
+
+TopSky allows for the following types of messages:
+
+\begin{tabular}{l l}
+  Uplink                      & Downlink\\
+  Level clearance             & Level request\\
+  Heading clearance           & Heading request\\
+  Direct-to clearance         & Direct-to request\\
+  Speed clearance             & Speed request\\
+  Squawk code assignment      & Urgency (MAYDAY/PAN/SQ7500)\\
+  Squawk ident instruction    & Free text\\
+  Voice contact instruction   & \\
+  Free text                   & \\
+\end{tabular}
+
+\subsubsection{Non-allowed message types}
+\label{cpdlc:nmt}
+
+TopSky does not allow the following downlink message types. They will be automatically closed and a reply sent informing that the system does not support the message type:
+
+\begin{itemize}
+  \item Any requests containing “When can we expect”, “At pilots discretion” or “Own separation”
+  \item Level requests for a cruise climb, block level, or any level request tied to a position or time
+  \item Lateral requests for an offset, weather deviation or ground track
+  \item Speed requests to maintain a speed range
+  \item Voice contact requests
+  \item Requests for a procedure name and/or type
+  \item Position reports
+\end{itemize}
+
+Note that a non-allowed message type can be classified as “free text” by TopSky if the message parser doesn’t recognize it as a non-allowed type. In this case the automatic reply will not be sent and the message may be left waiting for an answer if an answer is required.
+
+\subsubsection{Uplink clearance sequence}
+\label{cpdlc:ucs}
+
+In this example a level clearance is used. The clearance is sent using the \textit{\titleref{menu:cfl}}. To send the clearance using CPDLC, check that the “CPDLC” option is selected. Depending on the aircraft’s altitude, by default it may be selected or deselected. Send the clearance by selecting a level value.
+
+In this case FL200 was selected, and the CPDLC message “CLIMB TO FL200” was sent to the aircraft. The uplinked value is shown in brackets and in \colorref{color:CPDLC UM Clearance} color:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{CPDLC UM Clearance} [200]} & & \\         
+\end{tabular}
+
+The aircraft has responded with “STANDBY”. The uplinked value changes to \colorref{color:CPDLC Standby} color, and a warning is inserted on line 0 of the label. The warning can be acknowledged by left-clicking on it:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{CPDLC Standby} CFL SBY} & & \\
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{CPDLC Standby} [200]} & & \\         
+\end{tabular}
+
+The aircraft then eventually answers with “WILCO”. The CFL value is updated accordingly and the label field colors return to normal:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 200} & & \\         
+\end{tabular}
+
+If the aircraft answers with “UNABLE”, a warning is inserted in line 0 of the label:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{CPDLC Standby} CFL UNA} & & \\
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{CPDLC Standby} [200+]} & & \\         
+\end{tabular}
+
+The “+” after the level indicates that there is a reason in the answer message, for example “DUE TO PERFORMANCE”. The reason given is only accessible from the \textit{\titleref{win:dlcmw}}.
+
+Left-clicking on the warning acknowledges it and the original CFL value is again shown in the label:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & & \\         
+\end{tabular}
+
+\subsubsection{Downlink request sequence}
+\label{cpdlc:drs}
+
+This example shows a level request.
+
+The aircraft has sent a level request for FL200. The value is shown in the PRFL (Pilot Requested Level) field in brackets and in \colorref{color:CPDLC DM Request} color:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & {\color{CPDLC DM Request} [200]} & \\         
+\end{tabular}
+
+The responses to a level request are sent using the \textit{\titleref{menu:cfl}}, which offers the possibilities to respond with “STANDBY”, “UNABLE” or a level clearance. In the last case the sequence then changes to an \textit{\titleref{cpdlc:ucs}}.
+
+\subsubsection{Abnormal operations}
+\label{cpdlc:abn}
+
+As with DCL messages, the most likely failure scenario is TopSky misinterpreting the contents of a received message, which can be verified on the \textit{\titleref{win:dlcmw}}. Some other failure scenarios are presented below.
+
+If TopSky has temporarily lost contact with the CPDLC server, “CPDLC COMM FAIL” will be inserted in line 0 of the labels of all CPDLC connected aircraft in \colorref{color:CPDLC Failed} color:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{CPDLC Standby} CPDLC COMM FAIL} & & \\
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & & \\         
+\end{tabular}
+
+In case the server connection is not re-established within a certain time, the connection will be automatically closed and a warning message box will be presented. A new connection can be attempted at any time from the \textit{\titleref{win:dls}}.
+
+During temporary connection issues and also when the connection is automatically closed, the “AGCS” system label in the \textit{\titleref{win:geninfo}} will be displayed with \colorref{color:Warning} color until a connection is re-established.
+
+If the CPDLC connection is terminated by the pilot, a “CPDLC P ABT” warning is inserted in line 0 of the label in \colorref{color:CPDLC Failed} color:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{CPDLC Standby} CPDLC P ABT} & & \\
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & & \\         
+\end{tabular}
+
+Left-clicking on the warning acknowledges it.
+
+If an uplink clearance is not answered in time, a “<message type> P LATE” warning will be inserted in line 0 of the label in \colorref{color:CPDLC Pilot Late} color:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{CPDLC Pilot Late} CPDLC P LATE} & & \\
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & & \\         
+  {\color{CPDLC Pilot Late} [200]} & & \\         
+\end{tabular}
+
+Left-clicking on it opens a menu with options to either abort the clearance or manually mark it as aswered with “WILCO”. Manually marking should be done only after a satisfactory readback is obtained by voice.
+
+If sending an uplink clearance failed, a “<message type> ERR” warning will be inserted in line 0 of the label in \colorref{color:CPDLC Failed} color:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{CPDLC Failed} CPDLC ERR} & & \\
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & & \\         
+  {\color{CPDLC Failed} [200]} & & \\         
+\end{tabular}
+
+Left-clicking acknowledges the warning and aborts the clearance, displaying the previous value in the label.
+
+If an uplink clearance is sent successfully but you are not the Current Data Unit in the aircraft’s CPDLC system, a “<message type> NOT CDA” warning will be inserted in line 0 of the label in \colorref{color:CPDLC Failed}:
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{CPDLC Failed} CPDLC NOT CDA} & & \\
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
+  {\color{Assumed} 180} & & \\         
+  {\color{CPDLC Failed} [200]} & & \\         
+\end{tabular}
+
+Left-clicking acknowledges the warning and aborts the clearance, displaying the previous value in the label.
+
+\section{Flight Plan Conflict Probe}
+
+\subsection{MTCD (Medium Term Conflict Detection)}
+
+\subsubsection*{General}
+
+The MTCD system is a tool that enables the controller to predict possible future conflicts between aircraft. For performance reasons the maximum selectable look-ahead time (prediction time) is limited to 40 minutes and the separation distance that triggers the alert (prediction distance) to 20 nm. They can be set to any lower value, the defaults being 20 minutes and 8 nm.
+In the lateral plane the system works by checking the aircraft’s predicted route up to the defined prediction time and calculating if the separation with other aircraft will be less than the defined prediction distance.
+In the vertical plane, TopSky can be set up to use either of the two following setups (example predicted vertical path of a climbing track in black color, relevant levels in grey):
+
+\image{img/mtcdv.png}
+
+\begin{itemize}
+    \item Conflicts (area with red shading)
+    \begin{itemize}
+        \item detected within a specified buffer (default 4000ft) around the predicted vertical path of the aircraft between AFL and CFL/PEL
+        \item current clearances may lead to a loss of separation
+    \end{itemize}
+    \item Conflict risks (area with yellow shading)
+    \begin{itemize}
+        \item detected within the same buffer, but outside of the AFL-CFL/PEL level range
+        \item current clearances will not lead to a loss of separation, but clearing one of the tracks to another level may turn the risk into a conflict
+    \end{itemize}
+    \item Potential predicted conflicts (area with light red shading)
+    \begin{itemize}
+        \item detected for tracks with equal CFL/PEL values, after the level is calculated to have been reached, when the predicted path contains further climb/descent
+        \item at least one of the tracks must be in the assumed sector state
+        \item current clearances may lead to a loss of separation if further climb/descent is not given
+    \end{itemize}
+    \item Potential risks of conflict (area with light yellow shading)
+    \begin{itemize}
+        \item detected within a larger vertical buffer (default 10000ft) but within the minimum and maximum levels of the predicted vertical path
+    \end{itemize}
+    \item Potential conflicts (area with light blue shading)
+    \begin{itemize}
+        \item detected within the larger vertical buffer, outside of the minimum and maximum levels of the predicted vertical path
+    \end{itemize}
+\end{itemize}
+
+Optionally, the detection of potential predicted conflicts and potential risks of conflict can be disabled, in which case they will be converted to potential conflicts.
+
+For the predictions to be accurate, it’s very important to keep the CFL and the aircraft’s route updated at all times. MTCD can be disabled for aircraft that have an assigned heading or a RAM warning, as in those cases the system can’t predict the aircraft’s future positions. If it is enabled for them, the system assumes that the aircraft continues on its present track and ground speed for a specified time and stops the prediction there. The system is always disabled for flight plan tracks with an assigned heading.
+
+\subsubsection*{Conflict and risk display}
+
+If there is a conflict or potential predicted conflict for the aircraft within the set warning parameters (can be set to warn for risks as well), the following indications are shown. The default values are 10 minutes to loss of separation with a 7nm separation minimum.
+
+MTCD track label field Either “•” in \colorref{color:Urgency} color or “MTCD” in \colorref{color:Warning} color
+
+The MTCD conflicts are also displayed in the \textit{\titleref{win:card}}).
+
+\subsection{SAP (Segregated Area Probe)}
+
+\subsubsection*{General}
+
+Much like the MTCD system predicts future conflicts between aircraft, the SAP system predicts future intrusions into active areas. The system uses the same look-ahead time as the MTCD system. The future position predictions are done at one-minute intervals which means a very short intrusion into an active area may not be noticed by the system. The classification into risks and conflicts is the same as in MTCD: a conflict means that the current clearance may lead to the aircraft entering an active area, whereas a risk means that the current clearance will not lead to that but clearing the aircraft to its XFL or some other level beyond the current CFL may do so.
+
+As with MTCD, keeping the CFL and the aircraft’s route updated is important for the system’s operation. Like MTCD, SAP can be disabled for any aircraft that has an assigned heading or a RAM warning. If enabled, the prediction logic is the same as in the MTCD case. SAP is disabled for non-altitude reporting traffic that doesn’t have a manually set AFL.
+
+\subsubsection*{Conflict and Risk display on the track label}
+
+A conflict is shown by displaying the Military coordination indicator (“M”). The indicator can be set to warn for risks as well. Note that once the indicator is clicked and changes to inactive state, the system will not give further warnings for that aircraft as long as the indicator is in the inactive state. Click on the inactive indicator to re-arm the system once the aircraft has passed all the areas for which crossing clearance was given.
+
+SAP conflicts (optionally also risks) are also shown in the \textit{\titleref{win:sap}}).
+
 \section{Label field descriptions}
 
-\renewcommand*{\arraystretch}{1.6}
+
 \begin{longtable}{|p{2.5cm}|p{2.5cm}|p{4.5cm}|p{4.5cm}|}
     \hline
     \textbf{Data field} &
@@ -2199,14 +2172,202 @@ For example, if you send an RTI with AHDG 360 (as in the above example) and then
       \colorref{color:Unknown} \\ \hline
     \end{longtable}
 
-\section{Data stored in the flight strip annotation boxes}
+\section{Monitoring Aids}
 
-TopSky stores some data in the flight strip annotation boxes (the group of nine boxes in three columns on the right side of the strip). This enables you to send this data to the next controller, or any other controller by manually pushing the strip. EuroScope can be set to automatically push the strip to the next controller on handoff. In addition, TopSky automatically pushes the strip when a handoff proposal (HOP) is sent.
+\subsection{CLAM (Cleared Level Adherence Monitoring)}
 
-TopSky needs to be able to use four of the nine boxes for its functions. They are the boxes in the bottom row as well as the right-most box in the center row, marked with X’s in the picture below. Do not manually edit those boxes or use them to store any other data. The other boxes, marked by minus signs, are currently not used by TopSky in any way.
+\subsubsection*{General}
 
-\image{img/strip.png}
+The CLAM system warns if an aircraft is not maintaining its cleared level and its vertical rate is not towards the cleared level. The alert is inhibited when the cleared level is lower than a defined value (100ft), and for aircraft in level flight, for a specified time (60 sec) after a new cleared level is set.
+
+\subsubsection*{Alert Display}
+
+An alert is shown by displaying a circle around the aircraft position symbol and the text “CLAM” in the ALRT track label field. Note that MSAW, APW and AIW alerts will have priority over a CLAM alert in the track label.
+
+\subsection{RAM (Route Adherence Monitoring)}
+
+\subsubsection*{General}
+
+The RAM system warns if an aircraft is deviating from its route by more than a defined distance (2nm). The alert is inhibited specific distances from the departure (30nm) and destination (30nm), and a larger cross-track error (5nm) is allowed near waypoints where the route makes a turn (over 10° course change).
+
+For aircraft on a direct-to clearance, the alert is given if the difference between the aircraft’s track and the direct track to the cleared point exceeds a set value (5°). After a direct-to clearance is given, the alert is inhibited for a specified time (60 sec) or until the aircraft’s track is towards the point, whichever happens first.
+
+\subsubsection*{Alert Display}
+
+An alert is shown by displaying a circle around the aircraft position symbol and the text “RAM” in the ALRT track label field. Note that an MSAW, APW, AIW and CLAM alerts will have priority over a RAM alert in the track label.
+
+\section{Safety Nets}
+
+\subsection{AIW (Airspace Infringement Warning)}
+
+\subsubsection*{General}
+
+The AIW system warns if an uncontrolled aircraft is already inside or going to enter controlled airspace within a defined time. The system will only scan correlated radar tracks.
+
+\subsubsection*{Alert display}
+
+An alert is shown by displaying the text “AIW” in the ALRT track label field. Note that MSAW and APW alerts will have priority over an AIW alert. The AFL item is also colored “AIW Intrusion” and a one-minute- long prediction line is displayed in “AIW Intrusion” color regardless of the prediction line settings.
+
+
+\subsection{APW (Area Proximity Warning)}
+
+\subsubsection*{General}
+
+The APW system warns if an aircraft is inside or about to enter an active area it shouldn’t be entering (for example active danger, restricted and TSA areas). The position of the aircraft is only predicted in 30 second intervals for performance reasons so very short future intrusions may not be noticed by the system. The areas are defined in an external text file and activated in the \textit{\titleref{win:amw}}.
+
+\subsubsection*{Alert display}
+
+An alert is shown by coloring the CALLSIGN item background (plugin drawn windows) or the text itself (elsewhere where TopSky can’t control the background color) in \colorref{color:Warning} color unless the CALLSIGN item has been manually highlighted, and also by displaying the text “APW” in the ALRT track label field (an MSAW alert will have priority over an APW alert there).
+
+\subsection{MSAW (Minimum Safe Altitude Warning)}
+
+\subsubsection*{General}
+
+The MSAW system alerts when an aircraft is flying at an altitude below the minimum safe altitude. The minimum safe altitude data is read from an external file that has to be present for the system to give any warnings. There is an adjustable buffer value in the system that allows some altitude variation below the safe altitude to inhibit nuisance alerts for aircraft flying at the minimum safe altitude and not staying exactly at that altitude.
+
+\subsubsection*{Alert display}
+
+An alert is shown by displaying the text “MSAW” in the ALRT track label field.
+
+\subsection{STCA (Short Term Conflict Alert)}
+
+\subsubsection*{General}
+
+The STCA system is designed to alert the controller of a possible or actual loss of separation between aircraft. The alert is given a specified time (for example 90 seconds) before a loss of separation is predicted to happen, but it is dependent on the relative positions and movement of the aircraft. The alert will not be shown if both aircraft have STCA alerting inhibited (see the \textit{\titleref{win:snsw}}), are inside exclusion areas for parallel approaches, or when either aircraft is inside an active STCA inhibit area.
+
+In the vertical plane there is an option to always assume that an aircraft will level off at its cleared level. This will reduce the number of nuisance alerts caused by climbing and descending aircraft in busy airspace, but will delay the alert in case an aircraft continues through its cleared level. The alert will then be given only after the failure to level off is seen by the system.
+
+\subsubsection*{Alert display}
+
+An alert is shown by coloring the CALLSIGN item background (plugin drawn windows) or the text itself (elsewhere where TopSky can’t control the background color) in \colorref{color:Urgency} color. A one-minute-long prediction line is displayed in \colorref{color:Urgency} color regardless of the prediction line settings. 
+
+In addition to the above, the radar position symbol and history dots are displayed in \colorref{color:Urgency} color.
+
+An aural alert can also be generated if the corresponding plugin setting is enabled.
+
+\section{Sector States}
+
+Depending on a set of conditions and relationships, each Flight Plan is defined as being in a certain state relative to each airspace volume. This is the so called Sector State. As a given flight progresses along its route it will go through a series of diferent Sector States relative to a given airspace volume. 
+
+Track presentation coloring depends on the flight sector state:
+
+\begin{center}
+\begin{tabular}{| p{2.5cm} p{2.5cm} p{8cm} |}
+  \hline
+  \textbf{State}                                                  & \textbf{Color}               & \textbf{Condition}\\ \hline
+  Initial (Unconcerned) \nextrow \label{state:Unconcerned}        & \colortabex{Unconcerned}     & Track will not enter the active sector\\ \hline
+  Free (Unconcerned)\nextrow \label{state:Free}                   & \colortabex{Unconcerned}     & Track is not assumed or on-contact with anyone\\ \hline
+  Notified \nextrow \label{state:Notified}                        & \colortabex{Concerned}       & Track will enter the active sector (> 15 min)\\ \hline
+  Coordinated \nextrow \label{state:Coordinated}                  & \colortabex{Coordination}    & Track will enter the active sector (< 15 min)\\ \hline
+  Assumed \nextrow \label{state:Assumed}                          & \colortabex{Assumed}         & Track is assumed\\ \hline
+  On Contact \nextrow \label{state:On Contact}                    & \colortabex{Assumed}         & Track is on-contact with you. Flight is considered as Uncontrolled\\ \hline
+  Transfer Initiated                                              & \colortabex{Assumed}         & Track is being transferred to the next controller. \tagref{tag:CALLSIGN} and \tagref{tag:SI} are colored in \colorref{color:Redundant} color\\ \hline
+  Redundant \nextrow \label{state:Redundant}                      & \colortabex{Redundant}       & Track has been transferred to the next controller but is still inside the active sector\\ \hline
+  Informed                                                        & \colortabex{Informed 1}      & Track will not enter the active sector but is relevant to it\\ \hline
+\end{tabular}
+\end{center}
+
+Sector States are used to control label construction, placement in lists, filtering, coloring, Safety Net parameters and availability. For example, a Flight Plan in the \stateref{On Contact} state will not trigger an APW warning until already being inside a TSA and will be shown in the \winref{list:uncon}. The same flight but in the \stateref{Assumed} state will trigger the APW warning when less than 3nm of a TSA and will not be shown in the \winref{list:uncon}.
+
+\stateref{Coordinated} tracks that have not departed yet are displayed as \stateref{Notified}.
+
+\subsection*{Examples}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    Sector            & LEM                                                               & NORL               & CENL                & SULL                \\ \hline
+    Aircraft Position & \begin{tabular}[c]{@{}c@{}}\usym{2708}\\ >15 minutes\end{tabular} &                    &                     &                     \\ \hline
+    Sector State      & -                                                                 & \stateref{Notified} & \stateref{Notified} & \stateref{Notified} \\ \hline
+    \end{tabular}
+    \caption{Flight Plan still faraway inside LEM crossing NORL, CENL and SULL}
+    \label{tab:state-example-faraway}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  Sector            & LEM                                                               & NORL               & CENL                & SULL                \\ \hline
+  Aircraft Position & \begin{tabular}[c]{@{}c@{}}\usym{2708}\\ <15 minutes\end{tabular} &                    &                     &                     \\ \hline
+  Sector State      & -                                                                 & \stateref{Coordinated} & \stateref{Notified} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan entering NORL in less than 15 minutes}
+  \label{tab:state-example-entry}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Sector                                  & NORL               & CENL                & SULL                \\ \hline
+  Aircraft Position                       & \usym{2708}        &                     &                     \\ \hline
+  Sector State                            & \stateref{Assumed} & \stateref{Notified} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan assumed by NORL}
+  \label{tab:state-example-assumed}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Sector                                  & NORL               & CENL                & SULL                \\ \hline
+  Aircraft Position                       & \usym{2708}        &                     &                     \\ \hline
+  Sector State                            & \stateref{Assumed} & \stateref{Coordinated} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan assumed by NORL and less than 15 minutes to CENL}
+  \label{tab:state-example-norlexit}
+\end{table}
     
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Sector                                  & NORL                 & CENL               & SULL                \\ \hline
+  Aircraft Position                       & \usym{2708}          &         &                     \\ \hline
+  Sector State                            & \stateref{Redundant} & \stateref{Assumed} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan transferred from NORL to CENL but still inside of NORL airspace}
+  \label{tab:state-example-cenl}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Sector                                  & NORL                   & CENL               & SULL                \\ \hline
+  Aircraft Position                       &                        & \usym{2708}        &                     \\ \hline
+  Sector State                            & \stateref{Unconcerned} & \stateref{Assumed} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan assumed by CENL and has left NORL airspace}
+  \label{tab:state-example-cenlentry}
+\end{table}
+  
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  Sector            & LEM                                                               & NORL               & CENL                & SULL                \\ \hline
+  Aircraft Position & \begin{tabular}[c]{@{}c@{}}\usym{2708}\\ >15 minutes\end{tabular} &                    &                     &                     \\ \hline
+  Sector State      & -                                                                 & \stateref{Unconcerned} & \stateref{Unconcerned} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan in LEM and will only cross SULL}
+  \label{tab:state-example-sullonly}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  Sector            & LEM   & NORL                    & CENL                    & SULL                  \\ \hline
+  Aircraft Position &       &                         &                         &                       \\ \hline
+  Sector State      & -     & \stateref{Unconcerned}  & \stateref{Unconcerned}  & \stateref{Unconcerned}\\ \hline
+  \end{tabular}
+  \caption{Flight Plan does not enter any sector}
+  \label{tab:state-example-avoid}
+\end{table}
 
 \chapter{User Interface}
 
@@ -3554,6 +3715,41 @@ The departure sequence number is only stored locally, it is not sent to other co
 
 \section{Aircraft Lists}
 
+\subsection{Departure List}
+\label{list:dep}
+
+The Departure List contains all departures still on the ground of the controlled aerodromes.
+
+\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
+  \textbf{Item}                 & \textbf{Left Mouse}                 & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
+  \tagref{tag:CALLSIGN}         & Open \winref{menu:cs}               & Toggle Flight Leg display & \usym{2713}         \\ \hline
+  \tagref{tag:EOBT}             & Edit EOBT                           & Edit EOBT                 &                     \\ \hline
+  \tagref{tag:TOBT}             & Edit TOBT                           & Edit TOBT                 & \usym{2713}         \\ \hline
+  \tagref{tag:TSAT}             & Ready TOBT                          & Set TOBT to now           & \usym{2713}         \\ \hline
+  \tagref{tag:TSAC}             & Add TSAT to TSAC                    & Edit TSAC                 &                     \\ \hline
+  \tagref{tag:ASRT}             & Toggle ASRT                         & Toggle ASRT               &                     \\ \hline
+  \tagref{tag:ASAT}             &                                     &                           &                     \\ \hline
+  \tagref{tag:TTOT}             &                                     &                           &                     \\ \hline
+  \tagref{tag:CTOT}             & Open CTOT Option list               & Open CTOT Option list     &                     \\ \hline
+  \tagref{tag:Flow Message}     & Open \winref{menu:ahdg}             &                           &                     \\ \hline
+  \tagref{tag:Ready}            & Toggle Ready                        &                           &                     \\ \hline
+  \tagref{tag:ATYP}             &                                     &                           & \usym{2713}         \\ \hline
+  \tagref{tag:WTC}              &                                     &                           & \usym{2713}         \\ \hline
+  \tagref{tag:V}                &                                     &                           & \usym{2713}         \\ \hline
+  \tagref{tag:Departure stand}  &                                     &                           & \usym{2713}         \\ \hline
+  QNH                           & Edit OP TEXT                        & Edit OP TEXT              &                     \\ \hline
+  \tagref{tag:ADEP}             & Open \winref{win:fpw}               & Toggle Flight Leg display & \usym{2713}         \\ \hline
+  \tagref{tag:ADES}             & Open \winref{win:fpw}               & Toggle Flight Leg display & \usym{2713}         \\ \hline
+  \tagref{tag:DRWY}             & Open \winref{win:dlpdcw}            & Open \winref{win:dlpdcw}  & \usym{2713}         \\ \hline
+  \tagref{tag:SID}              & Open \winref{win:dlpdcw}            & Open \winref{win:dlpdcw}  & \usym{2713}         \\ \hline
+  \tagref{tag:ASSR}             & Open \winref{menu:assr}             & Open \winref{menu:assr}   & \usym{2713}         \\ \hline
+  \tagref{tag:CFL}              & Open \winref{menu:cfl}              & Open \winref{menu:cfl}    & \usym{2713}         \\ \hline
+  \tagref{tag:RFL}              & Open \winref{menu:rfl}              & Open \winref{menu:rfl}    & \usym{2713}         \\ \hline
+  \tagref{tag:CLR}              & Toggle Clearance Acknowledged flag  &                           & \usym{2713}         \\ \hline
+  \tagref{tag:Ground state}     & Open Ground State Menu              & Open Ground State Menu    & \usym{2713}         \\ \hline
+  \tagref{tag:OP TEXT2}         & Edit OP TEXT2                       & Edit OP TEXT2             & \usym{2713}         \\ \hline
+\end{longtable}
+
 \subsection{Sector List}
 \label{list:sector}
 
@@ -3575,45 +3771,137 @@ The Sector List contains all departed controlled aircraft in the following state
 
 \footnotetext[2]{The display of concerned aircraft is limited to those entering the sector within 60 minutes}
 
+\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
+  \textbf{Item}         & \textbf{Left Mouse}     & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
+  \tagref{tag:CALLSIGN} & Open \winref{menu:cs}   & Open Extended Label       & \usym{2713}         \\ \hline
+  \tagref{tag:ETN}      &                         &                           & \usym{2713}         \\ \hline
+  \tagref{tag:PEL}      & Open PEL Menu           &                           & \usym{2713}         \\ \hline
+  \tagref{tag:COPN}     & Open \winref{menu:wpt}  & Toggle Flight Leg display & \usym{2713}         \\ \hline
+  \tagref{tag:NRAC}     &                         &                           &                     \\ \hline
+  \tagref{tag:ATYP}     &                         &                           & \usym{2713}         \\ \hline
+  \tagref{tag:WTC}      &                         &                           &                     \\ \hline
+  \tagref{tag:V}        &                         &                           &                     \\ \hline
+  \tagref{tag:CFL}      & Open \winref{menu:cfl}  &                           & \usym{2713}         \\ \hline
+  \tagref{tag:AHDG}     & Open \winref{menu:ahdg} &                           &                     \\ \hline
+  \tagref{tag:ASP}      & Open \winref{menu:asp}  & Clear ASP value           &                     \\ \hline
+  \tagref{tag:TAS}      &                         &                           &                     \\ \hline
+  \tagref{tag:ETX}      &                         &                           &                     \\ \hline
+  \tagref{tag:XFL}      & Open XFL Menu           &                           &                     \\ \hline
+  \tagref{tag:COPX}     & Open \winref{menu:wpt}  &                           &                     \\ \hline
+  \tagref{tag:RFL}      & Open \winref{menu:rfl}  &                           &                     \\ \hline
+  \tagref{tag:ASSR}     & Open \winref{menu:assr} & Send CPDLC Squawk message &                     \\ \hline
+  \tagref{tag:NSSR}     & Open \winref{menu:assr} & Send CPDLC Squawk message &                     \\ \hline
+  \tagref{tag:ADEP}     &                         &                           &                     \\ \hline
+  \tagref{tag:SID}      & Open SID list           &                           & \usym{2713}         \\ \hline
+  \tagref{tag:DRWY}     & Open Runway list        &                           &                     \\ \hline
+  \tagref{tag:FCOPX}    &                         & Toggle Flight Leg display &                     \\ \hline
+  \tagref{tag:ETX}      &                         &                           &                     \\ \hline
+  \tagref{tag:ADES}     & Open \winref{win:fpw}   &                           & \usym{2713}         \\ \hline
+  \tagref{tag:SI}       & Open SI list            & Toggle SI frequency       &                     \\ \hline
+  \tagref{tag:ADES}     & Open \winref{win:fpw}   &                           & \usym{2713}         \\ \hline
+  \tagref{tag:ETA}      &                         &                           & \usym{2713}         \\ \hline
+  \tagref{tag:STAR}     & Open STAR list          &                           & \usym{2713}         \\ \hline
+  \tagref{tag:ARWY}     & Open Runway list        &                           & \usym{2713}         \\ \hline
+  \tagref{tag:OP TEXT}  & Edit OP\_TEXT           &                           & \usym{2713}         \\ \hline
+  \tagref{tag:OP TEXT2} & Edit OP\_TEXT2          &                           & \usym{2713}         \\ \hline
+\end{longtable}
+
 \subsection{Load Factor List}
 \label{list:load}
 
 \textit{\titleref{menu:global}} Tools -> Flight Plan Lists -> Load Factor List…
 
-The Load Factor List is a EuroScope-style list containing all departed controlled (all IFR, VFR only if ASSUMED) aircraft in the concerned state and all non-departed controlled aircraft in the concerned and coordinated states expected to enter the sector within 4 hours by default.
+The Load Factor List contains all departed controlled aircraft in the concerned state and all non-departed controlled aircraft in the concerned and coordinated states expected to enter the sector within 4 hours.
+
+\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
+  \textbf{Item}         & \textbf{Left Mouse}     & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
+  \tagref{tag:CALLSIGN} & Open \winref{menu:cs}   & Open Extended Label       & \usym{2713}         \\ \hline
+  \tagref{tag:ETN}      &                         &                           & \usym{2713}         \\ \hline
+  \tagref{tag:PEL}      & Open PEL Menu           &                           & \usym{2713}         \\ \hline
+  \tagref{tag:COPN}     & Open \winref{menu:wpt}  & Toggle Flight Leg display & \usym{2713}         \\ \hline
+  \tagref{tag:ADEP}     &                         &                           & \usym{2713}         \\ \hline
+  \tagref{tag:ADES}     & Open \winref{win:fpw}  &                           & \usym{2713}         \\ \hline
+  \tagref{tag:RFL}      & Open \winref{menu:rfl}  & Open \winref{win:dlcmw}   & \usym{2713}         \\ \hline
+  \tagref{tag:ASSR}     & Open \winref{menu:assr} & Send CPDLC Squawk message & \usym{2713}         \\ \hline
+\end{longtable}  
 
 \subsection{Uncontrolled Lists}
 \label{list:uncon}
 
 \textit{\titleref{menu:global}} Tools -> Flight Plan Lists -> Uncontrolled List 1/2…
 
-The Uncontrolled List is a EuroScope-style list containing all or a subset of Uncontrolled aircraft, depending on whether filters are set up.
+The Uncontrolled List contains all or a subset of Uncontrolled aircraft, depending on whether filters are set up.
 
 Up to 2 lists can be displayed. Each list may be configured with different filtering options.
+
+\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
+  \textbf{Item}         & \textbf{Left Mouse}     & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
+  \tagref{tag:CALLSIGN} & Open \winref{menu:cs}         & Open Extended Label       & \usym{2713}         \\ \hline
+  \tagref{tag:SI}       & Open SI list                  & Toggle SI frequency       & \usym{2713}         \\ \hline
+  \tagref{tag:C}        & Toggle Inbound clearance flag &                           & \usym{2713}         \\ \hline
+\end{longtable} 
 
 \subsection{ETWR List}
 \label{list:etwr}
 
 \textit{\titleref{menu:global}} Tools -> Flight Plan Lists -> ETWR List...
 
-The ETWR List is a EuroScope-style list containing notified and coordinated flights departing from specified airports
+The ETWR List contains notified and coordinated flights departing from specified airports
+
+\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
+  \textbf{Item}         & \textbf{Left Mouse}     & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
+  \tagref{tag:CALLSIGN} & Open \winref{menu:cs}     & Open Extended Label       & \usym{2713}         \\ \hline
+  \tagref{tag:ETN}      &                           &                           & \usym{2713}         \\ \hline
+  \tagref{tag:PEL}      & Open PEL Menu             &                           & \usym{2713}         \\ \hline
+  \tagref{tag:COPN}     & Open \winref{menu:wpt}    & Toggle Flight Leg display & \usym{2713}         \\ \hline
+  \tagref{tag:SID}      & Open \winref{win:dlpdcw}  &                           & \usym{2713}         \\ \hline
+  \tagref{tag:DRWY}     & Open \winref{win:dlpdcw}  &                           & \usym{2713}         \\ \hline
+  \tagref{tag:ATYP}     &                           &                           & \usym{2713}         \\ \hline
+  \tagref{tag:RFL}      & Open \winref{menu:rfl}    & Open \winref{win:dlcmw}   & \usym{2713}         \\ \hline
+  \tagref{tag:ASSR}     & Open \winref{menu:assr}   & Send CPDLC Squawk message & \usym{2713}         \\ \hline
+  \tagref{tag:ADEP}     &                           &                           & \usym{2713}         \\ \hline
+  \tagref{tag:ADES}     & Open \winref{win:fpw}     &                           & \usym{2713}         \\ \hline
+\end{longtable}  
 
 \subsection{Resectorisation List}
 \label{list:resec}
 
 \textit{\titleref{menu:global}} Tools -> Flight Plan Lists -> Resectorisation List…
 
-The Resectorisation List is a EuroScope-style list containing all flights assumed or on-contact with specified LFUNCs (controller IDs).
+The Resectorisation List contains all flights assumed or on-contact with specified LFUNCs.
+
+\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
+  \textbf{Item}         & \textbf{Left Mouse}     & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
+  \tagref{tag:CALLSIGN} & Open \winref{menu:cs}     &                           & \usym{2713}         \\ \hline
+  \tagref{tag:CFL}      & Open \winref{menu:cfl}    & Toggle Flight Leg display & \usym{2713}         \\ \hline
+\end{longtable}  
 
 \subsection{Traffic Management Lists}
 \label{list:tml1}
 
 \textit{\titleref{menu:global}} Tools -> Flight Plan Lists -> Traffic Management List 1/2…
 
-The Traffic Management List is a EuroScope-style list containing all Uncontrolled and Controlled flights at least in Coordinated State with specified destinations, and routing via specified points. The ETO over the point (or ETA if no point specified) must be within 30 minutes, and the destination must be specified to include uncontrolled flights in the list.
+The Traffic Management List contains all Uncontrolled and Controlled flights at least in Coordinated State with specified destinations, and routing via specified points. The ETO over the point (or ETA if no point specified) must be within 30 minutes, and the destination must be specified to include uncontrolled flights in the list.
 
 Up to 2 lists can be displayed. Each list may be configured with different filtering options.
 
+\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
+  \textbf{Item}         & \textbf{Left Mouse}     & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
+  \tagref{tag:COPN}     & Open \winref{menu:wpt}  & Toggle Flight Leg display & \usym{2713}         \\ \hline
+  \tagref{tag:PEL}      & Open PEL Menu           &                           & \usym{2713}         \\ \hline
+  \tagref{tag:SI}       & Open SI List            & Toggle SI frequency       & \usym{2713}         \\ \hline
+  \tagref{tag:CALLSIGN} & Open \winref{menu:cs}   & Open Extended Label       & \usym{2713}         \\ \hline
+  \tagref{tag:ASSR}     & Open \winref{menu:assr} & Send CPDLC Squawk message & \usym{2713}         \\ \hline
+  \tagref{tag:ETOHP}    &                         &                           & \usym{2713}         \\ \hline
+  \tagref{tag:AFL}      & Open \winref{menu:afl}  &                           & \usym{2713}         \\ \hline
+  \tagref{tag:a}        &                         &                           & \usym{2713}         \\ \hline
+  \tagref{tag:CFL}      & Open \winref{menu:cfl}  &                           & \usym{2713}         \\ \hline
+  \tagref{tag:ATYP}     &                         &                           & \usym{2713}         \\ \hline
+  \tagref{tag:WTC}      &                         &                           & \usym{2713}         \\ \hline
+  \tagref{tag:R}        &                         &                           & \usym{2713}         \\ \hline
+  \tagref{tag:TAS}      &                         &                           & \usym{2713}         \\ \hline
+  \tagref{tag:RFL}      & Open \winref{menu:rfl}  & Open \winref{win:dlcmw}   & \usym{2713}         \\ \hline
+\end{longtable}  
 \subsection{Lost List}
 \label{list:lost}
 
@@ -3623,25 +3911,23 @@ The list includes assumed flights that have previously been correlated to a rada
 
 \image{img/llist.png}
 
-The lost list contains the following fields:
-
-\begin{tabular}{l l l l}
-    Field                   & Type        & Left click                              & Right click\\
-    Callsign                & mandatory   & Open \textit{\titleref{menu:cs}}                      & -\\
-    N/ATYP                  & optional    & -                                       & -\\
-    AFL (last received)     & optional    & -                                       & Toggle route draw\\
-    CFL                     & optional    & Open CFL menu                           & Toggle route draw\\
-    ASSR                    & mandatory   & Open ASSR menu                          & -\\
-    FPASD                   & optional    & Toggle FPASD track (when globally off)  & -\\
-    Lost (time)             & optional    & -                                       & -\\
-\end{tabular}
+\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
+    \textbf{Item}          & \textbf{Type} & \textbf{Left Mouse}                     & \textbf{Right Mouse} \endhead \hline
+    Callsign                & mandatory     & Open \winref{menu:cs}                   &                           \\ \hline
+    N/ATYP                  & optional      &                                         &                           \\ \hline
+    AFL (last received)     & optional      &                                         & Toggle Flight Leg display \\ \hline
+    CFL                     & optional      & Open \winref{menu:cfl}                  & Toggle Flight Leg display \\ \hline
+    ASSR                    & mandatory     & Open \winref{menu:assr}                 &                           \\ \hline
+    FPASD                   & optional      & Toggle FPASD track (when globally off)  &                           \\ \hline
+    Lost (time)             & optional      &                                         &                           \\ \hline
+\end{longtable}
 
 “View” opens the View menu:
 
 \begin{tabular}{l l}
-    Header      & Toggle visibility of the list header line\\
-    Standard    & Set the list in Standard mode (only mandatory fields shown)\\
-    Extended    & Set the list in Extended mode  \\
+    Header      & Toggle visibility of the list header line                   \\
+    Standard    & Set the list in Standard mode (only mandatory fields shown) \\
+    Extended    & Set the list in Extended mode                               \\
 \end{tabular}
 
 “Options” opens the Options menu to select which optional fields are shown in Extended mode. The “All” selection shows all fields without affecting the individual selections.
@@ -3670,18 +3956,23 @@ The list sorting option is displayed next to the “Options” label. Clicking o
 
 The ETO column initially displays the estimated time over the holding fix. Once the aircraft enters the holding, the displayed time is fixed to the holding start time. For present position holds and holding points whose positions are unknown, the time when the holding clearance was given is displayed.
 
-\begin{tabular}{l l l}
-    Field                   & Left click                          & Right click\\
-    Label                   & Hide/display track label            & -\\
-    Callsign                & Open \textit{\titleref{menu:cs}}    & -\\
-    AFL                     & Open \textit{\titleref{menu:afl}}   & Toggle route draw\\
-    (attitude indicator)    & -                                   & -\\
-    CFL                     & Open \textit{\titleref{menu:cfl}}   & Toggle route draw\\
-    HPT                     & Open \textit{\titleref{win:smw}}    & -\\
-    ETO                     & -                                   & -\\ 
-\end{tabular}
+\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|} \hline
+    \textbf{Item}           & \textbf{Left mouse}                 & \textbf{Right mouse} \endhead \hline 
+    Label                   & Hide/display track label            & \\ \hline
+    Callsign                & Open \textit{\titleref{menu:cs}}    & \\ \hline
+    AFL                     & Open \textit{\titleref{menu:afl}}   & Toggle Flight Leg display\\ \hline
+    (attitude indicator)    &                                     & \\ \hline
+    CFL                     & Open \textit{\titleref{menu:cfl}}   & Toggle Flight Leg display\\ \hline
+    HPT                     & Open \textit{\titleref{win:smw}}    & \\ \hline
+    ETO                     &                                     & \\ \hline
+\end{longtable}
 
 If a track label has been hidden, it will be automatically unhidden if the aircraft is cleared to leave the holding or an incoming coordination message for the flight is received.
+
+\subsection{Unsupported Lists}
+\label{list:unsup}
+
+EuroScope's default Sector Inbound, Sector Exit, Arrival, Startup, Taxi Out, Take-Off, ADC Sector, Taxi In, Flight Plan, and Conflict lists are not supported and should not be used.
 
 \section{Windows}
 TopSky includes a number of windows that are discussed in this chapter. All windows have the following common features:
@@ -5169,7 +5460,21 @@ Some plugin functions can be accessed using a keyboard shortcut. By default, eac
   \nextrow \label{color:WM Frame} WM Frame                             & \cellcolor{WM Frame}                & Window frame when dragging                   \\ \hline
   \nextrow \textit{\textbf{Other colors}}                              &                                     &                                              \\ \hline
   \nextrow \label{color:Standard Line RDF} Standard Line RDF           & \cellcolor{Standard Line RDF}       & Direction Finder position circle or direction line \\ \hline
-  \nextrow \label{color:Text Notes} Text Notes                         & \cellcolor{Text Notes}              & Text notes                                   \\ \hline                                 
+  \nextrow \label{color:Text Notes} Text Notes                         & \cellcolor{Text Notes}              & Text notes                                   \\ \hline
+  \nextrow \textit{\textbf{A-CDM colors}}                              &                                     &                                              \\ \hline
+  \nextrow \label{color:color1} color1                                 & \cellcolor{color1}                  &                                              \\ \hline
+  \nextrow \label{color:color2} color2                                 & \cellcolor{color2}                  &                                              \\ \hline
+  \nextrow \label{color:color3} color3                                 & \cellcolor{color3}                  &                                              \\ \hline
+  \nextrow \label{color:color4} color4                                 & \cellcolor{color4}                  &                                              \\ \hline
+  \nextrow \label{color:color5} color5                                 & \cellcolor{color5}                  &                                              \\ \hline
+  \nextrow \label{color:color6} color6                                 & \cellcolor{color6}                  &                                              \\ \hline
+  \nextrow \label{color:color7} color7                                 & \cellcolor{color7}                  &                                              \\ \hline
+  \nextrow \label{color:color8} color8                                 & \cellcolor{color8}                  &                                              \\ \hline
+  \nextrow \label{color:color9} color9                                 & \cellcolor{color9}                  &                                              \\ \hline
+  \nextrow \label{color:color10} color10                               & \cellcolor{color10}                 &                                              \\ \hline
+  \nextrow \label{color:color11} color11                               & \cellcolor{color11}                 &                                              \\ \hline
+  \nextrow \label{color:color12} color12                               & \cellcolor{color12}                 &                                              \\ \hline
+
 \end{longtable}
 
 \chapter{Known issues}
@@ -5193,9 +5498,7 @@ The default method of opening the Radar Menu (<ALT>+right-click) may not always 
 
 The Radar Menu is then opened by right-clicking anywhere on the Global Menu.
 
-
-
-\appendix
-
+\nocite{*}
+\printbibliography
 
 \end{document}
