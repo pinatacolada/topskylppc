@@ -316,27 +316,27 @@ Interaction with core A-CDM systems is done with classic command line inputs:
 \begin{longtable}{|p{2.5cm}|p{2.5cm}|p{4.5cm}|p{4.5cm}|}
   \hline
   \textbf{Data field}             &  \textbf{Description}     &  \textbf{Comments}                    &  \textbf{Color} \\ \hline  \endhead
-  A \nextrow \label{tag:cdm:A}&  
+  A \nextrow \label{tag:CDM A}&  
     Alert & 
       Flashes A if the aircraft is waiting for an action&
         \colorref{color5}\\ \hline
 
-  ASAT \nextrow \label{tag:cdm:ASAT}&  
+  ASAT \nextrow \label{tag:ASAT}&  
     Actual Start-Up Approval Time &
         Automatically records time of Start-Up Approval when inputting a Start-Up, Pushback, Taxi or DEPA Ground Status &   
           \colorref{color12} \\ \hline
 
-  ASRT \nextrow \label{tag:cdm:ASRT}&  
+  ASRT \nextrow \label{tag:ASRT}&  
     Actual Start-Up Request Time &
         Used to record time of Ready or Start-Up Request &   
           \colorref{color10} \\ \hline
   
-  CTOT \nextrow \label{tag:cdm:CTOT}&  
+  CTOT \nextrow \label{tag:CTOT}&  
       Calculated Take Off Time&
         Flow restrictions create CTOTs to planes afected with published MDIs from ECFMP &   
             \colorref{color11} \\ \hline
 
-  E \nextrow \label{tag:cdm:E}&  
+  E \nextrow \label{tag:E}&  
     State & 
       Depending on aircraft timming:
 
@@ -348,35 +348,41 @@ Interaction with core A-CDM systems is done with classic command line inputs:
         \\ \hline            
 
             
-  EOBT \nextrow \label{tag:cdm:EOBT}&  
+  EOBT \nextrow \label{tag:EOBT}&  
     Estimated Off Block Time & 
       Same time as Flight Plan ETD or EOBT &
         \colorref{color8} 
 
-        \smallskip
+        \bigskip
 
         If a new EOBT is submitted by the pilot, and EOBT is different than TOBT:
 
         \colorref{color4} \\ \hline
 
-  Ready \nextrow \label{tag:cdm:Ready}&  
+  
+  Flow Message \nextrow \label{tag:Flow Message}&  
+    ECFMP Flow Message&
+        Description of the restriction impacting the flight &   
+          \colorref{color8}\\ \hline
+
+  Ready \nextrow \label{tag:Ready}&  
     Ready State Flag&
-        Used to signal Ready state. Setting Ready also records time of Ready or Start-Up Request &   
-          Ready:
-          
-          \colorref{color1} 
-          
-          \smallskip
-
-          Not Ready:
-          
-          \colorref{color7}\\ \hline
-
-  TOBT \nextrow \label{tag:cdm:TOBT}&  
+      Used to signal Ready state. Setting Ready also records time of Ready or Start-Up Request &   
+        Ready:
+        
+        \colorref{color1} 
+        
+        \bigskip
+        
+        Not Ready:
+        
+        \colorref{color7}\\ \hline
+      
+  TOBT \nextrow \label{tag:TOBT}&  
     Target Off Block Time & 
       On receipt of a new Flight Plan, TOBT is set to the same time as EOBT. 
 
-      \smallskip
+      \bigskip
 
       If the Flight Plan is updated with a new EOBT, TOBT will not change automatically. 
 
@@ -385,13 +391,13 @@ Interaction with core A-CDM systems is done with classic command line inputs:
 
         \colorref{color2} 
 
-        \smallskip
+        \bigskip
 
         From TOBT-5 to TOBT+5:
 
         \colorref{color1} \\ \hline
 
-  TSAC \nextrow \label{tag:cdm:TSAC}&  
+  TSAC \nextrow \label{tag:TSAC}&  
     Target Start-Up Approval Communicated Time&
       Used to note down TSAT communicated to the flight&   
        If TSAC within 5 minutes of TSAT:
@@ -402,32 +408,32 @@ Interaction with core A-CDM systems is done with classic command line inputs:
 
        \colorref{color4} \\ \hline
 
-  TSAT \nextrow \label{tag:cdm:TSAT}&  
+  TSAT \nextrow \label{tag:TSAT}&  
     Target Startup Time & 
       TTOT - EXOT &   
         From EOBT-35 to TSAT-5:
         
         \colorref{color2}
 
-        \smallskip
+        \bigskip
 
         From TSAT-5 to TSAT+5:
 
         \colorref{color1}
 
-        \smallskip
+        \bigskip
 
         From TSAT+5 to TSAT+6:
 
         \colorref{color5}
 
-        \smallskip
+        \bigskip
 
         After TSAT+6:
         
         \colorref{color2}\\ \hline
 
-  TTOT \nextrow \label{tag:cdm:TTOT}&  
+  TTOT \nextrow \label{tag:TTOT}&  
     Target Take Off Time &
       &   
         \colorref{color9}\\ \hline
