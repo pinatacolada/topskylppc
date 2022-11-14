@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{memoir}
+\documentclass[oneside,11pt,a4paper]{memoir}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{microtype}
@@ -85,7 +85,7 @@
 
 \newcolumntype{t}{>{\tt}c}
 
-\colorlet{shadecolor}{blue!10}
+\colorlet{shadecolor}{gray!20}
 
 \makeatletter
 \def\maxwidth#1{\ifdim\Gin@nat@width>#1 #1\else\Gin@nat@width\fi}
@@ -93,11 +93,11 @@
 
 
 \newenvironment{Warn}
-  {\begin{shaded}\marginnote{\fbox{Warning}}}
+  {\begin{shaded}\marginnote{\colorbox{red}{\color{white}Warning}}}
   {\end{shaded}}
 
   \newenvironment{Note}
-  {\begin{shaded}\marginnote{\fbox{Note}}}
+  {\begin{shaded}\marginnote{\colorbox{gray}{\color{white}Note}}}
   {\end{shaded}}
 
 \newcommand{\Tonde}[1]{\left(#1\right)}
@@ -239,6 +239,12 @@ The A-CDM plugin operates in a Master-Slave topology, in which the "CDM Master" 
   IF THERE IS NO ACTIVE "CDM MASTER" A-CDM WILL NOT BE OPERATIONAL
 \end{Warn}
 
+\begin{Warn}
+  IF MORE THAN ONE POSITION ASSIGNS ITSELF AS "CDM MASTER" A-CDM WILL NOT BE OPERATIONAL
+\end{Warn}
+
+At the end of a session or controller swap, the "CDM MASTER" ATC should return himself to "CDM SLAVE" before the next controller takes over.
+
 \subsubsection{A-CDM Timeline}
 
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -270,18 +276,38 @@ Every Flight Plan should have a meaningfull Estimated Off Block Time (EOBT, also
 
 A-CDM will calculate a Target Take Off Time (TTOT) based on the TOBT, current departure rate, known traffic and Flow Restrictions. Each TTOT is separated from other TTOTs by the ammount of time required in order to achieve the maximum defined departure rate. During moments of high traffic that, without a regulation, would exceed the airport departure rate capacity, the system will delay the TTOT in order to meet the required departure rate. 
 
+\medskip
+
 Based on the Departure Stand and Runway, the system calculates an Estimated Taxi Out Time (EXOT). Then, the system subtracts TTOT-EXOT, of which the result is the Target Start-up Time (TSAT). TSAT may never be earlier than TOBT. A TSAT has a validity window of -5 to +5 minutes, within which start-up approval may be issued. 
 
 A TSAT within the validity window will be colored in \colorref{color1}, or if outside the validity window \colorref{color2}. Additionally, it will be colored in \colorref{color5} the minute it expires, as an attention getter.
 
+If a flight misses its TSAT, a new one must be assigned by right clicking the TSAT value in order to set TOBT to present time and restart the CDM calculation for the concerned flight.
+
 \medskip
 
-During times of extraordinary demand, a Calculated Take-Off Time (CTOT) may be issued for a certain flight. The A-CDM operation remains the same, with the exception that it will try to match TTOT to CTOT.    
+During times of extraordinary demand, a Calculated Take-Off Time (CTOT) may be issued for a certain flight. The A-CDM operation remains the same, with the exception that it will try to match TTOT to CTOT. A CTOT has a validity window of -5 to +10 minutes of CTOT, during which Take Off clearance must be issued.    
 
-\subsection{Color}
+\subsubsection{Commands}
 
+Interaction with core A-CDM systems is done with classic command line inputs:
 
-
+\begin{longtable}{|p{5cm}|p{8.5cm}|}
+  \hline
+  \texttt{.cdm reload}                 & Reloads all CDM configs\\ \hline
+  \texttt{.cdm refresh}                & Forces a data refresh phase\\ \hline
+  \texttt{.cdm save}                   & Saves data to \texttt{savedData.txt}\\ \hline
+  \texttt{.cdm load}                   & Loads \texttt{savedData.txt}\\ \hline
+  \texttt{.cdm master "airport"}       & Become the master of the selected airport.\\ \hline
+  \texttt{.cdm slave "airport"}        & Turn back to slave of the selected airport.\\ \hline
+  \texttt{.cdm refreshtime "seconds"}  & Change refresh rate time in seconds (Default 30, MAX 99).\\ \hline
+  \texttt{.cdm delay "minutes"}        & Adds delay minutes to all flights that have a TSAT in the future\\ \hline
+  \texttt{.cdm lvo}                    & Toggle LVO on or off\\ \hline
+  \texttt{.cdm realmode}               & Toggle realmode on or off\\ \hline
+  \texttt{.cdm remarks}                & Toggle set TSAT to Euroscope scratchpad on or off\\ \hline
+  \texttt{.cdm rates}                  & Updates rates values from \texttt{rate.txt}\\ \hline
+  \texttt{.cdm help}                   & Show all commands \\ \hline
+\end{longtable}
 
 
 
