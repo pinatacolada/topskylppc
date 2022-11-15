@@ -1,4 +1,5 @@
 \documentclass[oneside,11pt,a4paper]{memoir}
+\AddToHook{cmd/section/before}{\clearpage}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{microtype}
@@ -9,13 +10,14 @@
 \usepackage[usestackEOL]{stackengine}
 \usepackage[percent]{overpic}
 \usepackage{amssymb}
-\usepackage{babel,xcolor,framed,marginnote,blindtext}
+\usepackage{xcolor,framed,marginnote,blindtext}
+\usepackage[british]{babel}
 \usepackage{longtable}
 \usepackage{pdflscape}
 \usepackage{makecell}
 \usepackage{colortbl}
 \usepackage{array}
-
+\usepackage{csquotes}
 
 \usepackage{nicematrix,tikz}
 \usepackage{stix}
@@ -23,7 +25,7 @@
 
 \usepackage{tabularray}
 
-\usepackage{datetime}
+\usepackage[useregional]{datetime2}
 
 \usepackage{xstring}
 
@@ -46,14 +48,20 @@
 \usepackage{biblatex}
 \addbibresource{refs.bib}
 
+\usepackage[hmargin=2cm,top=4cm,headheight=85pt,footskip=55pt]{geometry}
+
 \usepackage[scaled]{helvet}
+
 \renewcommand\familydefault{\sfdefault} 
+
 \renewcommand*{\arraystretch}{1.6}
 
 \newcounter{rowcounter}
+
 \newcommand{\nextrow}{\refstepcounter{rowcounter}}
 
-%\newcommand{\colorref}[1]{{\hyperref[#1]{\StrDel{#1}{}}}}
+\newcommand{\rev}{Rev.1}
+
 \newcommand{\colorref}[1]{\colorbox{Flight Highlight}{\color{#1}#1}}
 
 \newcommand{\colortabex}[1]{\cellcolor{Flight Highlight}\color{#1}\colorref{#1}}
@@ -71,6 +79,20 @@
 \newcommand{\drawtag}[3]{\node[draw,red,minimum height=0.55cm,minimum width=#1] at (#2) (#3) {}}
 
 \newcommand{\drawtagdesc}[4]{\node[draw,black,thick,text width=#1] at (#2) (#3) {#4};}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\newcommand{\headerformat}{%
+  {%
+  \begin{tabular}{|P{3cm}|P{10cm}|P{2cm}|} 
+    \hline
+    \vspace{0.01cm}\includegraphics[width=2.5cm]{img/logo.png} & \vspace{0.01cm}\textbf{\large{\leftmark}} & \vspace{0.01cm}\textbf{\large{\thesection}}  \\
+    \scriptsize{TOPLIS User Manual}             & \rightmark         & \small{P\thepage}\         \\
+    \hline
+    \end{tabular}%
+  }%
+}
+
 
 \newcommand\capdimage[2]{
 \begin{center}
@@ -93,18 +115,22 @@
 
 
 \newenvironment{Warn}
-  {\begin{shaded}\marginnote{\colorbox{red}{\color{white}Warning}}}
+  {\begin{shaded}\reversemarginpar\marginnote{\colorbox{red}{\color{white}Warning}}}
   {\end{shaded}}
 
   \newenvironment{Note}
-  {\begin{shaded}\marginnote{\colorbox{gray}{\color{white}Note}}}
+  {\begin{shaded}\reversemarginpar\marginnote{\colorbox{gray}{\color{white}Note}}}
   {\end{shaded}}
 
-\newcommand{\Tonde}[1]{\left(#1\right)}
+%\newdateformat{coverdate}{%
+%  \monthname[\THEMONTH] \THEYEAR
+%  }
+%
+%\newdateformat{footdate}{%
+%  \THEDAY \shortmonthname[\THEMONTH] \twodigit{\THEYEAR}
+%}
 
-\newdateformat{coverdate}{%
-  \monthname[\THEMONTH] \THEYEAR
-  }
+\DTMlangsetup[en-GB]{abbr,ord=omit,monthyearsep={\space}}
 
 \usepackage[
 breaklinks=true,colorlinks=true,
@@ -112,11 +138,10 @@ breaklinks=true,colorlinks=true,
 linkcolor=.,urlcolor=black,citecolor=black,% PRINT
 bookmarks=true,bookmarksopenlevel=2]{hyperref}
 
-\usepackage{geometry}
 % PDF VIEW
  \geometry{total={210mm,297mm},
  left=25mm,right=25mm,%
- bindingoffset=0mm, top=25mm,bottom=25mm}
+ bindingoffset=0mm, top=40mm,bottom=25mm}
 % PRINT
 %\geometry{total={210mm,297mm},
 %left=20mm,right=20mm,
@@ -141,17 +166,21 @@ bookmarks=true,bookmarksopenlevel=2]{hyperref}
 %\pagestyle{companion}\nouppercaseheads 
 %\pagestyle{headings}
 %\pagestyle{Ruled}
+
+\addtopsmarks{plain}{}{ 
+  \createmark{chapter}{left}{nonumber}{}{} 
+  \createmark{section}{right}{nonumber}{}{} 
+} 
+
 \pagestyle{plain}
 \makepagestyle{plain}
 \makeevenfoot{plain}{\thepage}{}{}
-\makeoddfoot{plain}{}{}{\thepage}
-\makeevenhead{plain}{}{}{}
-\makeoddhead{plain}{}{}{}
+\makeoddfoot{plain}{\rule{\textwidth}{1pt}\\\today}{}{\rev}
+\makeoddhead{plain}{\headerformat}
 
 
 \maxsecnumdepth{subsubsection} % chapters, sections, and subsections are numbered
 \maxtocdepth{subsubsection} % chapters, sections, and subsections are in the Table of Contents
-
 
 %%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
 \begin{document}
@@ -171,27 +200,32 @@ bookmarks=true,bookmarksopenlevel=2]{hyperref}
 
 ~\vspace{\fill}
 
-{\huge 
-\image{img/logo.png}\\
-TOPLIS
+{\huge
+  \textbf{ 
+    \image{img/logo.png}\\
+    TOPLIS
+  }
 }
 
 \vspace{2.5cm}
 
 {\LARGE
-TopSky plugin for Portugal vACC
+USER MANUAL
 }
 
 \vspace{3.5cm}
 
-User Manual
+TopSky plugin for Portugal vACC
+
 \medskip
+
 Version 2.0
+
 \medskip
 
 \vspace{\fill}
 
-\coverdate\today
+\today
 
 %%%
 }%%%
