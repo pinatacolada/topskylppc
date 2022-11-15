@@ -69,8 +69,6 @@ Color_Text_Notes=125,125,125
 
 CPDLC_MinLevel=100
 CPDLC_Transfer=1
-CPDLC_CFL=1
-CPDLC_DCT=1
 CPDLC_AutoAcceptLogon=1
 CPDLC_AutoAcceptLogon_Time=15
 CPDLC_PlaySound=1
@@ -308,6 +306,8 @@ Setup_LoadMap=ENVR\rivers
 
 [_CTR]
 CPDLC_Default=1
+CPDLC_CFL=1
+CPDLC_DCT=1
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
 
