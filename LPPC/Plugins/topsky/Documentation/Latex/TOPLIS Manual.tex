@@ -2941,12 +2941,13 @@ Not implemented (shows static values).
 The position symbol is drawn at the latest known position of the aircraft. The color of the symbol is the flight sector color for an unselected track and \colorref{Track Highlight} for a selected one.
 
 \begin{center}
-  \begin{minipage}[b]{0.1\textwidth}\end{minipage}\hfill 
-  \begin{minipage}[b]{0.1\textwidth}\capdimage{img/rps_psr.png}{Primary radar track}\end{minipage}\hfill 
-  \begin{minipage}[b]{0.1\textwidth}\capdimage{img/rps_psr+ssr.png}{Controlled Secondary or Combined radar track}\end{minipage}\hfill  
-  \begin{minipage}[b]{0.1\textwidth}\capdimage{img/rps_sec.png}{Uncontrolled Secondary or Combined radar track}\end{minipage}\hfill 
-  \begin{minipage}[b]{0.1\textwidth}\capdimage{img/rps_adsb.png}{ADS-B only track}\end{minipage}\hfill
-  \begin{minipage}[b]{0.1\textwidth}\end{minipage}\hfill 
+  \begin{minipage}[b]{0.14\textwidth}\end{minipage}\hfill 
+  \begin{minipage}[b]{0.14\textwidth}\capdimage{img/rps_psr.png}{Primary radar track}\end{minipage}\hfill 
+  \begin{minipage}[b]{0.14\textwidth}\capdimage{img/rps_ssr_con.png}{Controlled Secondary or Combined radar track}\end{minipage}\hfill  
+  \begin{minipage}[b]{0.14\textwidth}\capdimage{img/rps_ssr_unc.png}{Uncontrolled Secondary or Combined radar track}\end{minipage}\hfill 
+  \begin{minipage}[b]{0.14\textwidth}\capdimage{img/rps_adsb.png}{ADS-B only track}\end{minipage}\hfill
+  \begin{minipage}[b]{0.14\textwidth}\capdimage{img/rps_spi.png}{Special Position Indication (Ident)}\end{minipage}\hfill
+  \begin{minipage}[b]{0.14\textwidth}\end{minipage}\hfill 
 \end{center}  
 
 If a surveillance track does not receive position updates in over 30 seconds it becomes a Coasted track, position is no longer reliable.
@@ -2956,10 +2957,6 @@ If a surveillance track does not receive position updates in over 30 seconds it 
 If a Coasted track does not receive position updates for long enough, or it has originated outside of surveillance coverage, it becomes a FPASD track. FPASD tracks are not based on surveillance data but estimated based on Flight Plan data.
 
 \capdimage{img/rps_fpasd.png}{FPASD track}
-
-An indication of an SPI (transponder ident) can be added to the secondary radar and ADS-B symbols. It draws a cross over the symbol and prints the text “SPI” above and to the right of the symbol:
-
-\capdimage{img/rps_spi.png}{Secondary radar track without DAPs with Special Position Indication}  
 
 Except for the FPASD and Coasted tracks, a divergence alert will be drawn in case of a RAM
 or CLAM alert. This is a circle drawn around the symbol. Tracks with SPI active will not display this symbol.
