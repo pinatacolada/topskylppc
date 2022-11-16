@@ -967,7 +967,7 @@ To start using the data link functions, first connect to the VATSIM network. The
   \item Open the \winref{win:dls}
   \item Enter/check the login callsign
   \item Enter your personal logon code
-  \item Select whether to provide CPDLC or DCL/PDC services or both
+  \item Select whether to provide CPDLC or DCL services or both
   \item Left-click on the “Connect” button
 \end{itemize}
 
@@ -985,7 +985,7 @@ If the connection is lost, an error message dialog will be displayed in the cent
 
 \bigskip
 
-TopSky may sometimes fail to parse the message contents correctly. The longer the message, the more likely it is that the parsing will go wrong. When in doubt, open the message in the \winref{win:dlcmw}.
+TopSky may sometimes fail to parse the message contents correctly. The longer the message, the more likely it is that the parsing will fail. When in doubt, open the message in the \winref{win:dlcmw}.
 
 \bigskip
 
@@ -1057,7 +1057,7 @@ If the request is correctly formatted, TopSky will automatically send a flight s
   DEPART MESSAGE STATUS FSM 1312 221113 LPPT ABC123 RCD RECEIVED REQUEST BEING PROCESSED STANDBY 
 \end{quote}
 
-The List CLR tag item will show a “R” text in yellow (red if the request contained remarks text after the ATIS indicator. Check the message in the \winref{win:dlcmw}. The text will start to blink two minutes before a timeout occurs if a clearance hasn’t been sent.
+The List CLR tag item will show a “R” text in \colorref{Warning} color (\colorref{Urgency} if the request contained remarks text after the ATIS indicator. Check the message in the \winref{win:dlcmw}. The text will start to blink two minutes before a timeout occurs if a clearance hasn’t been sent.
 
 \bigskip
 
@@ -1129,24 +1129,26 @@ The messages are grouped to dialogs, with an opening message and subsequent repl
 \subsubsection{Allowed message types}
 \label{cpdlc:amt}
 
-TopSky allows for the following types of messages:
+TopSky supports for the following message types:
 
-\begin{tabular}{l l}
-  Uplink                      & Downlink\\
-  Level clearance             & Level request\\
-  Heading clearance           & Heading request\\
-  Direct-to clearance         & Direct-to request\\
-  Speed clearance             & Speed request\\
-  Squawk code assignment      & Urgency (MAYDAY/PAN/SQ7500)\\
-  Squawk ident instruction    & Free text\\
-  Voice contact instruction   & \\
-  Free text                   & \\
-\end{tabular}
+\begin{longtable}{|p{4.5cm}|p{4.5cm}|}
+  \hline
+  \textbf{Uplink}             & \textbf{Downlink} \endhead \hline
+  Level clearance             & Level request\\ \hline
+  Heading clearance           & Heading request\\ \hline
+  Direct-to clearance         & Direct-to request\\ \hline
+  Speed clearance             & Speed request\\ \hline
+  Squawk code assignment      & MAYDAY/PAN/SQ7500\\ \hline
+  Squawk ident instruction    & Free text\\ \hline
+  Voice contact instruction   & \\ \hline
+  Free text                   & \\ \hline
+  \caption{Supported CPDLC message types}
+\end{longtable}
 
-\subsubsection{Non-allowed message types}
+\subsubsection{Non-supported message types}
 \label{cpdlc:nmt}
 
-TopSky does not allow the following downlink message types. They will be automatically closed and a reply sent informing that the system does not support the message type:
+TopSky does not support the following downlink message types. They will be automatically closed and a reply sent informing that the system does not support the message type:
 
 \begin{itemize}
   \item Any requests containing “When can we expect”, “At pilots discretion” or “Own separation”
@@ -1158,7 +1160,7 @@ TopSky does not allow the following downlink message types. They will be automat
   \item Position reports
 \end{itemize}
 
-Note that a non-allowed message type can be classified as “free text” by TopSky if the message parser doesn’t recognize it as a non-allowed type. In this case the automatic reply will not be sent and the message may be left waiting for an answer if an answer is required.
+Note that a non-allowed message type can be classified as “free text” by TopSky if the message parser doesn’t recognize it as a non-allowed type. In this case the automatic reply will not be sent and it is recommended to use the "MESSAGE NOT SUPPORTED BY THIS ATS UNIT" message from the \winref{cpdlc:freetext} set, and archiving the dialogue.
 
 \subsubsection{Uplink clearance sequence}
 \label{cpdlc:ucs}
@@ -1273,7 +1275,7 @@ The responses to a level request are sent using the \winref{menu:cfl}, which off
 
 A set of premade free text messages is included for use in the \winref{menu:dlftm} and is acessible via the \winref{menu:cs} or \winref{win:dlcmw}:
 
-\begin{longtable}{|p{5cm}|p{5cm}|p{2.5cm}|}
+\begin{longtable}{|p{5cm}|p{6cm}|p{3.5cm}|}
   \hline
   \textbf{Message}                         & \textbf{Purpose}                                      & \textbf{Response Attribute} \endhead \hline
   MESSAGE NOT SUPPORTED BY THIS ATS UNIT   & Uncaught unsupported messages                         & Not required\\ \hline
@@ -1342,7 +1344,7 @@ If an uplink clearance is not answered in time, a “<message type> P LATE” wa
   >{\columncolor{Flight Highlight}}l 
   >{\columncolor{Flight Highlight}}l
   >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Pilot Late} CPDLC P LATE} & & \\
+  {\color{CPDLC Pilot Late} CFL P LATE} & & \\
   {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
   {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
   {\color{Assumed} 180} & & \\         
@@ -1363,7 +1365,7 @@ If sending an uplink clearance failed, a “<message type> ERR” warning will b
   >{\columncolor{Flight Highlight}}l 
   >{\columncolor{Flight Highlight}}l
   >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Failed} CPDLC ERR} & & \\
+  {\color{CPDLC Failed} CFL ERR} & & \\
   {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
   {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
   {\color{Assumed} 180} & & \\         
@@ -1384,7 +1386,7 @@ If an uplink clearance is sent successfully but you are not the Current Data Uni
   >{\columncolor{Flight Highlight}}l 
   >{\columncolor{Flight Highlight}}l
   >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Failed} CPDLC NOT CDA} & & \\
+  {\color{CPDLC Failed} CFL NOT CDA} & & \\
   {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
   {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
   {\color{Assumed} 180} & & \\         
@@ -1397,11 +1399,15 @@ Left-clicking acknowledges the warning and aborts the clearance, displaying the 
 
 \section{Flight Plan Conflict Probe}
 
+\begin{Warn}
+  The use of Safety Nets does not relieve the controller from manually identifying and correcting conflicts. Safety Nets are generally configured with conservative values in respect to minimum separations. Even so, the controller must be aware that it is impossible to configure Safety Nets to catch all possible conflict situations.
+\end{Warn}
+
 \subsection{MTCD (Medium Term Conflict Detection)}
 
 \subsubsection*{General}
 
-The MTCD system is a tool that enables the controller to predict possible future conflicts between aircraft. For performance reasons the maximum selectable look-ahead time (prediction time) is limited to 40 minutes and the separation distance that triggers the alert (prediction distance) to 20 nm. They can be set to any lower value, the defaults being 20 minutes and 8 nm.
+The MTCD system is a tool that enables the controller to predict possible future conflicts between aircraft. The look-ahead time (prediction time) is set to 20 minutes and the separation distance that triggers the alert (prediction distance) to 7nm for sectors where 5nm separation is applied, and 10 where 8nm separation is applied.
 
 \bigskip
 
@@ -1416,43 +1422,37 @@ In the vertical plane, TopSky predicts a climb or descent and accounts for buffe
 \begin{itemize}
     \item Conflicts (area with red shading)
     \begin{itemize}
-        \item detected within a specified buffer (default 4000ft) around the predicted vertical path of the aircraft between AFL and CFL/PEL
+        \item detected within 4000ft around the predicted vertical path of the aircraft between AFL and CFL/PEL
         \item current clearances may lead to a loss of separation
     \end{itemize}
     \item Conflict risks (area with yellow shading)
     \begin{itemize}
-        \item detected within the same buffer, but outside of the AFL-CFL/PEL level range
-        \item current clearances will not lead to a loss of separation, but clearing one of the tracks to another level may turn the risk into a conflict
+        \item detected within 4000ft around the predicted vertical path of the aircraft between AFL and RFL/XFL
+        \item current clearances will not lead to a loss of separation, but modifying the clearance to the predicted path (CFL=RFL/XFL) will create a conflict
     \end{itemize}
     \item Potential predicted conflicts (area with light red shading)
     \begin{itemize}
-        \item detected for tracks with equal CFL/PEL values, after the level is calculated to have been reached, when the predicted path contains further climb/descent
-        \item at least one of the tracks must be in the assumed sector state
-        \item current clearances may lead to a loss of separation if further climb/descent is not given
+        \item detected between tracks with equal CFL/PEL values, maintaining the same AFL, when the predicted path contains further climb/descent
+        \item current clearances result in a loss of separation if further climb/descent is not given
+        \item at least one of the tracks must be \stateref{Assumed}
     \end{itemize}
     \item Potential risks of conflict (area with light yellow shading)
     \begin{itemize}
-        \item detected within a larger vertical buffer (default 10000ft) but within the minimum and maximum levels of the predicted vertical path
+        \item detected within 10000ft but within the minimum and maximum levels of the predicted vertical path
     \end{itemize}
     \item Potential conflicts (area with light blue shading)
     \begin{itemize}
-        \item detected within the larger vertical buffer, outside of the minimum and maximum levels of the predicted vertical path
+        \item detected within 10000ft, outside of the minimum and maximum levels of the predicted vertical path
     \end{itemize}
 \end{itemize}
 
-Optionally, the detection of potential predicted conflicts and potential risks of conflict can be disabled, in which case they will be converted to potential conflicts.
-
 \bigskip
 
-For the predictions to be accurate, it’s very important to keep the CFL and the aircraft’s route updated at all times. MTCD can be disabled for aircraft that have an assigned heading or a RAM warning, as in those cases the system can’t predict the aircraft’s future positions. If it is enabled for them, the system assumes that the aircraft continues on its present track and ground speed for a specified time and stops the prediction there. The system is always disabled for flight plan tracks with an assigned heading.
+For the predictions to be accurate, it’s very important to keep the CFL and the aircraft’s route updated at all times. For aircraft that have an assigned heading or a RAM warning, the system assumes that it will continue on its present track and ground speed for a specified time and stops the prediction there. The system is always disabled for flight plan tracks with an assigned heading.
 
-\subsubsection*{Conflict and risk display}
+\subsubsection*{Conflict and Risk display on the track label}
 
-If there is a conflict or potential predicted conflict for the aircraft within the set warning parameters (can be set to warn for risks as well), the following indications are shown. The default values are 10 minutes to loss of separation with a 7nm separation minimum.
-
-\bigskip
-
-MTCD track label field Either “•” in \colorref{Urgency} color or “MTCD” in \colorref{Warning} color
+If there is a conflict or potential predicted conflict for the aircraft within the set warning parameters, a “•” in \colorref{Urgency} color is shown 10 minutes to loss of separation with a 7nm or 10nm separation minimum, depending on the sector.
 
 \bigskip
 
@@ -1462,19 +1462,242 @@ The MTCD conflicts are also displayed in the \winref{win:card}.
 
 \subsubsection*{General}
 
-Much like the MTCD system predicts future conflicts between aircraft, the SAP system predicts future intrusions into active areas. The system uses the same look-ahead time as the MTCD system. The future position predictions are done at one-minute intervals which means a very short intrusion into an active area may not be noticed by the system. The classification into risks and conflicts is the same as in MTCD: a conflict means that the current clearance may lead to the aircraft entering an active area, whereas a risk means that the current clearance will not lead to that but clearing the aircraft to its XFL or some other level beyond the current CFL may do so.
+Much like the MTCD system predicts future conflicts between aircraft, the SAP system predicts future intrusions into active areas. The system uses the same look-ahead time as the MTCD system. The future position predictions are done at one-minute intervals which means a very short intrusion into an active area may not be noticed by the system. The classification into risks and conflicts is the same as in MTCD: a conflict means that the current clearance will lead to the aircraft entering an active area, whereas a risk means that the current clearance will not lead to that but clearing the aircraft to its XFL or some other level beyond the current CFL may do so.
 
 \bigskip
 
-As with MTCD, keeping the CFL and the aircraft’s route updated is important for the system’s operation. Like MTCD, SAP can be disabled for any aircraft that has an assigned heading or a RAM warning. If enabled, the prediction logic is the same as in the MTCD case. SAP is disabled for non-altitude reporting traffic that doesn’t have a manually set AFL.
+As with MTCD, keeping the CFL and the aircraft’s route updated is important for the system’s operation. For aircraft that have an assigned heading or a RAM warning, the prediction logic is the same as in the MTCD case. SAP is disabled for non-altitude reporting traffic that do not have a manually set AFL.
 
 \subsubsection*{Conflict and Risk display on the track label}
 
-A conflict is shown by displaying the Military coordination indicator (“M”). The indicator can be set to warn for risks as well. Note that once the indicator is clicked and changes to inactive state, the system will not give further warnings for that aircraft as long as the indicator is in the inactive state. Click on the inactive indicator to re-arm the system once the aircraft has passed all the areas for which crossing clearance was given.
+A conflict is shown by displaying the Military coordination indicator (“M”). Note that once the indicator is clicked and changes to inactive state, the system will not give further warnings for that aircraft as long as the indicator is in the inactive state. Click on the inactive indicator to re-arm the system once the aircraft has passed all the areas for which crossing clearance was given.
 
 \bigskip
 
-SAP conflicts (optionally also risks) are also shown in the \winref{win:sap}.
+SAP conflicts are also shown in the \winref{win:sap}.
+
+\section{Monitoring Aids}
+
+\begin{Warn}
+  The use of Safety Nets does not relieve the controller from manually identifying and correcting conflicts. Safety Nets are generally configured with conservative values in respect to minimum separations. Even so, the controller must be aware that it is impossible to configure Safety Nets to catch all possible conflict situations.
+\end{Warn}
+
+
+\subsection{CLAM (Cleared Level Adherence Monitoring)}
+
+\subsubsection*{General}
+
+The CLAM system warns if an aircraft is not maintaining its cleared level and its vertical rate is not towards the cleared level. The alert is inhibited when the cleared level is lower than 100ft, and for aircraft in level flight, for 60 seconds after a new cleared level is set.
+
+\subsubsection*{Alert Display}
+
+An alert is shown by displaying a circle around the aircraft position symbol and the text “CLAM” in the \tagref{tag:ALRT} track label field. MSAW, APW and AIW alerts will have priority over a CLAM alert in the track label.
+
+\subsection{RAM (Route Adherence Monitoring)}
+
+\subsubsection*{General}
+
+The RAM system warns if an aircraft is deviating from its route by more than 1nm. The alert is inhibited 30nm from the departure and destination, and a larger cross-track error (5nm) is allowed near waypoints where the route makes a turn over 10° course change.
+
+\bigskip
+
+For aircraft on a direct-to clearance, the alert is given if the difference between the aircraft’s track and the direct track to the cleared point exceeds 5°. After a direct-to clearance is given, the alert is inhibited for 60 seconds or until the aircraft’s track is towards the point, whichever happens first.
+
+\subsubsection*{Alert Display}
+
+An alert is shown by displaying a circle around the aircraft position symbol and the text “RAM” in the \tagref{tag:ALRT} track label field. MSAW, APW, AIW and CLAM alerts will have priority over a RAM alert in the track label.
+
+\section{Safety Nets}
+
+\begin{Warn}
+  The use of Safety Nets does not relieve the controller from manually identifying and correcting conflicts. Safety Nets are generally configured with conservative values in respect to minimum separations. Even so, the controller must be aware that it is impossible to configure Safety Nets to catch all possible conflict situations.
+\end{Warn}
+
+
+\subsection{AIW (Airspace Infringement Warning)}
+
+\subsubsection*{General}
+
+The AIW system warns if an uncontrolled aircraft is already inside or going to enter controlled airspace within a defined time. The system will only scan correlated radar tracks.
+
+\subsubsection*{Alert display}
+
+An alert is shown by displaying the text “AIW” in the \tagref{tag:ALRT} track label field. MSAW and APW alerts will have priority over an AIW alert. The AFL item is also colored \colorref{AIW intrusion} and a one minute long prediction line is displayed in \colorref{AIW intrusion} color regardless of the prediction line settings.
+
+\subsection{APW (Area Proximity Warning)}
+
+\subsubsection*{General}
+
+The APW system warns if an aircraft is inside or about to enter a Temporary Segregated Airspace without clearance. The position of the aircraft is only predicted in 30 second intervals for performance reasons so very short future intrusions may not be noticed by the system. The areas are defined in an external text file and activated in the \winref{win:amw}.
+
+\subsubsection*{Alert display}
+
+An alert is shown by coloring the \tagref{tag:CALLSIGN} item background or the text itself in \colorref{Warning} color, unless the \tagref{tag:CALLSIGN} item has been manually highlighted. "APW" is displayed in the \tagref{tag:ALRT} track label field. An MSAW alert will have priority over an APW alert.
+
+\subsection{MSAW (Minimum Safe Altitude Warning)}
+
+\subsubsection*{General}
+
+\begin{Note}
+  MSAW is currently not implemented
+\end{Note}
+
+The MSAW system alerts when an aircraft is flying at an altitude below the minimum safe altitude. The minimum safe altitude data is read from an external file. There is an adjustable buffer value in the system that allows some altitude variation below the safe altitude to inhibit nuisance alerts for aircraft flying at the minimum safe altitude and not staying exactly at that altitude.
+
+\subsubsection*{Alert display}
+
+An alert is shown by displaying the text “MSAW” in the \tagref{tag:ALRT} track label field.
+
+\subsection{STCA (Short Term Conflict Alert)}
+
+\subsubsection*{General}
+
+The STCA system is designed to alert the controller of a possible or actual loss of separation between aircraft. The alert is given between 60 seconds and 120 seconds before a loss of separation is predicted to happen, but it is dependent on the relative positions and movement of the aircraft. The alert will not be shown if both aircraft have STCA alerting inhibited (see the \winref{win:snsw}), are inside exclusion areas for parallel approaches, or when either aircraft is inside an active STCA inhibit area. LPPR, LPPT, LPCS, LPFR, LPMA and LPPS CTR are defined as STCA inhibit areas
+
+\bigskip
+
+In the vertical plane the STCA function will assume that an aircraft will level off at its cleared level. This will reduce the number of nuisance alerts caused by climbing and descending aircraft in busy airspace, but will delay the alert in case an aircraft continues through its cleared level. The alert will then be given only after the failure to level off is seen by the system.
+
+\subsubsection*{Alert display}
+
+An alert is shown by coloring the \tagref{tag:CALLSIGN} item background or the text itself in \colorref{Urgency} color. A one minute long prediction line is displayed in \colorref{Urgency} color regardless of the prediction line settings. 
+
+\bigskip
+
+In addition to the above, the radar position symbol and history dots are displayed in \colorref{Urgency} color.
+
+\bigskip
+
+An aural alert can also be generated if the corresponding setting is enabled in the \winref{menu:global}.
+
+\section{Sector States}
+
+Depending on a set of conditions and relationships, each Flight Plan is defined as being in a certain state relative to each airspace volume. This is the so called Sector State. As a given flight progresses along its route it will go through a series of diferent Sector States relative to a given airspace volume. 
+
+\bigskip
+
+Track presentation coloring depends on the flight sector state:
+
+\begin{center}
+\begin{tabular}{| p{2.5cm} p{2.5cm} p{8cm} |}
+  \hline
+  \textbf{State}                                                  & \textbf{Color}               & \textbf{Condition}\\ \hline
+  Initial (Unconcerned) \nextrow \label{state:Unconcerned}        & \colortabex{Unconcerned}     & Track will not enter the active sector\\ \hline
+  Free (Unconcerned)\nextrow \label{state:Free}                   & \colortabex{Unconcerned}     & Track is not assumed or on-contact with anyone\\ \hline
+  Notified \nextrow \label{state:Notified}                        & \colortabex{Concerned}       & Track will enter the active sector (> 15 min)\\ \hline
+  Coordinated \nextrow \label{state:Coordinated}                  & \colortabex{Coordination}    & Track will enter the active sector (< 15 min)\\ \hline
+  Assumed \nextrow \label{state:Assumed}                          & \colortabex{Assumed}         & Track is assumed\\ \hline
+  On Contact \nextrow \label{state:On Contact}                    & \colortabex{Assumed}         & Track is on-contact with you. Flight is considered as Uncontrolled\\ \hline
+  Transfer Initiated                                              & \colortabex{Assumed}         & Track is being transferred to the next controller. \tagref{tag:CALLSIGN} and \tagref{tag:SI} are colored in \colorref{Redundant} color\\ \hline
+  Redundant \nextrow \label{state:Redundant}                      & \colortabex{Redundant}       & Track has been transferred to the next controller but is still inside the active sector\\ \hline
+  Informed                                                        & \colortabex{Informed 1}      & Track will not enter the active sector but is relevant to it\\ \hline
+\end{tabular}
+\end{center}
+
+Sector States are used to control label construction, placement in lists, filtering, coloring, Safety Net parameters and availability. For example, a Flight Plan in the \stateref{On Contact} state will not trigger an APW warning until already being inside a TSA and will be shown in the \winref{list:uncon}. The same flight but in the \stateref{Assumed} state will trigger the APW warning when less than 3nm of a TSA and will not be shown in the \winref{list:uncon}.
+
+\bigskip
+
+\stateref{Coordinated} tracks that have not departed yet are displayed as \stateref{Notified}.
+
+\subsection*{Examples}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    Sector            & LEM                                                               & NORL               & CENL                & SULL                \\ \hline
+    Aircraft Position & \begin{tabular}[c]{@{}c@{}}\usym{2708}\\ >15 minutes\end{tabular} &                    &                     &                     \\ \hline
+    Sector State      & -                                                                 & \stateref{Notified} & \stateref{Notified} & \stateref{Notified} \\ \hline
+    \end{tabular}
+    \caption{Flight Plan still faraway inside LEM crossing NORL, CENL and SULL}
+    \label{tab:state-example-faraway}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  Sector            & LEM                                                               & NORL               & CENL                & SULL                \\ \hline
+  Aircraft Position & \begin{tabular}[c]{@{}c@{}}\usym{2708}\\ <15 minutes\end{tabular} &                    &                     &                     \\ \hline
+  Sector State      & -                                                                 & \stateref{Coordinated} & \stateref{Notified} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan entering NORL in less than 15 minutes}
+  \label{tab:state-example-entry}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Sector                                  & NORL               & CENL                & SULL                \\ \hline
+  Aircraft Position                       & \usym{2708}        &                     &                     \\ \hline
+  Sector State                            & \stateref{Assumed} & \stateref{Notified} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan assumed by NORL}
+  \label{tab:state-example-assumed}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Sector                                  & NORL               & CENL                & SULL                \\ \hline
+  Aircraft Position                       & \usym{2708}        &                     &                     \\ \hline
+  Sector State                            & \stateref{Assumed} & \stateref{Coordinated} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan assumed by NORL and less than 15 minutes to CENL}
+  \label{tab:state-example-norlexit}
+\end{table}
+    
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Sector                                  & NORL                 & CENL               & SULL                \\ \hline
+  Aircraft Position                       & \usym{2708}          &         &                     \\ \hline
+  Sector State                            & \stateref{Redundant} & \stateref{Assumed} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan transferred from NORL to CENL but still inside of NORL airspace}
+  \label{tab:state-example-cenl}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+  \hline
+  Sector                                  & NORL                   & CENL               & SULL                \\ \hline
+  Aircraft Position                       &                        & \usym{2708}        &                     \\ \hline
+  Sector State                            & \stateref{Unconcerned} & \stateref{Assumed} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan assumed by CENL and has left NORL airspace}
+  \label{tab:state-example-cenlentry}
+\end{table}
+  
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  Sector            & LEM                                                               & NORL               & CENL                & SULL                \\ \hline
+  Aircraft Position & \begin{tabular}[c]{@{}c@{}}\usym{2708}\\ >15 minutes\end{tabular} &                    &                     &                     \\ \hline
+  Sector State      & -                                                                 & \stateref{Unconcerned} & \stateref{Unconcerned} & \stateref{Notified} \\ \hline
+  \end{tabular}
+  \caption{Flight Plan in LEM and will only cross SULL}
+  \label{tab:state-example-sullonly}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|}
+  \hline
+  Sector            & LEM   & NORL                    & CENL                    & SULL                  \\ \hline
+  Aircraft Position &       &                         &                         &                       \\ \hline
+  Sector State      & -     & \stateref{Unconcerned}  & \stateref{Unconcerned}  & \stateref{Unconcerned}\\ \hline
+  \end{tabular}
+  \caption{Flight Plan does not enter any sector}
+  \label{tab:state-example-avoid}
+\end{table}
+
 
 \section{Label field descriptions}
 
@@ -2613,213 +2836,6 @@ SAP conflicts (optionally also risks) are also shown in the \winref{win:sap}.
       \colorref{Unknown} \\ \hline
       \caption{Label Field descriptions}
     \end{longtable}
-
-\section{Monitoring Aids}
-
-\subsection{CLAM (Cleared Level Adherence Monitoring)}
-
-\subsubsection*{General}
-
-The CLAM system warns if an aircraft is not maintaining its cleared level and its vertical rate is not towards the cleared level. The alert is inhibited when the cleared level is lower than a defined value (100ft), and for aircraft in level flight, for a specified time (60 sec) after a new cleared level is set.
-
-\subsubsection*{Alert Display}
-
-An alert is shown by displaying a circle around the aircraft position symbol and the text “CLAM” in the ALRT track label field. Note that MSAW, APW and AIW alerts will have priority over a CLAM alert in the track label.
-
-\subsection{RAM (Route Adherence Monitoring)}
-
-\subsubsection*{General}
-
-The RAM system warns if an aircraft is deviating from its route by more than a defined distance (2nm). The alert is inhibited specific distances from the departure (30nm) and destination (30nm), and a larger cross-track error (5nm) is allowed near waypoints where the route makes a turn (over 10° course change).
-
-\bigskip
-
-For aircraft on a direct-to clearance, the alert is given if the difference between the aircraft’s track and the direct track to the cleared point exceeds a set value (5°). After a direct-to clearance is given, the alert is inhibited for a specified time (60 sec) or until the aircraft’s track is towards the point, whichever happens first.
-
-\subsubsection*{Alert Display}
-
-An alert is shown by displaying a circle around the aircraft position symbol and the text “RAM” in the ALRT track label field. Note that an MSAW, APW, AIW and CLAM alerts will have priority over a RAM alert in the track label.
-
-\section{Safety Nets}
-
-\subsection{AIW (Airspace Infringement Warning)}
-
-\subsubsection*{General}
-
-The AIW system warns if an uncontrolled aircraft is already inside or going to enter controlled airspace within a defined time. The system will only scan correlated radar tracks.
-
-\subsubsection*{Alert display}
-
-An alert is shown by displaying the text “AIW” in the ALRT track label field. Note that MSAW and APW alerts will have priority over an AIW alert. The AFL item is also colored “AIW Intrusion” and a one-minute- long prediction line is displayed in “AIW Intrusion” color regardless of the prediction line settings.
-
-
-\subsection{APW (Area Proximity Warning)}
-
-\subsubsection*{General}
-
-The APW system warns if an aircraft is inside or about to enter an active area it shouldn’t be entering (for example active danger, restricted and TSA areas). The position of the aircraft is only predicted in 30 second intervals for performance reasons so very short future intrusions may not be noticed by the system. The areas are defined in an external text file and activated in the \winref{win:amw}.
-
-\subsubsection*{Alert display}
-
-An alert is shown by coloring the CALLSIGN item background (plugin drawn windows) or the text itself (elsewhere where TopSky can’t control the background color) in \colorref{Warning} color unless the CALLSIGN item has been manually highlighted, and also by displaying the text “APW” in the ALRT track label field (an MSAW alert will have priority over an APW alert there).
-
-\subsection{MSAW (Minimum Safe Altitude Warning)}
-
-\subsubsection*{General}
-
-The MSAW system alerts when an aircraft is flying at an altitude below the minimum safe altitude. The minimum safe altitude data is read from an external file that has to be present for the system to give any warnings. There is an adjustable buffer value in the system that allows some altitude variation below the safe altitude to inhibit nuisance alerts for aircraft flying at the minimum safe altitude and not staying exactly at that altitude.
-
-\subsubsection*{Alert display}
-
-An alert is shown by displaying the text “MSAW” in the ALRT track label field.
-
-\subsection{STCA (Short Term Conflict Alert)}
-
-\subsubsection*{General}
-
-The STCA system is designed to alert the controller of a possible or actual loss of separation between aircraft. The alert is given a specified time (for example 90 seconds) before a loss of separation is predicted to happen, but it is dependent on the relative positions and movement of the aircraft. The alert will not be shown if both aircraft have STCA alerting inhibited (see the \winref{win:snsw}), are inside exclusion areas for parallel approaches, or when either aircraft is inside an active STCA inhibit area.
-
-\bigskip
-
-In the vertical plane there is an option to always assume that an aircraft will level off at its cleared level. This will reduce the number of nuisance alerts caused by climbing and descending aircraft in busy airspace, but will delay the alert in case an aircraft continues through its cleared level. The alert will then be given only after the failure to level off is seen by the system.
-
-\subsubsection*{Alert display}
-
-An alert is shown by coloring the CALLSIGN item background (plugin drawn windows) or the text itself (elsewhere where TopSky can’t control the background color) in \colorref{Urgency} color. A one-minute-long prediction line is displayed in \colorref{Urgency} color regardless of the prediction line settings. 
-
-\bigskip
-
-In addition to the above, the radar position symbol and history dots are displayed in \colorref{Urgency} color.
-
-\bigskip
-
-An aural alert can also be generated if the corresponding plugin setting is enabled.
-
-\section{Sector States}
-
-Depending on a set of conditions and relationships, each Flight Plan is defined as being in a certain state relative to each airspace volume. This is the so called Sector State. As a given flight progresses along its route it will go through a series of diferent Sector States relative to a given airspace volume. 
-
-\bigskip
-
-Track presentation coloring depends on the flight sector state:
-
-\begin{center}
-\begin{tabular}{| p{2.5cm} p{2.5cm} p{8cm} |}
-  \hline
-  \textbf{State}                                                  & \textbf{Color}               & \textbf{Condition}\\ \hline
-  Initial (Unconcerned) \nextrow \label{state:Unconcerned}        & \colortabex{Unconcerned}     & Track will not enter the active sector\\ \hline
-  Free (Unconcerned)\nextrow \label{state:Free}                   & \colortabex{Unconcerned}     & Track is not assumed or on-contact with anyone\\ \hline
-  Notified \nextrow \label{state:Notified}                        & \colortabex{Concerned}       & Track will enter the active sector (> 15 min)\\ \hline
-  Coordinated \nextrow \label{state:Coordinated}                  & \colortabex{Coordination}    & Track will enter the active sector (< 15 min)\\ \hline
-  Assumed \nextrow \label{state:Assumed}                          & \colortabex{Assumed}         & Track is assumed\\ \hline
-  On Contact \nextrow \label{state:On Contact}                    & \colortabex{Assumed}         & Track is on-contact with you. Flight is considered as Uncontrolled\\ \hline
-  Transfer Initiated                                              & \colortabex{Assumed}         & Track is being transferred to the next controller. \tagref{tag:CALLSIGN} and \tagref{tag:SI} are colored in \colorref{Redundant} color\\ \hline
-  Redundant \nextrow \label{state:Redundant}                      & \colortabex{Redundant}       & Track has been transferred to the next controller but is still inside the active sector\\ \hline
-  Informed                                                        & \colortabex{Informed 1}      & Track will not enter the active sector but is relevant to it\\ \hline
-\end{tabular}
-\end{center}
-
-Sector States are used to control label construction, placement in lists, filtering, coloring, Safety Net parameters and availability. For example, a Flight Plan in the \stateref{On Contact} state will not trigger an APW warning until already being inside a TSA and will be shown in the \winref{list:uncon}. The same flight but in the \stateref{Assumed} state will trigger the APW warning when less than 3nm of a TSA and will not be shown in the \winref{list:uncon}.
-
-\stateref{Coordinated} tracks that have not departed yet are displayed as \stateref{Notified}.
-
-\subsection*{Examples}
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|c|c|c|c|c|}
-    \hline
-    Sector            & LEM                                                               & NORL               & CENL                & SULL                \\ \hline
-    Aircraft Position & \begin{tabular}[c]{@{}c@{}}\usym{2708}\\ >15 minutes\end{tabular} &                    &                     &                     \\ \hline
-    Sector State      & -                                                                 & \stateref{Notified} & \stateref{Notified} & \stateref{Notified} \\ \hline
-    \end{tabular}
-    \caption{Flight Plan still faraway inside LEM crossing NORL, CENL and SULL}
-    \label{tab:state-example-faraway}
-\end{table}
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|c|c|c|c|c|}
-  \hline
-  Sector            & LEM                                                               & NORL               & CENL                & SULL                \\ \hline
-  Aircraft Position & \begin{tabular}[c]{@{}c@{}}\usym{2708}\\ <15 minutes\end{tabular} &                    &                     &                     \\ \hline
-  Sector State      & -                                                                 & \stateref{Coordinated} & \stateref{Notified} & \stateref{Notified} \\ \hline
-  \end{tabular}
-  \caption{Flight Plan entering NORL in less than 15 minutes}
-  \label{tab:state-example-entry}
-\end{table}
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|c|c|c|c|}
-  \hline
-  Sector                                  & NORL               & CENL                & SULL                \\ \hline
-  Aircraft Position                       & \usym{2708}        &                     &                     \\ \hline
-  Sector State                            & \stateref{Assumed} & \stateref{Notified} & \stateref{Notified} \\ \hline
-  \end{tabular}
-  \caption{Flight Plan assumed by NORL}
-  \label{tab:state-example-assumed}
-\end{table}
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|c|c|c|c|}
-  \hline
-  Sector                                  & NORL               & CENL                & SULL                \\ \hline
-  Aircraft Position                       & \usym{2708}        &                     &                     \\ \hline
-  Sector State                            & \stateref{Assumed} & \stateref{Coordinated} & \stateref{Notified} \\ \hline
-  \end{tabular}
-  \caption{Flight Plan assumed by NORL and less than 15 minutes to CENL}
-  \label{tab:state-example-norlexit}
-\end{table}
-    
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|c|c|c|c|}
-  \hline
-  Sector                                  & NORL                 & CENL               & SULL                \\ \hline
-  Aircraft Position                       & \usym{2708}          &         &                     \\ \hline
-  Sector State                            & \stateref{Redundant} & \stateref{Assumed} & \stateref{Notified} \\ \hline
-  \end{tabular}
-  \caption{Flight Plan transferred from NORL to CENL but still inside of NORL airspace}
-  \label{tab:state-example-cenl}
-\end{table}
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|c|c|c|c|}
-  \hline
-  Sector                                  & NORL                   & CENL               & SULL                \\ \hline
-  Aircraft Position                       &                        & \usym{2708}        &                     \\ \hline
-  Sector State                            & \stateref{Unconcerned} & \stateref{Assumed} & \stateref{Notified} \\ \hline
-  \end{tabular}
-  \caption{Flight Plan assumed by CENL and has left NORL airspace}
-  \label{tab:state-example-cenlentry}
-\end{table}
-  
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|c|c|c|c|c|}
-  \hline
-  Sector            & LEM                                                               & NORL               & CENL                & SULL                \\ \hline
-  Aircraft Position & \begin{tabular}[c]{@{}c@{}}\usym{2708}\\ >15 minutes\end{tabular} &                    &                     &                     \\ \hline
-  Sector State      & -                                                                 & \stateref{Unconcerned} & \stateref{Unconcerned} & \stateref{Notified} \\ \hline
-  \end{tabular}
-  \caption{Flight Plan in LEM and will only cross SULL}
-  \label{tab:state-example-sullonly}
-\end{table}
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{|c|c|c|c|c|}
-  \hline
-  Sector            & LEM   & NORL                    & CENL                    & SULL                  \\ \hline
-  Aircraft Position &       &                         &                         &                       \\ \hline
-  Sector State      & -     & \stateref{Unconcerned}  & \stateref{Unconcerned}  & \stateref{Unconcerned}\\ \hline
-  \end{tabular}
-  \caption{Flight Plan does not enter any sector}
-  \label{tab:state-example-avoid}
-\end{table}
 
 \chapter{User Interface}
 
