@@ -628,7 +628,7 @@ After the accepting controller assumes the aircraft, the release indicator chang
 \end{Note}
 
 \subsection{HOP}
-
+\label{coo:hop}
 The purpose of the HOP (Hand-Over Proposal) message is for the transferring controller to propose the flight for hand-over to the accepting controller, and/or to propose non-standard transfer conditions which require the approval of the accepting controller.
 
 \bigskip
@@ -713,6 +713,7 @@ The transferring controller should monitor both the track label and the \winref{
 \end{Note}
 
 \subsection{ROF}
+\label{coo:rof}
 
 The ROF (Request on Frequency) message is sent by the accepting controller to the transferring controller when a flight establises radio contact but the label has not yet been transfered to the downstream sector. The upstream sector should then transfer the label. The message may also be used as a reply to HOP to signify the acceptance of the flight under the proposed conditions.
 
@@ -777,7 +778,7 @@ The indications are removed when a “Transfer”, “Trf \& release” or “HO
 \end{Note}
 
 \subsection{RTI/TIP}
-
+\label{coo:rti}\label{coo:tip}
 These messages are used to request/propose the transfer of a flight on an assigned heading, speed or rate of climb/descent. RTI (Request Tactical Instructions) is a request initiated by the accepting controller and TIP (Tactical Instructions Proposal) a proposal initiated by the transferring controller.
 
 \bigskip
@@ -1713,7 +1714,7 @@ Sector States are used to control label construction, placement in lists, filter
       “•”, set from \winref{menu:cs} 
 
       Used to highlight a flight operating in a frequency other than the Sector Primary &
-      \colorref{Freq Indicator} \\ \hline
+      \colorref{Assumed} \\ \hline
     Mark dot \nextrow \label{tag:Mark dot}&
       Mark &
       “•”, set from \winref{menu:cs} 
@@ -2842,11 +2843,13 @@ Sector States are used to control label construction, placement in lists, filter
 \section{Main Window}
 \capdimage{img/mainwindow.png}{Main Window on initialization}
 
-Euroscope should load with some preplaced windows similar to the above configuration
+TopSky should load with some preplaced windows similar to the above configuration
 
 \begin{Note}
 Screen resolutions other than 1920x1080 will yield different results. Larger resolutions will bring preplaced windows towards the left and middle, while smaller resolutions may potentially place windows outside the screen. It is recommended for users experiencing difficulties related to their screen size to experiment and create custom settings in the TopSkySettingsLocal file containing revised window placements adjusted for their own screen. Refer to \texttt{\detokenize{TopSky_Developer_Guide_Settings.xlsx}} for available settings  
 \end{Note}
+
+On initialization TopSky will load the \winref{menu:global} on top, \winref{list:sector} and \winref{list:dep} on the top left, \winref{win:miw} and \winref{win:mow} on the top center right, \winref{win:notamlw} on center, \winref{win:card} and \winref{win:sap} on bottom right, plus legacy weather and controller lists on top right as well.
 
 \section{Global Menu}
 \label{menu:global}
@@ -2886,21 +2889,29 @@ Most used options are CPDLC Setting for CPDLC operations and Default Setting to 
 \subsection*{Unit Settings submenu}
 \label{menu:unitset}
 
-This submenu can be used to change the units used in TopSky. Any changes to the settings are session- specific only, so they will be lost when exiting EuroScope.
+This submenu can be used to change the units used in TopSky. Any changes to the settings are session specific only, so they will be lost when exiting EuroScope.
 
 \begin{longtable}{p{5cm} p{7.5cm}}
-  Altitude & Selects the units used for altitudes and vertical rates\\
-  Nautical (feet, feet per minute)\\
-  Metric (meters, meters per second)\\
-  Flight level & Selects the units for flight levels – only applicable with metric altitudes\\
-  Nautical (hundreds of feet)\\
-  Metric (meters)\\
-  Distance & Selects the units used for distances\\
-  Nautical (nautical miles)\\
-  Metric (kilometers)\\
-  Speed & Selects the units used for speeds\\
-  Nautical (knots)\\
-  Metric (kilometers per hour)\\
+  Altitude & Selects the units used for altitudes and vertical rates
+    \begin{itemize}
+      \item Nautical (feet, feet per minute)
+      \item Metric (meters, meters per second)
+    \end{itemize}\\
+  Flight level & Selects the units for flight levels – only applicable with metric altitudes
+    \begin{itemize}
+      \item Nautical (hundreds of feet)
+      \item Metric (meters)
+    \end{itemize}\\
+  Distance & Selects the units used for distances
+    \begin{itemize}
+      \item  Nautical (nautical miles)
+      \item Metric (kilometers)
+    \end{itemize}\\
+  Speed & Selects the units used for speeds
+    \begin{itemize}
+      \item Nautical (knots)
+      \item Metric (kilometers per hour)
+    \end{itemize}\\
 \end{longtable}
 
 \subsection*{Local Settings submenu}
@@ -2918,12 +2929,12 @@ specific only, so they will be lost when exiting EuroScope.
   Transfer confirmation   & Selects when to display the Transfer Confirmation Window:\\                          & \hspace{10pt}• On Always when CFL is not equal to XFL\\                          & \hspace{10pt}• NotRFL When CFL is not equal to XFL unless XFL = RFL\\                          & \hspace{10pt}• Off Never, any CFL value is OK\\
   CFL menu default value  & Selects the default value for the CFL menu when it is opened:\\                          & \hspace{10pt}• XFL FSS or CTR: RFL if not yet reached, otherwise as below\\                          & \hspace{10pt}• Other: The XFL value, or current CFL value with no XFL\\                          & \hspace{10pt}• CFL The current CFL value\\                          & \hspace{10pt}• RFL The RFL value\\
   FPCP inhibit            & FPCP calculations start when tracks are within this time from entering active sector\\
-  STCA alert              & Selects which aircraft display the STCA alert:\\                          & \hspace{10pt}• All All aircraft\\                          & \hspace{10pt}• Own+Co Only assumed and coordinated aircraft\\                          & \hspace{10pt}• Own Only assumed aircraft\\
-  STCA alert sound        & Selects which STCA alerts trigger the alert sound:\\                          & \hspace{10pt}• All All alerts\\                          & \hspace{10pt}• Own+Co Only alerts with assumed and/or coordinated aircraft involved\\                          & \hspace{10pt}• Own Only alerts with assumed aircraft involved\\
-  APW alert               & Selects which aircraft display the APW alert:\\                          & \hspace{10pt}• All All aircraft\\                          & \hspace{10pt}• Own+Co Only assumed and coordinated aircraft\\                          & \hspace{10pt}• Own Only assumed aircraft\\
-  APW alert sound         & Selects which STCA alerts trigger the alert sound:\\                          & \hspace{10pt}• All All alerts\\                          & \hspace{10pt}• Own+Co Only alerts for assumed or coordinated\\                          & aircraft\\                          & \hspace{10pt}• Own Only alerts for assumed aircraft\\
+  STCA alert              & Selects which aircraft display the STCA alert:\\                          & \hspace{10pt}• All All aircraft\\                          & \hspace{10pt}• Own+Co Only \stateref{Assumed} and \stateref{Coordinated} aircraft\\                          & \hspace{10pt}• Own Only \stateref{Assumed} aircraft\\
+  STCA alert sound        & Selects which STCA alerts trigger the alert sound:\\                          & \hspace{10pt}• All All alerts\\                          & \hspace{10pt}• Own+Co Only alerts with \stateref{Assumed} and \stateref{Coordinated} aircraft involved\\                          & \hspace{10pt}• Own Only alerts with \stateref{Assumed} aircraft involved\\
+  APW alert               & Selects which aircraft display the APW alert:\\                          & \hspace{10pt}• All All aircraft\\                          & \hspace{10pt}• Own+Co Only \stateref{Assumed} and \stateref{Coordinated} aircraft\\                          & \hspace{10pt}• Own Only \stateref{Assumed} aircraft\\
+  APW alert sound         & Selects which STCA alerts trigger the alert sound:\\                          & \hspace{10pt}• All All alerts\\                          & \hspace{10pt}• Own+Co Only alerts for \stateref{Assumed} and \stateref{Coordinated}\\                          & aircraft\\                          & \hspace{10pt}• Own Only alerts for \stateref{Assumed} aircraft\\
   METAR source            & Selects the METAR data source for TopSky windows that display METAR data\\
-  FPASD filter            & Allows filtering of displayed FPASD tracks based on sector state\\                          & \hspace{10pt}• Coord Display tracks at least in the coordinated state\\                          & \hspace{10pt}• Conc Display tracks at least in the concerned state\\                          & \hspace{10pt}• None Display all tracks\\
+  FPASD filter            & Allows filtering of displayed FPASD tracks based on sector state\\                          & \hspace{10pt}• Coord Display tracks at least in the \stateref{Coordinated} state\\                          & \hspace{10pt}• Conc Display tracks at least in the \stateref{Concerned} state\\                          & \hspace{10pt}• None Display all tracks\\
 \end{longtable}
 \medskip
 
@@ -2946,8 +2957,6 @@ Not operational.
 \subsection{AMS menu}
 \label{menu:ams}
 
-\image{img/AMS.png}
-
 Opens the \winref{win:amw}.
 
 \subsection{FData menu}
@@ -2959,13 +2968,13 @@ Opens the \winref{win:fpsw} and \winref{win:fpw}.
 \label{menu:tools}
 
 \begin{longtable}{p{5cm} p{7.5cm}}
-  Flight Plan Lists >   & Opens the Flight Plan Lists submenu       \\
+  Flight Plan Lists >   & Opens the \winref{menu:fplists}\\
   CARD…                 & Opens the \winref{win:card}    \\
   SAP…                  & Opens the \winref{win:sap}     \\
   Vertical Aid Window…  & Opens the \winref{win:vaw}     \\
   Message In…           & Opens the \winref{win:miw}     \\
   Message Out…          & Opens the \winref{win:mow}     \\
-  CPDLC >               & Opens the CPDLC submenu                   \\
+  CPDLC >               & Opens the CPDLC submenu        \\
   LAT/LONG…             & Opens the \winref{win:latlon}  \\
 \end{longtable}
 
@@ -2973,42 +2982,42 @@ Opens the \winref{win:fpsw} and \winref{win:fpw}.
 \label{menu:fplists}
 
 \begin{longtable}{p{5cm} p{7.5cm}}
-  List options bar            & Toggles the display of list options on the Global Menu\\
-  Sector List…                & Opens the Sector List                                 \\
-  Informed                    & Toggles the display of informed aircraft              \\
-  Concerned                   & Toggles the display of concerned aircraft             \\
-  Redundant                   & Toggles the display of redundant aircraft             \\
-  Load Factor List…           & Opens the \textit{\titleref{list:load}}               \\
-  ETWR List…                  & Opens the \textit{\titleref{list:etwr}}               \\
-  <adep>                      & ETWR List departure airports filter                   \\
-  Uncont. List 1…             & Opens the \textit{\titleref{list:uncon}}              \\
-  <filter>                    & Uncontrolled 1 List state filter                      \\
-  <units>                     & Uncontrolled 1 List units filter                      \\
-  Uncont. List 2…             & Opens the \textit{\titleref{list:uncon}}              \\
-  <filter>                    & Uncontrolled 2 List state filter                      \\
-  <units>                     & Uncontrolled 2 List units filter                      \\
-  Lost List…                  & Opens the \textit{\titleref{list:lost}}               \\
-  Resectorisation List…       & Opens the \textit{\titleref{list:resec}}              \\
-  <lfunc>                     & Resectorisation List LFUNC filter                     \\
-  Traffic Mgmt. List 1…       & Opens the \textit{\titleref{list:tml}}               \\
-  <state>                     & Traffic Management List 1 flight plan state filter    \\
-  <ades>                      & Traffic Management List 1 destination airports filter \\
-  <via>                       & Traffic Management List 1 route points filter         \\
-  Traffic Mgmt. List 2…       & Opens the \textit{\titleref{list:tml}}               \\
-  <state>                     & Traffic Management List 2 flight plan state filter    \\
-  <ades>                      & Traffic Management List 2 destination airports filter \\
-  <via>                       & Traffic Management List 2 route points filter         \\
+  List options bar            & Toggles the display of list options on the \winref{menu:global}\\
+  Sector List…                & Opens the \winref{list:sector}                                 \\
+  Informed                    & Toggles the display of \stateref{Informed} aircraft            \\
+  Concerned                   & Toggles the display of \stateref{Concerned} aircraft           \\
+  Redundant                   & Toggles the display of \stateref{Redundant} aircraft           \\
+  Load Factor List…           & Opens the \winref{list:load}                                   \\
+  ETWR List…                  & Opens the \winref{list:etwr}                                   \\
+  <adep>                      & ETWR List departure airports filter                            \\
+  Uncont. List 1…             & Opens the \winref{list:uncon}                                  \\
+  <filter>                    & Uncontrolled 1 List state filter                               \\
+  <units>                     & Uncontrolled 1 List units filter                               \\
+  Uncont. List 2…             & Opens the \winref{list:uncon}                                  \\
+  <filter>                    & Uncontrolled 2 List state filter                               \\
+  <units>                     & Uncontrolled 2 List units filter                               \\
+  Lost List…                  & Opens the \winref{list:lost}                                   \\
+  Resectorisation List…       & Opens the \winref{list:resec}                                  \\
+  <lfunc>                     & Resectorisation List LFUNC filter                              \\
+  Traffic Mgmt. List 1…       & Opens the \winref{list:tml}                                    \\
+  <state>                     & Traffic Management List 1 flight plan state filter             \\
+  <ades>                      & Traffic Management List 1 destination airports filter          \\
+  <via>                       & Traffic Management List 1 route points filter                  \\
+  Traffic Mgmt. List 2…       & Opens the \winref{list:tml}                                    \\
+  <state>                     & Traffic Management List 2 flight plan state filter             \\
+  <ades>                      & Traffic Management List 2 destination airports filter          \\
+  <via>                       & Traffic Management List 2 route points filter                  \\
 \end{longtable}
 
-When enabled, the list options bar displays “Info Conc Redu Filter Filter” on the right edge of the Global Menu. The first three toggle the respective settings for the Sector List and are colored with the appropriate color when enabled, and the last two are displayed in \colorref{VFR} color when the corresponding Uncontrolled list is somehow filtered. Clicking on them opens the Flight Plan Lists submenu to change the filtering options.
+When enabled, the list options bar displays “Info Conc Redu Filter Filter” on the right edge of the \winref{menu:global}. The first three toggle the respective settings for the \winref{list:sector} and are colored with the appropriate color when enabled, and the last two are displayed in \colorref{VFR} color when the corresponding \winref{list:uncon} are somehow filtered. Clicking on them opens the \winref{menu:fplists} to change the filtering options.
 
 \bigskip
 
-Left-clicking <filter> cycles through “ALL” (no filtering), “ON-CONTACT” (only tracks on-contact with anyone), “ON-CONTACT-PPOS” (only tracks on-contact with you) and “FREE” (only tracks in the free state).
+Left-clicking <filter> cycles through “ALL” (no filtering), “ON-CONTACT” (only tracks \stateref{On Contact} with anyone), “ON-CONTACT-PPOS” (only tracks \stateref{On Contact} with you) and “FREE” (only tracks in the \stateref{Free} state).
 
 \bigskip
 
-Left-clicking <units> opens a text entry box to enter a comma-separated list of aerodrome ICAO codes to filter the list. When entered, the list will display a flight only if one of the entered codes is its departure or destination, or the code is found in its scratchpad (OP-TEXT2).
+Left-clicking <units> opens a text entry box to enter a comma-separated list of aerodrome ICAO codes to filter the list. When entered, the list will display a flight only if one of the entered codes is its departure or destination, or the code is found in \tagref{tag:OP TEXT2}.
 
 \bigskip
 
@@ -3102,19 +3111,19 @@ High priority messages are critical failures in TopSky code. Low priority messag
 
 \bigskip
 
-Open the Personal Queue Window to view the messages or see Plugin Status submenu for more detailed information on the problem(s). The number is limited to 99, and is shown on “Global Menu Highlight” background when the window is not open.
+Open the \winref{win:pqw} to view the messages or see \winref{menu:status} for more detailed information on the problem(s). The number is limited to 99, and is shown on \colorref{Global Menu Highlight} background when the window is not open.
  
 \subsection{STS menu}
 \label{menu:sts}
 
 \begin{tabular}{p{5cm} p{7.5cm}}
-Plugin Status >                & Opens the Plugin Status submenu\\
+Plugin Status >                & Opens the \winref{menu:status}\\
 Safety Nets Status…            & Opens the \winref{win:snsw}\\
 Divergence Detection Status…   & Opens the \winref{win:ddsw}\\
 MTCD Status…                   & Opens the \winref{win:mtcdsw}\\
-CPDLC Default Status [ON/OFF]  & Toggles the CPDLC Default Status On/Off\\
+CPDLC Default Status           & Toggles the CPDLC Default Status On/Off\\
 Runway In Use                  & Opens the \winref{menu:ad}\\
-Supervisory >                  & Opens the Supervisory submenu\\
+Supervisory >                  & Opens the \winref{menu:super}\\
 RWY line display…              & Opens the \winref{menu:ad}\\
 \end{tabular}
 \medskip
@@ -3147,7 +3156,7 @@ Depending on the file, there are one to three of the following buttons available
 
 \bigskip
 
-Left-clicking the Save button will save the currently set manual activation periods as well as the information if an area with automatic schedules is set to manual mode. The information is saved to the “TopSkyAreasManualAct.txt” file in the same folder as TopSky dll. If the file already exists, TopSky will ask for confirmation as the save operation will overwrite any existing data. 
+Left-clicking the Save button will save the currently set manual activation periods as well as the information if an area with automatic schedules is set to manual mode. The information is saved to the \texttt{TopSkyAreasManualAct.txt} file in the same folder as \texttt{TopSky.dll}. If the file already exists, TopSky will ask for confirmation as the save operation will overwrite any existing data. 
 
 \bigskip
 
@@ -3177,7 +3186,7 @@ Opens the \winref{menu:rr}. If the rings are selected on,
 \subsection{Mxxx-yyy}
 \label{menu:mfil}
 
-Displays the status of the filters. If any filter is enabled and Quick Look is not toggled on, the color of the text is “Global Menu Highlight”.
+Displays the status of the filters. If any filter is enabled and Quick Look is not toggled on, the color of the text is \colorref{Global Menu Highlight}.
 
 \bigskip
 
@@ -3415,7 +3424,8 @@ Label items may be interacted with either with a left or a right click.
 
 \subsubsection{Line 0}
 
-\begin{center}
+\begin{figure}[H]
+  \centering
 \begin{tikzpicture}
   \node[,anchor=west,draw,text=Assumed,fill=Flight Highlight,minimum height=0.55cm] at (0,0) () {\texttt{V \textcolor{Warning}{APW} \textcolor{Warning}{/t} \textcolor{Urgency}{W Y R} \textcolor{Information}{P} \textcolor{Warning}{M} \textcolor{Information}{$\bullet$} $\bullet$ \textcolor{Warning}{A} + I \textcolor{Warning}{S} \textcolor{Urgency}{EM} \textcolor{Proposition In}{F100} 3223 \textcolor{CPDLC Pilot Late}{CPDLC P LATE} \textcolor{Urgency}{[MAYDAY]} DIV}};
 
@@ -3456,13 +3466,15 @@ Label items may be interacted with either with a left or a right click.
   \drawtag{0.8cm}{15.5,0}{opt2};
   \drawtagdesc{3.3cm}{14.15,4}{lopt2}{L: Edit OP\_TEXT2};
   \draw[red,very thick] (opt2.north east) -- (lopt2.south east);
-
 \end{tikzpicture}
-\end{center}
+\caption{Line 0 label Interaction}
+\end{figure}
+
 
 \subsubsection{Line 1}
 
-\begin{center}
+\begin{figure}[H]
+  \centering
 \begin{tikzpicture}
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelsel.png}};
   %0,0-10.4-2.6
@@ -3483,7 +3495,8 @@ Label items may be interacted with either with a left or a right click.
   \drawtagdesc{3cm}{10,4}{lwtc}{L: Toggle WTC highlight\\R: Toggle WTC display};
   \draw[red,very thick] (wtc.south east) -- (lwtc);
 \end{tikzpicture}
-\end{center}
+\caption{Line 1 label Interaction}
+\end{figure}
 
 \begin{Note}
   Not shown in the above example: When \tagref{tag:PFREQ} is displayed R: Acknowledge PFREQ warning
@@ -3491,7 +3504,8 @@ Label items may be interacted with either with a left or a right click.
 
 \subsubsection{Line 2}
 
-\begin{center}
+\begin{figure}[H]
+  \centering
 \begin{tikzpicture}
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelsel.png}};
 
@@ -3519,11 +3533,13 @@ Label items may be interacted with either with a left or a right click.
   \drawtagdesc{3cm}{10.5,4}{lrfl}{L: Open \winref{menu:rfl}\\R: Open \winref{win:dlcmw}};
   \draw[red,very thick] (rfl) -- (lrfl);
 \end{tikzpicture}
-\end{center}
+\caption{Line 2 label Interaction}
+\end{figure}
 
 \subsubsection{Line 3}
 
-\begin{center}
+\begin{figure}[H]
+  \centering
 \begin{tikzpicture}
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelsel.png}};
 
@@ -3551,11 +3567,13 @@ Label items may be interacted with either with a left or a right click.
   \drawtagdesc{2cm}{12,1.05}{lfcopx}{R: Toggle Flight Leg display};
   \draw[red,very thick] (fcopx) -- (lfcopx);
 \end{tikzpicture}
-\end{center}
+\caption{Line 3 label Interaction}
+\end{figure}
 
 \subsubsection{Line 4}
 
-\begin{center}
+\begin{figure}[H]
+  \centering
 \begin{tikzpicture}
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelsel.png}};
 
@@ -3564,15 +3582,16 @@ Label items may be interacted with either with a left or a right click.
   \drawtagdesc{2cm}{1.5,-1}{ldap}{R: Toggle associated DAP display};
   \draw[red,very thick] (dhdg) -- (ldap);
   \draw[red,very thick] (drc) -- (ldap);
-  
 \end{tikzpicture}
-\end{center}
+\caption{Line 4 label Interaction}
+\end{figure}
 
 \subsubsection{Extended Label}
 
 The Extended label is constructed of extra elements when compared to a Standard Selected label, some of which are interactable. These extra elements that are interactable are detailed below. The remaining elements function the same as in the Standard Selected label.
 
-\begin{center}
+\begin{figure}[H]
+  \centering
 \begin{tikzpicture}
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelext.png}};
 
@@ -3600,11 +3619,13 @@ The Extended label is constructed of extra elements when compared to a Standard 
   \drawtagdesc{2cm}{-2,0.6}{lopt2}{L: Edit OP\_TEXT2};
   \draw[red,very thick] (opt2) -- (lopt2);
 \end{tikzpicture}
-\end{center}
+\caption{Extended Label Interaction}
+\end{figure}
 
 \subsubsection{Uncoupled Label}
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.2\textwidth]{img/labelunc.png}};
 
@@ -3616,7 +3637,8 @@ The Extended label is constructed of extra elements when compared to a Standard 
   \draw[red,very thick] (tssr) -- (lcallsign);
 
 \end{tikzpicture}
-\end{center}
+\caption{Uncoupled Label Interaction}
+\end{figure}
 
 
 \subsection{Label Compaction}
@@ -3624,7 +3646,7 @@ The Extended label is constructed of extra elements when compared to a Standard 
 
 Label fields may be automatically supressed in certain conditions. This is called Label Compaction.
 
-Label Compaction only occurs in unselected labels. When a field is supressecallsignd, the remaining fields to the right will move left to the supressed field position. If all fields in a line are supressed, the next line is moved up to the supressed line position. Values being coordinated are exempted from Label Compaction.
+Label Compaction only occurs in unselected labels. When a field is supressed, the remaining fields to the right will move left to the supressed field position. If all fields in a line are supressed, the next line is moved up to the supressed line position. Values being coordinated are exempted from Label Compaction.
 
 \bigskip
 
@@ -3661,7 +3683,7 @@ Refuse                    & Refuses the incoming transfer\\
 Transfer                  & Initiates a transfer to the next sector\\
 Trf \& Release            & Opens the \winref{menu:xfrrel}\\
 ROF                       & Sends a \winref{menu:rof}\\
-(X)Freq                   & Toggles the Freq indicator\\
+(X)Freq                   & Toggles the \tagref{tag:Frequency dot}\\
 (X)Highlight              & Toggles the Callsign highlight\\
 (X)S-Highlight            & Toggles the Callsign+AFL fields highlight\\
 PRL                       & Opens the \winref{menu:prl}\\
@@ -3670,7 +3692,7 @@ $\blacktriangledown$ More & Shows additional less frequently used options\\
 Manual Transfer           & Opens the \winref{menu:mxfr}\\
 (X)Inbound Est            & Toggles the “Inbound Est” manual alert\\
 HOP                       & Initiates a \winref{win:hop}\\
-(X)Mark                   & Toggles the Mark indicator\\
+(X)Mark                   & Toggles the \tagref{tag:Mark dot}\\
 (X)Couple                 & Uncorrelates/correlates the flight plan\\
 FPL…                      & Opens the \winref{win:fpw}\\
 (X)Irregular              & Toggles the “Irregular” manual alert\\
@@ -3726,7 +3748,7 @@ Correlate       & Correlates the radar track with the next clicked “Callsign�
 
 \capdimage{img/xfr.png}{Transfer Menu}
 
-For CPDLC connected aircraft, the menu contains options related to the transfer. Left- clicking on the frequency button initiates the transfer (and sends the CPDLC message if selected).
+For CPDLC connected aircraft, the menu contains options related to the transfer. Left clicking on the frequency button initiates the transfer (and sends the CPDLC message if selected).
 
 \bigskip
 
@@ -3769,7 +3791,7 @@ The “Trf \& Release” option will show the release condition on the downstrea
 \subsection{Request On Frequency message}
 \label{menu:rof}
 
-The ROF message can be used to send a request to the controller currently tracking an aircraft to transfer it to your frequency. For the message to succeed, you must be seen as the next controller for the tracking controller. When sent, the text “ROF” is displayed in the track label on the tracking controller’s screen.
+See \winref{coo:rof}. For the message to succeed, you must be seen as the next controller for the tracking controller. When sent, the text “ROF” is displayed in the track label on the tracking controller’s screen.
 
 \begin{Warn}
 The “ROF” message is a feature specific to this plugin. It is an experimental feature and is not guaranteed to work all the time. When you send the message, check that it’s sent properly.
@@ -3784,7 +3806,7 @@ The “ROF” message is a feature specific to this plugin. It is an experimenta
 
 \capdimage{img/hold.png}{Hold Menu}
 
-The Hold menu allows you to enter a holding clearance (add the aircraft to the holding list). It displays for selection the points in the aircraft’s route that are ahead of its current position.
+The Hold menu allows you to enter a holding clearance, adding the aircraft to the \winref{list:hold}. It displays for selection the points in the aircraft’s route that are ahead of its current position.
 
 \bigskip
 
@@ -3831,7 +3853,7 @@ Left-clicking the “Select Freq” button will open a text entry box to enter a
 \subsection{CPDLC Free Text Menu}
 \label{menu:dlftm}
 
-The CPDLC Free Text menu is used to send a free text CPDLC message to the aircraft. The menu containsm pre-defined messages from a data file. Left-clicking on a message sends it.
+See \winref{cpdlc:freetext}. Left-clicking on a message sends it.
 
 \bigskip
 
@@ -3857,8 +3879,9 @@ This menu is used to set an arrival sequence number. Values from 1 to 50 are ava
 
 \bigskip
 
-The sequence number will not be transmitted to other controllers except the next
-controller (during transfer) unless the flight strip is manually sent.
+\begin{Warn}
+  The sequence number will not be transmitted to other controllers except the next controller (during transfer) unless the flight strip is manually sent.
+\end{Warn}
 
 \subsection{Waypoint Menu}
 \label{menu:wpt}
@@ -3988,7 +4011,7 @@ Regardless of whether the entered value is in meters or feet, and altitude or he
 \label{menu:cfl}
 \capdimage{img/cfl.png}{CFL Menu}
 
-In the track label the CFL menu is combined with the COPN altitude coordination menu and the CFL menu opens only when the aircraft is assumed. The default value is by default the XFL, but it can be changed to the current CFL or the RFL in the Local Settings menu. Altitudes up to the transition altitude are prefixed with “A” in the nautical units list and with “M” in the metric units list. QFE heights are prefixed with “E” in both lists. Selectable values are from 500ft to FL510 with 500ft intervals up to the transition altitude, then 1000ft intervals up to FL410 and 2000ft intervals above it. 
+In the track label the CFL menu is combined with the COPN altitude coordination menu and the CFL menu opens only when the aircraft is assumed. The default value is by default the XFL, but it can be changed to the current CFL or the RFL in the \winref{menu:localset}. Altitudes up to the transition altitude are prefixed with “A” in the nautical units list and with “M” in the metric units list. QFE heights are prefixed with “E” in both lists. Selectable values are from 500ft to FL650 with 500ft intervals up to the transition altitude, then 1000ft intervals up to FL410 and 2000ft intervals above it. 
 
 \bigskip
 
@@ -4040,7 +4063,7 @@ The RFL menu allows setting the requested flight level. The operation is similar
 
 \capdimage{img/ahdg.png}{AHDG Menu}
 
-This menu includes items to set or clear an assigned heading or a direct route and to send a HOP. The initially highlighted heading value will be the closest one to the assigned heading if the aircraft has one, otherwise the closest one to the aircraft ground track (or the departure runway heading if the menu is opened from the DEP list). Clicking on a heading value will set it as the assigned heading. The assigned heading can also be set by typing it into the entry box, using the pop-up keyboard or by using the AHDG vector.
+This menu includes items to set or clear an assigned heading or a direct route and to send a HOP. The initially highlighted heading value will be the closest one to the assigned heading if the aircraft has one, otherwise the closest one to the aircraft ground track, or the departure runway heading if the menu is opened from the \winref{list:dep}. Clicking on a heading value will set it as the assigned heading. The assigned heading can also be set by typing it into the entry box, using the pop-up keyboard or by using the AHDG vector.
 
 \bigskip
 
@@ -4052,7 +4075,7 @@ This menu includes items to set or clear an assigned heading or a direct route a
 
 \bigskip
 
-“HOP”, “RTI” and “TIP” are coordination functions (see below for more information). To use them, first click on the function’s button and then select the desired value from the list (for HOP also “Point” is available).
+“HOP”, “RTI” and “TIP” are coordination functions (see \winref{win:hop}, \winref{win:rti}). To use them, first click on the function’s button and then select the desired value from the list (for HOP also “Point” is available).
 
 \bigskip
 
