@@ -514,11 +514,11 @@ Some of the coordination functions (ROF, RTI and TIP) require very specific cond
 
 \subsection{PEL/COPN}
 
-A coordination is displayed by coloring the proposed values “Proposition In/Out” (depending on whether the coordination was sent or received) in the track label and the flight lists. Additionally, a message is displayed in the \winref{win:miw} for received coordinations and in the \winref{win:mow} for coordinations sent by you.
+A coordination is displayed by coloring the proposed values \colorref{Proposition In} or \colorref{Proposition Out}, depending on whether the coordination was sent or received, in the track label and the flight lists. Additionally, a message is displayed in the \winref{win:miw} for received coordinations and in the \winref{win:mow} for coordinations sent by you.
 
 \bigskip
 
-To send a PEL (Planned Entry Level) coordination, left-click on the PEL value in the track label or a flight list. This opens the a menu to select a value. To send a COPN (Entry Point) coordination, left-click on the COPN value in the track label or a flight list. This opens the \winref{menu:wpt}. Select “Routing”. This opens a menu to select the desired point. Keep an eye for the answer as it can be a counter-proposal as well, so the color of the values staying white doesn’t necessarily mean the coordination hasn’t been answered!
+To send a PEL (Planned Entry Level) coordination, left-click on the PEL value in the track label or a flight list. This opens a menu to select a value. To send a COPN (Entry Point) coordination, left-click on the COPN value in the track label or a flight list. This opens the \winref{menu:wpt}. Select “Routing”. This opens a menu to select the desired point. The response of the coordination can be a counter-proposal as well, in which case the color of the values remain \colorref{Proposition In}.
 
 \bigskip
 
@@ -543,17 +543,17 @@ To answer an incoming coordination, left-click on a proposed value or the corres
 
 \begin{tabular}{l l}
   Accept: & Accepted values, sector state color\\
-  Refuse: & Original values, sector state color (due to EuroScope bug, should be “Warning”)\\
-  Change: & New proposed values in “Proposition Out”\\
+  Refuse: & Original values, sector state color (due to EuroScope bug, should be \colorref{Warning})\\
+  Change: & New proposed values in \colorref{Proposition Out}\\
 \end{tabular}
 
 \subsection{XFL/COPX}
 
-A coordination is displayed by coloring the proposed values “Proposition In/Out” (depending on whether the coordination was sent or received) in the track label and the flight lists. Additionally, a message is displayed in the \winref{win:miw} for received coordinations and in the \winref{win:mow} for coordinations sent by you.
+A coordination is displayed by coloring the proposed values \colorref{Proposition In} or \colorref{Proposition Out}, depending on whether the coordination was sent or received, in the track label and the flight lists. Additionally, a message is displayed in the \winref{win:miw} for received coordinations and in the \winref{win:mow} for coordinations sent by you.
 
 \bigskip
 
-To send an XFL (Exit Flight Level) coordination, left-click on the XFL value in the track label or a flight list. This opens a menu to select a value. To send a COPX (Exit Point) coordination, left-click on the COPX value in the track label or a flight list. This opens the \winref{menu:wpt}. Select “Routing”. This opens a menu to select the desired point. Keep an eye for the answer as it can be a counter-proposal as well, so the color of the values staying white doesn’t necessarily mean the coordination hasn’t been answered!
+To send an XFL (Exit Flight Level) coordination, left-click on the XFL value in the track label or a flight list. This opens a menu to select a value. To send a COPX (Exit Point) coordination, left-click on the COPX value in the track label or a flight list. This opens the \winref{menu:wpt}. Select “Routing”. This opens a menu to select the desired point. The response of the coordination can be a counter-proposal as well, in which case the color of the values remain \colorref{Proposition In}.
 
 \bigskip
 
@@ -578,8 +578,8 @@ To answer an incoming coordination, left-click on a proposed value or the corres
 
 \begin{tabular}{l l}
   Accept: & Accepted values, sector state color\\
-  Refuse: & Original values, sector state color (due to EuroScope bug, should be “Warning”)\\
-  Change: & New proposed values in “Proposition Out”\\
+  Refuse: & Original values, sector state color (due to EuroScope bug, should be \colorref{Warning})\\
+  Change: & New proposed values in \colorref{Proposition Out}\\
 \end{tabular}
 
 \subsection{Releases}
@@ -588,7 +588,7 @@ To communicate a release to the next controller, select the “Trf \& release”
 
 \bigskip
 
-The release will be displayed on line 0 of the track label (in “Proposition In/Out” during the transfer), showing the first letter of the release condition. The example labels below show a Full release:
+The release will be displayed on line 0 of the track label (in \colorref{Proposition In} or \colorref{Proposition Out} during the transfer), showing the first letter of the release condition. The example labels below show a Full release:
 
 \bigskip
 
@@ -621,7 +621,7 @@ The release will be displayed on line 0 of the track label (in “Proposition In
 
 \bigskip
 
-After the accepting controller assumes the aircraft, the release indicator changes to sector state color. It remains in the transferring controller’s label until it becomes unconcerned, and in the accepting controller’s label for 3 minutes.
+After the accepting controller assumes the aircraft, the release indicator changes to sector state color. It remains in the transferring controller’s label until it becomes \stateref{Unconcerned}, and in the accepting controller’s label for 3 minutes.
 
 \begin{Note}
   If a release is sent to a controller not using the TopSky plugin, it will only be displayed on your label. To the accepting controller it will look like a normal transfer.
@@ -687,7 +687,7 @@ The example labels below show a HOP with an assigned heading proposal:
 \end{tabular}
 \end{multicols}
 
-The transferring controller should keep an eye on both the track label and the \winref{win:miw} as there are three ways for the accepting controller to answer a HOP. In order of preference, they are:
+The transferring controller should monitor both the track label and the \winref{win:miw} as there are three ways for the accepting controller to answer a HOP. In order of preference, they are:
 
 \begin{itemize}
   \item From the \winref{menu:cs}, select “ROF”. This sends a ROF message to the transferring controller.
@@ -714,7 +714,11 @@ The transferring controller should keep an eye on both the track label and the \
 
 \subsection{ROF}
 
-The ROF (Request on Frequency) message is sent by the accepting controller to the transferring controller, when required, requesting the transferring controller to instruct the aircraft to change to the frequency of the accepting controller. The message may be used as a reply to HOP to signify the acceptance of the flight under the proposed conditions, or to request the early transfer of the flight.
+The ROF (Request on Frequency) message is sent by the accepting controller to the transferring controller when a flight establises radio contact but the label has not yet been transfered to the downstream sector. The upstream sector should then transfer the label. The message may also be used as a reply to HOP to signify the acceptance of the flight under the proposed conditions.
+
+\begin{Warn}
+  ROF should not be used to request an early handover of a flight. ROF is a coordination tool that is context dependent, using it outside the prescribed scenarios or ir other unintended ways will cause unnecessary confusion.
+\end{Warn}
 
 To send a ROF message, select the “ROF” option in the \winref{menu:cs} of the aircraft in question. The example label below shows the indications when the message is sent (there are no indications in the accepting controller’s track label):
 
@@ -776,13 +780,15 @@ The indications are removed when a “Transfer”, “Trf \& release” or “HO
 
 These messages are used to request/propose the transfer of a flight on an assigned heading, speed or rate of climb/descent. RTI (Request Tactical Instructions) is a request initiated by the accepting controller and TIP (Tactical Instructions Proposal) a proposal initiated by the transferring controller.
 
+\bigskip
+
 In the examples below the RTI message is used. For the TIP message, the indications and actions are the same, only the roles are reversed – the transferring controller sends and the accepting controller answers the message, so the message will appear in the other Message Window.
 
 To send the RTI message:
 
 \begin{enumerate}
   \item open the AHDG, ASP or ARC menu and select the “RTI” option (found in the “More” folder) 
-  \item select the desired value in the list (the “Point” option in the AHDG menu can’t be chosen)
+  \item select the desired value in the list (“Point” option in the AHDG menu is not available)
 \end{enumerate}
 
 When the message is sent, the following indications are shown:
@@ -921,7 +927,7 @@ On the other hand, if “Reject” is chosen, the menu closes the indications ar
 
 \bigskip
 
-A rejected coordination value will be removed from the label after a specified time (60 seconds by default)
+A rejected coordination value will be removed from the label after 60 seconds.
 
 \begin{Note}
   If an RTI or TIP is sent to a controller not using the TopSky plugin or the message fails to go through, an error message will be put into the Personal Queue Window. The message counter in the Global Menu will be highlighted if the window is not open.
