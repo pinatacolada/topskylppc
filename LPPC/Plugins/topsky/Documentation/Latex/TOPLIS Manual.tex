@@ -2603,6 +2603,7 @@ SAP conflicts (optionally also risks) are also shown in the \winref{win:sap}.
       Unknown: 
       
       \colorref{Unknown} \\ \hline
+      \caption{Label Field descriptions}
     \end{longtable}
 
 \section{Monitoring Aids}
@@ -4360,6 +4361,7 @@ The Departure List contains all departures still on the ground of the controlled
   \tagref{tag:CLR}              & Toggle Clearance Acknowledged flag  &                           & \usym{2713}         \\ \hline
   \tagref{tag:Ground state}     & Open Ground State Menu              & Open Ground State Menu    & \usym{2713}         \\ \hline
   \tagref{tag:OP TEXT2}         & Edit OP TEXT2                       & Edit OP TEXT2             & \usym{2713}         \\ \hline
+  \caption{Departure List Construction}
 \end{longtable}
 
 \subsection{Sector List}
@@ -4418,6 +4420,7 @@ The Sector List contains all departed controlled aircraft in the following state
   \tagref{tag:ARWY}     & Open Runway list        &                           & \usym{2713}         \\ \hline
   \tagref{tag:OP TEXT}  & Edit OP\_TEXT           &                           & \usym{2713}         \\ \hline
   \tagref{tag:OP TEXT2} & Edit OP\_TEXT2          &                           & \usym{2713}         \\ \hline
+  \caption{Sector List Construction}
 \end{longtable}
 
 \subsection{Load Factor List}
@@ -4439,6 +4442,7 @@ The Load Factor List contains all departed controlled aircraft in the concerned 
   \tagref{tag:ADES}     & Open \winref{win:fpw}  &                           & \usym{2713}         \\ \hline
   \tagref{tag:RFL}      & Open \winref{menu:rfl}  & Open \winref{win:dlcmw}   & \usym{2713}         \\ \hline
   \tagref{tag:ASSR}     & Open \winref{menu:assr} & Send CPDLC Squawk message & \usym{2713}         \\ \hline
+  \caption{Load Factor List Construction}
 \end{longtable}  
 
 \subsection{Uncontrolled Lists}
@@ -4459,6 +4463,7 @@ Up to 2 lists can be displayed. Each list may be configured with different filte
   \tagref{tag:CALLSIGN} & Open \winref{menu:cs}         & Open Extended Label       & \usym{2713}         \\ \hline
   \tagref{tag:SI}       & Open SI list                  & Toggle SI frequency       & \usym{2713}         \\ \hline
   \tagref{tag:C}        & Toggle Inbound clearance flag &                           & \usym{2713}         \\ \hline
+  \caption{Uncontrolled List Construction}
 \end{longtable} 
 
 \subsection{ETWR List}
@@ -4483,6 +4488,7 @@ The ETWR List contains notified and coordinated flights departing from specified
   \tagref{tag:ASSR}     & Open \winref{menu:assr}   & Send CPDLC Squawk message & \usym{2713}         \\ \hline
   \tagref{tag:ADEP}     &                           &                           & \usym{2713}         \\ \hline
   \tagref{tag:ADES}     & Open \winref{win:fpw}     &                           & \usym{2713}         \\ \hline
+  \caption{ETWR List Construction}
 \end{longtable}  
 
 \subsection{Resectorisation List}
@@ -4498,6 +4504,7 @@ The Resectorisation List contains all flights assumed or on-contact with specifi
   \textbf{Item}         & \textbf{Left Mouse}     & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
   \tagref{tag:CALLSIGN} & Open \winref{menu:cs}     &                           & \usym{2713}         \\ \hline
   \tagref{tag:CFL}      & Open \winref{menu:cfl}    & Toggle Flight Leg display & \usym{2713}         \\ \hline
+  \caption{Resectorisation List Construction}
 \end{longtable}  
 
 \subsection{Traffic Management Lists}
@@ -4529,6 +4536,7 @@ Up to 2 lists can be displayed. Each list may be configured with different filte
   \tagref{tag:R}        &                         &                           & \usym{2713}         \\ \hline
   \tagref{tag:TAS}      &                         &                           & \usym{2713}         \\ \hline
   \tagref{tag:RFL}      & Open \winref{menu:rfl}  & Open \winref{win:dlcmw}   & \usym{2713}         \\ \hline
+  \caption{Traffic Management List Construction}
 \end{longtable}  
 
 \subsection{Lost List}
@@ -4553,7 +4561,8 @@ The list includes assumed flights that have previously been correlated to a rada
     ASSR                    & mandatory     & Open \winref{menu:assr}                 &                           \\ \hline
     FPASD                   & optional      & Toggle FPASD track (when globally off)  &                           \\ \hline
     Lost (time)             & optional      &                                         &                           \\ \hline
-\end{longtable}
+    \caption{Lost List Construction}
+  \end{longtable}
 
 “View” opens the View menu:
 
@@ -4616,7 +4625,8 @@ The ETO column initially displays the estimated time over the holding fix. Once 
     CFL                     & Open \winref{menu:cfl}   & Toggle Flight Leg display\\ \hline
     HPT                     & Open \winref{win:smw}    & \\ \hline
     ETO                     &                                     & \\ \hline
-\end{longtable}
+    \caption{Holding List Construction}
+  \end{longtable}
 
 \bigskip
 
@@ -6361,7 +6371,8 @@ Some plugin functions can be accessed using a keyboard shortcut. By default, eac
   <ALT> + <Q> & Start new QDM line                                   \\
   <ALT> + <U> & Inhibit active filters for 5 seconds (Quick Look)    \\
   <ALT> + <S> & Start a new minimum separation line                  \\
-  <ALT> + <C> & Reposition cursor at the center of the radar screen  \\    
+  <ALT> + <C> & Reposition cursor at the center of the radar screen  \\  
+  \caption{keyboard Shortcuts}  
 \end{longtable}
 
 “Selected flight” in the above means that the mouse cursor is over that flight’s track label. For the timed functions, activating the shortcut while the timer is running restarts the timer from zero.
@@ -6533,7 +6544,7 @@ Some plugin functions can be accessed using a keyboard shortcut. By default, eac
   \nextrow \label{color10} color10                               & \cellcolor{color10}                 &                                              \\ \hline
   \nextrow \label{color11} color11                               & \cellcolor{color11}                 &                                              \\ \hline
   \nextrow \label{color12} color12                               & \cellcolor{color12}                 &                                              \\ \hline
-
+  \caption{Color Names}
 \end{longtable}
 
 \chapter{Known issues}
