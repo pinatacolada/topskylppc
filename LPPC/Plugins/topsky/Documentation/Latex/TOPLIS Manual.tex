@@ -967,7 +967,7 @@ To start using the data link functions, first connect to the VATSIM network. The
 \begin{itemize}
   \item Open the \winref{win:dls}
   \item Enter/check the login callsign
-  \item Enter your personal logon code
+  \item Enter/check your personal logon code
   \item Select whether to provide CPDLC or DCL services or both
   \item Left-click on the “Connect” button
 \end{itemize}
@@ -1073,7 +1073,7 @@ If a clearance is not sent before the timeout occurs, the data link clearance re
 The clearance is sent using the \winref{win:dlpdcw}, opened by left clicking the RWY or SID fields of the Departure List. 
 
 \begin{Note}
-  Due to system limitations, the current ATIS letter should be manually added to the RMK field of the DCL, in the "ATIS: X" format.
+  Due to system limitations, the current ATIS letter should be manually added to the RMK field of the DCL, in the "ATIS X" format.
 \end{Note}
 
 The clearance is sent using the “Send DCL” button. “Voice” rejects the data link clearance request and sends a message to the aircraft to revert to voice procedures. 
@@ -1405,7 +1405,7 @@ Left-clicking acknowledges the warning and aborts the clearance, displaying the 
 \end{Warn}
 
 \subsection{MTCD (Medium Term Conflict Detection)}
-
+\label{tool:MTCD}
 \subsubsection*{General}
 
 The MTCD system is a tool that enables the controller to predict possible future conflicts between aircraft. The look-ahead time (prediction time) is set to 20 minutes and the separation distance that triggers the alert (prediction distance) to 7nm for sectors where 5nm separation is applied, and 10 where 8nm separation is applied.
@@ -1460,7 +1460,7 @@ If there is a conflict or potential predicted conflict for the aircraft within t
 The MTCD conflicts are also displayed in the \winref{win:card}.
 
 \subsection{SAP (Segregated Area Probe)}
-
+\label{tool:SAP}
 \subsubsection*{General}
 
 Much like the MTCD system predicts future conflicts between aircraft, the SAP system predicts future intrusions into active areas. The system uses the same look-ahead time as the MTCD system. The future position predictions are done at one-minute intervals which means a very short intrusion into an active area may not be noticed by the system. The classification into risks and conflicts is the same as in MTCD: a conflict means that the current clearance will lead to the aircraft entering an active area, whereas a risk means that the current clearance will not lead to that but clearing the aircraft to its XFL or some other level beyond the current CFL may do so.
@@ -1485,7 +1485,7 @@ SAP conflicts are also shown in the \winref{win:sap}.
 
 
 \subsection{CLAM (Cleared Level Adherence Monitoring)}
-
+\label{tool:CLAM}
 \subsubsection*{General}
 
 The CLAM system warns if an aircraft is not maintaining its cleared level and its vertical rate is not towards the cleared level. The alert is inhibited when the cleared level is lower than 100ft, and for aircraft in level flight, for 60 seconds after a new cleared level is set.
@@ -1495,7 +1495,7 @@ The CLAM system warns if an aircraft is not maintaining its cleared level and it
 An alert is shown by displaying a circle around the aircraft position symbol and the text “CLAM” in the \tagref{tag:ALRT} track label field. MSAW, APW and AIW alerts will have priority over a CLAM alert in the track label.
 
 \subsection{RAM (Route Adherence Monitoring)}
-
+\label{tool:RAM}
 \subsubsection*{General}
 
 The RAM system warns if an aircraft is deviating from its route by more than 1nm. The alert is inhibited 30nm from the departure and destination, and a larger cross-track error (5nm) is allowed near waypoints where the route makes a turn over 10° course change.
@@ -1516,7 +1516,7 @@ An alert is shown by displaying a circle around the aircraft position symbol and
 
 
 \subsection{AIW (Airspace Infringement Warning)}
-
+\label{tool:AIW}
 \subsubsection*{General}
 
 The AIW system warns if an uncontrolled aircraft is already inside or going to enter controlled airspace within a defined time. The system will only scan correlated radar tracks.
@@ -1526,7 +1526,7 @@ The AIW system warns if an uncontrolled aircraft is already inside or going to e
 An alert is shown by displaying the text “AIW” in the \tagref{tag:ALRT} track label field. MSAW and APW alerts will have priority over an AIW alert. The AFL item is also colored \colorref{AIW intrusion} and a one minute long prediction line is displayed in \colorref{AIW intrusion} color regardless of the prediction line settings.
 
 \subsection{APW (Area Proximity Warning)}
-
+\label{tool:APW}
 \subsubsection*{General}
 
 The APW system warns if an aircraft is inside or about to enter a Temporary Segregated Airspace without clearance. The position of the aircraft is only predicted in 30 second intervals for performance reasons so very short future intrusions may not be noticed by the system. The areas are defined in an external text file and activated in the \winref{win:amw}.
@@ -1536,7 +1536,7 @@ The APW system warns if an aircraft is inside or about to enter a Temporary Segr
 An alert is shown by coloring the \tagref{tag:CALLSIGN} item background or the text itself in \colorref{Warning} color, unless the \tagref{tag:CALLSIGN} item has been manually highlighted. "APW" is displayed in the \tagref{tag:ALRT} track label field. An MSAW alert will have priority over an APW alert.
 
 \subsection{MSAW (Minimum Safe Altitude Warning)}
-
+\label{tool:MSAW}
 \subsubsection*{General}
 
 \begin{Note}
@@ -1550,7 +1550,7 @@ The MSAW system alerts when an aircraft is flying at an altitude below the minim
 An alert is shown by displaying the text “MSAW” in the \tagref{tag:ALRT} track label field.
 
 \subsection{STCA (Short Term Conflict Alert)}
-
+\label{tool:STCA}
 \subsubsection*{General}
 
 The STCA system is designed to alert the controller of a possible or actual loss of separation between aircraft. The alert is given between 60 seconds and 120 seconds before a loss of separation is predicted to happen, but it is dependent on the relative positions and movement of the aircraft. The alert will not be shown if both aircraft have STCA alerting inhibited (see the \winref{win:snsw}), are inside exclusion areas for parallel approaches, or when either aircraft is inside an active STCA inhibit area. LPPR, LPPT, LPCS, LPFR, LPMA and LPPS CTR are defined as STCA inhibit areas
@@ -1589,9 +1589,9 @@ Track presentation coloring depends on the flight sector state:
   Coordinated \nextrow \label{state:Coordinated}                  & \colortabex{Coordination}    & Track will enter the active sector (< 15 min)\\ \hline
   Assumed \nextrow \label{state:Assumed}                          & \colortabex{Assumed}         & Track is assumed\\ \hline
   On Contact \nextrow \label{state:On Contact}                    & \colortabex{Assumed}         & Track is on-contact with you. Flight is considered as Uncontrolled\\ \hline
-  Transfer Initiated                                              & \colortabex{Assumed}         & Track is being transferred to the next controller. \tagref{tag:CALLSIGN} and \tagref{tag:SI} are colored in \colorref{Redundant} color\\ \hline
+  Transfer Initiated \nextrow \label{state:Transfer Initiated}    & \colortabex{Assumed}         & Track is being transferred to the next controller. \tagref{tag:CALLSIGN} and \tagref{tag:SI} are colored in \colorref{Redundant} color\\ \hline
   Redundant \nextrow \label{state:Redundant}                      & \colortabex{Redundant}       & Track has been transferred to the next controller but is still inside the active sector\\ \hline
-  Informed                                                        & \colortabex{Informed 1}      & Track will not enter the active sector but is relevant to it\\ \hline
+  Informed  \nextrow \label{state:Informed}                       & \colortabex{Informed 1}      & Track will not enter the active sector but is relevant to it\\ \hline
 \end{tabular}
 \end{center}
 
@@ -3419,6 +3419,7 @@ Line 0 is constructed solely of indicators and warnings. Line 0 is only displaye
   \end{longtable}
 
 \subsection{Label Interaction}
+\label{label:int}
 
 Label items may be interacted with either with a left or a right click.
 
@@ -4108,18 +4109,19 @@ Clicking a point on the radar screen will set the direct-to clearance without co
 
 \subsection{Handover Proposal (HOP)}
 \label{win:hop}
-A Handover Proposal can be used to propose non-standard transfer parameters (AHDG/Direct-to and ASP) to the next sector. For the receiving controller a HOP is identified by coloring the callsign data field with \colorref{Proposition In} color in the label. For the sending controller the Callsign field remains “Assumed” color and the Sector Indicator field is shown in \colorref{Proposition In} color. Additionally, if there are proposed parameters they are also colored “Proposition” in both controllers’ labels.
+
+See \winref{coo:hop}. For the receiving controller a HOP is identified by coloring the \tagref{tag:CALLSIGN} field with \colorref{Proposition In} color in the label. For the sending controller the \tagref{tag:CALLSIGN} field remains \colorref{Assumed} color and the \tagref{tag:SI} field is shown in \colorref{Proposition In} color. Additionally, if there are proposed parameters they are also colored \colorref{Proposition In} in both controllers’ labels.
 
 \bigskip
 
-There are three ways to answer a HOP and all of them involve accepting all proposed parameters. If one or more parameters are not acceptable, coordination must be done to find acceptable parameters or to revert to standard ones. The available ways to accept the proposed parameters are:
+There are three ways to answer a HOP and all of them involve accepting all proposed parameters. If one or more parameters are not acceptable, coordination must be done to find acceptable parameters or to revert to standard ones. The available ways, in order of preference, to accept the proposed parameters are:
 
 \bigskip
 
 \begin{longtable}{p{5cm} p{7.5cm}}
-\winref{menu:cs} -> “Assume”               & Assumes the track\\
-\winref{menu:cs} -> “ROF”                & Sends a Request On Frequency message\\
-Combined Transfer menu -> “Accept”    &  Sends an Accept message\\
+  \winref{menu:cs} -> “ROF”               & Sends a Request On Frequency message\\
+  \winref{menu:ctm} -> “Accept”      & Sends an Accept message\\
+  \winref{menu:cs} -> “Assume”            & Assumes the track\\
 \end{longtable}
 
 \bigskip
@@ -4138,7 +4140,7 @@ If a HOP is sent to a manually selected controller, the next controller selectio
 \label{win:rti}
 \label{win:tip}
 
-Certain tactical data (AHDG, ASP and ARC) can be coordinated using the RTI and TIP functions. Their only difference is that RTI is used for requesting the parameters when the aircraft is inbound to your sector and your sector is the next in the sector sequence, and TIP for propose the parameters to the next sector when the aircraft is assumed. Contrary to the HOP function, these coordinations can be refused using the system, and they do not offer the aircraft for transfer.
+Certain tactical data (AHDG, ASP and ARC) can be coordinated using the \winref{coo:rti} functions. Their only difference is that RTI is used for requesting the parameters when the aircraft is inbound to your sector and your sector is the next in the sector sequence, and TIP to propose the parameters to the next sector when the aircraft is assumed. Contrary to the \winref{win:hop} function, these coordinations can be refused using the system, and they do not offer the aircraft for transfer.
 
 \bigskip
 
@@ -4146,7 +4148,7 @@ When sent, the RTI/TIP is displayed on both controllers’ screens by displaying
 
 \bigskip
 
-To answer the RTI/TIP, left-click on the requested parameter shown above the track label or the corresponding message in the \winref{win:miw}. This will open the \winref{menu:ttm}.
+To answer the RTI/TIP, left-click on the requested parameter on line 0 of the track label or the corresponding message in the \winref{win:miw}. This will open the \winref{menu:ttm}.
 
 \begin{Warn}
 The “RTI” and “TIP” messages are features specific to this plugin. They are experimental features not guaranteed to work all the time. When you send these messages, check that they are sent properly.
@@ -4169,7 +4171,8 @@ When the cursor is over a known point (VOR, NDB or waypoint), the name of that p
 
 \subsection{ARC Menu}
 \label{menu:arc}
-\image{img/arc.png}
+
+\capdimage{img/arc.png}{ARC Menu}
 
 The ARC menu allows assigning a rate of climb or descent to the flight plan. Selectable rates are 500-5000 ft/min (displayed in 100’s of ft/min), or 5-25 m/s. The menu units are always the same as the units used for the aircraft in general.
 
@@ -4183,7 +4186,7 @@ By default, the “+” option is selected, meaning that the clearance is a mini
 
 \bigskip
 
-For “RTI” and “TIP” see the \winref{menu:ahdg}.
+“RTI” and “TIP” are coordination functions (see \winref{win:rti}). To use them, first click on the function’s button and then select the desired value from the list.
 
 \begin{Warn}
 The exact and maximum rate clearances are a feature specific to this plugin (the additional information is stored in the flight strip). To controllers not using TopSky, all assigned rate clearances will only show the rate value.
@@ -4203,7 +4206,7 @@ Assigned rate clearances given by controllers not using TopSky will be displayed
 
 \bigskip
 
-The ASP menu allows setting an assigned speed or Mach number. The default value will be the closest value to the assigned one if set, otherwise TopSky will suggest the closest value to the aircraft’s present speed based on the ground speed (zero wind will be assumed). The menu will initially open in IAS mode if the aircraft’s CFL is below the IAS/Mach altitude value defined in the Local Settings (FL275 by default), and in Mach mode if above it. The selectable values range from 100 to 400 knots and from Ma0.50 to Ma1.00.
+The ASP menu allows setting an assigned speed or Mach number. The default value will be the closest value to the assigned one if set, otherwise TopSky will suggest the closest value to the aircraft’s present speed based on the ground speed (zero wind will be assumed). The menu will initially open in IAS mode if the aircraft’s CFL is below FL285, and in Mach mode if above it. The selectable values range from 100 to 400 knots and from M0.50 to M1.00.
 
 \bigskip
 
@@ -4216,16 +4219,15 @@ The “Resume” item clears an assigned value. For CPDLC connected aircraft, it
 
 \bigskip
 
-For “HOP”, “RTI” and “TIP” see the \winref{menu:ahdg}.
+When the “Resume” button below the list is replaced by a “HS” button, clicking it will set a clearance for “high speed”, displayed as “HS” in the ASP label field. For CPDLC connected aircraft, it sends the “NO SPEED RESTRICTION” CPDLC message if the “CPDLC” option is selected. The “Resume” button can be found at the bottom of the “More” list.
 
 \bigskip
 
-The “Resume” button below the list is replaced by a “HS” button. Clicking it will set a clearance for “high speed”, displayed as “HS” in the ASP label field (see track label definition in the local setup documentation for how to clear a value). In other setups a “high speed” clearance will show a value of 999 knots. For CPDLC connected aircraft, it sends the “NO SPEED RESTRICTION” CPDLC message if the “CPDLC” option is selected. The “Resume” button can be found at the bottom of the “More” list.
+“HOP”, “RTI” and “TIP” are coordination functions (see \winref{win:hop}, \winref{win:rti}). To use them, first click on the function’s button and then select the desired value from the list (for HOP also “Point” is available).
 
 \bigskip
 
-Entering a metric value will set the aircraft’s units to metric; a nautical value will set
-nautical units.
+Entering a metric value will set the aircraft’s units to metric, a nautical value will set nautical units.
 
 \bigskip
 
@@ -4266,7 +4268,7 @@ The ASSR menu allows assigning an SSR code to the flight plan. To enter a new co
 \label{menu:ctm}
 \capdimage{img/ctm.png}{Combined Transfer Menu}
 
-The Combined Transfer menu displays the proposed transfer parameters for a HOP. It is opened by clicking on the AHDG, ASP or COPN/COPX items in the track label or flight list, or the list row displaying the HOP message in the \winref{win:miw}.
+The Combined Transfer menu displays the proposed transfer parameters for a \winref{coo:hop}. It is opened by clicking on the \tagref{tag:AHDG}, \tagref{tag:ASP} or \tagref{tag:COPN/COPX} items in the track label or flight list, or the list row displaying the HOP message in the \winref{win:miw}.
 
 \bigskip
 
@@ -4276,7 +4278,7 @@ From top to bottom, the displayed values are the direct-to point, speed/Mach val
 \label{menu:ttm}
 \capdimage{img/ttm.png}{Tactical Transfer Menu}
 
-The Tactical Transfer menu is used to accept, reject or apply tactical data (AHDG, ASP and/or ARC). It is opened by left-clicking on a proposed or accepted parameter in the track label. The menu displays all proposed (\colorref{Proposition In} color) and accepted (sector state color) values.
+The Tactical Transfer menu is used to accept, reject or apply tactical data (\tagref{tag:AHDG}, \tagref{tag:ASP} and/or \tagref{tag:ARC}). It is opened by left-clicking on a proposed or accepted parameter in the track label. The menu displays all proposed (in \colorref{Proposition In} color) and accepted (in sector state color) values.
 
 \bigskip
 
@@ -4284,11 +4286,10 @@ Clicking on “Accept” will accept all proposed values and “Reject” will r
 
 \bigskip
 
-Note that the menu displays both sent and received coordinations, but you can naturally only accept/reject the received ones and apply values for aircraft that are assumed.
-
+Once a value is accepted, the respective label field will be colored \colorref{Information} until the value is set to the accepted one.
 \bigskip
 
-Once a value is accepted, the respective label field (e.g. AHDG) will be colored “Information” until the value is set to the accepted one.
+Note that the menu displays both sent and received coordinations, but you can naturally only accept/reject the received ones and apply values for aircraft that are assumed.
 
 \bigskip
 
@@ -4593,7 +4594,7 @@ Up to 2 lists can be displayed. Each list may be configured with different filte
 
 \bigskip
 
-The list includes assumed flights that have previously been correlated to a radar track but radar contact has been lost. By default, the list opens automatically whenever a flight is added into it, and will be closed automatically when empty. If manually opened, the list cannot be manually closed until it is empty.
+The list includes assumed flights that have previously been correlated to a radar track but radar contact has been lost. The list opens automatically whenever a flight is added into it, and will be closed automatically when empty. If manually opened, the list cannot be manually closed until it is empty.
 
 \bigskip
 
@@ -4631,12 +4632,12 @@ The rows are sorted based on “Lost” time in descending order.
 
 \bigskip
 
-With TopSky set up to automatically open the Lost List when not empty, when a flight is added into the Lost List, its FPASD selection is initially set to “on” regardless of the FPASD setting in the Global menu.
+When a flight is added into the Lost List, its FPASD selection is initially set to “on” regardless of the FPASD setting in the \winref{menu:global}.
 
 \subsection{Holding List}
 \label{list:hold}
 
-The Holding List contains aircraft in the assumed, transfer initiated and on-contact with the position states that have been given a holding clearance. The list is automatically displayed whenever there is at least one aircraft in the list.
+The Holding List contains aircraft in the \stateref{Assumed}, \stateref{Transfer Initiated} and \stateref{On Contact} states that have been given a holding clearance. The list is automatically displayed whenever there is at least one aircraft in the list.
 
 \capdimage{img/hlist.png}{Holding List}
 
@@ -4729,17 +4730,17 @@ Other window-specific mouse function areas are explained below. All functions us
 \begin{longtable}{p{5cm} p{7.5cm}}
     Radar Menu          & Toggles keeping the menu permanently displayed\\
     Vector On/Off       & Toggles all prediction lines on/off\\
-    QDM                 & Starts a new QDM vector\\
-    SEP                 & Starts a new Minimum separation tool\\
+    QDM                 & Starts a new \winref{tool:qdm}\\
+    SEP                 & Starts a new \winref{tool:mst}\\
     Quick Look          & Toggles function to bypass all filters and show all track labels\\
-    Maps…               & Opens the Maps Window\\
-    Track Control…      & Opens the Track Control Window\\
-    View…               & Opens the View Window\\
-    Range XXX           & Opens the Zoom Window (XXX = distance: center -> right edge)\\
-    Altitude Filter X…  & Opens the Altitude Filtering Window, displays the filter status\\
-    SSR Filter X…       & Opens the SSR Code Filtering Window, displays the filter status\\
-    CJI Filter X…       & Opens the CJI Filtering Window, displays the filter status\\
-    LAT/LONG…           & Opens the Cursor Lat/Long Window\\
+    Maps…               & Opens the \winref{win:mapsw}\\
+    Track Control…      & Opens the \winref{win:tcw}\\
+    View…               & Opens the \winref{win:view}\\
+    Range XXX           & Opens the \winref{win:zoom} (XXX = distance: center -> right edge)\\
+    Altitude Filter X…  & Opens the \winref{win:afw}, displays the filter status\\
+    SSR Filter X…       & Opens the \winref{win:ssr}, displays the filter status\\
+    CJI Filter X…       & Opens the \winref{win:cji}, displays the filter status\\
+    LAT/LONG…           & Opens the \winref{win:latlon}\\
     Find Track          & Not implemented\\
     Scale Marker        & Toggles the Scale Marker on/off\\
     Direction Finder    & Toggles the Direction Finder position circles or lines on/off\\
@@ -4751,10 +4752,10 @@ The Radar Menu closes when a selection is made or the mouse cursor leaves the me
 
 \bigskip
 
-For all the filters, it is only possible to filter out unconcerned tracks. Aircraft with transponder codes 7500, 7600 and 7700 and tracks with an active STCA, MSAW, APW or DUPE alert are also excluded from filtering. If a filter is active, the filter title in the Radar Menu will be shown in “Selected” color.
+For all the filters, it is only possible to filter out \stateref{Unconcerned} tracks. Aircraft with transponder codes 7500, 7600 and 7700 and tracks with an active STCA, MSAW, APW or DUPE alert are also excluded from filtering. If a filter is active, the filter title in the Radar Menu will be shown in \colorref{Selected} color.
 
 \subsection{QDM Vector}
-\label{qdm}
+\label{tool:qdm}
 
 To draw a new QDM vector:
 \begin{itemize}
@@ -4804,7 +4805,7 @@ To adjust a QDM vector:
 Displays a range scale in the bottom right corner of the radar screen.
 
 \subsection{Minimum Separation Tool}
-\label{mmtool}
+\label{tool:mst}
 
 The minimum separation tool displays the predicted minimum lateral separation between two radar tracks within the next 30 minutes, assuming both of them maintain their present ground tracks and speeds. Lines are drawn from the tracks’ present positions to the positions where the tracks are predicted to be at the time of the minimum separation.
 
@@ -4825,7 +4826,7 @@ The minimum separation distance is by default displayed near the end of one of t
 
 \bigskip
 
-7 sets of lines can be simultaneously drawn (plus one from the CARD). When at least one set is drawn, a SEP List Window is opened:
+7 sets of lines can be simultaneously drawn (plus one from the \winref{win:card}). When at least one set is drawn, a SEP List Window is opened:
 
 \bigskip
 
@@ -4872,7 +4873,7 @@ The calculation is done using the tracks’ current vertical speeds.
     \item The vertical separation labels, when displayed, are similar to the minimum separation label but prefixed with “V”.
     \item If one or both points are beyond the minimum separation point, their calculation is extended forward up to an offline-defined time value.
     \item If a point is already passed or beyond the maximum displayed time, it will not be drawn.
-    \item If the end point is beyond the maximum displayed time, a line will be drawn using “C\_Sep\_Vert” color from the CPA to the end point or the maximum displayed time whichever is earlier.
+    \item If the end point is beyond the maximum displayed time, a line will be drawn using \colorref{SEP Vert} color from the CPA to the end point or the maximum displayed time whichever is earlier.
     \item If the tracks are not predicted to be separated by less than the defined value within the prediction time, “V=” is displayed left of the minimum separation label.
 \end{itemize}
 
@@ -4884,7 +4885,7 @@ The calculation is done using the tracks’ current vertical speeds.
 
 \capdimage{img/viewmenu.png}{View Window}
 
-The View Window lists the available views. To select a view, left-click on it. The radar screen will be refreshed to show the required area. The first three views, labeled “1”, “2” and “3” are views that can be defined on the fly. To define a view for one of them, set the screen area as desired and then right-click on the number. The number will then change to “Foreground” color to indicate that it has a view defined for it. An already defined view (“1”, “2” or “3”) can be redefined to show a different screen area just by defining it again with a right-click.
+The View Window lists the available views. To select a view, left-click on it. The radar screen will be refreshed to show the required area. The first three views, labeled “1”, “2” and “3” are views that can be defined on the fly. To define a view for one of them, set the screen area as desired and then right-click on the number. The number will then change to \colorref{Foreground} color to indicate that it has a view defined for it. An already defined view (“1”, “2” or “3”) can be redefined to show a different screen area just by defining it again with a right-click.
 
 \subsection{Zoom Window}
 \label{win:zoom}
@@ -4924,10 +4925,9 @@ that capability):
 \bigskip
 
 \begin{longtable}{p{2.5cm} p{7.5cm} p{2.5cm}}
-    Name & Foreground text                          & Not displayed\\
-    Name & Foreground text, Foreground4 background  & Automatic (not displayed)\\
-    Name & Foreground4 background                   & Automatic (displayed)\\
-    Name & Foreground background                    & Displayed\\    
+    \image{img/mapoff.png}  & Not displayed\\
+    \image{img/mapauto.png} & Automatic (not displayed)\\
+    \image{img/mapon.png}   & Displayed\\
 \end{longtable}
 
 \bigskip
@@ -4939,30 +4939,6 @@ not displayed --> automatic (if applicable) --> displayed
 \bigskip
 
 Right-clicking in the other direction. Left or right double-clicking on any map name will change the states of all maps in that folder.
-
-\bigskip
-
-The “AD\_Hotspots” map in the “Aerodromes” folder is an automatically created map that contains aerodrome symbols that are used to open the \winref{win:riuw} and \winref{win:ralw}.
-
-\bigskip
-
-The “AIRPORTS”, “FIXES” (fixes with numbers filtered out), “FIXES ALL”, “NDBS” and “VORS” maps (and their “+ L” counterparts) in the “MISC” folder are automatically generated maps that contain the corresponding items with and without text labels from the active sector file. The color used for the symbols is “Auto Map Symbol” and for the labels “Auto Map Label”. Depending on the sector file setup, there can also be one or more maps named “FIXES GRP” (where “GRP” is a group name given in the sector file). These are actually NDBs or VORs in the sector file. To create such a group, put a fake navaid with the name “!GRP!” in the sector file, where “GRP” is the desired group name. All following navaids of that type will be put in the “FIXES GRP” map. The same group name can only be used once in a sector file. The items in these maps will look like the items in the “NDBS” or “VORS” maps, depending on which section the items are placed in the sector file.
-
-\bigskip
-
-In addition to plugin defined maps, the window can be used to toggle the visibility of some elements from the active sector file. These are “ARTCC HIGH”, “ARTCC”, “ARTCC LOW”, “AIRWAYS H”, “AIRWAYS L”, “SID”, “STAR”, “GEO”, “REGIONS” and “FREE TEXT”. The elements from the sector file will not show the black background when active as TopSky does not know their state. The names of these elements will be shown in grey letters to serve as reminders about this limitation.
-
-\bigskip
-
-The “AIRWAYS L” and “AIRWAYS H” folders present the airways organized into groups. The default group is “PERM”. An airway can be assigned to a custom named group by having the group name in parentheses in the airway name. Airways with “[1]”, “[2]” or “[3]” found in their names will be assigned to groups “CDR 1”, “CDR 2” and “CDR 3” respectively. Custom group names and the CDR numbers can be combined, for example airway segments named “A1(GRP)[1]” and “A2(GRP)[1]” in the sector file would be labeled “GRP CDR 1” in the maps list. Additionally, one map with the group’s name is created that contains all airways in the group regardless of the PERM or CDR status.
-
-\bigskip
-
-NAT tracks extracted from downloaded track messages (see \winref{win:nattmw}) can be found in the “NAT” folder. Eastbound tracks are colored East NAT Map, westbound ones West NAT Map.
-
-\bigskip
-
-TopSky data files may include additional data to the abovementioned sector file. If present, the data is activated and deactivated together with the sector file item when done via the Maps Window.
 
 \subsection{Track Control Window}
 \label{win:tcw}
@@ -4992,7 +4968,7 @@ The “All” buttons toggle all the state buttons for that field on/off.
 
 \bigskip
 
-Regardless of the settings here, the necessary label fields will be displayed in certain cases (for example in case of a COPX coordination request, the COPX field will be displayed). The default label field selections are as displayed in the image.
+Regardless of the settings here, the necessary label fields will be displayed in certain cases (for example in case of a COPX coordination request, the COPX field will be displayed).
 
 \subsection{Altitude Filtering Window}
 \label{win:afw}
@@ -5083,15 +5059,15 @@ The “Connect” button becomes available once you are connected to the VATSIM 
 
 \bigskip
 
-If the VATSIM callsign is known when the window is opened, the CPDLC login callsign is pre-selected based on it. For CTR and FSS logins, the CPDLC login comes from a data file, and for others it is the beginning of the VATSIM login (which usually is the airport code). If necessary, the CPDLC login can be changed.
+If the VATSIM callsign is known when the window is opened, the CPDLC login callsign is pre-selected based on it. If necessary, the CPDLC login can be changed.
 
 \bigskip
 
-The “CPDLC” and “DCL/PDC” selections are used to define the offered services. For CTR and FSS logins both are selected by default, for others only “DCL/PDC” is selected.
+The “CPDLC” and “DCL” selections are used to define the offered services.
 
 \bigskip
 
-Sending a clearance via CPDLC can be the default setting in some of TopSky menus. For this to happen, the aircraft must be above the “Min Level” (FL) specified here, the selection button for the menu in question must be on, and the CPDLC Default Status (in Global Menu->STS) must be “On”. The “DCT” option does not do anything at the moment (DCT clearance via CPDLC is given using the “Point” option in the AHDG menu, so the “AHDG” option controls that as well). “Auto-accept logon” automatically accepts valid logon requests from tracks above “Min Level”.
+Sending a clearance via CPDLC can be the default setting in some of TopSky menus. For this to happen, the aircraft must be above the “Min Level” (FL) specified here, the selection button for the menu in question must be on, and the CPDLC Default Status (in \winref{menu:global}->\winref{menu:sts}) must be “On”. The “DCT” option does not do anything at the moment (DCT clearance via CPDLC is given using the “Point” option in the AHDG menu, so the “AHDG” option controls that as well). “Auto-accept logon” automatically accepts valid logon requests from tracks above “Min Level”.
 
 \bigskip
 
@@ -5133,7 +5109,7 @@ Altitudes are shown in hundreds of feet if at or below the transition altitude, 
 
 \bigskip
 
-An area’s activation status can be inactive, pre-active or active. A pre-active area is an area that will become active within 30 minutes and is shown in yellow text on a gray background. An active area is shown with yellow text on a blue background. The APW system will not alert for a pre-active area, but for the SAP system a pre-active area is considered as being active.
+An area’s activation status can be inactive, pre-active or active. A pre-active area is an area that will become active within 30 minutes and is shown in \colorref{Selected Period} text on a \colorref{TSA Preactive} background. An active area is shown with \colorref{Selected Period} text on a \colorref{TSA Active} background. The APW system will not alert for a pre-active area, but for the SAP system a pre-active area is considered as being active.
 
 \bigskip
 
@@ -5166,8 +5142,7 @@ With the area pop-up menu opened, the area text row background changes to black.
 \begin{itemize}
         \item ACTIVATE Clears any activation times and activates the area
         \item DEACTIVATE Clears any activation times and deactivates the area
-        \item AUTO If an activation schedule is found in the area data file, sets the
-        \item area to be activated automatically
+        \item AUTO If an activation schedule is found in the area data file, sets the area to be activated automatically
         \item VALIDATE Not implemented
         \item EDIT Allows to change the area parameters
         \item COPY Not implemented
@@ -5180,7 +5155,13 @@ After any selection from the pop-up menu, “Ok”, “Apply” or “Cancel” 
 
 \bigskip
 
-Preactive and active areas are displayed on the radar screen. The area border is drawn using a predefined color and it may be filled as well. A predefined text label may also be displayed, showing information about the area. A very small “+” symbol will be drawn at that location. By holding the left mouse button down on that symbol, a full area label will be displayed, showing:
+Preactive and active areas are displayed on the radar screen. A preactive area border is drawn in \colorref{Preactive Map}. An active area border is drawn in \colorref{Active Map Type 4} border and, for areas with high operational impact, filled in a transparent \colorref{Active RD Infill Map}. 
+
+\capdimage{img/tsapre.png}{Preactive Area} \capdimage{img/tsaact.png}{Active Area} \capdimage{img/tsafill.png}{Active High Operational Impact Area}
+
+\bigskip
+
+A predefined text label may also be displayed, showing information about the area. A very small “+” symbol will be drawn at that location. By holding the left mouse button down on that symbol, a full area label will be displayed, showing:
 
 \begin{center}
         Name\\ 
@@ -5211,11 +5192,11 @@ Clicking “Ok” will do the search and open the Flight Plan Window if it was c
 
 \winref{menu:global} FData -> Flight Plan Window… 
 
-Flight Plan Selection Window -> Create a list of one or more flight plans 
+\winref{win:fpsw} -> Create a list of one or more flight plans 
 
 \winref{menu:cs} -> More -> FPL… 
 
-“Open FPL Window” tag function
+“Open FPL Window” label function
 
 \bigskip
 
@@ -5278,12 +5259,12 @@ The following buttons are available:
 
 \bigskip
 
-\begin{longtable}{p{2.5cm} p{10cm}}
+\begin{longtable}{p{1.5cm} p{11cm}}
     CRE         & Create a new full flight plan (FPL)\\
                 & Editable fields will be highlighted\\
                 & If a flight plan is being displayed, all data fields keep their values so a new flight plan can be created using an existing one as a base. If not, default values will be set to FRUL, NRAC, EQUIP and Other fields\\
                 & “Apply” creates the FPL, “Cancel” aborts the operation\\
-    MOD         & dify the currently displayed FPL\\
+    MOD         & Modify the currently displayed FPL\\
                 & Available fields will be highlighted\\
                 & “Apply” modifies the FPL, “Cancel” aborts the operation\\
     Find        & Find a flight plan\\
@@ -5336,7 +5317,7 @@ Flight Plan Window -> “RTE” button
 
 \capdimage{img/route.png}{Complete Route Window}
 
-Displays the expanded route of the FPL currently shown in the \winref{win:fpw}. Already passed points are shown with “Overflown” color background. Points still ahead show the estimated time over the point and the calculated flight level (as calculated by EuroScope) below the point name.
+Displays the expanded route of the FPL currently shown in the \winref{win:fpw}. Already passed points are shown with \colorref{Overflown} color background. Points still ahead show the estimated time over the point and the calculated flight level below the point name.
 
 \subsection{Create APL Window}
 \label{win:apl}
@@ -5364,7 +5345,7 @@ For the accepted CFL entry formats, see \winref{menu:afl}.
 \bigskip
 
 Left-clicking on the FRUL field toggles the flight rules between “I” (IFR) and “V” (VFR).
-When the APL is successfully created, it is automatically assumed or set as on-contact depending on TopSky setup.
+When the APL is successfully created, it is automatically assumed.
 
 \subsection{Stack Manager Window}
 \label{win:smw}
@@ -5374,7 +5355,7 @@ Holding List... -> “HPT” item
 
 \capdimage{img/stackman.png}{Stack Manager Window}
 
-To help with controlling holding aircraft, Stack Manager Windows can be opened. They give a quick look into the vertical positions of aircraft that have been given a holding clearance to the holding fix associated with the window in question.
+The Stack Manager Windows give a quick look into the vertical positions of aircraft that have been given a holding clearance to the holding fix associated with the window in question.
 
 \bigskip
 
@@ -5383,19 +5364,24 @@ The window is split into three columns:
 \bigskip
 
 \begin{longtable}{p{2.5cm} p{10cm}}
-    Approaching Hold:   & Aircraft approaching the holding area\\
-                        & (more than 5 minutes flying time away from the holding fix)\\
+    Approaching Hold:   & Aircraft approaching the holding area
+    
+                          (more than 5 minutes flying time away from the holding fix)\\
     Hold:               & Aircraft in the holding area\\
     Leave Hold:         & Aircraft cleared to leave the holding\\   
 \end{longtable}
 
 \bigskip
 
-The window displays the aircraft labels at their cleared flight levels. For each aircraft the callsign, the vertical speed arrow if not in level flight (“\#” in \colorref{Warning} color for aircraft without altitude information), the RVSM capability indicator if applicable, and the CFL is displayed. If there are more than one aircraft with the same CFL, only one callsign will be shown. A “ + ” symbol in \colorref{SMW Overlap Box} color after the CFL value indicates that there are more flights to be displayed. Clicking on the symbol will display a window with all the callsigns with that CFL.
+The window displays the aircraft labels at their cleared flight levels. For each aircraft the callsign, the vertical speed arrow if not in level flight (“\#” in \colorref{Warning} color for aircraft without altitude information), the RVSM capability indicator if applicable, and the \tagref{tag:CFL} is displayed. If there are more than one aircraft with the same \tagref{tag:CFL}, only one callsign will be shown. A “+” symbol in \colorref{SMW Overlap Box} color after the \tagref{tag:CFL} value indicates that there are more flights to be displayed. Clicking on the symbol will display a window with all the callsigns with that \tagref{tag:CFL}.
 
 \bigskip
 
-For each aircraft an altitude box will be drawn that extends from AFL to CFL. Normally the color of the box is \colorref{SMW Level Band}, but in the Hold and Leave Hold columns if it is closer than 300ft or overlaps any other aircraft’s box, the color will be \colorref{SMW Overlap}. For an aircraft with a CLAM alert, the box will be in \colorref{SMW Overshoot} color. A flight level reserved for an overflight is shown in \colorref{SMW Overflight} color. The altitude box of aircraft in the Leave Hold column extends into the Hold column as well.
+For each aircraft an altitude box will be drawn that extends from \tagref{tag:AFL} to \tagref{tag:CFL}. Normally the color of the box is \colorref{SMW Level Band}, but in the Hold and Leave Hold columns if it is closer than 300ft or overlaps any other aircraft’s box, the color will be \colorref{SMW Overlap}. For an aircraft with a CLAM alert, the box will be in \colorref{SMW Overshoot} color. A flight level reserved for an overflight is shown in \colorref{SMW Overflight} color. The altitude box of aircraft in the Leave Hold column extends into the Hold column as well.
+
+\begin{Warn}
+  If two Hold volumes overlap (such as PILIM and ABUSU), each Stack Manager Window will show only it's own traffic, the adjacent interfering traffic will not be displayed
+\end{Warn}
 
 \bigskip
 
@@ -5403,7 +5389,7 @@ Aircraft will be automatically removed from the Leave Hold column after 10 minut
 
 \bigskip
 
-Any number of Stack Manager Windows can be opened to monitor multiple holdings at the same time. For CFLs at or below the transition altitude, the aircraft label is placed on the numerical value of the CFL, but the altitude box is always based on flight levels.
+Any number of Stack Manager Windows can be opened to monitor multiple holdings at the same time. For \tagref{tag:CFL} at or below the transition altitude, the aircraft label is placed on the numerical value of the \tagref{tag:CFL}, but the altitude box is always based on flight levels.
 
 \bigskip
 
@@ -5411,11 +5397,11 @@ The mouse click areas of the Stack Manager Window:
 
 \bigskip
 
-\begin{longtable}{p{2.5cm} p{10cm}}
+\begin{longtable}{p{5.5cm} p{7cm}}
     Slider or view background area  & Drag to adjust the lowest shown FL\\
     Aircraft callsigns              & Open \winref{menu:cs} \footnotemark[1]\\
     CFL                             & Open \winref{menu:cfl} \footnotemark[2]\\
-    + symbol                        & Open window to view all callsigns with that CFL\\
+    + symbol                        & Open window to view all callsigns with that \tagref{tag:CFL}\\
     FL numbers                      & Toggle overflight status for that level\\   
 \end{longtable}
 
@@ -5431,11 +5417,11 @@ The mouse click areas of the Stack Manager Window:
 
 \capdimage{img/card.png}{CARD}
 
-The CARD window presents the MTCD conflicts and conflict risks. It also allows setting some of the related parameters. It is divided into two parts:
+See \winref{tool:MTCD}. The CARD window presents the MTCD conflicts and conflict risks. It also allows setting some of the related parameters. It is divided into two parts:
 
 \bigskip
 
-On the left is the list area which includes all the detected conflicts and shows the concerned aircrafts’ callsigns. A conflict or potential predicted conflict has an \colorref{Urgency} colored label and a risk or potential risk of conflict has a \colorref{Warning} one. Potential conflicts are displayed with \colorref{Potential} colored labels. The conflict numbers are shown in \colorref{CARD Conflict Number} color. An \colorref{Urgency} colored background on a callsign means that the aircraft also has a Short Term Conflict Alert. A highlighted callsign will be highlighted in this list as well. An acknowledged conflict (shown in \colorref{Unconcerned} color) will not display the MTCD warning in the track label. An acknowledged problem will be automatically de-acknowledged if the predicted minimum separation decreases by a predefined amount.
+On the left is the list area which includes all the detected conflicts and shows the concerned aircrafts’ callsigns. A conflict or potential predicted conflict has an \colorref{Urgency} colored label and a risk or potential risk of conflict has a \colorref{Warning} one. Potential conflicts are displayed with \colorref{Potential} colored labels. The conflict numbers are shown in \colorref{CARD Conflict Number} color. An \colorref{Urgency} colored background on a callsign means that the aircraft also has a Short Term Conflict Alert. A highlighted callsign will be highlighted in this list as well. An acknowledged conflict (shown in \colorref{Unconcerned} color) will not display the MTCD warning in the track label. An acknowledged problem will be automatically de-acknowledged if the predicted minimum separation decreases by 1nm.
 
 \bigskip
 
@@ -5452,17 +5438,19 @@ The mouse click areas of the CARD window:
 
 \bigskip
 
-\begin{longtable}{p{2.5cm} p{10cm}}
-    “Timeloss” / “Distance”     & Opens a pop-up menu to select the sorting option\\
-                                & (Time to start of conflict / Predicted minimum separation)\\
+\begin{longtable}{p{5.5cm} p{7cm}}
+    “Timeloss” / “Distance”     & Opens a pop-up menu to select the sorting option
+                                  
+                                  (Time to start of conflict / Predicted minimum separation)\\
     “View” menu label           & Toggle the View menu.\\
     Vertical slider             & Drag to adjust the distance scale\\
     Horizontal slider           & Drag to adjust the time scale\\
     Diamond on vertical axis    & Drag to adjust prediction distance    \\
     Diamond on horizontal axis  & Drag to adjust prediction time\\
     Triangle on horizontal axis & Drag to adjust warning time\\
-    Conflict number labels      & Left-click to open Mark/ACK menu\\
-                                & Right-click to toggle SEP (minimum separation lines)\\
+    Conflict number labels      & Left-click to open Mark/ACK menu
+                                  
+                                  Right-click to toggle SEP (minimum separation lines)\\
 \end{longtable}
 
 \bigskip
@@ -5471,7 +5459,7 @@ From the “View” menu it is possible to toggle various MTCD related options:
 
 \bigskip
 
-\begin{longtable}{p{2.5cm} p{10cm}}
+\begin{longtable}{p{5.5cm} p{7cm}}
     List                & Toggles display of the list area\\
     Graphic             & Toggles display of the graphical area\\
     Grid                & Toggles a nm/min grid on the graphical area\\
@@ -5479,12 +5467,13 @@ From the “View” menu it is possible to toggle various MTCD related options:
     Potential Predicted & Toggles display of MTCD potential predicted conflicts \\
     Potential Risk      & Toggles display of MTCD potential risks of conflict \\
     Potential           & Toggles display of MTCD potential conflicts \\
-    PLC                 & Toggles display of planner controller conflicts\\
-                        & (conflict starts later than the triangle displayed on the time axis)\\
-    MTCD Ind            & Toggles the display of the MTCD indicator on the track label\\
-    Notif               & Toggles whether tracks in the notified state are considered for MTCD\\
-    Unco                & Toggles whether unconcerned tracks are considered for MTCD\\
-    Future              & Toggles whether flight plan tracks are considered for MTCD (flight plan tracks must be at least in the coordinated state regardless of the “Notif” and “Unco" selections)\\
+    PLC                 & Toggles display of planner controller conflicts
+    
+                          (conflict starts later than the triangle displayed on the time axis)\\
+    MTCD Ind            & Toggles the display of the \tagref{tag:MTCD} Mark on the track label\\
+    Notif               & Toggles whether tracks in the \stateref{Notified} state are considered for MTCD\\
+    Unco                & Toggles whether \stateref{Unconcerned} tracks are considered for MTCD\\
+    Future              & Toggles whether FPASD tracks are considered for MTCD (flight plan tracks must be at least in the \stateref{Coordinated} state regardless of the “Notif” and “Unco" selections)\\
 \end{longtable}
 
 \bigskip
@@ -5494,8 +5483,8 @@ From the “Mark/ACK” menu it is possible to toggle conflict-specific options:
 \bigskip
 
 \begin{longtable}{p{2.5cm} p{10cm}}
-    Mark All    & Toggles marking the Callsigns and AFL’s of the concerned tracks with “CARD Mark All” color\\
-    Mark Own    & Toggles marking the Callsigns of the concerned tracks with “CARD Mark Own” color\\
+    Mark All    & Toggles marking the \tagref{tag:CALLSIGN} and \tagref{tag:AFL}’s of the concerned tracks with \colorref{CARD Mark All} color\\
+    Mark Own    & Toggles marking the Callsigns of the concerned tracks with \colorref{CARD Mark Own} color\\
     ACK         & Toggles acknowledgement status\\
     Address     & Not implemented\\
 \end{longtable}
@@ -5509,7 +5498,7 @@ From the “Mark/ACK” menu it is possible to toggle conflict-specific options:
 
 \capdimage{img/sap.png}{SAP Window}
 
-The SAP window lists the aircraft that have SAP conflicts (can be set to also show risks). The list shows the aircraft callsign, the area it will enter and the coordinates and the time when it will enter it. Only the first entered area will be shown if the aircraft is predicted to enter more than one active area. Placing the mouse cursor over an aircraft line will show the aircraft’s route on the radar screen up to the first point of entering an active area or the first point where there is a risk of doing so if risks are selected to be displayed on the window. The list is sorted according to the entry time field, with the earliest time on top.
+See \winref{tool:SAP}. The SAP window lists the aircraft that have SAP conflicts. The list shows the aircraft callsign, the area it will enter and the coordinates and the time when it will enter it. Only the first entered area will be shown if the aircraft is predicted to enter more than one active area. Placing the mouse cursor over an aircraft line will show the aircraft’s route on the radar screen up to the first point of entering an active area or the first point where there is a risk of doing so if risks are selected to be displayed on the window. The list is sorted according to the entry time field, with the earliest time on top.
 
 \subsection{Vertical Aid Window}
 \label{win:vaw}
@@ -5520,7 +5509,7 @@ The SAP window lists the aircraft that have SAP conflicts (can be set to also sh
 
 \capdimage{img/vaw.png}{Vertical Aid Window}
 
-The Vertical Aid Window shows the predicted vertical trajectory of the selected aircraft (ASEL), starting from its current position (marked with a dot in “VAW Track Position” color), and the trajectories of all aircraft conflicting with it. The trajectories are displayed as calculated by EuroScope. The background color of the path area is by default the “Inactive Sector” color, but for the time the aircraft is predicted to be inside your sector the color will be the “Active Sector” color. Other sector boundary crossings are displayed with vertical lines in “VAW Sector Limits” color. The trajectory of the ASEL aircraft is drawn in “VAW Profile” color and the conflicting aircrafts’ trajectories in “Urgency” (conflict or potential predicted conflict), “Warning” (risk or potential risk of conflict) or “Potential” (potential).
+The Vertical Aid Window shows the predicted vertical trajectory of the selected aircraft (ASEL), starting from its current position (marked with a dot in \colorref{VAW Track Position} color), and the trajectories of all aircraft conflicting with it. The trajectories are displayed as calculated by EuroScope. The background color of the path area is by default the \colorref{Inactive Sector} color, but for the time the aircraft is predicted to be inside your sector the color will be the \colorref{Active Sector} color. Other sector boundary crossings are displayed with vertical lines in \colorref{VAW Sector Limits} color. The trajectory of the ASEL aircraft is drawn in \colorref{VAW Profile} color and the conflicting aircrafts’ trajectories in \colorref{Urgency} (conflict or potential predicted conflict), \colorref{Warning} (risk or potential risk of conflict) or \colorref{Potential} (potential).
 
 \bigskip
 
@@ -5529,7 +5518,7 @@ It is also possible to send PEL and XFL coordinations and set the CFL from this 
 \bigskip
 
 \begin{longtable}{p{2.5cm} p{10cm}}
-    CFL/PEL     & Opens the PEL or CFL menu depending on sector state\\
+    CFL/PEL     & Opens the PEL or \winref{menu:cfl} depending on sector state\\
     View        & Toggles the View menu\\
     XFL         & Opens the XFL menu\\
 \end{longtable}
@@ -5542,31 +5531,25 @@ From the “View” menu it is possible to toggle various MTCD related:
 
 \begin{longtable}{p{2.5cm} p{10cm}}
     Risk                    & Toggles display of MTCD risks\\
-    Potential Predicted     & Toggles display of MTCD potential predicted conflicts *\\
-    Potential Risk          & Toggles display of MTCD potential risks of conflict *\\
-    Potential               & Toggles display of potential conflicts *\\
-    Notif                   & Toggles whether tracks in the notified state are shown\\
-    Unco                    & Toggles whether unconcerned tracks are shown\\
+    Potential Predicted     & Toggles display of MTCD potential predicted conflicts\\
+    Potential Risk          & Toggles display of MTCD potential risks of conflict\\
+    Potential               & Toggles display of potential conflicts\\
+    Notif                   & Toggles whether \stateref{Notified} tracks are shown\\
+    Unco                    & Toggles whether \stateref{Unconcerned} tracks are shown\\
 \end{longtable}
 
 \bigskip
 
-* The availability of these items in the menu depends on TopSky setup
-
-\bigskip
-
-The PEL and XFL values are displayed in \colorref{Coordination} color, or in “Proposition” if being coordinated. After a refused coordination, the original value is shown in \colorref{Warning} color. The CFL value is displayed as a horizontal line across the screen.
+The PEL and XFL values are displayed in \colorref{Coordination} color, or in \colorref{Proposition In} if being coordinated. After a refused coordination, the original value is shown in \colorref{Warning} color. The CFL value is displayed as a horizontal line across the screen.
 
 \subsection{Message In Window}
 \label{win:miw}
 
 \winref{menu:global} Tools -> Message In...
 
-\bigskip
-
 \capdimage{img/miw.png}{Message In Window}
 
-The Message In Window shows received coordination messages, sorted by time, with the newest ones at the top of the list. For the ones requiring an answer, it is possible to send it either from this window, the aircraft track label or any aircraft list where the relevant items are displayed. The messages will be automatically removed from the list when the track becomes Unconcerned, or for some messages, also based on a specific event.
+The Message In Window shows received coordination messages, sorted by time, with the newest ones at the top of the list. For the ones requiring an answer, it is possible to send it either from this window, the aircraft track label or any aircraft list where the relevant items are displayed. The messages will be automatically removed from the list when the track becomes \stateref{Unconcerned}, or for some messages, also based on a specific event.
 
 \bigskip
 
@@ -5582,26 +5565,26 @@ The available message types are:
          \end{itemize}
     \item “From <SI> for <Callsign> proposes Request on downstream frequency”
          \begin{itemize}
-            \item Displayed when the next controller has sent a message requesting the track to be transferred to his frequency
+            \item Displayed when the next controller has sent a \winref{coo:rof} message
             \item Left-clicking on the line manually removed
             \item Removed when a transfer is started
          \end{itemize} 
     \item “From <SI> for <Callsign> proposes Handover [HDG xxx] [DCT xxxxx] [SP xxx]”
         \begin{itemize}
-            \item Displayed when there is a HOP in progress
+            \item Displayed when there is a \winref{coo:hop} in progress
             \item Left-clicking on the line opens the \winref{menu:ctm}
             \item Removed when the transfer is complete or cancelled
         \end{itemize} 
     \item “From <SI> for <Callsign> RTI [HDG xxx] [SP xxx] [ARC xx]”
         \begin{itemize}
-            \item Displayed when an RTI message has been received
+            \item Displayed when an \winref{coo:rti} message has been received
             \item Left-clicking on the line opens the \winref{menu:ttm}
         \end{itemize} 
     \item “From <SI> for <Callsign> TIP [HDG xxx] [SP xxx] [ARC xx]”
         \begin{itemize}
-            \item Displayed when a TIP message has been received
+            \item Displayed when a \winref{coo:tip} message has been received
             \item Left-clicking on the line opens the \winref{menu:ttm}
-            \item Removed when the track becomes Assumed
+            \item Removed when the track becomes \stateref{Assumed}
         \end{itemize} 
     \item “From <SI> for <Callsign> proposes HOP/RTI/TIP Accepted”
         \begin{itemize}
@@ -5656,19 +5639,19 @@ The available message types are:
         \end{itemize}
     \item“To <SI> Request <Callsign> on frequency”
         \begin{itemize}
-             \item Displayed when you have sent a ROF message
+             \item Displayed when you have sent a \winref{coo:rof} message
         \end{itemize}
     \item“To <SI> for <Callsign> proposes Handover [HDG xxx] [DCT xxxxx] [SP xxx]”
         \begin{itemize}
-             \item Displayed when you have sent a HOP
+             \item Displayed when you have sent a \winref{coo:hop}
         \end{itemize}
     \item“To <SI> for <Callsign> RTI [HDG xxx] [SP xxx] [ARC xx]”
         \begin{itemize}
-             \item Displayed when you have sent an RTI message
+             \item Displayed when you have sent an \winref{coo:rti} message
         \end{itemize}
     \item“To <SI> for <Callsign> TIP [HDG xxx] [SP xxx] [ARC xx]”
         \begin{itemize}
-             \item Displayed when you have sent a TIP message
+             \item Displayed when you have sent a \winref{coo:tip} message
         \end{itemize}
     \item“To <SI> for <Callsign> proposes HOP/RTI/TIP Accepted”
         \begin{itemize}
@@ -5701,7 +5684,7 @@ The available message types are:
 
 \capdimage{img/dlmicchk.png}{Microphone Check Menu}
 
-The Microphone Check menu is used to send a “CHECK STUCK MICROPHONE <frequency>” CPDLC message to all CPDLC connected aircraft when a stuck mic is suspected. The menu lists all frequencies selected for XMT TXT in EuroScope; left-clicking on one sends the messages. Manual frequency entry is not available.
+The Microphone Check menu is used to send a “CHECK STUCK MICROPHONE <frequency>” CPDLC message to all CPDLC connected aircraft when a stuck mic is suspected. The menu lists all frequencies selected for XMT TXT in EuroScope. Left-clicking on one sends the messages. Manual frequency entry is not available.
 
 \bigskip
 
@@ -5723,16 +5706,16 @@ The \winref{win:dlcmw} displays all sent and received CPDLC messages that have n
 The messages (for uplink clearances, also the responses) are color coded to display their status:
 
 \begin{itemize}
-    \item “Urgency” for CPDLC emergency messages that have not been replied to
-    \item “CPDLC Failed” for failed uplink messages
-    \item “CPDLC Unable” for uplink clearances replied to with “UNABLE”
-    \item “CPDLC Standby” for uplink clearances replied to with “STANDBY”, and not timed out
-    \item “CPDLC UM Clearance” for uplink clearances waiting for reply, and not timed out
-    \item “CPDLC Pilot Late” for timed out uplink clearances
-    \item “CPDLC Discarded” for discarded messages
-    \item “CPDLC DM Request” for downlink requests waiting for controller reply, and not timed out
-    \item “CPDLC Controller Late” for timed out downlink requests
-    \item “Foreground” for other messages
+    \item \colorref{Urgency} for CPDLC emergency messages that have not been replied to
+    \item \colorref{CPDLC Failed} for failed uplink messages
+    \item \colorref{CPDLC Unable} for uplink clearances replied to with “UNABLE”
+    \item \colorref{CPDLC Standby} for uplink clearances replied to with “STANDBY”, and not timed out
+    \item \colorref{CPDLC UM Clearance} for uplink clearances waiting for reply, and not timed out
+    \item \colorref{CPDLC Pilot Late} for timed out uplink clearances
+    \item \colorref{CPDLC Discarded} for discarded messages
+    \item \colorref{CPDLC DM Request} for downlink requests waiting for controller reply, and not timed out
+    \item \colorref{CPDLC Controller Late} for timed out downlink requests
+    \item \colorref{Foreground} for other messages
 \end{itemize}
 
 \bigskip
@@ -5768,7 +5751,7 @@ If the message is “REQUEST LOGON”:
 For other messages:
 
 \begin{longtable}{p{2.5cm} p{10cm}}
-    Manual & Reply Opens a window (see below) to type a free text reply\\
+    Manual & Reply Opens \winref{win:dlmrw}\\
 \end{longtable}
 
 \bigskip
@@ -5789,7 +5772,7 @@ This window is used to send a manually composed reply to a CPDLC message (max 99
 The window closes automatically when the message is sent or the mouse cursor leaves the window area.
 
 \begin{Warn}
-    When replying to a downlink request using the Manual Reply Window, the track label is not updated accordingly. If the downlink had been recognized as a request, the request information is removed from the label, and if the reply is a clearance, it is not shown on the label, and the label values are not updated. Always use the label menus to answer a recognized downlink!
+    When replying to a downlink request using the Manual Reply Window, the track label is not updated accordingly. If the downlink had been recognized as a request, the request information is removed from the label, and if the reply is a clearance, it is not shown on the label, and the label values are not updated. Always use the label menus to answer a recognized downlink
 \end{Warn}
 
 \subsection{CPDLC History Message Window}
@@ -5801,8 +5784,7 @@ The window closes automatically when the message is sent or the mouse cursor lea
 
 \capdimage{img/dlhmw.png}{CPDLC History Message Window}
 
-The CPDLC History Message Window contains CPDLC messages that have been archived from the CPDLC
-Current Message Window.
+The CPDLC History Message Window contains CPDLC messages that have been archived from the \winref{win:dlcmw}.
 
 \subsection{Cursor Lat/Long Window}
 \label{win:latlon}
@@ -5828,11 +5810,11 @@ The Weather Messages Window displays weather related messages. By default, METAR
 
 \bigskip
 
-By default, with the “METAR/SPECI” option button chosen, this window displays the METARs you have requested from the VATSIM server (i.e. [F2] <icao>) and any METARs EuroScope requests automatically. Whenever a new METAR is received from the server it is added to the list (an old METAR is removed when a newer one is received from the same station). New METARs and TAFs are displayed in \colorref{Warning} color until the mouse cursor is positioned on them (for the decoded METAR, this applies only for the first row).
+By default, with the “METAR/SPECI” option button chosen, this window displays the METARs you have requested to TopSky. Whenever a new METAR is received from the server it is added to the list (an old METAR is removed when a newer one is received from the same station). New METARs and TAFs are displayed in \colorref{Warning} color until the mouse cursor is positioned on them (for the decoded METAR, this applies only for the first row).
 
 \bigskip
 
-In addition, the window can display SIGMETs, SNOWTAMs and TAFs. The SIGMETs are retrieved when the “SIGMET” button is selected for the first time. Selecting the “SNOWTAM” or “TAF” option will open the \winref{menu:ad} where the desired stations must be selected. SNOWTAM data is downloaded together with the NOTAMs (as of writing this, they are not included in the data and hence unavailable for TopSky). If TopSky is configured to use a non-VATSIM METAR source, the METAR/SPECI list behaves the same way as the TAF list (stations must be selected from a list). The messages are automatically updated at specified intervals - the status bar at the bottom displays the remaining time to the next automatic update when the mouse cursor is over the window area.
+In addition, the window can display SIGMETs, SNOWTAMs and TAFs. The SIGMETs are retrieved when the “SIGMET” button is selected for the first time. Selecting the “SNOWTAM” or “TAF” option will open the \winref{menu:ad} where the desired stations must be selected. Messages are automatically updated at 15 minute intervals - the status bar at the bottom displays the remaining time to the next automatic update when the mouse cursor is over the window area.
 
 \bigskip
 
@@ -5910,13 +5892,11 @@ The General Information Window displays basic information on the system state. T
     role                & Own controller ID (between the mode and the “Normal” item)\\
     QNH                 & Shows the local QNH value (below the “Normal” item when available)\\
     CPDLC Def           & Displays the state of the CPDLC Default setting\\
-    FPASD               & Displays the state of the FPASD setting Alert\\
+    FPASD               & Displays the state of the FPASD setting \\
     Alert functions     & Status of the alert functions. The function name is shown in \colorref{Warning} color if selected off or there’s a fault in the data file.\\
     CCAMS               & Plugin selected as the code source:\\
                         & $\bullet$ \colorref{Urgency} color if the SSR data file contains no codes\\
-                        & $\bullet$ \colorref{Warning} color if simulated traffic is not downloaded\\
-                        & ESE file or fixed range selected as the code source:\\
-                        & $\bullet$ \colorref{Warning} color\\
+                        & $\bullet$ \colorref{Warning} color if simulated traffic is not downloaded or ESE file or fixed range selected as the code source\\
     AGCS                & \colorref{Warning} color if Hoppie datalink comms are failed\\
     MTCD                & \colorref{Warning} color if prediction time is set to zero    \\
 \end{longtable}
@@ -6097,13 +6077,22 @@ The NAT Track Messages Window displays the downloaded track messages. The messag
 
 \capdimage{img/snets.png}{Safety Nets Status Window}
 
-Allows setting the status for the STCA, MSAW, APW and AIW systems. The “On/Off” buttons control the corresponding system’s status.
+Allows setting the status for the \winref{tool:STCA}, \winref{tool:MSAW}, \winref{tool:APW} and \winref{tool:AIW} systems. The “On/Off” buttons control the corresponding system’s status.
 
 \bigskip
 
 Below them, there are four entry boxes for callsigns to exclude specific callsigns from all the safety nets. The “*” wildcard can be used to match multiple callsigns. It causes all the callsigns that match up to the “*” to be a match (i.e. “ABC*” will match all callsigns that start with “ABC”, but “*ABC” will match all callsigns as any characters after the “*” will be ignored).
+
+\bigskip
+
 Below the callsign fields, there are four SSR code boxes that can be used to exclude specific SSR codes from all the safety nets. The entered values must be 1-4 octal digits, and the system will match the number of digits entered (i.e. “2000” will match only code 2000, whereas “20” will match all codes in the range 2000-2077).
+
+\bigskip
+
 If there are STCA inhibition areas defined in the area data file, they will be listed in the area in the bottom part of the window. The area vertical limits (displayed in 100’s of feet or meters+“m” depending on system units) can be edited by clicking on the values, and the area activation can be toggled by clicking on the area status.
+
+\bigskip
+
 All changes to the window must be applied using the buttons in the bottom of the window to take effect.
 
 \bigskip
@@ -6123,7 +6112,7 @@ All changes to the window must be applied using the buttons in the bottom of the
 
 \capdimage{img/divsts.png}{Divergence Detection Status Window}
 
-Allows setting the status for the RAM and CLAM alerting. The “On/Off” buttons control the corresponding system’s status. All changes must be applied using the buttons below to take effect.
+Allows setting the status for the \winref{tool:RAM} and \winref{tool:CLAM} alerting. The “On/Off” buttons control the corresponding system’s status. All changes must be applied using the buttons below to take effect.
 
 \begin{longtable}{p{2.5cm} p{10cm}}
     Ok      & Applies the changes if any, closes the window\\
@@ -6140,7 +6129,7 @@ Allows setting the status for the RAM and CLAM alerting. The “On/Off” button
 
 \capdimage{img/mtcd.png}{MTCD Status Window}
 
-Allows setting the status for the MTCD system. The “On/Off” button controls the system’s status.
+Allows setting the status for the \winref{tool:MTCD} system. The “On/Off” button controls the system’s status.
 
 \bigskip
 
@@ -6148,7 +6137,7 @@ If there are MTCD inhibition areas defined in the area data file, they will be l
 
 \bigskip
 
-The rest of the inhibition settings affect both MTCD and SAP systems:
+The rest of the inhibition settings affect both \winref{tool:MTCD} and \winref{tool:SAP} systems:
 
 \bigskip
 
@@ -6186,7 +6175,6 @@ All changes must be applied using the buttons below to take effect.
 \label{win:riuw}
 
 \winref{menu:global} STS -> Runway In Use...
-Radar screen -> middle-click on Airport symbol drawn by TopSky’s “AD\_Hotspots” map...
 
 \bigskip
 
@@ -6213,7 +6201,7 @@ In the area below the title bar, on the left is the ICAO identifier of the airpo
 
 \bigskip
 
-The “Dep” and “Arr” buttons control whether departures and/or arrivals should be shown on the display (button background is shown in “Selected” color if selected on).
+The “Dep” and “Arr” buttons control whether departures and/or arrivals should be shown on the display (button background is shown in \colorref{Selected} color if selected on).
 
 \bigskip
 
@@ -6221,7 +6209,7 @@ The “RWY” label allows entering one or more runway identifiers to filter tra
 
 \bigskip
 
-The numbers on the right side are the caution and warning limits. The rates are color coded so that a rate at or below the caution limit will be shown in \colorref{Information} color, a rate above that but at or below the warning limit in “Warning” and a rate above that in “Urgency”. When both arrivals and departures are selected for display, the departures are shown with a hatched color.
+The numbers on the right side are the caution and warning limits. The rates are color coded so that a rate at or below the caution limit will be shown in \colorref{Information} color, a rate above that but at or below the warning limit in \colorref{Warning} and a rate above that in \colorref{Urgency}. When both arrivals and departures are selected for display, the departures are shown with a hatched color.
 
 \begin{longtable}{p{2.5cm} p{10cm}}
     ICAO        & Enter airport identifier\\
@@ -6247,7 +6235,7 @@ A number of these windows can be opened to simultaneously view multiple controll
 
 \bigskip
 
-The numbers on the right side are the caution and warning limits. To change them, left-click on them and re-enter in the same format (warning can’t be lower than caution; numbers must be separated by a forward slash). The traffic numbers are color coded so that a number at or below the caution limit will be shown in \colorref{Information} color, a number above that but at or below the warning limit in “Warning” and a number above that in “Urgency”.
+The numbers on the right side are the caution and warning limits. To change them, left-click on them and re-enter in the same format (warning can’t be lower than caution, numbers must be separated by a forward slash). The traffic numbers are color coded so that a number at or below the caution limit will be shown in \colorref{Information} color, a number above that but at or below the warning limit in \colorref{Warning} and a number above that in \colorref{Urgency}.
 
 \bigskip
 
@@ -6257,19 +6245,10 @@ The two sliders change the traffic number and time scales.
 \label{win:ralw}
 
 \winref{menu:global} STS -> RWY line display... (opens the \winref{menu:ad} for airport selection)
-Radar screen -> right-click on Airport symbol drawn by TopSky’s “AD\_Hotspots” map...
 
 \bigskip
 
 \capdimage{img/rwydsp.png}{Runway Approach Line Window}
-
-To open the window from the radar screen, right-click on an airport symbol (+) on the radar screen (for the click spots to be active, the “AD\_Hotspots” map in the “Aerodromes” folder of the \winref{win:mapsw} must be active). Only those airports with runways specified have active click spots.
-
-\bigskip
-
-The window will open below the mouse cursor, or will be repositioned there if already open.
-
-\bigskip
 
 The window contains selection buttons to toggle the display of the approach lines for the airport’s runways, and a listing of the currently active runways for the airport. The “ARR RWL DISPLAY” option toggles the automatic display of all approach lines for runways that are selected active for arrival. The setting is global for all airports. The runway approach line is by default 20nm long and has 5 distance markers at 2nm intervals. The color of the line is different depending on whether the runway is active for arrivals or not.
 
@@ -6282,7 +6261,7 @@ The window contains selection buttons to toggle the display of the approach line
 
 \capdimage{img/tiw.png}{Tactical Info Window}
 
-The Tactical Info Window displays coordinated tactical data (AHDG, ASP and/or ARC). Proposed data is in “Proposition”, rejected data in “Warning” and accepted data in sector state color. This window only displays the information; to answer or apply the data use the \winref{menu:ttm}.
+The Tactical Info Window displays coordinated tactical data (AHDG, ASP and/or ARC). Proposed data is in \colorref{Proposition In}, rejected data in \colorref{Warning} and accepted data in sector state color. This window only displays the information, to answer or apply the data use the \winref{menu:ttm}.
 
 \subsection{Pre-Departure Clearance Window}
 \label{win:dlpdcw}
@@ -6359,12 +6338,12 @@ The “Send DCL” and “Ok” buttons are active when at least the “RWY”, 
 
 \capdimage{img/dcw.png}{Departure Coordination Window}
 
-The Departure Coordination Window can be used to set the clearance flag. The window displays the aircraft callsign, departure runway and SID and allows setting the CFL, ASSR and EOBT values.
+The Departure Coordination Window can be used to set the clearance flag. The window displays the aircraft callsign, departure runway and SID and allows setting the \tagref{CFL}, \tagref{ASSR} and \tagref{EOBT} values.
 
 \begin{longtable}{p{2.5cm} p{10cm}}
-    CFL     & Opens the CFL menu\\
-    ASSR    & Opens the ASSR menu\\
-    EOBT    & Opens the Time menu\\
+    CFL     & Opens the \winref{menu:cfl}\\
+    ASSR    & Opens the \winref{menu:assr}\\
+    EOBT    & Opens the \winref{menu:tm}\\
     Cancel  & Disregards any changes, closes the window\\
     Ok      & Applies any changes, sets the clearance flag and closes the window\\
 \end{longtable}
@@ -6372,7 +6351,7 @@ The Departure Coordination Window can be used to set the clearance flag. The win
 \section{Flight Leg}
 
 The Flight Leg displays the aircraft’s planned track in one-minute steps. Each one-minute-long part of the
-path is colored according to the results of the MTCD and SAP processing. The following colors are possible:
+path is colored according to the results of the \winref{tool:MTCD} and \winref{tool:SAP} processing. The following colors are possible:
 
 \bigskip
 
@@ -6410,15 +6389,15 @@ The label that’s shown on each route point includes the following predefined f
 
 \section{Keyboard Shortcuts}
 
-Some plugin functions can be accessed using a keyboard shortcut. By default, each shortcut is a combination of two keys, with the first key needing to be down while the second is pressed to activate the function. The available shortcuts and their default keys are:
+Some TopSky functions can be accessed using a keyboard shortcut. The available shortcuts and their keys are:
 
 \begin{longtable}{p{2.5cm} p{10cm}}
-  <ALT> + <F> & Open FPL Window for the selected flight              \\
-  <ALT> + <E> & Open FPL Selection Window                            \\
-  <ALT> + <Q> & Start new QDM line                                   \\
-  <ALT> + <U> & Inhibit active filters for 5 seconds (Quick Look)    \\
-  <ALT> + <S> & Start a new minimum separation line                  \\
-  <ALT> + <C> & Reposition cursor at the center of the radar screen  \\  
+  <ALT+F> & Open FPL Window for the selected flight              \\
+  <ALT+E> & Open FPL Selection Window                            \\
+  <ALT+Q> & Start new QDM line                                   \\
+  <ALT+U> & Inhibit active filters for 5 seconds (Quick Look)    \\
+  <ALT+S> & Start a new minimum separation line                  \\
+  <ALT+C> & Reposition cursor at the center of the radar screen  \\  
   \caption{keyboard Shortcuts}  
 \end{longtable}
 
