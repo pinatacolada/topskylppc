@@ -376,7 +376,7 @@ Label_No_FCOPX=0
 [_W_CTR]
 MTCD_Sep_Lat=10
 
-[_O_CTR]
+[_WU_CTR]
 MTCD_Sep_Lat=10
 
 [_I_CTR]
