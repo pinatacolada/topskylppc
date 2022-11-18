@@ -1,0 +1,11 @@
+{
+	"Color Reference":{
+		"prefix":["colorref"],
+		"body":["\\colorref{color:$TM_SELECTED_TEXT}"]
+	},
+
+	"Tag Item Reference":{
+		"prefix":["tagref"],
+		"body":["\\tagref{tag:$TM_SELECTED_TEXT}"]
+	}
+}
