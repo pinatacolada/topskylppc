@@ -1,4 +1,4 @@
-\documentclass[oneside,11pt,a4paper]{memoir}
+\documentclass[a4paper,oneside,11pt]{memoir}
 \AddToHook{cmd/section/before}{\clearpage}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -18,7 +18,6 @@
 \usepackage{colortbl}
 \usepackage{array}
 \usepackage{csquotes}
-\usepackage{multicol}
 \usepackage{nicematrix,tikz}
 \usepackage{stix}
 \usepackage{xcolor}
@@ -48,7 +47,13 @@
 \usepackage{biblatex}
 \addbibresource{refs.bib}
 
-\usepackage[hmargin=2cm,top=4cm,headheight=85pt,footskip=55pt]{geometry}
+\usepackage{geometry}
+
+\usepackage{microtype}
+
+\usepackage{cellspace}
+\setlength\cellspacetoplimit{4pt}
+\setlength\cellspacebottomlimit{4pt}
 
 \usepackage[scaled]{helvet}
 
@@ -84,13 +89,13 @@
 
 \newcommand{\headerformat}{%
   {%
-  \begin{tabular}{|P{3cm}|P{10cm}|P{2cm}|} 
+ \begin{tabular}{|P{0.1916\textwidth}|P{0.6666\textwidth}|P{0.1416\textwidth}|} 
     \hline
-    \vspace{0.01cm}\includegraphics[width=2.5cm]{img/logo.png} & \vspace{0.01cm}\textbf{\large{\leftmark}} & \vspace{0.01cm}\textbf{\large{\thesection}}  \\
+    \raisebox{-0.5\height}{\includegraphics[max height=0.5\headheight,max width=0.15\textwidth]{img/logo.png}} & \textbf{\large{\leftmark}} & \textbf{\large{\thesection}}  \\
     \scriptsize{TOPLIS User Manual}             & \rightmark         & \small{P\thepage}\         \\
     \hline
     \end{tabular}%
-  }%
+}%
 }
 
 
@@ -113,14 +118,25 @@
 \def\maxwidth#1{\ifdim\Gin@nat@width>#1 #1\else\Gin@nat@width\fi}
 \makeatother
 
+\newcommand{\warn}[1]{
+  \begin{center}
+    
+    \begin{tabular}{| P{1.5cm}|p{10.5cm} |}
+      \hline
+      \cellcolor{shadecolor}\colorbox{red}{\color{white}Warning} &\cellcolor{shadecolor} #1 \\ \hline
+    \end{tabular}
+  \end{center}
+}
 
-\newenvironment{Warn}
-  {\begin{shaded}\reversemarginpar\marginnote{\colorbox{red}{\color{white}Warning}}}
-  {\end{shaded}}
-
-  \newenvironment{Note}
-  {\begin{shaded}\reversemarginpar\marginnote{\colorbox{gray}{\color{white}Note}}}
-  {\end{shaded}}
+\newcommand{\note}[1]{
+  \begin{center}
+    
+    \begin{tabular}{| P{1.5cm}|p{10.5cm} |}
+      \hline
+      \cellcolor{shadecolor}\colorbox{gray}{\color{white}Note} &\cellcolor{shadecolor} #1 \\ \hline
+    \end{tabular}
+  \end{center}
+}
 
 \DTMlangsetup[en-GB]{abbr,ord=omit,monthyearsep={\space}}
 
@@ -131,17 +147,32 @@ linkcolor=.,urlcolor=black,citecolor=black,% PRINT
 bookmarks=true,bookmarksopenlevel=2]{hyperref}
 
 % PDF VIEW
- \geometry{total={210mm,297mm},
- left=25mm,right=25mm,%
- bindingoffset=0mm, top=40mm,bottom=25mm}
+%\geometry{total={210mm,297mm}}
 % PRINT
 %\geometry{total={210mm,297mm},
 %left=20mm,right=20mm,
 %bindingoffset=10mm, top=25mm,bottom=25mm}
 
+%PAGE SETUP
+\setstocksize{297mm}{210mm}
+\settrimmedsize{297mm}{210mm}{*}
+\settrims{0pt}{0pt}
+\settypeblocksize{230mm}{166mm}{*}
+\setlrmargins{*}{34mm}{*}
+\setulmargins{42mm}{*}{*}
+\setheadfoot{20mm}{15mm}
+\setmarginnotes{1mm}{15mm}{1mm}
+\checkandfixthelayout
+
 %\OnehalfSpacing
 %\linespread{1.3}
 \setlength{\parindent}{0pt}
+
+\pretolerance=5000
+\tolerance=9000 
+\emergencystretch=0pt
+\righthyphenmin=4
+\lefthyphenmin=4
 
 %%% CHAPTER'S STYLE
 \chapterstyle{bianchi}
@@ -152,7 +183,6 @@ bookmarks=true,bookmarksopenlevel=2]{hyperref}
 \setsecheadstyle{\Large\bfseries\sffamily\raggedright}
 \setsubsecheadstyle{\large\bfseries\sffamily\raggedright}
 \setsubsubsecheadstyle{\bfseries\sffamily\raggedright}
-
 
 %%% STYLE OF PAGES NUMBERING
 %\pagestyle{companion}\nouppercaseheads 
@@ -166,9 +196,9 @@ bookmarks=true,bookmarksopenlevel=2]{hyperref}
 
 \pagestyle{plain}
 \makepagestyle{plain}
-\makeevenfoot{plain}{\thepage}{}{}
 \makeoddfoot{plain}{\rule{\textwidth}{1pt}\\\today}{}{\rev}
 \makeoddhead{plain}{\headerformat}
+
 
 
 \maxsecnumdepth{subsubsection} % chapters, sections, and subsections are numbered
@@ -196,7 +226,7 @@ bookmarks=true,bookmarksopenlevel=2]{hyperref}
   \textbf{ 
     \image{img/logo.png}\\
     TOPLIS
-  }
+}
 }
 
 \vspace{2.5cm}
@@ -263,13 +293,11 @@ It also allows the exchange of more accurate departure information, particularly
 
 The A-CDM plugin operates in a Master-Slave topology, in which the "CDM Master" will calculate the required data and distribute it to the slaved CDM positions. Due to this, it is mandatory that the "Master" ATC is the one at the lowest position, such as Delivery.
 
-\begin{Warn}
-  IF THERE IS NO ACTIVE "CDM MASTER" A-CDM WILL NOT BE OPERATIONAL
-\end{Warn}
+\warn{IF THERE IS NO ACTIVE "CDM MASTER" A-CDM WILL NOT BE OPERATIONAL}
+  
 
-\begin{Warn}
-  IF MORE THAN ONE POSITION ASSIGNS ITSELF AS "CDM MASTER" A-CDM WILL NOT BE OPERATIONAL
-\end{Warn}
+
+\warn{IF MORE THAN ONE POSITION ASSIGNS ITSELF AS "CDM MASTER" A-CDM WILL NOT BE OPERATIONAL}
 
 At the end of a session or controller swap, the "CDM MASTER" ATC should return himself to "CDM SLAVE" before the next controller takes over.
 
@@ -479,11 +507,13 @@ Interaction with core A-CDM systems is done with classic command line inputs:
 
 TopSky provides various ways to coordinate information between controllers.
 
+\bigskip
+
 The example track labels do not represent any specific setup and are only meant to highlight the items specific to each function. In the examples, aircraft ABC123 is assumed by “transferring controller” and the next sector is referred to as “accepting controller”. For reference, the example labels would look like these before any coordination (coordination point TROIA, entry/exit level FL180):
 
 \bigskip
 
-\begin{multicols}{2}
+\begin{longtable}{p{0.45\textwidth} p{0.45\textwidth}}
   Transferring controller:
 
   \begin{tabular}{
@@ -494,7 +524,7 @@ The example track labels do not represent any specific setup and are only meant 
     {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
     {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }     
   \end{tabular}
-  \columnbreak
+  &
 
   Accepting controller:
 
@@ -506,7 +536,7 @@ The example track labels do not represent any specific setup and are only meant 
     {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
     {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }     
   \end{tabular}
-  \end{multicols}
+  \end{longtable}
 
 \bigskip
 
@@ -592,7 +622,7 @@ The release will be displayed on line 0 of the track label (in \colorref{Proposi
 
 \bigskip
 
-\begin{multicols}{2}
+\begin{longtable}{p{0.45\textwidth} p{0.45\textwidth}}
   Transferring controller:
 
 \begin{tabular}{
@@ -604,7 +634,7 @@ The release will be displayed on line 0 of the track label (in \colorref{Proposi
   {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
   {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }     
 \end{tabular}
-  \columnbreak
+&
 
   Accepting controller:
 
@@ -617,15 +647,13 @@ The release will be displayed on line 0 of the track label (in \colorref{Proposi
   {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
   {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }     
 \end{tabular}
-\end{multicols}
+\end{longtable}
 
 \bigskip
 
 After the accepting controller assumes the aircraft, the release indicator changes to sector state color. It remains in the transferring controller’s label until it becomes \stateref{Unconcerned}, and in the accepting controller’s label for 3 minutes.
 
-\begin{Note}
-  If a release is sent to a controller not using the TopSky plugin, it will only be displayed on your label. To the accepting controller it will look like a normal transfer.
-\end{Note}
+\note{If a release is sent to a controller not using the TopSky plugin, it will only be displayed on your label. To the accepting controller it will look like a normal transfer.}
 
 \subsection{HOP}
 \label{coo:hop}
@@ -649,8 +677,7 @@ To send a HOP with a transfer condition (assigned heading, direct-to point or as
 
 The example labels below show a HOP with an assigned heading proposal:
 
-
-\begin{multicols}{2}
+\begin{longtable}{p{0.45\textwidth} p{0.45\textwidth}}
   Transferring controller:
 
 \begin{itemize}
@@ -667,7 +694,7 @@ The example labels below show a HOP with an assigned heading proposal:
   {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }\\  
   {\color{Proposition In} H360}    & {\color{Assumed} }          & {\color{Assumed} }\\  
 \end{tabular}
-  \columnbreak
+  &
   
   Accepting controller:
 
@@ -685,7 +712,9 @@ The example labels below show a HOP with an assigned heading proposal:
   {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }\\
   {\color{Proposition In} H360}    & {\color{Coordination} }          & {\color{Coordination} }\\      
 \end{tabular}
-\end{multicols}
+\end{longtable}
+
+\bigskip
 
 The transferring controller should monitor both the track label and the \winref{win:miw} as there are three ways for the accepting controller to answer a HOP. In order of preference, they are:
 
@@ -706,25 +735,21 @@ The transferring controller should monitor both the track label and the \winref{
   \end{itemize}
 \end{itemize}
 
-\begin{Note}
-  If a HOP is sent to a controller not using the TopSky plugin, it will only be displayed on your label. To the accepting controller it will look like a normal transfer. Any proposed values will be shown also on the accepting controller’s label but they will not be colored as proposals.
+\note{If a HOP is sent to a controller not using the TopSky plugin, it will only be displayed on your label. To the accepting controller it will look like a normal transfer. Any proposed values will be shown also on the accepting controller’s label but they will not be colored as proposals.
 
-  If a HOP is sent to a manually selected controller and is answered by either “Accept” or “ROF”, the next controller is reset to the automatically calculated one. The correct controller needs to be manually selected again before transferring the aircraft.
-\end{Note}
+  If a HOP is sent to a manually selected controller and is answered by either “Accept” or “ROF”, the next controller is reset to the automatically calculated one. The correct controller needs to be manually selected again before transferring the aircraft.}
 
 \subsection{ROF}
 \label{coo:rof}
 
 The ROF (Request on Frequency) message is sent by the accepting controller to the transferring controller when a flight establises radio contact but the label has not yet been transfered to the downstream sector. The upstream sector should then transfer the label. The message may also be used as a reply to HOP to signify the acceptance of the flight under the proposed conditions.
 
-\begin{Warn}
-  ROF should not be used to request an early handover of a flight. ROF is a coordination tool that is context dependent, using it outside the prescribed scenarios or ir other unintended ways will cause unnecessary confusion.
-\end{Warn}
+\warn{ROF should not be used to request an early handover of a flight. ROF is a coordination tool that is context dependent, using it outside the prescribed scenarios or ir other unintended ways will cause unnecessary confusion.}
 
 To send a ROF message, select the “ROF” option in the \winref{menu:cs} of the aircraft in question. The example label below shows the indications when the message is sent (there are no indications in the accepting controller’s track label):
 
 
-\begin{multicols}{2}
+\begin{longtable}{p{0.45\textwidth} p{0.45\textwidth}}
   Transferring controller:
 
   \begin{itemize}
@@ -741,7 +766,7 @@ To send a ROF message, select the “ROF” option in the \winref{menu:cs} of th
     {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
     {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }     
   \end{tabular}
-  \columnbreak
+  &
   
   Accepting controller:
 
@@ -749,7 +774,7 @@ To send a ROF message, select the “ROF” option in the \winref{menu:cs} of th
     \item ROF text in \colorref{Proposition Out} color
     \item Message in Message Out Window
   \end{itemize}
-\end{multicols}
+\end{longtable}
 
 
 
@@ -773,9 +798,7 @@ To send a ROF message, select the “ROF” option in the \winref{menu:cs} of th
 
 The indications are removed when a “Transfer”, “Trf \& release” or “HOP” is performed.
 
-\begin{Note}
-  If a ROF is sent to a controller not using the TopSky plugin or the message fails to go through, an error message will be put into the Personal Queue Window. The message counter in the Global Menu will be highlighted in \colorref{Warning} color if the window is not open.
-\end{Note}
+\note{If a ROF is sent to a controller not using the TopSky plugin or the message fails to go through, an error message will be put into the Personal Queue Window. The message counter in the Global Menu will be highlighted in \colorref{Warning} color if the window is not open.}
 
 \subsection{RTI/TIP}
 \label{coo:rti}\label{coo:tip}
@@ -794,7 +817,7 @@ To send the RTI message:
 
 When the message is sent, the following indications are shown:
 
-\begin{multicols}{2}
+\begin{longtable}{p{0.45\textwidth} p{0.45\textwidth}}
   Transferring controller:
 
   \begin{itemize}
@@ -812,7 +835,7 @@ When the message is sent, the following indications are shown:
     {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }     
   \end{tabular}
 
-  \columnbreak
+  &
  
   Accepting controller:
 
@@ -830,13 +853,13 @@ When the message is sent, the following indications are shown:
     {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
     {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }     
   \end{tabular}
-\end{multicols}
+\end{longtable}
 
 \bigskip
 
 To answer the message, left-click on the proposed value on line 0. This opens the \winref{menu:ttm}) where you can either accept or reject the proposal. When clicking on “Accept”, the menu closes and the following indications are displayed:
 
-\begin{multicols}{2}
+\begin{longtable}{p{0.45\textwidth} p{0.45\textwidth}}
   Transferring controller:
 
   \begin{itemize}
@@ -856,7 +879,7 @@ To answer the message, left-click on the proposed value on line 0. This opens th
     {\color{Information} AHDG}    & {\color{Assumed} }          & {\color{Assumed} }     
   \end{tabular}
 
-  \columnbreak
+  &
 
   Accepting controller:
 
@@ -876,7 +899,7 @@ To answer the message, left-click on the proposed value on line 0. This opens th
     {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }  \\   
     {\color{Information} AHDG}    & {\color{Coordination} }          & {\color{Coordination} }  \\   
   \end{tabular} 
-\end{multicols}
+\end{longtable}
 
 \bigskip
 
@@ -888,7 +911,7 @@ On the other hand, if “Reject” is chosen, the menu closes the indications ar
 
 \bigskip
 
-\begin{multicols}{2}
+\begin{longtable}{p{0.45\textwidth} p{0.45\textwidth}}
   Transferring controller:
 
   \begin{itemize}
@@ -906,7 +929,7 @@ On the other hand, if “Reject” is chosen, the menu closes the indications ar
     {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }\\         
   \end{tabular}
 
-  \columnbreak
+  &
 
   Accepting controller:
 
@@ -924,15 +947,13 @@ On the other hand, if “Reject” is chosen, the menu closes the indications ar
     {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
     {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }  \\     
   \end{tabular}
-\end{multicols}
+\end{longtable}
 
 \bigskip
 
 A rejected coordination value will be removed from the label after 60 seconds.
 
-\begin{Note}
-  If an RTI or TIP is sent to a controller not using the TopSky plugin or the message fails to go through, an error message will be put into the Personal Queue Window. The message counter in the Global Menu will be highlighted if the window is not open.
-\end{Note}
+\note{If an RTI or TIP is sent to a controller not using the TopSky plugin or the message fails to go through, an error message will be put into the Personal Queue Window. The message counter in the Global Menu will be highlighted if the window is not open.}
 
 \subsection{Coordinating more than one value}
 
@@ -974,9 +995,7 @@ To start using the data link functions, first connect to the VATSIM network. The
 
 The “Connect” button will change to “Online” with a green background. Wait at least 10 seconds to see if the connection is successful. Error messages regarding the connection will be shown in the \winref{win:pqw}. 
 
-\begin{Warn}
-  Attempting to connect with a CPDLC login callsign that is already in use will not fail instantly, and may take up to 10 seconds for the error message to be added to the \winref{win:pqw}
-\end{Warn}
+\warn{Attempting to connect with a CPDLC login callsign that is already in use will not fail instantly, and may take up to 10 seconds for the error message to be added to the \winref{win:pqw}}
 
 The Hoppie logon code expires after 120 days of inactivity. If that happens, the connection will fail and a new logon code has to be requested.
 
@@ -1026,9 +1045,7 @@ When the request has been accepted, the Callsign field will get steady square br
 
 To terminate the CPDLC connection of an aircraft, use the “End CPDLC” button in the \winref{menu:cs}.
 
-\begin{Note}
-  While it is possible to answer any message in the \winref{win:dlcmw} using the “Manual Reply” option, the track label menus should always be used to answer correctly recognized messages, as using the manual reply method will not update the track label values.
-\end{Note}
+\note{While it is possible to answer any message in the \winref{win:dlcmw} using the “Manual Reply” option, the track label menus should always be used to answer correctly recognized messages, as using the manual reply method will not update the track label values.}
 
 \subsection{Departure Clearance (DCL)}
 
@@ -1072,9 +1089,7 @@ If a clearance is not sent before the timeout occurs, the data link clearance re
 
 The clearance is sent using the \winref{win:dlpdcw}, opened by left clicking the RWY or SID fields of the Departure List. 
 
-\begin{Note}
-  Due to system limitations, the current ATIS letter should be manually added to the RMK field of the DCL, in the "ATIS X" format.
-\end{Note}
+\note{Due to system limitations, the current ATIS letter should be manually added to the RMK field of the DCL, in the "ATIS X" format.}
 
 The clearance is sent using the “Send DCL” button. “Voice” rejects the data link clearance request and sends a message to the aircraft to revert to voice procedures. 
 
@@ -1400,9 +1415,7 @@ Left-clicking acknowledges the warning and aborts the clearance, displaying the 
 
 \section{Flight Plan Conflict Probe}
 
-\begin{Warn}
-  The use of Safety Nets does not relieve the controller from manually identifying and correcting conflicts. Safety Nets are generally configured with conservative values in respect to minimum separations. Even so, the controller must be aware that it is impossible to configure Safety Nets to catch all possible conflict situations.
-\end{Warn}
+\warn{The use of Safety Nets does not relieve the controller from manually identifying and correcting conflicts. Safety Nets are generally configured with conservative values in respect to minimum separations. Even so, the controller must be aware that it is impossible to configure Safety Nets to catch all possible conflict situations.}
 
 \subsection{MTCD (Medium Term Conflict Detection)}
 \label{tool:MTCD}
@@ -1479,9 +1492,7 @@ SAP conflicts are also shown in the \winref{win:sap}.
 
 \section{Monitoring Aids}
 
-\begin{Warn}
-  The use of Safety Nets does not relieve the controller from manually identifying and correcting conflicts. Safety Nets are generally configured with conservative values in respect to minimum separations. Even so, the controller must be aware that it is impossible to configure Safety Nets to catch all possible conflict situations.
-\end{Warn}
+\warn{The use of Safety Nets does not relieve the controller from manually identifying and correcting conflicts. Safety Nets are generally configured with conservative values in respect to minimum separations. Even so, the controller must be aware that it is impossible to configure Safety Nets to catch all possible conflict situations.}
 
 
 \subsection{CLAM (Cleared Level Adherence Monitoring)}
@@ -1510,9 +1521,7 @@ An alert is shown by displaying a circle around the aircraft position symbol and
 
 \section{Safety Nets}
 
-\begin{Warn}
-  The use of Safety Nets does not relieve the controller from manually identifying and correcting conflicts. Safety Nets are generally configured with conservative values in respect to minimum separations. Even so, the controller must be aware that it is impossible to configure Safety Nets to catch all possible conflict situations.
-\end{Warn}
+\warn{The use of Safety Nets does not relieve the controller from manually identifying and correcting conflicts. Safety Nets are generally configured with conservative values in respect to minimum separations. Even so, the controller must be aware that it is impossible to configure Safety Nets to catch all possible conflict situations.}
 
 
 \subsection{AIW (Airspace Infringement Warning)}
@@ -1539,9 +1548,7 @@ An alert is shown by coloring the \tagref{tag:CALLSIGN} item background or the t
 \label{tool:MSAW}
 \subsubsection*{General}
 
-\begin{Note}
-  MSAW is currently not implemented
-\end{Note}
+\note{MSAW is currently not implemented}
 
 The MSAW system alerts when an aircraft is flying at an altitude below the minimum safe altitude. The minimum safe altitude data is read from an external file. There is an adjustable buffer value in the system that allows some altitude variation below the safe altitude to inhibit nuisance alerts for aircraft flying at the minimum safe altitude and not staying exactly at that altitude.
 
@@ -2845,9 +2852,7 @@ Sector States are used to control label construction, placement in lists, filter
 
 TopSky should load with some preplaced windows similar to the above configuration
 
-\begin{Note}
-Screen resolutions other than 1920x1080 will yield different results. Larger resolutions will bring preplaced windows towards the left and middle, while smaller resolutions may potentially place windows outside the screen. It is recommended for users experiencing difficulties related to their screen size to experiment and create custom settings in the TopSkySettingsLocal file containing revised window placements adjusted for their own screen. Refer to \texttt{\detokenize{TopSky_Developer_Guide_Settings.xlsx}} for available settings  
-\end{Note}
+\note{Screen resolutions other than 1920x1080 will yield different results. Larger resolutions will bring preplaced windows towards the left and middle, while smaller resolutions may potentially place windows outside the screen. It is recommended for users experiencing difficulties related to their screen size to experiment and create custom settings in the TopSkySettingsLocal file containing revised window placements adjusted for their own screen. Refer to \texttt{\detokenize{TopSky_Developer_Guide_Settings.xlsx}} for available settings}
 
 On initialization TopSky will load the \winref{menu:global} on top, \winref{list:sector} and \winref{list:dep} on the top left, \winref{win:miw} and \winref{win:mow} on the top center right, \winref{win:notamlw} on center, \winref{win:card} and \winref{win:sap} on bottom right, plus legacy weather and controller lists on top right as well.
 
@@ -2985,7 +2990,7 @@ Opens the \winref{win:fpsw} and \winref{win:fpw}.
   List options bar            & Toggles the display of list options on the \winref{menu:global}\\
   Sector List…                & Opens the \winref{list:sector}                                 \\
   Informed                    & Toggles the display of \stateref{Informed} aircraft            \\
-  Concerned                   & Toggles the display of \stateref{Concerned} aircraft           \\
+  Concerned                   & Toggles the display of \stateref{Notified} and \stateref{Coordinated} aircraft           \\
   Redundant                   & Toggles the display of \stateref{Redundant} aircraft           \\
   Load Factor List…           & Opens the \winref{list:load}                                   \\
   ETWR List…                  & Opens the \winref{list:etwr}                                   \\
@@ -3352,9 +3357,7 @@ The Uncoupled label is shown for radar tracks that aren’t correlated with a fl
 
 \capdimage{img/labeluncuns.png}{Unselected Uncoupled Track}
 
-\begin{Note}
-  \tagref{tag:FLTID} is displayed on line 1 only if a valid Mode-S Aircraft Identification is received. Otherwise, TSSR is displayed instead
-\end{Note}
+\note{\tagref{tag:FLTID} is displayed on line 1 only if a valid Mode-S Aircraft Identification is received. Otherwise, TSSR is displayed instead}
 
 \subsection*{Selected Track}
 
@@ -3366,9 +3369,7 @@ The Uncoupled label is shown for radar tracks that aren’t correlated with a fl
   \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
 \end{enumerate}
 
-\begin{Note}
-  \tagref{tag:FLTID} is displayed on line 1 only if a valid Mode-S Aircraft Identification is received. Otherwise, only TSSR is displayed
-\end{Note}
+\note{\tagref{tag:FLTID} is displayed on line 1 only if a valid Mode-S Aircraft Identification is received. Otherwise, only TSSR is displayed}
 
 \capdimage{img/labelunc.png}{Selected Uncoupled Track}
 
@@ -3499,9 +3500,7 @@ Label items may be interacted with either with a left or a right click.
 \caption{Line 1 label Interaction}
 \end{figure}
 
-\begin{Note}
-  Not shown in the above example: When \tagref{tag:PFREQ} is displayed R: Acknowledge PFREQ warning
-\end{Note}
+\note{Not shown in the above example: When \tagref{tag:PFREQ} is displayed R: Acknowledge PFREQ warning}
 
 \subsubsection{Line 2}
 
@@ -3785,22 +3784,18 @@ For CPDLC connected aircraft, the menu contains options related to the transfer:
 
 “R/T” / “CPDLC” select whether the transfer instruction is given via radio or as a CPDLC message.
 
-\begin{Warn}
-The “Trf \& Release” option will show the release condition on the downstream side only if the next controller is using this plugin, in other cases the transfer will be shown as a normal transfer.
-\end{Warn}
+\warn{The “Trf \& Release” option will show the release condition on the downstream side only if the next controller is using this plugin, in other cases the transfer will be shown as a normal transfer.}
 
 \subsection{Request On Frequency message}
 \label{menu:rof}
 
 See \winref{coo:rof}. For the message to succeed, you must be seen as the next controller for the tracking controller. When sent, the text “ROF” is displayed in the track label on the tracking controller’s screen.
 
-\begin{Warn}
-The “ROF” message is a feature specific to this plugin. It is an experimental feature and is not guaranteed to work all the time. When you send the message, check that it’s sent properly.
+\warn{The “ROF” message is a feature specific to this plugin. It is an experimental feature and is not guaranteed to work all the time. When you send the message, check that it’s sent properly.
 \begin{enumerate}
         \item A successfully sent message will be displayed in the \winref{win:mow}
         \item If there is an error or the message fails to go through, a message will be put into the \winref{win:pqw}
-\end{enumerate}
-\end{Warn}
+\end{enumerate}}
 
 \subsection{Hold Menu}
 \label{menu:hold}
@@ -3880,9 +3875,7 @@ This menu is used to set an arrival sequence number. Values from 1 to 50 are ava
 
 \bigskip
 
-\begin{Warn}
-  The sequence number will not be transmitted to other controllers except the next controller (during transfer) unless the flight strip is manually sent.
-\end{Warn}
+\warn{The sequence number will not be transmitted to other controllers except the next controller (during transfer) unless the flight strip is manually sent.}
 
 \subsection{Waypoint Menu}
 \label{menu:wpt}
@@ -3937,9 +3930,7 @@ UNABLE      & Sends an “UNABLE” CPDLC message\\
 
 The “R/T” / “CPDLC” selection is fixed to “CPDLC”.
 
-\begin{Warn}
-Clicking the point name will set the direct-to clearance without coordination
-\end{Warn}
+\warn{Clicking the point name will set the direct-to clearance without coordination}
 
 When there is no request in process and the aircraft has a direct-to point set, the menu can be used to send the clearance via CPDLC. In this case the menu opens like this except without the “SBY” and “UNABLE” buttons. Clicking the point name will send the “PROCEED DIRECT TO <point>” CPDLC message.
 
@@ -4103,9 +4094,7 @@ For CPDLC connected aircraft, the menu contains additional buttons:
 “SBY” and “UNABLE” send the corresponding answers to a downlink heading request
 message.
 
-\begin{Warn}
-Clicking a point on the radar screen will set the direct-to clearance without coordination 
-\end{Warn}
+\warn{Clicking a point on the radar screen will set the direct-to clearance without coordination }
 
 \subsection{Handover Proposal (HOP)}
 \label{win:hop}
@@ -4128,13 +4117,9 @@ There are three ways to answer a HOP and all of them involve accepting all propo
 
 If the parameters are unacceptable to the receiving controller, the sending controller has the possibility to modify or clear them using the appropriate menus, or to cancel the whole HOP by assuming the track.
 
-\begin{Warn}
-A HOP will only be shown correctly for controllers using this plugin. To other controllers it will be shown as a normal transfer without any special coloring of any data fields. This combined with the three possible ways to answer the HOP require the sending controller to pay special attention to the track to see what the result is.   
-\end{Warn}
+\warn{A HOP will only be shown correctly for controllers using this plugin. To other controllers it will be shown as a normal transfer without any special coloring of any data fields. This combined with the three possible ways to answer the HOP require the sending controller to pay special attention to the track to see what the result is.}
 
-\begin{Warn}
-If a HOP is sent to a manually selected controller, the next controller selection will be reset to the automatically calculated controller when an “ROF” or “Accept” answer is received. The correct controller must then be manually selected again for the transfer.   
-\end{Warn}
+\warn{If a HOP is sent to a manually selected controller, the next controller selection will be reset to the automatically calculated controller when an “ROF” or “Accept” answer is received. The correct controller must then be manually selected again for the transfer.}
 
 \subsection{Request Tactical Instructions (RTI) / Tactical Instructions Proposal (TIP)}
 \label{win:rti}
@@ -4150,16 +4135,14 @@ When sent, the RTI/TIP is displayed on both controllers’ screens by displaying
 
 To answer the RTI/TIP, left-click on the requested parameter on line 0 of the track label or the corresponding message in the \winref{win:miw}. This will open the \winref{menu:ttm}.
 
-\begin{Warn}
-The “RTI” and “TIP” messages are features specific to this plugin. They are experimental features not guaranteed to work all the time. When you send these messages, check that they are sent properly.
+\warn{The “RTI” and “TIP” messages are features specific to this plugin. They are experimental features not guaranteed to work all the time. When you send these messages, check that they are sent properly.
 
 \bigskip
 
 \begin{itemize}
         \item A successfully sent message will be displayed in the \winref{win:mow} and the requested parameter being shown above the track label
         \item If there is an error or the message fails to go through, a message will be put into the \winref{win:pqw}.
-\end{itemize}
-\end{Warn}
+\end{itemize}}
 
 \subsection{AHDG Vector}
 \label{menu:ahdgv}
@@ -4188,11 +4171,9 @@ By default, the “+” option is selected, meaning that the clearance is a mini
 
 “RTI” and “TIP” are coordination functions (see \winref{win:rti}). To use them, first click on the function’s button and then select the desired value from the list.
 
-\begin{Warn}
-The exact and maximum rate clearances are a feature specific to this plugin (the additional information is stored in the flight strip). To controllers not using TopSky, all assigned rate clearances will only show the rate value.
+\warn{The exact and maximum rate clearances are a feature specific to this plugin (the additional information is stored in the flight strip). To controllers not using TopSky, all assigned rate clearances will only show the rate value.
 
-Assigned rate clearances given by controllers not using TopSky will be displayed as minimum rate clearances.      
-\end{Warn}
+Assigned rate clearances given by controllers not using TopSky will be displayed as minimum rate clearances. }
 
 \subsection{ASP Menu}
 \label{menu:asp}
@@ -4250,9 +4231,7 @@ CPDLC message.
 
 SBY” and “UNABLE” send the corresponding answers to a downlink speed request.
 
-\begin{Warn}
-The minimum and maximum speed clearances are a feature specific to this plugin (the additional information is stored in the flight strip). To controllers not using TopSky, all assigned speed clearances will only show the speed value. Assigned speed clearances given by controllers not using TopSky will be displayed as exact speed clearances.
-\end{Warn}
+\warn{The minimum and maximum speed clearances are a feature specific to this plugin (the additional information is stored in the flight strip). To controllers not using TopSky, all assigned speed clearances will only show the speed value. Assigned speed clearances given by controllers not using TopSky will be displayed as exact speed clearances.}
 
 \subsection{ASSR Menu}
 \label{menu:assr}
@@ -4328,9 +4307,7 @@ UNABLE      & Sends an “UNABLE” CPDLC message\\
 
 The menu closes when an option is selected or the cursor leaves the menu area. If the aircraft cannot be cleared direct to the requested point but to another one, the request must be answered with “UNABLE” and a separate direct-to clearance must be given.
 
-\begin{Warn}
-Clicking the point name will set the direct-to clearance without coordination
-\end{Warn}
+\warn{Clicking the point name will set the direct-to clearance without coordination}
 
 \subsection{CPDLC Emergency Acknowledgement Menu}
 \label{menu:dleam}
@@ -4370,9 +4347,7 @@ The up/down arrows are used to change the value, “Ok” sets the time.
 
 The DSQ menu is used to select a specific departure sequence number to a flight. The list includes the possible numbers, and the current number is highlighted. Left-clicking on a number sets it, “Clear” removes the flight from the departure sequence.
 
-\begin{Note}
-The departure sequence number is only stored locally, it is not sent to other controllers or even to other EuroScope instances.
-\end{Note}
+\note{The departure sequence number is only stored locally, it is not sent to other controllers or even to other EuroScope instances.}
 
 \section{Aircraft Lists}
 
@@ -5053,9 +5028,7 @@ The “Connect” button becomes available once you are connected to the VATSIM 
 
 \bigskip
 
-\begin{Note}
-    It is possible to have the Logon Code pre-filled by creating a text file called “TopSkyCPDLChoppieCode.txt” in the same folder as the plugin dll (TopSky.dll). The file should contain only the logon code, nothing else. As the file contains your personal logon code, do not share it.
-\end{Note}
+\note{  It is possible to have the Logon Code pre-filled by creating a text file called “TopSkyCPDLChoppieCode.txt” in the same folder as the plugin dll (TopSky.dll). The file should contain only the logon code, nothing else. As the file contains your personal logon code, do not share it.}
 
 \bigskip
 
@@ -5379,9 +5352,7 @@ The window displays the aircraft labels at their cleared flight levels. For each
 
 For each aircraft an altitude box will be drawn that extends from \tagref{tag:AFL} to \tagref{tag:CFL}. Normally the color of the box is \colorref{SMW Level Band}, but in the Hold and Leave Hold columns if it is closer than 300ft or overlaps any other aircraft’s box, the color will be \colorref{SMW Overlap}. For an aircraft with a CLAM alert, the box will be in \colorref{SMW Overshoot} color. A flight level reserved for an overflight is shown in \colorref{SMW Overflight} color. The altitude box of aircraft in the Leave Hold column extends into the Hold column as well.
 
-\begin{Warn}
-  If two Hold volumes overlap (such as PILIM and ABUSU), each Stack Manager Window will show only it's own traffic, the adjacent interfering traffic will not be displayed
-\end{Warn}
+\warn{If two Hold volumes overlap (such as PILIM and ABUSU), each Stack Manager Window will show only it's own traffic, the adjacent interfering traffic will not be displayed}
 
 \bigskip
 
@@ -5771,9 +5742,7 @@ This window is used to send a manually composed reply to a CPDLC message (max 99
 
 The window closes automatically when the message is sent or the mouse cursor leaves the window area.
 
-\begin{Warn}
-    When replying to a downlink request using the Manual Reply Window, the track label is not updated accordingly. If the downlink had been recognized as a request, the request information is removed from the label, and if the reply is a clearance, it is not shown on the label, and the label values are not updated. Always use the label menus to answer a recognized downlink
-\end{Warn}
+\warn{  When replying to a downlink request using the Manual Reply Window, the track label is not updated accordingly. If the downlink had been recognized as a request, the request information is removed from the label, and if the reply is a clearance, it is not shown on the label, and the label values are not updated. Always use the label menus to answer a recognized downlink}
 
 \subsection{CPDLC History Message Window}
 \label{win:dlhmw}
