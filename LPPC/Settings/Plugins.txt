@@ -47,16 +47,12 @@ TopSky plugin:ACList/Uncontrolled List 1/m_Y:457
 TopSky plugin:ACList/Uncontrolled List 1/m_LineNumber:10
 TopSky plugin:ACList/Uncontrolled List 1/m_Resizable:1
 TopSky plugin:ACList/Uncontrolled List 1/m_OrderingColumn:1
-TopSky plugin:ACList/Uncontrolled List 1/m_Column_0:C/S:8:0:10021:6:1:1:TopSky plugin:TopSky plugin:TopSky plugin
-TopSky plugin:ACList/Uncontrolled List 1/m_Column_1:ASSR:5:1:10041:62:81:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/Uncontrolled List 2/m_Visible:0
-TopSky plugin:ACList/Uncontrolled List 2/m_X:989
-TopSky plugin:ACList/Uncontrolled List 2/m_Y:456
+TopSky plugin:ACList/Uncontrolled List 2/m_X:1194
+TopSky plugin:ACList/Uncontrolled List 2/m_Y:457
 TopSky plugin:ACList/Uncontrolled List 2/m_LineNumber:10
 TopSky plugin:ACList/Uncontrolled List 2/m_Resizable:1
-TopSky plugin:ACList/Uncontrolled List 2/m_OrderingColumn:-1
-TopSky plugin:ACList/Uncontrolled List 2/m_Column_0:C/S:10:0:10021:6:1:1:TopSky plugin:TopSky plugin:TopSky plugin
-TopSky plugin:ACList/Uncontrolled List 2/m_Column_1:LFUNC:6:0:10014:10:42:1:TopSky plugin::TopSky plugin
+TopSky plugin:ACList/Uncontrolled List 2/m_OrderingColumn:1
 TopSky plugin:ACList/ETWR List/m_Visible:0
 TopSky plugin:ACList/ETWR List/m_X:408
 TopSky plugin:ACList/ETWR List/m_Y:458
@@ -107,8 +103,22 @@ TopSky plugin:ACList/LOAD/m_Column_4:ADEP:7:0:10007:0:0:1:TopSky plugin::
 TopSky plugin:ACList/LOAD/m_Column_5:ADES:7:0:10008:1001:0:1:TopSky plugin:TopSky plugin:
 TopSky plugin:ACList/LOAD/m_Column_6:RFL:7:0:10006:59:84:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/LOAD/m_Column_7:ASSR:7:0:10041:62:81:1:TopSky plugin:TopSky plugin:TopSky plugin
+TopSky plugin:ACList/Uncontrolled List 1/m_Column_0:C/S:8:0:10021:6:1:1:TopSky plugin:TopSky plugin:TopSky plugin
+TopSky plugin:ACList/Uncontrolled List 1/m_Column_1:ASSR:5:1:10041:62:81:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/Uncontrolled List 1/m_Column_2:ADEP:5:1:10007:0:0:1:TopSky plugin::
-TopSky plugin:ACList/Uncontrolled List 2/m_Column_2:C :2:1:211:8:0:1:TopSky plugin:TopSky plugin:
+TopSky plugin:ACList/Uncontrolled List 1/m_Column_3:ATD:5:1:10076:93:0:1:TopSky plugin:TopSky plugin:
+TopSky plugin:ACList/Uncontrolled List 1/m_Column_4:ADES:5:1:10008:1001:39:1:TopSky plugin:TopSky plugin:TopSky plugin
+TopSky plugin:ACList/Uncontrolled List 1/m_Column_5:LFUNC:9:0:10069:20:42:1:TopSky plugin::TopSky plugin
+TopSky plugin:ACList/Uncontrolled List 1/m_Column_6:TEXT2:9:0:10059:2:0:1:TopSky plugin:TopSky plugin:
+TopSky plugin:ACList/Uncontrolled List 1/m_Column_7:C:2:1:211:8:0:0:TopSky plugin:TopSky plugin:
+TopSky plugin:ACList/Uncontrolled List 2/m_Column_0:C/S:8:0:10021:6:1:1:TopSky plugin:TopSky plugin:TopSky plugin
+TopSky plugin:ACList/Uncontrolled List 2/m_Column_1:ASSR:5:1:10041:62:81:1:TopSky plugin:TopSky plugin:TopSky plugin
+TopSky plugin:ACList/Uncontrolled List 2/m_Column_2:ADEP:5:1:10007:0:0:1:TopSky plugin::
+TopSky plugin:ACList/Uncontrolled List 2/m_Column_3:ATD:5:1:10076:93:0:1:TopSky plugin:TopSky plugin:
+TopSky plugin:ACList/Uncontrolled List 2/m_Column_4:ADES:5:1:10008:1001:39:1:TopSky plugin:TopSky plugin:TopSky plugin
+TopSky plugin:ACList/Uncontrolled List 2/m_Column_5:LFUNC:9:0:10069:20:42:1:TopSky plugin::TopSky plugin
+TopSky plugin:ACList/Uncontrolled List 2/m_Column_6:TEXT2:9:0:10059:2:0:1:TopSky plugin:TopSky plugin:
+TopSky plugin:ACList/Uncontrolled List 2/m_Column_7:C:2:1:211:8:0:0:TopSky plugin:TopSky plugin:
 TopSky plugin:ACList/ETWR List/m_Column_2:PEL:5:1:10001:68:0:1:TopSky plugin:TopSky plugin:
 TopSky plugin:ACList/ETWR List/m_Column_3:COPN:5:1:10004:45:99:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/ETWR List/m_Column_4:SID:7:0:10011:78:0:1:TopSky plugin:TopSky plugin:
@@ -164,9 +174,4 @@ TopSky plugin:ACList/Sector List/m_Column_26:STAR:7:0:10012:18:0:1:TopSky plugin
 TopSky plugin:ACList/Sector List/m_Column_27:ARWY:4:0:10010:19:0:1:TopSky plugin::
 TopSky plugin:ACList/Sector List/m_Column_28:OP_TEXT:8:1:10058:11:0:1:TopSky plugin:TopSky plugin:
 TopSky plugin:ACList/Sector List/m_Column_29:TEXT2:7:1:10059:2:0:1:TopSky plugin:TopSky plugin:
-TopSky plugin:ACList/Uncontrolled List 1/m_Column_3:ATD:5:1:10076:93:0:1:TopSky plugin:TopSky plugin:
-TopSky plugin:ACList/Uncontrolled List 1/m_Column_4:ADES:5:1:10008:1001:39:1:TopSky plugin:TopSky plugin:TopSky plugin
-TopSky plugin:ACList/Uncontrolled List 1/m_Column_5:LFUNC:9:0:10069:20:42:1:TopSky plugin::TopSky plugin
-TopSky plugin:ACList/Uncontrolled List 1/m_Column_6:TEXT2:9:0:10059:2:0:1:TopSky plugin:TopSky plugin:
-TopSky plugin:ACList/Uncontrolled List 1/m_Column_7:C:2:1:211:8:0:0:TopSky plugin:TopSky plugin:
 END
