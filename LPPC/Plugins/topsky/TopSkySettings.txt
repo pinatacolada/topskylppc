@@ -87,6 +87,8 @@ FlightLeg_AutoShow=1
 FlightLeg_AssumeTime=2
 FlightLeg_LineWidth=1
 
+FPCP_MinState=0
+
 HTTP_SIGMET_Pages=6443,6450
 
 HTTP_METAR_Server=https://meteo.ambitio.cyou/
