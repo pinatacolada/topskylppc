@@ -1,5 +1,5 @@
 VCCS
-Ts3Server:vatsim-scandinavia.org
+Ts3Server:vccs.vatsimspain.es
 Ts3Port:9988
 Ts3G2GChannel:LIS:DLV:12632256:0:PTD
 Ts3G2GChannel:LIS:GND:12632256:1:PTG
