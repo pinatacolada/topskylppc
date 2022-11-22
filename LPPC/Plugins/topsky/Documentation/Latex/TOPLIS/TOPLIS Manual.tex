@@ -2681,7 +2681,7 @@ specific only, so they will be lost when exiting EuroScope.
   APW alert               & Selects which aircraft display the APW alert:\\                          & \hspace{10pt}• All All aircraft\\                          & \hspace{10pt}• Own+Co Only \stateref{Assumed} and \stateref{Coordinated} aircraft\\                          & \hspace{10pt}• Own Only \stateref{Assumed} aircraft\\
   APW alert sound         & Selects which STCA alerts trigger the alert sound:\\                          & \hspace{10pt}• All All alerts\\                          & \hspace{10pt}• Own+Co Only alerts for \stateref{Assumed} and \stateref{Coordinated}\\                          & aircraft\\                          & \hspace{10pt}• Own Only alerts for \stateref{Assumed} aircraft\\
   METAR source            & Selects the METAR data source for TopSky windows that display METAR data\\
-  FPASD filter            & Allows filtering of displayed FPASD tracks based on sector state\\                          & \hspace{10pt}• Coord Display tracks at least in the \stateref{Coordinated} state\\                          & \hspace{10pt}• Conc Display tracks at least in the \stateref{Concerned} state\\                          & \hspace{10pt}• None Display all tracks\\
+  FPASD filter            & Allows filtering of displayed FPASD tracks based on sector state\\                          & \hspace{10pt}• Coord Display tracks at least in the \stateref{Coordinated} state\\                          & \hspace{10pt}• Conc Display tracks at least in the \stateref{Notified} state\\                          & \hspace{10pt}• None Display all tracks\\
 \end{longtable}
 \medskip
 
@@ -4114,7 +4114,7 @@ The Departure List contains all departures still on the ground of the controlled
   \tagref{tag:ATYP}             &                                     &                           & \usym{2713}         \\ \hline
   \tagref{tag:WTC}              &                                     &                           & \usym{2713}         \\ \hline
   \tagref{tag:V}                &                                     &                           & \usym{2713}         \\ \hline
-  \tagref{tag:Departure stand}  &                                     &                           & \usym{2713}         \\ \hline
+  Departure stand               &                                     &                           & \usym{2713}         \\ \hline
   QNH                           & Edit OP TEXT                        & Edit OP TEXT              &                     \\ \hline
   \tagref{tag:ADEP}             & Open \winref{win:fpw}               & Toggle Flight Leg display & \usym{2713}         \\ \hline
   \tagref{tag:ADES}             & Open \winref{win:fpw}               & Toggle Flight Leg display & \usym{2713}         \\ \hline
@@ -4124,7 +4124,7 @@ The Departure List contains all departures still on the ground of the controlled
   \tagref{tag:CFL}              & Open \winref{menu:cfl}              & Open \winref{menu:cfl}    & \usym{2713}         \\ \hline
   \tagref{tag:RFL}              & Open \winref{menu:rfl}              & Open \winref{menu:rfl}    & \usym{2713}         \\ \hline
   \tagref{tag:CLR}              & Toggle Clearance Acknowledged flag  &                           & \usym{2713}         \\ \hline
-  \tagref{tag:Ground state}     & Open Ground State Menu              & Open Ground State Menu    & \usym{2713}         \\ \hline
+  Ground state                  & Open Ground State Menu              & Open Ground State Menu    & \usym{2713}         \\ \hline
   \tagref{tag:OP TEXT2}         & Edit OP TEXT2                       & Edit OP TEXT2             & \usym{2713}         \\ \hline
   \caption{Departure List Construction}
 \end{longtable}
@@ -6062,7 +6062,7 @@ The “Send DCL” and “Ok” buttons are active when at least the “RWY”, 
 
 \capdimage{img/dcw.png}{Departure Coordination Window}
 
-The Departure Coordination Window can be used to set the clearance flag. The window displays the aircraft callsign, departure runway and SID and allows setting the \tagref{CFL}, \tagref{ASSR} and \tagref{EOBT} values.
+The Departure Coordination Window can be used to set the clearance flag. The window displays the aircraft callsign, departure runway and SID and allows setting the \tagref{tag:CFL}, \tagref{tag:ASSR} and \tagref{tag:EOBT} values.
 
 \begin{longtable}{p{2.5cm} p{10cm}}
     CFL     & Opens the \winref{menu:cfl}\\
