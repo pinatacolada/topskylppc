@@ -46,9 +46,15 @@
 \renewcommand\familydefault{\sfdefault} 
 \renewcommand*{\arraystretch}{1.6}
 
+\newcommand\setdocsubject[1]{\def\docsubject{#1}}
+\newcommand\setdoctitle[1]{\def\doctitle{#1}}
+\newcommand\setcoverdesc[1]{\def\coverdesc{#1}}
+\newcommand\setdocrevision[1]{\def\docrevision{#1}}
+
 \newcounter{rowcounter}
 \newcommand{\nextrow}{\refstepcounter{rowcounter}}
-\newcommand{\rev}{Rev.1}
+\newcommand{\rev}{Rev.\docrevision}
+
 \newcommand{\colorref}[1]{\colorbox{Flight Highlight}{\color{#1}#1}}
 \newcommand{\colortabex}[1]{\cellcolor{Flight Highlight}\color{#1}\colorref{#1}}
 \newcommand{\colortab}[1]{\cellcolor{Flight Highlight}\color{#1}}
@@ -64,7 +70,8 @@
  \begin{tabular}{|P{0.1916\textwidth}|P{0.6666\textwidth}|P{0.1416\textwidth}|} 
     \hline
     \raisebox{-0.5\height}{\includegraphics[max height=0.5\headheight,max width=0.15\textwidth]{../styles/logo.png}} & \textbf{\large{\leftmark}} & \textbf{\large{\thesection}}  \\
-    \scriptsize{TOPLIS User Manual}             & \rightmark         & \small{P\thepage}\         \\
+    \scriptsize{\docsubject\space\doctitle}             & \rightmark         & \small{P\thepage}\         \\
+
     \hline
     \end{tabular}%
 }%
@@ -168,23 +175,19 @@ bookmarks=true,bookmarksopenlevel=2]{hyperref}
 {\huge
   \textbf{ 
     \image{../styles/logo.png}\\
-    TOPLIS
+    \MakeUppercase{\docsubject}
 }
 }
 
 \vspace{2.5cm}
 
 {\LARGE
-USER MANUAL
+\MakeUppercase{\doctitle}
 }
 
 \vspace{3.5cm}
 
-TopSky plugin for Portugal vACC
-
-\medskip
-
-Version 2.0
+\coverdesc
 
 \medskip
 
