@@ -1,0 +1,209 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{../styles/ptvacc}
+  [2022/11/22 v1.00 Portugal vACC Manuals LaTeX package]
+
+\AddToHook{cmd/section/before}{\clearpage}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{microtype}
+\RequirePackage[dvips]{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{bookman}
+\RequirePackage{graphicx,xcolor}
+\RequirePackage[usestackEOL]{stackengine}
+\RequirePackage[percent]{overpic}
+\RequirePackage{amssymb}
+\RequirePackage{xcolor,framed,marginnote,blindtext}
+\RequirePackage[british]{babel}
+\RequirePackage{longtable}
+\RequirePackage{pdflscape}
+\RequirePackage{makecell}
+\RequirePackage{colortbl}
+\RequirePackage{array}
+\RequirePackage{csquotes}
+\RequirePackage{nicematrix,tikz}
+\RequirePackage{stix}
+\RequirePackage{xcolor}
+\RequirePackage{tabularray}
+\RequirePackage[useregional]{datetime2}
+\RequirePackage{xstring}
+\RequirePackage{enumitem}
+\RequirePackage[export]{adjustbox}
+\RequirePackage{utfsym}
+\RequirePackage{multirow}
+\RequirePackage{float}
+\RequirePackage{sidecap}
+\RequirePackage{graphicx,capt-of}
+\RequirePackage{biblatex}
+\addbibresource{refs.bib}
+\RequirePackage{geometry}
+\RequirePackage{microtype}
+\RequirePackage{cellspace}
+\setlength\cellspacetoplimit{4pt}
+\setlength\cellspacebottomlimit{4pt}
+\RequirePackage[scaled]{helvet}
+
+\renewcommand\familydefault{\sfdefault} 
+\renewcommand*{\arraystretch}{1.6}
+
+\newcounter{rowcounter}
+\newcommand{\nextrow}{\refstepcounter{rowcounter}}
+\newcommand{\rev}{Rev.1}
+\newcommand{\colorref}[1]{\colorbox{Flight Highlight}{\color{#1}#1}}
+\newcommand{\colortabex}[1]{\cellcolor{Flight Highlight}\color{#1}\colorref{#1}}
+\newcommand{\colortab}[1]{\cellcolor{Flight Highlight}\color{#1}}
+\newcommand{\tagref}[1]{\textit{\hyperref[#1]{\StrDel{#1}{tag:}}}}
+\newcommand{\stateref}[1]{\textit{\hyperref[state:#1]{#1}}}
+\newcommand{\winref}[1]{\textit{\titleref{#1}}}
+\newcommand{\image}[1]{\includegraphics[max height=10cm,max width=\textwidth]{#1}}
+\newcommand{\drawtag}[3]{\node[draw,red,minimum height=0.55cm,minimum width=#1] at (#2) (#3) {}}
+\newcommand{\drawtagdesc}[4]{\node[draw,black,thick,text width=#1] at (#2) (#3) {#4};}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcommand{\headerformat}{%
+  {%
+ \begin{tabular}{|P{0.1916\textwidth}|P{0.6666\textwidth}|P{0.1416\textwidth}|} 
+    \hline
+    \raisebox{-0.5\height}{\includegraphics[max height=0.5\headheight,max width=0.15\textwidth]{../styles/logo.png}} & \textbf{\large{\leftmark}} & \textbf{\large{\thesection}}  \\
+    \scriptsize{TOPLIS User Manual}             & \rightmark         & \small{P\thepage}\         \\
+    \hline
+    \end{tabular}%
+}%
+}
+
+\newcommand\capdimage[2]{
+\begin{center}
+\hspace{1em}%
+\vtop{%
+\centering
+\includegraphics[max height=8cm,max width=8cm]{#1}%
+\captionof{figure}{#2}%
+}%
+\end{center}
+\ignorespaces}
+
+\newcolumntype{t}{>{\tt}c}
+
+\colorlet{shadecolor}{gray!20}
+
+\makeatletter
+\def\maxwidth#1{\ifdim\Gin@nat@width>#1 #1\else\Gin@nat@width\fi}
+\makeatother
+
+\newcommand{\warn}[1]{
+  \begin{center}
+    
+    \begin{tabular}{| P{1.5cm}|p{10.5cm} |}
+      \hline
+      \cellcolor{shadecolor}\colorbox{red}{\color{white}Warning} &\cellcolor{shadecolor} #1 \\ \hline
+    \end{tabular}
+  \end{center}
+}
+
+\newcommand{\note}[1]{
+  \begin{center}
+    
+    \begin{tabular}{| P{1.5cm}|p{10.5cm} |}
+      \hline
+      \cellcolor{shadecolor}\colorbox{gray}{\color{white}Note} &\cellcolor{shadecolor} #1 \\ \hline
+    \end{tabular}
+  \end{center}
+}
+
+\DTMlangsetup[en-GB]{abbr,ord=omit,monthyearsep={\space}}
+
+\RequirePackage[
+breaklinks=true,colorlinks=true,
+linkcolor=.,urlcolor=black,citecolor=black,
+bookmarks=true,bookmarksopenlevel=2]{hyperref}
+
+\setstocksize{297mm}{210mm}
+\settrimmedsize{297mm}{210mm}{*}
+\settrims{0pt}{0pt}
+\settypeblocksize{230mm}{166mm}{*}
+\setlrmargins{*}{34mm}{*}
+\setulmargins{42mm}{*}{*}
+\setheadfoot{20mm}{15mm}
+\setmarginnotes{1mm}{15mm}{1mm}
+\checkandfixthelayout
+
+\setlength{\parindent}{0pt}
+
+\pretolerance=5000
+\tolerance=9000 
+\emergencystretch=0pt
+\righthyphenmin=4
+\lefthyphenmin=4
+
+\chapterstyle{bianchi}
+\setsecheadstyle{\Large\bfseries\sffamily\raggedright}
+\setsubsecheadstyle{\large\bfseries\sffamily\raggedright}
+\setsubsubsecheadstyle{\bfseries\sffamily\raggedright}
+
+\addtopsmarks{plain}{}{ 
+  \createmark{chapter}{left}{nonumber}{}{} 
+  \createmark{section}{right}{nonumber}{}{} 
+} 
+
+\pagestyle{plain}
+\makepagestyle{plain}
+\makeoddfoot{plain}{\rule{\textwidth}{1pt}\\\today}{}{\rev}
+\makeoddhead{plain}{\headerformat}
+
+
+
+\maxsecnumdepth{subsubsection} 
+\maxtocdepth{subsubsection}
+
+\newcommand{\startmanual}{
+
+\thispagestyle{empty}
+
+{%%%
+
+\centering
+\Large
+
+~\vspace{\fill}
+
+{\huge
+  \textbf{ 
+    \image{../styles/logo.png}\\
+    TOPLIS
+}
+}
+
+\vspace{2.5cm}
+
+{\LARGE
+USER MANUAL
+}
+
+\vspace{3.5cm}
+
+TopSky plugin for Portugal vACC
+
+\medskip
+
+Version 2.0
+
+\medskip
+
+\vspace{\fill}
+
+\today
+
+%%%
+}%%%
+
+\cleardoublepage
+%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+
+\tableofcontents*
+
+\clearpage
+
+%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%---%%%
+
+}
