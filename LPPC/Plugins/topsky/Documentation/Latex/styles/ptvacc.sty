@@ -54,6 +54,7 @@
 \newcounter{rowcounter}
 \newcommand{\nextrow}{\refstepcounter{rowcounter}}
 \newcommand{\rev}{Rev.\docrevision}
+
 \newcommand{\colorref}[1]{\colorbox{Flight Highlight}{\color{#1}#1}}
 \newcommand{\colortabex}[1]{\cellcolor{Flight Highlight}\color{#1}\colorref{#1}}
 \newcommand{\colortab}[1]{\cellcolor{Flight Highlight}\color{#1}}
@@ -70,6 +71,7 @@
     \hline
     \raisebox{-0.5\height}{\includegraphics[max height=0.5\headheight,max width=0.15\textwidth]{../styles/logo.png}} & \textbf{\large{\leftmark}} & \textbf{\large{\thesection}}  \\
     \scriptsize{\docsubject\space\doctitle}             & \rightmark         & \small{P\thepage}\         \\
+
     \hline
     \end{tabular}%
 }%
