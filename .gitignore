@@ -85,7 +85,6 @@
 /ts3server_win32.dll
 /vcruntime140.dll
 /version.txt
-/LPPC
 /PlugInEnvironment
 /soundbackends
 /Sounds
@@ -101,3 +100,41 @@ libssl-1_1.dll
 dev.ese
 dev.rwy
 dev.sct
+/LPPC/Alias
+/LPPC/ATIS
+/LPPC/ICAO
+/LPPC/NavData
+DEVPROF.prf
+LPPC/aeronav_copyright.txt
+.gitignore
+LPPC/LPPC VFR.pdf
+LPPC/Alias v2.docx
+LPPC/Plugins/AfvEuroScopeBridge.dll
+LPPC/Plugins/CFlightType.dll
+.gitignore
+LPPC/Plugins/ESTagItems.dll
+LPPC/Plugins/VCH.dll
+LPPC/Plugins/ACDM/CDM_data_LPPT.txt
+LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.aux
+.gitignore
+LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.bbl
+LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.bcf
+LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.blg
+LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.fdb_latexmk
+LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.fls
+LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.lof
+LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.log
+LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.lot
+LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.out
+LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.pdf
+LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.run.xml
+LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.synctex.gz
+LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.toc
+LPPC/Settings/ArrivalList.txt
+LPPC/Settings/VoiceChannels.txt
+LPPC/Settings/Settings.txt
+LPPC/Settings/SectorInboundList.txt
+.gitignore
+LPPC/Settings/SectorExitList.txt
+LPPC/Settings/Hungarian Matias.txt
+LPPC/Settings/ESGrammar.txt
