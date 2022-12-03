@@ -375,6 +375,9 @@ Label_No_NRAC=0
 Label_No_TSSR=0
 Label_No_FCOPX=0
 
+List_TfcMgmt1_Via=PESEX,UPKAT
+List_TfcMgmt2_Via=PILIM
+
 [_W_CTR]
 MTCD_Sep_Lat=10
 
@@ -404,6 +407,7 @@ CPDLC_Default=1
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
 Setup_LoadMap=APP\urb
+List_TfcMgmt1_Via=ADNOV,AKULU
 
 [LPPT_APP]
 CPDLC_Default=1
@@ -430,16 +434,19 @@ MTCD_Sep_Lat=5
 [LPPT_]
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
+List_TfcMgmt1_Via=PESEX,UPKAT
 
 [LPFR_APP]
 CPDLC_Default=1
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
+List_TfcMgmt1_Via=AKULU,VENOL
 
 [LPMA_APP]
 CPDLC_Default=1
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
+List_TfcMgmt1_Via=PILIM
 
 [LPAM_]
 Setup_LoadMap=ENVR\rivers
