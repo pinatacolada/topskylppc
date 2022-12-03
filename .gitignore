@@ -98,6 +98,6 @@ PlugInEnvironment
 libcrypto-1_1.dll
 libcurl.dll
 libssl-1_1.dll
-dev.ese
-dev.rwy
-dev.sct
+*.ese
+*.rwy
+*.sct
