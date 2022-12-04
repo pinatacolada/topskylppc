@@ -376,7 +376,7 @@ Label_No_TSSR=0
 Label_No_FCOPX=0
 
 List_TfcMgmt1_Via=PESEX,UPKAT
-List_TfcMgmt2_Via=PILIM
+List_TfcMgmt2_Via=PILIM,ABUSU
 
 [_W_CTR]
 MTCD_Sep_Lat=10
@@ -440,13 +440,13 @@ List_TfcMgmt1_Via=PESEX,UPKAT
 CPDLC_Default=1
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
-List_TfcMgmt1_Via=AKULU,VENOL
+List_TfcMgmt1_Via=GEBTI,VENOL
 
 [LPMA_APP]
 CPDLC_Default=1
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
-List_TfcMgmt1_Via=PILIM
+List_TfcMgmt1_Via=PILIM,ABUSU
 
 [LPAM_]
 Setup_LoadMap=ENVR\rivers
