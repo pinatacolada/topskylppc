@@ -172,6 +172,11 @@ Airport_Radius=6.5
 Airport_Runway_End=17:N041.15.47.900:W008.41.06.900
 Airport_Runway_End=35:N041.13.57.200:W008.40.37.900
 
+Airport_SMR_Raw=2
+Airport_SMR_Track=0
+Airport_ModeA=2
+Airport_ModeS=2
+
 List_Outbound=*,2,1427,650
 List_Inbound=*,2,1693,650
 List_Arrival=1,1427,780
