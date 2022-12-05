@@ -13,7 +13,7 @@ Color_WForeground2=170,170,170
 Color_WForeground=65,65,65
 Color_WTitleBar=250,250,250
 
-Equip_ModeS=
+Equip_ModeS=WZLCISG
 Equip_ProMode=1
 
 GroundLabel=1
