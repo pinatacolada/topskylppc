@@ -462,6 +462,7 @@ Setup_LoadMap=MIL\pstr
 Setup_LoadMap=MIL\pbej
 Setup_LoadMap=MIL\pmtr
 Setup_LoadMap=MIL\rad_vec_bej
+System_FIC_Position=1
 
 [LPCS_]
 Setup_LoadMap=TWRCAS\workng_areas
