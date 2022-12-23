@@ -31,6 +31,7 @@ Plugins	Plugin1Display1	Standard ES radar screen
 Plugins	Plugin2	\LPPC\Plugins\ACDM\CDM.dll
 Plugins	Plugin3	\LPPC\Plugins\AfvEuroScopeBridge.dll
 Plugins	Plugin4	\LPPC\Plugins\VATCANBookings.dll
+Plugins	Plugin5	\LPPC\Plugins\IASsure\IASsure.dll
 ASRFastKeys	1	LPPC\ASR\LPPC_CTR_TS.asr
 ASRFastKeys	5	LPPC\ASR\LPCS_TWR.asr
 ASRFastKeys	6	LPPC\ASR\LPMA_GND_TSGR.asr
