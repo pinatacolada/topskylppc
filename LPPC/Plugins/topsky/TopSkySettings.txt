@@ -46,6 +46,10 @@ APW_Buffer_Vert_U=1000
 APW_Buffer_Vert_L_IFR=1000
 APW_Buffer_Vert_L_VFR=0
 
+MSAW_Buffer_IFR=0
+MSAW_Buffer_VFR=0
+MSAW_PredictionTime=120
+
 Areas_Altitude_Filtering=1
 Areas_Label_Font=Lucida Sans Unicode
 Areas_Label_FontSize=12
