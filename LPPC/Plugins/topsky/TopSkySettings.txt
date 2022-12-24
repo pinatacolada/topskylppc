@@ -95,14 +95,14 @@ FPCP_MinState=0
 
 HTTP_SIGMET_Pages=6443,6450
 
-HTTP_METAR_Server=https://meteo.ambitio.cyou/
+HTTP_METAR_Server=https://meteo.vatsim.pt/
 HTTP_METAR_Page_Prefix=api/ipma/metar/topsky?airport_icao_codes=
 HTTP_METAR_Page_Suffix=
 HTTP_METAR_Data_Prefix=(prefix)
 HTTP_METAR_Data_Suffix=(suffix)
 
 HTTP_NOTAM_Area_Sched_Text= 
-HTTP_NOTAM_Server=https://eaup.ambitio.cyou/topsky/lp/aupnotam/
+HTTP_NOTAM_Server=https://eaup.vatsim.pt/api/v1/topsky/areas/LP/notam/
 HTTP_NOTAM_Page_Prefix=?loc=
 HTTP_NOTAM_Page_Suffix=
 
