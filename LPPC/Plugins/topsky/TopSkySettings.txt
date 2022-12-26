@@ -27,7 +27,7 @@ Airspace_ASSR_Type=2
 Airspace_ASSR_OAT_Remarks=RMK/OAT
 Airspace_ASSR_OAT_Type=0
 Airspace_P_Flag=LPPR,LPPT,LPFR,LPMA,LPPS
-Airspace_No_DUPE_Codes=2000,7000
+Airspace_No_DUPE_Codes=2000,7000,0000
 Airspace_NOTAM_Add=LPPC,LECM
 Airspace_SIGMET_Areas=LPPC
 
