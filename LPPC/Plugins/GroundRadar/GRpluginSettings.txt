@@ -145,7 +145,7 @@ Window_APP_AltFilter=24000
 Window_RVR=1,1120,0
 
 [LPPT]
-Airport_Elevation=355
+Airport_Elevation=374
 Airport_Radius=6.5
 Airport_Runway_End=20:N038.47.50.400:W009.07.38.500
 Airport_Runway_End=02:N038.45.56.460:W009.08.39.480
