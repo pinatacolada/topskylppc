@@ -150,10 +150,10 @@ Airport_Radius=6.5
 Airport_Runway_End=20:N038.47.50.400:W009.07.38.500
 Airport_Runway_End=02:N038.45.56.460:W009.08.39.480
 
-Airport_SMR_Raw=2
-Airport_SMR_Track=0
-Airport_ModeA=2
-Airport_ModeS=2
+;Airport_SMR_Raw=2
+;Airport_SMR_Track=0
+;Airport_ModeA=2
+;Airport_ModeS=2
 
 List_Outbound=*,2,1131,500
 List_Inbound=*,2,1203,650
@@ -172,10 +172,10 @@ Airport_Radius=6.5
 Airport_Runway_End=17:N041.15.47.900:W008.41.06.900
 Airport_Runway_End=35:N041.13.57.200:W008.40.37.900
 
-Airport_SMR_Raw=2
-Airport_SMR_Track=0
-Airport_ModeA=2
-Airport_ModeS=2
+;Airport_SMR_Raw=2
+;Airport_SMR_Track=0
+;Airport_ModeA=2
+;Airport_ModeS=2
 
 List_Outbound=*,2,1427,650
 List_Inbound=*,2,1693,650
