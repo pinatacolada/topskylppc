@@ -1,5 +1,5 @@
 VCCS
-Ts3Server:vccs.portugal-vacc.org
+Ts3Server:vccs.vatsim.pt
 Ts3Port:9988
 Ts3G2GChannel:LIS:DLV:12632256:0:DELLI
 Ts3G2GChannel:LIS:GND:12632256:1:GNDLI
