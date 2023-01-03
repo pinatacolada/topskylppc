@@ -31,8 +31,8 @@ Datablock:redundant:5868729:3.5:0:0:7
 Datablock:information:2744816:3.5:0:0:7
 Datablock:even flight level:11974326:3.5:0:0:7
 Datablock:odd flight level:39835:3.5:0:0:7
-Datablock:arrivals:16776960:3.5:0:0:7
-Datablock:departures:30446:3.5:0:0:7
+Datablock:arrivals:30446:3.5:0:0:7
+Datablock:departures:16776960:3.5:0:0:7
 Datablock:user 1:16777215:3.5:0:0:7
 Datablock:user 2:16777215:3.5:0:0:7
 Datablock:user 3:16777215:3.5:0:0:7
