@@ -1,5 +1,5 @@
 {
     "weather": {
-        "url": "https://weather.morpheusxaut.net/LPPC.json"
+        "url": "https://meteo.vatsim.pt/api/ias_sure/lppc"
     }
 }
