@@ -277,6 +277,7 @@ System_UseSidStarNoAllocationColor=1
 System_UseRwyLockedColor=0
 
 Track_PredictionLine=2
+Vector_QDM_MaxNumber=50
 
 Window_PDC_SetASSR=1
 Window_PDC_SetCFL=1
