@@ -297,7 +297,7 @@ Window_CPDLC_History_MaxListItems=7
 Window_FlightPlan=0,1412,600
 Window_FlightPlan_ShowAlways=1
 
-Window_MsgIn=1,1150,25
+Window_MsgIn=1,850,957
 Window_Msg_MaxListItems=7
 Window_SAP=1,1630,885
 Window_SAP_MaxListItems=7
