@@ -404,13 +404,21 @@ STCA_LinPred_Sep_Lat_L=7.5
 STCA_CurrProx_Sep_Lat_U=7.75
 STCA_CurrProx_Sep_Lat_L=7.75
 MTCD_Sep_Lat=10
+List_TfcMgmt1_Via=PILIM,ABUSU
+
+[LPPR_]
+List_TfcMgmt1_Via=ADNOV,AKULU
 
 [LPPR_APP]
 CPDLC_Default=1
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
 Setup_LoadMap=APP\urb
-List_TfcMgmt1_Via=ADNOV,AKULU
+
+[LPPT_]
+Window_CPDLC_Current=1,700,25
+Window_CPDLC_Setting=1,900,425
+List_TfcMgmt1_Via=PESEX,UPKAT
 
 [LPPT_APP]
 CPDLC_Default=1
@@ -434,22 +442,18 @@ STCA_CurrProx_Sep_Lat_U=2.75
 STCA_CurrProx_Sep_Lat_L=2.75
 MTCD_Sep_Lat=5
 
-[LPPT_]
-Window_CPDLC_Current=1,700,25
-Window_CPDLC_Setting=1,900,425
-List_TfcMgmt1_Via=PESEX,UPKAT
+[LPFR_]
+List_TfcMgmt1_Via=GEBTI,VENOL
 
 [LPFR_APP]
 CPDLC_Default=1
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
-List_TfcMgmt1_Via=GEBTI,VENOL
 
 [LPMA_APP]
 CPDLC_Default=1
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
-List_TfcMgmt1_Via=PILIM,ABUSU
 
 [LPAM_]
 Setup_LoadMap=ENVR\rivers
