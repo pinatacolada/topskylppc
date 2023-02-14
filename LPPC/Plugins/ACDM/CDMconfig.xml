@@ -6,6 +6,7 @@
 	<expiredCtot time="15" />
 	<ReaMsg minutes="0" />
 	<realMode mode="true" />
+	<Rates url="https://raw.githubusercontent.com/pinatacolada/topskylppc/master/LPPC/Plugins/ACDM/rate.txt" />
 	<Taxizones url="" />
 	<Ctot url="" />
 	<DefaultTaxiTime minutes="15" />
