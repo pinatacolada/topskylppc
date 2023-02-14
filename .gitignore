@@ -139,3 +139,5 @@ LPPC/Settings/SectorExitList.txt
 LPPC/Settings/Hungarian Matias.txt
 LPPC/Settings/ESGrammar.txt
 dev.prf
+ipaddr_local.txt
+VATCANBookings.dll
