@@ -471,6 +471,6 @@ Setup_LoadMap=MIL\pmtr
 Setup_LoadMap=MIL\rad_vec_bej
 
 [LPCS_]
-Setup_LoadMap=TWRCAS\workng_areas
+Setup_LoadMap=TWRCAS\working_areas
 Setup_LoadMap=APP\urb
 Setup_LoadMap=VFR\rot_vfr
