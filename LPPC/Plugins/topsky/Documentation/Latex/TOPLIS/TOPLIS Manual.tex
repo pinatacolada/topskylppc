@@ -9,7 +9,7 @@
 \medskip 
 
 Version 2.0}
-\setdocrevision{5}
+\setdocrevision{6}
 
 \begin{document}
 
@@ -90,6 +90,12 @@ A-CDM will calculate a Target Take Off Time (TTOT) based on the TOBT, current de
 
 \medskip
 
+Depending on the airport configuration, a TTOT may be locked in time in accordance with a Calculated Departure Time (CDT). CDT are typically used in airports with non-independant runways, such as crossing or closely spaced runways.
+
+\note{CDT are not used in LPPC FIR}
+
+\medskip
+
 Based on the Departure Stand and Runway, the system calculates an Estimated Taxi Out Time (EXOT). Then, the system subtracts TTOT-EXOT, of which the result is the Target Start-up Time (TSAT). TSAT may never be earlier than TOBT. A TSAT has a validity window of -5 to +5 minutes, within which start-up approval may be issued. 
 
 A TSAT within the validity window will be colored in \colorref{color1}, or if outside the validity window \colorref{color2}. Additionally, it will be colored in \colorref{color5} the minute it expires, as an attention getter.
@@ -98,7 +104,11 @@ If a flight misses its TSAT, a new one must be assigned by right clicking the TS
 
 \medskip
 
-During times of extraordinary demand, a Calculated Take-Off Time (CTOT) may be issued for a certain flight. The A-CDM operation remains the same, with the exception that it will try to match TTOT to CTOT. A CTOT has a validity window of -5 to +10 minutes of CTOT, during which Take Off clearance must be issued.    
+During times of extraordinary demand, a Calculated Take-Off Time (CTOT) may be issued for a certain flight. The A-CDM operation remains the same, with the exception that it will try to match TTOT to CTOT. A CTOT has a validity window of -5 to +10 minutes of CTOT, during which Take Off clearance must be issued.
+
+\medskip
+
+Once A-CDM is made aware of the assignment of a CTOT to a flight, it will keep the same CTOT locked until a Ready Message (REA) is sent, even if the external source of the CTOT is updated with an improvement. 
 
 \subsubsection{Commands}
 
@@ -108,6 +118,7 @@ Interaction with core A-CDM systems is done with classic command line inputs:
   \hline
   \texttt{.cdm reload}                 & Reloads all CDM configs\\ \hline
   \texttt{.cdm refresh}                & Forces a data refresh phase\\ \hline
+  \texttt{.cdm ctot}                   & Loads \texttt{ctot.txt} data\\ \hline
   \texttt{.cdm save}                   & Saves data to \texttt{savedData.txt}\\ \hline
   \texttt{.cdm load}                   & Loads \texttt{savedData.txt}\\ \hline
   \texttt{.cdm master "airport"}       & Become the master of the selected airport.\\ \hline
@@ -118,7 +129,7 @@ Interaction with core A-CDM systems is done with classic command line inputs:
   \texttt{.cdm realmode}               & Toggle realmode on or off\\ \hline
   \texttt{.cdm remarks}                & Toggle set TSAT to Euroscope scratchpad on or off\\ \hline
   \texttt{.cdm rates}                  & Updates rates values from \texttt{rate.txt}\\ \hline
-  \texttt{.cdm help}                   & Show all commands \\ \hline
+  \texttt{.cdm help}                   & Show all available commands \\ \hline
   \caption{A-CDM commands}
   \label{tab:acdm-commands}
 \end{longtable}
@@ -148,7 +159,13 @@ Interaction with core A-CDM systems is done with classic command line inputs:
   CTOT \nextrow \label{tag:CTOT}&  
       Calculated Take Off Time&
         Flow restrictions create CTOTs to planes afected with published MDIs from ECFMP &   
-            \colorref{color11} \\ \hline
+            \colorref{color11} 
+            
+            \bigskip
+
+            If REA message has been sent:
+            
+            \colorref{color2} \\ \hline
 
   E \nextrow \label{tag:E}&  
     State & 
@@ -159,7 +176,7 @@ Interaction with core A-CDM systems is done with classic command line inputs:
       C: EOBT is less than 35min and TSAT not expired
 
       I: TSAT expired &
-        \\ \hline            
+      \colorref{color1} \\ \hline            
 
             
   EOBT \nextrow \label{tag:EOBT}&  
@@ -250,9 +267,16 @@ Interaction with core A-CDM systems is done with classic command line inputs:
   TTOT \nextrow \label{tag:TTOT}&  
     Target Take Off Time &
       &   
-        \colorref{color9}\\ \hline
-        \caption{A-CDM field descriptions}
-        \label{tab:acdm-items}
+        \colorref{color9}
+
+        \bigskip
+        
+        If TTOT is locked due to a CDT restriction:
+
+        \colorref{color2}\\ \hline
+
+  \caption{A-CDM field descriptions}
+  \label{tab:acdm-items}
 \end{longtable}
 
 \section{Coordination}
