@@ -3,6 +3,7 @@
 [![gr-version](https://img.shields.io/badge/Ground%20Radar-1.5-blue.svg)](https://vats.im/GRplugin)
 [![cdm-version](https://img.shields.io/badge/CDM-2.1.1-blue.svg)](https://github.com/rpuig2001/CDM)
 [![afv-version](https://img.shields.io/badge/AFV-1.2.1-blue.svg)](https://audio.vatsim.net/docs/2.0/atc/euroscope)
+[![iassure-version](https://img.shields.io/badge/IASsure-1.4.1-blue.svg)](https://github.com/MorpheusXAUT/IASsure)
 
 The TopSky plugin is developed and maintained by Juha Holopainen from VATSIM Scandinavia. It is an almost complete set of tag items, tag menus, graphical elements on the radar display and some additional functionality based around the real world TopSky ATM system. 
 
@@ -75,3 +76,7 @@ To use CPDLC you need a [Hoppie account](https://www.hoppie.nl/acars/system/regi
 
 # Disclamer
 Although - as its name suggests - the plugin is based on the TopSky ATM system, it is in no way affiliated with or endorsed by Thales Group. Similarities between plugin features and the real system are not entirely coincidental, but anyone planning to use the plugin as a real world training aid really should know better…
+
+# License
+
+topskylppc is available under the GPL-3.0 license. See the [LICENSE](LICENSE) file for more info. IASsure is bundled with topskylppc under the MIT license. See the [LICENSE](LPPC/Plugins/IASsure/LICENSE) file for more info.
