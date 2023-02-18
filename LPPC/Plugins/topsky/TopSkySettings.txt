@@ -10,9 +10,9 @@ Setup_LoadMap=ENR_REP\rep_out
 Setup_LoadMap=ENR_REP\rep_bdry
 Setup_LoadMap=ENR_MAP\lim
 
-Setup_LoadMap=APP\p_tma
+Setup_LoadMap=APP\rep_tma
 Setup_LoadMap=APP\tma
-Setup_LoadMap=APP\rad_vec
+Setup_LoadMap=APP\radvec
 Setup_LoadMap=APP\ctr
 
 Setup_LoadMap=APPFUN\pfun_05_23_a
