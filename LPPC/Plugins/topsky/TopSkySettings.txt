@@ -413,7 +413,7 @@ List_TfcMgmt1_Via=ADNOV,AKULU
 CPDLC_Default=1
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
-Setup_LoadMap=APP\urb
+Setup_LoadMap=APPPRT\nortavia
 
 [LPPT_]
 Window_CPDLC_Current=1,700,25
