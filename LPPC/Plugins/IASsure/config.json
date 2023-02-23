@@ -1,5 +1,5 @@
 {
     "weather": {
-        "url": "https://meteo.vatsim.pt/api/ias_sure/lppc"
+        "url": "https://meteo.vatsim.pt/api/v1/ias_sure/lppc"
     }
 }
