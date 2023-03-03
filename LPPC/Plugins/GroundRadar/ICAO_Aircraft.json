@@ -337,7 +337,7 @@
 {"ICAO":"B752","Description":"L2J","WTC":"M","WTG":"D","RECAT-EU":"C","Wingspan":41.1,"Length":47.3,"Height":13.6,"MTOW":115680,"Use":"A","IATA":"752","IATA_cargo":"75F","Manufacturer":"BOEING","Model":"757-200, C-32"},
 {"ICAO":"B753","Description":"L2J","WTC":"M","WTG":"D","RECAT-EU":"C","Wingspan":41.1,"Length":54.5,"Height":13.6,"MTOW":123600,"Use":"A","IATA":"753","Manufacturer":"BOEING","Model":"757-300"},
 {"ICAO":"B762","Description":"L2J","WTC":"H","WTG":"C","RECAT-EU":"C","Wingspan":47.57,"Length":48.5,"Height":15.9,"MTOW":179170,"Use":"A","IATA":"762","IATA_cargo":"76X","Manufacturer":"BOEING","Model":"767-200, KC-767"},
-{"ICAO":"B763","Description":"L2J","WTC":"H","WTG":"C","RECAT-EU":"C","Wingspan":50.9,"Length":54.9,"Height":15.9,"MTOW":186880,"Use":"A","IATA":"763","IATA_cargo":"76Y","Manufacturer":"BOEING","Model":"767-300"},
+{"ICAO":"B763","Description":"L2J","WTC":"H","WTG":"C","RECAT-EU":"C","Wingspan":47.6,"Length":54.9,"Height":15.9,"MTOW":186880,"Use":"A","IATA":"763","IATA_cargo":"76Y","Manufacturer":"BOEING","Model":"767-300"},
 {"ICAO":"B764","Description":"L2J","WTC":"H","WTG":"C","RECAT-EU":"C","Wingspan":51.9,"Length":61.4,"Height":16.8,"MTOW":204120,"Use":"A","IATA":"764","Manufacturer":"BOEING","Model":"767-400"},
 {"ICAO":"B772","Description":"L2J","WTC":"H","WTG":"B","RECAT-EU":"B","Wingspan":60.9,"Length":63.7,"Height":18.4,"MTOW":297650,"Use":"A","IATA":"772","IATA_cargo":"77X","Manufacturer":"BOEING","Model":"777-200/ER"},
 {"ICAO":"B773","Description":"L2J","WTC":"H","WTG":"B","RECAT-EU":"B","Wingspan":60.9,"Length":73.9,"Height":18.5,"MTOW":299370,"Use":"A","IATA":"773","Manufacturer":"BOEING","Model":"777-300"},
