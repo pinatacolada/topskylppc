@@ -239,6 +239,13 @@ Rings_HighlightStep=2
 RwyAppLines_Auto=0
 RwyAppLines_Length=18
 
+SAP_Buffer_Lat_U=3
+SAP_Buffer_Lat_L_IFR=3
+SAP_Buffer_Lat_L_VFR=0
+SAP_Buffer_Vert_U=1000
+SAP_Buffer_Vert_L_IFR=1000
+SAP_Buffer_Vert_L_VFR=0
+
 Shortcut_AHDG_NoFixes_Combo=0x00
 Shortcut_XQDM_Combo=0x00
 Shortcut_XQDM=0x00
