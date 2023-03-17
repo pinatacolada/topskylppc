@@ -421,6 +421,7 @@ Window_CPDLC_Setting=1,900,425
 List_TfcMgmt1_Via=PESEX,UPKAT
 
 [LPPT_APP]
+Setup_LoadMap=TWRCAS\ext_cntrline_35
 CPDLC_Default=1
 STCA_Coarse_Sep_Lat_U=3
 STCA_Coarse_Sep_Lat_L=3
@@ -434,6 +435,7 @@ MTCD_Sep_Lat=5
 CPDLC_Default=1
 
 [LPPT_F_APP]
+Setup_LoadMap=TWRCAS\ext_cntrline_35
 STCA_Coarse_Sep_Lat_U=3
 STCA_Coarse_Sep_Lat_L=3
 STCA_LinPred_Sep_Lat_U=2.5
@@ -472,6 +474,5 @@ Setup_LoadMap=MIL\rad_vec_bej
 
 [LPCS_]
 Setup_LoadMap=TWRCAS\working_areas
-Setup_LoadMap=TWRCAS\ext_cntrline_35
 Setup_LoadMap=TWRLIS\vfr_lis
 Setup_LoadMap=VFR\rot_vfr
