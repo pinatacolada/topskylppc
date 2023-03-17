@@ -15,4 +15,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: PDF
-          path: TOPLIS Manual.pdf
+          path: LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.pdf
