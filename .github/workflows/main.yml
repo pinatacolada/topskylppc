@@ -10,6 +10,7 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: TOPLIS Manual.tex
+          working_directory: LPPC/Plugins/topsky/Documentation/Latex/TOPLIS
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
