@@ -4,15 +4,15 @@ Setup_LoadMap=ENVR\fir
 Setup_LoadMap=ENVR\shore
 Setup_LoadMap=ENVR\border
 Setup_LoadMap=ENVR\rwy
-Setup_LoadMap=ENVR\atz
+Setup_LoadMap=VFR\atz
 Setup_LoadMap=ENR_MAP\adj_fir_sec
 Setup_LoadMap=ENR_REP\rep_out
 Setup_LoadMap=ENR_REP\rep_bdry
 Setup_LoadMap=ENR_MAP\lim
 
-Setup_LoadMap=APP\p_tma
+Setup_LoadMap=APP\rep_tma
 Setup_LoadMap=APP\tma
-Setup_LoadMap=APP\rad_vec
+Setup_LoadMap=APP\radvec
 Setup_LoadMap=APP\ctr
 
 Setup_LoadMap=APPFUN\pfun_05_23_a
@@ -420,7 +420,7 @@ List_TfcMgmt1_Via=ADNOV,AKULU
 CPDLC_Default=1
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
-Setup_LoadMap=APP\urb
+Setup_LoadMap=APPPRT\nortavia
 
 [LPPT_]
 Window_CPDLC_Current=1,700,25
@@ -428,6 +428,7 @@ Window_CPDLC_Setting=1,900,425
 List_TfcMgmt1_Via=PESEX,UPKAT
 
 [LPPT_APP]
+Setup_LoadMap=TWRCAS\ext_cntrline_35
 CPDLC_Default=1
 STCA_Coarse_Sep_Lat_U=3
 STCA_Coarse_Sep_Lat_L=3
@@ -441,6 +442,7 @@ MTCD_Sep_Lat=5
 CPDLC_Default=1
 
 [LPPT_F_APP]
+Setup_LoadMap=TWRCAS\ext_cntrline_35
 STCA_Coarse_Sep_Lat_U=3
 STCA_Coarse_Sep_Lat_L=3
 STCA_LinPred_Sep_Lat_U=2.5
@@ -465,11 +467,11 @@ Window_CPDLC_Setting=1,900,425
 [LPAM_]
 Setup_LoadMap=ENVR\rivers
 Setup_LoadMap=ENVR\town
-Setup_LoadMap=ENVR\aerod
 Setup_LoadMap=ENVR\dam_nl
+Setup_LoadMap=VFR\aerod
 Setup_LoadMap=VFR\heli
-Setup_LoadMap=VFR\rot_vfr
-Setup_LoadMap=VFR\prociv
+Setup_LoadMap=VFR\vfr_routes
+Setup_LoadMap=VFR\prot_civ
 Setup_LoadMap=MIL\povar
 Setup_LoadMap=MIL\pmoj
 Setup_LoadMap=MIL\pstr
@@ -479,5 +481,5 @@ Setup_LoadMap=MIL\rad_vec_bej
 
 [LPCS_]
 Setup_LoadMap=TWRCAS\working_areas
-Setup_LoadMap=APP\urb
+Setup_LoadMap=TWRLIS\vfr_lis
 Setup_LoadMap=VFR\rot_vfr
