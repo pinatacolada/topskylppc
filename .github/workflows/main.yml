@@ -16,7 +16,7 @@ jobs:
         with:
           message: 'Update PDF'
           add: 'TOPLIS Manual.pdf'
-          cwd: 'LPPC/Plugins/topsky/Documentation/'
+          cwd: './LPPC/Plugins/topsky/Documentation/'
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
