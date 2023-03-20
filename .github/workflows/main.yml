@@ -2,7 +2,7 @@ name: Build LaTeX document
 on: 
   push:
     paths:
-    - 'LPPC/Plugins/topsky/Documentation/Latex/**'
+    - '**.tex'
 jobs:
   build_latex:
     runs-on: ubuntu-latest
