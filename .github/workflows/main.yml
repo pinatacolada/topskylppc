@@ -1,0 +1,27 @@
+name: Build LaTeX document
+on: 
+  push:
+    paths:
+    - LPPC/Plugins/topsky/Documentation/Latex/**
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v3
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: TOPLIS Manual.tex
+          working_directory: LPPC/Plugins/topsky/Documentation/Latex/TOPLIS
+      - name: Move PDF
+        uses: canastro/copy-file-action@master
+        with:
+          source: "./LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.pdf"
+          target: "./LPPC/Plugins/topsky/Documentation/TOPLIS Manual.pdf"
+      - name: Add & Commit PDF
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Update PDF'
+          add: '*.pdf'
+          cwd: './LPPC/Plugins/topsky/Documentation/'
