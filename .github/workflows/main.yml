@@ -20,10 +20,10 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           message: 'Update PDF'
-          add: 'TOPLIS Manual.pdf'
+          add: '*.pdf'
           cwd: './LPPC/Plugins/topsky/Documentation/'
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
           name: PDF
-          path: LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.pdf
+          path: LPPC/Plugins/topsky/Documentation/TOPLIS Manual.pdf
