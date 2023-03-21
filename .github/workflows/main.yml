@@ -2,7 +2,7 @@ name: Build LaTeX document
 on: 
   push:
     paths:
-    - LPPC/Plugins/topsky/Documentation/Latex/**
+    - 'LPPC/Plugins/topsky/Documentation/Latex/**'
 jobs:
   build_latex:
     runs-on: ubuntu-latest
@@ -22,6 +22,7 @@ jobs:
       - name: Add & Commit PDF
         uses: EndBug/add-and-commit@v9
         with:
-          message: 'Update PDF'
+          default_author: github_actions
+          message: 'Update TOPLIS Manual'
           add: '*.pdf'
           cwd: './LPPC/Plugins/topsky/Documentation/'
