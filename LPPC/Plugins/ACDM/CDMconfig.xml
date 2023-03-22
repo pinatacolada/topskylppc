@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <CDM>
-	<ctot option="cid" />
 	<rate ops="23" />
 	<rateLvo ops="12" />
 	<expiredCtot time="15" />
@@ -8,7 +7,7 @@
 	<realMode mode="true" />
 	<Rates url="https://raw.githubusercontent.com/pinatacolada/topskylppc/master/LPPC/Plugins/ACDM/rate.txt" />
 	<Taxizones url="" />
-	<Ctot url="" />
+	<Ctot code="" />
 	<DefaultTaxiTime minutes="15" />
 	<RefreshTime seconds="20" />
 	<Debug mode="false" />
