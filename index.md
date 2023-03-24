@@ -71,7 +71,7 @@
 
 20.  Navigate to 'C:\Program Files (x86)\EuroScope\LPPC\Plugins\topsky' and open the 'TopSkyCPDLChoppieCode.txt'. Replace the file's contents with your Hoppie code. If you do not have a code you need to request one at https://www.hoppie.nl/acars/system/register.html
 
-21.  Open EuroScope again. When prompted to 'Open a profile file', navigate to 'C:\Program Files (x86)\EuroScope' (or your instalation directory if different) and open the 'LPPC_CTR_TS.prf' file.
+21.  Open EuroScope again. When prompted to 'Open a profile file', navigate to 'C:\Program Files (x86)\EuroScope' (or your instalation directory if different) and open the 'LPPC_TopSky.prf' file.
 
      ![Download](/assets/img/prof.png)
 
