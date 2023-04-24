@@ -3,7 +3,7 @@
 [![gr-version](https://img.shields.io/badge/Ground%20Radar-1.5-blue.svg)](https://vats.im/GRplugin)
 [![cdm-version](https://img.shields.io/badge/CDM-2.2.0-blue.svg)](https://github.com/rpuig2001/CDM)
 [![afv-version](https://img.shields.io/badge/AFV-1.2.1-blue.svg)](https://audio.vatsim.net/docs/2.0/atc/euroscope)
-[![iassure-version](https://img.shields.io/badge/IASsure-1.4.2-blue.svg)](https://github.com/MorpheusXAUT/IASsure)
+[![iassure-version](https://img.shields.io/badge/IASsure-1.5.0-blue.svg)](https://github.com/MorpheusXAUT/IASsure)
 
 The TopSky plugin is developed and maintained by Juha Holopainen from VATSIM Scandinavia. It is an almost complete set of tag items, tag menus, graphical elements on the radar display and some additional functionality based around the real world TopSky ATM system. 
 

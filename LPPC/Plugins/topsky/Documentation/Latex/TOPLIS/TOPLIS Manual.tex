@@ -9,7 +9,7 @@
 \medskip 
 
 Version 2.0}
-\setdocrevision{8}
+\setdocrevision{9}
 
 \begin{document}
 
@@ -2060,11 +2060,11 @@ Sector States are used to control label construction, placement in lists, filter
        \\ \hline
     DIAS \nextrow \label{tag:DIAS}&
       Downloaded indicated airspeed &
-      Indicated airspeed as downloaded  from the aircraft via mode S DAPs. &
+      Indicated airspeed as downloaded  from the aircraft via mode S DAPs. If marked as unreliable, “DIAS”. &
        \\ \hline
     DMACH \nextrow \label{tag:DMACH}&
       Downloaded Mach number &
-      Mach number as downloaded from the aircraft via mode S DAPs. &
+      Mach number as downloaded from the aircraft via mode S DAPs. If marked as unreliable, “DMACH”. &
        \\ \hline
     DRC \nextrow \label{tag:DRC}&
       Downloaded rate of  climb/descent &
@@ -3359,7 +3359,7 @@ When \tagref{tag:MTCD} is displayed R: Toggle Flight Leg display}
 
   \drawtag{1.35cm}{0.85,0.5}{dhdg};
   \drawtag{0.7cm}{2.1,0.5}{drc};
-  \drawtagdesc{2cm}{1.5,-1}{ldap}{R: Toggle associated DAP display};
+  \drawtagdesc{3cm}{1.5,-2}{ldap}{L: Toggle DIAS/DMACH unreliable\\R: Toggle associated DAP display};
   \draw[red,very thick] (dhdg) -- (ldap);
   \draw[red,very thick] (drc) -- (ldap);
 \end{tikzpicture}
