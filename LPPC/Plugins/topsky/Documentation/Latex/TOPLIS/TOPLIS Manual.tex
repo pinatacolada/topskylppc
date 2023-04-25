@@ -9,7 +9,7 @@
 \medskip 
 
 Version 2.0}
-\setdocrevision{9}
+\setdocrevision{10}
 
 \begin{document}
 
@@ -1243,6 +1243,10 @@ In the vertical plane, TopSky predicts a climb or descent and accounts for buffe
 \bigskip
 
 For the predictions to be accurate, it’s very important to keep the CFL and the aircraft’s route updated at all times. For aircraft that have an assigned heading or a RAM warning, the system assumes that it will continue on its present track and ground speed for a specified time and stops the prediction there. The system is always disabled for flight plan tracks with an assigned heading.
+
+\bigskip
+
+MTCD is not available for aircraft on the ground until their state is set to “DEPA”.
 
 \subsubsection*{Conflict and Risk display on the track label}
 
