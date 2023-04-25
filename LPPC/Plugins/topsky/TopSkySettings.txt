@@ -226,6 +226,7 @@ Maps_Sct_Label_Pos=0,20
 
 Menu_Level_MaxValue=650
 
+MTCD_Filter_Dep=3
 MTCD_PLC_Time=5
 MTCD_Potential_Pred_Risk=1
 MTCD_Sep_Vert_U=2000
