@@ -484,4 +484,5 @@ Setup_LoadMap=MIL\rad_vec_bej
 [LPCS_]
 Setup_LoadMap=TWRCAS\working_areas
 Setup_LoadMap=TWRLIS\vfr_lis
-Setup_LoadMap=VFR\rot_vfr
+Setup_LoadMap=VFR\vfr_routes
+Setup_LoadMap=VFR\heli_routes
