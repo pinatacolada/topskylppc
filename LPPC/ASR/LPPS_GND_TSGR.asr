@@ -1,8 +1,8 @@
 DisplayTypeName:Ground Radar display
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
-SECTORFILE:
-SECTORTITLE:
+SECTORFILE:C:\Users\rtpso\Documents\gits\topskylppc\dev.sct
+SECTORTITLE:dev.sct
 Free Text:LPPS Stands\A01:freetext
 Free Text:LPPS Stands\A02:freetext
 Free Text:LPPS Stands\A03:freetext
