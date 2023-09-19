@@ -9,7 +9,7 @@
 \medskip 
 
 Version 2.0}
-\setdocrevision{10}
+\setdocrevision{11}
 
 \begin{document}
 
@@ -112,6 +112,10 @@ During times of extraordinary demand, a Calculated Take-Off Time (CTOT) may be i
 
 \medskip
 
+During some events, a manually created list of callsign and CTOT pairs may be created. These are Event CTOT, or ECTOT. ECTOT on their own do not contribute to A-CDM calculations, unless manually added as a CTOT to the flight.
+
+\medskip
+
 Once A-CDM is made aware of the assignment of a CTOT to a flight, it will keep the same CTOT locked until a Ready Message (REA) is sent, even if the external source of the CTOT is updated with an improvement. 
 
 \subsubsection{Commands}
@@ -120,20 +124,21 @@ Interaction with core A-CDM systems is done with classic command line inputs:
 
 \begin{longtable}{|p{5cm}|p{8.5cm}|}
   \hline
-  \texttt{.cdm reload}                 & Reloads all CDM configs\\ \hline
-  \texttt{.cdm refresh}                & Forces a data refresh phase\\ \hline
-  \texttt{.cdm ctot}                   & Loads \texttt{ctot.txt} data\\ \hline
-  \texttt{.cdm save}                   & Saves data to \texttt{savedData.txt}\\ \hline
-  \texttt{.cdm load}                   & Loads \texttt{savedData.txt}\\ \hline
-  \texttt{.cdm master "airport"}       & Become the master of the selected airport.\\ \hline
-  \texttt{.cdm slave "airport"}        & Turn back to slave of the selected airport.\\ \hline
-  \texttt{.cdm refreshtime "seconds"}  & Change refresh rate time in seconds (Default 30, MAX 99).\\ \hline
-  \texttt{.cdm delay "minutes"}        & Adds delay minutes to all flights that have a TSAT in the future\\ \hline
-  \texttt{.cdm lvo}                    & Toggle LVO on or off\\ \hline
-  \texttt{.cdm realmode}               & Toggle realmode on or off\\ \hline
-  \texttt{.cdm remarks}                & Toggle set TSAT to Euroscope scratchpad on or off\\ \hline
-  \texttt{.cdm rates}                  & Updates rates values from \texttt{rate.txt}\\ \hline
-  \texttt{.cdm help}                   & Show all available commands \\ \hline
+  \texttt{.cdm reload}                                      & Reloads all CDM configs\\ \hline
+  \texttt{.cdm refresh}                                     & Forces a data refresh phase\\ \hline
+  \texttt{.cdm ctot}                                        & Refreshes CTOT data\\ \hline
+  \texttt{.cdm save}                                        & Saves data to \texttt{savedData.txt}\\ \hline
+  \texttt{.cdm load}                                        & Loads \texttt{savedData.txt}\\ \hline
+  \texttt{.cdm master "airport"}                            & Become the master of the selected airport.\\ \hline
+  \texttt{.cdm slave "airport"}                             & Turn back to slave of the selected airport.\\ \hline
+  \texttt{.cdm refreshtime "seconds"}                       & Change refresh rate time in seconds (Default 30, MAX 99).\\ \hline
+  \texttt{.cdm customdelay "airport"/"runway" "time\_start"} & Shifts all TSATs for selected airport and runway to start at the \texttt{time\_start}. Wait some seconds to update after applied. (Ex. \texttt{.cdm customdelay LPPT/02 1100} All TSATs from LPPT runway 02 will start at 1100). To remove use \texttt{.cdm customdelay LPPT/02 9999}.\\ \hline
+  \texttt{.cdm lvo}                                         & Toggle LVO on or off\\ \hline
+  \texttt{.cdm realmode}                                    & Toggle realmode on or off\\ \hline
+  \texttt{.cdm remarks}                                     & Toggle set TSAT to Euroscope scratchpad on or off\\ \hline
+  \texttt{.cdm rates}                                       & Updates rates values from \texttt{rate.txt}\\ \hline
+  \texttt{.cdm flow }                                       & Forces an update on ECFMP flow restrictions data, otherwise updated every 5 minutes.\\ \hline
+  \texttt{.cdm help}                                        & Show all available commands \\ \hline
   \caption{A-CDM commands}
   \label{tab:acdm-commands}
 \end{longtable}
@@ -162,14 +167,31 @@ Interaction with core A-CDM systems is done with classic command line inputs:
   
   CTOT \nextrow \label{tag:CTOT}&  
       Calculated Take Off Time&
-        Flow restrictions create CTOTs to planes afected with published MDIs from ECFMP &   
+        Flow restrictions create CTOTs to planes affected with published MDIs from ECFMP &   
             \colorref{color11} 
             
             \bigskip
 
             If REA message has been sent:
             
-            \colorref{color2} \\ \hline
+            \colorref{color2}
+
+            \bigskip
+
+            If Manual or Event CTOT:
+            
+            \colorref{color4}
+
+            \bigskip
+
+            If Manual or Event CTOT, and Flow/CAD CTOT:
+            
+            \colorref{color7} \\ \hline
+
+  ECTOT \nextrow \label{tag:ECTOT}&  
+      Event Calculated Take Off Time&
+        Similar to \tagref{tag:CTOT}, but originating from a manually compiled list of callsign and CTOT pairs. Needs to be manually added to \tagref{tag:CTOT} to have an effect on A-CDM calculations. &   
+            \colorref{color11} \\ \hline
 
   E \nextrow \label{tag:E}&  
     State & 
@@ -4151,6 +4173,7 @@ The Departure List contains all departures still on the ground of the controlled
   \tagref{tag:ASAT}             &                                     &                           &                     \\ \hline
   \tagref{tag:TTOT}             &                                     &                           &                     \\ \hline
   \tagref{tag:CTOT}             & Open CTOT Option list               & Open CTOT Option list     &                     \\ \hline
+  \tagref{tag:ECTOT}            & Add ECTOT to CTOT                   & ECTOT Option list         &                     \\ \hline
   \tagref{tag:Flow Message}     & Open \winref{menu:ahdg}             &                           &                     \\ \hline
   \tagref{tag:Ready}            & Toggle Ready                        &                           &                     \\ \hline
   \tagref{tag:ATYP}             &                                     &                           & \usym{2713}         \\ \hline
