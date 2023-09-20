@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <CDM>
-	<rate ops="23" />
-	<rateLvo ops="12" />
+	<rate ops="20" />
+	<rateLvo ops="13" />
 	<expiredCtot time="15" />
 	<ReaMsg minutes="0" />
 	<realMode mode="true" />
