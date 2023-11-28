@@ -107,6 +107,12 @@ HTTP_NOTAM_Server=https://eaup.vatsim.pt/api/v1/topsky/areas/LP/notam/
 HTTP_NOTAM_Page_Prefix=?loc=
 HTTP_NOTAM_Page_Suffix=
 
+HTTP_TAF_Server=https://aviationweather.gov/
+HTTP_TAF_Page_Prefix=cgi-bin/data/dataserver.php?requestType=retrieve&dataSource=tafs&stationString=
+HTTP_TAF_Page_Suffix=&hoursBeforeNow=1&format=xml&mostRecentForEachStation=constraint&fields=raw_text
+HTTP_TAF_Data_Prefix=<raw_text>
+HTTP_TAF_Data_Suffix=</raw_text>
+
 Label_All_N=1
 Label_COP_MaxChars=5
 Label_DAPs=1
