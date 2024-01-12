@@ -50,8 +50,6 @@ It also allows the exchange of more accurate departure information, particularly
 The A-CDM plugin operates in a Master-Slave topology, in which the "CDM Master" will calculate the required data and distribute it to the slaved CDM positions. Due to this, it is mandatory that the "Master" ATC is the one at the lowest position, such as Delivery.
 
 \warn{IF THERE IS NO ACTIVE "CDM MASTER" A-CDM WILL NOT BE OPERATIONAL}
-  
-
 
 \warn{IF MORE THAN ONE POSITION ASSIGNS ITSELF AS "CDM MASTER" A-CDM WILL NOT BE OPERATIONAL}
 
@@ -59,7 +57,7 @@ At the end of a session or controller swap, the "CDM MASTER" ATC should return h
 
 \subsubsection{A-CDM Timeline}
 
-\begin{figure}
+\begin{figure}[H]
   \centering
   \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
     \path (0,121); 
@@ -86,21 +84,25 @@ Each departure follows a timeline of events from the moment a Flight Plan is sub
 
 \medskip
 
-Every Flight Plan should have a meaningfull Estimated Off Block Time (EOBT, also known as ETD). The EOBT is the starting point for the A-CDM calculation from which A-CDM will set the Target Off Block Time (TOBT) equal to. If the ATC notices TOBT is not meaningfull (already in the past or too far into the future) it must be updated.
+The A-CDM calculation begins at Target Off Block Time (TOBT). TOBT is the time the aircraft is ready for startup, or push and start. This is typically the time at which the pilots reports "fully ready", or requests pushback or startup. In an optimal scenario this would match with the flight plan Estimated Off Block Time (EOBT, sometimes called ETD in other sources).
 
 \medskip
 
-A-CDM will calculate a Target Take Off Time (TTOT) based on the TOBT, current departure rate, known traffic and Flow Restrictions. Each TTOT is separated from other TTOTs by the ammount of time required in order to achieve the maximum defined departure rate. During moments of high traffic that, without a regulation, would exceed the airport departure rate capacity, the system will delay the TTOT in order to meet the required departure rate. 
+A-CDM will calculate a Target Take Off Time (TTOT) based on the TOBT, current departure rate, known traffic and Flow Restrictions. Each TTOT is separated from other TTOTs by the amount of time required to achieve the maximum defined departure rate. During moments of high traffic that, without a regulation, would exceed the airport departure rate capacity, the system will delay the TTOT in order to meet the required departure rate. 
 
 \medskip
 
-Depending on the airport configuration, a TTOT may be locked in time in accordance with a Calculated Departure Time (CDT). CDT are typically used in airports with non-independant runways, such as crossing or closely spaced runways.
+Different Stands have different Estimated Taxi Out Time (EXOT). A stand closer to the runway will have a shorter EXOT than another further away. The system adds EXOT to TOBT, to obtain TTOT.
 
-\note{CDT are not used in LPPC FIR}
+\bigskip
 
-\medskip
+Target Start-up Time (TSAT) is the time at which a flight may push back and start up. 
 
-Based on the Departure Stand and Runway, the system calculates an Estimated Taxi Out Time (EXOT). Then, the system subtracts TTOT-EXOT, of which the result is the Target Start-up Time (TSAT). TSAT may never be earlier than TOBT. A TSAT has a validity window of -5 to +5 minutes, within which start-up approval may be issued. 
+If there is no delay, TSAT will be the same as TOBT. 
+
+If there is a delay, TSAT will the difference from TTOT - EXOT. 
+
+A TSAT has a validity window of -5 to +5 minutes, within which start-up approval may be issued. 
 
 A TSAT within the validity window will be colored in \colorref{color1}, or if outside the validity window \colorref{color2}. Additionally, it will be colored in \colorref{color5} the minute it expires, as an attention getter.
 
@@ -117,6 +119,37 @@ During some events, a manually created list of callsign and CTOT pairs may be cr
 \medskip
 
 Once A-CDM is made aware of the assignment of a CTOT to a flight, it will keep the same CTOT locked until a Ready Message (REA) is sent, even if the external source of the CTOT is updated with an improvement. 
+
+\subsubsection{Examples}
+
+The system first attempts to calculate a departure with no delay, by adding EXOT to TOBT it obtains TTOT. For example, TAP123 reports "fully ready" at 12:00 (TOBT 12:00), sitting on a stand with 15 minutes of taxi time (EXOT 15 minute), the system predicts TAP123 will be able to take off at 12:15 (TTOT 12:15). Because there is no conflict, TSAT is equal to TOBT (TSAT 12:00)
+
+\bigskip
+
+A second flight, RYR456, reports "fully ready" at the very next minute (TOBT 12:01), but is on a stand very close to the runway with a shorter taxi time (EXOT 5 minutes, for example), the system predicts RYR456 will be able to take off at 12:06 (TTOT 12:06). Because there is no conflict, TSAT is equal to TOBT (TSAT 12:01).
+
+Notice how RYR456 was ready for push and start after TAP123, yet, because of the very short taxi time, it will take off much sooner that TAP123.
+
+\bigskip
+
+A third flight, IBE789, also reports "fully ready" at 12:01 (TOBT 12:01), sitting on a stand with 15 minutes of taxi time (EXOT 15 minute), the system predicts IBE789 will be able to take off at 12:16 (TTOT 12:16). 
+
+However, this TTOT is too close to TAP123 (TTOT 12:15) and must be delayed for separation. 
+
+The system calculates that according to the current departure rate, IBE789 must take off at 12:18 (TTOT 12:18). By subtracting the 15 minutes Estimated Taxi Out Time from the Target Take Off Time, the system obtains IBE789's Target Startup Time of 12:03 (TTOT - EXOT = TSAT, 12:18 - 15 = 12:03).
+
+This is a very small delay, in fact so small that it falls within the TSAT window. IBE789 TSAT is 12:03, and because the TSAT window is +/- 5 minutes (11:58 - 12:08). IBE789 may be pushed back at anytime within this window.
+
+\bigskip
+
+A fourth flight, EJU321, is departing to the same destination as IBE789. This destination has limited capacity and can only accept arrivals in 15 minute intervals. The system will take care of this limitation, no intervention should be required.
+
+EJU321 reports "fully ready" at 12:01 (TOBT 12:01), sitting on a stand with 15 minutes of taxi time (EXOT 15 minute), the system predicts EJU321 will be able to take off at 12:16 (TTOT 12:16). Because of the restriction at destination, the earliest time that EJU321 can take off, while remaining separated of IBE789, is 12:33 (IBE789's TTOT, 12:18, + 15 minutes required separation at destination).
+
+The system assigns a Calculated Take Off Time of 12:33 to EJU321 (CTOT 12:33). By subtracting the taxi time from this (EXOT 15 minutes), the system obtains TSAT 12:18 (CTOT - EXOT = TSAT, 12:33 - 15 = 12:18).
+
+EJU321 must wait on the stand until the TSAT window (12:13 - 12:23) before being able to pushb and start.
+
 
 \subsubsection{Commands}
 
