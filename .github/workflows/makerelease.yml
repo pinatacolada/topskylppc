@@ -1,0 +1,38 @@
+name: Make Release Artifact
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      version:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Release version to include in zip file name'
+        # Default value if no value is explicitly provided
+        default: '2xx'
+        # Input has to be provided for the workflow to run
+        required: true
+        # The data type of the input
+        type: string
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            LPPC
+            LICENSE
+            LPPC_CTR.prf
+            LPPC_CTR_TS.prf
+            README.md
+      - name: delete not needed files
+      - run: rm -r ./LPPC/Plugins/ACDM/CAD
+      - run: rm -r ./LPPC/Plugins/topsky/Documentation/Latex
+      - name: zip release artifact
+        uses: TonyBogdanov/zip@1.0
+        with:
+          args: zip -qq -r ./toplis.zip ./target
