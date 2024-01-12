@@ -36,4 +36,4 @@ jobs:
       - name: zip release artifact
         uses: TonyBogdanov/zip@1.0
         with:
-          args: zip -qq -r ./toplis.zip ./target
+          args: zip -qq -r ./toplis.zip . -i ./target
