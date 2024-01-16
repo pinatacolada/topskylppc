@@ -1126,15 +1126,24 @@ The responses to a level request are sent using the \winref{menu:cfl}, which off
 
 A set of premade free text messages is included for use in the \winref{menu:dlftm} and is acessible via the \winref{menu:cs} or \winref{win:dlcmw}:
 
-\begin{longtable}{|p{5cm}|p{6cm}|p{3.5cm}|}
-  \hline
-  \textbf{Message}                         & \textbf{Purpose}                                      & \textbf{Response Attribute} \endhead \hline
-  MESSAGE NOT SUPPORTED BY THIS ATS UNIT   & Uncaught unsupported messages                         & Not required\\ \hline
-  SERVICE TERMINATED FREQ CHG APPROVED     & Release to Unicom                                     & Roger\\\hline
-  CONTACT ME VIA VOICE                     & Raise a flight on the frequency                       & Roger \\\hline
-  REQUEST AGAIN WITH NEXT ATC UNIT         & Defer requests onto the next sector                   & Not required\\\hline
-  \caption{CPDLC Free Text Messages}
-\end{longtable}
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{|l|l|l|}
+            \hline
+            \textbf{ATC Message Element}                        & \textbf{Purpose}                      & \textbf{Pilot Response}   \\ \hline
+            MESSAGE NOT SUPPORTED BY THIS ATS UNIT              & Uncaught unsupported messages         & NIL                       \\ \hline
+            SERVICE TERMINATED FREQ CHG APPROVED                & Release to Unicom                     & ROGER                     \\\hline
+            CONTACT ME VIA VOICE                                & Raise a flight on the frequency       & ROGER                     \\\hline
+            REQUEST AGAIN WITH NEXT ATC UNIT                    & Defer requests onto the next sector   & NIL                       \\\hline
+            IDENTIFICATION TERMINATED DUE SURVEILLANCE COVERAGE & Terminate surveillance service        & ROGER                     \\\hline
+            REPORT BY VOICE TOP OF DESCENT                      & Planning purposes                     & NIL                       \\\hline
+            STOP SENDING CPDLC REQUESTS                         & Impose CPDLC Silence                  & NIL                       \\\hline
+            RESUME NORMAL CPDLC OPERATIONS                      & Revoke CPDLC Silence                  & NIL                       \\\hline
+        \end{tabular}
+    }
+    \caption{CPDLC Free Text Messages}
+\end{table}
 
 \subsubsection{Abnormal operations}
 \label{cpdlc:abn}
