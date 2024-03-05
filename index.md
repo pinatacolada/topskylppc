@@ -3,7 +3,7 @@
 
 1.   Download and install EuroScope from https://www.euroscope.hu/install/EuroScopeSetup32.msi. By default EuroScope will ask to install in 'C:\Program Files (x86)\EuroScope'. Remember where your installation directory is as it will be used a lot. It is strongly recommended not to change the installation directory.
 
-2.   Download EuroScope Beta r34 from https://www.euroscope.hu/install/EuroScopeBeta32a34.zip
+2.   Download EuroScope Beta r34 from [here](https://web.archive.org/web/20220619021425if_/https://www.euroscope.hu/install/EuroScopeBeta32a34.zip).
 
 3.   Browse to your install directory and unzip the contents of the beta on top of your Euroscope installation. Overwrite the existing files. 
 
