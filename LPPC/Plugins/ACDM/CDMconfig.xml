@@ -3,7 +3,7 @@
 	<rate ops="23" />
 	<rateLvo ops="13" />
 	<expiredCtot time="15" />
-<ReaMsg minutes="0" />
+	<ReaMsg minutes="0" />
 	<realMode mode="false" />
 	<invalidateAtTsat mode="true" />
 	<Rates url="https://raw.githubusercontent.com/pinatacolada/topskylppc/master/LPPC/Plugins/ACDM/rate.txt" />
