@@ -2,5 +2,5 @@
 #--- LPPC ---#
 LPMA,8
 LPFR,15
-LPPT,20
+LPPT,18
 LPPR,14
