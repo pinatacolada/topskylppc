@@ -394,7 +394,7 @@ Label_No_NRAC=0
 Label_No_TSSR=0
 Label_No_FCOPX=0
 
-List_TfcMgmt1_Via=PESEX,UPKAT
+List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
 List_TfcMgmt2_Via=PILIM,ABUSU
 
 [_W_CTR]
