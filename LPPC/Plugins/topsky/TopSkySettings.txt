@@ -434,7 +434,7 @@ Setup_LoadMap=APPPRT\nortavia
 [LPPT_]
 Window_CPDLC_Current=1,700,25
 Window_CPDLC_Setting=1,900,425
-List_TfcMgmt1_Via=PESEX,UPKAT
+List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
 
 [LPPT_APP]
 Setup_LoadMap=TWRCAS\ext_cntrline_35
