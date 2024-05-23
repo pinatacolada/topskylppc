@@ -143,3 +143,12 @@ ipaddr_local.txt
 VATCANBookings.dll
 Thumbs.db
 LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.synctex(busy)
+.sentry-native/metadata
+.sentry-native/settings.dat
+.sentry-native/69a976be-3f2d-411f-9f65-2f8f4af3ab8b.run/__sentry-breadcrumb1
+.sentry-native/69a976be-3f2d-411f-9f65-2f8f4af3ab8b.run/__sentry-breadcrumb2
+.sentry-native/69a976be-3f2d-411f-9f65-2f8f4af3ab8b.run/__sentry-event
+crashpad_handler.exe
+EuroScopePrepair3DConnector.exe
+sentry.dll
+UnicodeTools.dll
