@@ -152,3 +152,4 @@ crashpad_handler.exe
 EuroScopePrepair3DConnector.exe
 sentry.dll
 UnicodeTools.dll
+.sentry-native/
