@@ -35,7 +35,7 @@ m_InhibitAutoPushOnHandoff:0
 m_RandomSquawks:1
 m_VFRSquawks:7000
 m_WhoIsOnlineURL:http://vatsim.metacraft.com/vatsim-data.txt
-m_AutoLoadMetarForActiveAirports:1
+m_AutoLoadMetarForActiveAirports:0
 m_LockShowRouteWhenAccepting:0
 m_VoiceAtisBuilderUrl:https://atis.vatsim.pt/?metar=$atisairport&rwy=$arrrwy($atisairport)&letter=$atiscode&show_freqs=true&lvp=false
 m_DoNotUseAcceptedColor:0
@@ -132,6 +132,9 @@ m_ConnectTime:15
 m_AutoAssumeOnGroundStateChangeButton:0
 m_ShowTrackMilesInRouteButton:1
 m_FilterOutSquawks:
+m_EquipmentsIcaoFormat:1
+m_DoNotShowMessageHandlersInProxy:0
+m_DoNotShowMessageHandlersInMainIfProxyConnected:0
 PILOTING
 m_Visible:0
 m_X:50
