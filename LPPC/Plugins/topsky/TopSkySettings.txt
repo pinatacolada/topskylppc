@@ -208,7 +208,7 @@ Window_SM_LowestLevel=20
 Window_WxMsgs_MetarRefreshInterval=600
 Window_WxMsgs_TafRefreshInterval=600
 
-Window_Clock=3
+Window_Clock=3,1000,25
 Window_CPDLC_Current=0,700,25
 Window_FlightPlan=0,1412,600
 Window_MsgIn=1,850,957
