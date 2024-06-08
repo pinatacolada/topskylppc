@@ -37,8 +37,6 @@ Airspace_SIGMET_Areas=LPPC
 AIW_FlightRules=1
 AIW_PredictionTime=2
 
-APW_VFR=1
-APW_Buffer_Lat_L_IFR=3
 APW_Buffer_Lat_L_VFR=0
 APW_Buffer_Lat_U=3
 APW_Buffer_Vert_U=2000
@@ -74,6 +72,8 @@ CPDLC_FSM_CLD_Header=CLD <hour><min> <year2><month2><day> <adep2> PDC <number> <
 Divergence_CLAM_DelayTime=30
 Divergence_RAM_Limit=1
 
+Equip_UseCodes=3
+
 FlightLeg_AssumeTime=2
 FlightLeg_AutoShow=1
 FlightLeg_Label_Point=0
@@ -83,6 +83,8 @@ FlightLeg_Label_SCFL=0
 FlightLeg_Potential_Risk=0
 
 FPCP_MinState=0
+
+HTTP_AUP_URL=https://lara.vatsim.pt/api/areas/LP/
 
 HTTP_GRIB_Latitude_Max=45
 HTTP_GRIB_Latitude_Min=30
@@ -95,18 +97,14 @@ HTTP_METAR_Page_Suffix=
 HTTP_METAR_Data_Prefix=(prefix)
 HTTP_METAR_Data_Suffix=(suffix)
 
+HTTP_natTrak_Filter_ADEP_Lon_Min=-22
+
 HTTP_NOTAM_Area_Sched_Text= 
 HTTP_NOTAM_Server=https://eaup.vatsim.pt/api/v1/topsky/areas/LP/notam/
 HTTP_NOTAM_Page_Prefix=?loc=
 HTTP_NOTAM_Page_Suffix=
 
-HTTP_TAF_Server=https://aviationweather.gov/
-HTTP_TAF_Page_Prefix=cgi-bin/data/dataserver.php?requestType=retrieve&dataSource=tafs&stationString=
-HTTP_TAF_Page_Suffix=&hoursBeforeNow=1&format=xml&mostRecentForEachStation=constraint&fields=raw_text
-HTTP_TAF_Data_Prefix=<raw_text>
-HTTP_TAF_Data_Suffix=</raw_text>
-
-Label_ACF_Use=1
+Label_ACF_Use=2
 Label_CompCsCaps=1
 Label_COP_MaxChars=5
 Label_FCOP_MaxChars=3
@@ -155,8 +153,6 @@ SAP_Buffer_Vert_L_VFR=0
 SAP_Buffer_Vert_U=2000
 
 Shortcut_AHDG_NoFixes_Combo=0x00
-Shortcut_XQDM_Combo=0x00
-Shortcut_XQDM=0x00
 Shortcut_Flight_Leg_Combo=0x00
 Shortcut_Flight_Leg=0x00
 
@@ -189,31 +185,38 @@ Track_PredictionLine=2
 
 Vector_MinSep_Label_Time=1
 
-Window_PDC_SetASSR=1
-Window_PDC_SetCFL=1
-
-Window_PDC_SetASSR=1
-Window_PDC_SetCFL=1
-
-Window_ASM=0,200,200,610,270
-Window_ASM_Chars_Name=10
-Window_ASM_Chars_MapText=10
-Window_ASM_Chars_User=10
 Window_ASM_ShowNOTAMasUsertext=0
-
-//Window_CARD_MaxConflicts=15
+Window_ASM_Chars_Name=10
+Window_CARD_MaxConflicts=15
+Window_CARD_View_DownstreamPred=1
 Window_CPDLC_Current_MaxListItems=7
 Window_CPDLC_History_MaxListItems=7
-Window_FlightPlan=0,1412,600
+Window_DCL_SetASSR=1
+Window_DCL_SetCFL=1
 Window_FlightPlan_ShowAlways=1
-
-Window_MsgIn=1,850,957
+Window_Msg_MaxItems=30
 Window_Msg_MaxListItems=7
-Window_SAP=1,1630,885
+Window_Ops_Caution=26
+Window_Ops_Warning=40
+Window_PDC_SetASSR=1
+Window_PDC_SetCFL=1
+Window_PredTfc_Caution=20
+Window_PredTfc_Warning=30
 Window_SAP_MaxListItems=7
+Window_SmallQNHTL_ICAO=LPPT
 Window_SM_LowestLevel=20
-Window_CARD=1,1560,693
+Window_WxMsgs_MetarRefreshInterval=600
+Window_WxMsgs_TafRefreshInterval=600
+
+Window_Clock=3
 Window_CPDLC_Current=0,700,25
+Window_FlightPlan=0,1412,600
+Window_MsgIn=1,850,957
+Window_SAP=1,1630,885
+Window_UpperWinds=1
+
+Window_ASM=0,200,200,610,270
+Window_CARD=1,1560,693
 Window_NOTAM=1,700,300,400
 Window_VAW=0,1610,450
 
