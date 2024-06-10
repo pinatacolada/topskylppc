@@ -84,8 +84,6 @@ FlightLeg_Potential_Risk=0
 
 FPCP_MinState=0
 
-HTTP_AUP_URL=https://lara.vatsim.pt/api/areas/LP/
-
 HTTP_GRIB_Latitude_Max=45
 HTTP_GRIB_Latitude_Min=30
 HTTP_GRIB_Longitude_Max=-5
