@@ -24,7 +24,9 @@ Setup_LoadMap=TWRCAS\pcas_gnss
 
 Airspace_833_Min=0
 Airspace_AOR_Airports=LP
+Airspace_AOR_Airports_Exclude=LPAZ,LPPD,LPLA,LPGR,LPSJ,LPPI,LPHR,LPCR,LPFL
 Airspace_AOR_Positions=LP
+Airspace_AOR_Positions_Exclude=LPPO,LPAZ,LPPD,LPLA,LPHR,LPFL
 Airspace_ASSR_OAT_Remarks=RMK/OAT
 Airspace_ASSR_OAT_Type=0
 Airspace_ASSR_APL_StartCode=3201
