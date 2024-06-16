@@ -104,7 +104,7 @@ HTTP_NOTAM_Server=https://eaup.vatsim.pt/api/v1/topsky/areas/LP/notam/
 HTTP_NOTAM_Page_Prefix=?loc=
 HTTP_NOTAM_Page_Suffix=
 
-Label_ACF_Use=0
+Label_ACF_Use=1
 Label_CompCsCaps=1
 Label_COP_MaxChars=5
 Label_FCOP_MaxChars=3
