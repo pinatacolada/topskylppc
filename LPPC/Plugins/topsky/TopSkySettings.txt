@@ -138,11 +138,9 @@ MTCD_Filter_Dep=3
 MTCD_PLC_Time=5
 
 Rings_Highlight=1
-Rings_HighlightStep=2
 
 RwyAppLines_Length=18
 
-SAP_Buffer_Lat_L_IFR=3
 SAP_Buffer_Lat_L_VFR=0
 SAP_Buffer_Lat_U=3
 SAP_Buffer_Vert_L_IFR=1000
