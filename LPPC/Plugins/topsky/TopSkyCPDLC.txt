@@ -1,5 +1,5 @@
 [DCL]
-DCL:LPPT:SID:CLRD TO <ades> OFF <drwy> VIA <sid> SQUAWK <assr> <atis> <qnh>
+DCL:LPPT:SID:CLRD TO <ades> OFF <drwy> VIA <sid> SQUAWK <assr> <qnh>
 
 [FREETEXT]
 FREETEXT:NE:MESSAGE NOT SUPPORTED BY THIS ATS UNIT
