@@ -203,15 +203,16 @@ Window_SM_LowestLevel=20
 Window_WxMsgs_MetarRefreshInterval=600
 Window_WxMsgs_TafRefreshInterval=600
 
-Window_Clock=3,1000,25
-Window_CPDLC_Current=0,700,25
-Window_FlightPlan=0,1412,600
+Window_Clock=3,1300,25
+Window_CPDLC_Current=0,910,25
+Window_FlightPlan=0,650,400
 Window_MsgIn=1,850,957
-Window_SAP=1,1630,885
-Window_UpperWinds=1
+Window_MsgOut=0,1200,957
+Window_SAP=1,1592,850
+Window_UpperWinds=1,1150,300
 
 Window_ASM=0,200,200,610,270
-Window_CARD=1,1560,693
+Window_CARD=1,1470,600,450,250
 Window_NOTAM=1,700,300,400
 Window_VAW=0,1610,450
 
@@ -226,8 +227,8 @@ Label_DIAS_Unsel_Default=1111
 [_CTR]
 CPDLC_CFL=1
 CPDLC_DCT=1
-Window_CPDLC_Current=1,700,25
-Window_CPDLC_Setting=1,900,425
+Window_CPDLC_Current=1,910,25
+Window_CPDLC_Setting=1,910,425
 
 STCA_Coarse_Sep_Lat_U=5
 STCA_Coarse_Sep_Lat_L=5
@@ -278,13 +279,13 @@ List_TfcMgmt1_Via=ADNOV,AKULU
 Window_SmallQNHTL_ICAO=LPPR
 
 [LPPR_APP]
-Window_CPDLC_Current=1,700,25
-Window_CPDLC_Setting=1,900,425
+Window_CPDLC_Current=1,910,25
+Window_CPDLC_Setting=1,910,425
 Setup_LoadMap=APPPRT\nortavia
 
 [LPPT_]
-Window_CPDLC_Current=1,700,25
-Window_CPDLC_Setting=1,900,425
+Window_CPDLC_Current=1,910,25
+Window_CPDLC_Setting=1,910,425
 List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
 
 [LPPT_APP]
@@ -323,12 +324,12 @@ Window_SmallQNHTL_ICAO=LPFR
 
 [LPFR_APP]
 CPDLC_Default=1
-Window_CPDLC_Current=1,700,25
-Window_CPDLC_Setting=1,900,425
+Window_CPDLC_Current=1,910,25
+Window_CPDLC_Setting=1,910,425
 
 [LPMA_APP]
-Window_CPDLC_Current=1,700,25
-Window_CPDLC_Setting=1,900,425
+Window_CPDLC_Current=1,910,25
+Window_CPDLC_Setting=1,910,425
 
 [LPAM_]
 Setup_LoadMap=ENVR\rivers
