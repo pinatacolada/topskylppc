@@ -173,6 +173,7 @@ System_Oceanic=1
 System_TaxiTime=15
 System_TransferConfirmation=2
 System_Trf_Release=0
+System_UseILScat=1
 System_UseRwyLockedColor=0
 System_UseTSAborderHighlightColor=1
 
