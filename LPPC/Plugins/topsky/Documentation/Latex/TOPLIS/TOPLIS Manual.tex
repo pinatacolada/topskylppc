@@ -8,8 +8,8 @@
 
 \medskip 
 
-Version 2.0}
-\setdocrevision{11}
+Version 2.1}
+\setdocrevision{1}
 
 \begin{document}
 
@@ -383,7 +383,7 @@ A coordination is displayed by coloring the proposed values \colorref{Propositio
 
 \bigskip
 
-To send a PEL (Planned Entry Level) coordination, left-click on the PEL value in the track label or a flight list. This opens a menu to select a value. To send a COPN (Entry Point) coordination, left-click on the COPN value in the track label or a flight list. This opens the \winref{menu:wpt}. Select “Routing”. This opens a menu to select the desired point. The response of the coordination can be a counter-proposal as well, in which case the color of the values remain \colorref{Proposition In}.
+To send a PEL (Planned Entry Level) coordination, left-click on the PEL value in the track label or a flight list. This opens a menu to select a value. To send a COPN (Entry Point) coordination, left-click on the COPN value in the track label or a flight list. This opens the \winref{menu:wpt}. Select “Probe”. This opens a menu to select the desired point. The response of the coordination can be a counter-proposal as well, in which case the color of the values remain \colorref{Proposition In}.
 
 \bigskip
 
@@ -408,7 +408,7 @@ To answer an incoming coordination, left-click on a proposed value or the corres
 
 \begin{tabular}{l l}
   Accept: & Accepted values, sector state color\\
-  Refuse: & Original values, sector state color (due to EuroScope bug, should be \colorref{Warning})\\
+  Refuse: & Original values, sector state color (EuroScope bug, should be \colorref{Warning})\\
   Change: & New proposed values in \colorref{Proposition Out}\\
 \end{tabular}
 
@@ -418,7 +418,7 @@ A coordination is displayed by coloring the proposed values \colorref{Propositio
 
 \bigskip
 
-To send an XFL (Exit Flight Level) coordination, left-click on the XFL value in the track label or a flight list. This opens a menu to select a value. To send a COPX (Exit Point) coordination, left-click on the COPX value in the track label or a flight list. This opens the \winref{menu:wpt}. Select “Routing”. This opens a menu to select the desired point. The response of the coordination can be a counter-proposal as well, in which case the color of the values remain \colorref{Proposition In}.
+To send an XFL (Exit Flight Level) coordination, left-click on the XFL value in the track label or a flight list. This opens a menu to select a value. To send a COPX (Exit Point) coordination, left-click on the COPX value in the track label or a flight list. This opens the \winref{menu:wpt}. Select “Probe”. This opens a menu to select the desired point. The response of the coordination can be a counter-proposal as well, in which case the color of the values remain \colorref{Proposition In}.
 
 \bigskip
 
@@ -443,52 +443,9 @@ To answer an incoming coordination, left-click on a proposed value or the corres
 
 \begin{tabular}{l l}
   Accept: & Accepted values, sector state color\\
-  Refuse: & Original values, sector state color (due to EuroScope bug, should be \colorref{Warning})\\
+  Refuse: & Original values, sector state color (EuroScope bug, should be \colorref{Warning})\\
   Change: & New proposed values in \colorref{Proposition Out}\\
 \end{tabular}
-
-\subsection{Releases}
-
-To communicate a release to the next controller, select the “Trf \& release” option instead of “Transfer” in the \winref{menu:cs} when transferring the aircraft. This opens the \winref{menu:xfrrel} to select the desired release condition. The available choices are “Climb”, “Descent”, “Turn” and “Full”. Selecting an option will start the transfer with the selected release condition.
-
-\bigskip
-
-The release will be displayed on line 0 of the track label (in \colorref{Proposition In} or \colorref{Proposition Out} during the transfer), showing the first letter of the release condition. The example labels below show a Full release:
-
-\bigskip
-
-\begin{longtable}{p{0.45\textwidth} p{0.45\textwidth}}
-  Transferring controller:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Proposition In} F} & {\color{Coordination} }       & {\color{Assumed} }      \\
-  {\color{Proposition In} ABC123} & {\color{Proposition In} IDA}       & {\color{Assumed} }      \\
-  {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
-  {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }     
-\end{tabular}
-&
-
-  Accepting controller:
-
-\begin{tabular}{
-  >{\columncolor{Flight Highlight}}l 
-  >{\columncolor{Flight Highlight}}l
-  >{\columncolor{Flight Highlight}}l }
-  {\color{Proposition In} F} & {\color{Coordination} }       & {\color{Assumed} }      \\
-  {\color{Assumed} ABC123} & {\color{Assumed} IDT}       & {\color{Coordination} }      \\
-  {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
-  {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }     
-\end{tabular}
-\end{longtable}
-
-\bigskip
-
-After the accepting controller assumes the aircraft, the release indicator changes to sector state color. It remains in the transferring controller’s label until it becomes \stateref{Unconcerned}, and in the accepting controller’s label for 3 minutes.
-
-\note{If a release is sent to a controller not using the TopSky plugin, it will only be displayed on your label. To the accepting controller it will look like a normal transfer.}
 
 \subsection{HOP}
 \label{coo:hop}
@@ -581,7 +538,7 @@ The ROF (Request on Frequency) message is sent by the accepting controller to th
 
 \warn{ROF should not be used to request an early handover of a flight. ROF is a coordination tool that is context dependent, using it outside the prescribed scenarios or ir other unintended ways will cause unnecessary confusion.}
 
-To send a ROF message, select the “ROF” option in the \winref{menu:cs} of the aircraft in question. The example label below shows the indications when the message is sent (there are no indications in the accepting controller’s track label):
+To send a ROF message, select the “ROF” option in the \winref{menu:cs} of the aircraft in question. The example labels below show the indications when the message is sent:
 
 
 \begin{longtable}{p{0.45\textwidth} p{0.45\textwidth}}
@@ -609,31 +566,22 @@ To send a ROF message, select the “ROF” option in the \winref{menu:cs} of th
     \item ROF text in \colorref{Proposition Out} color
     \item Message in Message Out Window
   \end{itemize}
+
+  \begin{tabular}{
+    >{\columncolor{Flight Highlight}}l 
+    >{\columncolor{Flight Highlight}}l
+    >{\columncolor{Flight Highlight}}l }
+    {\color{Proposition In} ROF}  & {\color{Coordination} }                 & {\color{Coordination} }      \\
+    {\color{Coordination} ABC123} & {\color{Coordination} IDT}              & {\color{Coordination} }      \\
+    {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
+    {\color{Coordination} 180}    & {\color{Coordination} }                 & {\color{Coordination} }     
+  \end{tabular}
+
 \end{longtable}
 
+The indications are removed when a “Transfer” or “HOP” is performed.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-The indications are removed when a “Transfer”, “Trf \& release” or “HOP” is performed.
-
-\note{If a ROF is sent to a controller not using the TopSky plugin or the message fails to go through, an error message will be put into the Personal Queue Window. The message counter in the Global Menu will be highlighted in \colorref{Warning} color if the window is not open.}
+\note{If a ROF is sent to a controller not using the TopSky plugin or the message fails to go through, an error message will be put into the Personal Queue Window. The message counter in the Global Menu will be highlighted in \colorref{Global Menu Highlight} color if the window is not open.}
 
 \subsection{RTI/TIP}
 \label{coo:rti}\label{coo:tip}
@@ -656,7 +604,7 @@ When the message is sent, the following indications are shown:
   Transferring controller:
 
   \begin{itemize}
-    \item Proposed value in \colorref{Proposition In} color
+    \item Proposed value in \colorref{Negotiation In} color
     \item Message in Message In Window
   \end{itemize}
 
@@ -664,10 +612,10 @@ When the message is sent, the following indications are shown:
     >{\columncolor{Flight Highlight}}l 
     >{\columncolor{Flight Highlight}}l
     >{\columncolor{Flight Highlight}}l }
-    {\color{Proposition In} H360} & {\color{Assumed} }       & {\color{Assumed} }      \\
     {\color{Assumed} ABC123} & {\color{Coordination} IDA}       & {\color{Assumed} }      \\
     {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
-    {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }     
+    {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} } \\
+    {\color{Negotiation In} H360}    & {\color{Assumed} }          & {\color{Assumed} }  \\         
   \end{tabular}
 
   &
@@ -675,7 +623,7 @@ When the message is sent, the following indications are shown:
   Accepting controller:
 
   \begin{itemize}
-    \item Proposed value in \colorref{Proposition Out} color
+    \item Proposed value in \colorref{Negotiation Out} color
     \item Message in Message Out Window
   \end{itemize}
 
@@ -683,23 +631,22 @@ When the message is sent, the following indications are shown:
     >{\columncolor{Flight Highlight}}l 
     >{\columncolor{Flight Highlight}}l
     >{\columncolor{Flight Highlight}}l }
-    {\color{Proposition Out} H360} & {\color{Coordination} }       & {\color{Coordination} }      \\
     {\color{Coordination} ABC123} & {\color{Coordination} IDT}       & {\color{Coordination} }      \\
     {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
-    {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }     
+    {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} } \\
+    {\color{Negotiation Out} H360}    & {\color{Coordination} }          & {\color{Coordination} }  \\        
   \end{tabular}
 \end{longtable}
 
 \bigskip
 
-To answer the message, left-click on the proposed value on line 0. This opens the \winref{menu:ttm}) where you can either accept or reject the proposal. When clicking on “Accept”, the menu closes and the following indications are displayed:
+To answer the message, left-click on the proposed value. This opens the \winref{menu:ahdg}, \winref{menu:asp} or \winref{menu:arc} in a mode where you can either accept or reject the proposal. When clicking on “Ack”, the menu closes and the following indications are displayed:
 
 \begin{longtable}{p{0.45\textwidth} p{0.45\textwidth}}
   Transferring controller:
 
   \begin{itemize}
-    \item Accepted value in sector state color
-    \item Relevant label field value in \colorref{Information} color (until the accepted value is set)
+    \item Relevant label field value in \colorref{Reminder} color (until the accepted value is set)
     \item Message in Message Out Window
   \end{itemize}
   
@@ -707,11 +654,10 @@ To answer the message, left-click on the proposed value on line 0. This opens th
     >{\columncolor{Flight Highlight}}l 
     >{\columncolor{Flight Highlight}}l
     >{\columncolor{Flight Highlight}}l }
-    {\color{Assumed} H360} & {\color{Assumed} }       & {\color{Assumed} }      \\
     {\color{Assumed} ABC123} & {\color{Coordination} IDA}       & {\color{Assumed} }      \\
     {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
     {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }\\     
-    {\color{Information} AHDG}    & {\color{Assumed} }          & {\color{Assumed} }     
+    {\color{Reminder} H360}    & {\color{Assumed} }          & {\color{Assumed} }     
   \end{tabular}
 
   &
@@ -719,8 +665,7 @@ To answer the message, left-click on the proposed value on line 0. This opens th
   Accepting controller:
 
   \begin{itemize}
-    \item Accepted value in sector state color
-    \item Relevant label field value in \colorref{Information} color (until the accepted value is set)
+    \item Relevant label field value in \colorref{Reminder} color (until the accepted value is set)
     \item Message in Message In Window
   \end{itemize}
   
@@ -728,17 +673,16 @@ To answer the message, left-click on the proposed value on line 0. This opens th
     >{\columncolor{Flight Highlight}}l 
     >{\columncolor{Flight Highlight}}l
     >{\columncolor{Flight Highlight}}l }
-    {\color{Coordination} H360} & {\color{Coordination} }       & {\color{Coordination} }      \\
     {\color{Coordination} ABC123} & {\color{Coordination} IDT}       & {\color{Coordination} }      \\
     {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
     {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }  \\   
-    {\color{Information} AHDG}    & {\color{Coordination} }          & {\color{Coordination} }  \\   
+    {\color{Reminder} H360}    & {\color{Coordination} }          & {\color{Coordination} }  \\   
   \end{tabular} 
 \end{longtable}
 
 \bigskip
 
-When the accepted value has been set (either by going back to the Tactical Transfer menu and selecting “Apply” or setting the value some other way), the label field returns to the sector state color.
+When the accepted value has been set, the label field returns to the sector state color. When replying to an RTI message, the menu also includes an “Accept” option which, in addition to accepting the coordination, also immediately sets the value. While the coordinated value is being shown in the label field, it is possible to display the currently set value temporarily by hovering the mouse cursor over the label and keeping the <ALT> key pressed.
 
 \bigskip
 
@@ -758,10 +702,10 @@ On the other hand, if “Reject” is chosen, the menu closes the indications ar
     >{\columncolor{Flight Highlight}}l 
     >{\columncolor{Flight Highlight}}l
     >{\columncolor{Flight Highlight}}l }
-    {\color{Warning} H360} & {\color{Assumed} }       & {\color{Assumed} }      \\
     {\color{Assumed} ABC123} & {\color{Coordination} IDA}       & {\color{Assumed} }      \\
     {\color{Assumed} 100}    & {\color{Assumed} $\blacktriangle$} & {\color{Assumed} TROIA} \\
-    {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }\\         
+    {\color{Assumed} 180}    & {\color{Assumed} }          & {\color{Assumed} }\\  
+    {\color{Warning} H360} & {\color{Assumed} }       & {\color{Assumed} }      \\       
   \end{tabular}
 
   &
@@ -777,22 +721,22 @@ On the other hand, if “Reject” is chosen, the menu closes the indications ar
     >{\columncolor{Flight Highlight}}l 
     >{\columncolor{Flight Highlight}}l
     >{\columncolor{Flight Highlight}}l }
-    {\color{Warning} H360} & {\color{Coordination} }       & {\color{Coordination} }      \\
     {\color{Coordination} ABC123} & {\color{Coordination} IDT}       & {\color{Coordination} }      \\
     {\color{Coordination} 100}    & {\color{Coordination} $\blacktriangle$} & {\color{Coordination} TROIA} \\
     {\color{Coordination} 180}    & {\color{Coordination} }          & {\color{Coordination} }  \\     
+    {\color{Warning} H360} & {\color{Coordination} }       & {\color{Coordination} }      \\
   \end{tabular}
 \end{longtable}
 
 \bigskip
 
-A rejected coordination value will be removed from the label after 60 seconds.
+A rejected coordination value will be removed from the label after 60 seconds or by right-clicking the value.
 
 \note{If an RTI or TIP is sent to a controller not using the TopSky plugin or the message fails to go through, an error message will be put into the Personal Queue Window. The message counter in the Global Menu will be highlighted if the window is not open.}
 
 \subsection{Coordinating more than one value}
 
-It is possible to coordinate more than one value, either before or after the previous proposal has been answered. It is important to note that the label field on line 0 will only show the last proposal or answer. Regardless of this, all the relevant label fields will have the \colorref{Information} color for accepted but not yet set values.
+It is possible to coordinate more than one value, either before or after the previous proposal has been answered. However, if more than one proposal is active, clicking on “Ack” or “Reject” to one will send the same answer to all of them. Therefore, it is recommended to wait for an answer until sending another proposal unless the intention of the proposal is to get “all or nothing”.
 
 \bigskip
 
@@ -804,7 +748,7 @@ TopSky stores some data in the flight strip annotation boxes (the group of nine 
 
 \bigskip
 
-TopSky needs to be able to use four of the nine boxes for its functions. They are the boxes in the bottom row as well as the right-most box in the center row, marked with X’s in the picture below. Do not manually edit those boxes or use them to store any other data. The other boxes, marked by minus signs, are currently not used by TopSky in any way.
+TopSky needs to be able to use three of the nine boxes for its functions. They are the boxes marked with X’s in the picture below. Do not manually edit those boxes or use them to store any other data. The other boxes, marked by minus signs, are currently not used by TopSky in any way.
 
 \capdimage{img/strip.png}{Unusable flight strip boxes}
 
