@@ -52,6 +52,7 @@ Areas_Label_Font=Lucida Sans Unicode
 Areas_Label_FontSize=12
 Areas_Label_UserText=0,0
 Areas_PreActiveTime=1800
+Areas_AUP_UserText=MIL
 
 Color_Active_Map_Type_3=132,142,139	//D GREY
 Color_Active_Map_Type_6=90,90,90	//INFILL GREY
@@ -200,7 +201,7 @@ Window_PredTfc_Caution=20
 Window_PredTfc_Warning=30
 Window_SAP_MaxListItems=7
 Window_SmallQNHTL_ICAO=LPPT
-Window_SM_LowestLevel=20
+Window_SM_LowestLevel=30
 Window_WxMsgs_MetarRefreshInterval=600
 Window_WxMsgs_TafRefreshInterval=600
 
