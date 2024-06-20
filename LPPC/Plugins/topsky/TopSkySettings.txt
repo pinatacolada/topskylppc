@@ -45,6 +45,7 @@ APW_Buffer_Vert_U=2000
 APW_Buffer_Vert_L_IFR=1000
 APW_Buffer_Vert_L_VFR=0
 APW_PredictionTime=120
+APW_Uncontrolled=0
 APW_WarningTime=120
 APW_WarningTime_Imm=110
 
