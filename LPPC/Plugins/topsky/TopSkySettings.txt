@@ -110,16 +110,16 @@ Label_SI_FreqTime=5
 Label_SI_ShowFreq=1
 Label_WTC_Highlight_WTC=J
 
-Label_WTC_Default=1100
+Label_AHDG_Default=1100
+Label_AMA_Default=1100
+Label_ASP_Default=1100
 Label_GS_Default=1100
-Label_NRAC_Default=0000
-Label_XFL_Default=0000
-Label_AHDG_Default=0000
-Label_ASP_Default=0000
-Label_PEL_Default=0000
 Label_NPT_Default=1100
+Label_NRAC_Default=0000
 Label_OFL_Default=0000
-Label_AMA_Default=0000
+Label_RFL_Default=0000
+Label_WTC_Default=1100
+Label_XFL_Default=1100
 
 List_ETWR_ADEP=LPPT,LPPR,LPFR,LPMA
 List_VFR_FPL_Area=42.2955958,-9.2532349,32.7503226,-17.9956055,32.0453328,-16.6882324,36.9520867,-7.2207642,38.182069,-6.9213867,38.4836948,-7.2015381,38.9893026,-6.8719482,39.4446776,-7.0532227,40.1704789,-6.7730713,41.0337871,-6.6467285,41.463312,-6.1468506,41.9431487,-5.9793091,42.2955958,-9.2532349
@@ -237,14 +237,6 @@ STCA_LinPred_Sep_Lat_U=4.5
 STCA_LinPred_Sep_Lat_L=4.5
 STCA_CurrProx_Sep_Lat_U=4.75
 STCA_CurrProx_Sep_Lat_L=4.75
-
-Label_GS_Default=0000
-Label_NRAC_Default=0000
-Label_XFL_Default=1100
-Label_AHDG_Default=1100
-Label_ASP_Default=1100
-Label_OFL_Default=1100
-Label_AMA_Default=0000
 
 List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
 List_TfcMgmt2_Via=PILIM,ABUSU
