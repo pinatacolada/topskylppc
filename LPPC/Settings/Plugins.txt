@@ -46,7 +46,7 @@ TopSky plugin:ACList/HOLDING LIST/m_Column_6:ETO:4:0:10036:0:0:1:TopSky plugin::
 TopSky plugin:ACList/LOAD/m_Visible:0
 TopSky plugin:ACList/LOAD/m_X:476
 TopSky plugin:ACList/LOAD/m_Y:869
-TopSky plugin:ACList/LOAD/m_LineNumber:10
+TopSky plugin:ACList/LOAD/m_LineNumber:20
 TopSky plugin:ACList/LOAD/m_Resizable:1
 TopSky plugin:ACList/LOAD/m_OrderingColumn:4
 TopSky plugin:ACList/LOAD/m_Column_0: C/S:10:0:10021:6:0:1:TopSky plugin:TopSky plugin:
@@ -65,7 +65,7 @@ TopSky plugin:ACList/LOAD/m_Column_12:STATE:8:0:3:13:0:0:Ground Radar plugin:Gro
 TopSky plugin:ACList/Resectorisation List/m_Visible:0
 TopSky plugin:ACList/Resectorisation List/m_X:773
 TopSky plugin:ACList/Resectorisation List/m_Y:49
-TopSky plugin:ACList/Resectorisation List/m_LineNumber:20
+TopSky plugin:ACList/Resectorisation List/m_LineNumber:15
 TopSky plugin:ACList/Resectorisation List/m_Resizable:1
 TopSky plugin:ACList/Resectorisation List/m_OrderingColumn:1
 TopSky plugin:ACList/Resectorisation List/m_Column_0: C/S:10:0:10021:6:0:1:TopSky plugin:TopSky plugin:
@@ -74,7 +74,7 @@ TopSky plugin:ACList/Resectorisation List/m_Column_2:C:1:0:10104:132:0:1:TopSky 
 TopSky plugin:ACList/Sector List/m_Visible:1
 TopSky plugin:ACList/Sector List/m_X:4
 TopSky plugin:ACList/Sector List/m_Y:49
-TopSky plugin:ACList/Sector List/m_LineNumber:20
+TopSky plugin:ACList/Sector List/m_LineNumber:15
 TopSky plugin:ACList/Sector List/m_Resizable:1
 TopSky plugin:ACList/Sector List/m_OrderingColumn:3
 TopSky plugin:ACList/Sector List/m_Column_0:U:2:0:10043:3:0:0:TopSky plugin:TopSky plugin:
