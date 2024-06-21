@@ -919,7 +919,7 @@ As the messages take significant amount of time to get through (receiving a repl
 
 \bigskip
 
-The messages are grouped to dialogs, with an opening message and subsequent replies. Some messages do not need a reply, while for others a specific reply is expected. The available replies are set automatically, so only the correct type of reply can be sent.
+The messages are grouped to dialogues, with an opening message and subsequent replies. Some messages do not need a reply, while for others a specific reply is expected. The available replies are set automatically, so only the correct type of reply can be sent.
 
 \subsubsection{Allowed message types}
 \label{cpdlc:amt}
@@ -1048,7 +1048,7 @@ This example shows a level request.
 
 \bigskip
 
-The aircraft has sent a level request for FL200. The value is shown in the PRFL (Pilot Requested Level) field in brackets and in \colorref{CPDLC DM Request} 
+The aircraft has sent a level request for FL200. The value is shown in the RFL field in brackets and in \colorref{CPDLC DM Request} color:
 
 \bigskip
 
@@ -1063,7 +1063,26 @@ The aircraft has sent a level request for FL200. The value is shown in the PRFL 
 
 \bigskip
 
-The responses to a level request are sent using the \winref{menu:cfl}, which offers the possibilities to respond with “STANDBY”, “UNABLE” or a level clearance. In the last case the sequence then changes to an \textit{\titleref{cpdlc:ucs}}.
+The responses to a level request are sent using the \winref{menu:rfl} or \winref{menu:cfl}. The \winref{menu:rfl} offers the possibilities to respond with “STANDBY” or “UNABLE”, the \winref{menu:cfl} with a level clearance (to the requested level or some other level). In this case the sequence then changes to an uplink clearance – see above for details.
+
+\bigskip
+
+If a free text CPDLC message is received from the aircraft, “CPDLC MSG” will be inserted above the label in \colorref{CPDLC DM Request} color:
+
+\bigskip
+
+\begin{tabular}{
+  >{\columncolor{Flight Highlight}}l 
+  >{\columncolor{Flight Highlight}}l
+  >{\columncolor{Flight Highlight}}l }
+  {\color{CPDLC DM Request} CPDLC MSG} & & \\
+  {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
+  {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\   
+\end{tabular}
+
+\bigskip
+
+Left-clicking on the warning will clear it and close all related dialogues. Right-clicking will open the \winref{win:dlcmw}.
 
 \subsubsection{Free Text Messages}
 \label{cpdlc:freetext}
@@ -1096,7 +1115,7 @@ As with DCL messages, the most likely failure scenario is TopSky misinterpreting
 
 \bigskip
 
-If TopSky has temporarily lost contact with the CPDLC server, “CPDLC COMM FAIL” will be inserted in line 0 of the labels of all CPDLC connected aircraft in \colorref{CPDLC Failed}
+If TopSky has temporarily lost contact with the CPDLC server, “CPDLC FAIL” will be inserted in line 0 of the labels of all CPDLC connected aircraft in \colorref{CPDLC Failed} color.
 
 \bigskip
 
@@ -1104,7 +1123,7 @@ If TopSky has temporarily lost contact with the CPDLC server, “CPDLC COMM FAIL
   >{\columncolor{Flight Highlight}}l 
   >{\columncolor{Flight Highlight}}l
   >{\columncolor{Flight Highlight}}l }
-  {\color{CPDLC Standby} CPDLC COMM FAIL} & & \\
+  {\color{CPDLC Standby} CPDLC FAIL} & & \\
   {\color{Assumed} [ABC123]} & {\color{Coordination} IDA} & \\
   {\color{Assumed} 100} & {\color{Assumed} $\blacktriangle$} & \\
   {\color{Assumed} 180} & & \\         
