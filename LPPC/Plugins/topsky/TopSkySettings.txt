@@ -139,6 +139,8 @@ MSAW_PredictionTime=120
 MTCD_Filter_Dep=3
 MTCD_PLC_Time=5
 
+RDF_Mode=-1
+
 Rings_Highlight=1
 
 RwyAppLines_Length=18
