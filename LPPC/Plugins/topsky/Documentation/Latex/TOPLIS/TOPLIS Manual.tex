@@ -2667,7 +2667,7 @@ On initialization TopSky will load the \winref{menu:global} on top, \winref{list
 \label{menu:global}
 \capdimage{img/globalmenu.png}{Global Menu}
 
-The Global Menu is located on the top edge of the radar screen. It displays the current UTC time and contains a number of submenus which are explained below.
+The Global Menu is located on the top edge of the radar screen. It displays the current UTC time (left-clicking opens the \winref{win:clock}) and contains a number of submenus which are explained below.
 
 \subsection{Setup Menu}
 \label{menu:set}
@@ -2675,27 +2675,24 @@ The Global Menu is located on the top edge of the radar screen. It displays the 
 
 Setup Menu allows for various adjustments. Each position will load its defined settings based on the active Primary Frequency.
 
-Most used options are CPDLC Setting for CPDLC operations and Default Setting to reset options.
+Most used options are CPDLC Setting for CPDLC operations and Default Settings to reset options.
+
+Personal settings can be defined in \texttt{\detokenize{TopSky_Developer_Guide_Settings.xlsx}} (see the Developer Guide).
 
 \begin{longtable}{p{5cm} p{7.5cm}}
-  Unit Settings > & Opens the \winref{menu:unitset}\\
-  Default Setting & Resets all settings to their default values (keeps login callsign specific ones if they are active at the time). When clicked, a confirmation window will open, asking to confirm the reset.\\
-  Local Settings > & Opens the \winref{menu:localset}\\
-  Brightness Control > & Opens the \winref{win:bcw}\\
-  Sign In… & Loads personal settings. The settings are specified in the \texttt{\detokenize{TopSkySettingsLocal.txt}} data file. When clicked, a confirmation window will open, asking to confirm the settings change.\\
-  Sign Out… & Clears any personal settings and resets all settings to their default values. When clicked, a confirmation window will open, asking to confirm the settings change.\\
-  CPDLC Setting… & Opens the \winref{win:dls}\\
-  FPASD & Toggles on/off the display of flight plan tracks\\
-  PDC Audible alarm & Toggles on/off playing a sound for received PDC messages\\
-  CPDLC Audible alarm & Toggles on/off playing a sound for received CPDLC messages\\
-  STCA Audible alarm & Toggles on/off playing a sound for STCA alerts\\
-  APW Audible alarm & Toggles on/off playing a sound for APW alerts\\
-  AMID & Not implemented\\
-  Flight Leg & Toggles on/off the automatic display of the Flight Leg for a specified time when a track becomes assumed\\
-  DAPs in Menus & Toggles on/off the display of DAPs in menus\\
-  DAPs in Labels & Toggles on/off the display of DAPs in track labels\\
-  RR Main > & Opens the RR Main submenu\\
-  Direction Finder > & Opens the Direction Finder submenu\\
+  Weather Map           & Not installed.\\ 
+  Unit Settings >       & Opens the \winref{menu:unitset}\\
+  Default Setting       & Resets all settings to their default values (keeps login callsign specific ones if they are active at the time). When clicked, a confirmation window will open, asking to confirm the reset.\\
+  Local Settings >      & Opens the \winref{menu:localset}\\
+  Brightness Control >  & Opens the \winref{win:bcw}\\
+  Sign In…              & Loads personal settings (done automatically at startup).\\
+  Sign Out…             & Clears any personal settings and resets all settings to their default values.\\ 
+  AMID                  & Not implemented.\\ 
+  CFL                   & Opens the \winref{menu:cflsm}\\
+  Flight Leg            & Opens the \winref{menu:flsm}\\
+  FPASD                 & Toggles on/off the display of flight plan tracks\\
+  CPDLC Setting…        & Opens the \winref{win:dls}\\
+  RR Main >             & Opens the RR Main submenu\\
 \end{longtable}
 
 \subsection*{Unit Settings submenu}
