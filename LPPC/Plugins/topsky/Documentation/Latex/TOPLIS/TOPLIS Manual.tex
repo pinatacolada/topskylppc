@@ -2695,7 +2695,7 @@ Personal settings can be defined in \texttt{\detokenize{TopSky_Developer_Guide_S
   RR Main >             & Opens the RR Main submenu\\
 \end{longtable}
 
-\subsection*{Unit Settings submenu}
+\subsubsection{Unit Settings submenu}
 \label{menu:unitset}
 
 This submenu can be used to change the units used in TopSky. Any changes to the settings are session specific only, so they will be lost when exiting EuroScope.
@@ -2723,50 +2723,75 @@ This submenu can be used to change the units used in TopSky. Any changes to the 
     \end{itemize}\\
 \end{longtable}
 
-\subsection*{Local Settings submenu}
+\subsubsection*{Local Settings submenu}
 \label{menu:localset}
 
-This submenu allows changing some of TopSky’s settings. Any changes to the settings are session-
-specific only, so they will be lost when exiting EuroScope.
-\medskip
+This submenu allows changing some of TopSky’s settings. Any changes to the settings are session specific only, so they will be lost when exiting EuroScope.
+
+\bigskip
 
 \begin{longtable}{p{5cm} p{7.5cm}}
-  Vertical reference      & Selects the pressure reference to be used at or below the transition altitude:\\                          & \hspace{10pt}• QNH Altitude above mean sea level\\                          & \hspace{10pt}• QFE Height above the aerodrome elevation\\                          & (set/check it in the adjacent box)\\
-  Used equipment codes    & Selects whether to use or disregard the equipment codes found in the flight plans:\\                          & \hspace{10pt}• All Use all codes\\                          & \hspace{10pt}• ICAO Use all codes when specified in ICAO format\\                          & \hspace{10pt}• ICAO-alt As ICAO, but force transponder to report altitude\\                          & \hspace{10pt}• None Disregard all codes\\
-  ASSR codes              & Selects the transponder code source:\\                          & \hspace{10pt}• Plugin Plugin data file (reverts to ESE if no codes found)\\                          & \hspace{10pt}• ESE ESE file\\                          & \hspace{10pt}• Range Fixed code range\\
+  Vertical reference      & Selects the pressure reference to be used at or below the transition altitude:\\      & \hspace{10pt}• QNH Altitude above mean sea level\\                          & \hspace{10pt}• QFE Height above the aerodrome elevation\\                                                 & (set/check it in the adjacent box)\\
+  Used equipment codes    & Selects whether to use or disregard the equipment codes found in the flight plans:\\  & \hspace{10pt}• All Use all codes in both ICAO and FAA formats\\             & \hspace{10pt}• ICAO Use all codes when specified in ICAO format\\                                         & \hspace{10pt}• FAA Use codes when specified in FAA format\\                          & \hspace{10pt}• None Disregard all codes\\ & \hspace{10pt}Selects specific capabilities to be taken into account:\\ & \hspace{10pt}• R RNAV capability\\ & \hspace{10pt}• PBN PBN string from FPL remarks\\ & \hspace{10pt}• W RVSM capability\\ & \hspace{10pt}• Y 8.33 kHz capability\\ & \hspace{10pt}• AltRptg Transponder altitude reporting capability\\ & \hspace{10pt}• Mode S Transponder mode S capability\\ & \hspace{10pt}• EHS Mode S enhanced surveillance capability\\ & \hspace{10pt}• FLTID Mode S flight ID downlink capability\\ & When taking into account a specific capability is deselected, all aircraft are assumed to have it. This inhibits track label alerts and also affects safety net processing. \\
+  ASSR codes              & Selects the transponder code source:\\                                                & \hspace{10pt}• Plugin Plugin data file (reverts to ESE if no codes found)\\ & \hspace{10pt}• ESE ESE file\\                                                                             & \hspace{10pt}• Range Fixed code range\\
   Groundspeed             & Selects whether to use pilot client reported ground speed or a plugin calculated value. Normally the reported value should be used as it is more accurate and stable, but some clients report wrong values. If that causes problems, you can try selecting TopSky calculated value instead\\ 
-  Transfer confirmation   & Selects when to display the Transfer Confirmation Window:\\                          & \hspace{10pt}• On Always when CFL is not equal to XFL\\                          & \hspace{10pt}• NotRFL When CFL is not equal to XFL unless XFL = RFL\\                          & \hspace{10pt}• Off Never, any CFL value is OK\\
-  CFL menu default value  & Selects the default value for the CFL menu when it is opened:\\                          & \hspace{10pt}• XFL FSS or CTR: RFL if not yet reached, otherwise as below\\                          & \hspace{10pt}• Other: The XFL value, or current CFL value with no XFL\\                          & \hspace{10pt}• CFL The current CFL value\\                          & \hspace{10pt}• RFL The RFL value\\
+  Transfer confirmation   & Selects when to display the Transfer Confirmation Window:\\                           & \hspace{10pt}• On Always when CFL is not equal to XFL\\                     & \hspace{10pt}• NotRFL When CFL is not equal to XFL unless XFL = RFL\\                                     & \hspace{10pt}• Off Never, any CFL value is OK\\
+  CFL menu default value  & Selects the default value for the CFL menu when it is opened:\\                       & \hspace{10pt}• Auto CTR: RFL if not yet reached, otherwise as below\\       & \hspace{40pt} Other: The XFL value, or current CFL value -1000ft with no XFL\\                                   & \hspace{10pt}• CFL The current CFL value\\                          & \hspace{10pt}• RFL The RFL value\\
   FPCP inhibit            & FPCP calculations start when tracks are within this time from entering active sector\\
-  STCA alert              & Selects which aircraft display the STCA alert:\\                          & \hspace{10pt}• All All aircraft\\                          & \hspace{10pt}• Own+Co Only \stateref{Assumed} and \stateref{Coordinated} aircraft\\                          & \hspace{10pt}• Own Only \stateref{Assumed} aircraft\\
-  STCA alert sound        & Selects which STCA alerts trigger the alert sound:\\                          & \hspace{10pt}• All All alerts\\                          & \hspace{10pt}• Own+Co Only alerts with \stateref{Assumed} and \stateref{Coordinated} aircraft involved\\                          & \hspace{10pt}• Own Only alerts with \stateref{Assumed} aircraft involved\\
-  APW alert               & Selects which aircraft display the APW alert:\\                          & \hspace{10pt}• All All aircraft\\                          & \hspace{10pt}• Own+Co Only \stateref{Assumed} and \stateref{Coordinated} aircraft\\                          & \hspace{10pt}• Own Only \stateref{Assumed} aircraft\\
-  APW alert sound         & Selects which STCA alerts trigger the alert sound:\\                          & \hspace{10pt}• All All alerts\\                          & \hspace{10pt}• Own+Co Only alerts for \stateref{Assumed} and \stateref{Coordinated}\\                          & aircraft\\                          & \hspace{10pt}• Own Only alerts for \stateref{Assumed} aircraft\\
+  STCA alert              & Selects which aircraft display the STCA alert:\\                                      & \hspace{10pt}• All All aircraft\\                                           & \hspace{10pt}• Own+Co Only \stateref{Assumed} and \stateref{Coordinated} aircraft\\                       & \hspace{10pt}• Own Only \stateref{Assumed} aircraft\\
+  STCA alert sound        & Selects which STCA alerts trigger the alert sound:\\                                  & \hspace{10pt}• All All alerts\\                                             & \hspace{10pt}• Own+Co Only alerts for \stateref{Assumed} or \stateref{Coordinated} aircraft           \\  & \hspace{10pt}• Own Only alerts with \stateref{Assumed} aircraft \\
+  APW alert               & Selects which aircraft display the APW alert:\\                                       & \hspace{10pt}• All All aircraft\\                                           & \hspace{10pt}• Own+Co Only \stateref{Assumed} and \stateref{Coordinated} aircraft\\                       & \hspace{10pt}• Own Only \stateref{Assumed} aircraft\\
+  APW alert sound         & Selects which STCA alerts trigger the alert sound:\\                                  & \hspace{10pt}• All All alerts\\                                             & \hspace{10pt}• Own+Co Only alerts for \stateref{Assumed} and \stateref{Coordinated}\\                     & aircraft\\                          & \hspace{10pt}• Own Only alerts for \stateref{Assumed} aircraft\\ & \hspace{10pt}• Off No alert sound\\
   METAR source            & Selects the METAR data source for TopSky windows that display METAR data\\
-  FPASD filter            & Allows filtering of displayed FPASD tracks based on sector state\\                          & \hspace{10pt}• Coord Display tracks at least in the \stateref{Coordinated} state\\                          & \hspace{10pt}• Conc Display tracks at least in the \stateref{Notified} state\\                          & \hspace{10pt}• None Display all tracks\\
+  FPASD filter            & Allows filtering of displayed FPASD tracks based on sector state\\                    & \hspace{10pt}• Coord Display tracks at least in the \stateref{Coordinated} state\\                          & \hspace{10pt}• Conc Display tracks at least in the \stateref{Notified} state\\                          & \hspace{10pt}• None Display all tracks\\
 \end{longtable}
 \medskip
 
-\subsection*{RR Main submenu}
+\subsubsection{CFL submenu}\label{menu:cflsm}
+
+\begin{longtable}{p{5cm} p{7.5cm}}
+  Reduced   & The reduced length CFL menu is used   \\
+  Extended  & The extended length CFL menu is used  \\
+\end{longtable}
+
+\subsubsection{Flight Leg submenu}\label{menu:flsm}
+
+\begin{longtable}{p{5cm} p{7.5cm}}
+  Assumed             & Automatically displays Flight Leg when track is assumed   \\
+  Potential Predicted & Displays potential predicted conflicts on flight leg  \\
+  Potential Risk      & Displays potential risks of conflicts on flight leg  \\
+\end{longtable}
+
+\subsubsection{RR Main submenu}
 \label{menu:rr}
 
 \begin{longtable}{p{5cm} p{7.5cm}}
-  Rings On/Off   & Toggles the range rings on/off                                 \\
-  Point             & Sets the rings centerpoint. Either click on the radar screen or enter the desired point in the text field. Fixes, VORs, NDBs and airports from the active sector file can be used as well as coordinates in the flight plan format (DD[N/S]DDD[E/W] or DDMM[N/S]DDDMM[E/W], e.g. 60N025E or 0811S00300W). Entering an empty text string resets the rings to be shown at the radar screen centerpoint.\\
+  Rings On/Off      & Toggles the range rings on/off                                 \\
+  Point             & Sets the rings centerpoint.                                 \\
   Separation        & Sets the separation between adjacent rings                  \\
   Number            & Sets the number of rings drawn                              \\
-  Highlight      & Toggles highlight (drawn with solid line) of specified rings   \\
+  Highlight         & Toggles highlight (drawn with solid line) of specified rings   \\
   Step              & Sets interval of highlighted rings                          \\
 \end{longtable}
 
-\subsection*{Direction Finder submenu}
+The rings centerpoint can be set either by clicking on the radar screen or entering the desired point in the text field. Fixes, VORs, NDBs and airports from the active sector file can be used as well as coordinates in the flight plan format (DD[N/S]DDD[E/W] or DDMM[N/S]DDDMM[E/W], e.g. 60N025E or 0811S00300W). Entering an empty text string resets the rings to be shown at the radar screen centerpoint.
 
-Not operational.
+\subsection{AMS menu}\label{menu:ams}
 
-\subsection{AMS menu}
-\label{menu:ams}
+\begin{longtable}{p{5cm} p{7.5cm}}
+  TSA…  & Opens the \winref{win:amw}. \\
+  NAT   & Opens the \winref{menu:natsm}. \\
+\end{longtable}
 
-Opens the \winref{win:amw}.
+\subsubsection{NAT submenu}\label{menu:natsm}
+
+\begin{longtable}{p{5cm} p{7.5cm}}
+  Eastbound Map  & Toggles display of eastbound tracks map. \\
+  Westbound Map  & Toggles display of westbound tracks map. \\
+  NAT List…      & Opens the \winref{win:natlw}. \\
+\end{longtable}
+
+Opening the NAT submenu triggers downloading the NAT Track Message which is then updated hourly. The tracks extracted from the messages can be displayed on the radar screen. Any named waypoints in the tracks that cannot be found in the active sector file are just skipped so the displayed tracks may not be accurate. 
 
 \subsection{FData menu}
 \label{menu:fdata}
@@ -2780,14 +2805,13 @@ Opens the \winref{win:fpsw} and \winref{win:fpw}.
   Flight Plan Lists >   & Opens the \winref{menu:fplists}\\
   CARD…                 & Opens the \winref{win:card}    \\
   SAP…                  & Opens the \winref{win:sap}     \\
-  Vertical Aid Window…  & Opens the \winref{win:vaw}     \\
   Message In…           & Opens the \winref{win:miw}     \\
   Message Out…          & Opens the \winref{win:mow}     \\
+  Shortcut…             & Opens the \winref{win:short}   \\
   CPDLC >               & Opens the CPDLC submenu        \\
-  LAT/LONG…             & Opens the \winref{win:latlon}  \\
 \end{longtable}
 
-\subsection*{Flight Plan Lists submenu}
+\subsubsection{Flight Plan Lists submenu}
 \label{menu:fplists}
 
 \begin{longtable}{p{5cm} p{7.5cm}}
@@ -2818,7 +2842,7 @@ Opens the \winref{win:fpsw} and \winref{win:fpw}.
   <via>                       & Traffic Management List 2 route points filter                  \\
 \end{longtable}
 
-When enabled, the list options bar displays “Info Conc Redu Filter Filter” on the right edge of the \winref{menu:global}. The first three toggle the respective settings for the \winref{list:sector} and are colored with the appropriate color when enabled, and the last two are displayed in \colorref{VFR} color when the corresponding \winref{list:uncon} are somehow filtered. Clicking on them opens the \winref{menu:fplists} to change the filtering options.
+When enabled, the list options bar displays “Info Conc Redu Filter Filter” on the right edge of the \winref{menu:global}. The first three toggle the respective settings for the \winref{list:sector} and are colored with the appropriate color when enabled, and the last two are displayed in \colorref{Redundant} color when the corresponding \winref{list:uncon} are somehow filtered. Clicking on them opens the \winref{menu:fplists} to change the filtering options.
 
 \bigskip
 
@@ -2836,7 +2860,7 @@ Left-clicking <lfunc>, <adep>, <ades> and <via> open text entry boxes to enter c
 
 Left-clicking <state> toggles between “ALL” (no filtering), “SIMUL+TERM” (not started flight plans filtered), “NOTST+SIMUL” (terminated flight plans filtered) and “SIMUL” (not started and terminated flight plans filtered).
 
-\subsection*{CPDLC submenu}
+\subsubsection{CPDLC submenu}
 \label{menu:cpdlc}
 
 \begin{longtable}{p{5cm} p{7.5cm}}
@@ -2849,13 +2873,14 @@ Left-clicking <state> toggles between “ALL” (no filtering), “SIMUL+TERM”
 \label{menu:met}
 
 \begin{longtable}{p{5cm} p{7.5cm}}
-- Messages… & Opens the \winref{win:wxmw}\\
-- QNH/TL    & Opens the \winref{win:qnhtl}\\
+- Messages…       & Opens the \winref{win:wxmw}\\
+- Upper Winds…    & Opens the \winref{win:uww}\\
+- Airfield Data…  & Opens the \winref{win:addw}\\
 \end{longtable}
 
 \subsection{[0]}
 
-Not implemented (always shows a zero value).
+Shows the number of received SIGMET messages. The number is limited to 99, and is shown on \colorref{Global Menu Highlight} background when not zero and the \winref{win:wxmw} is not open. Left-clicking the number will open the \winref{win:wxmw} with the SIGMET option selected.
 
 \subsection{Info menu}
 \label{menu:info}
@@ -2864,7 +2889,7 @@ Not implemented (always shows a zero value).
   General Information…      & Opens the \winref{win:geninfo}\\
   Document Viewer…          & Opens the \winref{win:dvw}\\
   NOTAM…                    & Opens the \winref{win:notamlw}\\
-  Aerodrome…                & Opens the \winref{menu:ad}\\
+  Small QNH/TL…             & Opens the \winref{win:sqtw}\\
   LFUNC Frequency Plan…     & Opens the \winref{win:lfunc}\\
   Airport labels            & Toggles airport labels selection\\
   Fix labels                & Toggles fix labels selection\\
@@ -2884,7 +2909,6 @@ When holding <ALT>, text labels will be displayed for airports, fixes, NDBs and 
   Personal Queue…       & Opens the \winref{win:pqw}\\
   ATC Messages…         & Opens the \winref{win:atcmw}\\
   Prim Freq Messages…   & Opens the \winref{win:pfmw}\\
-  NAT Track Messages…   & Opens the \winref{win:nattmw}\\
   Text notes >          & Opens the Text notes submenu\\
 \end{longtable}
 
@@ -2900,7 +2924,7 @@ When creating a note, a text entry field opens to enter the note text. When the 
 
 The notes can be deleted one by one or all of them at the same time. When deleting one by one, the notes are boxed to display their click areas. Clicking on one will delete the note. Pressing the [Esc] key or selecting the “Delete...” menu item again will abort the operation.
 
-\subsection*{Text notes submenu}
+\subsubsection{Text notes submenu}
 \label{menu:tnm}
 
 \begin{longtable}{p{5cm} p{7.5cm}}
@@ -2920,8 +2944,12 @@ High priority messages are critical failures in TopSky code. Low priority messag
 
 \bigskip
 
-Open the \winref{win:pqw} to view the messages or see \winref{menu:status} for more detailed information on the problem(s). The number is limited to 99, and is shown on \colorref{Global Menu Highlight} background when the window is not open.
- 
+Open the \winref{win:pqw} to view the messages or see \winref{menu:status} for more detailed information on the problem(s). The number is limited to 99, and is shown on \colorref{Global Menu Highlight} background when not zero and the window is not open.
+
+\bigskip
+
+Left-clicking the number opens the \winref{win:pqw}.
+
 \subsection{STS menu}
 \label{menu:sts}
 
@@ -2930,14 +2958,18 @@ Plugin Status >                & Opens the \winref{menu:status}\\
 Safety Nets Status…            & Opens the \winref{win:snsw}\\
 Divergence Detection Status…   & Opens the \winref{win:ddsw}\\
 MTCD Status…                   & Opens the \winref{win:mtcdsw}\\
+FPCA Status…                   & Opens the \winref{win:fpcasw}\\
 CPDLC Default Status           & Toggles the CPDLC Default Status On/Off\\
 Runway In Use                  & Opens the \winref{menu:ad}\\
-Supervisory >                  & Opens the \winref{menu:super}\\
 RWY line display…              & Opens the \winref{menu:ad}\\
+Supervisory >                  & Opens the \winref{menu:super}\\
+Flow Management…               & Opens the \winref{win:atfmw}\\
+Current Operational Load…      & Opens the \winref{win:colw}\\
+Operational Load Forecast…     & Opens the \winref{win:olfw}\\
 \end{tabular}
 \medskip
 
-\subsection*{Plugin Status submenu}
+\subsubsection{Plugin Status submenu}
 \label{menu:status}
 Shows the version of TopSky as well as some information on the loaded data files. Each data file reports its state with one of the following indicators:
 
@@ -2975,7 +3007,7 @@ Depending on the maps data file setup, the display state of some or all of the m
 
 Right-clicking the Reload button for Settings \& SettingsL has a special purpose. It opens a text entry box to type in a callsign whose settings should be loaded instead of the real login callsign. When entered, the callsign will be displayed next to the “Reload” button, and whenever a VATSIM callsign change is detected, an information popup is displayed to remind that TopSky settings are still forced to the manually entered callsign. This feature can be used for example to use settings for different positions on different EuroScope instances when providing top-down services, or to use settings for a specific position when logged in with an observer/staff/supervisor callsign. Clearing the entered callsign reverts to using the settings based on the actual login callsign.
 
-\subsection*{Supervisory submenu}
+\subsubsection{Supervisory submenu}
 \label{menu:super}
 
 \begin{tabular}{l l}
@@ -2995,14 +3027,15 @@ Opens the \winref{menu:rr}. If the rings are selected on,
 \subsection{Mxxx-yyy}
 \label{menu:mfil}
 
-Displays the status of the filters. If any filter is enabled and Quick Look is not toggled on, the color of the text is \colorref{Global Menu Highlight}.
+Displays the status of the altitude filters for the Main Radar Window. If enabled and Quick Look is not toggled on, the color of the text is \colorref{Global Menu Highlight}. “xxx” displays the Lower filter value and “yyy” the Upper filter value, in hundreds of feet.
 
 \bigskip
 
-Only the altitude filter status is shown. “xxx” displays the Lower filter value and “yyy” the Upper filter value, in hundreds of feet.
+Left-clicking the item opens the \winref{win:afw}.
 
 \subsection{S000-999}
-Not implemented (shows static values).
+
+Displays the status of the altitude filters for the Secondary Radar Window (not implemented, shows static values)
 
 \section{Aircraft Position Symbol}
 
