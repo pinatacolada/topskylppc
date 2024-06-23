@@ -3041,32 +3041,19 @@ Displays the status of the altitude filters for the Secondary Radar Window (not 
 
 The position symbol is drawn at the latest known position of the aircraft. The color of the symbol is the flight sector color for an unselected track and \colorref{Track Highlight} for a selected one.
 
-\bigskip
-
-\begin{center}
-  \begin{minipage}[b]{0.14\textwidth}\end{minipage}\hfill 
-  \begin{minipage}[b]{0.14\textwidth}\capdimage{img/rps_psr.png}{Primary radar track}\end{minipage}\hfill 
-  \begin{minipage}[b]{0.14\textwidth}\capdimage{img/rps_ssr_con.png}{Controlled Secondary or Combined radar track}\end{minipage}\hfill  
-  \begin{minipage}[b]{0.14\textwidth}\capdimage{img/rps_ssr_unc.png}{Uncontrolled Secondary or Combined radar track}\end{minipage}\hfill 
-  %\begin{minipage}[b]{0.14\textwidth}\capdimage{img/rps_adsb.png}{ADS-B only track}\end{minipage}\hfill
-  \begin{minipage}[b]{0.14\textwidth}\capdimage{img/rps_spi.png}{Special Position Indication (Ident)}\end{minipage}\hfill
-  \begin{minipage}[b]{0.14\textwidth}\end{minipage}\hfill 
-\end{center}  
-
-\bigskip
+\begin{figure}[H]
+  \centering
+  \includegraphics[max height=0.80\textheight,max width=0.80\textwidth]{img/tracks.png}
+  \caption{Track Symbology}
+\end{figure}
 
 If a surveillance track does not receive position updates in over 30 seconds it becomes a Coasted track, position is no longer reliable.
 
-\capdimage{img/rps_coast.png}{Coasted track}
-
 If a Coasted track does not receive position updates for long enough, or it has originated outside of surveillance coverage, it becomes a FPASD track. FPASD tracks are not based on surveillance data but estimated based on Flight Plan data.
 
-\capdimage{img/rps_fpasd.png}{FPASD track}
+\bigskip
 
-Except for the FPASD and Coasted tracks, a divergence alert will be drawn in case of a RAM
-or CLAM alert. This is a circle drawn around the symbol. Tracks with SPI active will not display this symbol.
-
-\capdimage{img/rps_divalert.png}{Uncontrolled Secondary radar track with divergence alert}
+Except for the FPASD and Coasted tracks, a divergence alert will be drawn in case of a RAM or CLAM alert. This is a circle drawn around the symbol. Tracks with SPI active will not display this symbol.
 
 \subsection{History dots}
 
@@ -3074,11 +3061,31 @@ The history dots show the previous positions of the track. The number of display
 
 \subsection{Prediction Line}
 
-The prediction line draws the predicted ground track of the aircraft, based on its current track and ground speed. It is a two-color line, starting with \colorref{Track Default} at the position symbol and then alternating with \colorref{Track Highlight} with every segment representing one minute of flying time. 
+The prediction line draws the predicted ground track of the aircraft, based on its current track and ground speed. It is a two-color line, starting with \colorref{Track Default} at the position symbol and then alternating with \colorref{Track Highlight}, with every segment representing one minute of flying time. 
 
 The default lenght of the prediction line is 2 minutes, and can be changed for all tracks via the \winref{win:tcw}, or for a single track via the \winref{menu:prl}. Prediction lines are not displayed for flight plan tracks.
 
 \capdimage{img/rps_predline+history_selected.png}{Selected track with 5 history dots and a 3-minute prediction line}
+
+\subsection{Track filtering}\label{win:tf}
+
+For all the filters, it is only possible to filter out \stateref{Unconcerned} tracks. Aircraft with transponder codes 7500, 7600 and 7700 and tracks with an active STCA, MSAW, APW or DUPE alert are also excluded from filtering. If a filter is active, the filter title in the Radar Menu will be shown in \colorref{Selected} color.
+
+\bigskip
+
+All filters, with the exception of the CJI filter, remove all components of the tracks, nothing remains visible. The CJI filter leaves the track position symbol and history dots visible.
+
+The filters can be overridden using the Quick Look (all filters), Quick Look Up/Down (altitude filter only) and Individual Quick Look (CJI filter only) functions.
+
+\bigskip
+
+For more details regarding filtering functions, see:
+
+\begin{itemize}
+  \item \winref{win:afw}
+  \item \winref{win:cji}
+  \item \winref{win:ssr}
+\end{itemize}
 
 \section{Track Labels}
 \label{tlabel}
@@ -3086,6 +3093,10 @@ The default lenght of the prediction line is 2 minutes, and can be changed for a
 There are four types of track labels that can be displayed: Standard, Reduced, Extended and Uncoupled.
 
 In addition, each label except the extended one has an unselected and a selected state, the selected state being shown when the mouse cursor is over the label.
+
+\bigskip
+
+The unselected Standard and Reduced labels can be minimized to display only some of their contents. When a label is minimized, the Callsign item is prefixed with a “<” to serve as a reminder.
 
 \subsection{Standard Track Label}
 \label{tlabel:std}
@@ -3123,7 +3134,7 @@ The Standard label is shown for aircraft that are in or will enter the active se
 
 \subsection{Reduced Track Label}
 
-The Reduced label for aircraft that will not enter the active sector. Flights in Free, Initial, Notified or Unconcerned are automatically displayed with a Reduced Track Label. 
+The Reduced label is shown for uncontrolled, unconcerned and notified tracks.
 
 \label{tlabel:red}
 
@@ -3987,7 +3998,7 @@ To answer the RTI/TIP, left-click on the requested parameter on line 0 of the tr
 
 \subsection{AHDG Vector}
 \label{menu:ahdgv}
-The AHDG vector is another way of setting an assigned heading for an aircraft. To use the vector, left-click on the radar position symbol of the aircraft. This will start drawing the vector. When you’re satisfied with the heading value, left-click again to set it. Right-clicking will abort drawing the vector.
+The AHDG vector is a way of setting an assigned heading for an aircraft. To use the vector, left-click on the radar position symbol of the aircraft. This will start drawing the vector. When you’re satisfied with the heading value, left-click again to set it. Right-clicking will abort drawing the vector.
 
 \bigskip
 
@@ -4558,7 +4569,7 @@ Other window-specific mouse function areas are explained below. All functions us
 \capdimage{img/radarmenu.png}{Radar Menu}
 
 \begin{longtable}{p{5cm} p{7.5cm}}
-    Radar Menu          & Toggles keeping the menu permanently displayed\\
+    Radar Menu          & Locks/unlocks the menu display\\
     Vector On/Off       & Toggles all prediction lines on/off\\
     QDM                 & Starts a new \winref{tool:qdm}\\
     SEP                 & Starts a new \winref{tool:mst}\\
@@ -4571,33 +4582,34 @@ Other window-specific mouse function areas are explained below. All functions us
     SSR Filter X…       & Opens the \winref{win:ssr}, displays the filter status\\
     CJI Filter X…       & Opens the \winref{win:cji}, displays the filter status\\
     LAT/LONG…           & Opens the \winref{win:latlon}\\
-    Find Track          & Not implemented\\
+    Find Track          & Opens the \winref{menu:ssrc} for the \winref{func:ft}\\
     Scale Marker        & Toggles the Scale Marker on/off\\
-    Direction Finder    & Toggles the Direction Finder position circles or lines on/off\\
 \end{longtable}
 
 \bigskip
 
-The Radar Menu closes when a selection is made or the mouse cursor leaves the menu area (unless the “Radar Menu” option is selected on).
-
-\bigskip
-
-For all the filters, it is only possible to filter out \stateref{Unconcerned} tracks. Aircraft with transponder codes 7500, 7600 and 7700 and tracks with an active STCA, MSAW, APW or DUPE alert are also excluded from filtering. If a filter is active, the filter title in the Radar Menu will be shown in \colorref{Selected} color.
+When unlocked, the Radar Menu closes when a selection is made or the cursor leaves the menu area.
 
 \subsection{QDM Vector}
 \label{tool:qdm}
 
 To draw a new QDM vector:
+
 \begin{itemize}
-    \item Left-click on the “QDM” menu item
-    \item Left-click on the desired start point (radar track or fixed position)
-    \item Left-click on the desired end point (radar track or fixed position)
+    \item Left-click on the “QDM” \winref{menu:radarm} item, or;
+    \item Left-click on the “QDM” \winref{menu:cs} item, or;
+    \item Use the keyboard shortcut key combination for a new QDM vector.
 \end{itemize}
+
+Then, left-click on the desired start point (radar track or fixed position), and then left-click on the desired end point (radar track or fixed position).
+
+The start point is automatically set to the radar position symbol of the track when starting the vector from the callsign menu
 
 \bigskip
 
-The vector’s data label is located at the end of the line. The available click spots for a radar track are the radar track position symbol and all its label items that have a mouse function.
-The line end positions will attach to defined points more easily than for a random position (there is a small click area centered on the defined points). The defined points are the following, and are searched in this order:
+The vector’s data label is located at the end of the line. Its position relative to the line end can be adjusted by middle-clicking the line end or the label itself. The available click spots for a radar track are the radar track position symbol and all its label items that have a TopSky plugin left-click mouse function.
+
+The line end positions will attach to defined points more easily than for a random position (there is a small click area centered on the defined points). The defined points have the following priority order:
 
 \begin{itemize}
     \item Radar track position symbols
@@ -4610,10 +4622,13 @@ The line end positions will attach to defined points more easily than for a rand
 \bigskip
 
 Right-clicking will abort drawing the vector.
+
+\bigskip
+
 To remove a QDM vector:
 
 \begin{itemize}
-    \item Right-click on either end point of the line (midpoint of the line for lines between two radar tracks)
+    \item Right-click on either end point or the midpoint of the line or the label
 \end{itemize}
 
 \bigskip
@@ -4621,9 +4636,17 @@ To remove a QDM vector:
 To adjust a QDM vector:
 
 \begin{itemize}
-    \item Left-click on either end point. The selected end of the line will then attach to the mouse cursor.
+    \item Left-click on either end point. The selected end of the line will attach to the mouse cursor.
     \item Left-click on the new desired end point (radar track or fixed position)
 \end{itemize}
+
+\subsection{Multi-QDM vector}
+
+When the start point of a QDM vector is a fixed point and the end point a track, the system automatically starts another QDM vector from the same start point. If it is attached to another track, the vectors are grouped together as a multi-QDM, and another vector is again automatically started from the same start point. This happens until the right mouse button is clicked to abort drawing a new vector (or the maximum number of QDM vectors is reached).
+
+\bigskip
+
+The advantage of the multi-QDM vectors is that when hovering over a track label of one of the tracks, a relative distance indication is added to the labels of all other vectors belonging to the same multi-QDM group, showing in parentheses the difference in the distance value compared to the selected track.
 
 \subsection{Scale Marker}
 \label{scale}
@@ -4656,7 +4679,7 @@ The minimum separation distance is by default displayed near the end of one of t
 
 \bigskip
 
-7 sets of lines can be simultaneously drawn (plus one from the \winref{win:card}). When at least one set is drawn, a SEP List Window is opened:
+7 sets of lines can be simultaneously drawn. When at least one set is drawn, a SEP List Window is opened:
 
 \bigskip
 
@@ -4683,21 +4706,17 @@ To lock/unlock a set of lines:
 
 \bigskip
 
-To display vertical separation information on the lines:
+To display vertical separation information on the lines, right-click on the colored box.
 
-\begin{itemize}
-    \item Right-click on the colored box for a set of lines to enable vertical separation display.
-    \item Right-click again to hide the vertical separation labels
-    \item Right-click once again to disable the vertical separation display
-\end{itemize}
+Right-clicking on the colored box for a set of lines cycles through:
 
-\bigskip
+\begin{longtable}{p{5cm} p{7.5cm}}
+  "V"   & Vertical separation display enabled\\
+  "v"   & Vertical separation display enabled without the vertical separation labels\\
+  blank & Vertical separation display disabled\\
+\end{longtable}
 
-The letter “V” is shown inside the box when activated (“v” when labels have been hidden), and on both lines, two points are displayed, the first showing the point where the tracks’ vertical separation is calculated to become smaller than an offline-defined value, and the second the point after that where it is calculated to become greater. 
-
-\bigskip
-
-The calculation is done using the tracks’ current vertical speeds.
+When vertical separation display is enabled, on both lines two points are displayed, the first showing the point where the tracks’ vertical separation is calculated to become smaller than an offline-defined value, and the second the point after that where it is calculated to become greater. The calculation is done using the tracks’ current vertical speeds.
 
 \begin{itemize}
     \item The vertical separation labels, when displayed, are similar to the minimum separation label but prefixed with “V”.
@@ -4799,6 +4818,7 @@ The “All” buttons toggle all the state buttons for that field on/off.
 \bigskip
 
 Regardless of the settings here, the necessary label fields will be displayed in certain cases (for example in case of a COPX coordination request, the COPX field will be displayed).
+
 
 \subsection{Altitude Filtering Window}
 \label{win:afw}
@@ -6180,9 +6200,10 @@ path is colored according to the results of the \winref{tool:MTCD} and \winref{t
 \bigskip
 
 \begin{longtable}{p{2.5cm} p{10cm}}
-\colorref{Urgency FL}      & MTCD and/or SAP conflic\\
-\colorref{Warning FL}      & MTCD and/or SAP risk\\
-\colorref{Potential FL}    & MTCD potential conflict\\
+\colorref{Urgency FL}      & MTCD conflict or potential predicted conflict, SAP conflic\\
+\colorref{Warning FL}      & MTCD risk, SAP risk\\
+\colorref{Potential FL}    & MTCD potential risk\\
+\colorref{Conflict Ack FL} & MTCD acknowledged conflict\\
 \colorref{Information FL}  & MTCD and/or SAP processing available, no conflicts or risks detected\\
 \colorref{Flight Leg}      & No MTCD or SAP processing available for this part of the Flight Leg\\
 \end{longtable}
@@ -6201,7 +6222,11 @@ manually toggled off, depending on the function that was used to display it.
 
 \bigskip
 
-The label that’s shown on each route point includes the following predefined fields
+The Flight Leg line is one pixel thick, except when it is showing only SAP conflicts (opened from the SAP Window) or showing also MTCD information (any conflicting aircraft legs). In that case the FLEG for the referenced flight is three pixels thick and the possible other FLEGs one pixel thick.
+
+\bigskip
+
+The label that’s shown on each route point includes the following predefined fields:
 
 \bigskip
 
