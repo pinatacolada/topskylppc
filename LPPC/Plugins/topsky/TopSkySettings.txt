@@ -154,6 +154,8 @@ SAP_Buffer_Vert_U=2000
 Shortcut_AHDG_NoFixes_Combo=0x00
 Shortcut_Flight_Leg_Combo=0x00
 Shortcut_Flight_Leg=0x00
+Shortcut_Quick_Look_Down_Combo=0x00
+Shortcut_Quick_Look_Up_Combo=0x00
 
 STCA_Coarse_PredictionTime=135
 STCA_Coarse_Sep_Vert_L=900
