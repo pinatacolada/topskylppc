@@ -3938,19 +3938,15 @@ If the parameters are unacceptable to the receiving controller, the sending cont
 
 \warn{If a HOP is sent to a manually selected controller, the next controller selection will be reset to the automatically calculated controller when an “ROF” or “Accept” answer is received. The correct controller must then be manually selected again for the transfer.}
 
-\subsection{Request Tactical Instructions (RTI) / Tactical Instructions Proposal (TIP)}
-\label{win:rti}
-\label{win:tip}
+\subsection{Request Tactical Instructions (RTI) / Tactical Instructions Proposal (TIP)}\label{win:rti}\label{win:tip}
 
-Certain tactical data (AHDG, ASP and ARC) can be coordinated using the \winref{coo:rti} functions. Their only difference is that RTI is used for requesting the parameters when the aircraft is inbound to your sector and your sector is the next in the sector sequence, and TIP to propose the parameters to the next sector when the aircraft is assumed. Contrary to the \winref{win:hop} function, these coordinations can be refused using the system, and they do not offer the aircraft for transfer.
+Certain tactical data (AHDG, ASP and ARC) can be coordinated using the \winref{coo:rti} functions. Their only difference is that RTI is used for requesting the parameters when the aircraft is inbound to your sector and your sector is the next in the sector sequence, and TIP for proposing the parameters to the next sector when the aircraft is assumed. Contrary to the \winref{win:hop} function, these coordinations can be refused using the system, and they do not offer the aircraft for transfer.
 
-\bigskip
+\capdimage{img/rti.png}{TIP Menu during ongoing AHDG coordination}
 
-When sent, the RTI/TIP is displayed on both controllers’ screens by displaying the requested parameter on line 0 of the track label in \colorref{Proposition In} color.
+To answer the RTI/TIP, open the \winref{menu:ahdg}. For TIP, the menu contains just two options, “Ack” (accept proposal) and “Reject” (reject proposal). For RTI, an additional “Accept” option is available. Like “Ack”, it accepts the proposal, but it also sets the value. For CPDLC connected flights, the “R/T” and “CPDLC” options are used to determine whether the clearance is to be sent as a CPDLC message or using RTF.
 
-\bigskip
-
-To answer the RTI/TIP, left-click on the requested parameter on line 0 of the track label or the corresponding message in the \winref{win:miw}. This will open the \winref{menu:ttm}.
+\warn{It is possible to have received more than one type (AHDG/ASP/ARC) of RTI/TIP. When answering one of them, the same answer will be sent to all the others as well. When selecting the “Accept” option, only that type’s value will be set (for example when AHDG and ASP RTI have been received and selecting “Accept” from the AHDG menu, both RTIs will be accepted but only the AHDG value will be set accordingly, and ASP value will have to be set separately)}
 
 \warn{The “RTI” and “TIP” messages are features specific to this plugin. They are experimental features not guaranteed to work all the time. When you send these messages, check that they are sent properly.
 
