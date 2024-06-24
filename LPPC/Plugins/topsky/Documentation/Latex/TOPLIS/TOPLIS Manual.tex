@@ -4755,21 +4755,15 @@ The Zoom Window displays and enables to change the radar screen range.
 
 \capdimage{img/mapsmenu.png}{Maps Windows}
 
-The Maps Window closes when the mouse cursor leaves the window area. If this is not desired, there is a
-hidden click spot in the top right corner of the menu (where the “close” button would be). Left-clicking in
-that area will disable the automatic closure of the menu and display the close button, which is then used to
-close the menu.
+The Maps Window closes when the mouse cursor leaves the window area. If this is not desired, there is a hidden click spot in the top right corner of the menu (where the “close” button would be). Left-clicking in that area will disable the automatic closure of the menu and display the close button, which is then used to close the menu.
 
 \bigskip
 
-The Maps Window enables the display of predefined maps on the radar screen, some of which may be set
-up with automatic activation rules. The maps are arranged to folders. Clicking on a folder name shows the
-maps in that folder below the folder list.
+The Maps Window enables the display of predefined maps on the radar screen, some of which may be set up with automatic activation rules. The maps are arranged to folders. Clicking on a folder name shows the maps in that folder below the folder list.
 
 \bigskip
 
-The map names are displayed with the following colors (automatic options only available for maps with
-that capability):
+The map names are displayed with the following colors (automatic options only available for maps with that capability):
 
 \bigskip
 
@@ -4796,7 +4790,7 @@ Right-clicking in the other direction. Left or right double-clicking on any map 
 
 \bigskip
 
-The Track Control Window is used to set track and track label related options. Note that the PRL/Vector selection must be on in the Radar Menu to see the prediction lines. The Track Control Window closes when the mouse cursor leaves the window area. The selections are specific to the radar screen they are made on but whenever TopSky settings are reloaded either automatically (sign in/out, login callsign change when signed in) or manually the selections on all radar screens will revert to the default values.
+The Track Control Window is used to set track and track label related options. Note that the “Vector” selection must be on (see Radar Menu/Shortcut Window) to see the prediction lines. The Track Control Window closes when the mouse cursor leaves the window area. The selections are specific to the radar screen they are made on, but whenever the plugin settings are reloaded either automatically (sign in/out, login callsign change when signed in) or manually the selections on all radar screens will revert to the default values.
 
 \capdimage{img/trackctl.png}{Track Control Window}
 
@@ -4823,6 +4817,8 @@ Regardless of the settings here, the necessary label fields will be displayed in
 \subsection{Altitude Filtering Window}
 \label{win:afw}
 
+\winref{menu:global} -> “Mxxx-yyy” item 
+
 \winref{menu:radarm} -> Altitude Filter [ON/OFF]...
 
 \bigskip
@@ -4842,15 +4838,19 @@ To set the filtering limits, values from -1200ft to FL660 are available with 100
 
 \capdimage{img/cji.png}{CJI Filtering Window}
 
-The CJI Filtering Window closes when the mouse cursor leaves the window area.
-
-\bigskip
-
 The CJI Filtering Window is used to filter the displayed track labels based on controller ID’s. The window shows the currently online controllers. To filter a controller’s tracks, click on the controller ID in the list. A filtered ID will be shown in inverse video.
 
 \bigskip
 
-Clicking “All” will filter all controllers, and clicking “None” will clear all controller ID filters.
+Clicking “All” filters all controllers, “None” clears all controller ID filters.
+
+\bigskip
+
+The CJI Filtering Window closes when the mouse cursor leaves the window area.
+
+\bigskip
+
+The “Uncoup labels” button controls filtering for uncoupled labels (this function is available also in Shortcut Window).
 
 \subsection{SSR Code Filtering Window}
 \label{win:ssr}
@@ -4874,6 +4874,27 @@ All changes to the window must be applied using the buttons in the bottom of the
     Apply   & Applies the changes\\
     Cancel  & Cancels the changes\\
 \end{longtable}
+
+\subsection{Quick Look}
+\label{win:qlook}
+
+\winref{menu:radarm} - > “Quick Look” button
+
+\winref{win:short} -> “Quick Look” button 
+
+\winref{func:short}
+
+\bigskip
+
+The Quick Look function can be used to override all filters. It is a toggle function and will stay active until toggled off.
+
+\subsubsection{Individual Quick Look}
+
+Middle-click aircraft position symbol
+
+\bigskip
+
+The Individual Quick Look function can be used to override the CJI filter for a specific track and to display labels for uncoupled primary tracks which are normally automatically hidden. It is a toggle function, middle-clicking again will hide the labels again.
 
 \subsection{Brightness Control Window}
 \label{win:bcw}
@@ -6236,7 +6257,7 @@ The label that’s shown on each route point includes the following predefined f
 \image{img/fltod.png}   & Top of Descent\\
 \end{longtable}
 
-\section{Keyboard Shortcuts}
+\section{Keyboard Shortcuts}\label{func:short}
 
 Some TopSky functions can be accessed using a keyboard shortcut. The available shortcuts and their keys are:
 
@@ -6244,7 +6265,7 @@ Some TopSky functions can be accessed using a keyboard shortcut. The available s
   <ALT+F> & Open FPL Window for the selected flight              \\
   <ALT+E> & Open FPL Selection Window                            \\
   <ALT+Q> & Start new QDM line                                   \\
-  <ALT+U> & Inhibit active filters for 5 seconds (Quick Look)    \\
+  <ALT+U> & Inhibit active filters (Quick Look)    \\
   <ALT+S> & Start a new minimum separation line                  \\
   <ALT+C> & Reposition cursor at the center of the radar screen  \\  
   \caption{keyboard Shortcuts}  
