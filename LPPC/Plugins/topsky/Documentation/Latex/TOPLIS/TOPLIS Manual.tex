@@ -3872,21 +3872,21 @@ For CPDLC connected aircraft, if a level request has been received from the airc
 
 \capdimage{img/ahdg.png}{AHDG Menu}
 
-This menu includes items to set or clear an assigned heading or a direct route and to send a HOP. The initially highlighted heading value will be the closest one to the assigned heading if the aircraft has one, otherwise the closest one to the aircraft ground track, or the departure runway heading if the menu is opened from the \winref{list:dep}. Clicking on a heading value will set it as the assigned heading. The assigned heading can also be set by typing it into the entry box, using the pop-up keyboard or by using the AHDG vector.
+This menu includes items to set or clear an assigned heading or a direct route and to send a HOP. The initially highlighted heading value will be the closest one to the assigned heading if the aircraft has one, otherwise the closest one to the aircraft ground track, or the departure runway heading if the menu is opened from the \winref{list:dep}. Clicking on a heading value will set it as the assigned heading. The assigned heading can also be set by typing it into the entry box or by using the AHDG vector.
 
 \bigskip
 
-“Clear” removes an assigned heading or a direct route. For CPDLC connected aircraft, it sends the “RESUME OWN NAVIGATION” CPDLC message if the “CPDLC” option is selected.
+"LLZ” enters a localizer clearance.
 
 \bigskip
 
-“Point” lets you pick a direct-to point from the radar screen. Left-click on any point to set it as the direct-to point (available points are VORs, NDBs and waypoints, in that priority order). Pressing the [Esc] key or clicking on any clickable data field will abort the operation.
+The “More” folder contains the following additional options:
 
-\bigskip
-
-“HOP”, “RTI” and “TIP” are coordination functions (see \winref{win:hop}, \winref{win:rti}). To use them, first click on the function’s button and then select the desired value from the list (for HOP also “Point” is available).
-
-\bigskip
+\begin{itemize}
+  \item “Point” lets you pick a direct-to point from the radar screen. Left-click on any point to set it as the direct-to point (VORs, NDBs and waypoints, in that priority order). Pressing the [Esc] key or clicking on any clickable data field will abort the operation;
+  \item “HOP”, “RTI” and “TIP” are coordination functions (see \winref{win:hop}, \winref{win:rti}). To use them, first click on the function’s button and then select the desired value from the list (for HOP also “Point” is available);
+  \item “Clear” removes an assigned heading or a direct route. For CPDLC connected aircraft, it sends the “RESUME OWN NAVIGATION” CPDLC message if the “CPDLC” option is selected.
+\end{itemize}
 
 \capdimage{img/ahdgdl.png}{CPDLC AHDG Menu}
 
@@ -3896,7 +3896,7 @@ For CPDLC connected aircraft, the menu contains additional buttons:
 
 \bigskip
 
-“R/T” and “CPDLC” select whether a heading/direct-to clearance is to be sent via radio or as a CPDLC message.
+“R/T” and “CPDLC” select whether a heading/direct-to clearance is to be sent using R/T or as a CPDLC message.
 
 \bigskip
 
