@@ -3815,31 +3815,32 @@ Regardless of whether the entered value is an altitude or height, it will be con
 \label{menu:cfl}
 \capdimage{img/cfl.png}{CFL Menu}
 
-In the track label the CFL menu is combined with the COPN altitude coordination menu and the CFL menu opens only when the aircraft is assumed. The default value is by default the XFL, but it can be changed to the current CFL or the RFL in the \winref{menu:localset}. Altitudes up to the transition altitude are prefixed with “A” in the nautical units list and with “M” in the metric units list. QFE heights are prefixed with “E” in both lists. Selectable values are from 500ft to FL650 with 500ft intervals up to the transition altitude, then 1000ft intervals up to FL410 and 2000ft intervals above it. 
+The CFL menu is available only when the aircraft is assumed. The default value is by default the XFL, but it can be changed to the current CFL or the RFL in the \winref{menu:localset}. Altitudes up to the transition altitude are prefixed with “A”, QFE heights are prefixed with “E”. Selectable values are from 500ft to FL650 with 500ft intervals up to the transition altitude, then 1000ft intervals up to FL410 and 2000ft intervals above it. 
 
 \bigskip
 
-“Visual App” / “VA” and “Clear for App” / “CA” set the corresponding approach clearances.
+The aircraft’s RFL is displayed above the level list with format “R<RFL>”. Left-clicking it sets the CFL equal to RFL.
 
 \bigskip
 
-The list units can be toggled with the “NAUTICAL” / “METRIC” item. There are three ways to set the CFL using this menu:
+“VA”, “CA”, “CAT2” and “CAT3” set the corresponding approach clearances.
+
+\bigskip
+
+“Probe” toggles a CFL probe function and displays the Flight Leg. Moving the mouse cursor over the levels in the list will show the MTCD/SAP effects of setting that value as the CFL (allow a couple of seconds for the FPCP to update the calculations).
+
+\bigskip
+
+There are four ways to set the CFL using this menu:
 
 \bigskip
 
 \begin{itemize}
-        \item Clicking a level value in the list or one of the two approach clearance items
-        \item Clicking the text entry box between the level list and the approach clearance item and entering the value there
-        \item Clicking the right-pointing triangle to open a keyboard that can be used to type in the value using the mouse. “C” clears the entry and “Ok” sets the value.
+        \item Clicking the RFL value;
+        \item Clicking a level value in the list;
+        \item Clicking one of the approach clearance items;
+        \item Clicking the text entry box at the bottom of the menu and entering the value there.
 \end{itemize}
-
-\bigskip
-
-Entering a metric value will set the aircraft’s units to metric; a nautical value will set nautical units.
-
-\bigskip
-
-The aircraft’s RFL is displayed in the place of the “NAUTICAL”/”METRIC” item with format “R<RFL>”. Left-clicking the button still has the same effect (changes the displayed units).
 
 \capdimage{img/cfldl.png}{CPDLC CFL Menu}
 
@@ -3847,15 +3848,11 @@ For CPDLC connected aircraft, the menu contains “R/T” and “CPDLC” option
 
 \bigskip
 
-If a level request has been received from the aircraft, there are also “SBY” and “UNABLE” buttons to send those messages as a reply.
+When a level request downlink has been received, the “R/T” option is deselected and cannot be selected. The request must be replied to using CPDLC. A clearance to the requested or some other level is given using this menu. The “STANDBY” and “UNABLE” responses are sent from the RFL menu.
 
 \bigskip
 
-- When a level request downlink has been received, the “R/T” option is deselected and cannot be selected. The request must be replied to using CPDLC.
-
-\bigskip
-
-- When a level clearance uplink has been sent, the “CPDLC” option is deselected and cannot be selected. If a new level clearance must be sent before there is an answer to the uplink, it must be given via radio (doing so also closes the open uplink message).
+When a level clearance uplink is waiting for reply, the “CPDLC” option is deselected and cannot be selected. If a new level clearance must be sent before there is an answer to the uplink, it must be given using R/T (doing so also closes the open uplink message).
 
 \subsection{RFL Menu}
 \label{menu:rfl}
