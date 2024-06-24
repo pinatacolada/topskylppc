@@ -3857,7 +3857,15 @@ When a level clearance uplink is waiting for reply, the “CPDLC” option is de
 \subsection{RFL Menu}
 \label{menu:rfl}
 
-The RFL menu allows setting the requested flight level. The operation is similar to the AFL and CFL menus. The function for the “NEXT” button is not implemented.
+\capdimage{img/rfl.png}{RFL Menu}
+
+The RFL menu allows setting the requested flight level. The operation is similar to the AFL and CFL menus. The function for the "-->" button is not implemented.
+
+\bigskip
+
+\capdimage{img/rfldl.png}{RFL Menu during ongoing downlinked request}
+
+For CPDLC connected aircraft, if a level request has been received from the aircraft, there are also “SBY” and “UNABLE” buttons to send those messages as a reply. For clearing the aircraft to the requested or some other level, the CFL menu must be used.
 
 \subsection{AHDG Menu}
 \label{menu:ahdg}
