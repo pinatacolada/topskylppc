@@ -3516,14 +3516,15 @@ The following Label Compaction rules are in place:
 
 \section{Track Label Menus}
 
-These menus are opened from track label fields or flight lists. Except for the confirmation windows, they are closed automatically when a menu option is chosen or the mouse cursor leaves the menu area. Menu items shown with (X) represent an item that has an activated and a deactivated state. With the item activated, the item name is shown prefixed with the letter “X”. The mouse wheel can be used to scroll the selection lists in the menus.
+These menus are opened from track label fields or flight lists. Except for the confirmation windows, they are closed automatically when a menu option is chosen or the mouse cursor leaves the menu area. The mouse wheel can be used to scroll the selection lists in the menus.
 
 \bigskip
 
 Many of the menus have a default item or value, displayed with inverse video. The menu usually opens so that the default value is located under the mouse cursor for easy selection. Some menus contain items that open folders within the menu. They show a filled triangle before the item name (upright if the folder is closed, inverted if the folder is open). The “More” folder is opened automatically when the mouse cursor is placed over it or if the default item is in the “More” folder, other folders must be left-clicked to open.
 
-\subsection{Callsign Menu}
-\label{menu:cs}
+\subsection{Callsign Menu}\label{menu:cs}
+
+Items in the callsign menu that are currently not available (for example “Assume” for a track that is not free or being transferred in) are hidden to make the menu as small as possible, so the example images below do not show all the possible items. In the other menus the unavailable items are displayed with \colorref{Arm} color.
 
 \subsection*{Controlled Track}
 
@@ -3533,35 +3534,36 @@ Many of the menus have a default item or value, displayed with inverse video. Th
 Assume                    & Assumes track\\
 Refuse                    & Refuses the incoming transfer\\
 Transfer                  & Initiates a transfer to the next sector\\
-Trf \& Release            & Opens the \winref{menu:xfrrel}\\
 ROF                       & Sends a \winref{menu:rof}\\
 (X)Freq                   & Toggles the \tagref{tag:Frequency dot}\\
 (X)Highlight              & Toggles the Callsign highlight\\
 (X)S-Highlight            & Toggles the Callsign+AFL fields highlight\\
-PRL                       & Opens the \winref{menu:prl}\\
+Vector                    & Opens the \winref{menu:prl}\\
+QDM                       & Starts a QDM line from this track\\
 (X)Hold                   & “Hold” opens the \winref{menu:hold}, “XHold” cancels a given holding clearance\\
 $\blacktriangledown$ More & Shows additional less frequently used options\\
-Manual Transfer           & Opens the \winref{menu:mxfr}\\
-(X)Inbound Est            & Toggles the “Inbound Est” manual alert\\
+Man Trf                   & Opens the \winref{menu:mxfr}\\
 HOP                       & Initiates a \winref{win:hop}\\
 (X)Mark                   & Toggles the \tagref{tag:Mark dot}\\
-(X)Couple                 & Uncorrelates/correlates the flight plan\\
-FPL…                      & Opens the \winref{win:fpw}\\
-(X)Irregular              & Toggles the “Irregular” manual alert\\
+FPL                       & Opens the \winref{win:fpw}\\
 Start/End CPDLC           & Starts/Ends CPDLC connection with the aircraft\\
 VCI                       & Opens the \winref{menu:vci}\\
 Squawk Ident              & Sends a “SQUAWK IDENT” CPDLC message to the aircraft\\
 CPDLC Free Text           & Opens the \winref{menu:dlftm}\\
 Free                      & Releases track\\
-On Contact                & Sets track \stateref{On Contact}\footnotemark[1]\\
+(X)Inbound Est            & Toggles the “Inbound Est” manual alert\\
+(X)Irregular              & Toggles the “Irregular” manual alert\\
 (X)Missed App             & Toggles the “Missed App” manual alert\\
+(X)Weather                & Toggles the “Weather” manual alert\\
+On Contact                & Sets track \stateref{On Contact}\footnotemark[1]\\
+(X)Couple                 & Uncorrelates/correlates the flight plan\\
 \end{longtable}
 
 \footnotetext[1]{Clicking “On Contact” for a track with “Y” or “Z” flight rules will also automatically change the flight rules in the VATSIM flight plan to VFR in order to make it uncontrolled. The displayed flight rules are not affected.}
 
 \bigskip
 
-Besides the manual alerts, none of the selectable toggle options in this menu will be transmitted to other controllers, but the “Mark”, “Freq” and highlight selections will be seen in your other EuroScope instances. A holding clearance is transmitted to the next controller when transferring the track. To correlate a flight plan, first click on the “Correlate” item, and then click on the radar position symbol of the desired radar track.
+Besides the manual alerts, none of the selectable toggle options in this menu will be transmitted to other controllers, but the “Mark”, “Freq” and highlight selections will be seen in your other EuroScope instances. A holding clearance is broadcast to all controllers in range when given, and additionally transmitted to the next controller when transferring the track. To correlate a flight plan, first click on the "Couple" item, and then click on the radar position symbol of the desired radar track.
 
 \bigskip
 
@@ -3570,15 +3572,19 @@ Besides the manual alerts, none of the selectable toggle options in this menu wi
 \capdimage{img/cmuncon.png}{Uncontrolled Track Callsign Menu}
 
 \begin{tabular}{l l l}
-On Contact        & Sets track \stateref{On Contact} \\
-Free              & Releases track\\
-Assume            & Assumes track\footnotemark[1]\\
-(X)Highlight      & Toggles the Callsign highlight\\
-(X)S-Highlight    & Toggles the Callsign+AFL fields highlight\\
-(X)Couple         & Uncorrelates/correlates the flight plan\\
-(X)Hold           & “Hold” opens the \winref{menu:hold}, “XHold” cancels a given holding clearance\\
-FPL...            & Opens the \winref{win:fpw}\\
-PRL               & Opens the \winref{menu:prl}\\
+On Contact                & Sets track \stateref{On Contact} \\
+Assume                    & Assumes track\footnotemark[1]\\
+Vector                    & Opens the \winref{menu:prl}\\
+QDM                       & Starts a QDM line from this track\\
+(X)Highlight              & Toggles the Callsign highlight\\
+(X)S-Highlight            & Toggles the Callsign+AFL fields highlight\\
+$\blacktriangledown$ More & Shows additional less frequently used options\\
+(X)Hold                   & “Hold” opens the \winref{menu:hold}, “XHold” cancels a given holding clearance\\
+(X)Mark                   & Toggles the Mark indicator\\
+(X)Freq                   & Toggles the Freq indicator\\
+Free                      & Releases track\\
+FPL                       & Opens the \winref{win:fpw}\\
+(X)Couple                 & Uncorrelates/correlates the flight plan\\
 \end{tabular}
 
 \footnotetext[1]{Clicking “Assume” for a track with “Y” or “Z” flight rules will also automatically change the flight rules in the VATSIM flight plan to IFR in order to make it controlled. The displayed flight rules are not affected.}
@@ -3589,9 +3595,12 @@ PRL               & Opens the \winref{menu:prl}\\
 \capdimage{img/cmuncor.png}{Uncorrelated Track Callsign Menu}
 
 \begin{tabular}{l l l}
-Correlate       & Correlates the radar track with the next clicked “Callsign” field
-\\Create APL    & Opens the \winref{win:apl}
-\\PRL           & Opens the \winref{menu:prl}
+IFR APL         & Opens the \winref{win:apl} (with FRUL=I and S-Highlight on)\\
+Create APL      & Opens the \winref{win:apl}\\
+Vector          &  Opens the \winref{menu:prl}\\
+(X)Highlight    & Toggles the TSSR/FLTID highlight\\
+Couple          & Correlates the radar track with the next clicked “Callsign” field\\
+QDM             & Starts a QDM line from this track\\
 \end{tabular}
 \medskip
 
@@ -3617,27 +3626,6 @@ For CPDLC connected aircraft, the menu contains options related to the transfer.
 
 If an aircraft has a defined XFL value and hasn’t been cleared to it (CFL is not equal to XFL), attempting to transfer the aircraft will open a Transfer Confirmation Window in the middle of the radar screen. While the window is open it will block all other attempts to click on items elsewhere on the radar screen. Either click on “Transfer” to transfer the aircraft regardless of the situation, or “Cancel” to cancel the transfer.
 
-\subsection{Transfer \& Release menu}
-\label{menu:xfrrel}
-
-\capdimage{img/xfrrel.png}{Transfer \& Release menu}
-
-The Transfer \& Release menu allows specifying a release condition for a track to be transferred. The transfer is initiated after selecting the desired condition (climb, descent, turn or full). The release will be shown on line 0 of the track label (C for climb, D for descent, T for turn and F for full). The transferring controller will see the label item until the track becomes unconcerned. The receiving controller will see the item for 3 minutes after the track is assumed.
-
-\capdimage{img/xfrreldl.png}{CPDLC Transfer \& Release menu}
-
-For CPDLC connected aircraft, the menu contains options related to the transfer:
-
-\bigskip
-
-“Monitor” / “Contact” select which of the two CPDLC message types will be sent.
-
-\bigskip
-
-“R/T” / “CPDLC” select whether the transfer instruction is given via radio or as a CPDLC message.
-
-\warn{The “Trf \& Release” option will show the release condition on the downstream side only if the next controller is using this plugin, in other cases the transfer will be shown as a normal transfer.}
-
 \subsection{Request On Frequency message}
 \label{menu:rof}
 
@@ -3649,12 +3637,12 @@ See \winref{coo:rof}. For the message to succeed, you must be seen as the next c
         \item If there is an error or the message fails to go through, a message will be put into the \winref{win:pqw}
 \end{enumerate}}
 
-\subsection{Hold Menu}
+\subsection{Hold/Susp Menu}
 \label{menu:hold}
 
 \capdimage{img/hold.png}{Hold Menu}
 
-The Hold menu allows you to enter a holding clearance, adding the aircraft to the \winref{list:hold}. It displays for selection the points in the aircraft’s route that are ahead of its current position.
+The Hold/Susp menu allows you to enter a holding clearance, adding the aircraft to the \winref{list:hold}. It displays for selection the points in the aircraft’s route that are ahead of its current position.
 
 \bigskip
 
@@ -3666,7 +3654,7 @@ Left-clicking “Here” enters the present position coordinates as the holding 
 
 \bigskip
 
-The holding point is automatically sent to your other EuroScope instances with a small delay and can be sent to other controllers by pushing the flight strip as the information is stored there.
+The “Suspend” folder contains a list of all currently active TSA areas. Left-clicking on one sets the aircraft to a TSA Hold. A TSA Hold clearance will exclude the aircraft from all APW and SAP processing.
 
 \subsection{Manual Transfer Menu}
 \label{menu:mxfr}
@@ -3734,35 +3722,39 @@ This menu is used to set an arrival sequence number. Values from 1 to 50 are ava
 
 \capdimage{img/wpt.png}{Waypoint Menu}
 
-\begin{longtable}{p{5cm} p{7.5cm}}
-$\blacktriangle$  Routing & Opens the “COPN point” or “COPX point” submenu (EuroScope default item)\\
-$\blacktriangle$ Arrival & Opens the “Assign STAR” submenu (EuroScope default item)\\
-$\blacktriangle$ Departure & Opens the “Assign SID” submenu (EuroScope default item)\\
-$\blacktriangle$ TSA Hold & Opens the TSA Hold submenu (not available if a holding clearance is active)\\
-$\blacktriangle$ Hold & Opens the Hold submenu (not available if a TSA holding clearance is active)\\
-\end{longtable}
+This menu gives access to functions related to the route of the aircraft. It is used to assign direct-to clearances, holding clearances, and to coordinate the sector entry/exit point.
 
 \bigskip
 
-This menu gives access to functions related to the route of the aircraft. It is used to assign direct-to clearances, departure and arrival routes, holding clearances, and to coordinate the sector entry/exit point.
+Left-clicking on a point in the list sets a direct-to clearance to that point. Any point name can be manually entered in the box at the bottom of the menu.
+
+\warn{Note that no coordination is performed. If coordination is necessary, right-click any point name to open the EuroScope “COPN/COPX point” popup list or use the “Probe” button instead.}
+
+\bigskip
+
+When the aircraft is CPDLC-connected and the coordination is an exit coordination, the menu offers a choice between “R/T” and “CPDLC”. The chosen option decides how a clearance is communicated to the aircraft.
+
+\bigskip
+
+“Probe” opens the EuroScope “COPN point” or “COPX point” popup list and draws the Flight Leg for the flight. Moving the mouse cursor over the points in the popup can be used to probe the effects of possible route changes. Allow up to 5 seconds after each point change for FPCP to update. The popup is also used to start point coordinations.
+
+\bigskip
+
+For “HOP” see \winref{menu:ahdg}.
+
+\bigskip
+
+Left-clicking “Hold” opens the \winref{menu:hold}. If a holding clearance already exists, the button will read “XHold” and clicking it will remove the clearance.
 
 \capdimage{img/wptyn.png}{Waypoint Menu in Coordination}
 
-When an entry or exit coordination has been received, the menu opens looking like this instead. The options are:
+When an entry or exit coordination has been received, the menu options are:
 
 \begin{longtable}{p{5cm} p{7.5cm}}
-$\blacktriangle$ Routing    & Opens the “COPN point” or “COPX point” submenu (EuroScope default item)
-\\Accept                      & Accepts the coordination
-\\Reject                      & Rejects the coordination
+Accept                    & Accepts the coordination\\
+Reject                    & Rejects the coordination\\
+Probe                     & Opens EuroScope popup to counter-propose another point\\
 \end{longtable}
-
-The submenu opened with “Routing” offers the same possibilities to accept or reject the coordination, but also the possibility to counter-propose a different point.
-
-\capdimage{img/wptdl.png}{CPDLC DCT Request Downlink Waypoint Menu}
-
-When the aircraft is CPDLC-connected and the coordination is an exit coordination, the menu offers a choice between “R/T” and “CPDLC”. The chosen option decides how an accepted coordination is communicated to the aircraft.
-
-\bigskip
 
 With “CPDLC” selected, when “Accept” is clicked, in addition to the coordination being accepted, a “PROCEED DIRECT TO <point>” CPDLC message is sent to the aircraft.
 
@@ -4896,6 +4888,30 @@ Middle-click aircraft position symbol
 
 The Individual Quick Look function can be used to override the CJI filter for a specific track and to display labels for uncoupled primary tracks which are normally automatically hidden. It is a toggle function, middle-clicking again will hide the labels again.
 
+{Level Band Highlight}\label{func:lbh}
+
+Right click AFL track label item 
+
+\bigskip
+
+While active, this function highlights the callsigns of the referenced flight and the callsigns of all other flights within the level band of the referenced flight. The prediction line is forced on for these flights.
+
+\bigskip
+
+All other flights will be filtered out to display just their track position symbols and history dots unless they have an active STCA, APW, MSAW or AIW warning or are squawking 7500, 7600 or 7700. Tracks without a valid AFL will be filtered out.
+
+\subsection{Oceanic Level highlight}\label{func:olh}
+
+Right click OFL track label item 
+
+\bigskip
+
+While active, this function highlights the callsigns of the referenced flight and the callsigns of all other flights having the same OAN and OFL. The prediction line is forced on for these flights.
+
+\bigskip
+
+All other flights will be filtered out to display just their track position symbols and history dots unless they have an active STCA, APW, MSAW or AIW warning or are squawking 7500, 7600 or 7700.
+
 \subsection{Brightness Control Window}
 \label{win:bcw}
 
@@ -5651,16 +5667,23 @@ The window closes automatically when the message is sent or the mouse cursor lea
 
 The CPDLC History Message Window contains CPDLC messages that have been archived from the \winref{win:dlcmw}.
 
-\subsection{Cursor Lat/Long Window}
-\label{win:latlon}
+\subsection{Cursor Lat/Long Window}\label{win:latlon}
 
-\winref{menu:global} Tools -> LAT/LONG...
+\winref{menu:radarm} -> LAT/LONG…
 
 \bigskip
 
 \capdimage{img/latlon.png}{Cursor Lat/Long Window}
 
 Displays the latitude and longitude values of the cursor position.
+
+\subsection{Find Track}\label{func:findt}
+
+\winref{menu:radarm} -> Find Track 
+
+\bigskip
+
+The Find Track function highlights for a specified time all labels matching the specified TSSR, ASSR or PSSR with Temp Track Highlight color.
 
 \subsection{Weather Messages Window}
 \label{win:wxmw}
