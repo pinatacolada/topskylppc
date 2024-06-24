@@ -3778,29 +3778,10 @@ The “R/T” / “CPDLC” selection is fixed to “CPDLC”.
 
 When there is no request in process and the aircraft has a direct-to point set, the menu can be used to send the clearance via CPDLC. In this case the menu opens like this except without the “SBY” and “UNABLE” buttons. Clicking the point name will send the “PROCEED DIRECT TO <point>” CPDLC message.
 
-\subsection*{TSA Hold Submenu}
-
-The TSA Hold submenu allows you to enter a clearance to enter an active military area. It displays the active and preactive TSA type areas. If a clearance already exists, the menu will only give the option to remove it with the “XHold” item.
-
-\bigskip
-
-The clearance is automatically sent to your other EuroScope instances with a small delay and can be sent to other controllers by pushing the flight strip as the information is stored there. A TSA hold clearance will exclude the aircraft from all APW and SAP processing.
-
-\subsection*{TSA Hold Submenu}
-
-If a holding clearance already exists, the menu will only give the option to remove it with the “XHold” item.
-See \winref{menu:hold} for other details.
-
 \subsection{AFL Menu}
 \label{menu:afl}
 
-\begin{center}
-  \begin{minipage}[b]{0.14\textwidth}\end{minipage}\hfill 
-  \begin{minipage}[b]{0.14\textwidth}\capdimage{img/afl.png}{AFL Menu nautical units}\end{minipage}\hfill 
-  \begin{minipage}[b]{0.14\textwidth}\capdimage{img/aflm.png}{AFL Menu metric units}\end{minipage}\hfill  
-  \begin{minipage}[b]{0.14\textwidth}\capdimage{img/kbd.png}{AFL Menu keyboard}\end{minipage}\hfill 
-  \begin{minipage}[b]{0.14\textwidth}\end{minipage}\hfill 
-\end{center}  
+\capdimage{img/afl.png}{AFL Menu}
 
 This menu can be used to set the AFL value for aircraft that don’t have an altitude reporting transponder.
 
@@ -3810,21 +3791,12 @@ The default value is the previously set manual AFL value if set, otherwise the C
 
 \bigskip
 
-By default, the menu (as well as the AFL label item) is always showing nautical units, regardless of the system units or the selected units for the aircraft. If this behavior is selected off, the list units can be toggled with the “NAUTICAL” / “METRIC” item. There are three ways to set the AFL using this menu:
-
-\bigskip
+There are two ways to set the AFL using this menu:
 
 \begin{itemize}
         \item Clicking a level value in the list
         \item Clicking the text entry box below the level list and entering the value there
-        \item Clicking the right-pointing triangle to open a keyboard that can be used to type in the value using the mouse. “C” clears the entry and “Ok” sets the value.
 \end{itemize}
-
-\bigskip
-
-Entering a metric value will also set the aircraft’s units to metric; a nautical value will set nautical units.
-
-\bigskip
 
 The accepted manual level entry formats for the AFL, CFL and RFL menus are as follows (“n” is a number):
 
@@ -3832,16 +3804,12 @@ The accepted manual level entry formats for the AFL, CFL and RFL menus are as fo
 
 \begin{longtable}{p{5cm} p{7.5cm}}
 “Annn” or “nnn”         & Altitude in hundreds of feet\\
-“Mnnnn” or “nnnn”       & Altitude in tens of meters\\
-“Mnnnnn” or “nnnnn”     & Altitude in meters\\
 “Ennn”                  & Height in hundreds of feet above aerodrome elevation\\
-“Ennnn”                 & Height in tens of meters above aerodrome elevation\\
-“Ennnnn”                & Height in meters above aerodrome elevation\\
 \end{longtable}    
 
 \bigskip
 
-Regardless of whether the entered value is in meters or feet, and altitude or height, it will be converted to altitude in feet and the result is then rounded to the nearest 100 feet.
+Regardless of whether the entered value is an altitude or height, it will be converted to altitude in feet and the result is then rounded to the nearest 100 feet.
 
 \subsection{CFL Menu}
 \label{menu:cfl}
