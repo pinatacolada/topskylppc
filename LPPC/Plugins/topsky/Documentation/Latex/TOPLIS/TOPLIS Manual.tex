@@ -5833,10 +5833,7 @@ The following information is displayed:
 
 TIME, ARWY and TEXT display can be toggled from the “View” menu.
 
-\subsection{General Information Window}
-\label{win:geninfo}
-
-\bigskip
+\subsection{General Information Window}\label{win:geninfo}
 
 \capdimage{img/geninfo.png}{General Information Window}
 
@@ -5849,11 +5846,13 @@ The General Information Window displays basic information on the system state. T
     CPDLC Def           & Displays the state of the CPDLC Default setting\\
     FPASD               & Displays the state of the FPASD setting \\
     Alert functions     & Status of the alert functions. The function name is shown in \colorref{Warning} color if selected off or there’s a fault in the data file.\\
-    CCAMS               & Plugin selected as the code source:\\
+    CCAMS               & Displayed if plugin is selected as the SSR code source\\
                         & $\bullet$ \colorref{Urgency} color if the SSR data file contains no codes\\
                         & $\bullet$ \colorref{Warning} color if simulated traffic is not downloaded or ESE file or fixed range selected as the code source\\
+    IDLS                & Plugin set up to send DCL. \colorref{Warning} color if datalink comms are failed.\\
     AGCS                & \colorref{Warning} color if Hoppie datalink comms are failed\\
     MTCD                & \colorref{Warning} color if prediction time is set to zero    \\
+    SEK                 & Plugin is receiving AMAN data. \colorref{Warning} color if data loading has failed.\\
 \end{longtable}
 
 \subsection{Document Viewer Window}
