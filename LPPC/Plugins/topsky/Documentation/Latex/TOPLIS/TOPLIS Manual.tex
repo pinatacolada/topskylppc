@@ -4043,16 +4043,21 @@ SBY” and “UNABLE” send the corresponding answers to a downlink speed reque
 
 \warn{The minimum, maximum and high speed clearances are a feature specific to this plugin (the additional information is stored in the flight strip). To controllers not using TopSky, all assigned speed clearances will only show the speed value (999 for the high speed clearance). Assigned speed clearances given by controllers not using TopSky will be displayed as exact speed clearances.}
 
-\subsection{ASSR Menu}
-\label{menu:assr}
+\subsection{SSR Code Menu}\label{menu:assr}
+
 \capdimage{img/assr.png}{ASSR Menu}
 
-The ASSR menu allows assigning an SSR code to the flight plan. To enter a new code, type it by left-clicking the numbers. “C” clears the entered value and “Ok” assigns the code if it’s a valid one. To get an automatically assigned code, clear the value and then left-click on “Ok” with the entry box left empty.
+The SSR Code menu allows assigning an SSR code to the flight plan. To enter a new code, type it by left-clicking the numbers. “C” clears the entered value and “Ok” assigns the code if it’s a valid one. To get an automatically assigned code, left-click the “Get SSR” button.
 
 %\bigskip
 %
 %Depending on the configuration, the assigned code may be a mode S conspicuity code. To force a discrete code, make a new assignment – either manual or automatic. If an automatic assignment is requested for a flight with the conspicuity code currently assigned, the new assignment will be a discrete code.
 %
+
+\bigskip
+
+When the SSR Code menu is opened to start the \winref{func:findt} function, the top row of the menu will read “Find” and the “Get SSR” button will not be present. Enter a code and click “Ok” to start the function.
+
 \subsection{Combined Transfer Menu}
 \label{menu:ctm}
 \capdimage{img/ctm.png}{Combined Transfer Menu}
