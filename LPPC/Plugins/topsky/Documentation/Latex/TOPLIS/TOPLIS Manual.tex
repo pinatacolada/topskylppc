@@ -5540,51 +5540,49 @@ The Message Out Window shows the coordination messages you have sent, sorted by 
 
 The available message types are:
 
-\bigskip
-
 \begin{itemize}
-    \item“To <SI> for <Callsign> proposes goes to your frequency”
-        \begin{itemize}
-             \item Displayed when you transfer a track
-        \end{itemize}
-    \item“To <SI> Request <Callsign> on frequency”
-        \begin{itemize}
-             \item Displayed when you have sent a \winref{coo:rof} message
-        \end{itemize}
-    \item“To <SI> for <Callsign> proposes Handover [HDG xxx] [DCT xxxxx] [SP xxx]”
-        \begin{itemize}
-             \item Displayed when you have sent a \winref{coo:hop}
-        \end{itemize}
-    \item“To <SI> for <Callsign> RTI [HDG xxx] [SP xxx] [ARC xx]”
-        \begin{itemize}
-             \item Displayed when you have sent an \winref{coo:rti} message
-        \end{itemize}
-    \item“To <SI> for <Callsign> TIP [HDG xxx] [SP xxx] [ARC xx]”
-        \begin{itemize}
-             \item Displayed when you have sent a \winref{coo:tip} message
-        \end{itemize}
-    \item“To <SI> for <Callsign> proposes HOP/RTI/TIP Accepted”
-        \begin{itemize}
-             \item Displayed when you have sent an Accept message to HOP, RTI or TIP
-        \end{itemize}
-    \item“To <SI> for <Callsign> proposes RTI/TIP rejected [by timeout]”
-        \begin{itemize}
-             \item Displayed when you have sent a Reject message to RTI or TIP. “Rejected by timeout” will be sent automatically if the coordination is not answered within a specified time.
-        \end{itemize}
-    \item“To <SI> for <Callsign> proposes [COPN xxxxx] [PEL xxx]”
-        \begin{itemize}
-             \item Displayed when you have sent an entry coordination
-        \end{itemize}
-    \item“To <SI> for <Callsign> proposes [COPX xxxxx] [XFL xxx]”
-        \begin{itemize}
-             \item Displayed when you have sent an exit coordination
-        \end{itemize}
-    \item“To <SI> for <Callsign> proposes will squawk <ASSR>”
-        \begin{itemize}
-             \item Displayed when you have assigned a new SSR code and there is a next controller online for the track
-        \end{itemize}
+  \item“To <SI> for <Callsign> COF”
+    \begin{itemize}
+      \item Displayed when you transfer a track
+    \end{itemize}
+  \item“To <SI> for <Callsign> ROF”
+    \begin{itemize}
+      \item Displayed when you have sent a \winref{coo:rof} message
+    \end{itemize}
+  \item“To <SI> for <Callsign> HOP [HDG xxx] [DCT xxxxx] [SP xxx]”
+    \begin{itemize}
+      \item Displayed when you have sent a \winref{coo:hop}
+    \end{itemize}
+  \item“To <SI> for <Callsign> RTI [HDG xxx] [SP xxx] [ARC xx]”
+    \begin{itemize}
+      \item Displayed when you have sent an \winref{coo:rti} message
+    \end{itemize}
+  \item“To <SI> for <Callsign> TIP [HDG xxx] [SP xxx] [ARC xx]”
+    \begin{itemize}
+      \item Displayed when you have sent a \winref{coo:tip} message
+    \end{itemize}
+  \item“To <SI> for <Callsign> accept HOP/RTI/TIP”
+    \begin{itemize}
+      \item Displayed when you have sent an Accept message to HOP, RTI or TIP
+    \end{itemize}
+  \item“To <SI> for <Callsign> reject RTI/TIP [by timeout/by system]”
+    \begin{itemize}
+      \item Displayed when you have sent a Reject message to RTI or TIP. “Rejected by timeout” will be sent automatically if the coordinatio is not answered within a specified time.
+    \end{itemize}
+  \item“To <SI> for <Callsign> CDN [level] [DCT xxxxx]”
+    \begin{itemize}
+      \item Displayed when you have sent an entry coordination
+    \end{itemize}
+  \item“To <SI> for <Callsign> RAP/RRV [level] [DCT xxxxx]”
+    \begin{itemize}
+      \item Displayed when you have sent an exit coordination
+    \end{itemize}
+  \item“To <SI> for <Callsign> COD <ASSR>”
+    \begin{itemize}
+      \item Displayed when you have assigned a new SSR code and there is a next controller online for the track
+    \end{itemize}
 \end{itemize}
-    
+
 \subsection{Microphone Check Menu}
 \label{menu:dlmcm}
 
