@@ -5422,13 +5422,23 @@ ACK               & Left-click toggles military coordination indicator\\
 
 \capdimage{img/vaw.png}{Vertical Aid Window}
 
-The Vertical Aid Window shows the predicted vertical trajectory of the selected aircraft (ASEL), starting from its current position (marked with a dot in \colorref{VAW Track Position} color), and the trajectories of all aircraft conflicting with it. The trajectories are displayed as calculated by EuroScope. The background color of the path area is by default the \colorref{Inactive Sector} color, but for the time the aircraft is predicted to be inside your sector the color will be the \colorref{Active Sector} color. Other sector boundary crossings are displayed with vertical lines in \colorref{VAW Sector Limits} color. The trajectory of the ASEL aircraft is drawn in \colorref{VAW Profile} color and the conflicting aircrafts’ trajectories in \colorref{Urgency} (conflict or potential predicted conflict), \colorref{Warning} (risk or potential risk of conflict) or \colorref{Potential} (potential).
+The Vertical Aid Window shows the predicted vertical trajectory of the selected aircraft in \colorref{VAW Profile} color, starting from its current position (marked with a dot in \colorref{VAW Track Position} color), and its MTCD and SAP conflicts. The background color of the path area is by default the \colorref{Inactive Sector} color, but for the time the aircraft is predicted to be inside your sector the color will be the \colorref{Active Sector} color with \colorref{VAW Sector Limits} color edges.
 
 \bigskip
 
-It is also possible to send PEL and XFL coordinations and set the CFL from this window using the two buttons:
+MTCD conflicts are displayed as boxes horizontally from the start to the end of the conflict and vertically from the lowest to the highest level of the conflicting track during that period. The callsign of the conflicting track is displayed in the top left corner of the box. The different types of conflicts are shown as follows:
+
+\begin{longtable}{p{5.5cm} p{7cm}}
+  Conflict  & Filled box in \colorref{Urgency} color (\colorref{Conflict Ack} if acknowledged)\\
+  Risk      & Filled box in \colorref{Warning} color (\colorref{Conflict Ack} if acknowledged)\\
+  Other     & Unfilled box in \colorref{Potential} color (\colorref{Conflict Ack} if acknowledged)\\
+\end{longtable}
+
+SAP conflicts, if selected to be displayed, are displayed as unfilled boxes in \colorref{Warning} color, covering the area horizontally from the start to the end of the conflict and vertically from the bottom to the top of the area. The area name is shown at the top left corner of the box.
 
 \bigskip
+
+The mouse click areas of the Vertical Aid Window:
 
 \begin{longtable}{p{2.5cm} p{10cm}}
     CFL/PEL     & Opens the PEL or \winref{menu:cfl} depending on sector state\\
@@ -5436,24 +5446,16 @@ It is also possible to send PEL and XFL coordinations and set the CFL from this 
     XFL         & Opens the XFL menu\\
 \end{longtable}
 
-\bigskip
-
-From the “View” menu it is possible to toggle various MTCD related:
-
-\bigskip
+From the “View” menu it is possible to toggle various MTCD related options:
 
 \begin{longtable}{p{2.5cm} p{10cm}}
     Risk                    & Toggles display of MTCD risks\\
-    Potential Predicted     & Toggles display of MTCD potential predicted conflicts\\
-    Potential Risk          & Toggles display of MTCD potential risks of conflict\\
-    Potential               & Toggles display of potential conflicts\\
     Notif                   & Toggles whether \stateref{Notified} tracks are shown\\
     Unco                    & Toggles whether \stateref{Unconcerned} tracks are shown\\
+    SAP                     & Toggles whether SAP conflicts are shown\\
 \end{longtable}
 
-\bigskip
-
-The PEL and XFL values are displayed in \colorref{Coordination} color, or in \colorref{Proposition In} if being coordinated. After a refused coordination, the original value is shown in \colorref{Warning} color. The CFL value is displayed as a horizontal line across the screen.
+For assumed flights, the CFL value is displayed as a \colorref{Warning} color horizontal line across the screen if different from XFL.
 
 \subsection{Message In Window}
 \label{win:miw}
