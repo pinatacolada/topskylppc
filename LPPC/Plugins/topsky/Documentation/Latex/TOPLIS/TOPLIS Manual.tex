@@ -6145,6 +6145,31 @@ The Runway In Use Window displays the arrival and departure runway allocation at
 
 The “RWL Display” button opens the \winref{win:ralw} for this aerodrome.
 
+\subsection{Runway Approach Line Window}\label{win:ralw}
+
+\winref{menu:global} STS -> RWY line display... (opens the \winref{menu:ad} for airport selection)
+
+\capdimage{img/rwydsp.png}{Runway Approach Line Window}
+
+The window will open below the mouse cursor, or will be repositioned there if already open. 
+
+\bigskip
+
+The window contains selection buttons to toggle the display of the approach lines for the airport’s runways, and a listing of the currently active runways. The “ARR RWL DISPLAY” option toggles the automatic display of all approach lines for runways that are selected active for arrival. The setting is global for all airports.
+
+\bigskip
+
+The options, and their default settings for the approach lines are as follows:
+
+\begin{longtable}{p{2.5cm} p{10cm}}
+  OFF & No line drawn\\
+  NM  & 16nm line, 5 markers at 2nm intervals\\
+  NME & 30nm line, 5 markers at 2nm intervals, then 4 markers at 5nm intervals\\
+  Km  & 30km line, 5 markers at 2km intervals, then 4 markers at 5km intervals\\
+\end{longtable}
+
+The color of the line is different depending on whether the runway is active for arrivals or not.
+
 \subsection{Operations Rate Window}
 \label{win:orw}
 
@@ -6203,17 +6228,6 @@ The numbers on the right side are the caution and warning limits. To change them
 \bigskip
 
 The two sliders change the traffic number and time scales.
-
-\subsection{Runway Approach Line Window}
-\label{win:ralw}
-
-\winref{menu:global} STS -> RWY line display... (opens the \winref{menu:ad} for airport selection)
-
-\bigskip
-
-\capdimage{img/rwydsp.png}{Runway Approach Line Window}
-
-The window contains selection buttons to toggle the display of the approach lines for the airport’s runways, and a listing of the currently active runways for the airport. The “ARR RWL DISPLAY” option toggles the automatic display of all approach lines for runways that are selected active for arrival. The setting is global for all airports. The runway approach line is by default 20nm long and has 5 distance markers at 2nm intervals. The color of the line is different depending on whether the runway is active for arrivals or not.
 
 \subsection{Tactical Info Window}
 \label{win:tiw}
