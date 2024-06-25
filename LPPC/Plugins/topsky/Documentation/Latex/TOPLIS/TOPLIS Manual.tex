@@ -4000,38 +4000,35 @@ Assigned rate clearances given by controllers not using TopSky will be displayed
 
 \bigskip
 
-The ASP menu allows setting an assigned speed or Mach number. The default value will be the closest value to the assigned one if set, otherwise TopSky will suggest the closest value to the aircraft’s present speed based on the ground speed (zero wind will be assumed). The menu will initially open in IAS mode if the aircraft’s CFL is below FL285, and in Mach mode if above it. The selectable values range from 100 to 400 knots and from M0.50 to M1.00.
+The ASP menu allows setting an assigned speed or Mach number. The default value will depend on the assigned one if set (assigned+20kts for departures, assigned or slightly less for arrivals), otherwise it will be either a pre-defined value or the current DMACH if available. The menu will initially open in IAS mode if the aircraft’s CFL is below FL285, and in Mach mode if above it. The selectable values range from 100 to 400 knots and from M0.50 to M1.00.
 
 \bigskip
 
-The “+” and “-” options can be used to specify the clearance
-as a minimum/maximum speed.
+Left-click the units button to toggle between IAS and Mach.
+
+\bigskip
+
+The “HS” option will set a clearance for “high speed”, displayed as “HS” in the ASP label field.
+
+\bigskip
+
+The “+” and “-” options can be used to specify the clearanceas a minimum/maximum speed.
+
+\bigskip
+
+For “HOP”, “RTI” and “TIP” see the \winref{menu:ahdg}.
 
 \bigskip
 
 The “Resume” item clears an assigned value. For CPDLC connected aircraft, it sends the “RESUME NORMAL SPEED” CPDLC message if the “CPDLC” option is selected.
 
-\bigskip
-
-When the “Resume” button below the list is replaced by a “HS” button, clicking it will set a clearance for “high speed”, displayed as “HS” in the ASP label field. For CPDLC connected aircraft, it sends the “NO SPEED RESTRICTION” CPDLC message if the “CPDLC” option is selected. The “Resume” button can be found at the bottom of the “More” list.
-
-\bigskip
-
-“HOP”, “RTI” and “TIP” are coordination functions (see \winref{win:hop}, \winref{win:rti}). To use them, first click on the function’s button and then select the desired value from the list (for HOP also “Point” is available).
-
-\bigskip
-
-Entering a metric value will set the aircraft’s units to metric, a nautical value will set nautical units.
-
-\bigskip
-
 \capdimage{img/aspmachdl.png}{CPDLC ASP Menu}
+
 For CPDLC connected aircraft, the menu contains additional buttons:
 
 \bigskip
 
-R/T” and “CPDLC” select whether a speed clearance is to be sent via radio or as a
-CPDLC message.
+R/T” and “CPDLC” select whether a speed clearance is to be sent via radio or as a CPDLC message.
 
 \bigskip
 
@@ -4044,7 +4041,7 @@ CPDLC message.
 
 SBY” and “UNABLE” send the corresponding answers to a downlink speed request.
 
-\warn{The minimum and maximum speed clearances are a feature specific to this plugin (the additional information is stored in the flight strip). To controllers not using TopSky, all assigned speed clearances will only show the speed value. Assigned speed clearances given by controllers not using TopSky will be displayed as exact speed clearances.}
+\warn{The minimum, maximum and high speed clearances are a feature specific to this plugin (the additional information is stored in the flight strip). To controllers not using TopSky, all assigned speed clearances will only show the speed value (999 for the high speed clearance). Assigned speed clearances given by controllers not using TopSky will be displayed as exact speed clearances.}
 
 \subsection{ASSR Menu}
 \label{menu:assr}
