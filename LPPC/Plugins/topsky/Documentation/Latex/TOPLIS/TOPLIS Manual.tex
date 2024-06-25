@@ -5073,7 +5073,7 @@ Clicking “Ok” will do the search and open the Flight Plan Window if it was c
 
 \winref{win:fpsw} -> Create a list of one or more flight plans 
 
-\winref{menu:cs} -> More -> FPL… 
+\winref{menu:cs} -> FPL… 
 
 “Open FPL Window” label function
 
@@ -5087,96 +5087,111 @@ The Flight Plan Window displays flight plan data as well as some system data rel
 
 The data fields show the following information:
 
-\bigskip
-
 \begin{longtable}{p{2.5cm} p{10cm}}
-    Callsign    & Callsign of the aircraft\\
-    FRUL        & Flight rules (I, V, Y or Z)\\
-    FTYP        & not available\\
-    NRAC        & Number of aircraft\\
-    ATYP/W      & Aircraft type and wake turbulence category\\
-    EQCST       & Displays aircraft equipment status for certain equipment (W, Y, U, R and P) - “EQ” equipped, “NO” not equipped, “UN” unknown.\\
-    EOBD        & Estimated Off-Block Date\\
-    EOBT        & Estimated Off-Block Time\\
-    EQUIP       & Equipment list - For flight plans with FAA equipment codes, a rough conversion to ICAO is shown in parentheses\\
-    ADEP        & Departure aerodrome\\
-    ADES        & Destination aerodrome\\
-    EET         & Estimated Elapsed Time\\
-    ALTN        & Alternate aerodrome(s)\\
-    ETD         & Estimated Time of Departure\\
-    ETB         & Estimated time to enter your sector\\
-    TAS         & True Air Speed\\
-    RFL         & Requested Flight Level\\
-    RTE         & Route\\
-    Other       & Flight plan remarks field\\
-    SUP         & Supplementary information (endurance, PIC name)\\
+    C/S     & Callsign of the aircraft\\
+    FRUL    & Flight rules (I, V, Y or Z)\\
+    FTYP    & Flight type (not available)\\
+    NRAC    & Number of aircraft\\
+    ATYP/W  & Aircraft type and wake turbulence category\\
+    EQUIP   & Equipment list - For flight plans with FAA equipment codes, a rough conversion to ICAO is shown in parentheses\\
+    ADEP    & Departure aerodrome\\
+    ADES    & Destination aerodrome\\
+    EOBD    & Estimated Off-Block Date\\
+    EOBT    & Estimated Off-Block Time\\
+    CTOT    & Calculated Take-Off Time\\
+    EQCST   & EQCST Displays aircraft equipment status for certain equipment (W, Y, U, R, P and S) - “EQ” equipped, “NO” not equipped, “UN” unknown.\\
+    TAS     & True Air Speed\\
+    RFL     & Requested Flight Level\\
+    EET     & Estimated Elapsed Time\\
+    ATOW    & Actual Take-Off Weight (not available)\\
+    ALTN    & Alternate aerodrome(s)\\
+    ETD     & Estimated Time of Departure\\
+    ETB     & Estimated time to Boundary (of your sector)\\
+    RTE     & Route\\
 \end{longtable}
 
-\bigskip
+With the window in extended mode, the following additional information is shown:
+
+\begin{longtable}{p{2.5cm} p{10cm}}  
+  Other     & Flight plan remarks field\\
+  FMF       & Flight Message field\\
+  SUP       & Supplementary information (endurance, PIC name)\\
+\end{longtable}
 
 The following system information regarding the flight plan is shown unless the initial plan is displayed:
 
-\bigskip
-
 \begin{longtable}{p{2.5cm} p{10cm}}
-    PSSR    & Previous SSR code\\
-    ASSR    & Assigned SSR code\\
-    PEL/CFL & Planned Entry Level or Cleared Flight Level, depending on the flight’s state\\
-    Type    & Type of flight plan (APL or FPL)\\
-    Status  & Status of the flight plan\\
-    ETN     & Estimated time to COPN\\
-    COPN    & Entry coordination point\\
-    ETX     & Estimated time to COPX\\
-    COPX    & Exit coordination point\\
-    LFUNC   & Controller who is currently tracking the aircraft\\
-    0/0     & Number of the displayed FPL in the list / total number of flight plans in the list\\
+    PSSR          & Previous SSR code\\
+    ASSR          & Assigned SSR code\\
+    PEL/CFL       & Planned Entry Level or Cleared Flight Level, depending on the flight’s state\\
+    System State  & System state of flight plan\\
+    LFUNC         & Controller who is currently tracking the aircraft\\
+    ETN           & Estimated time to COPN\\
+    COPN          & Entry coordination point\\
+    ETX           & Estimated time to COPX\\
+    COPX          & Exit coordination point\\
+    Type          & Type of flight plan (APL or FPL)\\
+    IFPLID        & Eurocontrol unique FPL\_ID for the flight plan (not available)\\
+    0/0           & Number of the displayed FPL in the list / total number of flight plans in the list\\
 \end{longtable}
 
-\bigskip
+For oceanic setups, the following information from the latest received OCM is also available:
+
+\begin{longtable}{p{2.5cm} p{10cm}}
+  OCM             & Oceanic Clearance Message\\
+  MNR             & Oceanic cruising speed\\
+  OFL             & Oceanic cruising Flight Level\\
+  NAT             & North Atlantic Track name (or “\#” for random route)\\
+  OAN             & Oceanic Control Area entry point\\
+  CTO             & Clearance time on OAN\\
+  “RES”/”no RES”  & Time restriction indicator in OCM\\
+\end{longtable}
 
 The following buttons are available:
 
 \bigskip
 
 \begin{longtable}{p{1.5cm} p{11cm}}
-    CRE         & Create a new full flight plan (FPL)\\
-                & Editable fields will be highlighted\\
-                & If a flight plan is being displayed, all data fields keep their values so a new flight plan can be created using an existing one as a base. If not, default values will be set to FRUL, NRAC, EQUIP and Other fields\\
-                & “Apply” creates the FPL, “Cancel” aborts the operation\\
-    MOD         & Modify the currently displayed FPL\\
-                & Available fields will be highlighted\\
-                & “Apply” modifies the FPL, “Cancel” aborts the operation\\
-    Find        & Find a flight plan\\
-                & Enter Callsign to find the flight plan, “Cancel” aborts the operation\\
-    Probe       & Not implemented\\
-    Force       & Force this aircraft to be included in the MTCD and SAP processing regardless of its sector state or any inhibition settings in the MTCD Status Window\\
-    ACT         & Not implemented\\
-    SAC         & Enter a slot time\\
-                & Enter the time to the ETD field, “Cancel” aborts the operation\\
-    CREAPL      & Create a new abbreviated flight plan (APL)\\
-                & Editable fields will be highlighted\\
-                & “Apply” creates the APL, “Cancel” aborts the operation\\
-    MODAPL      & Modify the currently displayed APL\\
-                & Editable fields will be highlighted\\
-                & “Apply” modifies the APL, “Cancel” aborts the operation\\
-    CONV        & Convert an APL to an FPL\\
-                & Editable fields will be highlighted\\
-                & Default values will be set to FRUL, NRAC, EQUIP and Other fields\\
-                & “Apply” converts the APL, “Cancel” aborts the operation\\
-    Unforce     & Cancel the forced inclusion of this aircraft in the MTCD and SAP processing\\
-    Terminate   & Not implemented\\
-    CNL         & Not implemented\\
-    RTE         & Opens the Complete Route Window\\
-    Prev        & Selects the previous flight plan in the list (see Flight Plan Selection Window)\\
-    Next        & Selects the next flight plan in the list (see Flight Plan Selection Window)\\
-    INI         & View the initial flight plan\\
-                & Complete Route Window is closed if it was opened\\
-                & Flight plan refresh time and system information will not be shown\\
-                & “CRE” starts to create a new flight plan based on the displayed initial flight plan, “Refresh” or “Cancel” shows the current flight plan again\\
-    Refresh     & Refreshes the displayed information\\
-    Apply       & Apply changes that were made\\
-                & Any errors will be displayed in the bottom row of the window\\
-    Cancel      & Cancel any changes and quit the current operation\\
+    CRE               & Create a new full flight plan (FPL)\\
+                      & Editable fields will be highlighted\\
+                      & If a flight plan is being displayed, all data fields keep their values so a new flight plan can be created using an existing one as a base. If not, default values will be set to FRUL, NRAC, EQUIP and Other fields\\
+                      & “Apply” creates the FPL, “Cancel” aborts the operation\\
+    MOD               & Modify the currently displayed FPL\\
+                      & Available fields will be highlighted\\
+                      & “Apply” modifies the FPL, “Cancel” aborts the operation\\
+    Find              & Find a flight plan\\
+                      & Enter Callsign to find the flight plan, “Cancel” aborts the operation\\
+    Activate          & Not implemented\\
+    SAC               & Enter a slot time\\
+                      & Enter the time to the ETD field, “Cancel” aborts the operation\\
+    Terminate         & Not implemented\\
+    CNL               & Not implemented\\
+    RTE               & Opens the \winref{win:crw}\\
+    Up/down triangle  & Toggle FPL Window extended mode on/off\\
+    Send              & Not implemented\\
+    CREAPL            & Create a new abbreviated flight plan (APL)\\
+                      & Editable fields will be highlighted\\
+    MODAPL            & Modify the currently displayed APL\\
+                      & Editable fields will be highlighted\\
+                      & “Apply” modifies the APL, “Cancel” aborts the operation\\
+    Force             & Force this aircraft to be included in the MTCD and SAP processing regardless of its sector state or any inhibition settings in the \winref{win:mtcdsw}\\
+                      & “Apply” creates the APL, “Cancel” aborts the operation\\
+    Unforce           & Cancel the forced inclusion of this aircraft in the MTCD and SAP processing\\
+    Get SSR           & Assigns a new SSR code for the flight\\
+    FSSR              & Not implemented\\
+    MAC               & Not implemented\\
+    Prev              & Selects the previous flight plan in the list (see Flight Plan Selection Window)\\
+    Next              & Selects the next flight plan in the list (see Flight Plan Selection Window)\\
+    Strip             & Not implemented\\
+    INI               & View the initial flight plan\\
+                      & \winref{win:crw} is closed if it was opened\\
+                      & Flight plan refresh time and system information will not be shown\\
+                      & “CRE” starts to create a new flight plan based on the displayed initial flight plan, “Refresh” or “Cancel” shows the current flight plan again\\
+    OCM Tx            & Not implemented\\
+    Refresh           & Refreshes the displayed information\\
+    Apply             & Apply changes that were made\\
+                      & Any errors will be displayed in the bottom row of the window\\
+    Cancel            & Cancel any changes and quit the current operation\\
 \end{longtable}
 
 \bigskip
