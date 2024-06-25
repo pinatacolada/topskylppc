@@ -4946,80 +4946,102 @@ The Raw Video Control Window controls the brightness (in general) and afterglow 
 
 \capdimage{img/tsa.png}{Airspace Management Window}
 
-This window is used for the activation and deactivation of the areas for the APW and SAP functionality. Each area can have a start time and/or an end time defined for its activation, or it can be activated without any time limits, making it active until deactivated manually. Additionally, lower and upper altitude limits are given. An area can have activation schedules defined in the area data file. Such areas will be automatically activated as long as their “Auto” option is selected ( “A” in the “Auto” column). The “Auto” option cannot be selected for areas that don’t have an activation schedule defined in the area data file.
+This window is used to control the activation of the areas for the APW and SAP functionality. Each area can have start/end times and/or an end time defined for its activation, or it can be activated without any time limits, making it active until deactivated manually. The areas can also have lower and/or upper altitude limits. An area can have activation rules defined in the area data file. Such areas will be automatically activated based on schedule data, NOTAM or AUP contents as long as their “Auto” option is selected ( “A” in the “Auto” column). The “Auto” option cannot be selected for areas with no activation rules.
 
 \bigskip
 
-Dates will be shown in the format “yymmdd” and times in “hh:mm” and they must be entered in the same format. Entering an empty string for a date will clear it and the related time value and vice versa. When entering a time or date value to an empty field, the other value is automatically set to the current time/date value. Entering an empty string to the Map Text, Lower or Upper fields will reset the value to the default one from the data file.
+An area’s activation status can be inactive, pre-active or active. A pre-active area is an area that will become active within 30 minutes and is shown in \colorref{Selected Period} text on a \colorref{TSA Preactive} background. An active area is shown with \colorref{Selected Period} text on a \colorref{TSA Active} background. The APW system will not alert for a pre-active area, but the SAP system will.
 
 \bigskip
 
-Altitudes are shown in hundreds of feet if at or below the transition altitude, otherwise in flight levels. They must be entered in the same format.
-
-\bigskip
-
-An area’s activation status can be inactive, pre-active or active. A pre-active area is an area that will become active within 30 minutes and is shown in \colorref{Selected Period} text on a \colorref{TSA Preactive} background. An active area is shown with \colorref{Selected Period} text on a \colorref{TSA Active} background. The APW system will not alert for a pre-active area, but for the SAP system a pre-active area is considered as being active.
+When the cursor is over the window area, the bottom message area displays automatic map activation options depending on the setup. Each one is colored \colorref{Arm} if selected off, \colorref{Warning} if on but no data available, and \colorref{Foreground} if on and data available. When the remote option is active, changes to area parameters are not allowed. AUP and NOTAM activation can be selected on/off but the data may be overridden depending on how the remote data source has been set up
 
 \bigskip
 
 The mouse click areas of the Airspace Management Window:
 
-
-\begin{itemize} 
-        \item Sorting option text (e.g. “Start date/time”) Opens a pop-up menu to select a sorting option for the list 
-        \item Right-click to open an area pop-up menu
-        \item Other fields Left-click to edit field (when edit function active)
-        \item “Ok” button Applies the changes, closes the window
-        \item “Apply” button Applies the changes
-        \item “Cancel” button Cancels the changes 
-\end{itemize}
-
-\bigskip
+\begin{longtable}{p{2.5cm} p{10cm}}
+  Sorting option text (e.g. “Start date/time”)  & Opens a pop-up menu to select a sorting option for the list\\
+  Other fields                                  & Left-click to edit field (when edit function active), right-click to open an area pop-up menu\\
+  “Ok” button                                   &  Applies the changes, closes the window\\
+  “Apply” button                                & Applies the changes\\
+  “Cancel” button                               & Cancels the changes\\
+  “AUP” label                                   & Toggles area activation based on AUP data \\
+  “NOTAM” label                                 & Toggles area activation based on NOTAM data\\
+  “Remote” label                                & Toggles area activation based on a remote source\\
+  “Master” label                                & Toggles saving/uploading area activation data\\
+\end{longtable}
 
 The sorting pop-up menu contains the following items:
 
-\begin{itemize}
-        \item Start Date Sorts based on the Start Date/Time, earliest first
-        \item Name Sorts alphabetically based on the Name field
-        \item Map Text Sorts alphabetically based on the Map Text field 
-\end{itemize}
+\begin{longtable}{p{2.5cm} p{10cm}}
+  Start Date/Time   & Sorts based on the Start Date/Time, earliest first\\
+  Name              & Sorts alphabetically based on the Name field\\
+  Map Text          & Sorts alphabetically based on the Map Text field \\
+\end{longtable}
+
+The area pop-up menu contains the following items:
+
+\begin{longtable}{p{2.5cm} p{10cm}}
+  Activate    & Clears any activation times and activates the area\\
+  Deactivate  & Clears any activation times and deactivates the area\\
+  Auto        & If an activation schedule is found in the area data file, sets the area to be activated automatically\\
+  Edit        & Allows to change the area parameters\\
+  Full Edit   & Not implemented\\
+  Copy        & Not implemented\\
+  Delete      & Clears any activation times, returns label and altitude limits to their default values and deactivates the area\\
+\end{longtable}
+
+With the area pop-up menu opened, the area text row background changes to “Flight Highlight” color. 
 
 \bigskip
 
-With the area pop-up menu opened, the area text row background changes to black. The menu contains the following items:
+With the “Edit” function activated, the following mouse click areas are available for the edited area:
 
-\begin{itemize}
-        \item ACTIVATE Clears any activation times and activates the area
-        \item DEACTIVATE Clears any activation times and deactivates the area
-        \item AUTO If an activation schedule is found in the area data file, sets the area to be activated automatically
-        \item VALIDATE Not implemented
-        \item EDIT Allows to change the area parameters
-        \item COPY Not implemented
-        \item DELETE Clears any activation times, returns label and altitude limits to their default values and deactivates the area
-\end{itemize}
+\begin{longtable}{p{2.5cm} p{10cm}}
+  Map Text    & Set/change/delete the area label text\\
+  Start Date  & Set/change/delete the start date\\
+  Start Time  & Set/change/delete the start time\\
+  End Date    & Set/change/delete the end date\\
+  End Time    & Set/change/delete the end time\\
+  Lower       & Set/change/delete the lower altitude limit\\
+  Upper       & Set/change/delete the upper altitude limit\\
+  User        & Set/change/delete a user defined text\\
+\end{longtable}
+
+Dates are shown in the format “yymmdd” and times in “hh:mm” and they must be entered in the same format. Entering an empty string for a date will clear it and the related time value and vice versa. When entering a time or date value to an empty field, the other value is automatically set to the current time/date value. Entering an empty string to the Map Text, Lower or Upper fields will reset the value to the default one from the data file.
 
 \bigskip
 
-After any selection from the pop-up menu, “Ok”, “Apply” or “Cancel” must be selected to apply or cancel the selection. 
+Altitudes are shown in hundreds of feet if at or below the transition altitude, otherwise in flight levels.
 
 \bigskip
+
+After any selection from the pop-up menu other than “Edit”, “Ok”, “Apply” or “Cancel” must be selected to apply or cancel the selection. 
+
+\subsubsection{Area display}
 
 Preactive and active areas are displayed on the radar screen. A preactive area border is drawn in \colorref{Preactive Map}. An active area border is drawn in \colorref{Active Map Type 4} border and, for areas with high operational impact, filled in a transparent \colorref{Active RD Infill Map}. 
 
 \capdimage{img/tsapre.png}{Preactive Area} \capdimage{img/tsaact.png}{Active Area} \capdimage{img/tsafill.png}{Active High Operational Impact Area}
 
-\bigskip
+\subsubsection{Area label}
 
-A predefined text label may also be displayed, showing information about the area. A very small “+” symbol will be drawn at that location. By holding the left mouse button down on that symbol, a full area label will be displayed, showing:
+An area may display a predefined reduced text label, showing information about the area. By holding the left mouse button down on MAPTEXT or UPPER/LOWER, a full area label will be displayed, showing:
 
 \begin{center}
-        Name\\ 
-        Map text\\
-        Upper level limit\\
-        Start time --------- End time\\
-        Lower level limit\\
-        time in minutes until the area becomes active\\
+  NAME\\
+  MAPTEXT\\
+  UPPER USERTEXT \\
+  --------- START TIME - END TIME\\
+  LOWER\\
 \end{center}
+
+The reduced label can be configured to display any combination of these fields. In the reduced label, a lower limit of “000” will not be displayed.
+
+\bigskip
+
+If an area has more than one activation period defined, is currently active, and the next activation period is pre-active, the levels, times and user text for the next activation period are shown below the current activation period in the label.
 
 \subsection{Flight Plan Selection Window}
 \label{win:fpsw}
