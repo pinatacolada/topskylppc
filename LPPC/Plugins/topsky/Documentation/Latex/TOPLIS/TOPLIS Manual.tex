@@ -4102,17 +4102,19 @@ When there is no answer to a CPDLC uplink clearance, this menu can be used to re
 \label{menu:tm}
 \capdimage{img/etd.png}{Time Menu}
 
-The Time menu is used to set/change the time value for ATD, EOBT, ETD and SLOT fields.
+The Time menu is used to set/change the time value for ATD, CTOT, EOBT, ETD, NBT and NLT fields.
 Default values are:
 
 \begin{longtable}{p{5cm} p{7.5cm}}
 ATD     & Current time\\
+CTOT    & current field value if available, current time otherwise\\
 EOBT    & Current time\\
 ETD     & Current field value\\
-SLOT    & Current field value if any (ATD if different from ETD), current time otherwise\\
+NBT     & Current field value if available, current time otherwise\\
+NLT     & current field value if available, current time otherwise\\
 \end{longtable}
 
-The up/down arrows are used to change the value, “Ok” sets the time.
+“C” clears the value, “Ok” sets the time.
 
 \subsection{Departure Sequence Menu}
 \label{menu:dqm}
