@@ -6229,16 +6229,49 @@ The numbers on the right side are the caution and warning limits. To change them
 
 The two sliders change the traffic number and time scales.
 
-\subsection{Tactical Info Window}
-\label{win:tiw}
+\subsection{Air Traffic Flow Management Window}\label{win:atfmw}
 
-“Open Tactical Info Window” tag function
+\winref{menu:global} STS -> Flow Management…
 
-\bigskip
+\capdimage{img/atfmw.png}{Air Traffic Flow Management Window}
 
-\capdimage{img/tiw.png}{Tactical Info Window}
+The Air Traffic Flow Management Window can be used to list the aircraft flying in the AoR within a specified time period. The following options are available to sort and filter the results (the end of the time period is the only mandatory item):
 
-The Tactical Info Window displays coordinated tactical data (AHDG, ASP and/or ARC). Proposed data is in \colorref{Proposition In}, rejected data in \colorref{Warning} and accepted data in sector state color. This window only displays the information, to answer or apply the data use the \winref{menu:ttm}.
+\begin{longtable}{p{2.5cm} p{10cm}}
+  Sort            & The list sorting parameter, click to toggle between ETD and C/S.\\
+  Time period     & The start and end of the specified time period\\
+  Altitude layer  & The lower and upper limits for the RFL value\\
+  Known point     & A point in the filed route\\
+  Airway          & An airway in the filed route\\
+  ADEP            & Departure airport (starting with the entered string)\\
+  ADES            & Destination airport (starting with the entered string)\\
+  Callsign        & Callsign (starting with the entered string)\\
+  LFUNC           & Predicted to enter airspace of this position ID\\
+  Volumic Sector  & Not implemented\\
+\end{longtable}
+
+For entry into the list, an aircraft must meet all specified filtering criteria. The list displays the following information about each aircraft:
+
+\begin{longtable}{p{2.5cm} p{10cm}}
+  C/S   & Callsign\\
+  ATYP  & Aircraft type\\
+  ADEP  & Departure airport\\
+  ADES  & Destination airport\\
+  ETD   & Estimated Time of Departure\\
+  RFL   & Requested Flight Level\\
+  FIX   & The “Known point” if specified, otherwise the FIR entry coordination point\\
+  ETO   & Estimated time over the fix\\
+  FCOPX & FIR exit coordination point\\
+  STATE & Flight plan system state\\
+\end{longtable}
+
+The buttons in the window:
+
+\begin{longtable}{p{2.5cm} p{10cm}}
+  MOD     & Makes the entry boxes and sorting option selectable, clears the list data.\\
+  Apply   & Calculates the data. Available only when MOD has been selected and at least the end of the time period has been entered. If the start of the time period is left empty, the current time is used.\\
+  Cancel  & Clears all entries and list data\\
+\end{longtable}
 
 \subsection{Pre-Departure Clearance Window}
 \label{win:dlpdcw}
