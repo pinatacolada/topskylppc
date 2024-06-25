@@ -5313,66 +5313,55 @@ See \winref{tool:MTCD}. The CARD window presents the MTCD conflicts and conflict
 
 \bigskip
 
-On the left is the list area which includes all the detected conflicts and shows the concerned aircrafts’ callsigns. A conflict or potential predicted conflict has an \colorref{Urgency} colored label and a risk or potential risk of conflict has a \colorref{Warning} one. Potential conflicts are displayed with \colorref{Potential} colored labels. The conflict numbers are shown in \colorref{CARD Conflict Number} color. An \colorref{Urgency} colored background on a callsign means that the aircraft also has a Short Term Conflict Alert. A highlighted callsign will be highlighted in this list as well. An acknowledged conflict (shown in \colorref{Unconcerned} color) will not display the MTCD warning in the track label. An acknowledged problem will be automatically de-acknowledged if the predicted minimum separation decreases by 1nm.
+On the left is the list area which includes all the detected conflicts and shows the concerned aircrafts’ callsigns. The conflict label background is in \colorref{Urgency} color for a conflict or potential predicted conflict, \colorref{Warning} for a risk or potential risk of conflict and \colorref{Conflict Ack} for an acknowledged conflict. An acknowledged conflict will be automatically de-acknowledged if the predicted minimum separation decreases by 1nm.
 
 \bigskip
 
-Hovering the mouse cursor over a conflict label will display the conflict on the radar screen.
-
-\bigskip
-
-On the right is the graphical display area that gives an overview to the severity and timeframe for each conflict. On the vertical (distance) axis the conflicts are placed to the predicted minimum separation and on the horizontal (time) axis the label is placed so that the left edge of the conflict number is at the time of closest point of approach. A line in \colorref{CARD Time Vector} color, extending to the left from the label, marks the time when the separation will decrease below the prediction distance. For fast closure rates the time from prediction distance to CPA may be too short to display the line. The conflict labels have the same mouse functions as the ones in the list area. If the label position would be outside the maximum time displayed in the window, the label is positioned at the maximum displayed time with a \colorref{Foreground} colored edge.
-The area below 5nm distance is drawn in \colorref{Field Highlight} color.
+On the right is the graphical display area that gives an overview to the severity and timeframe for each conflict. On the vertical (distance) axis the conflicts are placed to the predicted minimum separation and on the horizontal (time) axis the label is placed so that the left edge of the conflict number is at the time of closest point of approach. A line in \colorref{CARD Time Vector} color, extending to the left from the label, marks the time when the separation will decrease below the prediction distance. For fast closure rates the time from prediction distance to CPA may be too short to display the line. The conflict labels have the same mouse functions as the ones in the list area. If the label position would be outside the maximum time displayed in the window, the label is positioned at the maximum displayed time. The area below 5nm distance is drawn in \colorref{CARD Min Sep} color.
 
 \bigskip
 
 The mouse click areas of the CARD window:
 
-\bigskip
-
 \begin{longtable}{p{5.5cm} p{7cm}}
-    “Timeloss” / “Distance”     & Opens a pop-up menu to select the sorting option
+  Sorting option              & Opens a pop-up menu to select the sorting option
                                   
-                                  (Time to start of conflict / Predicted minimum separation)\\
-    “View” menu label           & Toggle the View menu.\\
-    Vertical slider             & Drag to adjust the distance scale\\
-    Horizontal slider           & Drag to adjust the time scale\\
-    Diamond on vertical axis    & Drag to adjust prediction distance    \\
-    Diamond on horizontal axis  & Drag to adjust prediction time\\
-    Triangle on horizontal axis & Drag to adjust warning time\\
-    Conflict number labels      & Left-click to open Mark/ACK menu
-                                  
-                                  Right-click to toggle SEP (minimum separation lines)\\
-\end{longtable}
+                                Time loss (time to start of conflict)
 
-\bigskip
+                                Time min dist (time to minimum separation)
+
+                                Min dist (minimum separation)\\
+  “View” menu label           & Toggle the View menu.\\
+  Vertical slider             & Drag to adjust the distance scale\\
+  Horizontal slider           & Drag to adjust the time scale\\
+  Diamond on vertical axis    & Drag to adjust prediction distance    \\
+  Diamond on horizontal axis  & Drag to adjust prediction time\\
+  Triangle on horizontal axis & Drag to adjust warning time\\
+  Conflict labels             & Left-click to open Mark/ACK menu
+
+                                Middle-click to display SEP (minimum separation lines)  
+                                
+                                Right-click to remove SEP\\
+  Conflict callsigns          & Middle-click to open Vertical Aid Window\\
+\end{longtable}
 
 From the “View” menu it is possible to toggle various MTCD related options:
 
-\bigskip
-
 \begin{longtable}{p{5.5cm} p{7cm}}
-    List                & Toggles display of the list area\\
-    Graphic             & Toggles display of the graphical area\\
-    Grid                & Toggles a nm/min grid on the graphical area\\
-    Risk                & Toggles display of MTCD risks of conflict\\
-    Potential Predicted & Toggles display of MTCD potential predicted conflicts \\
-    Potential Risk      & Toggles display of MTCD potential risks of conflict \\
-    Potential           & Toggles display of MTCD potential conflicts \\
-    PLC                 & Toggles display of planner controller conflicts
-    
-                          (conflict starts later than the triangle displayed on the time axis)\\
-    MTCD Ind            & Toggles the display of the \tagref{tag:MTCD} Mark on the track label\\
-    Notif               & Toggles whether tracks in the \stateref{Notified} state are considered for MTCD\\
-    Unco                & Toggles whether \stateref{Unconcerned} tracks are considered for MTCD\\
-    Future              & Toggles whether FPASD tracks are considered for MTCD (flight plan tracks must be at least in the \stateref{Coordinated} state regardless of the “Notif” and “Unco" selections)\\
+    List                  & Toggles display of the list area\\
+    Graphic               & Toggles display of the graphical area\\
+    Risk                  & Toggles display of MTCD risks of conflict\\
+    Downstream Predicted  & Toggles display of conflicts starting in next sector\\
+    Potential Predicted   & Toggles display of MTCD potential predicted conflicts \\
+    Potential Risk        & Toggles display of MTCD potential risks of conflict \\
+    PLC                   & Toggles display of PLC conflicts (starts later than the triangle displayed on the time axis)\\
+    MTCD Ind              & Toggles the display of the \tagref{tag:MTCD} Mark on the track label\\
+    Notif                 & Toggles whether tracks in the \stateref{Notified} state are considered for MTCD\\
+    Unco                  & Toggles whether \stateref{Unconcerned} tracks are considered for MTCD\\
+    Future                & Toggles future conflicts (starting later than the currently visible time period)\\
 \end{longtable}
 
-\bigskip
-
 From the “Mark/ACK” menu it is possible to toggle conflict-specific options:
-
-\bigskip
 
 \begin{longtable}{p{2.5cm} p{10cm}}
     Mark All    & Toggles marking the \tagref{tag:CALLSIGN} and \tagref{tag:AFL}’s of the concerned tracks with \colorref{CARD Mark All} color\\
