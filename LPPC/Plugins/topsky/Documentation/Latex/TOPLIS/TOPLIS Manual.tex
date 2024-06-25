@@ -5893,6 +5893,7 @@ The Document Viewer Window is used to browse and search for information in speci
         \item Aircraft operating agency and notifying state
         \item (Telephony designator)
     \end{itemize}
+    \item NAT TrkM - Downloaded NAT Track Message (for oceanic setups)
 \end{itemize}
 
 \bigskip
@@ -5929,28 +5930,13 @@ By default, the window displays all received NOTAMs. Left-clicking on the “All
 
 The NOTAM List is automatically displayed at startup in order to fetch the current FUA. It may be closed after loading.
 
-\subsection{Aerodrome Window}
-\label{win:adw}
+\subsection{Small QNH/TL Window}\label{win:sqnhw}
 
-\winref{menu:global} -> Info -> Aerodrome...
+\winref{menu:global} -> Info -> Small QNH/TL…
 
-\bigskip
+\capdimage{img/sqnhw.png}{Aerodrome Window}
 
-\capdimage{img/adinfo.png}{Aerodrome Window}
-
-The Aerodrome Window displays information about the selected airport.
-
-\bigskip
-
-Left-clicking on the airport ICAO code opens the \winref{menu:ad} to select another airport, and left-clicking on the “NOTAM” button opens the \winref{win:notamlw}, showing only the NOTAMs for the selected airport.
-
-\bigskip
-
-Below the header, the latest METAR and TAF for the airport are displayed. The QNH and TRL in the header are based on the METAR data.
-
-\bigskip
-
-The bottom part of the window displays the arrival and departure runway allocation at the selected airport. The runway selections are read-only in this window.
+Displays the QNH and transition level for one pre-defined aerodrome. If an aerodrome code has not been defined in the settings file, the code will be taken from the login callsign for APP logins and below. For CTR callsigns the window will automatically display data for LPPT.
 
 \subsection{LFUNC Frequency Plan Window}
 \label{win:lfunc}
