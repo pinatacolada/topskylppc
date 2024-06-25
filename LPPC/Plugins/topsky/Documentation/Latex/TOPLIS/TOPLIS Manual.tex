@@ -5470,65 +5470,60 @@ The Message In Window shows received coordination messages, sorted by time, with
 
 The available message types are:
 
-\bigskip
-
 \begin{itemize} 
-    \item “From <SI> proposes: <Callsign> is coming to your frequency”
-         \begin{itemize} 
-            \item Displayed when the track is being transferred to you
-            \item Removed when the transfer is complete or cancelled
-         \end{itemize}
-    \item “From <SI> for <Callsign> proposes Request on downstream frequency”
-         \begin{itemize}
-            \item Displayed when the next controller has sent a \winref{coo:rof} message
-            \item Left-clicking on the line manually removed
-            \item Removed when a transfer is started
-         \end{itemize} 
-    \item “From <SI> for <Callsign> proposes Handover [HDG xxx] [DCT xxxxx] [SP xxx]”
-        \begin{itemize}
-            \item Displayed when there is a \winref{coo:hop} in progress
-            \item Left-clicking on the line opens the \winref{menu:ctm}
-            \item Removed when the transfer is complete or cancelled
-        \end{itemize} 
-    \item “From <SI> for <Callsign> RTI [HDG xxx] [SP xxx] [ARC xx]”
-        \begin{itemize}
-            \item Displayed when an \winref{coo:rti} message has been received
-            \item Left-clicking on the line opens the \winref{menu:ttm}
-        \end{itemize} 
-    \item “From <SI> for <Callsign> TIP [HDG xxx] [SP xxx] [ARC xx]”
-        \begin{itemize}
-            \item Displayed when a \winref{coo:tip} message has been received
-            \item Left-clicking on the line opens the \winref{menu:ttm}
-            \item Removed when the track becomes \stateref{Assumed}
-        \end{itemize} 
-    \item “From <SI> for <Callsign> proposes HOP/RTI/TIP Accepted”
-        \begin{itemize}
-            \item Displayed when an Accept message has been received to HOP, RTI or TIP
-            \item Left-clicking on the line manually removes it
-        \end{itemize} 
-    \item “From <SI> for <Callsign> proposes RTI/TIP rejected [by timeout]”
-        \begin{itemize}
-            \item Displayed when a reject message has been received to RTI or TIP
-            \item Left-clicking on the line manually removes it
-        \end{itemize} 
-    \item “From <SI> for <Callsign> proposes [COPN xxxxx] [PEL xxx]”
-        \begin{itemize}
-            \item Displayed when an entry coordination has been received
-            \item Left-clicking on a value opens the EuroScope default menu to answer
-            \item Removed when the track becomes Assumed
-        \end{itemize} 
-    \item “From <SI> for <Callsign> proposes [COPX xxxxx] [XFL xxx]”
-        \begin{itemize}
-            \item Displayed when an exit coordination has been received
-            \item Left-clicking on a value opens the EuroScope default menu to answer an active coordination
-        \end{itemize} 
-    \item “From <SI>: <Callsign> will be squawking <ASSR>”
-        \begin{itemize}
-            \item Displayed when a previous controller assigns a new SSR code for a track
-            \item Left-clicking on the line manually removes it
-        \end{itemize}     
+  \item “From <SI> for <Callsign> COF”
+    \begin{itemize} 
+      \item Displayed when the track is being transferred to you
+      \item Removed when the transfer is complete or cancelled
+    \end{itemize}
+  \item “From <SI> for <Callsign> ROF”
+    \begin{itemize}
+      \item Displayed when the next controller has sent a \winref{coo:rof} message
+      \item Left-clicking on the line manually removed
+      \item Removed when a transfer is started
+    \end{itemize} 
+  \item “From <SI> for <Callsign> HOP [HDG xxx] [DCT xxxxx] [SP xxx]”
+    \begin{itemize}
+      \item Displayed when there is a \winref{coo:hop} in progress
+      \item Left-clicking on the line opens the \winref{menu:ctm}
+      \item Removed when the transfer is complete or cancelled
+    \end{itemize} 
+  \item “From <SI> for <Callsign> RTI [HDG xxx] [SP xxx] [ARC xx]”
+    \begin{itemize}
+      \item Displayed when an \winref{coo:rti} message has been received
+    \end{itemize} 
+  \item “From <SI> for <Callsign> TIP [HDG xxx] [SP xxx] [ARC xx]”
+    \begin{itemize}
+      \item Displayed when a \winref{coo:tip} message has been received
+      \item Removed when the track becomes \stateref{Assumed}
+    \end{itemize} 
+  \item “From <SI> for <Callsign> accept HOP/RTI/TIP
+    \begin{itemize}
+      \item Displayed when an Accept message has been received to HOP, RTI or TIP
+      \item Left-clicking on the line manually removes it
+    \end{itemize} 
+  \item “From <SI> for <Callsign> reject RTI/TIP [by timeout/by system]”
+    \begin{itemize}
+      \item Displayed when a reject message has been received to RTI or TIP
+      \item Left-clicking on the line manually removes it
+    \end{itemize} 
+  \item “From <SI> for <Callsign> RAP/RRV [level] [DCT xxx]”
+    \begin{itemize}
+      \item Displayed when an entry coordination has been received
+      \item Left-clicking on a value opens the EuroScope default menu to answer
+      \item Removed when the track becomes Assumed
+    \end{itemize} 
+  \item “From <SI> for <Callsign> CDN [level] [DCT xxx]”
+    \begin{itemize}
+      \item Displayed when an exit coordination has been received
+      \item Left-clicking on a value opens the EuroScope default menu to answer an active coordination
+    \end{itemize} 
+  \item “From <SI> for <Callsign> COD <ASSR>”
+    \begin{itemize}
+      \item Displayed when a previous controller assigns a new SSR code for a track
+      \item Left-clicking on the line manually removes it
+    \end{itemize}     
 \end{itemize}
-
 
 \subsection{Message Out Window}
 \label{win:mow}
