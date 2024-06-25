@@ -5810,16 +5810,28 @@ The window displays upper winds and temperatures from a range of levels at a use
 
 The “Updated at HH:MM” displays the timestamp of the data downloaded by the plugin (the data itself is the forecast for 6 hours after that time). If no time is shown, then no data is available.
 
-\subsection{QNH/TL Window}
-\label{win:qnhtl}
+\subsection{Airfield Data Window}\label{win:adw}
 
-\winref{menu:global} MET -> QNH/TL...
+\winref{menu:global} MET -> Airfield Data
+
+\capdimage{img/adw.png}{Airfield Data Window}
+
+The window displays the QNH values, transition levels and other information for those airports that have a METAR displayed in the \winref{win:wxmw}. The transition level tables are defined in a data file, and if a table can’t be found for an airport in the list, a transition level will not be shown. The buttons in the window have no functionality.
 
 \bigskip
 
-\capdimage{img/qnhtl.png}{QNH/TL Window}
+The following information is displayed:
 
-The window displays the QNH values and corresponding transition levels for those airports that have a METAR displayed in the \winref{win:wxmw}. The transition level tables are defined in a data file, and if a table can’t be found for an airport in the list, a transition level will not be shown. The buttons in the window have no functionality.
+\begin{longtable}{p{2.5cm} p{10cm}}
+  A/D   & Aerodrome ICAO code\\
+  TIME  & METAR timestamp\\
+  ARWY  & Arrival runway (first one if more than one active)\\
+  QNH   & QNH value\\
+  TL    & Transition level\\
+  TEXT  & Other active arrival runways (if more than one)\\
+\end{longtable}
+
+TIME, ARWY and TEXT display can be toggled from the “View” menu.
 
 \subsection{General Information Window}
 \label{win:geninfo}
