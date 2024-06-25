@@ -5340,7 +5340,7 @@ The mouse click areas of the CARD window:
   Conflict labels             & Left-click to open Mark/ACK menu
 
                                 Middle-click to display SEP (minimum separation lines)  
-                                
+
                                 Right-click to remove SEP\\
   Conflict callsigns          & Middle-click to open Vertical Aid Window\\
 \end{longtable}
@@ -5375,11 +5375,43 @@ From the “Mark/ACK” menu it is possible to toggle conflict-specific options:
 
 \winref{menu:global} Tools -> SAP...
 
-\bigskip
-
 \capdimage{img/sap.png}{SAP Window}
 
-See \winref{tool:SAP}. The SAP window lists the aircraft that have SAP conflicts. The list shows the aircraft callsign, the area it will enter and the coordinates and the time when it will enter it. Only the first entered area will be shown if the aircraft is predicted to enter more than one active area. Placing the mouse cursor over an aircraft line will show the aircraft’s route on the radar screen up to the first point of entering an active area or the first point where there is a risk of doing so if risks are selected to be displayed on the window. The list is sorted according to the entry time field, with the earliest time on top.
+See \winref{tool:SAP}. The SAP window lists the aircraft that have SAP risks or conflicts. The list shows the following information about each conflict:
+
+\begin{longtable}{p{5.5cm} p{7cm}}
+  C/S   & Aircraft callsign\\
+  ASSR  & Assigned SSR code\\
+  AREA  & Name of the area\\
+  USER  & User text of the area\\
+  TIME  & Entry time into the area (current time if already inside)\\
+  CFL   & Cleared Flight Level\\
+  ACK   & Conflict acknowledgement status (military coordination indicator)\\
+\end{longtable}
+
+For active areas the area name is displayed in \colorref{TSA Active} color and for pre-active areas in \colorref{TSA Preactive}.
+
+\bigskip
+
+The mouse click areas of the SAP window:
+
+\begin{longtable}{p{5.5cm} p{7cm}}
+“View” menu label & Toggle the View menu 
+                    
+                    o Header Toggle display of list header row\\
+“Font” menu label & not implemented\\
+Sorting option    & Opens a pop-up menu to select the sorting option: 
+                    
+                    o Time (entry time) 
+                    
+                    o Area (area name)\\
+C/S               & Left-click opens \winref{menu:cs}\\
+ASSR              & Left-click opens \winref{menu:assr}\\
+CFL               & Left-click opens \winref{menu:cfl} 
+
+                    Right-click opens \winref{win:vaw}\\
+ACK               & Left-click toggles military coordination indicator\\
+\end{longtable}
 
 \subsection{Vertical Aid Window}
 \label{win:vaw}
