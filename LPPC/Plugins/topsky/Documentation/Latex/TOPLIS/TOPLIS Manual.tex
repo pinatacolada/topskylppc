@@ -4867,35 +4867,60 @@ The Brightness Control Window allows setting the brightness for some screen colo
 
 \winref{menu:global} Setup -> CPDLC Setting...
 
-\bigskip
-
 \capdimage{img/dlsetup.png}{CPDLC Setting Window}
 
-The CPDLC Setting Window is used to begin/end the connection to the CPDLC network, and change some CPDLC related settings.
+The CPDLC Setting Window is used to begin/end the connection to the CPDLC network, and change some CPDLC related settings. It is split into three sections:
 
-\bigskip
+\subsubsection*{Connection setup}
 
-The “Connect” button becomes available once you are connected to the VATSIM network as a controller and both the Login (four-character callsign used for the CPDLC connection) and the Logon Code (your personal password to the Hoppie network) have been entered. Left-clicking on it connects TopSky to the CPDLC network. Once a connection has been established, the button background color changes to Information and the button text changes to “Online”. Once connected, left-clicking on the button disconnects TopSky from the CPDLC network.
+\begin{longtable}{p{2.5cm} p{10cm}}
+  Login               & Four-character callsign used for the CPDLC connection\\
+  “Connect”/“Online”  & Left-click to Connect/disconnect the plugin to/from the CPDLC network\\
+  Logon               & Code Your personal password to the Hoppie network\\
+\end{longtable}
 
-\bigskip
+Once a connection has been established, the “Connect” button background color changes to \colorref{Information} and the button text changes to “Online”.
 
-\note{  It is possible to have the Logon Code pre-filled by creating a text file called “TopSkyCPDLChoppieCode.txt” in the same folder as the plugin dll (TopSky.dll). The file should contain only the logon code, nothing else. As the file contains your personal logon code, do not share it.}
-
-\bigskip
+\note{ It is possible to have the Logon Code pre-filled by creating a text file named \texttt{TopSkyCPDLChoppieCode.txt} in the same folder as the plugin dll (\texttt{TopSky.dll}). The file should contain only the logon code, nothing else. As the file contains your personal logon code, do not share it.}
 
 If the VATSIM callsign is known when the window is opened, the CPDLC login callsign is pre-selected based on it. If necessary, the CPDLC login can be changed.
 
-\bigskip
+\subsubsection*{DCL/PDC setup}
 
-The “CPDLC” and “DCL” selections are used to define the offered services.
+\begin{longtable}{p{2.5cm} p{10cm}}
+  DCL/PDC & Datalink clearance service on/off\\
+  Auto    & Automatic sending of datalink clearances on/off\\
+\end{longtable}
 
-\bigskip
+\note{The DFREQ, NFREQ, NPT and START options have no effect, as they are not used in the CLD message.}
 
-Sending a clearance via CPDLC can be the default setting in some of TopSky menus. For this to happen, the aircraft must be above the “Min Level” (FL) specified here, the selection button for the menu in question must be on, and the CPDLC Default Status (in \winref{menu:global}->\winref{menu:sts}) must be “On”. The “DCT” option does not do anything at the moment (DCT clearance via CPDLC is given using the “Point” option in the AHDG menu, so the “AHDG” option controls that as well). “Auto-accept logon” automatically accepts valid logon requests from tracks above “Min Level”.
+When the “Auto” option is enabled, a datalink clearance will be automatically sent when a request is received if all the following conditions are met:
 
-\bigskip
+\begin{itemize}
+  \item The received clearance request must not contain any remarks text;\\
+  \item A suitable clearance format is available for the aircraft;\\
+  \item The aircraft is not assumed by another controller;\\
+  \item The aircraft has a departure runway assigned;\\
+  \item The aircraft has a cleared altitude manually assigned;\\
+  \item The aircraft has a transponder code assigned.\\
+\end{itemize}
 
-When making changes to the “Min Level” or the menu selections, the “Ok” and “Cancel” buttons become active. Left-click on “Ok” to apply the changes or “Cancel” to abort.
+\subsubsection*{CPDLC setup}
+
+\begin{longtable}{p{2.5cm} p{10cm}}
+  CPDLC               & CPDLC service on/off\\
+  Auto-accept logon   & Automatically accepts valid logon requests from tracks above FL100\\
+\end{longtable}
+
+The following items are the only ones visible also in proxy EuroScope instances, and are used to determine whether sending a clearance via CPDLC is the default setting in some of the plugin menus. For this to happen:
+
+\begin{itemize}
+  \item The aircraft must be above FL100;
+  \item The selection button for the menu in question must be on;
+  \item The CPDLC Default Status (in \winref{menu:global}->\winref{menu:sts}) must be “ON".
+\end{itemize}
+
+When making changes to any items other than the connection setup part and the “DCL/PDC” and “CPDLC” selections, the “Ok” and “Cancel” buttons become active. Left-click on “Ok” to apply the changes or “Cancel” to abort.
 
 \subsection{Raw Video Control Window}
 \label{win:rvcw}
