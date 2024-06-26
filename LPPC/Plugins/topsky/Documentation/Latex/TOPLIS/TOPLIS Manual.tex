@@ -6341,6 +6341,46 @@ The Departure Coordination Window can be used to set the clearance flag. The win
     Ok      & Applies any changes, sets the clearance flag and closes the window\\
 \end{longtable}
 
+\subsection{Departure Clearance Window}\label{win:dclw}
+
+“Open DCL Window/PDC Window” tag function
+
+\capdimage{img/dclw.png}{Departure Clearance Window}
+
+The Departure Clearance Window is used to issue datalink clearances.
+
+\bigskip
+
+The top part of the window (“From a/c”) displays the aircraft callsign and information received from the aircraft in the clearance request message:
+
+\begin{longtable}{p{2.5cm} p{10cm}}
+  Gate    & Stand designator\\
+  ATYP    & Aircraft type\\
+  ADES    & Destination\\
+  ATIS    & ATIS designator\\
+  RCD-RMK & Remarks text (only displayed if not empty)\\
+\end{longtable}
+
+The bottom part is used to compose and send a reply:
+
+\begin{longtable}{p{2.5cm} p{10cm}}
+  RWY *   & Departure runway (left-click to open RWY setup popup list)\\
+  SID     & SID designator (left-click to open SID setup popup list)\\
+  AHDG    & Assigned heading (left-click to open \winref{menu:ahdg})\\
+  CFL *   & Cleared level (left-click to open \winref{menu:cfl})\\
+  ASSR *  & Assigned transponder code (left-click to open \winref{menu:assr})\\
+\end{longtable}
+
+The buttons are as follows:
+
+\begin{longtable}{p{2.5cm} p{10cm}}
+  Send    & MSG Sends the clearance message, closes the window\\
+  R/T     & Sends a “REVERT TO VOICE” message, aborts the datalink clearance process\\
+  Cancel  & Closes the window\\
+\end{longtable}
+
+The “Send MSG” button is available when a clearance can be sent – a defined format is available, all required fields have been filled (all fields marked with “*” above, when present, are required fields) and another controller is not tracking the aircraft (so it’s possible to set the clearance flag).
+
 \section{Flight Leg}
 
 The Flight Leg displays the aircraft’s planned track in one-minute steps. Each one-minute-long part of the
