@@ -6295,71 +6295,32 @@ The Operational Load Forecast Window displays the predicted number of aircraft e
   Cancel  & Clears all entries and data.\\
 \end{longtable}
 
-\subsection{Pre-Departure Clearance Window}
-\label{win:dlpdcw}
+\subsection{Pre-Departure Clearance Window}\label{win:dlpdcw}
 
-“Open PDC Window” tag function
-
-\bigskip
+“Open DCL Window/PDC Window” label function
 
 \capdimage{img/dcl.png}{Pre-Departure Clearance Window}
 
-The Pre-Departure Clearance Window is used to issue departure clearances, either via R/T or datalink. The following data fields are displayed for review:
-
-\bigskip
+The Pre-Departure Clearance Window is used to adjust clearance data and toggle the clearance flag. The following data fields are displayed for review:
 
 \begin{longtable}{p{2.5cm} p{10cm}}
     RWY     & Departure runway (left-click to open RWY setup popup list)\\
     SID     & Assigned SID (left-click to open SID setup popup list)\\
     AHDG    & Assigned heading (left-click to open \winref{menu:ahdg})\\
-    NPT     & Next route point (left-click to edit)\\
     CFL     & Cleared level (left-click to open \winref{menu:cfl})\\
     ASSR    & Assigned transponder code (left-click to open \winref{menu:assr})\\
-    START   & Start-up clearance (left-click to toggle between “YES” and “NO”)\\
-    NFREQ   & Next frequency (left-click to edit)\\
-    DFREQ   & Departure frequency (left-click to edit)\\
-    RMK     & Free text remarks to send with a datalink clearance (left-click to edit)\\
 \end{longtable}
 
-\bigskip
-
-The NPT, NFREQ, DFREQ, START and RMK fields are only displayed if a datalink clearance has been requested and the clearance format (defined in the CPDLC data file) includes them.
-
-\bigskip
-
-The RWY field text is displayed in \colorref{Proposition In} color if the clearance has not yet been issued and the selected runway is not active for departure. The CFL level background is displayed in \colorref{Warning} color for DEL/GND/TWR/APP/DEP controllers when it is above XFL, and for CTR/FSS controllers when it is above PEL.
-
-\bigskip
-
-When the datalink clearance format includes the possibility to switch between “track” and “heading” modes, the “AHDG” label is displayed as a button. Left-click on it to toggle between “AHDG” and “TRACK”.
-
-\bigskip
-
-When the RMK field contains text, the window displays the full text if it is not longer than 8 characters, otherwise the 7 first characters + “…”. Left-click to edit the text.
-
-\bigskip
-
-When the aircraft has requested a clearance via datalink, the two buttons in the window are:
+The RWY field text is displayed in \colorref{Proposition In} color if the clearance has not yet been issued and the selected runway is not active for departure. The CFL level background is displayed in \colorref{Warning} color for DEL/GND/TWR/APP controllers when it is above XFL, and for CTR controllers when it is above PEL.
 
 \begin{longtable}{p{2.5cm} p{10cm}}
-    Send DCL    & Sends a departure clearance via datalink, closes the window\\
-    Voice       & Sends an error message “REVERT TO VOICE PROCEDURE”, closes the window\\
+    Ok      & Sets the clearance flag, closes the window\\
+    Cancel  & Clears the clearance flag, closes the window\\
 \end{longtable}
 
 \bigskip
 
-When the aircraft has not requested a clearance via datalink, not enough data is entered, or the controller has used the “Voice” option above to abort the datalink clearance process, the buttons are:
-
-\bigskip
-
-\begin{longtable}{p{2.5cm} p{10cm}}
-    Ok      & Sets the clearance flag “On”, closes the window\\
-    Cancel  & Sets the clearance flag “Off”, closes the window\\
-\end{longtable}
-
-\bigskip
-
-The “Send DCL” and “Ok” buttons are active when at least the “RWY”, “CFL”, “ASSR”, all displayed frequency fields and the “NPT” field, if displayed, contain data.
+The “Ok” button is active when at least “RWY”, “CFL” and “ASSR” contain data. The window closes automatically if the aircraft is assumed by another controller.
 
 \subsection{Departure Coordination Window}
 \label{win:dcw}
