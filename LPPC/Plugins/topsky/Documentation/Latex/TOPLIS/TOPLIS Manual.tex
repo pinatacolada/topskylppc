@@ -4398,49 +4398,64 @@ Up to 2 lists can be displayed. Each list may be configured with different filte
 \footnotetext[1]{Labeled as ETO}
 \footnotetext[2]{Labeled as EAT}
 
-\subsection{Holding List}
-\label{list:hold}
-
-The Holding List contains aircraft in the \stateref{Assumed}, \stateref{Transfer Initiated} and \stateref{On Contact} states that have been given a holding clearance. The list is automatically displayed whenever there is at least one aircraft in the list.
+\subsection{Holding List}\label{list:hold}
 
 \capdimage{img/hlist.png}{Holding List}
 
-“View” opens the View menu which contains only one item, “Header”. It toggles the visibility of the list’s header line.
+The Holding List contains aircraft that have been given a holding clearance (by default the aircraft need to be at least in the coordinated sector state). The list is automatically displayed whenever there is at least one aircraft in the list. Left-clicking the button at the top right corner collapses the list to display only the title bar.
 
 \bigskip
 
-“Options” is inaccessible as there are no selectable options in the holding list.
+It is possible to set up point-specific lists using the plugin settings file, in which case the generic list includes aircraft that are in a TSA hold, present position hold or holding at a point for which there is no specific list defined. For point-specific lists, the list title text begins with the point name.
 
 \bigskip
 
-The list sorting option is displayed next to the “Options” label. Clicking on it opens a menu to select between the following sorting options:
+“View” opens the View menu
+
+\begin{longtable}{p{5cm} p{7.5cm}}
+  Header  & Toggle visibility of the list header line\\
+  Default & Sets field visibility to default (all optional fields off)\\
+  <field> & Toggles field visibility\\
+\end{longtable}
+
+Left-clicking adjusts only the current list, right-clicking sets the same value to all holding lists.
+
+\bigskip
+
+The list sorting option is displayed next to the "View" label. Clicking on it opens a menu to select between the following sorting options:
 
 \bigskip
 
 \begin{longtable}{p{5cm} p{7.5cm}}
-    “ETO on Holding point”  & ETO at the holding point -> Holding point name -> Callsign\\
-    “Holding point”         & Holding point name -> CFL -> Callsign\\
+  ETO/HPT     & ETO at the holding point -> Holding point name -> Callsign\\
+  HPT/CFL/AFL & Holding point name -> CFL -> AFL -> Callsign\\
+  FX/STA      & Feeder fix name -> Scheduled time at feeder fix -> Callsign\\
 \end{longtable}
+
+For point-specific holding lists, the sorting options are “ETO”, “CFL/AFL” and “FX/STA”.
 
 \bigskip
 
 The ETO column initially displays the estimated time over the holding fix. Once the aircraft enters the holding, the displayed time is fixed to the holding start time. For present position holds and holding points whose positions are unknown, the time when the holding clearance was given is displayed.
 
-\bigskip
-
-\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|} \hline
-    \textbf{Item}           & \textbf{Left mouse}                 & \textbf{Right mouse} \endhead \hline 
-    Label                   & Hide/display track label            & \\ \hline
-    Callsign                & Open \winref{menu:cs}    & \\ \hline
-    AFL                     & Open \winref{menu:afl}   & Toggle Flight Leg display\\ \hline
-    (attitude indicator)    &                                     & \\ \hline
-    CFL                     & Open \winref{menu:cfl}   & Toggle Flight Leg display\\ \hline
-    HPT                     & Open \winref{win:smw}    & \\ \hline
-    ETO                     &                                     & \\ \hline
+\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
+  \textbf{Item}             & \textbf{Type} & \textbf{Left Mouse}   & \textbf{Right Mouse} \endhead \hline
+    Lbl                     & optional  & Hide/display track label  &                           \\ \hline
+    C/S                     & mandatory & Open \winref{menu:cs}     &                           \\ \hline
+    ASSR                    & optional  & Open \winref{menu:assr}   &                           \\ \hline
+    AFL                     & mandatory & Open \winref{menu:afl}    &                           \\ \hline
+    (attitude indicator)    & mandatory &                           &                           \\ \hline
+    CFL                     & mandatory & Open \winref{menu:cfl}    & Open \winref{win:vaw}     \\ \hline
+    HPT                     & optional  & Open \winref{win:smw}     &                           \\ \hline
+    ETO                     & optional  &                           &                           \\ \hline
+    XFL                     & optional  & Open COPX Alt popup       &                           \\ \hline
+    COPX                    & optional  & Open \winref{menu:wpt}    & Toggle route draw         \\ \hline
+    PEL                     & optional  & Open COPX Alt popup       &                           \\ \hline
+    FX                      & optional  &                           &                           \\ \hline
+    STA                     & optional  &                           &                           \\ \hline
+    TTLTTG                  & optional  &                           &                           \\ \hline
     \caption{Holding List Construction}
   \end{longtable}
-
-\bigskip
 
 If a track label has been hidden, it will be automatically unhidden if the aircraft is cleared to leave the holding or an incoming coordination message for the flight is received.
 
