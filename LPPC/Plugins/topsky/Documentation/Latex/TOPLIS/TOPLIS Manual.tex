@@ -4244,6 +4244,47 @@ The Load Factor List contains all departed controlled aircraft in the concerned 
   \caption{Load Factor List Construction}
 \end{longtable}  
 
+\subsection{Resectorisation List}
+\label{list:resec}
+
+\winref{menu:global} Tools -> Flight Plan Lists -> Resectorisation List…
+
+\bigskip
+
+The Resectorisation List contains all flights assumed or on-contact with specified LFUNCs.
+
+\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
+  \textbf{Item}         & \textbf{Left Mouse}     & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
+  \tagref{tag:CALLSIGN} & Open \winref{menu:cs}     &                           & \usym{2713}         \\ \hline
+  \tagref{tag:CFL}      & Open \winref{menu:cfl}    & Toggle Flight Leg display & \usym{2713}         \\ \hline
+  \caption{Resectorisation List Construction}
+\end{longtable}  
+
+\subsection{ETWR List}
+\label{list:etwr}
+
+\winref{menu:global} Tools -> Flight Plan Lists -> ETWR List...
+
+\bigskip
+
+The ETWR List contains notified and coordinated flights departing from specified airports
+
+\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
+  \textbf{Item}         & \textbf{Left Mouse}     & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
+  \tagref{tag:CALLSIGN} & Open \winref{menu:cs}     & Open Extended Label       & \usym{2713}         \\ \hline
+  \tagref{tag:ETN}      &                           &                           & \usym{2713}         \\ \hline
+  \tagref{tag:PEL}      & Open PEL Menu             &                           & \usym{2713}         \\ \hline
+  \tagref{tag:COPN}     & Open \winref{menu:wpt}    & Toggle Flight Leg display & \usym{2713}         \\ \hline
+  \tagref{tag:SID}      & Open \winref{win:dlpdcw}  &                           & \usym{2713}         \\ \hline
+  \tagref{tag:DRWY}     & Open \winref{win:dlpdcw}  &                           & \usym{2713}         \\ \hline
+  \tagref{tag:ATYP}     &                           &                           & \usym{2713}         \\ \hline
+  \tagref{tag:RFL}      & Open \winref{menu:rfl}    & Open \winref{win:dlcmw}   & \usym{2713}         \\ \hline
+  \tagref{tag:ASSR}     & Open \winref{menu:assr}   & Send CPDLC Squawk message & \usym{2713}         \\ \hline
+  \tagref{tag:ADEP}     &                           &                           & \usym{2713}         \\ \hline
+  \tagref{tag:ADES}     & Open \winref{win:fpw}     &                           & \usym{2713}         \\ \hline
+  \caption{ETWR List Construction}
+\end{longtable}  
+
 \subsection{Uncontrolled Lists}
 \label{list:uncon}
 
@@ -4271,85 +4312,6 @@ Up to 2 lists can be displayed. Each list may be configured with different filte
 \end{longtable} 
 
 \footnotetext[1]{Labeled as LFUNC}
-
-\subsection{ETWR List}
-\label{list:etwr}
-
-\winref{menu:global} Tools -> Flight Plan Lists -> ETWR List...
-
-\bigskip
-
-The ETWR List contains notified and coordinated flights departing from specified airports
-
-\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
-  \textbf{Item}         & \textbf{Left Mouse}     & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
-  \tagref{tag:CALLSIGN} & Open \winref{menu:cs}     & Open Extended Label       & \usym{2713}         \\ \hline
-  \tagref{tag:ETN}      &                           &                           & \usym{2713}         \\ \hline
-  \tagref{tag:PEL}      & Open PEL Menu             &                           & \usym{2713}         \\ \hline
-  \tagref{tag:COPN}     & Open \winref{menu:wpt}    & Toggle Flight Leg display & \usym{2713}         \\ \hline
-  \tagref{tag:SID}      & Open \winref{win:dlpdcw}  &                           & \usym{2713}         \\ \hline
-  \tagref{tag:DRWY}     & Open \winref{win:dlpdcw}  &                           & \usym{2713}         \\ \hline
-  \tagref{tag:ATYP}     &                           &                           & \usym{2713}         \\ \hline
-  \tagref{tag:RFL}      & Open \winref{menu:rfl}    & Open \winref{win:dlcmw}   & \usym{2713}         \\ \hline
-  \tagref{tag:ASSR}     & Open \winref{menu:assr}   & Send CPDLC Squawk message & \usym{2713}         \\ \hline
-  \tagref{tag:ADEP}     &                           &                           & \usym{2713}         \\ \hline
-  \tagref{tag:ADES}     & Open \winref{win:fpw}     &                           & \usym{2713}         \\ \hline
-  \caption{ETWR List Construction}
-\end{longtable}  
-
-\subsection{Resectorisation List}
-\label{list:resec}
-
-\winref{menu:global} Tools -> Flight Plan Lists -> Resectorisation List…
-
-\bigskip
-
-The Resectorisation List contains all flights assumed or on-contact with specified LFUNCs.
-
-\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
-  \textbf{Item}         & \textbf{Left Mouse}     & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
-  \tagref{tag:CALLSIGN} & Open \winref{menu:cs}     &                           & \usym{2713}         \\ \hline
-  \tagref{tag:CFL}      & Open \winref{menu:cfl}    & Toggle Flight Leg display & \usym{2713}         \\ \hline
-  \caption{Resectorisation List Construction}
-\end{longtable}  
-
-\subsection{Traffic Management Lists}
-\label{list:tml}
-
-\winref{menu:global} Tools -> Flight Plan Lists -> Traffic Management List 1/2…
-
-\bigskip
-
-The Traffic Management List contains all Uncontrolled and Controlled flights at least in Coordinated State with specified destinations, and routing via specified points. The ETO over the point (or ETA if no point specified) must be within 30 minutes, and the destination must be specified to include uncontrolled flights in the list.
-
-\bigskip
-
-Up to 2 lists can be displayed. Each list may be configured with different filtering options.
-
-\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
-  \textbf{Item}         & \textbf{Left Mouse}     & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
-  \tagref{tag:COPN}     & Open \winref{menu:wpt}  & Toggle Flight Leg display &                     \\ \hline
-  \tagref{tag:PEL}      & Open PEL Menu           &                           &                     \\ \hline
-  \tagref{tag:SI}       & Open SI List            & Toggle SI frequency       &                     \\ \hline
-  \tagref{tag:CALLSIGN} & Open \winref{menu:cs}   & Open Extended Label       & \usym{2713}         \\ \hline
-  \tagref{tag:ASSR}     & Open \winref{menu:assr} & Send CPDLC Squawk message &                     \\ \hline
-  \tagref{tag:AFL}      & Open \winref{menu:afl}  &                           & \usym{2713}         \\ \hline
-  \tagref{tag:a}        &                         &                           &                     \\ \hline
-  \tagref{tag:CFL}      & Open \winref{menu:cfl}  &                           &                     \\ \hline
-  \tagref{tag:ATYP}     &                         &                           & \usym{2713}         \\ \hline
-  \tagref{tag:WTC}      &                         &                           & \usym{2713}         \\ \hline
-  \tagref{tag:TAS}      &                         &                           &                     \\ \hline
-  \tagref{tag:RFL}      & Open \winref{menu:rfl}  & Open \winref{win:dlcmw}   &                     \\ \hline
-  \tagref{tag:ETOHP}\footnotemark[1]    &                         &                           & \usym{2713}         \\ \hline
-  \tagref{tag:OP TEXT2}\footnotemark[2]   & Edit OP\_TEXT2          &                           & \usym{2713}         \\ \hline
-  \tagref{tag:STAR}     & Open STAR list          &                           & \usym{2713}         \\ \hline
-  \tagref{tag:ARWY}     & Open Runway list        &                           & \usym{2713}         \\ \hline
-  \tagref{tag:HP}       & Open \winref{menu:wpt}  &                           & \usym{2713}         \\ \hline
-  \caption{Traffic Management List Construction}
-\end{longtable}
-
-\footnotetext[1]{Labeled as ETO}
-\footnotetext[2]{Labeled as EAT}
 
 \subsection{Lost List}
 \label{list:lost}
@@ -4397,6 +4359,44 @@ The rows are sorted based on “Lost” time in descending order.
 \bigskip
 
 When a flight is added into the Lost List, its FPASD selection is initially set to “on” regardless of the FPASD setting in the \winref{menu:global}.
+
+\subsection{Traffic Management Lists}
+\label{list:tml}
+
+\winref{menu:global} Tools -> Flight Plan Lists -> Traffic Management List 1/2…
+
+\bigskip
+
+The Traffic Management List contains all Uncontrolled and Controlled flights at least in Coordinated State with specified destinations, and routing via specified points. The ETO over the point (or ETA if no point specified) must be within 30 minutes, and the destination must be specified to include uncontrolled flights in the list.
+
+\bigskip
+
+Up to 2 lists can be displayed. Each list may be configured with different filtering options.
+
+\begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
+  \textbf{Item}         & \textbf{Left Mouse}     & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
+  \tagref{tag:COPN}     & Open \winref{menu:wpt}  & Toggle Flight Leg display &                     \\ \hline
+  \tagref{tag:PEL}      & Open PEL Menu           &                           &                     \\ \hline
+  \tagref{tag:SI}       & Open SI List            & Toggle SI frequency       &                     \\ \hline
+  \tagref{tag:CALLSIGN} & Open \winref{menu:cs}   & Open Extended Label       & \usym{2713}         \\ \hline
+  \tagref{tag:ASSR}     & Open \winref{menu:assr} & Send CPDLC Squawk message &                     \\ \hline
+  \tagref{tag:AFL}      & Open \winref{menu:afl}  &                           & \usym{2713}         \\ \hline
+  \tagref{tag:a}        &                         &                           &                     \\ \hline
+  \tagref{tag:CFL}      & Open \winref{menu:cfl}  &                           &                     \\ \hline
+  \tagref{tag:ATYP}     &                         &                           & \usym{2713}         \\ \hline
+  \tagref{tag:WTC}      &                         &                           & \usym{2713}         \\ \hline
+  \tagref{tag:TAS}      &                         &                           &                     \\ \hline
+  \tagref{tag:RFL}      & Open \winref{menu:rfl}  & Open \winref{win:dlcmw}   &                     \\ \hline
+  \tagref{tag:ETOHP}\footnotemark[1]    &                         &                           & \usym{2713}         \\ \hline
+  \tagref{tag:OP TEXT2}\footnotemark[2]   & Edit OP\_TEXT2          &                           & \usym{2713}         \\ \hline
+  \tagref{tag:STAR}     & Open STAR list          &                           & \usym{2713}         \\ \hline
+  \tagref{tag:ARWY}     & Open Runway list        &                           & \usym{2713}         \\ \hline
+  \tagref{tag:HP}       & Open \winref{menu:wpt}  &                           & \usym{2713}         \\ \hline
+  \caption{Traffic Management List Construction}
+\end{longtable}
+
+\footnotetext[1]{Labeled as ETO}
+\footnotetext[2]{Labeled as EAT}
 
 \subsection{Holding List}
 \label{list:hold}
