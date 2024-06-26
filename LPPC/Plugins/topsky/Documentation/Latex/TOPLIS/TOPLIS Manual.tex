@@ -6281,6 +6281,20 @@ The buttons in the window:
 
 The Current Operational Load Window displays the number of aircraft currently assumed by or flying in the airspace of the displayed controllers. The display is refreshed at 60 second intervals. The bars displaying the number of aircraft are shown with \colorref{COL Under Threshold} color up to a defined number (20 by default), and with \colorref{COL Above Threshold} above it. The state is displayed as \colorref{Normal Load} unless at least one controller has more than the alert number of aircraft, in which case it is displayed as \colorref{Warning}.
 
+\subsection{Operational Load Forecast Window}\label{win:olfw}
+
+\winref{menu:global} STS -> Operational Load Forecast…
+
+\capdimage{img/olf.png}{Operational Load Forecast Window}
+
+The Operational Load Forecast Window displays the predicted number of aircraft entering the airspace of the displayed controllers within a specified time period.
+
+\begin{longtable}{p{2.5cm} p{10cm}}
+  MOD     & Makes the start and end of time period boxes selectable for entry.\\
+  Apply   & Calculates the data. Available only when MOD has been selected and at least the end of the time period has been entered. If the start of the  time period is left empty, the current time is used.\\
+  Cancel  & Clears all entries and data.\\
+\end{longtable}
+
 \subsection{Pre-Departure Clearance Window}
 \label{win:dlpdcw}
 
