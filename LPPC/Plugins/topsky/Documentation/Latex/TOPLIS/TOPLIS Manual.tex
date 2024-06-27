@@ -1379,15 +1379,23 @@ In the vertical plane the STCA function will assume that an aircraft will level 
 
 \subsubsection*{Alert display}
 
-An alert is shown by coloring the \tagref{tag:CALLSIGN} item background or the text itself in \colorref{Urgency} color. A one minute long prediction line is displayed in \colorref{Urgency} color regardless of the prediction line settings. 
-
-\bigskip
-
-In addition to the above, the radar position symbol and history dots are displayed in \colorref{Urgency} color.
+An alert is shown by coloring the \tagref{tag:CALLSIGN} item background or the text itself in \colorref{Urgency} color. A one minute long prediction line is displayed in \colorref{Urgency} color regardless of the prediction line settings. The radar position symbol and history dots are displayed in \colorref{Urgency} color.
 
 \bigskip
 
 An aural alert can also be generated if the corresponding setting is enabled in the \winref{menu:global}.
+
+\bigskip
+
+Whenever at least one STCA alert is active, an STCA Alert List is automatically opened.
+
+\capdimage{img/stcal.png}{STCA Alert List}
+
+The list displays for each alert the callsign/FLTID/TSSR of each track, the minimum predicted horizontal separation between them, and a checkbox.
+
+\bigskip
+
+The alerts are sorted by minimum predicted horizontal separation. The list cannot be manually closed, it will close automatically when there are no more active alerts.
 
 \section{Sector States}
 
