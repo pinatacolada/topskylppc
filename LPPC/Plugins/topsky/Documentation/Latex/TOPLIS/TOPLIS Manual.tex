@@ -3539,7 +3539,7 @@ ROF                       & Sends a \winref{menu:rof}\\
 (X)Highlight              & Toggles the Callsign highlight\\
 (X)S-Highlight            & Toggles the Callsign+AFL fields highlight\\
 Vector                    & Opens the \winref{menu:prl}\\
-QDM                       & Starts a QDM line from this track\\
+QDM                       & Starts a \winref{tool:qdm} from this track\\
 (X)Hold                   & “Hold” opens the \winref{menu:hold}, “XHold” cancels a given holding clearance\\
 $\blacktriangledown$ More & Shows additional less frequently used options\\
 Man Trf                   & Opens the \winref{menu:mxfr}\\
@@ -3575,7 +3575,7 @@ Besides the manual alerts, none of the selectable toggle options in this menu wi
 On Contact                & Sets track \stateref{On Contact} \\
 Assume                    & Assumes track\footnotemark[1]\\
 Vector                    & Opens the \winref{menu:prl}\\
-QDM                       & Starts a QDM line from this track\\
+QDM                       & Starts a \winref{tool:qdm} from this track\\
 (X)Highlight              & Toggles the Callsign highlight\\
 (X)S-Highlight            & Toggles the Callsign+AFL fields highlight\\
 $\blacktriangledown$ More & Shows additional less frequently used options\\
@@ -3600,7 +3600,7 @@ Create APL      & Opens the \winref{win:apl}\\
 Vector          &  Opens the \winref{menu:prl}\\
 (X)Highlight    & Toggles the TSSR/FLTID highlight\\
 Couple          & Correlates the radar track with the next clicked “Callsign” field\\
-QDM             & Starts a QDM line from this track\\
+QDM             & Starts a \winref{tool:qdm} from this track\\
 \end{tabular}
 \medskip
 
@@ -6453,16 +6453,25 @@ The label that’s shown on each route point includes the following predefined f
 Some TopSky functions can be accessed using a keyboard shortcut. The available shortcuts and their keys are:
 
 \begin{longtable}{p{2.5cm} p{10cm}}
-  <ALT+F> & Open FPL Window for the selected flight              \\
-  <ALT+E> & Open FPL Selection Window                            \\
-  <ALT+Q> & Start new QDM line                                   \\
-  <ALT+U> & Inhibit active filters (Quick Look)    \\
-  <ALT+S> & Start a new minimum separation line                  \\
-  <ALT+C> & Reposition cursor at the center of the radar screen  \\  
+  <ALT+F> & Open \winref{win:fpw} for the selected flight       \\
+  <ALT+E> & Open \winref{win:fpsw}                              \\
+  <ALT+Q> & Start new \winref{tool:qdm}                         \\
+  <ALT+U> & Toggle \winref{win:qlook} on/off                    \\
+  <ALT+S> & Start a new \winref{tool:mst}                       \\
+  <ALT+C> & Reposition cursor at the center of the radar screen \\  
+  <ALT+T> & Start \winref{func:findt} function                  \\
+  <ALT+Z> & Toggle \winref{win:zoom}                            \\
+  <ALT+R> & Toggle \winref{win:card}                            \\
+  <ALT+I> & Toggle \winref{win:miw}                             \\
+  <ALT+O> & Toggle \winref{win:mow}                             \\
+  <ALT+M> & Toggle \winref{win:amw}                             \\
+  <ALT+A> & Toggle \winref{win:apl}                             \\
+  <ALT+N> & Open new \winref{win:note}                          \\
+  <ALT+D> & Toggle \winref{win:adw}                             \\
   \caption{keyboard Shortcuts}  
 \end{longtable}
 
-“Selected flight” in the above means that the mouse cursor is over that flight’s track label. For the timed functions, activating the shortcut while the timer is running restarts the timer from zero.
+“Selected flight” means that the mouse cursor is over that flight’s track label.
 
 \section{Color Values}
 
