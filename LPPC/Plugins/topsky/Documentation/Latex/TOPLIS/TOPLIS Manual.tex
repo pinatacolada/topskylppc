@@ -1312,7 +1312,7 @@ The CLAM system warns if an aircraft is not maintaining its cleared level and it
 
 \subsubsection*{Alert Display}
 
-An alert is shown by displaying a “diverging” type aircraft position symbol and the text “L” in the \tagref{tag:ALRT} track label field (MSAW, APW and AIW alerts will have priority over a CLAM alert), or in the dedicated CLAM tag item.
+An alert is shown by displaying a “diverging” type aircraft position symbol and the text “L” in the \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} track label field (MSAW, APW and AIW alerts will have priority over a CLAM alert), or in the dedicated CLAM tag item.
 
 \subsection{RAM (Route Adherence Monitoring)}
 \label{tool:RAM}
@@ -1326,7 +1326,7 @@ For aircraft on a direct-to clearance, the alert is given if the difference betw
 
 \subsubsection*{Alert Display}
 
-An alert is shown by displaying a “diverging” type aircraft position symbol and the text “RAM” in the \tagref{tag:ALRT} track label field (MSAW, APW, AIW and CLAM alerts will have priority over a RAM alert), or in the dedicated RAM track label item.
+An alert is shown by displaying a “diverging” type aircraft position symbol and the text “RAM” in the \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} track label field (MSAW, APW, AIW and CLAM alerts will have priority over a RAM alert), or in the dedicated RAM track label item.
 
 \section{Safety Nets}
 
@@ -1341,7 +1341,7 @@ The AIW system warns if an uncontrolled aircraft is already inside or going to e
 
 \subsubsection*{Alert display}
 
-An alert is shown by displaying the text “AIW” in the \tagref{tag:ALRT} tag item (MSAW and APW alerts will have priority over an AIW alert), or in the dedicated AIW tag item. The AFL item is also colored \colorref{AIW intrusion} and a one-minute-along prediction line is displayed in \colorref{AIW intrusion} color regardless of the prediction line settings.
+An alert is shown by displaying the text “AIW” in the \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} tag item (MSAW and APW alerts will have priority over an AIW alert), or in the dedicated AIW tag item. The AFL item is also colored \colorref{AIW intrusion} and a one-minute-along prediction line is displayed in \colorref{AIW intrusion} color regardless of the prediction line settings.
 
 \subsection{APW (Area Proximity Warning)}
 \label{tool:APW}
@@ -1351,7 +1351,7 @@ The APW system warns if an aircraft is inside or about to enter a Temporary Segr
 
 \subsubsection*{Alert display}
 
-An alert is shown by displaying the text “APW” in the \tagref{tag:ALRT} track label field (an MSAW alert will have priority over an APW alert), or in the dedicated APW tag item.
+An alert is shown by displaying the text “APW” in the \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} track label field (an MSAW alert will have priority over an APW alert), or in the dedicated APW tag item.
 
 \subsection{MSAW (Minimum Safe Altitude Warning)}
 \label{tool:MSAW}
@@ -1363,7 +1363,7 @@ The MSAW system alerts when an aircraft is flying at an altitude below the minim
 
 \subsubsection*{Alert display}
 
-An alert is shown by displaying the text “MSAW” in the \tagref{tag:ALRT} track label field or in the dedicated MSAW track label field.
+An alert is shown by displaying the text “MSAW” in the \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} track label field or in the dedicated MSAW track label field.
 
 \subsection{STCA (Short Term Conflict Alert)}
 \label{tool:STCA}
@@ -3245,10 +3245,10 @@ The Standard label is shown for aircraft that are in or will enter the active se
 
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:RI} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC W} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
+  \item \tagref{tag:COM} \tagref{tag:*} \tagref{tag:V} \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC E} \tagref{tag:CPDLC W} \tagref{tag:TEXT2} \tagref{tag:SQAMAN} \tagref{tag:TTLTTGMFXFF}  
   \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
-  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL}
-  \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX}
+  \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:ACF} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL}
+  \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX} \tagref{tag:OFL} \tagref{tag:O+}
   \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
 \end{enumerate}
 
@@ -3258,7 +3258,7 @@ The Standard label is shown for aircraft that are in or will enter the active se
 
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:RI} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC W} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
+  \item \tagref{tag:COM} \tagref{tag:*} \tagref{tag:V} \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC E} \tagref{tag:CPDLC W} \tagref{tag:TEXT2} \tagref{tag:SQAMAN} \tagref{tag:TTLTTGMFXFF}  
   \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
   \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL}
   \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX}
@@ -3280,7 +3280,7 @@ The Reduced label is shown for uncontrolled, unconcerned and notified tracks.
 
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Mark dot} \tagref{tag:S} \tagref{tag:EMRG}  
+  \item \tagref{tag:V} \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Mark dot} \tagref{tag:S} \tagref{tag:EMRG}  
   \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
   \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES}
   \item \tagref{tag:TRACK} \tagref{tag:FCOPX}
@@ -3293,7 +3293,7 @@ The Reduced label is shown for uncontrolled, unconcerned and notified tracks.
 
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Mark dot} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:NSSR} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
+  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Mark dot} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:NSSR} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
   \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
   \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL}
   \item \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:FCOPX}
@@ -3310,7 +3310,7 @@ The Extended label can be opened from the Standard or Reduced label by right cli
 
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:ALRT} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:RI} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC W} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
+  \item \tagref{tag:*} \tagref{tag:V} \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} \tagref{tag:COM} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:RI} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC W} \tagref{tag:CPDLC E} \tagref{tag:TEXT2}  
   \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \hfill \tagref{tag:TSSR} \tagref{tag:ASSR} \tagref{tag:PSSR}
   \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:TRACK} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL} \hfill \tagref{tag:FLTID} \tagref{tag:FLTADD}
   \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX}
@@ -3335,7 +3335,7 @@ The Uncoupled label is shown for radar tracks that aren’t correlated with a fl
 
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item \tagref{tag:ALRT} \tagref{tag:EMRG}
+  \item \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} \tagref{tag:EMRG}
   \item \tagref{tag:FLTID} or \tagref{tag:TSSR}  
   \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:GS}
   \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
@@ -3349,7 +3349,7 @@ The Uncoupled label is shown for radar tracks that aren’t correlated with a fl
 
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item \tagref{tag:ALRT} \tagref{tag:EMRG}
+  \item \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} \tagref{tag:EMRG}
   \item \tagref{tag:FLTID} \tagref{tag:TSSR}
   \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:GS}
   \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
@@ -3372,12 +3372,12 @@ Line 0 is constructed solely of indicators and warnings. Line 0 is only displaye
   \endhead
   \hline
   \colortab{Assumed}V              & Y, Y or Z Flight Rules, same color as Track Label                                                                           & \tagref{tag:V}             \\ \hline
-  \colortab{Warning}MSAW           & Minimum Safe Altitude Warning                                                                                               & \tagref{tag:ALRT}          \\ \hline
-  \colortab{Warning}APW            & Area Proximity Warning                                                                                                      & \tagref{tag:ALRT}          \\ \hline
-  \colortab{AIW intrusion}AIW      & Area Intrusion Warning                                                                                                      & \tagref{tag:ALRT}          \\ \hline
-  \colortab{Assumed}CLAM           & Cleared Level Adherence Monitoring, same color as Track Label                                                               & \tagref{tag:ALRT}          \\ \hline
-  \colortab{Assumed}RAM            & Route Adherence Monitoring, same color as Track Label                                                                       & \tagref{tag:ALRT}          \\ \hline
-  \colortab{Warning}DUPE           & Duplicate SSR code                                                                                                          & \tagref{tag:ALRT}          \\ \hline
+  \colortab{Warning}MSAW           & Minimum Safe Altitude Warning                                                                                               & \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O}          \\ \hline
+  \colortab{Warning}APW            & Area Proximity Warning                                                                                                      & \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O}          \\ \hline
+  \colortab{AIW intrusion}AIW      & Area Intrusion Warning                                                                                                      & \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O}          \\ \hline
+  \colortab{Assumed}CLAM           & Cleared Level Adherence Monitoring, same color as Track Label                                                               & \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O}          \\ \hline
+  \colortab{Assumed}RAM            & Route Adherence Monitoring, same color as Track Label                                                                       & \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O}          \\ \hline
+  \colortab{Warning}DUPE           & Duplicate SSR code                                                                                                          & \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O}          \\ \hline
   \colortab{Warning}/t             & Communication Type Indicator                                                                                                & \tagref{tag:COM}          \\ \hline
   \colortab{Urgency}W              & RVSM Not Equipped                                                                                                           & \tagref{tag:W}             \\ \hline
   \colortab{Information}W          & RVSM Exempt                                                                                                                 & \tagref{tag:W}             \\ \hline
