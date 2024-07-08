@@ -2024,16 +2024,6 @@ Sector States are used to control label construction, placement in lists, filter
     
     “???” if not in database &
   \\ \hline
-  COM \nextrow \label{tag:COM}&
-    Communication type &
-    “r” if voice receive only “t” if text only &
-    \colorref{Warning} \\ \hline
-  COMP\_CS \nextrow \label{tag:COMP CS}&
-    ICAO RTF callsign &
-    The decoded ICAO RTF callsign 
-    
-    “???” if not in database &
-    \\ \hline
   COORD \nextrow \label{tag:COORD}&
     Coordination message &
     ROF message sent/received:
@@ -2338,7 +2328,7 @@ Sector States are used to control label construction, placement in lists, filter
     If highlighted: 
     \colorref{Warning} \\ \hline
   HOLD &
-    Hold/XHold \nextrow \label{tag:GS}&
+    Hold/XHold \nextrow \label{tag:HOLD}&
     Holding clearance state at point related to the traffic management list &
     \colorref{Warning} \\ \hline
   HPT \nextrow \label{tag:HPT}&
@@ -6506,7 +6496,7 @@ The Departure Coordination Window can be used to set the clearance flag. The win
     Ok      & Applies any changes, sets the clearance flag and closes the window\\
 \end{longtable}
 
-\subsection{Departure Clearance Window}\label{win:dclw}
+\subsection{Departure Clearance Window}\label{win:dldclw}
 
 “Open DCL Window/PDC Window” tag function
 
