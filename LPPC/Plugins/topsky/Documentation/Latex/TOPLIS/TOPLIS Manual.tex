@@ -848,7 +848,7 @@ The aircraft sends a clearance request message (RCD). The message is also shown 
 
 \subsubsection{Flight System Message (FSM)}
 
-If the request is correctly formatted, TopSky will automatically send a flight system message (FSM) as a reply. Its content depends on whether all the requirements for a DCL are met (flight plan found, departure airport offers data link clearances, etc.). If so, the following reply message is sent to the aircraft:
+If the request is correctly formatted, TopSky may automatically reply with a Departure Clearance Message (CLD) message if all the conditions in \winref{win:dlsdcl} are met. If not all conditions are met, TopSky will automatically send a flight system message (FSM) as a reply. Its content depends on whether all the requirements for a DCL are met (flight plan found, departure airport offers data link clearances, etc.). If so, the following reply message is sent to the aircraft:
 
 \begin{quote}
   DEPART MESSAGE STATUS FSM 1312 221113 LPPT ABC123 RCD RECEIVED REQUEST BEING PROCESSED STANDBY 
@@ -867,8 +867,6 @@ If a clearance is not sent before the timeout occurs, the data link clearance re
 \subsubsection{Departure Clearance Message (CLD)}
 
 The clearance is sent using the \winref{win:dldclw}, opened by left clicking the RWY or SID fields of the Departure List. 
-
-\note{Due to system limitations, the current ATIS letter should be manually added to the RMK field of the DCL, in the "ATIS X" format.}
 
 The clearance is sent using the “Send MSG” button. “R/T” rejects the data link clearance request and sends a message to the aircraft to revert to voice procedures. 
 
@@ -5040,7 +5038,7 @@ Once a connection has been established, the “Connect” button background colo
 
 If the VATSIM callsign is known when the window is opened, the CPDLC login callsign is pre-selected based on it. If necessary, the CPDLC login can be changed.
 
-\subsubsection*{DCL/PDC setup}
+\subsubsection*{DCL/PDC setup}\label{win:dlsdcl}
 
 \begin{longtable}{p{2.5cm} p{10cm}}
   DCL/PDC & Datalink clearance service on/off\\
