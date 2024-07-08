@@ -1312,7 +1312,7 @@ The CLAM system warns if an aircraft is not maintaining its cleared level and it
 
 \subsubsection*{Alert Display}
 
-An alert is shown by displaying a “diverging” type aircraft position symbol and the text “L” in the \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} track label field (MSAW, APW and AIW alerts will have priority over a CLAM alert), or in the dedicated CLAM tag item.
+An alert is shown by displaying a “diverging” type aircraft position symbol and the text “L” in the \tagref{tag:CLAM} track label field.
 
 \subsection{RAM (Route Adherence Monitoring)}
 \label{tool:RAM}
@@ -1326,7 +1326,7 @@ For aircraft on a direct-to clearance, the alert is given if the difference betw
 
 \subsubsection*{Alert Display}
 
-An alert is shown by displaying a “diverging” type aircraft position symbol and the text “RAM” in the \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} track label field (MSAW, APW, AIW and CLAM alerts will have priority over a RAM alert), or in the dedicated RAM track label item.
+An alert is shown by displaying a “diverging” type aircraft position symbol.
 
 \section{Safety Nets}
 
@@ -1341,7 +1341,7 @@ The AIW system warns if an uncontrolled aircraft is already inside or going to e
 
 \subsubsection*{Alert display}
 
-An alert is shown by displaying the text “AIW” in the \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} tag item (MSAW and APW alerts will have priority over an AIW alert), or in the dedicated AIW tag item. The AFL item is also colored \colorref{AIW intrusion} and a one-minute-along prediction line is displayed in \colorref{AIW intrusion} color regardless of the prediction line settings.
+An alert is shown by displaying the text “AIW” in the \tagref{tag:AIW}. The AFL item is also colored \colorref{AIW intrusion} and a one-minute-along prediction line is displayed in \colorref{AIW intrusion} color regardless of the prediction line settings.
 
 \subsection{APW (Area Proximity Warning)}
 \label{tool:APW}
@@ -1351,7 +1351,7 @@ The APW system warns if an aircraft is inside or about to enter a Temporary Segr
 
 \subsubsection*{Alert display}
 
-An alert is shown by displaying the text “APW” in the \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} track label field (an MSAW alert will have priority over an APW alert), or in the dedicated APW tag item.
+An alert is shown by displaying the text “APW” in the\tagref{tag:APW}.
 
 \subsection{MSAW (Minimum Safe Altitude Warning)}
 \label{tool:MSAW}
@@ -1363,7 +1363,7 @@ The MSAW system alerts when an aircraft is flying at an altitude below the minim
 
 \subsubsection*{Alert display}
 
-An alert is shown by displaying the text “MSAW” in the \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} track label field or in the dedicated MSAW track label field.
+An alert is shown by displaying the text “MSAW” in the \tagref{tag:MSAW}.
 
 \subsection{STCA (Short Term Conflict Alert)}
 \label{tool:STCA}
@@ -3375,14 +3375,15 @@ Line 0 is constructed solely of indicators and warnings. Line 0 is only displaye
   %
   \endhead
   \hline
-  \colortab{Assumed}V              & Y, Y or Z Flight Rules, same color as Track Label                                                                           & \tagref{tag:V}             \\ \hline
-  \colortab{Warning}MSAW           & Minimum Safe Altitude Warning                                                                                               & \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O}          \\ \hline
-  \colortab{Warning}APW            & Area Proximity Warning                                                                                                      & \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O}          \\ \hline
-  \colortab{AIW intrusion}AIW      & Area Intrusion Warning                                                                                                      & \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O}          \\ \hline
-  \colortab{Assumed}CLAM           & Cleared Level Adherence Monitoring, same color as Track Label                                                               & \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O}          \\ \hline
-  \colortab{Assumed}RAM            & Route Adherence Monitoring, same color as Track Label                                                                       & \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O}          \\ \hline
-  \colortab{Warning}DUPE           & Duplicate SSR code                                                                                                          & \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O}          \\ \hline
   \colortab{Warning}/t             & Communication Type Indicator                                                                                                & \tagref{tag:COM}          \\ \hline
+  \colortab{Assumed}V              & Y, Y or Z Flight Rules, same color as Track Label                                                                           & \tagref{tag:V}             \\ \hline
+  \colortab{Warning}MSAW           & Minimum Safe Altitude Warning                                                                                               & \tagref{tag:MSAW}          \\ \hline
+  \colortab{Warning}APM            & Area Proximity Warning                                                                                                      & \tagref{tag:APM}           \\ \hline
+  \colortab{Warning}APW            & Area Proximity Warning                                                                                                      & \tagref{tag:APW}           \\ \hline
+  \colortab{AIW intrusion}AIW      & Area Intrusion Warning                                                                                                      & \tagref{tag:AIW}           \\ \hline
+  \colortab{Assumed}L              & Cleared Level Adherence Monitoring, same color as Track Label                                                               & \tagref{tag:CLAM}          \\ \hline
+  \colortab{Warning}DUPE           & Duplicate SSR code                                                                                                          & \tagref{tag:DUPE}          \\ \hline
+  \colortab{Urgency}O              & RVSM Not Equipped                                                                                                           & \tagref{tag:O}             \\ \hline
   \colortab{Urgency}W              & RVSM Not Equipped                                                                                                           & \tagref{tag:W}             \\ \hline
   \colortab{Information}W          & RVSM Exempt                                                                                                                 & \tagref{tag:W}             \\ \hline
   \colortab{Unknown}W              & RVSM Unknown                                                                                                                & \tagref{tag:W}             \\ \hline
@@ -3398,13 +3399,17 @@ Line 0 is constructed solely of indicators and warnings. Line 0 is only displaye
   \colortab{Warning}A              & Manual alert(s) active                                                                                                      & \tagref{tag:A}             \\ \hline
   \colortab{Assumed}+              & STS/ found in FPL remarks field, same color as Track Label                                                                  & \tagref{tag:+}             \\ \hline
   \colortab{Assumed}I              & OP\_TEXT has data, same color as Track Label                                                                                & \tagref{tag:I}             \\ \hline
+  \colortab{Warning}F              & Mode S Callsign is different from coupled Flight Plan Callsign                                                              & \tagref{tag:S}             \\ \hline
   \colortab{Warning}S              & Mode S Callsign is different from coupled Flight Plan Callsign                                                              & \tagref{tag:S}             \\ \hline
   \colortab{Urgency}EM             & “HI” for A7500, “CF” for A7600, “EM” for A7700                                                                              & \tagref{tag:EMRG}          \\ \hline
-  \colortab{Proposition In}H270    & Value in coordination, or ROF if a Request On Frequency message is received                                                 & \tagref{tag:COORD}         \\ \hline
+  \colortab{Proposition In}ROF     & ROF if a Request On Frequency message is received                                                                           & \tagref{tag:COORD}         \\ \hline
+  \colortab{Assumed}A1000          & Displays ASSR if different from TSSR, same color as Track Label                                                             & \tagref{tag:NSSR}          \\ \hline
   \colortab{Assumed}3223           & Displays ASSR if different from TSSR, same color as Track Label                                                             & \tagref{tag:NSSR}          \\ \hline
   \colortab{CPDLC Pilot Late}CPDLC P LATE     & CPDLC Warning messages                                                                                           & \tagref{tag:CPDLC W}       \\ \hline
   \colortab{Urgency}[MAYDAY]       & CPDLC Emergency Downlink                                                                                                    & \tagref{tag:CPDLC E}       \\ \hline
   \colortab{Assumed}TEXT2          & User entered text visible to everyone, same color as Track Label                                                            & \tagref{tag:OP TEXT2}      \\ \hline
+  \colortab{Assumed}01             & AMAN number in sequence                                                                                                     & \tagref{tag:SQAMAN}        \\ \hline
+  \colortab{Warning}G01            & AMAN TTL Time To Loose TTG Time To Gain MFX\_FF Feeder Fix                                                                   & \tagref{tag:TTLTTGMFXFF}   \\ \hline
   \caption{Line 0 Indications}
   \label{tab:line0}\\
   \end{longtable}
