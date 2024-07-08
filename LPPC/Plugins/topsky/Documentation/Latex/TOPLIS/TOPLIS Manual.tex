@@ -1529,1136 +1529,1278 @@ Sector States are used to control label construction, placement in lists, filter
 \section{Label field descriptions}
 
 \begin{longtable}{|p{2.5cm}|p{2.5cm}|p{4.5cm}|p{4.5cm}|}
-    \hline
-    \textbf{Data field} &
-    \textbf{Description} &
-    \textbf{Comments} &
-    \textbf{Color} \\ \hline
-    \endhead
-    Frequency dot \nextrow \label{tag:Frequency dot} &
-    Frequency &
-      “•”, set from \winref{menu:cs} 
-
-      Used to highlight a flight operating in a frequency other than the Sector Primary &
-      \colorref{Assumed} \\ \hline
-    Mark dot \nextrow \label{tag:Mark dot}&
-      Mark &
-      “•”, set from \winref{menu:cs} 
-      
-      Used to highlight a particular flight &
-      \colorref{Information} \\ \hline
-    +  \nextrow \label{tag:+}&
-      Field 18 information &
-      “+” if “STS/” found in FPL remarks field &
-       \\ \hline
-    * \nextrow \label{tag:*}&
-      Unit &
-      “*” if label units are different from  the system units &
-      \colorref{Warning} \\ \hline
-    A \nextrow \label{tag:A}&
-      Manual alerts &
-      “A” if Manual alert(s) active &
-      \colorref{Warning} \\ \hline
-    a \nextrow \label{tag:a}&
-      Attitude indicator &
-      Climbing: up arrow 
-      
-      Descending: down arrow 
-      
-      Level flight or unknown: blank & 
-      \\ \hline
-    ADEP \nextrow \label{tag:ADEP}&
-      Departure aerodrome &
-      ICAO code, 4 characters &
-       \\ \hline
-    ADES \nextrow \label{tag:ADES}&
-      Destination aerodrome &
-      ICAO code, 4 characters &
-       \\ \hline
-    AFL \nextrow \label{tag:AFL}&
-      Actual Flight Level &
-      FL’s with 3 digits
-
-      Altitudes “A”+ 2 digits
-
-      Heights “E”+ 2 digits, in hundreds of feet 
-      
-         &
-      AIW: 
-      
-      \colorref{AIW intrusion} 
-
-      \bigskip
-      
-      Manually set: 
-      
-      \colorref{Warning} 
-
-      \bigskip 
-      
-      Mark All: 
-      
-      \colorref{CARD Mark All} 
-
-      \bigskip 
-      
-      S-Highlight: 
-      
-      \colorref{Suite Highlight} \\ \hline
-    AHDG \nextrow \label{tag:AHDG}&
-      Assigned heading &
-      List: 
-      
-      Assigned heading (“H” + 3 digits) or  direct-to point name 
-      \bigskip
-      
-      Unselected label: 
-      
-      - Assigned heading 
-      
-      - Direct-to point name (hidden when  direct to COPX) 
-      \bigskip
-      
-      Selected label: 
-      
-      - Assigned heading 
-      
-      - Direct-to point name 
-      \bigskip
-      
-      If a heading clearance or request is  in progress via CPDLC, displays  “{[}heading{]}”, followed by “+” if the  request or answer contains a reason(i.e. DUE TO something). 
-      \bigskip
-     
-      DEP list: 
-      Does not display the  brackets for CPDLC status. &
-      If a value is assigned and  HOP: 
-
-      \colorref{Proposition In} 
-      \bigskip
-
-      If a tactical coordination value is accepted but not  set: 
-
-      \colorref{Information} 
-      \bigskip
-
-      If a CPDLC uplink message  has been sent: 
-
-      \colorref{CPDLC UM Clearance} 
-      \bigskip
-      
-      If a CPDLC downlink  message has been  received: 
-
-      \colorref{CPDLC DM Request} 
-      \bigskip
-      
-      If controller timeout has expired following a CPDLC downlink request: 
-
-      \colorref{CPDLC Controller Late} 
-      \bigskip
-      
-      If a CPDLC warning has  been raised: color of the  warning \\ \hline
-    AIW \nextrow \label{tag:AIW}&
-      AIW alert (see also ALRT) &
-      “AIW” &
-      \colorref{AIW intrusion} \\ \hline
-    ALRT \nextrow \label{tag:ALRT}&
-      Alert message &
-      “MSAW”, “APW”, “AIW”, “CLAM”,  “RAM” or  “DUPE” (in this priority order) &
-      MSAW and APW: 
-      
-      \colorref{Warning} 
-       
-      \bigskip
-
-      AIW:
-      
-      \colorref{AIW intrusion} \\ \hline
-    ALT1 \nextrow \label{tag:ALT1}&
-      Alternate aerodrome 1 &
-      ICAO code, 4 characters &
-       \\ \hline
-    ALT2 \nextrow \label{tag:ALT2}&
-      Alternate aerodrome 2 &
-      Second alternate can be set by  inserting “ALT2/XXXX” into  the FPL remarks field &
-       \\ \hline
-    APW \nextrow \label{tag:APW}&
-      APW alert (see also ALRT) &
-      “APW” &
-      \colorref{Warning} \\ \hline
-    ARC \nextrow \label{tag:ARC}&
-      Assigned vertical rate &
-      “R” + 2 digits, in 100’s of ft/min &
-      If a value is assigned and  HOP: 
-      
-      \colorref{Proposition In}  
-
-      \bigskip
-      
-      If a tactical coordination value is accepted but not set: 
-      
-      \colorref{Information} \\ \hline
-    ARWY \nextrow \label{tag:ARWY}&
-      Arrival runway &
-      Arrival runway identifier &
-      If manually assigned: Rwy Locked \\ \hline
-    ASP \nextrow \label{tag:ASP}&
-      Assigned speed &
-      Mach “M”+ 2 digits
-      \bigskip
-
-      “HS” for high speed clearance 
-      \bigskip
-
-      Speed 2 digits, in 10’s of knots
-      \bigskip
-      
-      If a speed clearance or request is in progress via CPDLC, displays  “{[}speed{]}”, followed by “+” if the  request or answer contains a reason. &
-      If a value is assigned and  HOP: 
-      
-      \colorref{Proposition In} 
-
-      \bigskip
-
-      If a tactical coordination value is accepted but not  set: 
-      
-      \colorref{Information} 
-      \bigskip
-      
-      If a CPDLC uplink message  has been sent:  
-      
-      \colorref{CPDLC UM Clearance} 
-      \bigskip
-      
-      If a CPDLC downlink message has been received:  
-      
-      \colorref{CPDLC DM Request} 
-      \bigskip
-      
-      If controller timeout has expired following a CPDLC downlink request:  
-      
-      \colorref{CPDLC Controller Late} 
-      \bigskip
-      
-      If a CPDLC warning has  been raised: color of the  warning \\ \hline
-    ASSR \nextrow \label{tag:ASSR}&
-      Assigned mode 3/A code &
-      4 digits or “A”+ 4 digits. 
-      \bigskip
-
-      If a SQUAWK SSR message is in progress via CPDLC, displays the  code in brackets, followed by “+” if  the answer contains a reason. 
-      \bigskip
-
-      DEP list:
-      
-      Does not display the brackets for CPDLC status. &
-      If different than TSSR:  
-      
-      \colorref{Warning} 
-      \bigskip
-
-      If a CPDLC uplink message  has been sent:  
-      
-      \colorref{CPDLC UM Clearance} 
-      \bigskip
-      
-      If a CPDLC warning has  been raised: 
-      
-      color of the  warning \\ \hline
-    ATD \nextrow \label{tag:ATD}&
-      Actual Time of Departure &
-      UTC time in “HHMM” format &
-       \\ \hline
-    ATYP \nextrow \label{tag:ATYP}&
-      Aircraft type &
-      Type with max 4 characters &
-      If highlighted: 
-      
-      \colorref{Warning} \\ \hline
-    ATYP/W \nextrow \label{tag:ATYP/W}&
-      Aircraft type / Wake  Turbulence Category &
-      Type with max 4 characters + “/” +  WTC (“L”, “M”, “H”, “J” or “?”) &
-      If highlighted: 
-
-      \colorref{Warning} \\ \hline
-    C \nextrow \label{tag:C}&
-      Inbound clearance &
-      “C” if ADES needs inbound clearance &
-      Active state: 
-
-      \colorref{Information} \\ \hline
-    CALLSIGN \nextrow\label{tag:CALLSIGN} &
-      Callsign &
-      If more than one aircraft, suffixed  by “+”. 
-      \bigskip
-      
-      If correlated to a primary  track or to a secondary track with  no ASSR code and a non-discrete  TSSR code, suffixed by “*”. 
-      \bigskip
-      
-      If the flight is CPDLC connected, the callsign is displayed in brackets. &
-      Priority order: 
-      
-      STCA alert: 
-
-      \colorref{Urgency} 
-      
-      HOP in: 
-
-      \colorref{Proposition In} 
-      
-      Mark Own: 
-
-      \colorref{CARD Mark Own} 
-      
-      Highlight: 
-      
-      \colorref{Warning} 
-      
-      Mark All: 
-
-      \colorref{CARD Mark All} 
-      
-      S-Highlight: 
-
-      \colorref{Suite Highlight} 
-      \bigskip
-
-      If none of the above: 
-      
-      Transfer in: 
-
-      \colorref{Assumed} 
-      
-      Transfer out: 
-
-      \colorref{Redundant} \\ \hline
-    CFL \nextrow \label{tag:CFL}&
-      Cleared Flight Level &
-      “CA” if Clear for App flag set
-      
-      “VA” if Visual App flag set
-      \bigskip
-
-      See AFL field for number format. 
-      \bigskip
-      
-      Unselected label: Not shown if equal to AFL 
-      \bigskip
-
-      If a level clearance is in progress via  CPDLC, displays “{[}level{]}”, followed  by “+” if the answer contains a  reason (i.e. DUE TO something). 
-      \bigskip
-
-      DEP list:
-      Does not display the  brackets for CPDLC status. &
-      DEP list: 
-      
-      For CTR, if CFL \textgreater PEL,  for others if CFL \textgreater XFL: 
-      
-      \colorref{Warning} 
-      \bigskip
-      
-      If a CPDLC uplink message  has been sent: 
-
-      \colorref{CPDLC UM Clearance} 
-
-      \bigskip
-      
-      If a CPDLC warning has  been raised: 
-      
-      color of the  warning \\ \hline
-    CFL/PEL \nextrow \label{tag:CFL/PEL}&
-      Cleared Flight Level or  Planned Entry Level &
-      PEL is shown for flights in  “coordinated” and “ongoing coordination” states, CFL otherwise. 
-      \bigskip 
-      
-      “CA” if Clear for App flag set
-      
-      “VA” if Visual App flag set
-      
-      See AFL field for number format.
-      \bigskip 
-      
-      Unselected label: 
-      
-      PEL: Not shown if equal to AFL and no ongoing coordination. 
-      
-      CFL: Not shown if equal to AFL 
-      \bigskip
-      
-      If a level clearance is in progress via  CPDLC, displays “{[}level{]}”, followed  by “+” if the answer contains a  reason (i.e. DUE TO something). &
-      PEL: 
-      
-      Ongoing coordination:  
-      
-      \colorref{Proposition In} 
-
-      \bigskip
-      
-      Change just before ETN: 
-      
-      \colorref{Info Coord} 
-
-      \bigskip
-      
-      Coordination refused: 
-      
-      \colorref{Warning}
-
-      \bigskip 
-      
-      CFL: 
-      
-      If a CPDLC uplink message  has been sent:  
-      
-      \colorref{CPDLC UM Clearance} 
-
-      \bigskip
-      
-      If a CPDLC downlink  message has been  received:  
-      
-      \colorref{CPDLC DM Request} 
-
-      \bigskip
-      
-      If a CPDLC warning has  been raised: 
-      
-      color of the  warning \\ \hline
-    CLR \nextrow \label{tag:CLR}&
-      Clearance received flag &
-      If no clearance received and no data  link clearance in progress: 
-      
-      "$\square$" 
-      \bigskip
-      
-      If clearance requested via data link: 
-      
-      “R” 
-      \bigskip
-
-      If waiting for answer from the  aircraft for a sent data link  clearance: 
-      
-      “A” 
-      \bigskip
-
-      If clearance received: 
-      
-      "$\blacksquare$" 
-      \bigskip
-
-      “R” and “A” are  blinking when less than 2 minutes  are remaining to timeout &
-      “R”: When request contains  free text: 
-
-      \colorref{Urgency} 
-
-      \bigskip
-      
-      Otherwise: 
-
-      \colorref{Warning} 
-
-      \bigskip
-      
-      “A”: When blinking: 
-
-      \colorref{Warning} \\ \hline
-    COM \nextrow \label{tag:COM}&
-      Communication type &
-      “r” if voice receive only “t” if text only &
-      \colorref{Warning} \\ \hline
-    COMP\_CS \nextrow \label{tag:COMP CS}&
-      ICAO RTF callsign &
-      The decoded ICAO RTF callsign 
-      
-      “???” if not in database &
-       \\ \hline
-    COORD \nextrow \label{tag:COORD}&
-      Coordination message &
-      “ROF” if a Request On Frequency message has been received from  the next sector  
-      \bigskip
-
-      The last changed tactical coordination parameter value (AHDG, ASP or ARC) &
-      Proposed: 
-
-      \colorref{Proposition In} 
-
-      \bigskip
-      
-      Rejected: 
-
-      \colorref{Warning} \\ \hline
-    COPN \nextrow \label{tag:COPN}&
-      Entry point &
-       &
-      Ongoing coordination: 
-
-      \colorref{Proposition In} 
-
-      \bigskip
-      
-      Coordination refused: 
-
-      \colorref{Warning} \\ \hline
-    COPX \nextrow \label{tag:COPX}&
-      Exit point &
-      DEP list: 
-      
-      If logged in as CTR and flight not inside active sector, displays COPN 
-      \bigskip
-
-      (with holding): 
-      
-      A holding clearance is displayed if  there is no coordination. It shows the holding point name + “ H” or for  lat/lon point holdings, “POS H”. For a TSA Hold clearance, the area  name is shown. &
-      Ongoing coordination: 
-
-      \colorref{Proposition In} 
-
-      \bigskip
-      
-      Coordination refused: 
-
-      \colorref{Warning} \\ \hline
-    COPN/COPX \nextrow \label{tag:COPN/COPX}&
-      Entry point or Exit point &
-      COPN is shown for flights in  “coordinated” and “ongoing coordination” states, COPX in “assumed”, “transfer  initiated” and “redundant” phases. 
-      \bigskip
-
-      (with holding): 
-      
-      A holding clearance is displayed if  there is no coordination. It shows  the holding point name + “ H” or for  lat/lon point holdings, “POS H”. For a TSA Hold clearance, the area  name is shown. &
-      Ongoing coordination: 
-      
-      \colorref{Proposition In} 
-      \bigskip
-      
-      Coordination refused: 
-      
-      \colorref{Warning} \\ \hline
-    \nextrow \label{tag:CPDLC E} CPDLC\_E &
-      CPDLC Emergency &
-      CPDLC emergency messages: 
-      
-      “SQ7500”, “{[}MAYDAY{]}”, or “{[}PAN{]}” &
-      \colorref{Urgency} \\ \hline
-    CPDLC\_W \nextrow \label{tag:CPDLC W}&
-      CPDLC Warning &
-      CPDLC warning messages: 
-      
-      “COMM FAIL” for network failure 
-      
-      "<type> ERR” for message failure 
-      "<type> NOT CDA” for NOT CURRENT  DATA AUTHORITY response 
-      "<type> P LATE” for timeout 
-      "<type> SBY” for STANDBY response 
-      "<type> UNA” for UNABLE response    
-      \bigskip
-      
-      <type> is the type of message: 
-      
-      “AHDG” for heading clearance 
-      
-      “CFL” for level clearance 
-      
-      “COF” for communication transfer 
-      
-      “DCT” for direct-to clearance 
-      
-      “SQI” for SQUAWK IDENT message 
-      
-      “SSR” for SQUAWK SSR message 
-      
-      “VCI” for communication transfer &
-      “COMM FAIL”,  “ERR” or “NOT CDA”:  
-      
-      \colorref{CPDLC Failed} 
-      \bigskip
-
-      “UNA”:  
-      
-      \colorref{CPDLC Unable} 
-      \bigskip
-
-      “SBY”:  
-      
-      \colorref{CPDLC Standby} 
-      
-      \bigskip
-      
-      “P LATE”:  
-      
-      \colorref{CPDLC Pilot Late} \\ \hline
-    CRC \nextrow \label{tag:CRC}&
-      Computed vertical rate &
-      2 digits, in 100’s of ft/min 
-         
-      Value preceded by “C” for climbing,  “D” for descending &
-       \\ \hline
-    DHDG \nextrow \label{tag:DHDG}&
-      Downloaded heading &
-      Magnetic heading as downloaded  from the aircraft via mode S DAPs.  
-      
-      “H” + 3 digits. &
-       \\ \hline
-    DIAS \nextrow \label{tag:DIAS}&
-      Downloaded indicated airspeed &
-      Indicated airspeed as downloaded  from the aircraft via mode S DAPs. If marked as unreliable, “DIAS”. &
-       \\ \hline
-    DMACH \nextrow \label{tag:DMACH}&
-      Downloaded Mach number &
-      Mach number as downloaded from the aircraft via mode S DAPs. If marked as unreliable, “DMACH”. &
-       \\ \hline
-    DRC \nextrow \label{tag:DRC}&
-      Downloaded rate of  climb/descent &
-      Rate of climb/descent as downloaded from the aircraft via mode S DAPs. 
-      
-      Not available on  VATSIM (computed rate displayed instead, see CRC). &
-       \\ \hline
-    DRWY \nextrow \label{tag:DRWY}&
-      Departure runway &
-      Departure runway identifier &
-      Clearance flag not set:  
-      
-      \colorref{Proposition In} 
-      
-      \bigskip
-
-      Clearance flag set: 
-      
-      \colorref{Information} \\ \hline
-    DSFL \nextrow \label{tag:DSFL}&
-      Downloaded selected  flight level &
-      Selected flight level as downloaded from the aircraft via mode S DAPs.  
-      
-      Blank, not available on VATSIM. &
-       \\ \hline
-    DSQ \nextrow \label{tag:DSQ}&
-      Departure sequence number &
-       &
-       \\ \hline
-    EET \nextrow \label{tag:EET}&
-      Estimated Elapsed Time &
-      “HHMM” &
-       \\ \hline
-    EMRG \nextrow \label{tag:EMRG}&
-      Emergency &
-      “HI” for squawk 7500
-      
-      “CF” for squawk 7600,
-      
-      “EM” for squawk 7700 &
-      \colorref{Urgency} \\ \hline
-    EQUIP \nextrow \label{tag:EQUIP}&
-      FPL equipment field &
-      Rough conversion to ICAO FPL 
-      
-      (COM/NAV): COM/NAV equipment 
-      
-      (SUR): “/” + surveillance equipment &
-       \\ \hline
-    EST/DEP/
+  \hline
+  \textbf{Data field} &
+  \textbf{Description} &
+  \textbf{Comments} &
+  \textbf{Color} \\ \hline
+  \endhead
+  Frequency dot \nextrow \label{tag:Frequency dot} &
+  Frequency &
+    “•”, set from \winref{menu:cs} 
+    Used to highlight a flight operating in a frequency other than the Sector Primary &
+    \colorref{Assumed} \\ \hline
+  Mark dot \nextrow \label{tag:Mark dot}&
+    Mark &
+    “•”, set from \winref{menu:cs} 
     
-    ABT \nextrow \label{tag:EST/DEP/ABT}&
-      Manual departure &
-      “EST” when clearance flag not set and ground state not “DEPA”
-      \bigskip
+    Used to highlight a particular flight &
+    \colorref{Information} \\ \hline
+  +  \nextrow \label{tag:+}&
+    Field 18/ FMF indicator &
+    “+” if “STS/” found in FPL remarks field or when FMF is not empty &
+    \\ \hline
+  +  \nextrow \label{tag:O+}&
+    Time restriction indicator in OCM &
+    “+” if time restriction information is present in OCM or has been manually entered &
+    Non-acknowledged OCM with changed restriction:
+    
+    \colorref{Information}\\ \hline
+  * \nextrow \label{tag:*}&
+    Unit &
+    “*” if label units are different from  the system units &
+    \colorref{Warning} \\ \hline
+  A \nextrow \label{tag:A}&
+    Manual alerts &
+    “A” if Manual alert(s) active &
+    \colorref{Warning} \\ \hline
+  a \nextrow \label{tag:a}&
+    Attitude indicator &
+    Climbing: up arrow 
+    
+    Descending: down arrow 
+    
+    Level flight or unknown: blank & 
+    \\ \hline
+  A1000 \nextrow \label{tag:A1000}&
+    A1000 warning &
+    “1000” when one of the conditions in the color column are met & 
+    Non-mode S track coupled on A1000:
+    
+    \colorref{Urgency} 
+    
+    \bigskip
+    
+    ASSR A1000 and FPL does not indicate mode S FLTID capability:
+    
+    \colorref{Warning}\\ \hline
+  ACF \nextrow \label{tag:ACF}&
+    Approach clearance &
+    Approach clearance type: 
+    
+    \bigskip
 
-      “DEP” when clearance flag set or ground state 
-      \bigskip
-      
-      “DEPA” but not yet departed
-      \bigskip
-      
-      “ABT” when departed &
-       \\ \hline
-    ETA \nextrow \label{tag:ETA}&
-      Estimated Time of Arrival &
-      UTC time in “HHMM” format or  “HOLD” if flight in holding state &
-       \\ \hline
-    ETD \nextrow \label{tag:ETD}&
-      Estimated Time of  Departure &
-      UTC time in “HHMM” format &
-       \\ \hline
-    ETD/ATD \nextrow \label{tag:ETD/ATD}&
-      Estimated Time of Departure or Actual Time  of Departure &
-      For a departed aircraft, shows the  actual departure, otherwise the estimated departure time.  
-      
-      “HHMM”, both times taken from  the FPL data &
-       \\ \hline
-    ETN \nextrow \label{tag:ETN}&
-      Estimated time over  COPN or sector entry  time if no COPN &
-      UTC time in “HHMM” format (sector entry): always entry time &
-       \\ \hline
-    ETOHP \nextrow \label{tag:ETOHP}&
-      Estimated time over holding point or holding  start time &
-      UTC time in “HHMM” format &
-       \\ \hline
-    ETX \nextrow \label{tag:ETX}&
-      Estimated time over  COPX or sector exit time  if no COPX &
-      UTC time in “HHMM” format (sector exit): always exit time &
-       \\ \hline
-    FCOPX \nextrow \label{tag:FCOPX}&
-      FIR COPX point &
-       &
-       \\ \hline
-    FIELD15 \nextrow \label{tag:FIELD15}&
-      Speed Level Route &
-      The flight plan field 15 data (TAS,  RFL and route). Max 360 characters &
-       \\ \hline
-    FIELD18 \nextrow \label{tag:FILED18}&
-      Other information &
-      The flight plan field 18 data  (remarks). Max 360 characters &
-       \\ \hline
-    FLTADD \nextrow \label{tag:FLTADD}&
-      Mode S transponder  address &
-      Mode S transponder hex address &
-       \\ \hline
-    FLTID &
-      Aircraft identification \nextrow \label{tag:FLTID}&
-      Callsign as received via mode S &
-       \\ \hline
-    GS &
-      Ground Speed \nextrow \label{tag:GS}&
-      "N"+3 digits, in knots &
-      If highlighted: 
+    Approach: “CA” 
+    
+    Visual approach: “VA” 
+    
+    CAT II approach: “CAT2” 
+    
+    CAT III approach: “CAT3” & 
+    If toggled on: \colorref{ACF Via CFL}\\ \hline
+  ADEP \nextrow \label{tag:ADEP}&
+    Departure aerodrome &
+    ICAO code, 4 characters &
+    \\ \hline
+  ADES \nextrow \label{tag:ADES}&
+    Destination aerodrome &
+    ICAO code, 4 characters &
+    If highlighted: \colorref{Warning}\\ \hline
+  AFL \nextrow \label{tag:AFL}&
+    Actual Flight Level &
+    FL’s 3 digits
+    Altitudes “A”+ 2 digits
+    Heights “E”+ 2 digits, in hundreds of feet 
+    
+    &
+    AIW: 
+    
+    \colorref{AIW intrusion}
 
-      \colorref{Warning} \\ \hline
-    HP \nextrow \label{tag:HP}&
-      Holding point &
-      Holding point name or for lat/lon  point holdings, “POS”. 
-      
-      For a TSA Hold clearance, the area  name is shown. &
-       \\ \hline
-    I \nextrow \label{tag:I}&
-      Flight information &
-      “I” if OP\_TEXT has data &
-       \\ \hline
-    Label &
-      Label hidden flag &
-      “$\blacksquare$” if label displayed, “$\square$” if label hidden &
-       \\ \hline
-    M \nextrow \label{tag:M}&
-      Military coordination &
-      “M” if military coordination is  required &
-      Active state: 
+    \bigskip
+    
+    Manually set value: 
+    
+    \colorref{Warning} 
 
-      \colorref{Warning} \\ \hline
-    MALRT \nextrow \label{tag:MALRT}&
-      Manual alerts &
-      Displays alerts entered via the  \winref{menu:cs} &
-      \colorref{Warning} \\ \hline
-    MSAW \nextrow \label{tag:MSAW}&
-      MSAW alert (see also ALRT) &
-      “MSAW” &
-      \colorref{Warning} \\ \hline
-    MTCD \nextrow \label{tag:MTCD}&
-      MTCD indicator &
-      “•” if aircraft has an MTCD problem &
-      \colorref{Urgency} \\ \hline
-    N/ATYP \nextrow \label{tag:N/ATYP}&
-      Number of aircraft /  Aircraft type &
-      Unselected label: 
-      
-      Number range 2 - 99 
-      \bigskip
-      
-      Selected label or List: 
-      
-      Number range 1 - 99 
-      \bigskip
+    \bigskip 
 
-      Number can be set by prefixing the aircraft type in the FPL by “X/”  where X is the number (max 99) &
-      If highlighted: 
+    Coasted track:
+    
+    \colorref{Warning} 
 
-      \colorref{Warning} \\ \hline
-    NPT \nextrow \label{tag:NPT}&
-      Next route point &
-      When a DCT request or clearance  via CPDLC is in progress: 
-      
-      Displays the point name followed by  “+” if the request contains a reason  (i.e. DUE TO something) 
-      \bigskip
+    \bigskip 
 
-      Otherwise: Next point on the route &
-      If a CPDLC uplink message  has been sent:  
-      
-      \colorref{CPDLC UM Clearance} 
-      \bigskip
+    Mark All: 
+    
+    \colorref{CARD Mark All} 
 
-      If a CPDLC downlink  message has been  received:  
-      
-      \colorref{CPDLC DM Request} 
-      \bigskip
-      
-      If controller timeout has expired following a CPDLC downlink request:  
-      
-      \colorref{CPDLC Controller Late} 
-      \bigskip
-      
-      If a CPDLC warning has  been raised: 
-      
-      color of the  warning \\ \hline
-    NRAC \nextrow \label{tag:NRAC}&
-      Number of aircraft &
-      Number from 2 to 99 
-      \bigskip
-      
-      Extended label: 
-      
-      “n” if 1 
-      
-      Other label or (List): blank if 1 
-      \bigskip
-      
-      Number can be set by prefixing the  aircraft type in the FPL by “X/”  where X is the number (max 99). &
-       \\ \hline
-    NSSR \nextrow \label{tag:NSSR}&
-      SSR warning &
-      Displays ASSR if different from TSSR &
-      If a CPDLC uplink message  has been sent:  
-      
-      \colorref{CPDLC UM Clearance} 
-      \bigskip
-      
-      If a CPDLC warning has been raised: 
-      
-      color of the  warning \\ \hline
-    OP\_TEXT \nextrow \label{tag:OP TEXT}&
-      Flight information message &
-      User entered text, stored in the flight strip &
-       \\ \hline
-    OP\_TEXT2 \nextrow \label{tag:OP TEXT2}&
-      OP\_TEXT2 message &
-      User entered text, stored in the scratchpad &
-       \\ \hline
-    P &
-      No P-RNAV/RNAV1 capability \nextrow \label{tag:P}&
-      “P” if aircraft equipment is not indicating P-RNAV/RNAV1 capability and destination has arrival  procedures requiring it &
-      \colorref{Information} \\ \hline
-    PEL &
-      Planned Entry Level \nextrow \label{tag:PEL}&
-      “CA” if Clear for App set
-      
-      “VA” if Visual App flag set
-      
-      See AFL field for number format. &
-      Ongoing coordination:
-      
-      \colorref{Proposition In} 
-      \bigskip
-      
-      Change just before ETN: 
-      
-      \colorref{Info Coord} 
-      \bigskip
-      
-      Coordination refused: 
-      
-      \colorref{Warning} \\ \hline
-    PFREQ \nextrow \label{tag:PFREQ}&
-      Pilot monitored frequency &
-      Displays your primary frequency  when transfer of communications  was done via CPDLC using the  MONITOR option &
-      CPDLC DM Request \\ \hline
-    PRFL \nextrow \label{tag:PRFL}&
-      RFL requested by pilot via  CPDLC &
-      Displays “{[}requested level{]}”,  followed by “+” if the request  contains a reason (i.e. DUE TO  something) &
-      If a CPDLC downlink  message has been  received:  
-      
-      \colorref{CPDLC DM Request} 
-      \bigskip
-      
-      If controller timeout has expired following a CPDLC downlink request:
-      
-      \colorref{CPDLC Controller Late} 
-      \bigskip
-      
-      If a CPDLC warning has been raised: 
-      
-      color of the warning \\ \hline
-    PSSR \nextrow \label{tag:PSSR}&
-      Previous mode 3/A code &
-      If not known, shows ASSR if  available. Format as ASSR field. &
-       \\ \hline
-    R \nextrow \label{tag:R}&
-      No B-RNAV/RNAV5  capability &
-      “R” if aircraft equipment is not  indicating B-RNAV/RNAV5 capability &
-      Not equipped:
-      
-      \colorref{Urgency}
-      \bigskip 
-      
-      Unknown: 
-      
-      \colorref{Unknown} \\ \hline
-    RFL \nextrow \label{tag:RFL}&
-      Requested Flight Level &
-      See AFL field for format 
-      \bigskip
-      
-      List: 
-      
-      If an RFL request is in progress via CPDLC, displays “{[}requested level{]}”, followed by “+” if the request contains a reason (i.e. DUE TO  something). 
-      \bigskip
-      
-      DEP list does not display the  brackets for CPDLC status. &
-      In flight lists: 
-      
-      If a CPDLC downlink  message has been  received:  
-      
-      \colorref{CPDLC DM Request} 
-      \bigskip
-      
-      If controller timeout has expired following a CPDLC downlink request:
-      
-      \colorref{CPDLC Controller Late} 
-      \bigskip
-      
-      If a CPDLC warning has  been raised: 
-      
-      color of the  warning \\ \hline
-    RI \nextrow \label{tag:RI}&
-      Release Indicator &
-      “F” fully released 
-      
-      “C” released for climb 
-      
-      “D” released for descent 
-      
-      “T” released for turns 
-      \bigskip
-      
-      Incoming release disappears 3 min after track is assumed, outgoing when track is no longer redundant. &
-      During transfer:  
-      
-      \colorref{Proposition In} \\ \hline
-    ROUTE \nextrow \label{tag:ROUTE}&
-      Flight plan route &
-      DEP list 
-      
-      - part 1 shows first 15 characters, part 2 characters 16-30 
-      \bigskip
-      
-      If departing from defined airports: 
-      
-      - first 30/45 characters (2 or 3 parts) 
-      \bigskip
-      
-      If arriving at a clearance flag airport: 
-      
-      - last 30/45 characters (2 or 3 parts) 
-      \bigskip
-      
-      Else: 
-      
-      - first 30/45 characters (2 or 3 parts) &
-       \\ \hline
-    S \nextrow \label{tag:S}&
-      Mode S mismatch indicator &
-      “S” if downloaded callsign is different than coupled flight plan callsign &
-      \colorref{Warning} \\ \hline
-    SI \nextrow \label{tag:SI}&
-      Sector Indicator &
-      Assumed track: 
-      
-      Next sector identifier or frequency.  
-      \bigskip
-      
-      Displayed in brackets if a  communications transfer is in  progress via CPDLC, followed by “+”  if the answer contains a reason. The frequency  display is forced on during a  transfer via CPDLC. 
-      \bigskip
-      
-      Other tracks: 
-      
-      Tracking controller identifier or  frequency. 
-      \bigskip
-      
-      List: Frequency display is not possible 
-      \bigskip
-      
-      DEP list: Does not display the  brackets for CPDLC status. 
-      \bigskip
-      
-      Current: Displays always the  current tracking controller id 
-      \bigskip
-      
-      Previous: Displays the current tracking controller id unless it is you or the track is in redundant state 
-      \bigskip
-      
-      Next: Displays the next controller id when assumed, or current when in redundant state &
-      Priority order: 
-      \bigskip
-      
-      Outgoing HOP: 
-      
-      \colorref{Proposition In} 
-      \bigskip
-      
-      Manually changed next sector: 
-      
-      \colorref{Warning} 
-      \bigskip
-      
-      Normal next sector:
-      
-      \colorref{Coordination} 
-      \bigskip
-      
-      If a CPDLC communications transfer uplink message has been sent:  
-      
-      \colorref{CPDLC UM Clearance} 
-      \bigskip
-      
-      If a CPDLC warning has been raised: 
-      
-      color of the  warning \\ \hline
-    SID \nextrow \label{tag:SID}&
-      Assigned or planned SID &
-      SID identifier &      
-      If automatically assigned:
-      
-      \colorref{Sid Star No Allocation} 
-      \bigskip
-       
-      If manually assigned:
-      
-      \colorref{Sid Star Allocation} \\ \hline
-    SQ \nextrow \label{tag:SQ}&
-      Arrival sequence number &
-      A number from 1 to 50 &
-       \\ \hline
-    STAR \nextrow \label{tag:STAR}&
-      Assigned or planned STAR &
-      STAR identifier &
-      If not transmitted to flight:  
-      
-      \colorref{Sid Star No Allocation} 
-      \bigskip
-      
-      If readback received from flight: 
-      
-      \colorref{Sid Star Allocation} \\ \hline
-    STS \nextrow \label{tag:STS}&
-      Ground state &
-      EuroScope default ground state &
-       \\ \hline
-    TAS \nextrow \label{tag:TAS}&
-      Flight Plan TAS &
-      See GS field for format &
-       \\ \hline
-    TEXT2 \nextrow \label{tag:TEXT2}&
-      OP-TEXT2 message &
-      If more than 10 characters, then shows first 9 + “>” &
-       \\ \hline
-    TRACK \nextrow \label{tag:TRACK}&
-      Ground track &
-      “T” + the aircraft’s current ground track in degrees magnetic &
-       \\ \hline
-    TSSR \nextrow \label{tag:TSSR}&
-      Aircraft transponded  mode 3/A code &
-      4 digits or “A”+ 4 digits &
-       \\ \hline
-    V \nextrow \label{tag:V}&
-      Flight rules &
-      “V” if VFR
-      
-      “Y” if first IFR and later VFR
-      
-      “Z” if first VFR and later IFR &
-       \\ \hline
-    W \nextrow \label{tag:W}&
-      No RVSM capability &
-      “W” if aircraft equipment is not  indicating RVSM capability &
-      Not equipped: 
-      
-      \colorref{Urgency} 
-      \bigskip
-      
-      Exempt: 
-      
-      \colorref{Information} 
-      \bigskip
-      
-      Unknown: 
-      
-      \colorref{Unknown} \\ \hline
-    WTC \nextrow \label{tag:WTC}&
-      Wake turbulence  category &
-      “J” for Super
-      
-      “H” for Heavy
-      
-      “M” for Medium
-      
-      “L” for Light 
-      
-      “?” for unknown 
-      \bigskip
-      
-      Unselected label: 
-      
-      Only displayed if not medium unless the field is highlighted &
-      If highlighted: 
-      
-      \colorref{Warning} \\ \hline
-    /WTC \nextrow \label{tag:/WTC}&
-      Wake turbulence  category &
-      “/J” for Super
-      
-      “/H” for Heavy
-      
-      “/M” for Medium
-      
-      “/L” for Light 
-      
-      “?” for unknown 
-      \bigskip
-      
-      Unselected label: 
-      
-      Only displayed if not medium unless the field is highlighted &
-      If highlighted: 
-      
-      \colorref{Warning} \\ \hline
-    XFL \nextrow \label{tag:XFL}&
-      Exit Flight Level &
-      “CA” if Clear for App set
-      
-      “VA” if Visual App flag set
-      
-      See AFL field for number format. 
-      \bigskip
-      
-      Unselected label: 
-      
-      Not shown if equal to CFL/PEL and  no ongoing coordination. 
-      \bigskip
-      
-      DEP list: 
-      
-      If logged in as CTR and flight not  inside active sector, displays PEL.  
-      
-      Otherwise displays XFL. &
-      Ongoing coordination:  
-      
-      \colorref{Proposition In} 
-      \bigskip
-      
-      Coordination refused: 
-      
-      \colorref{Warning} \\ \hline
-    Y \nextrow \label{tag:Y}&
-      No 8.33kHz capability &
-      “Y” if aircraft equipment is not  indicating 8.33kHz capability &
-      Not equipped: 
-      
-      \colorref{Urgency} 
-      \bigskip
-      
-      Exempt: 
-      
-      \colorref{Information} 
-      \bigskip
-      
-      Unknown: 
-      
-      \colorref{Unknown} \\ \hline
-      \caption{Label Field descriptions}
-    \end{longtable}
+    \bigskip 
+    
+    S-Highlight: 
+    
+    \colorref{Suite Highlight} \\ \hline
+  AHDG \nextrow \label{tag:AHDG}&
+    Assigned heading &
+    List: 
+    
+    - Assigned heading (“H” + 3 digits)
+    
+    - “H” (maintain present heading)
+
+    - “LLZ” (localizer clearance)
+
+    - Direct-to point name
+
+    \bigskip
+    
+    Unselected label: 
+    
+    - Assigned heading 
+    
+    - “H”
+    
+    - “LLZ”
+    
+    - Direct-to point name
+    
+    \bigskip
+    
+    Selected label: 
+    
+    - Assigned heading 
+
+    - “H”
+
+    - “LLZ”
+    
+    - Direct-to point name 
+    \bigskip
+
+    Direct-to point shown only if set using the AHDG menu or vector and not equal to COPX point.
+
+    \bigskip
+    
+    If a heading clearance or request is  in progress via CPDLC, displays  “{[}heading{]}”, followed by “+” if the  request or answer contains a reason(i.e. DUE TO something). 
+    \bigskip
+
+    DEP list: 
+    Does not display the  brackets for CPDLC status. &
+    If value assigned and HOP:
+
+    Sent: \colorref{Proposition Out}
+
+    Received: \colorref{Proposition In}
+    
+    \bigskip
+    
+    Tactical coordination:
+
+    Sent: \colorref{Negotiation In}
+
+    Received: \colorref{Negotiation Out}
+
+    Rejected: \colorref{Warning}
+
+    Value accepted but not set: \colorref{Reminder}
+
+    \bigskip
+
+    CPDLC:
+
+    Uplink message sent: \colorref{CPDLC UM Clearance}
+
+    Downlink message received: \colorref{CPDLC DM Request}
+
+    Controller timeout expired: \colorref{CPDLC Controller Late}
+
+    CPDLC warning raised: Color of the warning \\ \hline
+  AIW \nextrow \label{tag:AIW}&
+    AIW alert (see also ALRT) &
+    “AIW” &
+    \colorref{AIW intrusion} \\ \hline
+  ALRT \nextrow \label{tag:ALRT}&
+    Alert message &
+    “MSAW”, “APW”, “AIW”, “L” (CLAM), “RAM” or “D” (DUPE) (in this priority order) &
+    MSAW and APW: 
+    
+    \colorref{Warning} 
+    
+    \bigskip
+    AIW:
+    
+    \colorref{AIW intrusion} \\ \hline
+  ALT1 \nextrow \label{tag:ALT1}&
+    Alternate aerodrome 1 &
+    ICAO code, 4 characters &
+    \\ \hline
+  ALT2 \nextrow \label{tag:ALT2}&
+    Alternate aerodrome 2 &
+    Second alternate can be set by  inserting “ALT2/XXXX” into  the FPL remarks field &
+    \\ \hline
+  AN \nextrow \label{tag:AN}&
+    Area navigation &
+    “P” if RNAV1 capable
+    
+    “R” if RNAV5 capable &
+    \\ \hline
+  APW \nextrow \label{tag:APW}&
+    APW alert (see also ALRT) &
+    “APW” &
+    \colorref{Warning} \\ \hline
+  ARC \nextrow \label{tag:ARC}&
+    Assigned vertical rate &
+    “R” + 2 digits, in 100’s of ft/min 
+    
+    \bigskip
+
+    (followed by “+” or “-” when applicable for a minimum or maximum rate clearance) &
+    If value assigned and HOP:
+
+    Sent: \colorref{Proposition Out}
+
+    Received: \colorref{Proposition In}
+
+    \bigskip
+
+    Tactical coordination:
+
+    Sent: \colorref{Negotiation In}
+
+    Received: \colorref{Negotiation Out}
+
+    Rejected: \colorref{Warning}
+
+    Value accepted but not set: \colorref{Reminder} \\ \hline
+  ARWY \nextrow \label{tag:ARWY}&
+    Arrival runway &
+    Arrival runway identifier &
+    If manually assigned: \colorref{Rwy Locked} \\ \hline
+  ASI \nextrow \label{tag:ASI}&
+    Assuming sector &
+    &
+    \\ \hline
+  ASP \nextrow \label{tag:ASP}&
+    Assigned speed &
+    Mach “M”+ 2 digits
+
+    \bigskip
+
+    “HS” for high speed clearance 
+
+    \bigskip
+
+    Speed 2 digits, in 10’s of knots
+
+    \bigskip
+
+    (followed by “+” or “-” when applicable for a minimum or maximum rate clearance)
+
+    \bigskip
+    
+    If a speed clearance or request is in progress via CPDLC, displays  “{[}speed{]}”, followed by “+” if the  request or answer contains a reason. &
+    If value assigned and HOP:
+
+    Sent: \colorref{Proposition Out}
+
+    Received: \colorref{Proposition In}
+
+    \bigskip
+
+    Tactical coordination:
+
+    Sent: \colorref{Negotiation In}
+
+    Received: \colorref{Negotiation Out}
+
+    Rejected: \colorref{Warning}
+
+    Value accepted but not set: \colorref{Reminder}
+
+    \bigskip
+
+    CPDLC:
+
+    Uplink message sent: \colorref{CPDLC UM Clearance}
+
+    Downlink message received: \colorref{CPDLC DM Request}
+
+    Controller timeout expired: \colorref{CPDLC Controller Late}
+
+    CPDLC warning raised: Color of the warning \\ \hline
+  ASSR \nextrow \label{tag:ASSR}&
+    Assigned mode 3/A code &
+    4 digits or “A”+ 4 digits. 
+    \bigskip
+    If a SQUAWK SSR message is in progress via CPDLC, displays the  code in brackets, followed by “+” if  the answer contains a reason. 
+    \bigskip
+    DEP list:
+    
+    Does not display the brackets for CPDLC status. &
+    If different than TSSR:  
+    
+    \colorref{Information} 
+
+    \bigskip
+    
+    CPDLC:
+
+    Uplink message sent:  
+    
+    \colorref{CPDLC UM Clearance} 
+
+    CPDLC warning raised: 
+    
+    Color of the  warning \\ \hline
+  ATD \nextrow \label{tag:ATD}&
+    Actual Time of Departure &
+    UTC time in “HHMM” format &
+    \\ \hline
+    ATIS \nextrow \label{tag:ATIS}&
+    ATIS designator &
+    &
+    \\ \hline
+  ATYP \nextrow \label{tag:ATYP}&
+    Aircraft type &
+    Type with max 4 characters &
+    If highlighted: 
+    
+    \colorref{Warning} \\ \hline
+  ATYP/W \nextrow \label{tag:ATYP/W}&
+    Aircraft type / Wake  Turbulence Category &
+    Type with max 4 characters + “/” +  WTC (“L”, “M”, “H”, “J” or “?”) &
+    If highlighted: 
+    \colorref{Warning} \\ \hline
+  C \nextrow \label{tag:C}&
+    Inbound clearance &
+    “C” if ADES needs inbound clearance &
+    Active state: 
+    \colorref{Information} \\ \hline
+  CALLSIGN \nextrow\label{tag:CALLSIGN} &
+    Callsign &
+    If label is minimized, prefixed by “<” .
+    
+    \bigskip
+
+    If number of aircraft is more than one, suffixed  by “+”. 
+
+    \bigskip
+    
+    If correlated to a primary  track or to a secondary track with  no ASSR code and a non-discrete  TSSR code, suffixed by “*”. 
+    
+    \bigskip
+    
+    If the flight is CPDLC connected, the callsign is displayed in brackets. &
+    Priority order: 
+    
+    STCA alert: \colorref{Urgency} 
+    
+    HOP received: \colorref{Proposition In} 
+    
+    Transfer in: \colorref{Assumed} 
+    
+    HOP sent: \colorref{Assumed} 
+    
+    Transfer out: \colorref{Redundant} 
+    
+    Level band highlight AFL: \colorref{Urgency} 
+    
+    Level band highlight XFL: \colorref{Warning} 
+
+    \\ \hline
+  CFL \nextrow \label{tag:CFL}&
+    Cleared Flight Level &
+    See AFL field for number format. 
+
+    \bigskip
+    
+    Unselected label: Not shown if equal to AFL 
+
+    \bigskip
+
+    If a level clearance is in progress via  CPDLC, displays “{[}level{]}”, followed  by “+” if the answer contains a  reason (i.e. DUE TO something). 
+
+    \bigskip
+
+    DEP list:
+    Does not display the  brackets for CPDLC status. &
+    DEP list: 
+    
+    For CTR, if CFL\textgreater PEL, for others if CFL\textgreater XFL: \colorref{Warning} 
+
+    \bigskip
+    
+    CPDLC:
+    
+    Uplink message sent: \colorref{CPDLC UM Clearance} 
+
+    CPDLC warning raised: Color of the  warning \\ \hline
+  CFL/PEL \nextrow \label{tag:CFL/PEL}&
+    Cleared Flight Level or  Planned Entry Level &
+    PEL is shown for flights in  “coordinated” and “ongoing coordination” states, CFL otherwise. 
+
+    \bigskip
+    
+    See AFL field for number format.
+
+    \bigskip 
+    
+    Unselected label: 
+    
+    PEL: Not shown if equal to AFL and no ongoing coordination. 
+    
+    CFL: Not shown if equal to AFL 
+    \bigskip
+    
+    If a level clearance is in progress via  CPDLC, displays “{[}level{]}”, followed  by “+” if the answer contains a  reason (i.e. DUE TO something). &
+    PEL: 
+    
+    Coordination sent: \colorref{Proposition Out} 
+
+    Coordination received: \colorref{Proposition In} 
+    
+    Change just before ETN: \colorref{Info Coord} 
+    
+    Coordination refused: \colorref{Warning}
+    
+    \bigskip 
+    
+    CFL: 
+    
+    CPDLC:
+    
+    Uplink message sent: \colorref{CPDLC UM Clearance} 
+    
+    Downlink  message received: \colorref{CPDLC DM Request}
+    
+    CPDLC warning raised: Color of the  warning \\ \hline
+  CLAM \nextrow \label{tag:CLAM}&
+    CLAM indicator (see also ALRT) &
+    “L” &
+    \colorref{Warning} \\ \hline
+  CLR \nextrow \label{tag:CLR}&
+    Clearance received flag &
+    If clearance not received: "$\square$" 
+    
+    If clearance received: "$\blacksquare$" &
+    \\ \hline
+  CLR/DCL/CMT\nextrow \label{tag:CLRDCLCMT}&    
+    Combined clearance received flag and DCL dialogue status &
+    Clearance received flag set: "$\blacksquare$"
+    
+    \bigskip
+    
+    State of the datalink clearance dialogue:
+    
+    - “R” (request received)
+    
+    - “S” (clearance sent)
+    
+    - “F” (failed)
+    
+    \bigskip
+    
+    Clearance flag not set: "$\square$"
+    
+    \bigskip
+    
+    (“R” alternates with “•” if remark text present in the RCD)&
+    If “R” or “•”: \colorref{Warning} \\ \hline
+  CMT \nextrow \label{tag:CMT}&
+    CMT Text indicator &
+    “•” if received RCD contains remark text &
+    \\ \hline
+  CODE \nextrow \label{tag:CODE}&
+    FPL mode S hex code &
+    “/” + aircraft’s mode S hex code if found in the FPL remarks &
+    \\ \hline
+  COM \nextrow \label{tag:COM}&
+    Communication type &
+    “r” if voice receive only “t” if text only &
+    \colorref{Warning} \\ \hline
+  COMP\_CS \nextrow \label{tag:COMP CS}&
+    ICAO RTF callsign &
+    The decoded ICAO RTF callsign 
+    
+    “???” if not in database &
+  \\ \hline
+  COM \nextrow \label{tag:COM}&
+    Communication type &
+    “r” if voice receive only “t” if text only &
+    \colorref{Warning} \\ \hline
+  COMP\_CS \nextrow \label{tag:COMP CS}&
+    ICAO RTF callsign &
+    The decoded ICAO RTF callsign 
+    
+    “???” if not in database &
+    \\ \hline
+  COORD \nextrow \label{tag:COORD}&
+    Coordination message &
+    ROF message sent/received:
+
+    - “ROF”
+
+    \bigskip
+
+    Transfer with release:
+    
+    - “F” fully released
+    
+    - “C” released for climb
+    
+    - “D” released for descent
+    
+    - “T” released for turns &
+    Sent: \colorref{Proposition Out}
+
+    Received: \colorref{Proposition In}
+
+    (until assumed by the downstream position) \\ \hline
+  COPN \nextrow \label{tag:COPN}&
+    Entry point &
+    &
+    Coordination sent: \colorref{Proposition Out}
+
+    Coordination received: \colorref{Proposition In}
+
+    Coordination refused: \colorref{Warning}  \\ \hline
+  COPX \nextrow \label{tag:COPX}&
+    Exit point &
+    DEP list: 
+    
+    If logged in as CTR and flight not inside active sector, displays COPN 
+    \bigskip
+    (with holding): 
+    
+    A holding clearance is displayed if  there is no coordination. It shows the holding point name + “ H” or for  lat/lon point holdings, “POS H”. For a TSA Hold clearance, the area  name is shown. &
+    Coordination sent: \colorref{Proposition Out}
+
+    Coordination received: \colorref{Proposition In}
+
+    Coordination refused: \colorref{Warning}  \\ \hline
+  COPN/COPX \nextrow \label{tag:COPN/COPX}&
+    Entry point or Exit point &
+    COPN is shown for flights in  “coordinated” and “ongoing coordination” states, COPX in “assumed”, “transfer  initiated” and “redundant” phases. 
+    \bigskip
+    (with holding): 
+    
+    A holding clearance is displayed if  there is no coordination. It shows  the holding point name + “ H” or for  lat/lon point holdings, “POS H”. For a TSA Hold clearance, the area  name is shown. &
+    Coordination sent: \colorref{Proposition Out}
+
+    Coordination received: \colorref{Proposition In}
+
+    Coordination refused: \colorref{Warning} \\ \hline
+  \nextrow \label{tag:CPDLC E} CPDLC\_E &
+    CPDLC Emergency &
+    CPDLC emergency messages: 
+    
+    “SQ7500”, “{[}MAYDAY{]}”, or “{[}PAN{]}” &
+    \colorref{Urgency} \\ \hline
+  CPDLC\_W \nextrow \label{tag:CPDLC W}&
+    CPDLC Warning &
+    CPDLC warning messages: 
+    
+    - "CPDLC FAIL” network failure 
+
+    - “CPDLC P ABT” pilot logoff 
+
+    - "<type> ERR” message failure 
+
+    - "<type> NOT CDA” NOT CURRENT  DATA AUTHORITY response 
+
+    - "<type> P LATE” pilot timeout 
+
+    - "<type> SBY” STANDBY response 
+
+    - "<type> UNA” UNABLE response    
+
+    - “CPDLC MSG” unidentified downlink
+
+    \bigskip
+    
+    <type> is the type of message: 
+    
+    - “AHDG” heading clearance 
+    
+    - “CFL” level clearance 
+    
+    - “COF” communication transfer 
+    
+    - “DCT” direct-to clearance 
+    
+    - “SQI” SQUAWK IDENT message 
+    
+    - “SSR” SQUAWK SSR message 
+    
+    - “VCI” communication transfer &
+    "CPDLC FAIL”, “CPDLC P ABT”, “ERR” or “NOT CDA”: \colorref{CPDLC Failed} 
+
+    \bigskip
+
+    “P LATE”: \colorref{CPDLC Pilot Late}
+
+    \bigskip
+
+    “SBY”: \colorref{CPDLC Standby}     
+    
+    \bigskip
+
+    “UNA”: \colorref{CPDLC Unable} 
+    
+    \bigskip
+    
+    “CPDLC MSG”: \colorref{CPDLC DM Request}\\ \hline
+  CTO \nextrow \label{tag:CTO}&
+    Clearance time on OAN &
+    “HHMM” &
+    Major difference between estimated time at point and CTO: \colorref{Urgency}
+
+    Minor difference between estimated time at point and CTO: \colorref{Warning}
+
+    Non-acknowledged OCM with changed CTO: \colorref{Information} \\ \hline
+  DGS \nextrow \label{tag:DGS}&
+    Downloaded ground speed &
+    Ground speed as downloaded from the aircraft via mode S DAPs. Format as in GS field. &
+    \\ \hline
+  CRC \nextrow \label{tag:CRC}&
+    Computed vertical rate &
+    2 digits, in 100’s of ft/min
+    
+    Value preceded by “C” for climbing,  “D” for descending &
+    \\ \hline
+  DHDG \nextrow \label{tag:DHDG}&
+    Downloaded heading &
+    Magnetic heading as downloaded  from the aircraft via mode S DAPs.  
+    
+    “H” + 3 digits. &
+    \\ \hline
+  DIAS \nextrow \label{tag:DIAS}&
+    Downloaded indicated airspeed &
+    Indicated airspeed as downloaded  from the aircraft via mode S DAPs. An estimated value is displayed if upper wind/temp data is available. &
+    \\ \hline
+  DMACH \nextrow \label{tag:DMACH}&
+    Downloaded Mach number &
+    Mach number as downloaded from the aircraft via mode S DAPs.  An estimated value is displayed if upper wind/temp data is available. &
+    \\ \hline
+  DRC \nextrow \label{tag:DRC}&
+    Downloaded rate of  climb/descent &
+    Rate of climb/descent as downloaded from the aircraft via mode S DAPs. 
+    
+    Not available on  VATSIM (computed rate displayed instead, see CRC). &
+    \\ \hline
+  DRWY \nextrow \label{tag:DRWY}&
+    Departure runway &
+    Departure runway identifier &
+    If manually assigned: \colorref{Rwy Locked}
+
+    \bigskip
+
+    Clearance flag not set: \colorref{Proposition In} 
+    
+    \bigskip
+
+    Clearance flag set: \colorref{Information} \\ \hline
+  DSFL \nextrow \label{tag:DSFL}&
+    Downloaded selected  flight level &
+    Selected flight level as downloaded from the aircraft via mode S DAPs.  
+    
+    Not available on VATSIM. &
+    \\ \hline
+  DSQ \nextrow \label{tag:DSQ}&
+    Departure sequence number &
+    &
+    \\ \hline
+  DUPE \nextrow \label{tag:DUPE}&
+    DUPE indicator (see also ALRT) &
+    “D”&
+    \colorref{Warning}\\ \hline
+  EET \nextrow \label{tag:EET}&
+    Estimated Elapsed Time &
+    “HHMM” &
+    \\ \hline
+  EMRG \nextrow \label{tag:EMRG}&
+    Emergency &
+    “HI” for squawk 7500
+    
+    “CF” for squawk 7600,
+    
+    “EM” for squawk 7700 &
+    \colorref{Urgency} \\ \hline
+  EQUIP \nextrow \label{tag:EQUIP}&
+    FPL equipment field &
+    (COM/NAV): COM/NAV equipment 
+    
+    (SUR): “/” + surveillance equipment 
+
+    \bigskip
+    
+    If the FPL equipment is in the FAA format, a rough conversion to the ICAO format is made&
+    \\ \hline
+  EST/DEP/
+  
+  ABT \nextrow \label{tag:EST/DEP/ABT}&
+    Manual departure &
+    Clearance flag not set: “EST”
+
+    Clearance flag set: “DEP”
+    
+    Departed: “ABT” &
+    \\ \hline
+  ETA \nextrow \label{tag:ETA}&
+    Estimated Time of Arrival &
+    UTC time in “HHMM” format or  “HOLD” if flight in holding state &
+    \\ \hline
+  ETD \nextrow \label{tag:ETD}&
+    Estimated Time of  Departure &
+    UTC time in “HHMM” format &
+    \\ \hline
+  ETD/ATD \nextrow \label{tag:ETD/ATD}&
+    Estimated Time of Departure or Actual Time  of Departure &
+    Not departed:
+
+    - ETD
+
+    Departed:
+  
+    - ATD  
+    
+    “HHMM”, both times taken from  the FPL data &
+    \\ \hline
+  ETN \nextrow \label{tag:ETN}&
+    Estimated time over  COPN or sector entry  time if no COPN &
+    UTC time in “HHMM” format (sector entry): always entry time &
+    \\ \hline
+  ETOHP \nextrow \label{tag:ETOHP}&
+    Estimated time over holding point or holding  start time &
+    UTC time in “HHMM” format &
+    \\ \hline
+  ETX \nextrow \label{tag:ETX}&
+    Estimated time over  COPX or sector exit time  if no COPX &
+    UTC time in “HHMM” format (sector exit): always exit time &
+    \\ \hline
+  F \nextrow \label{tag:F}&
+    No fix warning &
+    “F” if IFR flight is not routing via one of specified fixes to its destination &
+    \colorref{Information}\\ \hline
+  FCOPN \nextrow \label{tag:FCOPN}&
+    FIR COPN point &
+    FIR entry coordination point &
+    \colorref{Information}\\ \hline
+  FCOPX \nextrow \label{tag:FCOPX}&
+    FIR COPX point &
+    FIR exit coordination point
+    
+    For inbound and domestic flights, displays ADES.&
+    If different from OCM entry point: \colorref{Information}\\ \hline
+  FETN \nextrow \label{tag:FETN}&
+    Estimated time over FCOPN &
+    &
+    \\ \hline
+  FETX \nextrow \label{tag:FETX}&
+    Estimated time over FCOPX &
+    &
+    \\ \hline
+  FF \nextrow \label{tag:FF}&
+    Feeder fix &
+    &
+    \\ \hline
+  FIELD15 \nextrow \label{tag:FIELD15}&
+    Speed Level Route &
+    The flight plan field 15 data (TAS,  RFL and route). Max 360 characters &
+    \\ \hline
+  FIELD18 \nextrow \label{tag:FILED18}&
+    Other information &
+    The flight plan field 18 data  (remarks). Max 540 characters &
+    \\ \hline
+  FLTADD \nextrow \label{tag:FLTADD} &
+    Mode S transponder  address &
+    Mode S transponder hex address &
+    \\ \hline
+  FLTID \nextrow \label{tag:FLTID} &
+    Aircraft identification &
+    Callsign as received via mode S &
+    \\ \hline
+  FLTID/TSSR \nextrow \label{tag:FLTIDTSSR} &
+    Aircraft identification or transponder code &
+    FLTID if available, otherwise TSSR &
+    If highlighted: \colorref{Warning}\\ \hline
+  FMF \nextrow \label{tag:FMF} &
+    Flight Message Field &
+    User entered text, stored only locally &
+    \\ \hline
+  FText \nextrow \label{tag:FText} &
+    Free text &
+    &
+    \\ \hline
+  GS &
+    Ground Speed \nextrow \label{tag:GS}&
+    "N"+3 digits, in knots &
+    If highlighted: 
+    \colorref{Warning} \\ \hline
+  HOLD &
+    Hold/XHold \nextrow \label{tag:GS}&
+    Holding clearance state at point related to the traffic management list &
+    \colorref{Warning} \\ \hline
+  HPT \nextrow \label{tag:HPT}&
+    Holding point &
+    Holding point name or for lat/lon  point holdings, “POS”. 
+    
+    For a TSA Hold clearance, the area  name is shown. &
+    \\ \hline
+  I \nextrow \label{tag:I}&
+    Flight information &
+    “I” if OP\_TEXT has data &
+    \\ \hline
+  Label &
+    Label hidden flag &
+    “$\blacksquare$” if label displayed, “$\square$” if label hidden &
+    \\ \hline
+  M \nextrow \label{tag:M}&
+    Military coordination &
+    “M” if military coordination is  required &
+    Active state: 
+    \colorref{Warning} \\ \hline
+  MALRT \nextrow \label{tag:MALRT}&
+    Manual alerts &
+    Displays alerts entered via the  \winref{menu:cs} &
+    \colorref{Warning} \\ \hline
+  MFX \nextrow \label{tag:MFX}&
+    Metering fix &
+    AMAN metering fix name &
+    \\ \hline
+  MFX\_FF \nextrow \label{tag:MFXFF}&
+    Metering fix or feeder fix &
+    AMAN metering fix or feeder fix name &
+    \\ \hline
+  MNR \nextrow \label{tag:MNR}&
+    Oceanic cruising speed &
+    Cleared cruising speed from the last received OCM &
+    Non-acknowledged OCM with changed MNR: \colorref{Information}\\ \hline
+  MSAW \nextrow \label{tag:MSAW}&
+    MSAW alert (see also ALRT) &
+    “MSAW” &
+    \colorref{Warning} \\ \hline
+  MTCD \nextrow \label{tag:MTCD}&
+    MTCD indicator &
+    “•” if aircraft has an MTCD problem &
+    \colorref{Urgency} (\colorref{Conflict Ack} if all conflicts acknowledged) \\ \hline
+  N/ATYP \nextrow \label{tag:N/ATYP}&
+    Number of aircraft /  Aircraft type &
+    Unselected label: 
+    
+    Number range 2 - 99 
+    \bigskip
+    
+    Selected label or List: 
+    
+    Number range 1 - 99 
+    \bigskip
+    Number can be set by prefixing the aircraft type in the FPL by “X/”  where X is the number (max 99) &
+    If highlighted: 
+    \colorref{Warning} \\ \hline
+  NAT \nextrow \label{tag:NAT}&
+    North Atlantic Track name &
+    Cleared NAT name from the last received OCM (“\#” for a random route) &
+    Non-acknowledged OCM with changed NAT: \colorref{Information} \\ \hline
+  NBT \nextrow \label{tag:NBT}&
+    Not Before Time &
+    Time restriction at OAN &
+    Non-acknowledged: \colorref{Warning} \\ \hline
+  NLT \nextrow \label{tag:NLT}&
+    Not Later than Time &
+    Time restriction at OAN &
+    Non-acknowledged: \colorref{Warning} \\ \hline
+  NPT \nextrow \label{tag:NPT}&
+    Next route point &
+    When a DCT request or clearance  via CPDLC is in progress: 
+    
+    Displays the point name followed by  “+” if the request contains a reason  (i.e. DUE TO something) 
+    \bigskip
+    Otherwise: Next point on the route &
+    CPDLC:
+    
+    Uplink message sent: \colorref{CPDLC UM Clearance} 
+    
+    Downlink message received: \colorref{CPDLC DM Request} 
+    
+    Controller timeout expired: \colorref{CPDLC Controller Late} 
+
+    CPDLC warning raised: color of the  warning \\ \hline
+  NRAC \nextrow \label{tag:NRAC}&
+    Number of aircraft &
+    Number from 2 to 99 
+    \bigskip
+    
+    Extended label: 
+    
+    “n” if 1 
+    
+    Other label or (List): blank if 1 
+    \bigskip
+    
+    Number can be set by prefixing the  aircraft type in the FPL by “X/”  where X is the number (max 99). &
+    \\ \hline
+  NSSR \nextrow \label{tag:NSSR}&
+    SSR warning &
+    Displays ASSR if different from TSSR 
+    
+    (always displayed for flight plan tracks or when SQUAWK SSR) &
+    CPDLC:
+    
+    Uplink message sent: \colorref{CPDLC UM Clearance} 
+    
+    CPDLC warning raised: color of the  warning \\ \hline
+  O \nextrow \label{tag:O}&
+    Oceanic alert &
+    “O” if Oceanic Clearance Message is not acknowledged &
+    \colorref{Warning}\\ \hline
+  OAN \nextrow \label{tag:OAN}&
+    Cleared Oceanic Control Area entry point &
+    Cleared entry point from the last received OCM &
+    Non-acknowledged OCM with changed OAN: \colorref{Information}\\ \hline
+  OCM \nextrow \label{tag:OCM}&
+    Oceanic Clearance Message &
+    &
+    \\ \hline
+  OFL \nextrow \label{tag:OFL}&
+    Oceanic cruising Flight Level &
+    Cleared oceanic flight level from the last received OCM &
+    Non-acknowledged OCM with changed OFL: \colorref{Information}\\ \hline
+  OP\_TEXT \nextrow \label{tag:OP TEXT}&
+    Flight information message &
+    User entered text &
+    \\ \hline
+  OP\_TEXT2 \nextrow \label{tag:OP TEXT2}&
+    OP\_TEXT2 message &
+    User entered text, stored in the scratchpad &
+    \\ \hline
+  P &
+    No P-RNAV/RNAV1 capability \nextrow \label{tag:P}&
+    “P” if aircraft equipment is not indicating P-RNAV/RNAV1 capability and destination has arrival  procedures requiring it &
+    Not equipped: \colorref{Information} 
+    
+    Unknown: \colorref{Unknown}\\ \hline
+  PEL &
+    Planned Entry Level \nextrow \label{tag:PEL}&
+    See AFL field for number format. &
+    Coordination sent: \colorref{Proposition Out}
+
+    Coordination received: \colorref{Proposition In}
+
+    Change just before ETN: \colorref{Info Coord}
+
+    Coordination refused: \colorref{Warning} \\ \hline
+  PFREQ \nextrow \label{tag:PFREQ}&
+    Pilot monitored frequency &
+    Displays your primary frequency  when transfer of communications  was done via CPDLC using the  MONITOR option &
+    CPDLC DM Request \\ \hline
+  PRFL \nextrow \label{tag:PRFL}&
+    RFL requested by pilot via  CPDLC &
+    Displays “{[}requested level{]}”,  followed by “+” if the request  contains a reason (i.e. DUE TO  something) &
+    CPDLC:
+    
+    Downlink  message received: \colorref{CPDLC DM Request}
+    
+    Controller timeout expired: \colorref{CPDLC Controller Late} 
+    
+    CPDLC warning raised: Color of the warning \\ \hline
+  PSSR \nextrow \label{tag:PSSR}&
+    Previous mode 3/A code &
+    If not known, shows ASSR if  available. Format as ASSR field. &
+    \\ \hline
+  R \nextrow \label{tag:R}&
+    No B-RNAV/RNAV5  capability &
+    “R” if aircraft equipment is not  indicating B-RNAV/RNAV5 capability &
+    Not equipped: \colorref{Urgency}
+
+    Exempted: \colorref{Information}
+    
+    Unknown:  \colorref{Unknown} \\ \hline
+  RAM \nextrow \label{tag:RAM}&
+    RAM indicator (see also ALRT) &
+    “RAM” &
+    \colorref{Warning} \\ \hline
+  RFL \nextrow \label{tag:RFL}&
+    Requested Flight Level &
+    See AFL field for format 
+    \bigskip
+    
+    List: 
+    
+    If an RFL request is in progress via CPDLC, displays “{[}requested level{]}”, followed by “+” if the request contains a reason (i.e. DUE TO  something). 
+    \bigskip
+    
+    DEP list does not display the  brackets for CPDLC status. &
+    (List) and (DEP list): 
+    
+    CPDLC:
+    
+    Downlink message received: \colorref{CPDLC DM Request} 
+    
+    Controller timeout expired: \colorref{CPDLC Controller Late} 
+    
+    CPDLC warning raised: color of the  warning \\ \hline
+  ROUTE \nextrow \label{tag:ROUTE}&
+    Flight plan route &
+    DEP list 
+    
+    - part 1 shows first 15 characters, part 2 characters 16-30 
+    \bigskip
+    
+    If departing from defined airports: 
+    
+    - first 30/45 characters (2 or 3 parts) 
+    \bigskip
+    
+    If arriving at a clearance flag airport: 
+    
+    - last 30/45 characters (2 or 3 parts) 
+    \bigskip
+    
+    Else: 
+    
+    - first 30/45 characters (2 or 3 parts) &
+     \\ \hline
+  S \nextrow \label{tag:S}&
+    Mode S mismatch indicator &
+    “S” if downloaded callsign is different than coupled flight plan callsign &
+    \colorref{Warning} \\ \hline
+  SI \nextrow \label{tag:SI}&
+    Sector Indicator &
+    Assumed track: 
+    
+    Next sector identifier or frequency.  
+    \bigskip
+    
+    Displayed in brackets if a  communications transfer is in  progress via CPDLC, followed by “+”  if the answer contains a reason. The frequency  display is forced on during a  transfer via CPDLC. 
+    \bigskip
+    
+    Other tracks: 
+    
+    Tracking controller identifier or  frequency. 
+    \bigskip
+    
+    List: Frequency display is not possible 
+    \bigskip
+    
+    DEP list: Does not display the  brackets for CPDLC status. 
+    \bigskip
+    
+    Current: Displays always the  current tracking controller id 
+    \bigskip
+    
+    Previous: Displays the current tracking controller id unless it is you or the track is in redundant state 
+    \bigskip
+    
+    Next: Displays the next controller id when assumed, or current when in redundant state &
+    Priority order: 
+
+    \bigskip
+    
+    HOP sent: \colorref{Proposition Out} 
+
+    \bigskip
+
+    Out Transfer initiated: \colorref{Redundant} 
+    
+    \bigskip
+
+    Next unit coordination received: \colorref{Proposition In} 
+    
+    \bigskip
+
+    Manually changed next sector: \colorref{Warning} 
+    
+    \bigskip
+    
+    Normal next sector: \colorref{Coordination} 
+    
+    \bigskip
+
+    CPDLC:
+    
+    Communications transfer message sent: \colorref{CPDLC UM Clearance} 
+    
+    \bigskip
+
+    If a CPDLC warning has been raised: Color of the  warning \\ \hline
+  SID \nextrow \label{tag:SID}&
+    Assigned or planned SID &
+    SID identifier &      
+    New assignment: \colorref{Sid Star Allocation} \\ \hline
+  SQ \nextrow \label{tag:SQ}&
+    Arrival sequence number  (manually set)&
+    A number from 1 to 50 &
+    \\ \hline
+  SQ\_AMAN \nextrow \label{tag:SQAMAN}&
+    Arrival sequence number (provided by AMAN)&
+    A number from 1 to 99  &
+    \\ \hline
+  STAFF \nextrow \label{tag:STAFF}&
+    Scheduled Time of Arrival at feeder fix&
+    AMAN calculated time to pass the feeder fix  &
+    \\ \hline
+  STAR \nextrow \label{tag:STAR}&
+    Assigned or planned STAR &
+    STAR identifier &
+    New assignment: \colorref{Sid Star Allocation} \\ \hline
+  STATE \nextrow \label{tag:STATE}&
+    Current system state &
+    Notified: NOTI 
+    
+    Coordinated: COOR 
+    
+    On-going coordination: ONGC 
+    
+    Assumed: ASSU 
+    
+    Transfer initiated: TRAN 
+    
+    Redundant: REDU 
+    
+    Terminated: TERM 
+    
+    Free: FREE 
+    
+    On-contact: ONCT &
+    \\ \hline
+  STS \nextrow \label{tag:STS}&
+    Ground state &
+    EuroScope default ground state &
+    \\ \hline
+  TAS \nextrow \label{tag:TAS}&
+    Flight Plan TAS &
+    TAS from flight plan, either: 
+    
+    “K” + 4 digits, km/h 
+    
+    “N” + 4 digits, knots 
+    
+    “M” + 3 digits, 1/100’s of Ma &
+    \\ \hline
+  TEXT2 \nextrow \label{tag:TEXT2}&
+    OP-TEXT2 message &
+    If more than 10 characters, then shows first 9 + “>” &
+    \\ \hline
+  TRACK \nextrow \label{tag:TRACK}&
+    Ground track &
+    “T” + the aircraft’s current ground track in degrees magnetic &
+    \\ \hline
+  TOM \nextrow \label{tag:TOM}&
+    Time of Metering &
+    AMAN calculated time to pass the metering fix &
+    \\ \hline
+  TOM\_STAFF \nextrow \label{tag:TOMSTAFF}&
+    Time of Metering or Scheduled Time of Arrival at feeder fix &
+    AMAN calculated time to pass the metering fix or feeder fix &
+    \\ \hline
+  TSSR \nextrow \label{tag:TSSR}&
+    Aircraft transponded  mode 3/A code &
+    4 digits or “A”+ 4 digits &
+    \\ \hline
+  TTL\_TTG \nextrow \label{tag:TTLTTG}&
+    Time To Lose/Gain at metering fix &
+    &
+    \\ \hline
+  TTLTTG\_FF \nextrow \label{tag:TTLTTGFF}&
+    Time To Lose/Gain at feeder fix &
+    &
+    \\ \hline
+  TTLTTG\_MFX\_FF \nextrow \label{tag:TTLTTGMFXFF}&
+  Time To Lose/Gain at metering fix or feeder fix &
+    &
+    \\ \hline
+  V \nextrow \label{tag:V}&
+    Flight rules &
+    “V” if VFR
+    
+    “Y” if first IFR and later VFR
+    
+    “Z” if first VFR and later IFR &
+    \\ \hline
+  W \nextrow \label{tag:W}&
+    No RVSM capability &
+    “W” if aircraft equipment is not  indicating RVSM capability &
+    Not equipped: 
+    
+    \colorref{Urgency} 
+    \bigskip
+    
+    Exempt: 
+    
+    \colorref{Information} 
+    \bigskip
+    
+    Unknown: 
+    
+    \colorref{Unknown} \\ \hline
+    WTC and /WTC \nextrow \label{tag:WTC}&
+    Wake turbulence  category &
+    “J” for Super
+    
+    “H” for Heavy
+    
+    “M” for Medium
+    
+    “L” for Light 
+
+    (in /WTC all prefixed with a “/”)
+    
+    \bigskip
+    
+    Unselected label: 
+    
+    Only displayed if not medium unless the field is highlighted &
+    If highlighted: 
+    
+    \colorref{Warning} \\ \hline
+    WTG and /WTG \nextrow \label{tag:WTG}&
+    Wake turbulence group &
+    ICAO or RECAT-EU wake turbulence group 
+    
+    (in /WTG prefixed with a “/”) &
+    If highlighted: 
+    
+    \colorref{Warning} \\ \hline
+  XFL \nextrow \label{tag:XFL}&
+    Exit Flight Level &
+    See AFL field for number format. 
+
+    \bigskip
+    
+    Unselected label: 
+    
+    Not shown if equal to CFL/PEL and  no ongoing coordination. 
+    \bigskip
+    
+    DEP list: 
+    
+    If logged in as CTR and flight not  inside active sector, displays PEL.  
+    
+    Otherwise displays XFL. &
+    Coordination sent: \colorref{Proposition Out} 
+
+    Coordination received: \colorref{Proposition In} 
+    
+    Coordination refused: \colorref{Warning} \\ \hline
+  Y \nextrow \label{tag:Y}&
+    No 8.33kHz capability &
+    “Y” if aircraft equipment is not  indicating 8.33kHz capability &
+    Not equipped: 
+    
+    \colorref{Urgency} 
+    \bigskip
+    
+    Exempt: 
+    
+    \colorref{Information} 
+    \bigskip
+    
+    Unknown: 
+    
+    \colorref{Unknown} \\ \hline
+    \caption{Label Field descriptions}
+  \end{longtable}
 
 \chapter{User Interface}
 
@@ -4399,7 +4541,7 @@ Up to 2 lists can be displayed. Each list may be configured with different filte
   \tagref{tag:OP TEXT2}\footnotemark[2]   & Edit OP\_TEXT2          &                           & \usym{2713}         \\ \hline
   \tagref{tag:STAR}     & Open STAR list          &                           & \usym{2713}         \\ \hline
   \tagref{tag:ARWY}     & Open Runway list        &                           & \usym{2713}         \\ \hline
-  \tagref{tag:HP}       & Open \winref{menu:wpt}  &                           & \usym{2713}         \\ \hline
+  \tagref{tag:HPT}       & Open \winref{menu:wpt}  &                           & \usym{2713}         \\ \hline
   \caption{Traffic Management List Construction}
 \end{longtable}
 
