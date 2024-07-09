@@ -1742,6 +1742,10 @@ Sector States are used to control label construction, placement in lists, filter
     
     “R” if RNAV5 capable &
     \\ \hline
+  APM \nextrow \label{tag:APM}&
+    APM alert (see also ALRT) &
+    “MSAW” &
+    \colorref{Warning} \\ \hline
   APW \nextrow \label{tag:APW}&
     APW alert (see also ALRT) &
     “APW” &
@@ -2026,19 +2030,7 @@ Sector States are used to control label construction, placement in lists, filter
     Coordination message &
     ROF message sent/received:
 
-    - “ROF”
-
-    \bigskip
-
-    Transfer with release:
-    
-    - “F” fully released
-    
-    - “C” released for climb
-    
-    - “D” released for descent
-    
-    - “T” released for turns &
+    - “ROF” &
     Sent: \colorref{Proposition Out}
 
     Received: \colorref{Proposition In}
@@ -2138,6 +2130,12 @@ Sector States are used to control label construction, placement in lists, filter
     \bigskip
     
     “CPDLC MSG”: \colorref{CPDLC DM Request}\\ \hline
+  CRC \nextrow \label{tag:CRC}&
+    Computed vertical rate &
+    2 digits, in 100’s of ft/min
+    
+    Value preceded by “C” for climbing,  “D” for descending &
+    \\ \hline
   CTO \nextrow \label{tag:CTO}&
     Clearance time on OAN &
     “HHMM” &
@@ -2149,12 +2147,6 @@ Sector States are used to control label construction, placement in lists, filter
   DGS \nextrow \label{tag:DGS}&
     Downloaded ground speed &
     Ground speed as downloaded from the aircraft via mode S DAPs. Format as in GS field. &
-    \\ \hline
-  CRC \nextrow \label{tag:CRC}&
-    Computed vertical rate &
-    2 digits, in 100’s of ft/min
-    
-    Value preceded by “C” for climbing,  “D” for descending &
     \\ \hline
   DHDG \nextrow \label{tag:DHDG}&
     Downloaded heading &
@@ -3377,13 +3369,12 @@ Line 0 is constructed solely of indicators and warnings. Line 0 is only displaye
   \hline
   \colortab{Warning}/t             & Communication Type Indicator                                                                                                & \tagref{tag:COM}          \\ \hline
   \colortab{Assumed}V              & Y, Y or Z Flight Rules, same color as Track Label                                                                           & \tagref{tag:V}             \\ \hline
-  \colortab{Warning}MSAW           & Minimum Safe Altitude Warning                                                                                               & \tagref{tag:MSAW}          \\ \hline
-  \colortab{Warning}APM            & Area Proximity Warning                                                                                                      & \tagref{tag:APM}           \\ \hline
+  \colortab{Warning}MSAW           & Approach Path Monitor or Minimum Safe Altitude Warning                                                                                               & \tagref{tag:MSAW}          \\ \hline
   \colortab{Warning}APW            & Area Proximity Warning                                                                                                      & \tagref{tag:APW}           \\ \hline
   \colortab{AIW intrusion}AIW      & Area Intrusion Warning                                                                                                      & \tagref{tag:AIW}           \\ \hline
-  \colortab{Assumed}L              & Cleared Level Adherence Monitoring, same color as Track Label                                                               & \tagref{tag:CLAM}          \\ \hline
+  \colortab{Warning}L              & Cleared Level Adherence Monitoring                                                               & \tagref{tag:CLAM}          \\ \hline
   \colortab{Warning}DUPE           & Duplicate SSR code                                                                                                          & \tagref{tag:DUPE}          \\ \hline
-  \colortab{Urgency}O              & RVSM Not Equipped                                                                                                           & \tagref{tag:O}             \\ \hline
+  \colortab{Warning}O              & Oceanic Alert                                                                                                               & \tagref{tag:O}             \\ \hline
   \colortab{Urgency}W              & RVSM Not Equipped                                                                                                           & \tagref{tag:W}             \\ \hline
   \colortab{Information}W          & RVSM Exempt                                                                                                                 & \tagref{tag:W}             \\ \hline
   \colortab{Unknown}W              & RVSM Unknown                                                                                                                & \tagref{tag:W}             \\ \hline
@@ -3394,22 +3385,22 @@ Line 0 is constructed solely of indicators and warnings. Line 0 is only displaye
   \colortab{Unknown}R              & RNAV5 Unknown                                                                                                               & \tagref{tag:R}             \\ \hline
   \colortab{Information}P          & RNAV1 Not Equipped                                                                                                          & \tagref{tag:P}             \\ \hline
   \colortab{Warning}M              & Military Coordination Required flag                                                                                         & \tagref{tag:M}             \\ \hline
-  \colortab{Information}$\bullet$  & Mark dot, used to highlight a certain flight by the ATC                                                                     & \tagref{tag:Mark dot}      \\ \hline
-  \colortab{Assumed}$\bullet$      & Frequency dot, used to highlight a flight operating in a frequency other than the Sector Primary, same color as Track Label & \tagref{tag:Frequency dot} \\ \hline
+  \colortab{Information}$\bullet$  & Mark dot                                                                                                                    & \tagref{tag:Mark dot}      \\ \hline
+  \colortab{Assumed}$\bullet$      & Frequency dot, same color as Track Label                                                                                    & \tagref{tag:Frequency dot} \\ \hline
   \colortab{Warning}A              & Manual alert(s) active                                                                                                      & \tagref{tag:A}             \\ \hline
   \colortab{Assumed}+              & STS/ found in FPL remarks field, same color as Track Label                                                                  & \tagref{tag:+}             \\ \hline
   \colortab{Assumed}I              & OP\_TEXT has data, same color as Track Label                                                                                & \tagref{tag:I}             \\ \hline
-  \colortab{Warning}F              & Mode S Callsign is different from coupled Flight Plan Callsign                                                              & \tagref{tag:S}             \\ \hline
+  \colortab{Information}F          & No Fix warning                                                                                                              & \tagref{tag:F}             \\ \hline
   \colortab{Warning}S              & Mode S Callsign is different from coupled Flight Plan Callsign                                                              & \tagref{tag:S}             \\ \hline
   \colortab{Urgency}EM             & “HI” for A7500, “CF” for A7600, “EM” for A7700                                                                              & \tagref{tag:EMRG}          \\ \hline
   \colortab{Proposition In}ROF     & ROF if a Request On Frequency message is received                                                                           & \tagref{tag:COORD}         \\ \hline
-  \colortab{Assumed}A1000          & Displays ASSR if different from TSSR, same color as Track Label                                                             & \tagref{tag:NSSR}          \\ \hline
+  \colortab{Warning}A1000          & A1000 incompatibility                                                                                                       & \tagref{tag:A1000}         \\ \hline
   \colortab{Assumed}3223           & Displays ASSR if different from TSSR, same color as Track Label                                                             & \tagref{tag:NSSR}          \\ \hline
   \colortab{CPDLC Pilot Late}CPDLC P LATE     & CPDLC Warning messages                                                                                           & \tagref{tag:CPDLC W}       \\ \hline
   \colortab{Urgency}[MAYDAY]       & CPDLC Emergency Downlink                                                                                                    & \tagref{tag:CPDLC E}       \\ \hline
   \colortab{Assumed}TEXT2          & User entered text visible to everyone, same color as Track Label                                                            & \tagref{tag:OP TEXT2}      \\ \hline
   \colortab{Assumed}01             & AMAN number in sequence                                                                                                     & \tagref{tag:SQAMAN}        \\ \hline
-  \colortab{Warning}G01            & AMAN TTL Time To Loose TTG Time To Gain MFX\_FF Feeder Fix                                                                   & \tagref{tag:TTLTTGMFXFF}   \\ \hline
+  \colortab{Warning}G01            & AMAN TTL Time To Loose TTG Time To Gain MFX\_FF Feeder Fix                                                                  & \tagref{tag:TTLTTGMFXFF}   \\ \hline
   \caption{Line 0 Indications}
   \label{tab:line0}\\
   \end{longtable}
