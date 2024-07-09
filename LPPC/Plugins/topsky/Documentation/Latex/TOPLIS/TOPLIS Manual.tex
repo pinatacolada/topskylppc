@@ -3396,8 +3396,8 @@ Line 0 is constructed solely of indicators and warnings. Line 0 is only displaye
   \colortab{Proposition In}ROF     & ROF if a Request On Frequency message is received                                                                           & \tagref{tag:COORD}         \\ \hline
   \colortab{Warning}A1000          & A1000 incompatibility                                                                                                       & \tagref{tag:A1000}         \\ \hline
   \colortab{Assumed}3223           & Displays ASSR if different from TSSR, same color as Track Label                                                             & \tagref{tag:NSSR}          \\ \hline
-  \colortab{CPDLC Pilot Late}CPDLC P LATE     & CPDLC Warning messages                                                                                           & \tagref{tag:CPDLC W}       \\ \hline
   \colortab{Urgency}[MAYDAY]       & CPDLC Emergency Downlink                                                                                                    & \tagref{tag:CPDLC E}       \\ \hline
+  \colortab{CPDLC Pilot Late}CPDLC P LATE     & CPDLC Warning messages                                                                                           & \tagref{tag:CPDLC W}       \\ \hline
   \colortab{Assumed}TEXT2          & User entered text visible to everyone, same color as Track Label                                                            & \tagref{tag:OP TEXT2}      \\ \hline
   \colortab{Assumed}01             & AMAN number in sequence                                                                                                     & \tagref{tag:SQAMAN}        \\ \hline
   \colortab{Warning}G01            & AMAN TTL Time To Loose TTG Time To Gain MFX\_FF Feeder Fix                                                                  & \tagref{tag:TTLTTGMFXFF}   \\ \hline
@@ -3408,53 +3408,57 @@ Line 0 is constructed solely of indicators and warnings. Line 0 is only displaye
 \subsection{Label Interaction}
 \label{label:int}
 
-Label items may be interacted with either with a left or a right click.
+Label items may be interacted with either with a left, right or shift and right click.
 
 \subsubsection{Line 0}
 
 \begin{figure}[H]
   \centering
-\begin{tikzpicture}
-  \node[,anchor=west,draw,text=Assumed,fill=Flight Highlight,minimum height=0.55cm] at (0,0) () {\texttt{V \textcolor{Warning}{APW} \textcolor{Warning}{/t} \textcolor{Urgency}{W Y R} \textcolor{Information}{P} \textcolor{Warning}{M} \textcolor{Information}{$\bullet$} $\bullet$ \textcolor{Warning}{A} + I \textcolor{Warning}{S} \textcolor{Urgency}{EM} \textcolor{Proposition In}{F100} 3223 \textcolor{CPDLC Pilot Late}{CPDLC P LATE} \textcolor{Urgency}{[MAYDAY]} DIV}};
+  \resizebox{\columnwidth}{!}{
+    \begin{tikzpicture}
+      \node[,anchor=west,draw,text=Assumed,fill=Flight Highlight,minimum height=0.55cm] at (0,0) () {\texttt{\textcolor{Warning}{/t} V \textcolor   {Warning}{MSAW} \textcolor{Warning}{APW} \textcolor{AIW intrusion}{AIW} \textcolor{Warning}{L} \textcolor{Warning}{DUPE} \textcolor{Warning}{O}   \textcolor{Urgency}{W Y R} \textcolor{Information}{P} \textcolor{Warning}{M} \textcolor{Information}{$\bullet$} $\bullet$ \textcolor{Warning}{A} +     I \textcolor{Information}{F} \textcolor{Warning}{S} \textcolor{Urgency}{EM} \textcolor{Proposition In}{ROF} \textcolor{Warning}{A1000} 3223 \textcolor{Urgency}{[MAYDAY]} \textcolor{CPDLC Pilot Late}{CPDLC P LATE} DIV 01 \textcolor{Warning}{G01}}};
+      
+      \drawtag{0.6cm}{0.3,0}{com};
+      \drawtagdesc{4cm}{2.1,4}{lcom}{L: Open Communication Type Menu};
+      \draw[red,very thick] (com.north west) -- (lcom.south west);
 
-  \drawtag{0.7cm}{0.95,0}{alrt};
-  \drawtagdesc{4cm}{2,-2}{lext}{R: Open Extended label};
-  \draw[red,very thick] (alrt) -- (lext);
+      \drawtag{0.8cm}{3.7,0}{aiw};
+      \drawtagdesc{3cm}{3.7,-2}{lext}{R: Acknowledge AIW alert};
+      \draw[red,very thick] (aiw) -- (lext);
 
-  \drawtag{0.6cm}{1.8,0}{com};
-  \drawtagdesc{4cm}{1.8,4}{lcom}{L: Open Communication Type Menu};
-  \draw[red,very thick] (com) -- (lcom);
+      \drawtag{0.4cm}{6,0}{o};
+      \drawtagdesc{5cm}{3,2}{lext}{R: Acknowledge OCM};
+      \draw[red,very thick] (o) -- (lext);
 
-  \drawtag{0.4cm}{4.2,0}{m};
-  \drawtagdesc{4cm}{4.2,2}{lm}{L: Toggle Military Coordination Flag\\R: Toggle Flight Leg display};
-  \draw[red,very thick] (m) -- (lm);
+      \drawtag{1.3cm}{10,0}{alrt};
+      \drawtagdesc{3cm}{8,-2}{lext}{R: Open Extended label};
+      \draw[red,very thick] (alrt) -- (lext);
 
-  \drawtag{0.4cm}{5.4,0}{a};
-  \draw[red,very thick] (a.south west) -- (lext);
+      \drawtag{0.4cm}{10.9,0}{f};
+      \drawtagdesc{3cm}{12,-2}{lext}{L: Toggle No Fix flag};
+      \draw[red,very thick] (f) -- (lext);
 
-  \drawtag{0.27cm}{6.3,0}{i};
-  \draw[red,very thick] (i.south west) -- (lext);
+      \drawtag{0.4cm}{8.3,0}{m};
+      \drawtagdesc{4cm}{8.3,2}{lm}{L: Toggle Military Coordination Flag\\R: Toggle Flight Leg display};
+      \draw[red,very thick] (m) -- (lm);
+    
+      \drawtag{1cm}{15.2,0}{nssr};
+      \drawtagdesc{4cm}{15,2}{lnssr}{L: Open \winref{menu:assr}\\R: Send CPDLC squawk message};
+      \draw[red,very thick] (nssr) -- (lnssr);
+    
+      \drawtag{3cm}{19.3 ,0}{dlw};
+      \drawtagdesc{4cm}{19.3,2}{ldlw}{L: CPDLC Warning functions\\R: Open \winref{win:dlcmw}};
+      \draw[red,very thick] (dlw) -- (ldlw);
 
-  \drawtag{1cm}{8.25,0}{coord};
-  \drawtagdesc{4cm}{6.5,-2}{lcoord}{R: Open \winref{menu:ttm}};
-  \draw[red,very thick] (coord) -- (lcoord);
-
-  \drawtag{1cm}{9.4,0}{nssr};
-  \drawtagdesc{4cm}{8.8,2}{lnssr}{L: Open \winref{menu:assr}\\R: Send CPDLC squawk message};
-  \draw[red,very thick] (nssr) -- (lnssr);
-
-  \drawtag{3cm}{11.5,0}{dlw};
-  \drawtagdesc{4cm}{11.5,-2}{ldlw}{L: CPDLC Warning functions\\R: Open \winref{win:dlcmw}};
-  \draw[red,very thick] (dlw) -- (ldlw);
-
-  \drawtag{2cm}{14.1,0}{dle};
-  \drawtagdesc{4cm}{13.5,2}{ldle}{L: Open \winref{menu:dleam}};
-  \draw[red,very thick] (dle) -- (ldle);
-
-  \drawtag{0.8cm}{15.5,0}{opt2};
-  \drawtagdesc{3.3cm}{14.15,4}{lopt2}{L: Edit OP\_TEXT2};
-  \draw[red,very thick] (opt2.north east) -- (lopt2.south east);
-\end{tikzpicture}
+      \drawtag{1.8cm}{16.8,0}{dle};
+      \drawtagdesc{4cm}{16.8,-2}{ldle}{L: \winref{menu:dleam}};
+      \draw[red,very thick] (dle) -- (ldle);      
+    
+      \drawtag{0.8cm}{21.3,0}{opt2};
+      \drawtagdesc{3.3cm}{21.3,-2}{lopt2}{L: Edit OP\_TEXT2\\R: Open Extended label};
+      \draw[red,very thick] (opt2) -- (lopt2);
+    \end{tikzpicture}
+  }
 \caption{Line 0 label Interaction}
 \end{figure}
 
