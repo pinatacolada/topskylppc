@@ -3427,7 +3427,7 @@ Label items may be interacted with either with a left, right or shift and right 
       \draw[red,very thick] (aiw) -- (lext);
 
       \drawtag{0.4cm}{6,0}{o};
-      \drawtagdesc{5cm}{3,2}{lext}{R: Acknowledge OCM};
+      \drawtagdesc{4cm}{3,2}{lext}{R: Acknowledge OCM};
       \draw[red,very thick] (o) -- (lext);
 
       \drawtag{1.3cm}{10,0}{alrt};
@@ -3471,19 +3471,19 @@ Label items may be interacted with either with a left, right or shift and right 
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelsel.png}};
   %0,0-10.4-2.6
 
-  \drawtag{2.3cm}{1.35,2.15}{callsign};
-  \drawtagdesc{4cm}{0,4}{lcallsign}{L: Open \winref{menu:cs} \\R: Open Extended Tag};
+  \drawtag{1.8cm}{1,1.9}{callsign};
+  \drawtagdesc{3cm}{0,4}{lcallsign}{L: Open \winref{menu:cs} \\ R: Open \winref{label:ext} \\ Shift+R: Toggle \winref{label:min}};
   \draw[red,very thick] (callsign) -- (lcallsign);
   
-  \drawtag{0.7cm}{3,2.15}{si};
-  \drawtagdesc{2cm}{3.5,4}{lsi}{L: Open SI Menu\\R: Toggle SI Frequency};
+  \drawtag{0.7cm}{2.4,1.9}{si};
+  \drawtagdesc{3cm}{3.4,4}{lsi}{L: Assume / Transfer\\R: Toggle SI Frequency};
   \draw[red,very thick] (si) -- (lsi);
   
-  \drawtag{1.3cm}{4.3,2.15}{atyp};
-  \drawtagdesc{3cm}{6.5,4}{latyp}{L: Toggle ATYP highlight\\R: Toggle ATYP display};
+  \drawtag{1cm}{3.4,1.9}{atyp};
+  \drawtagdesc{2.5cm}{6.5,4}{latyp}{L: Toggle ATYP highlight\\R: Toggle ATYP display};
   \draw[red,very thick] (atyp) -- (latyp);
 
-  \drawtag{0.4cm}{5.35,2.15}{wtc};
+  \drawtag{0.4cm}{4.3,1.9}{wtc};
   \drawtagdesc{3cm}{10,4}{lwtc}{L: Toggle WTC highlight\\R: Toggle WTC display};
   \draw[red,very thick] (wtc.south east) -- (lwtc);
 \end{tikzpicture}
@@ -3580,7 +3580,7 @@ When \tagref{tag:MTCD} is displayed R: Toggle Flight Leg display}
 \caption{Line 4 label Interaction}
 \end{figure}
 
-\subsubsection{Extended Label}
+\subsubsection{Extended Label}\label{label:ext}
 
 The Extended label is constructed of extra elements when compared to a Standard Selected label, some of which are interactable. These extra elements that are interactable are detailed below. The remaining elements function the same as in the Standard Selected label.
 
