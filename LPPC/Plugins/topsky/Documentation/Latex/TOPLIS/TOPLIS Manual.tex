@@ -3610,27 +3610,23 @@ The Extended label is constructed of extra elements when compared to a Standard 
 \begin{tikzpicture}
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelext.png}};
 
-  \drawtag{1cm}{7.65,3.7}{assr};
-  \drawtagdesc{4cm}{10,5.5}{lassr}{L: Open \winref{menu:assr} \\R: Send Squawk CPDLC message};
+  \drawtag{0.7cm}{7,4.5}{tssr};
+  \drawtagdesc{4cm}{5.5,6.5}{ltssr}{R: Toggle Mode S data};
+  \draw[red,very thick] (tssr) -- (ltssr);
+
+  \drawtag{0.7cm}{7.9,4.5}{assr};
+  \drawtagdesc{4cm}{10,6.5}{lassr}{L: Open \winref{menu:assr} \\R: Send Squawk CPDLC message};
   \draw[red,very thick] (assr) -- (lassr);
   
-  \drawtag{0.7cm}{1.5,1.8}{atd};
-  \drawtagdesc{2cm}{-2,4}{latd}{L: Open \winref{menu:tm}};
-  \draw[red,very thick] (atd) -- (latd);
-  
-  \drawtag{1cm}{2.5,1.8}{ades};
-  \drawtagdesc{3cm}{1.5,5.5}{lades}{L: Open \winref{win:fpw}\\R: Toggle ADES display};
+  \drawtag{1cm}{1.9,3.1}{ades};
+  \drawtagdesc{3cm}{1.5,6.5}{lades}{L: Open \winref{win:fpw}};
   \draw[red,very thick] (ades) -- (lades);
 
-  \drawtag{0.7cm}{3.5,1.8}{wtc};
-  \drawtagdesc{3cm}{5.5,5.5}{lwtc}{L: Open \winref{win:fpw}};
-  \draw[red,very thick] (wtc) -- (lwtc);
-
-  \drawtag{1.7cm}{0.9,0.8}{opt};
+  \drawtag{1.7cm}{0.9,0.7}{opt};
   \drawtagdesc{3cm}{-2,2}{lopt}{L: Edit OP\_TEXT};
   \draw[red,very thick] (opt) -- (lopt);
 
-  \drawtag{2cm}{1,0.25}{opt2};
+  \drawtag{2cm}{1,0.15}{opt2};
   \drawtagdesc{2cm}{-2,0.6}{lopt2}{L: Edit OP\_TEXT2};
   \draw[red,very thick] (opt2) -- (lopt2);
 \end{tikzpicture}
