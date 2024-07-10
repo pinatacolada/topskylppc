@@ -3543,32 +3543,41 @@ When \tagref{tag:ACF} is displayed L: Toggle \winref{tag:ACF} field color R: Cle
 \begin{tikzpicture}
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelsel.png}};
 
-  \drawtag{1cm}{0.7,1.05}{xfl};
-  \drawtagdesc{2cm}{-1.5,1.05}{lxfl}{L:Open XFL Menu};
+  \drawtag{1cm}{0.6,0.85}{xfl};
+  \drawtagdesc{2cm}{-1.5,1.05}{lxfl}{L:Open XFL Menu \\ R: Open \winref{win:vaw} };
   \draw[red,very thick] (xfl) -- (lxfl);
 
-  \drawtag{1.35cm}{3.65,1.05}{ahdg};
-  \drawtagdesc{2cm}{0.5,4}{lahdg}{L: Open \winref{menu:ahdg}};
+  \drawtag{1.35cm}{3.3,0.85}{ahdg};
+  \drawtagdesc{4cm}{-0.5,4}{lahdg}{L: Open \winref{menu:ahdg} \\ R: Ack RJC or FAIL / Clear value / Assign present heading};
   \draw[red,very thick] (ahdg) -- (lahdg);
 
-  \drawtag{1cm}{5,1.05}{asp};
-  \drawtagdesc{3cm}{3.5,4}{lasp}{L: Open \winref{menu:asp}\\R: Clear ASP value};
+  \drawtag{1cm}{4.6,0.85}{asp};
+  \drawtagdesc{2.5cm}{3.5,4}{lasp}{L: Open \winref{menu:asp} \\ R: Ack RJC or FAIL / Clear value};
   \draw[red,very thick] (asp) -- (lasp);
 
-  \drawtag{1cm}{6.25,1.05}{arc};
-  \drawtagdesc{3cm}{7,4}{larc}{L: Open \winref{menu:arc}};
+  \drawtag{1cm}{5.7,0.85}{arc};
+  \drawtagdesc{3cm}{7,4}{larc}{L: Open \winref{menu:arc} \\ R: Ack RJC or FAIL / Clear value};
   \draw[red,very thick] (arc) -- (larc);
 
-  \drawtag{1.35cm}{7.7,1.05}{copn};
+  \drawtag{1.5cm}{7.2,0.85}{copn};
   \drawtagdesc{3cm}{10.5,4}{lcopn}{L: Open \winref{menu:wpt}\\R: Toggle Flight Leg display};
   \draw[red,very thick] (copn) -- (lcopn);
 
-  \drawtag{1.7cm}{9.4,1.05}{fcopx};
-  \drawtagdesc{2cm}{12,1.05}{lfcopx}{R: Toggle Flight Leg display};
+  \drawtag{1cm}{8.6,0.85}{fcopx};
+  \drawtagdesc{2cm}{12,2}{lfcopx}{R: Toggle Flight Leg display};
   \draw[red,very thick] (fcopx) -- (lfcopx);
+
+  \drawtag{1cm}{9.75,0.85}{ofl};
+  \drawtagdesc{2.5cm}{12,-1}{lofl}{L: Open \winref{win:vaw} \\ R: Acknowledge OCM / Toggle OFL highlight};
+  \draw[red,very thick] (ofl) -- (lofl);
 \end{tikzpicture}
 \caption{Line 3 label Interaction}
 \end{figure}
+
+\note{Not shown in the above example: 
+
+When \tagref{tag:O+} is displayed R: Open \winref{win:otrw}}
+
 
 \subsubsection{Line 4}
 
