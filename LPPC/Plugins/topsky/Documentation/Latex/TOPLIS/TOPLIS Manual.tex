@@ -33,10 +33,6 @@ The base TopSky plugin is developed by Juha Holopainen. The TopSky plugin (a.k.a
 
 The A-CDM plugin is developed by Roger Puig. CDM is an Euroscope plugin based on the real life CDM tool that allows us to improve the departure flows at airports.\cite{cdm}
 
-\bigskip
-
-The IASsure plugin is developed and maintaned by Nick Müller. This plugin allows you to make better informed decisions based on aircraft speed without relying on pilot reports.\cite{iassure}
-
 \chapter{Systems}
 
 \section{A-CDM}
@@ -3005,7 +3001,7 @@ Left-clicking <state> toggles between “ALL” (no filtering), “SIMUL+TERM”
 \begin{longtable}{p{5cm} p{7.5cm}}
 - Messages…       & Opens the \winref{win:wxmw}\\
 - Upper Winds…    & Opens the \winref{win:uww}\\
-- Airfield Data…  & Opens the \winref{win:addw}\\
+- Airfield Data…  & Opens the \winref{win:adw}\\
 \end{longtable}
 
 \subsection{[0]}
@@ -3019,7 +3015,7 @@ Shows the number of received SIGMET messages. The number is limited to 99, and i
   General Information…      & Opens the \winref{win:geninfo}\\
   Document Viewer…          & Opens the \winref{win:dvw}\\
   NOTAM…                    & Opens the \winref{win:notamlw}\\
-  Small QNH/TL…             & Opens the \winref{win:sqtw}\\
+  Small QNH/TL…             & Opens the \winref{win:sqnhw}\\
   LFUNC Frequency Plan…     & Opens the \winref{win:lfunc}\\
   Airport labels            & Toggles airport labels selection\\
   Fix labels                & Toggles fix labels selection\\
@@ -3088,7 +3084,7 @@ Plugin Status >                & Opens the \winref{menu:status}\\
 Safety Nets Status…            & Opens the \winref{win:snsw}\\
 Divergence Detection Status…   & Opens the \winref{win:ddsw}\\
 MTCD Status…                   & Opens the \winref{win:mtcdsw}\\
-FPCA Status…                   & Opens the \winref{win:fpcasw}\\
+FPCA Status…                   & Opens the \winref{win:fpcas}\\
 CPDLC Default Status           & Toggles the CPDLC Default Status On/Off\\
 Runway In Use                  & Opens the \winref{menu:ad}\\
 RWY line display…              & Opens the \winref{menu:ad}\\
@@ -4697,7 +4693,7 @@ Other window-specific mouse function areas are explained below. All functions us
     SSR Filter X…       & Opens the \winref{win:ssr}, displays the filter status\\
     CJI Filter X…       & Opens the \winref{win:cji}, displays the filter status\\
     LAT/LONG…           & Opens the \winref{win:latlon}\\
-    Find Track          & Opens the \winref{menu:ssrc} for the \winref{func:ft}\\
+    Find Track          & Opens the \winref{menu:assr} for the \winref{func:findt} function\\
     Scale Marker        & Toggles the Scale Marker on/off\\
 \end{longtable}
 
@@ -4956,6 +4952,10 @@ The CJI Filtering Window is used to filter the displayed track labels based on c
 
 \bigskip
 
+The “Uncoup labels” button controls filtering for uncoupled labels (this function is available also in \winref{win:short}).
+
+\bigskip
+
 Clicking “All” filters all controllers, “None” clears all controller ID filters.
 
 \bigskip
@@ -4964,7 +4964,17 @@ The CJI Filtering Window closes when the mouse cursor leaves the window area.
 
 \bigskip
 
-The “Uncoup labels” button controls filtering for uncoupled labels (this function is available also in Shortcut Window).
+\subsubsection{Primary Track Filtering}\label{func:filterpri}
+
+\winref{win:short} -> “Prim Tracks” button
+
+When enabled, primary track filtering filters out all primary tracks.
+
+\subsubsection{Uncontrolled Flight Filtering}\label{func:filterunc}
+
+\winref{win:short} -> “Uncont Flights” button
+
+When enabled, uncontrolled flight filtering filters out all uncontrolled flights not “On-contact” with you.
 
 \subsection{SSR Code Filtering Window}
 \label{win:ssr}
@@ -5784,8 +5794,8 @@ The Shortcut Window gives access to the following functions:
 
 \begin{longtable}{p{2.5cm} p{10cm}}
   Uncoup Labels   & Toggles uncoupled labels filtering on/off\\
-  Prim Tracks     & Toggles \winref{func:prifilter} on/off\\
-  Uncont Flights  & Toggles \winref{func:uncfilter} on/off\\
+  Prim Tracks     & Toggles \winref{func:filterpri} on/off\\
+  Uncont Flights  & Toggles \winref{func:filterunc} on/off\\
   Vector On/Off   & Toggles all prediction lines on/off\\
   Quick Look      & Toggles function to bypass all filters and show all track labels\\
 \end{longtable}
