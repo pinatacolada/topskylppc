@@ -3640,12 +3640,16 @@ The Extended label is constructed of extra elements when compared to a Standard 
 \begin{tikzpicture}
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.2\textwidth]{img/labelunc.png}};
 
-  \drawtag{1.2cm}{2.5,0.9}{callsign};
+  \drawtag{0.7cm}{1.5,0.9}{callsign};
   \drawtagdesc{3.8cm}{1.6,2.3}{lcallsign}{L: Open \winref{menu:cs}};
   \draw[red,very thick] (callsign) -- (lcallsign);
   
-  \drawtag{1.6cm}{0.95,0.9}{tssr};
+  \drawtag{1cm}{0.6,0.9}{tssr};
   \draw[red,very thick] (tssr) -- (lcallsign);
+
+  \drawtag{3.2cm}{1.6,0.2}{dsfl};
+  \drawtagdesc{3.8cm}{1.6,-1}{ldsfl}{L: Toggle associated mode S downlink parameter display};
+  \draw[red,very thick] (dsfl) -- (ldsfl);
 
 \end{tikzpicture}
 \caption{Uncoupled Label Interaction}
