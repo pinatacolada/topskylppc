@@ -3586,11 +3586,17 @@ When \tagref{tag:O+} is displayed R: Open \winref{win:otrw}}
 \begin{tikzpicture}
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelsel.png}};
 
-  \drawtag{1.35cm}{0.85,0.5}{dhdg};
-  \drawtag{0.7cm}{2.1,0.5}{drc};
-  \drawtagdesc{3cm}{1.5,-2}{ldap}{L: Toggle DIAS/DMACH unreliable\\R: Toggle associated DAP display};
+  \drawtag{1.35cm}{0.7,0.35}{dsfl};
+  \drawtag{1.35cm}{2.1,0.35}{dhdg};
+  \drawtag{0.7cm}{3.3,0.35}{dias};
+  \drawtag{0.7cm}{4.1,0.35}{drc};
+  \drawtag{1cm}{5.2,0.35}{dmach};
+  \drawtagdesc{6cm}{5,-2}{ldap}{R: Toggle associated DAP display};
+  \draw[red,very thick] (dsfl) -- (ldap);
   \draw[red,very thick] (dhdg) -- (ldap);
+  \draw[red,very thick] (dias) -- (ldap);
   \draw[red,very thick] (drc) -- (ldap);
+  \draw[red,very thick] (dmach) -- (ldap);
 \end{tikzpicture}
 \caption{Line 4 label Interaction}
 \end{figure}
