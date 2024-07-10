@@ -3322,6 +3322,20 @@ The Extended label can be opened from the Standard or Reduced label by right cli
 
 \capdimage{img/labelext.png}{Extended Track}
 
+\subsection{Minimized Track Label}\label{tlabel:min}
+
+The Minimized label is toggled by Shift+Right clicking the \winref{tag:CALLSIGN} label item.
+
+\begin{enumerate}[label=Line \arabic*]
+  \setcounter{enumi}{-1}
+  \item \tagref{tag:COM} \tagref{tag:*} \tagref{tag:V} \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:DUPE} \tagref{tag:W} \tagref{tag:M} \tagref{tag:EMRG} \tagref{tag:COORD} \tagref{tag:CPDLC E} 
+  \item \tagref{tag:MTCD} < \tagref{tag:CALLSIGN}
+  \item \tagref{tag:AFL} \tagref{tag:a}
+\end{enumerate}
+
+\capdimage{img/labelmin.png}{Minimized Track}
+
+
 \subsection{Uncoupled Track Label}
 \label{tlabel:unc}
 
@@ -3472,7 +3486,7 @@ Label items may be interacted with either with a left, right or shift and right 
   %0,0-10.4-2.6
 
   \drawtag{1.8cm}{1,1.9}{callsign};
-  \drawtagdesc{3cm}{0,4}{lcallsign}{L: Open \winref{menu:cs} \\ R: Open \winref{label:ext} \\ Shift+R: Toggle \winref{label:min}};
+  \drawtagdesc{3cm}{0,4}{lcallsign}{L: Open \winref{menu:cs} \\ R: Open \winref{label:ext} \\ Shift+R: Toggle \winref{tlabel:min}};
   \draw[red,very thick] (callsign) -- (lcallsign);
   
   \drawtag{0.7cm}{2.4,1.9}{si};
@@ -3648,7 +3662,7 @@ The Extended label is constructed of extra elements when compared to a Standard 
   \draw[red,very thick] (tssr) -- (lcallsign);
 
   \drawtag{3.2cm}{1.6,0.2}{dsfl};
-  \drawtagdesc{3.8cm}{1.6,-1}{ldsfl}{L: Toggle associated mode S downlink parameter display};
+  \drawtagdesc{3.8cm}{1.6,-1}{ldsfl}{L: Toggle associated mode S downlink parameter};
   \draw[red,very thick] (dsfl) -- (ldsfl);
 
 \end{tikzpicture}
