@@ -57,11 +57,10 @@ TopSky plugin:ACList/LOAD/m_Column_4:PEL:4:0:10001:68:110:1:TopSky plugin:TopSky
 TopSky plugin:ACList/LOAD/m_Column_5:COPN:6:0:10004:45:99:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/LOAD/m_Column_6:ADEP:5:0:10007:0:0:0:TopSky plugin::
 TopSky plugin:ACList/LOAD/m_Column_7:ADES:5:0:10008:1001:7:0:TopSky plugin:TopSky plugin:
-TopSky plugin:ACList/LOAD/m_Column_8:RFL:4:0:10062:59:0:1:TopSky plugin:TopSky plugin:
+TopSky plugin:ACList/LOAD/m_Column_8:RFL:4:0:10062:69:84:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/LOAD/m_Column_9:PSSR:5:0:10086:0:138:0:TopSky plugin::TopSky plugin
 TopSky plugin:ACList/LOAD/m_Column_10:ASSR:5:0:10042:62:81:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/LOAD/m_Column_11:C:2:0:10098:126:0:0:TopSky plugin:TopSky plugin:
-TopSky plugin:ACList/LOAD/m_Column_12:STATE:8:0:3:13:0:0:Ground Radar plugin:Ground Radar plugin:
 TopSky plugin:ACList/Resectorisation List/m_Visible:0
 TopSky plugin:ACList/Resectorisation List/m_X:773
 TopSky plugin:ACList/Resectorisation List/m_Y:49
