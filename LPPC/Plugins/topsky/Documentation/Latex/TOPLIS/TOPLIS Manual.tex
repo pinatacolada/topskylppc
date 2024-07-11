@@ -4299,8 +4299,7 @@ The DSQ menu is used to select a specific departure sequence number to a flight.
 
 \section{Aircraft Lists}
 
-\subsection{Departure List}
-\label{list:dep}
+\subsection{Departure List}\label{list:dep}
 
 The Departure List contains all departures still on the ground of the controlled aerodromes.
 
@@ -4316,7 +4315,7 @@ The Departure List contains all departures still on the ground of the controlled
   \tagref{tag:TTOT}             &                                     &                           &                     \\ \hline
   \tagref{tag:CTOT}             & Open CTOT Option list               & Open CTOT Option list     &                     \\ \hline
   \tagref{tag:ECTOT}            & Add ECTOT to CTOT                   & ECTOT Option list         &                     \\ \hline
-  \tagref{tag:Flow Message}     & Open \winref{menu:ahdg}             &                           &                     \\ \hline
+  \tagref{tag:Flow Message}     &                                     &                           &                     \\ \hline
   \tagref{tag:Ready}            & Toggle Ready                        &                           &                     \\ \hline
   \tagref{tag:ATYP}             &                                     &                           & \usym{2713}         \\ \hline
   \tagref{tag:WTC}              &                                     &                           & \usym{2713}         \\ \hline
@@ -4325,8 +4324,8 @@ The Departure List contains all departures still on the ground of the controlled
   QNH                           & Edit OP TEXT                        & Edit OP TEXT              &                     \\ \hline
   \tagref{tag:ADEP}             & Open \winref{win:fpw}               & Toggle Flight Leg display & \usym{2713}         \\ \hline
   \tagref{tag:ADES}             & Open \winref{win:fpw}               & Toggle Flight Leg display & \usym{2713}         \\ \hline
-  \tagref{tag:DRWY}             & Open \winref{win:dlpdcw}            & Open \winref{win:dlpdcw}  & \usym{2713}         \\ \hline
-  \tagref{tag:SID}              & Open \winref{win:dlpdcw}            & Open \winref{win:dlpdcw}  & \usym{2713}         \\ \hline
+  \tagref{tag:DRWY}             & Open \winref{win:dldclw}            & Open \winref{win:dlpdcw}  & \usym{2713}         \\ \hline
+  \tagref{tag:SID}              & Open \winref{win:dldclw}            & Open \winref{win:dlpdcw}  & \usym{2713}         \\ \hline
   \tagref{tag:ASSR}             & Open \winref{menu:assr}             & Open \winref{menu:assr}   & \usym{2713}         \\ \hline
   \tagref{tag:CFL}              & Open \winref{menu:cfl}              & Open \winref{menu:cfl}    & \usym{2713}         \\ \hline
   \tagref{tag:RFL}              & Open \winref{menu:rfl}              & Open \winref{menu:rfl}    & \usym{2713}         \\ \hline
@@ -4336,8 +4335,7 @@ The Departure List contains all departures still on the ground of the controlled
   \caption{Departure List Construction}
 \end{longtable}
 
-\subsection{Sector List}
-\label{list:sector}
+\subsection{Sector List}\label{list:sector}
 
 \winref{menu:global} Tools -> Flight Plan Lists -> Sector List…
 
@@ -4360,38 +4358,56 @@ The Sector List contains all departed controlled aircraft in the following state
 \footnotetext[2]{The display of concerned aircraft is limited to those entering the sector within 60 minutes}
 
 \begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
-  \textbf{Item}         & \textbf{Left Mouse}     & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
-  \tagref{tag:CALLSIGN} & Open \winref{menu:cs}   & Open Extended Label       & \usym{2713}         \\ \hline
-  \tagref{tag:ETN}      &                         &                           & \usym{2713}         \\ \hline
-  \tagref{tag:PEL}      & Open PEL Menu           &                           & \usym{2713}         \\ \hline
-  \tagref{tag:COPN}     & Open \winref{menu:wpt}  & Toggle Flight Leg display & \usym{2713}         \\ \hline
-  \tagref{tag:NRAC}     &                         &                           &                     \\ \hline
-  \tagref{tag:ATYP}     &                         &                           & \usym{2713}         \\ \hline
-  \tagref{tag:WTC}      &                         &                           &                     \\ \hline
-  \tagref{tag:V}        &                         &                           &                     \\ \hline
-  \tagref{tag:CFL}      & Open \winref{menu:cfl}  &                           & \usym{2713}         \\ \hline
-  \tagref{tag:AHDG}     & Open \winref{menu:ahdg} &                           &                     \\ \hline
-  \tagref{tag:ASP}      & Open \winref{menu:asp}  & Clear ASP value           &                     \\ \hline
-  \tagref{tag:TAS}      &                         &                           &                     \\ \hline
-  \tagref{tag:ETX}      &                         &                           &                     \\ \hline
-  \tagref{tag:XFL}      & Open XFL Menu           &                           &                     \\ \hline
-  \tagref{tag:COPX}     & Open \winref{menu:wpt}  &                           &                     \\ \hline
-  \tagref{tag:RFL}      & Open \winref{menu:rfl}  &                           &                     \\ \hline
-  \tagref{tag:ASSR}     & Open \winref{menu:assr} & Send CPDLC Squawk message &                     \\ \hline
-  \tagref{tag:NSSR}     & Open \winref{menu:assr} & Send CPDLC Squawk message &                     \\ \hline
-  \tagref{tag:ADEP}     &                         &                           &                     \\ \hline
-  \tagref{tag:SID}      & Open SID list           &                           & \usym{2713}         \\ \hline
-  \tagref{tag:DRWY}     & Open Runway list        &                           &                     \\ \hline
-  \tagref{tag:FCOPX}    &                         & Toggle Flight Leg display &                     \\ \hline
-  \tagref{tag:ETX}      &                         &                           &                     \\ \hline
-  \tagref{tag:ADES}     & Open \winref{win:fpw}   &                           & \usym{2713}         \\ \hline
-  \tagref{tag:SI}       & Open SI list            & Toggle SI frequency       &                     \\ \hline
-  \tagref{tag:ADES}     & Open \winref{win:fpw}   &                           & \usym{2713}         \\ \hline
-  \tagref{tag:ETA}      &                         &                           & \usym{2713}         \\ \hline
-  \tagref{tag:STAR}     & Open STAR list          &                           & \usym{2713}         \\ \hline
-  \tagref{tag:ARWY}     & Open Runway list        &                           & \usym{2713}         \\ \hline
-  \tagref{tag:OP TEXT}  & Edit OP\_TEXT           &                           & \usym{2713}         \\ \hline
-  \tagref{tag:OP TEXT2} & Edit OP\_TEXT2          &                           & \usym{2713}         \\ \hline
+  \textbf{Item}         & \textbf{Left Mouse}         & \textbf{Right Mouse}        & \textbf{Default Visibility}  \endhead \hline
+  \tagref{tag:*}        & Toggle units                &                             &                     \\ \hline
+  \tagref{tag:CALLSIGN} & Open \winref{menu:cs}       & Open Extended Label         & \usym{2713}         \\ \hline
+  \tagref{tag:ETN}      &                             &                             & \usym{2713}         \\ \hline
+  \tagref{tag:PEL}      & Open PEL Menu               & Open \winref{win:vaw}       & \usym{2713}         \\ \hline
+  \tagref{tag:COPN}     & Open \winref{menu:wpt}      & Toggle Flight Leg display   & \usym{2713}         \\ \hline
+  \tagref{tag:NRAC}     &                             &                             &                     \\ \hline
+  \tagref{tag:ATYP}     & Toggle ATYP highlight       &                             & \usym{2713}         \\ \hline
+  \tagref{tag:WTC}      & Toggle WTC highlight        &                             &                     \\ \hline
+  \tagref{tag:V}        &                             &                             &                     \\ \hline
+  \tagref{tag:CFL}      & Open \winref{menu:cfl}      & Open \winref{win:vaw}       & \usym{2713}         \\ \hline
+  \tagref{tag:ACF}      & Toggle ACF field color      & Clear approach clearance    &                     \\ \hline
+  \tagref{tag:AHDG}     & Open \winref{menu:ahdg}     & Ack RJC or FAIL / Clear value / Assign present heading  & \\ \hline
+  \tagref{tag:ASP}      & Open \winref{menu:asp}      & Ack RJC or FAIL / Clear value &                   \\ \hline
+  \tagref{tag:TAS}      &                             &                             &                     \\ \hline
+  \tagref{tag:ETX}      &                             &                             &                     \\ \hline
+  \tagref{tag:XFL}      & Open XFL Menu               & Open \winref{win:vaw}       &                     \\ \hline
+  \tagref{tag:COPX}     & Open \winref{menu:wpt}      & Toggle Flight Leg display   &                     \\ \hline
+  \tagref{tag:RFL}      & Open \winref{menu:rfl}      & Open \winref{win:dlcmw}     &                     \\ \hline
+  \tagref{tag:PSSR}     &                             & Find PSSR                   &                     \\ \hline
+  \tagref{tag:ASSR}     & Open \winref{menu:assr}     & Send CPDLC Squawk message   & \usym{2713}         \\ \hline
+  \tagref{tag:NSSR}     & Open \winref{menu:assr}     & Send CPDLC Squawk message   &                     \\ \hline
+  \tagref{tag:AN}       &                             &                             &                     \\ \hline
+  \tagref{tag:ADEP}     &                             &                             &                     \\ \hline
+  \tagref{tag:SID}      & Open SID list               & Acknowledge SID allocation  & \usym{2713}         \\ \hline
+  \tagref{tag:DRWY}     & Open Runway list            &                             &                     \\ \hline
+  \tagref{tag:FCOPX}    &                             & Toggle Flight Leg display   &                     \\ \hline
+  \tagref{tag:ETX}      &                             &                             &                     \\ \hline
+  \tagref{tag:FText}    & Edit \tagref{tag:FText}     &                             &                     \\ \hline
+  \tagref{tag:ADES}     & Open \winref{win:fpw}       &                             & \usym{2713}         \\ \hline
+  \tagref{tag:MFXFF}    &                             &                             &                     \\ \hline
+  \tagref{tag:TOMSTAFF} &                             &                             &                     \\ \hline
+  \tagref{tag:TTLTTGMFXFF}&                           &                             &                     \\ \hline
+  \tagref{tag:SI}       & Open SI list                &                             & \usym{2713}         \\ \hline
+  \tagref{tag:ETA}      &                             &                             & \usym{2713}         \\ \hline
+  \tagref{tag:STAR}     & Open STAR list              &Acknowledge STAR allocation  & \usym{2713}         \\ \hline
+  \tagref{tag:ARWY}     & Open Runway list            &                             & \usym{2713}         \\ \hline
+  \tagref{tag:SQAMAN}   &                             &                             &                     \\ \hline
+  Gate                  & Open Stand menu             &                             &                     \\ \hline
+  \tagref{tag:OP TEXT}  & Edit \tagref{tag:OP TEXT}   &                             & \usym{2713}         \\ \hline
+  \tagref{tag:OP TEXT2} & Edit \tagref{tag:OP TEXT2}  &                             & \usym{2713}         \\ \hline
+  \tagref{tag:MNR}      &                             &                             &                     \\ \hline
+  \tagref{tag:OFL}      & Open \winref{win:vaw}       & Acknowledge OCM / Toggle OFL highlight &                     \\ \hline
+  \tagref{tag:NAT}      &                             &                             &                     \\ \hline
+  \tagref{tag:OAN}      &                             &                             &                     \\ \hline
+  \tagref{tag:CTO}      &                             &                             &                     \\ \hline
+  \tagref{tag:O+}       &                             & Open \winref{win:otrw}      &                     \\ \hline
+  \tagref{tag:NBT}      & Open \winref{menu:tm}       & Acknowledge / clear OCM NBT &                     \\ \hline
+  \tagref{tag:NLT}      & Open \winref{menu:tm}       & Acknowledge / clear OCM NLT &                     \\ \hline
+  C                     & Toggle Check indicator      &                             &                     \\ \hline
   \caption{Sector List Construction}
 \end{longtable}
 
