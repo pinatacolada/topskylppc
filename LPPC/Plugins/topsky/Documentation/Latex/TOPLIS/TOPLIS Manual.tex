@@ -4391,7 +4391,7 @@ The Sector List contains all departed controlled aircraft in the following state
   \tagref{tag:MFXFF}    &                             &                             &                     \\ \hline
   \tagref{tag:TOMSTAFF} &                             &                             &                     \\ \hline
   \tagref{tag:TTLTTGMFXFF}&                           &                             &                     \\ \hline
-  \tagref{tag:SI}       & Open SI list                &                             & \usym{2713}         \\ \hline
+  \tagref{tag:SI}       & Assume / Transfer           & Toggle SI frequency         & \usym{2713}         \\ \hline
   \tagref{tag:ETA}      &                             &                             & \usym{2713}         \\ \hline
   \tagref{tag:STAR}     & Open STAR list              &Acknowledge STAR allocation  & \usym{2713}         \\ \hline
   \tagref{tag:ARWY}     & Open Runway list            &                             & \usym{2713}         \\ \hline
@@ -4449,7 +4449,7 @@ The Resectorisation List contains all flights assumed or on-contact with specifi
 \begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
   \textbf{Item}         & \textbf{Left Mouse}       & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
   \tagref{tag:CALLSIGN} & Open \winref{menu:cs}     &                           & \usym{2713}         \\ \hline
-  \tagref{tag:SI}       &                           &                           &                     \\ \hline
+  \tagref{tag:SI}       & Assume / Transfer         & Toggle SI frequency       &                     \\ \hline
   C                     & Toggle Check indicator    &                           &                     \\ \hline
   \caption{Resectorisation List Construction}
 \end{longtable}  
@@ -4464,18 +4464,31 @@ The Resectorisation List contains all flights assumed or on-contact with specifi
 The ETWR List contains notified and coordinated flights departing from specified airports
 
 \begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
-  \textbf{Item}         & \textbf{Left Mouse}     & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
-  \tagref{tag:CALLSIGN} & Open \winref{menu:cs}     & Open Extended Label       & \usym{2713}         \\ \hline
-  \tagref{tag:ETN}      &                           &                           & \usym{2713}         \\ \hline
-  \tagref{tag:PEL}      & Open PEL Menu             &                           & \usym{2713}         \\ \hline
-  \tagref{tag:COPN}     & Open \winref{menu:wpt}    & Toggle Flight Leg display & \usym{2713}         \\ \hline
-  \tagref{tag:SID}      & Open \winref{win:dlpdcw}  &                           & \usym{2713}         \\ \hline
-  \tagref{tag:DRWY}     & Open \winref{win:dlpdcw}  &                           & \usym{2713}         \\ \hline
-  \tagref{tag:ATYP}     &                           &                           & \usym{2713}         \\ \hline
-  \tagref{tag:RFL}      & Open \winref{menu:rfl}    & Open \winref{win:dlcmw}   & \usym{2713}         \\ \hline
-  \tagref{tag:ASSR}     & Open \winref{menu:assr}   & Send CPDLC Squawk message & \usym{2713}         \\ \hline
-  \tagref{tag:ADEP}     &                           &                           & \usym{2713}         \\ \hline
-  \tagref{tag:ADES}     & Open \winref{win:fpw}     &                           & \usym{2713}         \\ \hline
+  \textbf{Item}         & \textbf{Left Mouse}       & \textbf{Right Mouse}        & \textbf{Default Visibility}  \endhead \hline
+  \tagref{tag:*}        & Toggle units              &                             &                     \\ \hline
+  \tagref{tag:CALLSIGN} & Open \winref{menu:cs}     &                             & \usym{2713}         \\ \hline
+  \tagref{tag:FETN}     &                           &                             &                     \\ \hline
+  \tagref{tag:FCOPN}    &                           & Toggle Flight Leg display   &                     \\ \hline
+  \tagref{tag:ETN}      &                           &                             & \usym{2713}         \\ \hline
+  \tagref{tag:PEL}      & Open PEL Menu             & Open \winref{win:vaw}       & \usym{2713}         \\ \hline
+  \tagref{tag:COPN}     & Open \winref{menu:wpt}    & Toggle Flight Leg display   &                     \\ \hline
+  \tagref{tag:SID}      & Open SID list             & Acknowledge SID allocation  & \usym{2713}         \\ \hline
+  \tagref{tag:DRWY}     & Open runway list          &                             & \usym{2713}         \\ \hline
+  \tagref{tag:FText}    & Edit \tagref{tag:FText}   &                             &                     \\ \hline
+  \tagref{tag:NRAC}     &                           &                             &                     \\ \hline
+  \tagref{tag:ATYP}     &                           &                             & \usym{2713}         \\ \hline
+  \tagref{tag:WTC}      &                           &                             & \usym{2713}         \\ \hline
+  \tagref{tag:V}        &                           &                             & \usym{2713}         \\ \hline
+  \tagref{tag:XFL}      & Open COPX Alt popup       & Open \winref{win:vaw}       &                     \\ \hline
+  \tagref{tag:COPX}     & Open \winref{menu:wpt}    & Toggle Flight Leg display   &                     \\ \hline
+  \tagref{tag:FCOPX}    &                           & Toggle Flight Leg display   &                     \\ \hline
+  \tagref{tag:RFL}      & Open \winref{menu:rfl}    & Open \winref{win:dlcmw}     & \usym{2713}         \\ \hline
+  \tagref{tag:ASSR}     & Open \winref{menu:assr}   & Send CPDLC Squawk message   & \usym{2713}         \\ \hline
+  \tagref{tag:ADEP}     &                           &                             & \usym{2713}         \\ \hline
+  \tagref{tag:ADES}     & Open \winref{win:fpw}     &                             & \usym{2713}         \\ \hline
+  \tagref{tag:SI}       & Assume / Transfer         & Toggle SI frequency         &                     \\ \hline
+  \tagref{tag:AN}       &                           &                             &                     \\ \hline
+  C                     & Toggle Check indicator    &                             & \usym{2713}         \\ \hline
   \caption{ETWR List Construction}
 \end{longtable}  
 
