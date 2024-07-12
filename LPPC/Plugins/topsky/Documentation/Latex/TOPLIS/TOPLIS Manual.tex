@@ -4407,7 +4407,7 @@ The Sector List contains all departed controlled aircraft in the following state
   \tagref{tag:O+}       &                             & Open \winref{win:otrw}      &                     \\ \hline
   \tagref{tag:NBT}      & Open \winref{menu:tm}       & Acknowledge / clear OCM NBT &                     \\ \hline
   \tagref{tag:NLT}      & Open \winref{menu:tm}       & Acknowledge / clear OCM NLT &                     \\ \hline
-  C                     & Toggle Check indicator      &                             &                     \\ \hline
+  \tagref{tag:C}        & Toggle Check indicator      &                             &                     \\ \hline
   \caption{Sector List Construction}
 \end{longtable}
 
@@ -4433,7 +4433,7 @@ The Load Factor List contains all departed controlled aircraft in the concerned 
   \tagref{tag:RFL}      & Open \winref{menu:rfl}  & Open \winref{win:dlcmw}   & \usym{2713}         \\ \hline
   \tagref{tag:PSSR}     &                         & Find PSSR                 &                     \\ \hline
   \tagref{tag:ASSR}     & Open \winref{menu:assr} & Send CPDLC Squawk message & \usym{2713}         \\ \hline
-  C                     & Toggle Check indicator  &                           &                     \\ \hline
+  \tagref{tag:C}        & Toggle Check indicator  &                           &                     \\ \hline
   \caption{Load Factor List Construction}
 \end{longtable}  
 
@@ -4450,7 +4450,7 @@ The Resectorisation List contains all flights assumed or on-contact with specifi
   \textbf{Item}         & \textbf{Left Mouse}       & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
   \tagref{tag:CALLSIGN} & Open \winref{menu:cs}     &                           & \usym{2713}         \\ \hline
   \tagref{tag:SI}       & Assume / Transfer         & Toggle SI frequency       &                     \\ \hline
-  C                     & Toggle Check indicator    &                           &                     \\ \hline
+  \tagref{tag:C}        & Toggle Check indicator    &                           &                     \\ \hline
   \caption{Resectorisation List Construction}
 \end{longtable}  
 
@@ -4488,7 +4488,7 @@ The ETWR List contains notified and coordinated flights departing from specified
   \tagref{tag:ADES}     & Open \winref{win:fpw}     &                             & \usym{2713}         \\ \hline
   \tagref{tag:SI}       & Assume / Transfer         & Toggle SI frequency         &                     \\ \hline
   \tagref{tag:AN}       &                           &                             &                     \\ \hline
-  C                     & Toggle Check indicator    &                             & \usym{2713}         \\ \hline
+  \tagref{tag:C}        & Toggle Check indicator    &                             & \usym{2713}         \\ \hline
   \caption{ETWR List Construction}
 \end{longtable}  
 
@@ -4509,12 +4509,28 @@ Up to 2 lists can be displayed. Each list may be configured with different filte
   \textbf{Item}         & \textbf{Left Mouse}           & \textbf{Right Mouse}      & \textbf{Default Visibility}  \endhead \hline
   \tagref{tag:CALLSIGN} & Open \winref{menu:cs}         & Open Extended Label       & \usym{2713}         \\ \hline
   \tagref{tag:ASSR}     & Open \winref{menu:assr}       & Send CPDLC Squawk message & \usym{2713}         \\ \hline
+  \tagref{tag:NRAC}     &                               &                           & \usym{2713}         \\ \hline
+  \tagref{tag:ATYP}     &                               &                           & \usym{2713}         \\ \hline
   \tagref{tag:ADEP}     &                               &                           & \usym{2713}         \\ \hline
-  \tagref{tag:ATD}      & Open \winref{menu:tm}         &                           & \usym{2713}         \\ \hline
-  \tagref{tag:ADES}     & Open \winref{win:fpw}         & Toggle Flight Leg display & \usym{2713}         \\ \hline
-  \tagref{tag:SI}\footnotemark[1] & Open SI list              & Toggle SI frequency       & \usym{2713}         \\ \hline
-  \tagref{tag:OP TEXT2} & Edit OP\_TEXT2                &                           & \usym{2713}         \\ \hline
-  \tagref{tag:C}        & Toggle Inbound clearance flag &                           &                     \\ \hline
+  \tagref{tag:ETD}      & Open \winref{menu:tm}         &                           & \usym{2713}         \\ \hline
+  \tagref{tag:ATD}      & Open \winref{menu:tm}         & Reset ATD to ETD          & \usym{2713}         \\ \hline
+  \tagref{tag:ADES}     & Open \winref{win:fpw}         &                           & \usym{2713}         \\ \hline
+  \tagref{tag:FF}       &                               &                           &                     \\ \hline
+  \tagref{tag:STAFF}    &                               &                           &                     \\ \hline
+  \tagref{tag:TTLTTGFF} &                               &                           &                     \\ \hline
+  \tagref{tag:ALT1}     & Open \winref{win:fpw}         &                           &                     \\ \hline
+  \tagref{tag:EET}      & Open \winref{win:fpw}         &                           &                     \\ \hline
+  \tagref{tag:ETA}      &                               &                           &                     \\ \hline
+  \tagref{tag:FCOPN}    &                               & Toggle Flight Leg display &                     \\ \hline
+  \tagref{tag:PEL}      & Open PEL menu                 & Open \winref{win:vaw}     &                     \\ \hline
+  \tagref{tag:FETN}     &                               &                           &                     \\ \hline
+  \tagref{tag:FCOPX}    &                               & Toggle Flight Leg display &                     \\ \hline
+  \tagref{tag:FETX}     &                               &                           &                     \\ \hline
+  \tagref{tag:SI}\footnotemark[1] &                     &                           &                     \\ \hline
+  \tagref{tag:OP TEXT}  & Edit \tagref{tag:OP TEXT}     &                           & \usym{2713}         \\ \hline
+  \tagref{tag:OP TEXT2} & Edit \tagref{tag:OP TEXT2}    &                           &                     \\ \hline
+  \tagref{tag:FText}    & Edit \tagref{tag:FText}       &                           &                     \\ \hline
+  \tagref{tag:C}        & Toggle Check indicator        &                           & \usym{2713}         \\ \hline
   \caption{Uncontrolled List Construction}
 \end{longtable} 
 
