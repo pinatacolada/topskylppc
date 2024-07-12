@@ -26,10 +26,9 @@ TopSky plugin:ACList/ETWR List/m_Column_17: RFL:5:0:10006:59:84:1:TopSky plugin:
 TopSky plugin:ACList/ETWR List/m_Column_18: ASSR:6:0:10041:62:81:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/ETWR List/m_Column_19:ADEP:5:0:10007:0:0:1:TopSky plugin::
 TopSky plugin:ACList/ETWR List/m_Column_20:ADES:5:0:10008:1001:7:1:TopSky plugin:TopSky plugin:
-TopSky plugin:ACList/ETWR List/m_Column_21: SI:7:0:10014:20:0:0:TopSky plugin::
+TopSky plugin:ACList/ETWR List/m_Column_21: SI:7:0:10014:100:7:0:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/ETWR List/m_Column_22:AN:3:0:10088:0:0:0:TopSky plugin::
 TopSky plugin:ACList/ETWR List/m_Column_23:C:2:0:10089:118:0:1:TopSky plugin:TopSky plugin:
-TopSky plugin:ACList/ETWR List/m_Column_24:STATE:8:0:3:13:0:0:Ground Radar plugin:Ground Radar plugin:
 TopSky plugin:ACList/HOLDING LIST/m_Visible:0
 TopSky plugin:ACList/HOLDING LIST/m_X:20
 TopSky plugin:ACList/HOLDING LIST/m_Y:20
@@ -108,7 +107,7 @@ TopSky plugin:ACList/Sector List/m_Column_28:ADES:5:0:10008:1001:7:1:TopSky plug
 TopSky plugin:ACList/Sector List/m_Column_29:FX:6:0:10112:0:0:0:TopSky plugin::
 TopSky plugin:ACList/Sector List/m_Column_30:STA:5:0:10115:0:0:0:TopSky plugin::
 TopSky plugin:ACList/Sector List/m_Column_31:TTLTTG:7:0:10118:0:0:0:TopSky plugin::
-TopSky plugin:ACList/Sector List/m_Column_32: SI:7:0:10014:20:0:1:TopSky plugin::
+TopSky plugin:ACList/Sector List/m_Column_32: SI:7:0:10014:100:7:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/Sector List/m_Column_33:ETA:5:0:10033:0:0:1:TopSky plugin::
 TopSky plugin:ACList/Sector List/m_Column_34:STAR:8:0:10012:18:124:1:TopSky plugin::TopSky plugin
 TopSky plugin:ACList/Sector List/m_Column_35:ARWY:5:0:10010:19:0:1:TopSky plugin::
