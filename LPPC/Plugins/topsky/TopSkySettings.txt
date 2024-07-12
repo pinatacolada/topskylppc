@@ -23,78 +23,71 @@ Setup_LoadMap=TWRCAS\pcas
 Setup_LoadMap=TWRCAS\pcas_gnss
 
 Airspace_833_Min=0
-Airspace_ASSR_Type=2
+Airspace_AOR_Airports=LP
+Airspace_AOR_Airports_Exclude=LPAZ,LPPD,LPLA,LPGR,LPSJ,LPPI,LPHR,LPCR,LPFL
+Airspace_AOR_Positions=LP
+Airspace_AOR_Positions_Exclude=LPPO,LPAZ,LPPD,LPLA,LPHR,LPFL
 Airspace_ASSR_OAT_Remarks=RMK/OAT
 Airspace_ASSR_OAT_Type=0
-Airspace_P_Flag=LPPR,LPPT,LPFR,LPMA,LPPS
+Airspace_ASSR_APL_StartCode=3201
+Airspace_ASSR_APL_EndCode=3277
 Airspace_No_DUPE_Codes=2000,7000
 Airspace_NOTAM_Add=LPPC,LECM
+Airspace_P_Flag=LPPR,LPPT,LPCS,LPFR,LPMA,LPPS
 Airspace_SIGMET_Areas=LPPC
 
-AIW_Inhibit_ActiveAreas=1
 AIW_FlightRules=1
-AIW_Floor=1500
+AIW_PredictionTime=2
 
-APW_VFR=1
-APW_PredictionTime=120
-APW_WarningTime=120
-APW_WarningTime_Imm=110
-APW_Buffer_Lat_U=3
-APW_Buffer_Lat_L_IFR=3
 APW_Buffer_Lat_L_VFR=0
+APW_Buffer_Lat_U=3
 APW_Buffer_Vert_U=2000
 APW_Buffer_Vert_L_IFR=1000
 APW_Buffer_Vert_L_VFR=0
+APW_PredictionTime=120
+APW_Uncontrolled=0
+APW_WarningTime=120
+APW_WarningTime_Imm=110
 
-MSAW_Buffer_IFR=0
-MSAW_Buffer_VFR=0
-MSAW_PredictionTime=120
-
-Areas_Altitude_Filtering=1
 Areas_Label_Font=Lucida Sans Unicode
 Areas_Label_FontSize=12
+Areas_Label_UserText=0,0
 Areas_PreActiveTime=1800
-Areas_Label_Name=0
-Areas_Label_MapText=0
-Areas_Label_Levels=1
-Areas_Label_Times=0
-Areas_Label_UserText=0
-Areas_NOTAM_Activation=1
+Areas_AUP_UserText=MIL
 
-Color_Active_Map_Type_1=87,87,164	//PURPLE
-Color_Active_Map_Type_2=80,162,74	//GREEN
 Color_Active_Map_Type_3=132,142,139	//D GREY
-Color_Active_Map_Type_4=200,53,18	//RED
-Color_Active_Map_Type_5=198,174,58	//MUSTARD
 Color_Active_Map_Type_6=90,90,90	//INFILL GREY
 
 Color_Proposition_Accepted=175,125,175 //C_Sector_Informed
 Color_Text_Notes=125,125,125
 
-CPDLC_MinLevel=100
+CPDLC_MinLevel=1
 CPDLC_Transfer=1
 CPDLC_AutoAcceptLogon=1
 CPDLC_AutoAcceptLogon_Time=15
-CPDLC_PlaySound=1
-CPDLC_PDC_PlaySound=1
+CPDLC_PDC_Auto=1
 CPDLC_PDC_Timeout_Pilot=180
 CPDLC_FSM_CLD_Header=CLD <hour><min> <year2><month2><day> <adep2> PDC <number> <callsign>
 
 Divergence_CLAM_DelayTime=30
 Divergence_RAM_Limit=1
 
-FlightLeg_Label_Time=1
+Equip_UseCodes=3
+
+FlightLeg_AssumeTime=2
+FlightLeg_AutoShow=1
 FlightLeg_Label_Point=0
 FlightLeg_Label_DIST=0
 FlightLeg_Label_RFL=0
 FlightLeg_Label_SCFL=0
-FlightLeg_AutoShow=1
-FlightLeg_AssumeTime=2
-FlightLeg_LineWidth=1
+FlightLeg_Potential_Risk=0
 
 FPCP_MinState=0
 
-HTTP_SIGMET_Pages=6443,6450
+HTTP_GRIB_Latitude_Max=45
+HTTP_GRIB_Latitude_Min=30
+HTTP_GRIB_Longitude_Max=-5
+HTTP_GRIB_Longitude_Min=-20
 
 HTTP_METAR_Server=https://meteo.vatsim.pt/
 HTTP_METAR_Page_Prefix=api/v1/ipma/metar/topsky?airport_icao_codes=
@@ -102,238 +95,156 @@ HTTP_METAR_Page_Suffix=
 HTTP_METAR_Data_Prefix=(prefix)
 HTTP_METAR_Data_Suffix=(suffix)
 
+HTTP_natTrak_Filter_ADEP_Lon_Min=-22
+
 HTTP_NOTAM_Area_Sched_Text= 
 HTTP_NOTAM_Server=https://eaup.vatsim.pt/api/v1/topsky/areas/LP/notam/
 HTTP_NOTAM_Page_Prefix=?loc=
 HTTP_NOTAM_Page_Suffix=
 
-HTTP_TAF_Server=https://aviationweather.gov/
-HTTP_TAF_Page_Prefix=cgi-bin/data/dataserver.php?requestType=retrieve&dataSource=tafs&stationString=
-HTTP_TAF_Page_Suffix=&hoursBeforeNow=1&format=xml&mostRecentForEachStation=constraint&fields=raw_text
-HTTP_TAF_Data_Prefix=<raw_text>
-HTTP_TAF_Data_Suffix=</raw_text>
-
-Label_All_N=1
+Label_ACF_Use=0
+Label_CompCsCaps=1
 Label_COP_MaxChars=5
-Label_DAPs=1
 Label_FCOP_MaxChars=3
 Label_Field18_Flag_Items=STS/ALTRV,STS/ATFMX,STS/HUM,STS/FFR,STS/FLTCK,STS/HAZMAT,STS/HEAD,STS/HOSP,STS/MARSA,STS/MEDEVAC,STS/NONRVSM,STS/SAR,STS/STATE
-
-Label_RTE_Origin=LP
-Label_RTE_Origin=LP
-Label_SI_ShowFreq=1
+Label_Minimised_ItemCodes_List=4,5,6,15,22,26,49,67,68,107,151,152,199,202,206,264,303,305,306,307,308,399,400
 Label_SI_FreqTime=5
+Label_SI_ShowFreq=1
+Label_WTC_Highlight_WTC=J
 
-Label_Co_SQ=0
-Label_Co_ATYP=1
-Label_Co_WTC=1
-Label_Co_GS=1
-Label_Co_ADES=0
-Label_Co_COPN=0
-Label_Co_NRAC=0
-Label_Co_XFL=0
-Label_Co_AHDG=0
-Label_Co_ASP=0
-Label_Co_PEL=0
-Label_Co_TSSR=0
-Label_Co_RFL=0
-Label_Co_FCOPX=0
-
-Label_Co_DSFL_Unsel=0
-Label_Co_DHDG_Unsel=0
-Label_Co_DIAS_Unsel=0
-Label_Co_DMACH_Unsel=0
-Label_Co_DRC_Unsel=0
-
-Label_Co_DSFL_Sel=1
-Label_Co_DHDG_Sel=1
-Label_Co_DIAS_Sel=1
-Label_Co_DMACH_Sel=1
-Label_Co_DRC_Sel=1
-
-Label_Ass_SQ=0
-Label_Ass_ATYP=1
-Label_Ass_WTC=1
-Label_Ass_GS=1
-Label_Ass_ADES=0
-Label_Ass_COPX=0
-Label_Ass_NRAC=0
-Label_Ass_XFL=0
-Label_Ass_AHDG=0
-Label_Ass_ASP=0
-Label_Ass_TSSR=0
-Label_Ass_RFL=0
-Label_Ass_FCOPX=0
-
-Label_Ass_DSFL_Unsel=0
-Label_Ass_DHDG_Unsel=0
-Label_Ass_DIAS_Unsel=0
-Label_Ass_DMACH_Unsel=0
-Label_Ass_DRC_Unsel=0
-
-Label_Ass_DSFL_Sel=1
-Label_Ass_DHDG_Sel=1
-Label_Ass_DIAS_Sel=1
-Label_Ass_DMACH_Sel=1
-Label_Ass_DRC_Sel=1
-
-Label_Red_SQ=0
-Label_Red_ATYP=1
-Label_Red_WTC=1
-Label_Red_GS=1
-Label_Red_ADES=0
-Label_Red_COPX=0
-Label_Red_NRAC=0
-Label_Red_XFL=0
-Label_Red_AHDG=0
-Label_Red_ASP=0
-Label_Red_TSSR=0
-Label_Red_RFL=0
-Label_Red_FCOPX=0
-
-Label_Red_DSFL_Unsel=0
-Label_Red_DHDG_Unsel=0
-Label_Red_DIAS_Unsel=0
-Label_Red_DMACH_Unsel=0
-Label_Red_DRC_Unsel=0
-
-Label_Red_DSFL_Sel=1
-Label_Red_DHDG_Sel=1
-Label_Red_DIAS_Sel=1
-Label_Red_DMACH_Sel=1
-Label_Red_DRC_Sel=1
-
-Label_No_SQ=0
-Label_No_ATYP=1
-Label_No_WTC=1
-Label_No_GS=1
-Label_No_ADES=0
-Label_No_NRAC=0
-Label_No_TSSR=0
-Label_No_RFL=0
-Label_No_FCOPX=0
-
-Label_No_DSFL_Unsel=0
-Label_No_DHDG_Unsel=0
-Label_No_DIAS_Unsel=0
-Label_No_DMACH_Unsel=0
-Label_No_DRC_Unsel=0
-
-Label_No_DSFL_Sel=1
-Label_No_DHDG_Sel=1
-Label_No_DIAS_Sel=1
-Label_No_DMACH_Sel=1
-Label_No_DRC_Sel=1
+Label_AHDG_Default=1100
+Label_AMA_Default=1100
+Label_ASP_Default=1100
+Label_GS_Default=1100
+Label_NPT_Default=1100
+Label_NRAC_Default=0000
+Label_OFL_Default=0000
+Label_RFL_Default=0000
+Label_WTC_Default=1100
+Label_XFL_Default=1100
 
 List_ETWR_ADEP=LPPT,LPPR,LPFR,LPMA
 List_VFR_FPL_Area=42.2955958,-9.2532349,32.7503226,-17.9956055,32.0453328,-16.6882324,36.9520867,-7.2207642,38.182069,-6.9213867,38.4836948,-7.2015381,38.9893026,-6.8719482,39.4446776,-7.0532227,40.1704789,-6.7730713,41.0337871,-6.6467285,41.463312,-6.1468506,41.9431487,-5.9793091,42.2955958,-9.2532349
+List_TfcMgmt_MaxTime=40
 
-Maps_Sct_Label_Pos=0,20
-
+Menu_CFL_ExtendedItems=21
+Menu_DAPs=1
 Menu_Level_MaxValue=650
+
+MSAW=0
+MSAW_Buffer_IFR=0
+MSAW_Buffer_VFR=0
+MSAW_PredictionTime=120
 
 MTCD_Filter_Dep=3
 MTCD_PLC_Time=5
-MTCD_Potential_Pred_Risk=1
-MTCD_Sep_Vert_U=2000
-MTCD_Sep_Vert_L=1000
-MTCD_Sep_Lat=7
 
-Rings_Separation=5
-Rings_Number=10
+RDF_Mode=-1
+
 Rings_Highlight=1
-Rings_HighlightStep=2
 
-RwyAppLines_Auto=0
 RwyAppLines_Length=18
 
-SAP_Buffer_Lat_U=3
-SAP_Buffer_Lat_L_IFR=3
 SAP_Buffer_Lat_L_VFR=0
-SAP_Buffer_Vert_U=2000
+SAP_Buffer_Lat_U=3
 SAP_Buffer_Vert_L_IFR=1000
 SAP_Buffer_Vert_L_VFR=0
+SAP_Buffer_Vert_U=2000
 
 Shortcut_AHDG_NoFixes_Combo=0x00
-Shortcut_XQDM_Combo=0x00
-Shortcut_XQDM=0x00
+Shortcut_CARD=0x52
+Shortcut_Create_APL=0x41
+Shortcut_Find_Track=0x54
 Shortcut_Flight_Leg_Combo=0x00
 Shortcut_Flight_Leg=0x00
+Shortcut_Message_In=0x49
+Shortcut_Message_Out=0x4F
+Shortcut_Notepad=0x4E
+Shortcut_QNHTL=0x44
+Shortcut_Quick_Look_Down_Combo=0x00
+Shortcut_Quick_Look_Up_Combo=0x00
+Shortcut_TSA=0x4D
+Shortcut_Zoom=0x5A
 
 STCA_Coarse_PredictionTime=135
-STCA_Coarse_Sep_Vert_U=1900
 STCA_Coarse_Sep_Vert_L=900
-STCA_FastDiv_Sep_Vert_U=1900
-STCA_FastDiv_Sep_Vert_L=900
-STCA_LinPred_PredictionTime=135
-STCA_LinPred_ConflictCount=3
+STCA_Coarse_Sep_Vert_U=1900
 STCA_CurrProx_ConflictCount=3
-STCA_WarningTime_U=120
+STCA_FastDiv_Sep_Vert_L=900
+STCA_FastDiv_Sep_Vert_U=1900
+STCA_LinPred_ConflictCount=3
+STCA_LinPred_PredictionTime=135
 STCA_WarningTime_L=60
-STCA_WarningTime_U_Imm=110
+STCA_WarningTime_U=120
 STCA_WarningTime_L_Imm=60
+STCA_WarningTime_U_Imm=110
 
+System_APL_Controlled=0
 System_ASP_IasMach=28500
-System_UseAcceptedCoordColor=1
-System_UseReportedGS=1
-System_FPASD=1
 System_FPASD_MinState=1
-System_GS_DeleteMinMax=1
-System_RepHdg_Correction=2
+System_MagModel_Year=2024
+System_MetarSourceVATSIM=0
+System_Oceanic=1
 System_TaxiTime=15
 System_TransferConfirmation=2
-System_MagModel_Type=1
-System_MagModel_Year=2022
-System_MetarSourceVATSIM=0
+System_Trf_Release=0
+System_UseILScat=1
+System_UseRwyLockedColor=0
 System_UseTSAborderHighlightColor=1
 
-System_UseSidStarAllocationColor=0
-System_UseSidStarNoAllocationColor=1
-System_UseRwyLockedColor=0
-
 Track_PredictionLine=2
-Vector_QDM_MaxNumber=50
 
-Window_PDC_SetASSR=1
-Window_PDC_SetCFL=1
+Vector_MinSep_Label_Time=1
 
-Window_PDC_SetASSR=1
-Window_PDC_SetCFL=1
-
-Window_ASM=0,200,200,610,270
-Window_ASM_Chars_Name=10
-Window_ASM_Chars_MapText=10
-Window_ASM_Chars_User=10
 Window_ASM_ShowNOTAMasUsertext=0
-
-//Window_CARD_MaxConflicts=15
+Window_ASM_Chars_Name=10
+Window_CARD_MaxConflicts=15
+Window_CARD_View_DownstreamPred=1
 Window_CPDLC_Current_MaxListItems=7
 Window_CPDLC_History_MaxListItems=7
-Window_FlightPlan=0,1412,600
+Window_DCL_SetASSR=1
+Window_DCL_SetCFL=1
 Window_FlightPlan_ShowAlways=1
-
-Window_MsgIn=1,850,957
+Window_Msg_MaxItems=30
 Window_Msg_MaxListItems=7
-Window_SAP=1,1630,885
+Window_Ops_Caution=26
+Window_Ops_Warning=40
+Window_PDC_SetASSR=1
+Window_PDC_SetCFL=1
+Window_PredTfc_Caution=20
+Window_PredTfc_Warning=30
 Window_SAP_MaxListItems=7
-Window_SM_LowestLevel=20
-Window_CARD=1,1560,693
-Window_CPDLC_Current=0,700,25
+Window_SmallQNHTL_ICAO=LPPT
+Window_SM_LowestLevel=30
+Window_WxMsgs_MetarRefreshInterval=600
+Window_WxMsgs_TafRefreshInterval=600
+
+Window_Clock=3,1300,25
+Window_CPDLC_Current=0,910,25
+Window_FlightPlan=0,650,400
+Window_MsgIn=1,850,957
+Window_MsgOut=0,1200,957
+Window_SAP=1,1592,850
+Window_UpperWinds=1,1150,300
+
+Window_ASM=0,200,200,610,270
+Window_CARD=1,1470,600,450,250
 Window_NOTAM=1,700,300,400
 Window_VAW=0,1610,450
 
 [_APP]
 Setup_LoadMap=ENVR\rivers
+Label_DIAS_Unsel_Default=1111
 
 [_TWR]
 Setup_LoadMap=ENVR\rivers
+Label_DIAS_Unsel_Default=1111
 
 [_CTR]
-CPDLC_Default=1
 CPDLC_CFL=1
 CPDLC_DCT=1
-Window_CPDLC_Current=1,700,25
-Window_CPDLC_Setting=1,900,425
+Window_CPDLC_Current=1,910,25
+Window_CPDLC_Setting=1,910,425
 
 STCA_Coarse_Sep_Lat_U=5
 STCA_Coarse_Sep_Lat_L=5
@@ -341,58 +252,6 @@ STCA_LinPred_Sep_Lat_U=4.5
 STCA_LinPred_Sep_Lat_L=4.5
 STCA_CurrProx_Sep_Lat_U=4.75
 STCA_CurrProx_Sep_Lat_L=4.75
-
-Label_Co_SQ=0
-Label_Co_ATYP=0
-Label_Co_WTC=1
-Label_Co_GS=0
-Label_Co_ADES=0
-Label_Co_COPN=0
-Label_Co_NRAC=0
-Label_Co_XFL=1
-Label_Co_AHDG=1
-Label_Co_ASP=1
-Label_Co_PEL=1
-Label_Co_TSSR=0
-Label_Co_RFL=0
-Label_Co_FCOPX=1
-
-Label_Ass_SQ=0
-Label_Ass_ATYP=0
-Label_Ass_WTC=1
-Label_Ass_GS=0
-Label_Ass_ADES=0
-Label_Ass_COPX=0
-Label_Ass_NRAC=0
-Label_Ass_XFL=1
-Label_Ass_AHDG=1
-Label_Ass_ASP=1
-Label_Ass_TSSR=0
-Label_Ass_RFL=0
-Label_Ass_FCOPX=0
-
-Label_Red_SQ=0
-Label_Red_ATYP=0
-Label_Red_WTC=0
-Label_Red_GS=0
-Label_Red_ADES=0
-Label_Red_COPX=0
-Label_Red_NRAC=0
-Label_Red_XFL=0
-Label_Red_AHDG=0
-Label_Red_ASP=0
-Label_Red_TSSR=0
-Label_Red_RFL=0
-Label_Red_FCOPX=0
-
-Label_No_SQ=0
-Label_No_ATYP=0
-Label_No_WTC=0
-Label_No_GS=0
-Label_No_ADES=0
-Label_No_NRAC=0
-Label_No_TSSR=0
-Label_No_FCOPX=0
 
 List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
 List_TfcMgmt2_Via=PILIM,ABUSU
@@ -421,24 +280,24 @@ STCA_CurrProx_Sep_Lat_U=7.75
 STCA_CurrProx_Sep_Lat_L=7.75
 MTCD_Sep_Lat=10
 List_TfcMgmt1_Via=PILIM,ABUSU
+Window_SmallQNHTL_ICAO=LPMA
 
 [LPPR_]
 List_TfcMgmt1_Via=ADNOV,AKULU
+Window_SmallQNHTL_ICAO=LPPR
 
 [LPPR_APP]
-CPDLC_Default=1
-Window_CPDLC_Current=1,700,25
-Window_CPDLC_Setting=1,900,425
+Window_CPDLC_Current=1,910,25
+Window_CPDLC_Setting=1,910,425
 Setup_LoadMap=APPPRT\nortavia
 
 [LPPT_]
-Window_CPDLC_Current=1,700,25
-Window_CPDLC_Setting=1,900,425
+Window_CPDLC_Current=1,910,25
+Window_CPDLC_Setting=1,910,425
 List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
 
 [LPPT_APP]
 Setup_LoadMap=TWRCAS\ext_cntrline_35
-CPDLC_Default=1
 STCA_Coarse_Sep_Lat_U=3
 STCA_Coarse_Sep_Lat_L=3
 STCA_LinPred_Sep_Lat_U=2.5
@@ -447,8 +306,15 @@ STCA_CurrProx_Sep_Lat_U=2.75
 STCA_CurrProx_Sep_Lat_L=2.75
 MTCD_Sep_Lat=5
 
-[LPPT_U_APP]
-CPDLC_Default=1
+[LPPT_W_APP]
+Setup_LoadMap=TWRCAS\ext_cntrline_35
+STCA_Coarse_Sep_Lat_U=3
+STCA_Coarse_Sep_Lat_L=3
+STCA_LinPred_Sep_Lat_U=2.5
+STCA_LinPred_Sep_Lat_L=2.5
+STCA_CurrProx_Sep_Lat_U=2.75
+STCA_CurrProx_Sep_Lat_L=2.75
+MTCD_Sep_Lat=5
 
 [LPPT_F_APP]
 Setup_LoadMap=TWRCAS\ext_cntrline_35
@@ -462,16 +328,16 @@ MTCD_Sep_Lat=5
 
 [LPFR_]
 List_TfcMgmt1_Via=GEBTI,VENOL
+Window_SmallQNHTL_ICAO=LPFR
 
 [LPFR_APP]
 CPDLC_Default=1
-Window_CPDLC_Current=1,700,25
-Window_CPDLC_Setting=1,900,425
+Window_CPDLC_Current=1,910,25
+Window_CPDLC_Setting=1,910,425
 
 [LPMA_APP]
-CPDLC_Default=1
-Window_CPDLC_Current=1,700,25
-Window_CPDLC_Setting=1,900,425
+Window_CPDLC_Current=1,910,25
+Window_CPDLC_Setting=1,910,425
 
 [LPAM_]
 Setup_LoadMap=ENVR\rivers
