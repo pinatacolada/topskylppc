@@ -1,0 +1,57 @@
+Settings	alias	\LPPC\Alias\alias.txt
+Settings	airlines	\LPPC\ICAO\ICAO_Airlines.txt
+Settings	airports	\LPPC\ICAO\ICAO_Airports.txt
+Settings	aircraft	\LPPC\ICAO\ICAO_Aircraft.txt
+Settings	Settingsfile	\LPPC\Settings\General_TopSky.txt
+Settings	AtisFolder	\LPPC\ATIS\atisfiles.txt
+Settings	SettingsfileSYMBOLOGY	\LPPC\Settings\Symbology_TopSky.txt
+Settings	SettingsfileVOICE	\LPPC\Settings\VoiceChannels.txt
+Settings	SettingsfilePROFILE	\LPPC\Settings\Settings.txt
+Settings	SettingsfileTAGS	\LPPC\Settings\Tags_TopSky.txt
+Settings	SettingsfileSIL	\LPPC\Settings\SectorInboundList_TopSky.txt
+Settings	SettingsfileSEL	\LPPC\Settings\SectorExitList_TopSky.txt
+Settings	SettingsfileDEP	\LPPC\Settings\DepartureList_TopSky.txt
+Settings	SettingsfileARR	\LPPC\Settings\ArrivalList.txt
+Settings	SettingsfileFP	\LPPC\Settings\FPList_TopSky.txt
+Settings	SettingsfilePLUGINS	\LPPC\Settings\Plugins_APS.txt
+Settings	SettingsfileSCREEN	\LPPC\Settings\Screen_TopSky.txt
+Settings	SettingsfileCONFLICT	\LPPC\Settings\Conflict_TopSky.txt
+Settings	SettingsfileVCCS	\LPPC\Settings\VCCS.txt
+Settings	SettingsfilePILOTING	\LPPC\Settings\General_TopSky.txt
+Settings	ipaddr	\ipaddr.txt
+Settings	airways	\LPPC\NavData\airway.txt
+Settings	AselKey	5111808
+Settings	FreqKey	3604480
+Plugins	Plugin0	\LPPC\Plugins\topsky\TopSky.dll
+Plugins	Plugin0Display0	Standard ES radar screen
+Plugins	Plugin0Display1	Ground Radar display
+Plugins	Plugin1	\LPPC\Plugins\GroundRadar\GRplugin.dll
+Plugins	Plugin1Display0	Ground Radar display
+Plugins	Plugin1Display1	Standard ES radar screen
+Plugins	Plugin2	\LPPC\Plugins\ACDM\CDM.dll
+Plugins	Plugin2Display0	Ground Radar display
+Plugins	Plugin2Display1	Standard ES radar screen
+Plugins	Plugin3	\LPPC\Plugins\AfvEuroScopeBridge.dll
+Plugins	Plugin3Display0	Ground Radar display
+Plugins	Plugin3Display1	Standard ES radar screen
+Plugins	Plugin4	\LPPC\Plugins\VATCANBookings.dll
+ASRFastKeys	1	LPPC\ASR\LPPC_CTR_TS.asr
+ASRFastKeys	4	LPPC\ASR\LPPS_GND_TSGR.asr
+ASRFastKeys	5	LPPC\ASR\LPCS_TWR.asr
+ASRFastKeys	6	LPPC\ASR\LPMA_GND_TSGR.asr
+ASRFastKeys	7	LPPC\ASR\LPFR_GND_TSGR.asr
+ASRFastKeys	8	LPPC\ASR\LPPT_GND_TSGR.asr
+ASRFastKeys	9	LPPC\ASR\LPPR_GND_TSGR.asr
+RecentFiles	Recent1	LPPC\ASR\LPPC_CTR_TS.asr
+LastSession	connecttype	0
+LastSession	certificate	vatsim ID
+RecentFiles	Recent2	LPPC\ASR\LPMA_GND_TSGR.asr
+RecentFiles	Recent3	LPPC\ASR\LPFR_GND_TSGR.asr
+RecentFiles	Recent4	LPPC\ASR\LPPT_GND_TSGR.asr
+RecentFiles	Recent5	LPPC\ASR\LPPR_GND_TSGR.asr
+RecentFiles	Recent6	LPPC\ASR\LPCS_TWR.asr
+RecentFiles	Recent7	LPPC\ASR\LPPC_CTR_TS.asr
+RecentFiles	Recent8	LPPC\ASR\LPPR_GND_TSGR.asr
+RecentFiles	Recent9	LPPC\ASR\LPPR_GND_TSGR.asr
+TeamSpeakVccs	TsVccsMiniControlX	1741
+TeamSpeakVccs	TsVccsMiniControlY	675
