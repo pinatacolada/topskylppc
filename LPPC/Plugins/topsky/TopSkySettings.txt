@@ -292,6 +292,8 @@ Window_CPDLC_Setting=1,910,425
 Setup_LoadMap=APPPRT\nortavia
 
 [LPPT_]
+Window_CARD_View_Notif=1
+Window_CARD_View_Future=0
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
 List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
