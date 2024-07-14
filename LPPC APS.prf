@@ -10,7 +10,7 @@ Settings	SettingsfilePROFILE	\LPPC\Settings\Settings.txt
 Settings	SettingsfileTAGS	\LPPC\Settings\Tags_TopSky.txt
 Settings	SettingsfileSIL	\LPPC\Settings\SectorInboundList_TopSky.txt
 Settings	SettingsfileSEL	\LPPC\Settings\SectorExitList_TopSky.txt
-Settings	SettingsfileDEP	\LPPC\Settings\DepartureList_TopSky.txt
+Settings	SettingsfileDEP	\LPPC\Settings\DepartureList_TopSky_APS.txt
 Settings	SettingsfileARR	\LPPC\Settings\ArrivalList.txt
 Settings	SettingsfileFP	\LPPC\Settings\FPList_TopSky.txt
 Settings	SettingsfilePLUGINS	\LPPC\Settings\Plugins_APS.txt
