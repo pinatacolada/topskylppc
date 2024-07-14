@@ -279,7 +279,13 @@ STCA_LinPred_Sep_Lat_L=7.5
 STCA_CurrProx_Sep_Lat_U=7.75
 STCA_CurrProx_Sep_Lat_L=7.75
 MTCD_Sep_Lat=10
+Label_PEL_Default=0000
+Label_WTC_Default=0000
+Label_XFL_Default=0000
 List_TfcMgmt1_Via=PILIM,ABUSU
+Window_CARD_View_Notif=1
+Window_CARD_View_Future=0
+Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPMA
 
 [LPPR_]
