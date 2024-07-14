@@ -137,6 +137,7 @@ MSAW_Buffer_VFR=0
 MSAW_PredictionTime=120
 
 MTCD_Filter_Dep=3
+MTCD_Floor=8500
 MTCD_PLC_Time=5
 
 RDF_Mode=-1
@@ -167,17 +168,9 @@ Shortcut_TSA=0x4D
 Shortcut_Zoom=0x5A
 
 STCA_Coarse_PredictionTime=135
-STCA_Coarse_Sep_Vert_L=900
-STCA_Coarse_Sep_Vert_U=1900
 STCA_CurrProx_ConflictCount=3
-STCA_FastDiv_Sep_Vert_L=900
-STCA_FastDiv_Sep_Vert_U=1900
 STCA_LinPred_ConflictCount=3
 STCA_LinPred_PredictionTime=135
-STCA_WarningTime_L=60
-STCA_WarningTime_U=120
-STCA_WarningTime_L_Imm=60
-STCA_WarningTime_U_Imm=110
 
 System_APL_Controlled=0
 System_ASP_IasMach=28500
@@ -246,42 +239,10 @@ CPDLC_DCT=1
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
 
-STCA_Coarse_Sep_Lat_U=5
-STCA_Coarse_Sep_Lat_L=5
-STCA_LinPred_Sep_Lat_U=4.5
-STCA_LinPred_Sep_Lat_L=4.5
-STCA_CurrProx_Sep_Lat_U=4.75
-STCA_CurrProx_Sep_Lat_L=4.75
-
 List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
 List_TfcMgmt2_Via=PILIM,ABUSU
 
-[_W_CTR]
-MTCD_Sep_Lat=10
-
-[_WU_CTR]
-MTCD_Sep_Lat=10
-
-[_I_CTR]
-STCA_Coarse_Sep_Lat_U=8
-STCA_Coarse_Sep_Lat_L=8
-STCA_LinPred_Sep_Lat_U=7.5
-STCA_LinPred_Sep_Lat_L=7.5
-STCA_CurrProx_Sep_Lat_U=7.75
-STCA_CurrProx_Sep_Lat_L=7.75
-MTCD_Sep_Lat=10
-
 [LPMA_]
-STCA_Coarse_Sep_Lat_U=8
-STCA_Coarse_Sep_Lat_L=8
-STCA_LinPred_Sep_Lat_U=7.5
-STCA_LinPred_Sep_Lat_L=7.5
-STCA_CurrProx_Sep_Lat_U=7.75
-STCA_CurrProx_Sep_Lat_L=7.75
-MTCD_Sep_Lat=10
-Label_PEL_Default=0000
-Label_WTC_Default=0000
-Label_XFL_Default=0000
 List_TfcMgmt1_Via=PILIM,ABUSU
 List_TfcMgmt2_Via=MARCU,LAPPA
 Window_CARD_View_Notif=1
@@ -318,37 +279,12 @@ List_TfcMgmt2_Via=CASLU,ESP
 
 [LPPT_APP]
 Setup_LoadMap=TWRCAS\ext_cntrline_35
-STCA_Coarse_Sep_Lat_U=3
-STCA_Coarse_Sep_Lat_L=3
-STCA_LinPred_Sep_Lat_U=2.5
-STCA_LinPred_Sep_Lat_L=2.5
-STCA_CurrProx_Sep_Lat_U=2.75
-STCA_CurrProx_Sep_Lat_L=2.75
-MTCD_Sep_Lat=5
-Window_SmallQNHTL=1,1425,25
-Window_SmallQNHTL_ICAO=LPPT
 
 [LPPT_W_APP]
 Setup_LoadMap=TWRCAS\ext_cntrline_35
-STCA_Coarse_Sep_Lat_U=3
-STCA_Coarse_Sep_Lat_L=3
-STCA_LinPred_Sep_Lat_U=2.5
-STCA_LinPred_Sep_Lat_L=2.5
-STCA_CurrProx_Sep_Lat_U=2.75
-STCA_CurrProx_Sep_Lat_L=2.75
-MTCD_Sep_Lat=5
 
 [LPPT_F_APP]
 Setup_LoadMap=TWRCAS\ext_cntrline_35
-STCA_Coarse_Sep_Lat_U=3
-STCA_Coarse_Sep_Lat_L=3
-STCA_LinPred_Sep_Lat_U=2.5
-STCA_LinPred_Sep_Lat_L=2.5
-STCA_CurrProx_Sep_Lat_U=2.75
-STCA_CurrProx_Sep_Lat_L=2.75
-MTCD_Sep_Lat=5
-Window_SmallQNHTL=1,1425,25
-Window_SmallQNHTL_ICAO=LPPT
 
 [LPFR_]
 Label_PEL_Default=0000
