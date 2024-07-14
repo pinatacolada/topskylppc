@@ -283,12 +283,19 @@ List_TfcMgmt1_Via=PILIM,ABUSU
 Window_SmallQNHTL_ICAO=LPMA
 
 [LPPR_]
+Label_PEL_Default=0000
+Label_WTC_Default=0000
+Label_XFL_Default=0000
 List_TfcMgmt1_Via=ADNOV,AKULU
+Window_CARD_View_Notif=1
+Window_CARD_View_Future=0
 Window_SmallQNHTL_ICAO=LPPR
 
 [LPPR_APP]
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
+Window_SmallQNHTL=1,1425,25
+Window_SmallQNHTL_ICAO=LPPR
 Setup_LoadMap=APPPRT\nortavia
 
 [LPPT_]
