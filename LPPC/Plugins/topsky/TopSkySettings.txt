@@ -297,9 +297,6 @@ Window_CPDLC_Setting=1,910,425
 List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
 List_TfcMgmt2_Via=CASLU,ESP
 
-Window_SmallQNHTL=1,1425,25
-Window_SmallQNHTL_ICAO=LPPT
-
 [LPPT_APP]
 Setup_LoadMap=TWRCAS\ext_cntrline_35
 STCA_Coarse_Sep_Lat_U=3
@@ -309,6 +306,8 @@ STCA_LinPred_Sep_Lat_L=2.5
 STCA_CurrProx_Sep_Lat_U=2.75
 STCA_CurrProx_Sep_Lat_L=2.75
 MTCD_Sep_Lat=5
+Window_SmallQNHTL=1,1425,25
+Window_SmallQNHTL_ICAO=LPPT
 
 [LPPT_W_APP]
 Setup_LoadMap=TWRCAS\ext_cntrline_35
@@ -329,6 +328,8 @@ STCA_LinPred_Sep_Lat_L=2.5
 STCA_CurrProx_Sep_Lat_U=2.75
 STCA_CurrProx_Sep_Lat_L=2.75
 MTCD_Sep_Lat=5
+Window_SmallQNHTL=1,1425,25
+Window_SmallQNHTL_ICAO=LPPT
 
 [LPFR_]
 List_TfcMgmt1_Via=GEBTI,VENOL
