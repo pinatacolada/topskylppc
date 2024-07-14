@@ -1222,7 +1222,7 @@ Left-clicking acknowledges the warning and aborts the clearance, displaying the 
 \label{tool:MTCD}
 \subsubsection*{General}
 
-The MTCD system is a tool that enables the controller to predict possible future conflicts between aircraft. The look-ahead time (prediction time) is set to 20 minutes and the separation distance that triggers the alert (prediction distance) to 7nm for sectors where 5nm separation is applied, and 10 where 8nm separation is applied.
+The MTCD system is a tool that enables the controller to predict possible future conflicts between aircraft. The look-ahead time (prediction time) is set to 20 minutes and the separation distance that triggers the alert (prediction distance) to 5 NM within the 3 NM separation area, 7 NM within the 5 NM separation area, and 10 NM within the 8 NM separation area.
 
 \bigskip
 
@@ -1267,11 +1267,11 @@ For the predictions to be accurate, it’s very important to keep the CFL and th
 
 \bigskip
 
-MTCD is not available for aircraft on the ground until their state is set to “DEPA”.
+MTCD is not available for aircraft on the ground until their state is set to “DEPA”, or aircraft below 8500ft.
 
 \subsubsection*{Conflict and Risk display on the track label}
 
-If there is a conflict or potential predicted conflict for the aircraft within the set warning parameters, a “•” in \colorref{Urgency} color is shown 10 minutes to loss of separation with a 7nm or 10nm separation minimum, depending on the sector.
+If there is a conflict or potential predicted conflict for the aircraft within the set warning parameters, a “•” in \colorref{Urgency} color is shown 10 minutes to loss of separation with a 5nm, 7nm or 10nm separation minimum, depending on the sector.
 
 \bigskip
 
