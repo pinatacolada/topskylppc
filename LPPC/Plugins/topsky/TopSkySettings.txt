@@ -296,6 +296,9 @@ Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
+Label_PEL_Default=0000
+Label_WTC_Default=0000
+Label_XFL_Default=0000
 List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
 List_TfcMgmt2_Via=CASLU,ESP
 
