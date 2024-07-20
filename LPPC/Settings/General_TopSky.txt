@@ -79,9 +79,9 @@ m_ShowVFRFlightPlanTrack:0
 m_ShowIFRFlightPlanTrack:1
 m__AutoStartFlightPlanTracks:1
 m_UnicomFrequency:122.8
-m_MessageInfoLevel:1
-m_MessageWarningLevel:2
-m_MessageErrorLevel:4
+m_MessageInfoLevel:0
+m_MessageWarningLevel:0
+m_MessageErrorLevel:0
 m_PointOutLevel:0
 m_HandoffRequestLevel:0
 m_CoordinationRequestLevel:0
