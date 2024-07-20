@@ -89,7 +89,7 @@ m_HandoffAcceptLevel:0
 m_HandoffRefuseLevel:0
 m_CoordinationAcceptLevel:0
 m_CoordinationRefuseLevel:0
-m_ServerMessageLevel:2
+m_ServerMessageLevel:0
 m_AtcMessageLevel:2
 m_BroadcastMessageLevel:2
 m_SupMessageLevel:4
