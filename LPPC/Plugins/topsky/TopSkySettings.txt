@@ -244,6 +244,7 @@ Label_OFL_Default=1100
 
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
+Window_MsgOut=1,1200,957
 
 List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
 List_TfcMgmt2_Via=PILIM,ABUSU
