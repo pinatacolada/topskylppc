@@ -1,9 +1,8 @@
 # TopSky plugin for Portugal vACC 
-[![latest-version](https://img.shields.io/github/v/release/pinatacolada/topskylppc?include_prereleases)](https://github.com/pinatacolada/topskylppc/releases)  [![topsky-version](https://img.shields.io/badge/TopSky-2.4.1-blue.svg)](https://vats.im/TopSkyPlugin)
+[![latest-version](https://img.shields.io/github/v/release/pinatacolada/topskylppc?include_prereleases)](https://github.com/pinatacolada/topskylppc/releases)  [![topsky-version](https://img.shields.io/badge/TopSky-2.5.11-blue.svg)](https://forum.vatsim-scandinavia.org/d/45-topsky-plugin-25-beta-11)
 [![gr-version](https://img.shields.io/badge/Ground%20Radar-1.5-blue.svg)](https://vats.im/GRplugin)
 [![cdm-version](https://img.shields.io/badge/CDM-2.2.4-blue.svg)](https://github.com/rpuig2001/CDM)
 [![afv-version](https://img.shields.io/badge/AFV-1.2.1-blue.svg)](https://audio.vatsim.net/docs/2.0/atc/euroscope)
-[![iassure-version](https://img.shields.io/badge/IASsure-1.5.0-blue.svg)](https://github.com/MorpheusXAUT/IASsure)
 
 The TopSky plugin is developed and maintained by Juha Holopainen from VATSIM Scandinavia. It is an almost complete set of tag items, tag menus, graphical elements on the radar display and some additional functionality based around the real world TopSky ATM system. 
 
@@ -79,4 +78,4 @@ Although - as its name suggests - the plugin is based on the TopSky ATM system, 
 
 # License
 
-topskylppc is available under the GPL-3.0 license. See the [LICENSE](LICENSE) file for more info. IASsure is bundled with topskylppc under the MIT license. See the [LICENSE](LPPC/Plugins/IASsure/LICENSE) file for more info.
+topskylppc is available under the GPL-3.0 license. See the [LICENSE](LICENSE) file for more info.
