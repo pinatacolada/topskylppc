@@ -30,7 +30,8 @@ jobs:
             LPPC/
             LICENSE
             LPPC_CTR.prf
-            LPPC_CTR_TS.prf
+            LPPC ACS.prf
+            LPPC APS.prf
             README.md
             !LPPC/Plugins/ACDM/CAD/
             !LPPC/Plugins/topsky/Documentation/Latex/
