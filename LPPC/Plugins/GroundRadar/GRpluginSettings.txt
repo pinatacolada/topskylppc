@@ -195,26 +195,6 @@ Airport_Elevation=24
 Airport_Radius=6.5
 Airport_Runway_Buffer_LVP=28:160.0
 
-Label=GND:DEP:0:
-Label=GND:DEP:1:
-Label=GND:DEP:2:
-Label=GND:DEP:3:
-
-Label=GND:ARR:0:
-Label=GND:ARR:1:
-Label=GND:ARR:2:
-Label=GND:ARR:3:
-
-Label=GND:OTH:0:
-Label=GND:OTH:1:
-Label=GND:OTH:2:
-Label=GND:OTH:3:
-
-Label=GND:UNC:0:
-Label=GND:UNC:1:
-Label=GND:UNC:2:
-Label=GND:UNC:3:
-
 List_Outbound=*,2,1427,650
 List_Inbound=*,2,1693,650
 List_Arrival=1,1427,780
