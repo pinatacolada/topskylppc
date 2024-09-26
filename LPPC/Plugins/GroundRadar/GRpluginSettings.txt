@@ -186,6 +186,11 @@ List_Alerts=1,1351,25
 List_Stand=0,1102,25
 List_Stand_Items=20
 
+System_APM=0
+System_RIM=0
+System_RUM=0 
+System_RVM=0
+
 Window_APP=1,700,25,410,410
 Window_APP_Extensions=0
 Window_APP_Scale=14
