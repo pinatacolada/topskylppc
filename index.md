@@ -61,7 +61,11 @@
 
      ![Download](/assets/img/prof.png)
 
-1.  EuroScope will now load into this window. Locate the mini VCCS window, to the right of the Clock window and above the METAR list, and right click either LINE 1 or LINE 2, to open the full VCCS window.
+1.  EuroScope will now load into this window. 
+
+     ![Download](/assets/img/complete.png)
+
+1.   Locate the mini VCCS window, to the right of the Clock window and above the METAR list, and right click either LINE 1 or LINE 2, to open the full VCCS window.
 
      ![VCCS mini window](/assets/img/vccsmini.png)
 
