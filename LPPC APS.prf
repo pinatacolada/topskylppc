@@ -55,13 +55,13 @@ RecentFiles	Recent8	LPPC\ASR\LPPR_GND_TSGR.asr
 RecentFiles	Recent9	LPPC\ASR\LPPR_GND_TSGR.asr
 TeamSpeakVccs	TsVccsMiniControlX	1741
 TeamSpeakVccs	TsVccsMiniControlY	675
-LastSession	atis_freq0	124304
+LastSession	atis_freq0	124305
 LastSession	atis_url0	https://atis.vatsim.pt/?metar=$atisairport&rwy=$arrrwy($atisairport)&letter=$atiscode&show_freqs=true&lvp=false
 LastSession	atis_callsign0	LPPR_ATIS
 LastSession	atis_message0	[LPPR ATIS] [A] 1800[Z] [RNP APCH] [RWY IN USE 35] [TRL] 50  [WND] 340 [DEG] 15 [KT] [CAVOK] [TEMP] 18 [DP] 12 [QNH] 1016 [ACK LPPR INFO] [A]
 LastSession	atis_auto0	1
 LastSession	atis_callsign1	LPPT_ATIS
-LastSession	atis_freq1	124154
+LastSession	atis_freq1	124155
 LastSession	atis_auto1	1
 LastSession	atis_url1	https://atis.vatsim.pt/?metar=$atisairport&rwy=$arrrwy($atisairport)&letter=$atiscode&show_freqs=true&lvp=false
 LastSession	atis_message1	[LPPT ATIS] [A] 1800[Z] [EXP ILS APCH] [RWY IN USE 02] [TRL] 50 [AFTER LDG VACATE VIA H4] [WND] 330 [DEG] 15 [KT] [CAVOK] [TEMP] 19 [DP] 9 [QNH] 1015 [COMPLY WITH SPEED LIMITATIONS] [ACK LPPT INFO] [A]
