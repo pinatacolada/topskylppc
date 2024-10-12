@@ -45,34 +45,31 @@ ASRFastKeys	9	LPPC\ASR\LPPR_GND_TSGR.asr
 RecentFiles	Recent1	LPPC\ASR\LPPC_CTR_TS.asr
 LastSession	connecttype	0
 LastSession	certificate	vatsim ID
-RecentFiles	Recent2	LPPC\ASR\LPMA_GND_TSGR.asr
-RecentFiles	Recent3	LPPC\ASR\LPFR_GND_TSGR.asr
+RecentFiles	Recent2	LPPC\ASR\LPCS_TWR.asr
+RecentFiles	Recent3	LPPC\ASR\LPPR_GND_TSGR.asr
 RecentFiles	Recent4	LPPC\ASR\LPPT_GND_TSGR.asr
-RecentFiles	Recent5	LPPC\ASR\LPPR_GND_TSGR.asr
-RecentFiles	Recent6	LPPC\ASR\LPCS_TWR.asr
-RecentFiles	Recent7	LPPC\ASR\LPPC_CTR_TS.asr
-RecentFiles	Recent8	LPPC\ASR\LPPR_GND_TSGR.asr
-RecentFiles	Recent9	LPPC\ASR\LPPR_GND_TSGR.asr
+RecentFiles	Recent5	LPPC\ASR\LPFR_GND_TSGR.asr
+RecentFiles	Recent6	LPPC\ASR\LPMA_GND_TSGR.asr
 TeamSpeakVccs	TsVccsMiniControlX	1741
 TeamSpeakVccs	TsVccsMiniControlY	675
 LastSession	atis_freq0	124305
-LastSession	atis_url0	https://atis.vatsim.pt/?metar=$atisairport&rwy=$arrrwy($atisairport)&letter=$atiscode&show_freqs=true&lvp=false
+LastSession	atis_url0	https://vatatis.vatsim.pt/generate?LVO=FALSE&icao=$atisairport&runway=$arrrwy($atisairport)&info=$atiscode
 LastSession	atis_callsign0	LPPR_ATIS
-LastSession	atis_message0	[LPPR ATIS] [A] 1800[Z] [RNP APCH] [RWY IN USE 35] [TRL] 50  [WND] 340 [DEG] 15 [KT] [CAVOK] [TEMP] 18 [DP] 12 [QNH] 1016 [ACK LPPR INFO] [A]
+LastSession	atis_message0	LPPR ATIS A 1800Z RNP APCH RWY IN USE 35 TRL 55 WND 350 DEG 6 KT VIS 10KM CLD FEW 4800FT TEMP 19 DP 17 QNH 1009 ACK INFO A
 LastSession	atis_auto0	1
 LastSession	atis_callsign1	LPPT_ATIS
 LastSession	atis_freq1	124155
 LastSession	atis_auto1	1
-LastSession	atis_url1	https://atis.vatsim.pt/?metar=$atisairport&rwy=$arrrwy($atisairport)&letter=$atiscode&show_freqs=true&lvp=false
-LastSession	atis_message1	[LPPT ATIS] [A] 1800[Z] [EXP ILS APCH] [RWY IN USE 02] [TRL] 50 [AFTER LDG VACATE VIA H4] [WND] 330 [DEG] 15 [KT] [CAVOK] [TEMP] 19 [DP] 9 [QNH] 1015 [COMPLY WITH SPEED LIMITATIONS] [ACK LPPT INFO] [A]
+LastSession	atis_url1	https://vatatis.vatsim.pt/generate?LVO=FALSE&icao=$atisairport&runway=$arrrwy($atisairport)&info=$atiscode
+LastSession	atis_message1	LPPT ATIS A 1800Z EXP ILS APCH RWY IN USE 20 TRL 55 WND 150 DEG 5 KT VRB BTN 120 DEG AND 180 DEG VIS 10KM CLD FEW 2500FT FEW 3000FT TEMP 22 DP 17 QNH 1007 MEDIUM AND LGT AIRCRAFT EXP POSITION U FOR DEP TKOF AVBL DIST 2412 M IF UNABLE ADVISE BEFORE PUSH AFTER LDG VACATE VIA H1 ADVISE IF UNABLE ACK INFO A
 LastSession	atis_callsign2	LPFR_ATIS
 LastSession	atis_freq2	124205
-LastSession	atis_url2	https://atis.vatsim.pt/?metar=$atisairport&rwy=$arrrwy($atisairport)&letter=$atiscode&show_freqs=true&lvp=false
+LastSession	atis_url2	https://vatatis.vatsim.pt/generate?LVO=FALSE&icao=$atisairport&runway=$arrrwy($atisairport)&info=$atiscode
 LastSession	atis_auto2	1
-LastSession	atis_message2	[LPFR ATIS] [A] 1800[Z] [EXP ILS Z APCH] [RWY IN USE 28] [TRL] 55    [WND] 280 [DEG] 13 [KT] [CAVOK] [TEMP] 22 [DP] 12 [QNH] 1013 [ACK LPFR INFO] [A]
+LastSession	atis_message2	LPFR ATIS A 1800Z EXP ILS Z APCH RWY IN USE 10 TRL 55 WND 130 DEG 10 KT VIS 10KM FBL CLD FEW 1000FT SCT 1700FT FEW 2000FT TEMP 19 DP 18 QNH 1008 ACK INFO A
 LastSession	atis_callsign3	LPMA_ATIS
 LastSession	atis_freq3	130355
-LastSession	atis_url3	https://atis.vatsim.pt/?metar=$atisairport&rwy=$arrrwy($atisairport)&letter=$atiscode&show_freqs=true&lvp=false
+LastSession	atis_url3	https://vatatis.vatsim.pt/generate?LVO=FALSE&icao=$atisairport&runway=$arrrwy($atisairport)&info=$atiscode
 LastSession	atis_auto3	1
-LastSession	atis_message3	[LPMA ATIS] [A] 1800[Z] [EXP RNP APP] [RWY IN USE 05] [TRL] 60  [WND] 040 [DEG] 11 [KT]  [VIS] 10[KM] [CLD] [SCT] {1500} [FT] [TEMP] 20 [DP] 15 [QNH] 1020 [ACK LPMA INFO] [A]
+LastSession	atis_message3	LPMA ATIS A 1800Z EXP RNP APP RWY IN USE 05 TRL 60 WND 350 DEG 9 KT VRB BTN 270 DEG AND 020 DEG VIS 10KM CLD FEW 1600FT TEMP 25 DP 12 QNH 1013 RS WND 120 DEG 6 KT VRB BTN 060 DEG AND 160 DEG ACK INFO A
 LastSession	atis_freq4	118000
