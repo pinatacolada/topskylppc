@@ -23,3 +23,22 @@ Plugins	Plugin0	\AfvEuroScopeBridge.dll
 Plugins	Plugin0Display0	Standard ES radar screen
 Plugins	Plugin1	\ESTagItems.dll
 Plugins	Plugin1Display0	Standard ES radar screen
+Sounds	Sound0	\LPPC\Sounds\handoff_request.wav
+Sounds	Sound1	\LPPC\Sounds\handoff_accept.wav
+Sounds	Sound2	\LPPC\Sounds\conflict_alert.wav
+Sounds	Sound3	\LPPC\Sounds\radio_message.wav
+Sounds	Sound4	\LPPC\Sounds\private_message.wav
+Sounds	Sound5	\LPPC\Sounds\atc_message.wav
+Sounds	Sound6	\LPPC\Sounds\broadcast_message.wav
+Sounds	Sound7	\LPPC\Sounds\landline_request.wav
+Sounds	Sound8	\LPPC\Sounds\supervisor_message.wav
+Sounds	Sound9	\LPPC\Sounds\connected.wav
+Sounds	Sound10	\LPPC\Sounds\disconnected.wav
+Sounds	Sound11	\LPPC\Sounds\ongoing_request.wav
+Sounds	Sound12	\LPPC\Sounds\ongoing_accepted.wav
+Sounds	Sound13	\LPPC\Sounds\ongoing_refused.wav
+Sounds	Sound14	\LPPC\Sounds\ongoing_manual.wav
+Sounds	Sound15	\LPPC\Sounds\new_atis.wav
+Sounds	Sound16	\LPPC\Sounds\handoff_refused.wav
+Sounds	Sound17	\LPPC\Sounds\pointout.wav
+Sounds	Sound18	\LPPC\Sounds\startup.wav
