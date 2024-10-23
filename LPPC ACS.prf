@@ -73,3 +73,22 @@ LastSession	atis_url3	https://vatatis.vatsim.pt/generate?lvo=FALSE&icao=$atisair
 LastSession	atis_auto3	1
 LastSession	atis_message3	LPMA ATIS A 1800Z EXP RNP APP RWY IN USE 05 TRL 60 WND 350 DEG 9 KT VRB BTN 270 DEG AND 020 DEG VIS 10KM CLD FEW 1600FT TEMP 25 DP 12 QNH 1013 RS WND 120 DEG 6 KT VRB BTN 060 DEG AND 160 DEG ACK INFO A
 LastSession	atis_freq4	118000
+Sounds	Sound0	\LPPC\Sounds\handoff_request.wav
+Sounds	Sound1	\LPPC\Sounds\handoff_accept.wav
+Sounds	Sound2	\LPPC\Sounds\conflict_alert.wav
+Sounds	Sound3	\LPPC\Sounds\radio_message.wav
+Sounds	Sound4	\LPPC\Sounds\private_message.wav
+Sounds	Sound5	\LPPC\Sounds\atc_message.wav
+Sounds	Sound6	\LPPC\Sounds\broadcast_message.wav
+Sounds	Sound7	\LPPC\Sounds\landline_request.wav
+Sounds	Sound8	\LPPC\Sounds\supervisor_message.wav
+Sounds	Sound9	\LPPC\Sounds\connected.wav
+Sounds	Sound10	\LPPC\Sounds\disconnected.wav
+Sounds	Sound11	\LPPC\Sounds\ongoing_request.wav
+Sounds	Sound12	\LPPC\Sounds\ongoing_accepted.wav
+Sounds	Sound13	\LPPC\Sounds\ongoing_refused.wav
+Sounds	Sound14	\LPPC\Sounds\ongoing_manual.wav
+Sounds	Sound15	\LPPC\Sounds\new_atis.wav
+Sounds	Sound16	\LPPC\Sounds\handoff_refused.wav
+Sounds	Sound17	\LPPC\Sounds\pointout.wav
+Sounds	Sound18	\LPPC\Sounds\startup.wav
