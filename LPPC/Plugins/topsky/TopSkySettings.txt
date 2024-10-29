@@ -199,6 +199,7 @@ Window_CPDLC_Current_MaxListItems=7
 Window_CPDLC_History_MaxListItems=7
 Window_DCL_SetASSR=1
 Window_DCL_SetCFL=1
+Window_DCL_StartUp_Default=0
 Window_FlightPlan_ShowAlways=1
 Window_Msg_MaxItems=30
 Window_Msg_MaxListItems=7
