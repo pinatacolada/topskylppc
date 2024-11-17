@@ -3,19 +3,18 @@
 	<rate ops="20" />
 	<rateLvo ops="13" />
 	<expiredCtot time="15" />
-	<ReaMsg minutes="0" />
 	<realMode mode="false" />
 	<invalidateAtTsat mode="true" />
 	<Rates url="https://raw.githubusercontent.com/pinatacolada/topskylppc/master/LPPC/Plugins/ACDM/rate.txt" />
 	<Taxizones url="" />
-	<Ctot url="" />
+	<Ctot url="https://archivos.vatsimspain.es/Operaciones/Plugins/CDM_data/ctot.txt" />
 	<DefaultTaxiTime minutes="15" />
-	<RefreshTime seconds="20" />
+	<RefreshTime seconds="10" />
 	<Debug mode="false" />
 	<FlowRestrictions url="https://ecfmp.vatsim.net/api/v1/plugin" />
-	<vdgsFileType type="3" />
-	<ftpHost host="" />
-	<ftpUser user="" />
-	<ftpPassword password="" />
-	<Su_Wait mode="false" />
+	<vdgsFileType type="3"/>
+	<ftpHost host="ftp.vatsimspain.es" />
+	<ftpUser user="aman_vatspa" />
+	<ftpPassword password="Ek0TxdyF33yaxBqxRAK5" />
+	<Su_Wait mode="true" />
 </CDM>
