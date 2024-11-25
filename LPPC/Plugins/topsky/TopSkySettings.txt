@@ -139,7 +139,7 @@ MSAW_PredictionTime=120
 
 MTCD_Filter_Dep=3
 MTCD_Floor=8500
-MTCD_PLC_Time=5
+MTCD_PLC_Time=4
 
 RDF_Mode=-1
 
