@@ -32,7 +32,7 @@ Airspace_ASSR_OAT_Type=0
 Airspace_ASSR_APL_StartCode=3205
 Airspace_ASSR_APL_EndCode=3277
 Airspace_No_DUPE_Codes=2000,7000
-Airspace_NOTAM_Add=LPPC,LECM
+Airspace_NOTAM_Add=LPPC
 Airspace_P_Flag=LPPR,LPPT,LPCS,LPFR,LPMA,LPPS
 Airspace_SIGMET_Areas=LPPC
 
