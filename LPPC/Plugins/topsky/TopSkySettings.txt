@@ -80,7 +80,6 @@ FlightLeg_Label_Point=0
 FlightLeg_Label_DIST=0
 FlightLeg_Label_RFL=0
 FlightLeg_Label_SCFL=0
-FlightLeg_LineWidth=0
 
 FPCP_MinState=0
 
