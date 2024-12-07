@@ -83,6 +83,8 @@ FlightLeg_Label_SCFL=0
 
 FPCP_MinState=0
 
+HTTP_AUP_URL=https://eaup.vatsim.pt/api/v2/areas/LP/
+
 HTTP_GRIB_Latitude_Max=45
 HTTP_GRIB_Latitude_Min=30
 HTTP_GRIB_Longitude_Max=-5
