@@ -98,11 +98,6 @@ HTTP_METAR_Data_Suffix=(suffix)
 
 HTTP_natTrak_Filter_ADEP_Lon_Min=-22
 
-HTTP_NOTAM_Area_Sched_Text= 
-HTTP_NOTAM_Server=https://eaup.vatsim.pt/api/v1/topsky/areas/LP/notam/
-HTTP_NOTAM_Page_Prefix=?loc=
-HTTP_NOTAM_Page_Suffix=
-
 Label_ACF_Use=0
 Label_CompCsCaps=1
 Label_COP_MaxChars=5
