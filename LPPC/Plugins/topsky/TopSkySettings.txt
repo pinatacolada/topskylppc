@@ -53,6 +53,7 @@ Areas_Label_Font=Lucida Sans Unicode
 Areas_Label_FontSize=12
 Areas_Label_UserText=0,0
 Areas_PreActiveTime=1800
+Areas_AUP_Activation=1
 Areas_AUP_UserText=MIL
 
 Color_Active_Map_Type_3=132,142,139	//D GREY
@@ -188,6 +189,7 @@ Track_PredictionLine=2
 Vector_AHDG_Label_Dist=2
 Vector_MinSep_Label_Time=1
 
+Window_ASM=1,200,200,610,270
 Window_ASM_ShowNOTAMasUsertext=0
 Window_ASM_Chars_Name=10
 Window_CARD_MaxConflicts=15
@@ -220,7 +222,6 @@ Window_MsgOut=0,1200,957
 Window_SAP=1,1592,850
 Window_UpperWinds=1,1150,300
 
-Window_ASM=0,200,200,610,270
 Window_CARD=1,1470,600,450,250
 Window_NOTAM=1,700,300,400
 Window_VAW=0,1610,450
