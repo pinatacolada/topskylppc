@@ -1,7 +1,6 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
-SECTORFILE:C:\Program Files (x86)\EuroScope\LPPC-Package_20200116115535-200101-0001.sct
 SECTORTITLE:LPPC-Package_20200116115535-200101-0001.sct
 Airports:LPBG:symbol
 Airports:LPBR:symbol
@@ -696,15 +695,15 @@ Free Text:SCT2\LPR-60A:freetext
 Free Text:SCT2\LPR-60B:freetext
 Free Text:SCT2\LPR-60BB:freetext
 Free Text:SCT2\LPR-61:freetext
-Free Text:VFR Referências\ABOBA:freetext
-Free Text:VFR Referências\BACEL:freetext
-Free Text:VFR Referências\MAXED:freetext
-Free Text:VFR Referências\NTRM:freetext
-Free Text:VFR Referências\OBRM:freetext
-Free Text:VFR Referências\P1:freetext
-Free Text:VFR Referências\P2:freetext
-Free Text:VFR Referências\P3:freetext
-Free Text:VFR Referências\VALVE:freetext
+Free Text:VFR ReferÃªncias\ABOBA:freetext
+Free Text:VFR ReferÃªncias\BACEL:freetext
+Free Text:VFR ReferÃªncias\MAXED:freetext
+Free Text:VFR ReferÃªncias\NTRM:freetext
+Free Text:VFR ReferÃªncias\OBRM:freetext
+Free Text:VFR ReferÃªncias\P1:freetext
+Free Text:VFR ReferÃªncias\P2:freetext
+Free Text:VFR ReferÃªncias\P3:freetext
+Free Text:VFR ReferÃªncias\VALVE:freetext
 Geo:GEO:
 Geo:GM Landmark Morocco Coastline:
 Geo:LE Landmark Spain Coastline:

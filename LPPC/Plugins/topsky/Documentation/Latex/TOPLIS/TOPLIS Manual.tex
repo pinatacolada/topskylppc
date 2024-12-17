@@ -9,7 +9,7 @@
 \medskip 
 
 Version 3.0}
-\setdocrevision{1}
+\setdocrevision{2}
 
 \begin{document}
 
@@ -1623,6 +1623,12 @@ Sector States are used to control label construction, placement in lists, filter
     \colorref{Warning} 
 
     \bigskip 
+
+    If highlighted:
+
+    \colorref{Warning} 
+
+    \bigskip
 
     Mark All: 
     
@@ -3513,11 +3519,11 @@ When \tagref{tag:MTCD} is displayed R: Toggle Flight Leg display}
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelsel.png}};
 
   \drawtag{1cm}{0.5,1.35}{afl};
-  \drawtagdesc{2cm}{-1.5,0}{lafl}{L:Open \winref{menu:afl}\\R: Toggle \winref{func:lbh}};
+  \drawtagdesc{2cm}{-1.5,0}{lafl}{L: Open \winref{menu:afl} / Toggle AFL highlight\\R: Toggle \winref{func:lbh}};
   \draw[red,very thick] (afl) -- (lafl);
 
   \drawtag{1cm}{1.7,1.35}{cfl};
-  \drawtagdesc{2cm}{-2,3.2}{lcfl}{L:Open \winref{menu:cfl}\\R: Open \winref{win:vaw}};
+  \drawtagdesc{2cm}{-2,3.2}{lcfl}{L: Open \winref{menu:cfl}\\R: Open \winref{win:vaw}};
   \draw[red,very thick] (cfl) -- (lcfl);
 
   \drawtag{1.35cm}{3,1.35}{gs};
@@ -3553,7 +3559,7 @@ When \tagref{tag:ACF} is displayed L: Toggle \winref{tag:ACF} field color R: Cle
   \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=0.65\textwidth]{img/labelsel.png}};
 
   \drawtag{1cm}{0.6,0.85}{xfl};
-  \drawtagdesc{2cm}{-1.5,1.05}{lxfl}{L:Open XFL Menu \\ R: Open \winref{win:vaw} };
+  \drawtagdesc{2cm}{-1.5,1.05}{lxfl}{L: Open XFL Menu \\ R: Toggle \winref{func:lbh} };
   \draw[red,very thick] (xfl) -- (lxfl);
 
   \drawtag{1.35cm}{3.3,0.85}{ahdg};
@@ -5071,7 +5077,7 @@ The Individual Quick Look function can be used to override the CJI filter for a 
 
 \subsection{Level Band Highlight}\label{func:lbh}
 
-Right click AFL track label item 
+Right click AFL or XFL track label item 
 
 \bigskip
 
