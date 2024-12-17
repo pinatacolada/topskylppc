@@ -16,5 +16,5 @@
 	<ftpHost host="#{CDM_FTP_HOST}#" />
 	<ftpUser user="#{CDM_FTP_USER}#" />
 	<ftpPassword password="#{CDM_FTP_PASSWORD}#" />
-	<Su_Wait mode="true" />
+	<Su_Wait mode="false" />
 </CDM>
