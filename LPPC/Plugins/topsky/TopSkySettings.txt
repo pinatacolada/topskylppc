@@ -32,7 +32,7 @@ Airspace_ASSR_OAT_Type=0
 Airspace_ASSR_APL_StartCode=3205
 Airspace_ASSR_APL_EndCode=3277
 Airspace_No_DUPE_Codes=2000,7000
-Airspace_NOTAM_Add=LPPC,LECM
+Airspace_NOTAM_Add=LPPC
 Airspace_P_Flag=LPPR,LPPT,LPCS,LPFR,LPMA,LPPS
 Airspace_SIGMET_Areas=LPPC
 
@@ -53,6 +53,7 @@ Areas_Label_Font=Lucida Sans Unicode
 Areas_Label_FontSize=12
 Areas_Label_UserText=0,0
 Areas_PreActiveTime=1800
+Areas_AUP_Activation=1
 Areas_AUP_UserText=MIL
 
 Color_Active_Map_Type_3=132,142,139	//D GREY
@@ -80,9 +81,10 @@ FlightLeg_Label_Point=0
 FlightLeg_Label_DIST=0
 FlightLeg_Label_RFL=0
 FlightLeg_Label_SCFL=0
-FlightLeg_Potential_Risk=0
 
 FPCP_MinState=0
+
+HTTP_AUP_URL=https://eaup.vatsim.pt/api/v2/areas/LP/
 
 HTTP_GRIB_Latitude_Max=45
 HTTP_GRIB_Latitude_Min=30
@@ -96,11 +98,6 @@ HTTP_METAR_Data_Prefix=(prefix)
 HTTP_METAR_Data_Suffix=(suffix)
 
 HTTP_natTrak_Filter_ADEP_Lon_Min=-22
-
-HTTP_NOTAM_Area_Sched_Text= 
-HTTP_NOTAM_Server=https://eaup.vatsim.pt/api/v1/topsky/areas/LP/notam/
-HTTP_NOTAM_Page_Prefix=?loc=
-HTTP_NOTAM_Page_Suffix=
 
 Label_ACF_Use=0
 Label_CompCsCaps=1
@@ -139,7 +136,7 @@ MSAW_PredictionTime=120
 
 MTCD_Filter_Dep=3
 MTCD_Floor=8500
-MTCD_PLC_Time=5
+MTCD_PLC_Time=4
 
 RDF_Mode=-1
 
@@ -189,8 +186,10 @@ System_UseTSAborderHighlightColor=1
 
 Track_PredictionLine=2
 
+Vector_AHDG_Label_Dist=2
 Vector_MinSep_Label_Time=1
 
+Window_ASM=1,200,200,610,270
 Window_ASM_ShowNOTAMasUsertext=0
 Window_ASM_Chars_Name=10
 Window_CARD_MaxConflicts=15
@@ -223,7 +222,6 @@ Window_MsgOut=0,1200,957
 Window_SAP=1,1592,850
 Window_UpperWinds=1,1150,300
 
-Window_ASM=0,200,200,610,270
 Window_CARD=1,1470,600,450,250
 Window_NOTAM=1,700,300,400
 Window_VAW=0,1610,450
