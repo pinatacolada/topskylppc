@@ -334,3 +334,4 @@ soundbackends
 /CacheXDll.pdb
 DEVPROF.prf
 LPPC/Plugins/ACDM/log.txt
+LPPC/Plugins/ACDM/CDM_data_LPPT.json
