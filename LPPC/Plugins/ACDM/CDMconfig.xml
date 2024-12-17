@@ -13,14 +13,8 @@
 	<Debug mode="false" />
 	<FlowRestrictions url="https://ecfmp.vatsim.net/api/v1/plugin" />
 	<vdgsFileType type="3"/>
-<<<<<<< HEAD
-	<ftpHost host="b" />
-	<ftpUser user="b" />
-	<ftpPassword password="b" />
-=======
-	<ftpHost host="#{secrets.CDM_FTP_HOST}#" />
-	<ftpUser user="#{secrets.CDM_FTP_USER}#" />
-	<ftpPassword password="#{secrets.CDM_FTP_PASSWORD}#" />
->>>>>>> 1431509 (fix secrets maybe)
+	<ftpHost host="c" />
+	<ftpUser user="c" />
+	<ftpPassword password="c" />
 	<Su_Wait mode="true" />
 </CDM>
