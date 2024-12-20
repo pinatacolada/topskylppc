@@ -251,6 +251,33 @@ Interaction with core A-CDM systems is done with classic command line inputs:
         Description of the restriction impacting the flight &   
           \colorref{color8}\\ \hline
 
+  FSTS \nextrow \label{tag:FSTS}&  
+  Flight Plan Status&
+      REA if Ready message has been sent
+      
+      PRIO to give priority for improvement
+      
+      SUSP if flight plan has been suspended 
+      
+      Empty otherwise &   
+      REA: 
+      
+      \colorref{color5}
+      
+      \bigskip
+
+      PRIO: 
+      
+      \colorref{color1}
+
+      \bigskip
+      
+      SUSP: 
+      
+      \colorref{color7}
+      
+      \\ \hline
+
   Ready \nextrow \label{tag:Ready}&  
     Ready State Flag&
       Used to signal Ready state. Setting Ready also records time of Ready or Start-Up Request &   
@@ -4320,6 +4347,7 @@ The Departure List contains all departures still on the ground of the controlled
   \tagref{tag:TTOT}             &                                     & TTOT Options              \\ \hline
   \tagref{tag:CTOT}             &                                     & CTOT Options              \\ \hline
   \tagref{tag:ECTOT}            & Add ECTOT to CTOT                   & ECTOT Options             \\ \hline
+  \tagref{tag:FSTS}             &                                     & Network Status Options    \\ \hline
   \tagref{tag:Flow Message}     & Get FM as text                      &                           \\ \hline
   \tagref{tag:Ready}            & Toggle Ready                        &                           \\ \hline
   \tagref{tag:ATYP}             &                                     &                           \\ \hline
