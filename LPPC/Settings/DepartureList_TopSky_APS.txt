@@ -9,7 +9,7 @@ m_HeaderOnly:0
 m_Column: C/S:9:0:10021:6:39:1:TopSky plugin:TopSky plugin:TopSky plugin:4:0.0
 m_Column:EOBT:5:1:1:100:120:0:CDM Plugin:CDM Plugin:CDM Plugin:1:0.0
 m_Column:TOBT:5:1:4:115:121:1:CDM Plugin:CDM Plugin:CDM Plugin:1:0.0
-m_Column:TSAT:5:1:2:114:133:1:CDM Plugin:CDM Plugin:CDM Plugin:1:0.0
+m_Column:TSAT:5:1:2:114:0:1:CDM Plugin:CDM Plugin::1:0.0
 m_Column:TSAC:5:1:5:103:104:0:CDM Plugin:CDM Plugin:CDM Plugin:1:0.0
 m_Column:ASRT:5:1:7:107:0:0:CDM Plugin:CDM Plugin::1:0.0
 m_Column:ASAT:5:1:6:0:0:0:CDM Plugin:::1:0.0
