@@ -48,6 +48,14 @@ jobs:
           generate_release_notes: true
           name: 'TopSky Portugal vACC ${{ github.event.inputs.version }}'
           tag_name: '${{ github.event.inputs.version }}'
-          files: 'toplis${{ github.event.inputs.version }}.zip'
+          files:  |
+            LPPC/
+            LICENSE
+            LPPC_CTR.prf
+            LPPC ACS.prf
+            LPPC APS.prf
+            README.md
+            !LPPC/Plugins/ACDM/CAD/
+            !LPPC/Plugins/topsky/Documentation/Latex/
             
             
