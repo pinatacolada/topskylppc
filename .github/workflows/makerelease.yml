@@ -1,4 +1,4 @@
-name: Make Release Artifact
+name: Release
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -10,7 +10,7 @@ on:
         # Friendly description to be shown in the UI instead of 'name'
         description: 'Release version to include in zip file name'
         # Default value if no value is explicitly provided
-        default: '2xx'
+        default: '3.x.x'
         # Input has to be provided for the workflow to run
         required: true
         # The data type of the input
@@ -30,6 +30,7 @@ jobs:
           no-telemetry: 'true'
       - name: Remove extra files
         run: |
+          rm -r .git
           rm -r .github 
           rm -r .vscode 
           rm -r assets
