@@ -33,7 +33,14 @@ jobs:
         with:
           type: 'zip'
           filename: 'toplis${{ github.event.inputs.version }}.zip'
-          exclusions: '.github .vscode assets .git* *.yml LPPC/Plugins/ACDM/CAD/ LPPC/Plugins/topsky/Documentation/Latex/'
+          exclusions: |
+            .github 
+            .vscode 
+            assets 
+            .git* 
+            *.yml 
+            LPPC/Plugins/ACDM/CAD/ 
+            LPPC/Plugins/topsky/Documentation/Latex/
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.0.0
         with:
