@@ -28,6 +28,12 @@ jobs:
           sources: 'LPPC/Plugins/ACDM/CDMconfig.xml'
           variables: '[${{ toJSON(vars) }},${{ toJSON(secrets) }}]'
           no-telemetry: 'true'
+      - name: Zip files
+        uses: thedoctor0/zip-release@0.7.5
+        with:
+          type: 'zip'
+          filename: 'toplis${{ github.event.inputs.version }}.zip'
+          exclusions: '.github .vscode assets .git* *.yml LPPC/Plugins/ACDM/CAD/ LPPC/Plugins/topsky/Documentation/Latex/'
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.0.0
         with:
@@ -48,14 +54,6 @@ jobs:
           generate_release_notes: true
           name: 'TopSky Portugal vACC ${{ github.event.inputs.version }}'
           tag_name: '${{ github.event.inputs.version }}'
-          files:  |
-            LPPC/
-            LICENSE
-            LPPC_CTR.prf
-            LPPC ACS.prf
-            LPPC APS.prf
-            README.md
-            !LPPC/Plugins/ACDM/CAD/
-            !LPPC/Plugins/topsky/Documentation/Latex/
+          files: 'toplis${{ github.event.inputs.version }}.zip'
             
             
