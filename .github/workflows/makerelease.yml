@@ -42,4 +42,12 @@ jobs:
             !LPPC/Plugins/ACDM/CAD/
             !LPPC/Plugins/topsky/Documentation/Latex/
           retention-days: 2
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          name: 'TopSky Portugal vACC ${{ github.event.inputs.version }}'
+          tag_name: '${{ github.event.inputs.version }}'
+          files: 'toplis${{ github.event.inputs.version }}.zip'
+            
             
