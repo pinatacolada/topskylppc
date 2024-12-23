@@ -28,6 +28,16 @@ jobs:
           sources: 'LPPC/Plugins/ACDM/CDMconfig.xml'
           variables: '[${{ toJSON(vars) }},${{ toJSON(secrets) }}]'
           no-telemetry: 'true'
+      - name: Remove extra files
+        run: |
+          rm -r .github 
+          rm -r .vscode 
+          rm -r assets
+          rm -r .gitignore
+          rm -r .gitlab-ci.yml
+          rm -r _config.yml
+          rm -r LPPC/Plugins/ACDM/CAD/
+          rm -r LPPC/Plugins/topsky/Documentation/Latex/
       - name: Zip files
         uses: thedoctor0/zip-release@0.7.5
         with:
@@ -41,20 +51,6 @@ jobs:
             *.yml 
             LPPC/Plugins/ACDM/CAD/ 
             LPPC/Plugins/topsky/Documentation/Latex/
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v4.0.0
-        with:
-          name: toplis${{ github.event.inputs.version }}
-          path: |
-            LPPC/
-            LICENSE
-            LPPC_CTR.prf
-            LPPC ACS.prf
-            LPPC APS.prf
-            README.md
-            !LPPC/Plugins/ACDM/CAD/
-            !LPPC/Plugins/topsky/Documentation/Latex/
-          retention-days: 2
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
