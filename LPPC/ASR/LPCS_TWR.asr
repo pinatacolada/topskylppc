@@ -65,7 +65,8 @@ Free Text:LPCS Taxiways\W:freetext
 Geo:GEO:
 Geo:LP Landmark Continental Coastline:
 Geo:LPBJ Groundlayout:
-Geo:LPCS Groundlayout:
+Geo:LPCS Groundlayout rwy:
+Geo:LPCS Groundlayout twy:
 Geo:LPVZ Groundlayout:
 Regions:LPCS Groundlayout:polygon
 Runways:LPAR 04-22:centerline
