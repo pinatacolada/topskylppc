@@ -2195,6 +2195,10 @@ Sector States are used to control label construction, placement in lists, filter
     DUPE indicator (see also ALRT) &
     “D”&
     \colorref{Warning}\\ \hline
+  EAT \nextrow \label{tag:EAT}&
+    Expected Approach Time &
+    Manually entered time in “HHMM” format&
+    \\ \hline
   EET \nextrow \label{tag:EET}&
     Estimated Elapsed Time &
     “HHMM” &
@@ -2541,7 +2545,17 @@ Sector States are used to control label construction, placement in lists, filter
     Else: 
     
     - first 30/45 characters (2 or 3 parts) &
-     \\ \hline
+    \\ \hline
+  RT \nextrow \label{tag:S}&
+    EAT given indicator &
+    EAT not given to pilot: “$\square$” 
+    
+    EAT given to pilot: “$\blacksquare$”
+
+    \bigskip
+
+    (local flag only, not sent to other controllers)&
+    \\ \hline
   S \nextrow \label{tag:S}&
     Mode S mismatch indicator &
     “S” if downloaded callsign is different than coupled flight plan callsign &
@@ -3018,7 +3032,7 @@ Shows the number of received SIGMET messages. The number is limited to 99, and i
 
 \begin{longtable}{p{5cm} p{7.5cm}}
   General Information…      & Opens the \winref{win:geninfo}\\
-  Document Viewer…          & Opens the \winref{win:dvw}\\
+  MISC Information…          & Opens the \winref{win:minfw}\\
   NOTAM…                    & Opens the \winref{win:notamlw}\\
   Small QNH/TL…             & Opens the \winref{win:sqnhw}\\
   LFUNC Frequency Plan…     & Opens the \winref{win:lfunc}\\
@@ -4280,12 +4294,13 @@ When there is no answer to a CPDLC uplink clearance, this menu can be used to re
 \label{menu:tm}
 \capdimage{img/etd.png}{Time Menu}
 
-The Time menu is used to set/change the time value for ATD, CTOT, EOBT, ETD, NBT and NLT fields.
+The Time menu is used to set/change the time value for ATD, CTOT, EAT, EOBT, ETD, NBT and NLT fields.
 Default values are:
 
 \begin{longtable}{p{5cm} p{7.5cm}}
 ATD     & Current time\\
 CTOT    & current field value if available, current time otherwise\\
+EAT     & current field value if available, current time otherwise\\
 EOBT    & Current time\\
 ETD     & Current field value\\
 NBT     & Current field value if available, current time otherwise\\
@@ -4616,7 +4631,7 @@ Up to 2 lists can be displayed. Each list may be configured with different filte
   \tagref{tag:TAS}      &                         &                           \\ \hline
   \tagref{tag:RFL}      & Open \winref{menu:rfl}  & Open \winref{win:dlcmw}   \\ \hline
   \tagref{tag:ETOHP}\footnotemark[1]    &                         &           \\ \hline
-  \tagref{tag:OP TEXT2}\footnotemark[2]   & Edit OP\_TEXT2          &         \\ \hline
+  \tagref{tag:EAT}      & Open \winref{menu:tm}   &                           \\ \hline
   \tagref{tag:STAR}     & Open STAR list          &                           \\ \hline
   \tagref{tag:ARWY}     & Open Runway list        &                           \\ \hline
   \tagref{tag:HPT}       & Open \winref{menu:wpt}  &                          \\ \hline
@@ -4624,7 +4639,6 @@ Up to 2 lists can be displayed. Each list may be configured with different filte
 \end{longtable}
 
 \footnotetext[1]{Labeled as ETO}
-\footnotetext[2]{Labeled as EAT}
 
 \subsection{Holding List}\label{list:hold}
 
@@ -4655,12 +4669,13 @@ The list sorting option is displayed next to the "View" label. Clicking on it op
 \bigskip
 
 \begin{longtable}{p{5cm} p{7.5cm}}
+  EAT/HPT     & Expected Approach Time -> Holding point name -> Callsign\\
   ETO/HPT     & ETO at the holding point -> Holding point name -> Callsign\\
   HPT/CFL/AFL & Holding point name -> CFL -> AFL -> Callsign\\
   FX/STA      & Feeder fix name -> Scheduled time at feeder fix -> Callsign\\
 \end{longtable}
 
-For point-specific holding lists, the sorting options are “ETO”, “CFL/AFL” and “FX/STA”.
+For point-specific holding lists, the sorting options are “EAT”, “ETO”, “CFL/AFL” and “FX/STA”.
 
 \bigskip
 
@@ -4678,6 +4693,8 @@ The ETO column initially displays the estimated time over the holding fix. Once 
     ETO                     & optional  &                           &                           \\ \hline
     XFL                     & optional  & Open COPX Alt popup       &                           \\ \hline
     COPX                    & optional  & Open \winref{menu:wpt}    & Toggle route draw         \\ \hline
+    EAT                     & optional  & Open \winref{menu:tm}     &                           \\ \hline
+    RT (EAT given indicator)& optional  & Toggle EAT given indicator&                           \\ \hline
     PEL                     & optional  & Open COPX Alt popup       &                           \\ \hline
     FX                      & optional  &                           &                           \\ \hline
     STA                     & optional  &                           &                           \\ \hline
@@ -4686,6 +4703,10 @@ The ETO column initially displays the estimated time over the holding fix. Once 
   \end{longtable}
 
 If a track label has been hidden, it will be automatically unhidden if the aircraft is cleared to leave the holding or an incoming coordination message for the flight is received.
+
+\bigskip
+
+The expected approach time, if entered, is broadcast to other controllers as well. By default, 10 minutes after it a warning message will be entered into the tracking controller’s \winref{win:pqw} if the holding has not been terminated. The EAT is not used for any predictions. The EAT given indicator is not transmitted to other controllers.
 
 \subsection{Unsupported Lists}
 \label{list:unsup}
@@ -5505,7 +5526,7 @@ Holding List... -> “HPT” item
 
 \capdimage{img/stackman.png}{Stack Manager Window}
 
-The Stack Manager Windows give a quick look into the vertical positions of aircraft that have been given a holding clearance to the holding fix associated with the window in question.
+The Stack Manager Windows gives a quick look into the vertical positions of aircraft that have been given a holding clearance to the holding fix associated with the window in question.
 
 \bigskip
 
@@ -5523,7 +5544,16 @@ The window is split into three columns:
 
 \bigskip
 
-The window displays the aircraft labels at their cleared flight levels. For each aircraft the callsign, the vertical speed arrow if not in level flight (“\#” in \colorref{Warning} color for aircraft without altitude information), the RVSM capability indicator if applicable, and the \tagref{tag:CFL} is displayed. If there are more than one aircraft with the same \tagref{tag:CFL}, only one callsign will be shown. A “+” symbol in \colorref{SMW Overlap Box} color after the \tagref{tag:CFL} value indicates that there are more flights to be displayed. Clicking on the symbol will display a window with all the callsigns with that \tagref{tag:CFL}.
+The window displays the aircraft at their cleared flight levels. For each aircraft the label contains:
+
+\begin{itemize}
+  \item Callsign;
+  \item CFL;
+  \item Attitude indicator (“\#” in \colorref{Warning} color for aircraft without altitude information);
+  \item EAT.
+\end{itemize}
+
+If there are more than one aircraft with the same \tagref{tag:CFL}, only one callsign will be shown. A “+” symbol in \colorref{SMW Overlap Box} color after the \tagref{tag:CFL} value indicates that there are more flights to be displayed. Clicking on the symbol will display a window with all the callsigns with that \tagref{tag:CFL}.
 
 \bigskip
 
@@ -5549,6 +5579,7 @@ The mouse click areas of the Stack Manager Window:
     Slider or view background area  & Drag to adjust the lowest shown FL\\
     Aircraft callsigns              & Open \winref{menu:cs} \footnotemark[1]\\
     CFL                             & Open \winref{menu:cfl} \footnotemark[2]\\
+    EATs                            & Open \winref{menu:tm}\\
     + symbol                        & Open window to view all callsigns with that \tagref{tag:CFL}\\
     FL numbers                      & Toggle overflight status for that level\\   
 \end{longtable}
@@ -6072,7 +6103,7 @@ The “Updated at HH:MM” displays the timestamp of the data downloaded by the 
 
 \capdimage{img/adw.png}{Airfield Data Window}
 
-The window displays the QNH values, transition levels and other information for those airports that have a METAR displayed in the \winref{win:wxmw}. The transition level tables are defined in a data file, and if a table can’t be found for an airport in the list, a transition level will not be shown. The buttons in the window have no functionality.
+The window displays the QNH values, transition levels and other information for those airports that have a METAR displayed in the \winref{win:wxmw}. The transition level tables are defined in a data file, and if a table can’t be found for an airport in the list, a transition level will not be shown.
 
 \bigskip
 
@@ -6099,8 +6130,8 @@ The General Information Window displays basic information on the system state. T
     mode                & “Free”, “Operational”, “Proxy”, “Replay” or “Training” depending on the connection method \\
     role                & Own controller ID (between the mode and the “Normal” item)\\
     QNH                 & Shows the local QNH value (below the “Normal” item when available)\\
-    CPDLC Def           & Displays the state of the CPDLC Default setting\\
-    FPASD               & Displays the state of the FPASD setting \\
+    CPDLC Def: [ON|OFF] & Displays the state of the CPDLC Default setting\\
+    FPASD: [ON|OFF]     & Displays the state of the FPASD setting \\
     Alert functions     & Status of the alert functions. The function name is shown in \colorref{Warning} color if selected off or there’s a fault in the data file.\\
     CCAMS               & Displayed if plugin is selected as the SSR code source\\
                         & $\bullet$ \colorref{Urgency} color if the SSR data file contains no codes\\
@@ -6108,19 +6139,19 @@ The General Information Window displays basic information on the system state. T
     IDLS                & Plugin set up to send DCL. \colorref{Warning} color if datalink comms are failed.\\
     AGCS                & \colorref{Warning} color if Hoppie datalink comms are failed\\
     MTCD                & \colorref{Warning} color if prediction time is set to zero    \\
-    SEK                 & Plugin is receiving AMAN data. \colorref{Warning} color if data loading has failed.\\
+    SEK                 & Displayed if plugin is receiving AMAN data. \colorref{Warning} color if data loading has failed.\\
 \end{longtable}
 
-\subsection{Document Viewer Window}
-\label{win:dvw}
+\subsection{Miscellaneous Information Window}
+\label{win:minfw}
 
-\winref{menu:global} -> Info -> Document Viewer...
+\winref{menu:global} -> Info -> MISC Information...
 
 \bigskip
 
-\capdimage{img/doc.png}{Document Viewer Window}
+\capdimage{img/minfw.png}{Document Viewer Window}
 
-The Document Viewer Window is used to browse and search for information in specific data files
+The Miscellaneous Information Window is used to browse and search for information in specific data files
 
 \begin{itemize}
     \item Aircraft - Information about aircraft types
