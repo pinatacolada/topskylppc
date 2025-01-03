@@ -1,4 +1,4 @@
-name: Make Release Artifact
+name: Release
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -10,7 +10,7 @@ on:
         # Friendly description to be shown in the UI instead of 'name'
         description: 'Release version to include in zip file name'
         # Default value if no value is explicitly provided
-        default: '2xx'
+        default: '3.x.x'
         # Input has to be provided for the workflow to run
         required: true
         # The data type of the input
@@ -28,18 +28,36 @@ jobs:
           sources: 'LPPC/Plugins/ACDM/CDMconfig.xml'
           variables: '[${{ toJSON(vars) }},${{ toJSON(secrets) }}]'
           no-telemetry: 'true'
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v4.0.0
+      - name: Remove extra files
+        run: |
+          rm -r .git
+          rm -r .github 
+          rm -r .vscode 
+          rm -r assets
+          rm -r .gitignore
+          rm -r .gitlab-ci.yml
+          rm -r _config.yml
+          rm -r LPPC/Plugins/ACDM/CAD/
+          rm -r LPPC/Plugins/topsky/Documentation/Latex/
+      - name: Zip files
+        uses: thedoctor0/zip-release@0.7.5
         with:
-          name: toplis${{ github.event.inputs.version }}
-          path: |
-            LPPC/
-            LICENSE
-            LPPC_CTR.prf
-            LPPC ACS.prf
-            LPPC APS.prf
-            README.md
-            !LPPC/Plugins/ACDM/CAD/
-            !LPPC/Plugins/topsky/Documentation/Latex/
-          retention-days: 2
+          type: 'zip'
+          filename: 'toplis${{ github.event.inputs.version }}.zip'
+          exclusions: |
+            .github 
+            .vscode 
+            assets 
+            .git* 
+            *.yml 
+            LPPC/Plugins/ACDM/CAD/ 
+            LPPC/Plugins/topsky/Documentation/Latex/
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          name: 'TopSky Portugal vACC ${{ github.event.inputs.version }}'
+          tag_name: '${{ github.event.inputs.version }}'
+          files: 'toplis${{ github.event.inputs.version }}.zip'
+            
             
