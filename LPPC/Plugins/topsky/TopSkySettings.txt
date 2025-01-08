@@ -228,10 +228,12 @@ Window_VAW=0,1610,450
 [_APP]
 Setup_LoadMap=ENVR\rivers
 Label_DIAS_Unsel_Default=1111
+Label_DRC_Unsel_Default=1111
 
 [_TWR]
 Setup_LoadMap=ENVR\rivers
 Label_DIAS_Unsel_Default=1111
+Label_DRC_Unsel_Default=1111
 
 [_CTR]
 Label_GS_Default=0000
