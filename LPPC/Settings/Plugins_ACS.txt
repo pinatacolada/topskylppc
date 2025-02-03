@@ -61,7 +61,7 @@ TopSky plugin:ACList/LOAD/m_Column_9:PSSR:5:0:10086:0:138:0:TopSky plugin::TopSk
 TopSky plugin:ACList/LOAD/m_Column_10:ASSR:5:0:10042:62:81:1:TopSky plugin:TopSky plugin:TopSky plugin
 TopSky plugin:ACList/LOAD/m_Column_11:C:2:0:10098:126:0:0:TopSky plugin:TopSky plugin:
 TopSky plugin:ACList/Resectorisation List/m_Visible:0
-TopSky plugin:ACList/Resectorisation List/m_X:825
+TopSky plugin:ACList/Resectorisation List/m_X:614
 TopSky plugin:ACList/Resectorisation List/m_Y:45
 TopSky plugin:ACList/Resectorisation List/m_LineNumber:15
 TopSky plugin:ACList/Resectorisation List/m_Resizable:1
@@ -141,7 +141,7 @@ TopSky plugin:ACList/Uncontrolled List 1/m_Column_18:FETX:5:0:10092:0:0:0:TopSky
 TopSky plugin:ACList/Uncontrolled List 1/m_Column_19:LFUNC:6:0:10069:0:0:1:TopSky plugin::
 TopSky plugin:ACList/Uncontrolled List 1/m_Column_20:OP_TEXT:11:0:10058:11:0:0:TopSky plugin:TopSky plugin:
 TopSky plugin:ACList/Uncontrolled List 2/m_Visible:0
-TopSky plugin:ACList/Uncontrolled List 2/m_X:229
+TopSky plugin:ACList/Uncontrolled List 2/m_X:272
 TopSky plugin:ACList/Uncontrolled List 2/m_Y:439
 TopSky plugin:ACList/Uncontrolled List 2/m_LineNumber:10
 TopSky plugin:ACList/Uncontrolled List 2/m_Resizable:1
