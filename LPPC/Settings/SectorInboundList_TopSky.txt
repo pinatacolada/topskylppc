@@ -11,23 +11,23 @@ m_Column: C/S:10:0:10021:6:0:1:TopSky plugin:TopSky plugin::0:0.0
 m_Column:FETN:5:0:10106:0:0:0:TopSky plugin:::1:0.0
 m_Column:FCOPN:6:0:10105:0:99:0:TopSky plugin::TopSky plugin:1:0.0
 m_Column:PSSR:5:0:10086:0:138:0:TopSky plugin::TopSky plugin:1:0.0
-m_Column: ASSR:6:0:10041:62:81:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
-m_Column:NSSR:5:0:10107:62:81:1:TopSky plugin:TopSky plugin:TopSky plugin:0:0.0
+m_Column: ASSR:6:0:10041:62:81:0:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
+m_Column:NSSR:5:0:10107:62:81:0:TopSky plugin:TopSky plugin:TopSky plugin:0:0.0
 m_Column:ETN:5:0:10016:0:0:1:TopSky plugin:::1:0.0
 m_Column:PEL:4:0:10001:68:110:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
 m_Column:ACF:5:0:10129:156:157:0:TopSky plugin:TopSky plugin:TopSky plugin:0:0.0
 m_Column:COPN:6:0:10004:45:99:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
 m_Column:No:3:0:10040:0:0:0:TopSky plugin:::1:0.0
-m_Column:ATYP:5:0:10028:24:0:1:TopSky plugin:TopSky plugin::1:0.0
+m_Column:ATYP:5:0:10028:24:0:0:TopSky plugin:TopSky plugin::1:0.0
 m_Column:W:2:0:10032:104:0:0:TopSky plugin:TopSky plugin::1:0.0
 m_Column:R:2:0:10031:0:0:0:TopSky plugin:::1:0.0
 m_Column:XFL:4:0:10003:105:110:0:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
 m_Column:COPX:6:0:10065:45:99:0:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
-m_Column: RFL:5:0:10006:59:84:1:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
-m_Column:FCOPX:6:0:10045:0:99:0:TopSky plugin::TopSky plugin:1:0.0
+m_Column: RFL:5:0:10006:59:84:0:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
+m_Column:FCOPX:6:0:10045:0:99:1:TopSky plugin::TopSky plugin:1:0.0
 m_Column:FETX:5:0:10092:0:0:0:TopSky plugin:::1:0.0
-m_Column:ADEP:5:0:10007:0:0:1:TopSky plugin:::1:0.0
-m_Column:ADES:5:0:10008:1001:7:1:TopSky plugin:TopSky plugin::1:0.0
+m_Column:ADEP:5:0:10007:0:0:0:TopSky plugin:::1:0.0
+m_Column:ADES:5:0:10008:1001:7:0:TopSky plugin:TopSky plugin::1:0.0
 m_Column: AHDG:7:0:10038:14:133:0:TopSky plugin:TopSky plugin:TopSky plugin:1:0.0
 m_Column:FText:8:0:10095:112:0:0:TopSky plugin:TopSky plugin::1:0.0
 m_Column: SI:6:0:10014:20:0:0:TopSky plugin:::1:0.0
