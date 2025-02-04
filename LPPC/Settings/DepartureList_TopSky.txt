@@ -4,19 +4,22 @@ m_X:0
 m_Y:381
 m_LineNumber:15
 m_Resizable:1
-m_OrderingColumn:3
+m_OrderingColumn:5
 m_HeaderOnly:0
 m_Column: C/S:9:0:10021:6:39:1:TopSky plugin:TopSky plugin:TopSky plugin:4:0.0
-m_Column:EOBT:5:1:1:100:100:0:CDM Plugin:CDM Plugin:CDM Plugin:1:0.0
-m_Column:TOBT:5:1:4:115:115:1:CDM Plugin:CDM Plugin:CDM Plugin:1:0.0
-m_Column:TSAT:5:1:2:114:114:1:CDM Plugin:CDM Plugin:CDM Plugin:1:0.0
+m_Column:FSTS:5:1:18:0:137:1:CDM Plugin::CDM Plugin:0:0.0
+m_Column:EOBT:5:1:1:100:120:0:CDM Plugin:CDM Plugin:CDM Plugin:1:0.0
+m_Column:TOBT:5:1:4:115:121:1:CDM Plugin:CDM Plugin:CDM Plugin:1:0.0
+m_Column:TSAT:7:0:16:114:0:1:CDM Plugin:CDM Plugin::1:0.0
 m_Column:TSAC:5:1:5:103:104:0:CDM Plugin:CDM Plugin:CDM Plugin:1:0.0
-m_Column:ASRT:5:1:7:107:107:0:CDM Plugin:CDM Plugin:CDM Plugin:1:0.0
+m_Column:ASRT:5:1:7:107:0:0:CDM Plugin:CDM Plugin::1:0.0
 m_Column:ASAT:5:1:6:0:0:0:CDM Plugin:::1:0.0
-m_Column:TTOT:5:1:3:0:0:0:CDM Plugin:::1:0.0
-m_Column:CTOT:5:1:10:108:108:0:CDM Plugin:CDM Plugin:CDM Plugin:1:0.0
+m_Column:TTOT:5:1:3:0:128:0:CDM Plugin::CDM Plugin:1:0.0
+m_Column: :3:0:20:0:0:0:CDM Plugin:::0:0.0
+m_Column:CTOT:4:0:10:0:108:1:CDM Plugin::CDM Plugin:1:0.0
+m_Column: :3:0:21:0:0:0:CDM Plugin:::0:0.0
 m_Column:ECTOT:5:1:15:129:130:0:CDM Plugin:CDM Plugin:CDM Plugin:0:0.0
-m_Column:REGUL:7:0:11:0:0:0:CDM Plugin:::0:0.0
+m_Column:REGUL:7:0:11:127:0:0:CDM Plugin:CDM Plugin::0:0.0
 m_Column:RDY:4:0:12:106:0:0:CDM Plugin:CDM Plugin::0:0.0
 m_Column:ATYPE:6:1:10028:0:0:1:TopSky plugin:::4:0.0
 m_Column:WTC:3:1:10032:0:0:1:TopSky plugin:::4:0.0
