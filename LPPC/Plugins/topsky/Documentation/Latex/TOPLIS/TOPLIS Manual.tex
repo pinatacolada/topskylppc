@@ -217,6 +217,29 @@ Interaction with core A-CDM systems is done with classic command line inputs:
             
             \colorref{color7} \\ \hline
 
+  Delta CTOT \nextrow \label{tag:Delta CTOT}&  
+      Countdown to CTOT&
+            &   
+            \colorref{color11} 
+            
+            \bigskip
+
+            If REA message has been sent:
+            
+            \colorref{color2}
+
+            \bigskip
+
+            If Manual or Event CTOT:
+            
+            \colorref{color4}
+
+            \bigskip
+
+            If Manual or Event CTOT, and Flow/CAD CTOT:
+            
+            \colorref{color7} \\ \hline
+
   ECTOT \nextrow \label{tag:ECTOT}&  
       Event Calculated Take Off Time&
         Similar to \tagref{tag:CTOT}, but originating from a manually compiled list of callsign and CTOT pairs. Needs to be manually added to \tagref{tag:CTOT} to have an effect on A-CDM calculations. &   
@@ -322,30 +345,30 @@ Interaction with core A-CDM systems is done with classic command line inputs:
        \colorref{color4} \\ \hline
 
   TSAT \nextrow \label{tag:TSAT}&  
-    Target Startup Time & 
-      TTOT - EXOT &   
+    Target Startup Time / Delay & 
+      TTOT - EXOT. Ammount of delay may be displayed right of the slash, as the difference between TOBT and TSAT. &   
         From EOBT-35 to TSAT-5:
         
         \colorref{color2}
 
-        \bigskip
+        \bigskip  
 
         From TSAT-5 to TSAT+5:
 
-        \colorref{color1}
+        \colorref{color1} 
 
-        \bigskip
+        \bigskip 
 
         From TSAT+5 to TSAT+6:
 
-        \colorref{color5}
+        \colorref{color5} 
 
-        \bigskip
+        \bigskip  
 
         After TSAT+6:
         
         \colorref{color2}\\ \hline
-
+  
   TTOT \nextrow \label{tag:TTOT}&  
     Target Take Off Time &
       &   
@@ -356,6 +379,16 @@ Interaction with core A-CDM systems is done with classic command line inputs:
         If TTOT is locked due to a CDT restriction:
 
         \colorref{color2}\\ \hline
+  Delta TTOT \nextrow \label{tag:Delta TTOT}&  
+    Countdown to TTOT &
+      &   
+      \colorref{color9}
+
+      \bigskip
+      
+      If TTOT is locked due to a CDT restriction:
+
+      \colorref{color2}\\ \hline
 
   \caption{A-CDM field descriptions}
   \label{tab:acdm-items}
@@ -4353,6 +4386,7 @@ The Departure List contains all departures still on the ground of the controlled
 \begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|} \hline
   \textbf{Item}                 & \textbf{Left Mouse}                 & \textbf{Right Mouse}      \endhead \hline
   \tagref{tag:CALLSIGN}         & Open \winref{menu:cs}               & Toggle Flight Leg display \\ \hline
+  \tagref{tag:FSTS}             &                                     & Network Status Options    \\ \hline
   \tagref{tag:EOBT}             & Edit EOBT                           & EOBT Options              \\ \hline
   \tagref{tag:TOBT}             & Edit TOBT                           & TOBT Options              \\ \hline
   \tagref{tag:TSAT}             & Ready TOBT                          &                           \\ \hline
@@ -4360,9 +4394,10 @@ The Departure List contains all departures still on the ground of the controlled
   \tagref{tag:ASRT}             & Toggle ASRT                         &                           \\ \hline
   \tagref{tag:ASAT}             &                                     &                           \\ \hline
   \tagref{tag:TTOT}             &                                     & TTOT Options              \\ \hline
+  \tagref{tag:Delta TTOT}       &                                     &                           \\ \hline
   \tagref{tag:CTOT}             &                                     & CTOT Options              \\ \hline
+  \tagref{tag:Delta CTOT}       &                                     &                           \\ \hline
   \tagref{tag:ECTOT}            & Add ECTOT to CTOT                   & ECTOT Options             \\ \hline
-  \tagref{tag:FSTS}             &                                     & Network Status Options    \\ \hline
   \tagref{tag:Flow Message}     & Get FM as text                      &                           \\ \hline
   \tagref{tag:Ready}            & Toggle Ready                        &                           \\ \hline
   \tagref{tag:ATYP}             &                                     &                           \\ \hline
