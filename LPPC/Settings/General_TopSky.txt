@@ -65,7 +65,7 @@ m_HiliteASELAircraft:0
 m_EnableVoiceRecognition:0
 m_VoiceRecognitionStyle:2
 m_SModeTransponders:HLEIS
-m_CorrelationMode:1
+m_CorrelationMode:2
 m_CorrelationDistance:100
 m_SimulateRadars:1
 m_AllowCorrelatedTAGDown:1
