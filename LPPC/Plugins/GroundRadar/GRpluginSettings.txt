@@ -186,7 +186,8 @@ List_Alerts=1,1351,25
 List_Stand=0,1102,25
 List_Stand_Items=20
 
-System_APM=0
+System_APW=0
+System_CBM=0
 System_RIM=0
 System_RUM=0
 System_RVM=0
