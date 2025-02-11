@@ -1,7 +1,7 @@
 Color_Arrival=253,236,166
 Color_Departure=0,18,153
 Color_Unknown=0,0,0
-Color_Background=160,160,160
+Color_APP_Background=160,160,160
 Color_RawVideo=175,190,200
 Color_RawVideoHistory=105,185,185
 Color_SelectedLabelFill_App=200,200,200
@@ -107,8 +107,6 @@ System_RwyBufferArea=90.0
 System_RwyArea_LVP=90.0
 System_RwyBufferArea_LVP=140.0
 
-System_SchengenArea=BI,EB,ED,EE,EF,EH,EK,EL,EN,EP,ES,ET,EV,EY,GC,LD,LE,LF,LG,LH,LI,LJ,LK,LM,LO,LP,LS,LZ
-
 Track_PredictionLine_APP=2
 Track_HistoryDots_APP=5
 Track_HistoryDots_GND=5
@@ -164,7 +162,7 @@ List_Alerts=1,1351,25
 List_Stand=0,1102,25
 List_Stand_Items=20
 
-Window_APP=1,1430,500,490,457
+Window_APP=1,1,1430,500,490,457
 Window_APP_Extensions=0
 Window_APP_Scale=9
 
@@ -186,12 +184,13 @@ List_Alerts=1,1351,25
 List_Stand=0,1102,25
 List_Stand_Items=20
 
-System_APM=0
+System_APW=0
+System_CBM=0
 System_RIM=0
 System_RUM=0
 System_RVM=0
 
-Window_APP=1,700,25,410,410
+Window_APP=1,1,700,25,410,410
 Window_APP_Extensions=0
 Window_APP_Scale=14
 
@@ -227,7 +226,7 @@ List_Alerts=1,1351,25
 List_Stand=0,1102,25
 List_Stand_Items=20
 
-Window_APP=1,700,25,410,410
+Window_APP=1,1,700,25,410,410
 Window_APP_Extensions=0
 Window_APP_Scale=14
 
@@ -264,7 +263,7 @@ List_Alerts=1,1351,25
 List_Stand=0,1102,25
 List_Stand_Items=20
 
-Window_APP=1,700,25,410,410
+Window_APP=1,1,700,25,410,410
 Window_APP_Extensions=0
 Window_APP_Scale=14
 
@@ -299,6 +298,6 @@ List_Alerts=1,1351,25
 List_Stand=0,1102,25
 List_Stand_Items=20
 
-Window_APP=1,700,25,410,410
+Window_APP=1,1,700,25,410,410
 Window_APP_Extensions=0
 Window_APP_Scale=14
