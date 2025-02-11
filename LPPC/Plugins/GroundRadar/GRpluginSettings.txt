@@ -107,8 +107,6 @@ System_RwyBufferArea=90.0
 System_RwyArea_LVP=90.0
 System_RwyBufferArea_LVP=140.0
 
-System_SchengenArea=BI,EB,ED,EE,EF,EH,EK,EL,EN,EP,ES,ET,EV,EY,GC,LD,LE,LF,LG,LH,LI,LJ,LK,LM,LO,LP,LS,LZ
-
 Track_PredictionLine_APP=2
 Track_HistoryDots_APP=5
 Track_HistoryDots_GND=5
