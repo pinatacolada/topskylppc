@@ -142,7 +142,7 @@ List_Outbound_SID_MaxChars=4
 Window_APP_Scale=17
 Window_APP_AltFilter=24000
 
-Window_RVR=1,1120,0
+Window_RVR=1,1129,260
 
 [LPPT]
 Airport_Elevation=374
@@ -155,14 +155,14 @@ Airport_SMR_Track=0
 Airport_ModeA=2
 Airport_ModeS=2
 
-List_Outbound=*,2,1131,500
-List_Inbound=*,2,1203,650
-List_Arrival=1,1243,830
-List_Alerts=1,1351,25
-List_Stand=0,1102,25
+List_Outbound=*,2,446,260
+List_Inbound=*,2,719,260
+List_Arrival=1,944,260
+List_Alerts=1,1351,44
+List_Stand=0,1200,650
 List_Stand_Items=20
 
-Window_APP=1,1,1430,500,490,457
+Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=9
 
@@ -177,11 +177,11 @@ Airport_SMR_Track=0
 Airport_ModeA=2
 Airport_ModeS=2
 
-List_Outbound=*,2,1427,650
-List_Inbound=*,2,1693,650
-List_Arrival=1,1427,780
-List_Alerts=1,1351,25
-List_Stand=0,1102,25
+List_Outbound=*,2,446,260
+List_Inbound=*,2,719,260
+List_Arrival=1,944,260
+List_Alerts=1,1351,44
+List_Stand=0,1200,650
 List_Stand_Items=20
 
 System_APW=0
@@ -190,7 +190,7 @@ System_RIM=0
 System_RUM=0
 System_RVM=0
 
-Window_APP=1,1,700,25,410,410
+Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
 
@@ -219,14 +219,14 @@ Label=GND:UNC:1:
 Label=GND:UNC:2:
 Label=GND:UNC:3:
 
-List_Outbound=*,2,1427,650
-List_Inbound=*,2,1693,650
-List_Arrival=1,1427,780
-List_Alerts=1,1351,25
-List_Stand=0,1102,25
+List_Outbound=*,2,446,260
+List_Inbound=*,2,719,260
+List_Arrival=1,944,260
+List_Alerts=1,1351,44
+List_Stand=0,1200,650
 List_Stand_Items=20
 
-Window_APP=1,1,700,25,410,410
+Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
 
@@ -256,14 +256,14 @@ Label=GND:UNC:1:
 Label=GND:UNC:2:
 Label=GND:UNC:3:
 
-List_Outbound=*,2,1427,650
-List_Inbound=*,2,1693,650
-List_Arrival=1,1427,780
-List_Alerts=1,1351,25
-List_Stand=0,1102,25
+List_Outbound=*,2,446,260
+List_Inbound=*,2,719,260
+List_Arrival=1,944,260
+List_Alerts=1,1351,44
+List_Stand=0,1200,650
 List_Stand_Items=20
 
-Window_APP=1,1,700,25,410,410
+Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
 
@@ -291,13 +291,13 @@ Label=GND:UNC:1:
 Label=GND:UNC:2:
 Label=GND:UNC:3:
 
-List_Outbound=*,2,1427,650
-List_Inbound=*,2,1693,650
-List_Arrival=1,1427,780
-List_Alerts=1,1351,25
-List_Stand=0,1102,25
+List_Outbound=*,2,446,260
+List_Inbound=*,2,719,260
+List_Arrival=1,944,260
+List_Alerts=1,1351,44
+List_Stand=0,1200,650
 List_Stand_Items=20
 
-Window_APP=1,1,700,25,410,410
+Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14

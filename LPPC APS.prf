@@ -50,8 +50,8 @@ RecentFiles	Recent3	LPPC\ASR\LPPR_GND_TSGR.asr
 RecentFiles	Recent4	LPPC\ASR\LPPT_GND_TSGR.asr
 RecentFiles	Recent5	LPPC\ASR\LPFR_GND_TSGR.asr
 RecentFiles	Recent6	LPPC\ASR\LPMA_GND_TSGR.asr
-TeamSpeakVccs	TsVccsMiniControlX	1741
-TeamSpeakVccs	TsVccsMiniControlY	675
+TeamSpeakVccs	TsVccsMiniControlX	1537
+TeamSpeakVccs	TsVccsMiniControlY	25
 LastSession	atis_freq0	124305
 LastSession	atis_url0	https://vatatis.vatsim.pt/generate?lvo=FALSE&icao=$atisairport&runway=$arrrwy($atisairport)&info=$atiscode
 LastSession	atis_callsign0	LPPR_ATIS
