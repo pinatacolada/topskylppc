@@ -266,9 +266,10 @@ Label=GND:UNC:1:
 Label=GND:UNC:2:
 Label=GND:UNC:3:
 
-List_Outbound=*,2,446,260
-List_Inbound=*,2,719,260
+List_Outbound_DefPos=446,260
+List_Inbound_DefPos=719,260
 List_Arrival=1,944,260
+List_Alerts=0,1351,44
 List_Stand=0,1200,650
 List_Stand_Items=20
 
