@@ -237,7 +237,6 @@ Label_DIAS_Unsel_Default=1111
 Label_DRC_Unsel_Default=1111
 
 [_CTR]
-
 Label_GS_Default=0000
 Label_NPT_Default=1110
 Label_OFL_Default=1100
