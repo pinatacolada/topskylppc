@@ -236,7 +236,7 @@ List_Alerts=0,1351,44
 List_Stand=0,1200,650
 List_Stand_Items=20
 
-Window_APP=0,1,0,45,447,336
+Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
 
