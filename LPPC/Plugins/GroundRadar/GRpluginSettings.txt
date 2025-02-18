@@ -113,6 +113,8 @@ Track_HistoryDots_GND=5
 Track_HistoryDots_TWR_Type=1
 Track_Heading_Line=0
 
+List_Alerts=1,1129,260
+
 List_Arrival_RWY=0
 List_Arrival_TYPE=0
 List_Arrival_WTC=0
@@ -141,8 +143,9 @@ List_Outbound_SID_MaxChars=4
 
 Window_APP_Scale=17
 Window_APP_AltFilter=24000
-
-Window_RVR=1,1129,260
+Window_METAR=1,446,45,272,215
+Window_QNH=1,926,45
+Window_RVR=1,926,180
 
 [LPPT]
 Airport_Elevation=374
@@ -158,7 +161,6 @@ Airport_ModeS=2
 List_Outbound=*,2,446,260
 List_Inbound=*,2,719,260
 List_Arrival=1,944,260
-List_Alerts=1,1351,44
 List_Stand=0,1200,650
 List_Stand_Items=20
 
@@ -180,7 +182,6 @@ Airport_ModeS=2
 List_Outbound=*,2,446,260
 List_Inbound=*,2,719,260
 List_Arrival=1,944,260
-List_Alerts=1,1351,44
 List_Stand=0,1200,650
 List_Stand_Items=20
 
@@ -231,7 +232,6 @@ System_RVM=0
 List_Outbound=*,2,446,260
 List_Inbound=*,2,719,260
 List_Arrival=1,944,260
-List_Alerts=1,1351,44
 List_Stand=0,1200,650
 List_Stand_Items=20
 
@@ -268,7 +268,6 @@ Label=GND:UNC:3:
 List_Outbound=*,2,446,260
 List_Inbound=*,2,719,260
 List_Arrival=1,944,260
-List_Alerts=1,1351,44
 List_Stand=0,1200,650
 List_Stand_Items=20
 
@@ -312,7 +311,6 @@ Label=GND:UNC:3:
 List_Outbound=*,2,446,260
 List_Inbound=*,2,719,260
 List_Arrival=1,944,260
-List_Alerts=1,1351,44
 List_Stand=0,1200,650
 List_Stand_Items=20
 
