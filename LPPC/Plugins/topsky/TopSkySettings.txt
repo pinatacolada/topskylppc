@@ -98,7 +98,7 @@ HTTP_METAR_Data_Suffix=(suffix)
 
 HTTP_natTrak_Filter_ADEP_Lon_Min=-22
 
-Label_ACF_Use=0
+Label_ACF_Use=1
 Label_CompCsCaps=1
 Label_COP_MaxChars=5
 Label_FCOP_MaxChars=3
