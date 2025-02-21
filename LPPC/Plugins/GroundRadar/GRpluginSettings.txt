@@ -155,8 +155,8 @@ Airport_Runway_End=02:N038.45.56.460:W009.08.39.480
 
 Airport_SMR_Raw=2
 Airport_SMR_Track=0
-Airport_ModeA=2
-Airport_ModeS=2
+Airport_ModeA=1
+Airport_ModeS=1
 
 List_Outbound=*,2,446,260
 List_Inbound=*,2,719,260
