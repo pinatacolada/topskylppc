@@ -14,9 +14,9 @@
 	<Debug mode="false" />
 	<FlowRestrictions url="https://ecfmp.vatsim.net/api/v1/plugin" />
 	<vdgsFileType type="3"/>
-	<ftpHost host="#{CDM_FTP_HOST}#" />
-	<ftpUser user="#{CDM_FTP_USER}#" />
-	<ftpPassword password="#{CDM_FTP_PASSWORD}#" />
+	<ftpHost host="" />
+	<ftpUser user="" />
+	<ftpPassword password="" />
 	<Server mode="true" />
 	<Su_Wait mode="false" />
 </CDM>
