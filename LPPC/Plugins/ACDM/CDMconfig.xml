@@ -19,4 +19,5 @@
 	<ftpPassword password="" />
 	<Server mode="true" />
 	<Su_Wait mode="false" />
+	<pilotTobt mode="true"/>
 </CDM>
