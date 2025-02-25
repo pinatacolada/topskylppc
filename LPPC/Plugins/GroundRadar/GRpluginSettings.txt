@@ -122,6 +122,7 @@ List_Arrival_ETA=1
 List_Arrival_STAND=1
 
 List_Inbound_DTT=1
+List_Inbound_DefPos=719,260
 List_Inbound_TYPE=0
 List_Inbound_WTC=0
 List_Inbound_ETA=1
@@ -137,6 +138,7 @@ List_Outbound_TYPE=1
 List_Outbound_WTC=1
 List_Outbound_SID=1
 List_Outbound_ADES=1
+List_Outbound_DefPos=446,260
 List_Outbound_ExpiryTime=300
 List_Outbound_SID_MaxChars=4
 
@@ -229,8 +231,6 @@ System_RIM=0
 System_RUM=0
 System_RVM=0
 
-List_Outbound_DefPos=446,260
-List_Inbound_DefPos=719,260
 List_Arrival=1,944,260
 List_Alerts=0,1351,44
 List_Stand=0,1200,650
@@ -266,8 +266,6 @@ Label=GND:UNC:1:
 Label=GND:UNC:2:
 Label=GND:UNC:3:
 
-List_Outbound_DefPos=446,260
-List_Inbound_DefPos=719,260
 List_Arrival=1,944,260
 List_Alerts=0,1351,44
 List_Stand=0,1200,650
@@ -310,8 +308,6 @@ Label=GND:UNC:1:
 Label=GND:UNC:2:
 Label=GND:UNC:3:
 
-List_Outbound_DefPos=446,260
-List_Inbound_DefPos=719,260
 List_Arrival=1,944,260
 List_Alerts=0,1351,44
 List_Stand=0,1200,650
