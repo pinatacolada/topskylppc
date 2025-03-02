@@ -90,6 +90,9 @@ Label=APP:UNC:1:CALLSIGN,0,0
 Label=APP:UNC:2:AFL,0,0::VS,4,1
 Label=APP:UNC:3:GS,0,0
 
+List_Stand=1,1410,140
+List_Stand_Items=22
+
 RawVideo=1
 RawVideo_MaxHistory=5
 
@@ -163,8 +166,6 @@ Airport_ModeS=1
 List_Outbound=*,2,446,260
 List_Inbound=*,2,719,260
 List_Arrival=1,944,260
-List_Stand=0,1200,650
-List_Stand_Items=20
 
 Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
@@ -184,8 +185,6 @@ Airport_ModeS=1
 List_Outbound=*,2,446,260
 List_Inbound=*,2,719,260
 List_Arrival=1,944,260
-List_Stand=0,1200,650
-List_Stand_Items=20
 
 System_APW=0
 System_CBM=0
@@ -233,8 +232,6 @@ System_RVM=0
 
 List_Arrival=1,944,260
 List_Alerts=0,1351,44
-List_Stand=0,1200,650
-List_Stand_Items=20
 
 Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
@@ -268,8 +265,6 @@ Label=GND:UNC:3:
 
 List_Arrival=1,944,260
 List_Alerts=0,1351,44
-List_Stand=0,1200,650
-List_Stand_Items=20
 
 System_APW=0
 System_CBM=0
@@ -310,8 +305,6 @@ Label=GND:UNC:3:
 
 List_Arrival=1,944,260
 List_Alerts=0,1351,44
-List_Stand=0,1200,650
-List_Stand_Items=20
 
 System_APW=0
 System_CBM=0
