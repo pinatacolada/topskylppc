@@ -90,8 +90,8 @@ Label=APP:UNC:1:CALLSIGN,0,0
 Label=APP:UNC:2:AFL,0,0::VS,4,1
 Label=APP:UNC:3:GS,0,0
 
-List_Stand=1,1410,140
-List_Stand_Items=22
+List_Stand=1,1410,130
+List_Stand_Items=20
 
 RawVideo=1
 RawVideo_MaxHistory=5
