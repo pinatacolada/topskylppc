@@ -80,8 +80,6 @@ FlightLeg_Label_DIST=0
 FlightLeg_Label_RFL=0
 FlightLeg_Label_SCFL=0
 
-FPCP_MinState=0
-
 HTTP_AUP_URL=https://eaup.vatsim.pt/api/v2/areas/LP/
 
 HTTP_GRIB_Latitude_Max=45
@@ -240,6 +238,7 @@ Label_GS_Default=0000
 Label_NPT_Default=1110
 Label_OFL_Default=1100
 
+Window_CARD_View_Unco=1
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
 Window_MsgOut=1,1200,957
