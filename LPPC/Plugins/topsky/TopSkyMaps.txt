@@ -305,6 +305,9 @@ SCTDATA:GEO\LP Landmark Porto Santo Cima
 SCTDATA:GEO\LP Landmark Porto Santo Cal
 SCTDATA:GEO\LP Landmark Deserta Bugio
 SCTDATA:GEO\LP Landmark Deserta Grande
+SCTDATA:GEO\LP Landmark Selvagem Grande
+SCTDATA:GEO\LP Landmark Selvagem Pequena
+SCTDATA:GEO\LP Landmark Selvagem Ilheu de Fora
 
 MAP:border
 FOLDER:ENVR
