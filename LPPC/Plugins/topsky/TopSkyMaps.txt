@@ -308,6 +308,8 @@ SCTDATA:GEO\LP Landmark Deserta Grande
 SCTDATA:GEO\LP Landmark Selvagem Grande
 SCTDATA:GEO\LP Landmark Selvagem Pequena
 SCTDATA:GEO\LP Landmark Selvagem Ilheu de Fora
+SCTDATA:GEO\LP Landmark Santa Maria
+SCTDATA:GEO\LP Landmark Sao Miguel
 
 MAP:border
 FOLDER:ENVR
@@ -2542,6 +2544,9 @@ SCTDATA:ARTCC LOW\adj_fir_gmmm_fir
 
 //MADRID-SEVILLA BORDER
 SCTDATA:ARTCC LOW\adj_fir_lecs_fir
+
+//LPAZ TMA
+SCTDATA:ARTCC LOW\adj_fir_lpaz_tma
 
 MAP:rvsm
 FOLDER:ENR_MAP
