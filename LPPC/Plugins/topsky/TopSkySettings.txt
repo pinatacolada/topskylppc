@@ -263,7 +263,7 @@ Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
 Window_SmallQNHTL_ICAO=LPPR
 
-[LPPR_APP]
+{PRAPP}
 Setup_Informed=*:XAMAX:LPPT,LPCS:1
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
@@ -282,15 +282,15 @@ Label_XFL_Default=0000
 List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
 List_TfcMgmt2_Via=CASLU,ESP
 
-[LPPT_APP]
+{TME}
 Setup_LoadMap=TWRCAS\ext_cntrline_35
 Setup_Informed=*:*:LPPT,LPCS,LPAR,LPMT:1
 
-[LPPT_W_APP]
+{TMO}
 Setup_LoadMap=TWRCAS\ext_cntrline_35
 Setup_Informed=*:*:LPPT,LPCS,LPAR,LPMT:1
 
-[LPPT_F_APP]
+{ARRLI}
 Setup_LoadMap=TWRCAS\ext_cntrline_35
 Setup_Informed=LPPT,LPCS,LPAR,LPMT:*:*:1
 
@@ -304,12 +304,12 @@ Window_CARD_View_Future=0
 Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPFR
 
-[LPFR_APP]
+{FRTMA}
 Setup_Informed=*:VATZI:LPPT,LPCS:1
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
 
-[LPMA_APP]
+{MATMA}
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
 
@@ -328,23 +328,23 @@ Setup_LoadMap=MIL\pbej
 Setup_LoadMap=MIL\pmtr
 Setup_LoadMap=MIL\rad_vec_bej
 
-[LPCS_]
+{CTRCS}
 Setup_LoadMap=TWRLIS\vfr_lis_nl
 
-[LPPC_W]
+{OESL}
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
 
-[LPPC_D]
+{DEML}
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
 
-[LPPC_O]
+{OEST}
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
 
-[LPPC_E]
+{ESTL}
 Setup_Informed=*:AGADO,DEMOS,ORSOS:*:1
 
-[LPPC_N]
+{NORL}
 Setup_Informed=*:BARDI,AGADO,DEMOS,ORSOS:*:1
 
-[LPPC_C]
+{CENL}
 Setup_Informed=*:TOSDI,BARDI,ADORO,ORSOS:*:1
