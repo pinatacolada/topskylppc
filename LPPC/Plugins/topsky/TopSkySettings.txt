@@ -271,6 +271,13 @@ Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPPR
 Setup_LoadMap=APPPRT\nortavia
 
+{PRTMA}
+Setup_Informed=*:XAMAX:LPPT,LPCS:1
+Window_CPDLC_Current=1,910,25
+Window_CPDLC_Setting=1,910,425
+Window_SmallQNHTL=1,1425,25
+Window_SmallQNHTL_ICAO=LPPR
+
 [LPPT_]
 Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
