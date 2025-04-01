@@ -346,5 +346,11 @@ Setup_Informed=*:AGADO,DEMOS,ORSOS:*:1
 {NORL}
 Setup_Informed=*:BARDI,AGADO,DEMOS,ORSOS:*:1
 
+{NORM}
+Setup_Informed=*:BARDI,AGADO,DEMOS,ORSOS:*:1
+
 {CENL}
+Setup_Informed=*:TOSDI,BARDI,ADORO,ORSOS:*:1
+
+{CENM}
 Setup_Informed=*:TOSDI,BARDI,ADORO,ORSOS:*:1
