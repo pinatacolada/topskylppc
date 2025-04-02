@@ -345,19 +345,19 @@ FOLDER:ENVR
 LAYER:-1
 COLOR:MAP_GREY
 
-SCTDATA:GEO\LP Landmark rwy lppr
-SCTDATA:GEO\LP Landmark rwy lppt
-SCTDATA:GEO\LP Landmark rwy lpcs
-SCTDATA:GEO\LP Landmark rwy lpfr
-SCTDATA:GEO\LP Landmark rwy lpma
-SCTDATA:GEO\LP Landmark rwy lpps
-SCTDATA:GEO\LP Landmark rwy lpso
-SCTDATA:GEO\LP Landmark rwy lppm
-SCTDATA:GEO\LP Landmark rwy lpst
-SCTDATA:GEO\LP Landmark rwy lpov
-SCTDATA:GEO\LP Landmark rwy lpmt 25
-SCTDATA:GEO\LP Landmark rwy lpmt 01
-SCTDATA:GEO\LP Landmark rwy lpar
+SCTDATA:GEO\LP rwy lppr
+SCTDATA:GEO\LP rwy lppt
+SCTDATA:GEO\LP rwy lpcs
+SCTDATA:GEO\LP rwy lpfr
+SCTDATA:GEO\LP rwy lpma
+SCTDATA:GEO\LP rwy lpps
+SCTDATA:GEO\LP rwy lpso
+SCTDATA:GEO\LP rwy lppm
+SCTDATA:GEO\LP rwy lpst
+SCTDATA:GEO\LP rwy lpov
+SCTDATA:GEO\LP rwy lpmt 25
+SCTDATA:GEO\LP rwy lpmt 01
+SCTDATA:GEO\LP rwy lpar
 
 MAP:town
 FOLDER:ENVR
