@@ -64,7 +64,7 @@ And a lot more...
 # Instalation
 TopSky is already included in the Sector Package of Portugal vACC.
 
-When prompted during startup, use the LPPC_CTR_TS.prf profile.
+When prompted during startup, use the LPPC ACS.prf for CTR of LPPC APS.prf for APP and below.
 
 Ta-daa, it should work now.
 
