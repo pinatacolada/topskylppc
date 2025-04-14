@@ -1,6 +1,0 @@
-##----- Capacity Availability Document -----##
-#--- LPPC ---#
-LPMA,10
-LPFR,15
-LPPT,20
-LPPR,14
