@@ -33,7 +33,6 @@ Airspace_ASSR_APL_StartCode=3205
 Airspace_ASSR_APL_EndCode=3277
 Airspace_No_DUPE_Codes=2000,7000
 Airspace_NOTAM_Add=LPPC
-Airspace_P_Flag=LPPR,LPPT,LPCS,LPFR,LPMA,LPPS
 Airspace_SIGMET_Areas=LPPC
 
 AIW_FlightRules=1
@@ -81,8 +80,6 @@ FlightLeg_Label_DIST=0
 FlightLeg_Label_RFL=0
 FlightLeg_Label_SCFL=0
 
-FPCP_MinState=0
-
 HTTP_AUP_URL=https://eaup.vatsim.pt/api/v2/areas/LP/
 
 HTTP_GRIB_Latitude_Max=45
@@ -98,7 +95,7 @@ HTTP_METAR_Data_Suffix=(suffix)
 
 HTTP_natTrak_Filter_ADEP_Lon_Min=-22
 
-Label_ACF_Use=0
+Label_ACF_Use=1
 Label_CompCsCaps=1
 Label_COP_MaxChars=5
 Label_FCOP_MaxChars=3
@@ -136,6 +133,7 @@ MSAW_PredictionTime=120
 MTCD_Filter_Dep=3
 MTCD_Floor=8500
 MTCD_PLC_Time=4
+MTCD_Sharing_Time=15
 
 RDF_Mode=-1
 
@@ -240,6 +238,7 @@ Label_GS_Default=0000
 Label_NPT_Default=1110
 Label_OFL_Default=1100
 
+Window_CARD_View_Unco=1
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
 Window_MsgOut=1,1200,957
@@ -265,6 +264,7 @@ Window_CARD_View_Future=0
 Window_SmallQNHTL_ICAO=LPPR
 
 [LPPR_APP]
+Setup_Informed=*:XAMAX:LPPT,LPCS:1
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
 Window_SmallQNHTL=1,1425,25
@@ -284,12 +284,15 @@ List_TfcMgmt2_Via=CASLU,ESP
 
 [LPPT_APP]
 Setup_LoadMap=TWRCAS\ext_cntrline_35
+Setup_Informed=*:*:LPPT,LPCS,LPAR,LPMT:1
 
 [LPPT_W_APP]
 Setup_LoadMap=TWRCAS\ext_cntrline_35
+Setup_Informed=*:*:LPPT,LPCS,LPAR,LPMT:1
 
 [LPPT_F_APP]
 Setup_LoadMap=TWRCAS\ext_cntrline_35
+Setup_Informed=LPPT,LPCS,LPAR,LPMT:*:*:1
 
 [LPFR_]
 Label_PEL_Default=0000
@@ -302,6 +305,7 @@ Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPFR
 
 [LPFR_APP]
+Setup_Informed=*:VATZI:LPPT,LPCS:1
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
 
@@ -325,6 +329,22 @@ Setup_LoadMap=MIL\pmtr
 Setup_LoadMap=MIL\rad_vec_bej
 
 [LPCS_]
-Setup_LoadMap=TWRLIS\vfr_lis
-Setup_LoadMap=VFR\vfr_routes
-Setup_LoadMap=VFR\heli_routes
+Setup_LoadMap=TWRLIS\vfr_lis_nl
+
+[LPPC_W]
+Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
+
+[LPPC_D]
+Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
+
+[LPPC_O]
+Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
+
+[LPPC_E]
+Setup_Informed=*:AGADO,DEMOS,ORSOS:*:1
+
+[LPPC_N]
+Setup_Informed=*:BARDI,AGADO,DEMOS,ORSOS:*:1
+
+[LPPC_C]
+Setup_Informed=*:TOSDI,BARDI,ADORO,ORSOS:*:1
