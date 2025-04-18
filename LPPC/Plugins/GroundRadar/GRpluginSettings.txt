@@ -96,6 +96,14 @@ List_Stand_Items=20
 RawVideo=1
 RawVideo_MaxHistory=5
 
+System_APW=-1
+System_CBM=-1
+System_ECM=-1
+System_ICM=-1
+System_OSM=-1
+System_RIM=-1
+System_RUM=-1
+System_RVM=-1
 System_State_OnFreq=READY
 System_State_DeIce=TAXI SP
 
@@ -167,9 +175,20 @@ List_Outbound=*,2,446,260
 List_Inbound=*,2,719,260
 List_Arrival=1,944,260
 
+System_APW=1
+System_CBM=1
+System_ECM=1
+System_ICM=1
+System_OSM=1
+System_RIM=1
+System_RUM=1
+System_RVM=1
+
 Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=9
+Window_WindRose=02,2,718,45
+Window_WindRose=20,2,718,45
 
 [LPPR]
 Airport_Elevation=227
@@ -195,9 +214,12 @@ System_RVM=0
 Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
+Window_WindRose=35,2,718,45
+Window_WindRose=17,2,718,45
 
 [LPFR]
 Airport_Elevation=24
+Airport_LVP=0
 Airport_Radius=6.5
 Airport_Runway_Buffer_LVP=28:160.0
 
@@ -221,24 +243,18 @@ Label=GND:UNC:1:
 Label=GND:UNC:2:
 Label=GND:UNC:3:
 
-System_APW=0
-System_CBM=0
-System_ECM=0
-System_ICM=0
-System_OSM=0
-System_RIM=0
-System_RUM=0
-System_RVM=0
-
 List_Arrival=1,944,260
 List_Alerts=0,1351,44
 
 Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
+Window_WindRose=28,2,718,45
+Window_WindRose=10,2,718,45
 
 [LPMA]
 Airport_Elevation=191
+Airport_LVP=0
 Airport_Radius=6.5
 Airport_Runway_End=05:N032.41.20.317:W016.47.05.617
 Airport_Runway_End=23:N032.42.24.461:W016.45.50.583
@@ -266,21 +282,15 @@ Label=GND:UNC:3:
 List_Arrival=1,944,260
 List_Alerts=0,1351,44
 
-System_APW=0
-System_CBM=0
-System_ECM=0
-System_ICM=0
-System_OSM=0
-System_RIM=0
-System_RUM=0
-System_RVM=0
-
 Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
+Window_WindRose=05,2,718,45
+Window_WindRose=23,2,718,45
 
 [LPPS]
 Airport_Elevation=340
+Airport_LVP=0
 Airport_Radius=5
 
 Label=GND:DEP:0:
@@ -306,15 +316,8 @@ Label=GND:UNC:3:
 List_Arrival=1,944,260
 List_Alerts=0,1351,44
 
-System_APW=0
-System_CBM=0
-System_ECM=0
-System_ICM=0
-System_OSM=0
-System_RIM=0
-System_RUM=0
-System_RVM=0
-
 Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
+Window_WindRose=36,2,718,45
+Window_WindRose=18,2,718,45
