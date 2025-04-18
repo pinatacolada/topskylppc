@@ -170,6 +170,8 @@ List_Arrival=1,944,260
 Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=9
+Window_WindRose=02,2,718,45
+Window_WindRose=20,2,718,45
 
 [LPPR]
 Airport_Elevation=227
@@ -195,6 +197,8 @@ System_RVM=0
 Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
+Window_WindRose=35,2,718,45
+Window_WindRose=17,2,718,45
 
 [LPFR]
 Airport_Elevation=24
@@ -236,6 +240,8 @@ List_Alerts=0,1351,44
 Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
+Window_WindRose=28,2,718,45
+Window_WindRose=10,2,718,45
 
 [LPMA]
 Airport_Elevation=191
@@ -278,6 +284,8 @@ System_RVM=0
 Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
+Window_WindRose=05,2,718,45
+Window_WindRose=23,2,718,45
 
 [LPPS]
 Airport_Elevation=340
@@ -318,3 +326,5 @@ System_RVM=0
 Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
+Window_WindRose=36,2,718,45
+Window_WindRose=18,2,718,45
