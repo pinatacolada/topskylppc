@@ -299,6 +299,7 @@ Label_PEL_Default=0000
 Label_WTC_Default=0000
 Label_XFL_Default=0000
 List_TfcMgmt1_Via=FR455,VENOL
+List_TfcMgmt2_Via=SOTEX,ALAGU
 Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
 Window_SmallQNHTL=1,1425,25
