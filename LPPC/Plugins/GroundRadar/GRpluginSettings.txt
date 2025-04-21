@@ -219,9 +219,15 @@ Window_WindRose=17,2,718,45
 
 [LPFR]
 Airport_Elevation=24
-Airport_LVP=0
 Airport_Radius=6.5
 Airport_Runway_Buffer_LVP=28:160.0
+
+Airport_SMR_Raw=2
+Airport_SMR_Track=0
+Airport_ModeA=1
+Airport_ModeS=1
+
+RawVideo_MaxHistory=0
 
 List_Arrival=1,944,260
 List_Alerts=0,1351,44
