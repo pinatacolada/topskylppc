@@ -5,10 +5,12 @@
 	<expiredCtot time="15" />
 	<realMode mode="false" />
 	<pilotTobt mode="true" />
+	<autoAtot mode="false" />
 	<invalidateAtTsat mode="true" />
 	<Rates url="https://raw.githubusercontent.com/pinatacolada/lppc-atfm/main/rate.txt" />
 	<Taxizones url="" />
 	<Ctot url="https://raw.githubusercontent.com/pinatacolada/lppc-atfm/main/ctot.txt" />
+	<sidInterval url="" />
 	<DefaultTaxiTime minutes="15" />
 	<DeIceTimes light="5" medium="9" heavy="12" super="15"/>
 	<RefreshTime seconds="10" />
