@@ -6,6 +6,7 @@ Setup_LoadMap=ENVR\border
 Setup_LoadMap=ENVR\rwy
 Setup_LoadMap=VFR\atz
 Setup_LoadMap=ENR_MAP\adj_fir_sec
+Setup_LoadMap=ENR_MAP\e-w-m
 Setup_LoadMap=ENR_REP\rep_out
 Setup_LoadMap=ENR_REP\rep_bdry
 Setup_LoadMap=ENR_MAP\lim
