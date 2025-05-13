@@ -105,7 +105,6 @@ System_RIM=-1
 System_RUM=-1
 System_RVM=-1
 System_State_OnFreq=READY
-System_State_DeIce=TAXI SP
 
 Track_Heading_Line=1
 Track_PredictionLine_TWR=1
