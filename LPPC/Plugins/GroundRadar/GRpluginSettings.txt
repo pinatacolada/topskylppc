@@ -96,7 +96,6 @@ List_Stand_Items=20
 RawVideo=1
 RawVideo_MaxHistory=5
 
-System_APM=-1
 System_APW=-1
 System_CBM=-1
 System_ECM=-1
