@@ -249,6 +249,8 @@ List_TfcMgmt2_Via=PILIM,ABUSU
 [LPMA_]
 List_TfcMgmt1_Via=PILIM,ABUSU
 List_TfcMgmt2_Via=MARCU,LAPPA
+Setup_LoadMap=TWRSAN\rep_san_stars_nl
+Setup_LoadMap=TWRSAN\rep_san_rnp_nl
 Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
 Window_SmallQNHTL=1,1425,25
@@ -338,8 +340,14 @@ Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
 [LPPC_D]
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
 
+[LPPC_I]
+Setup_LoadMap=TWRSAN\rep_san_stars_nl
+Setup_LoadMap=TWRSAN\rep_san_rnp_nl
+
 [LPPC_O]
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
+Setup_LoadMap=TWRSAN\rep_san_stars_nl
+Setup_LoadMap=TWRSAN\rep_san_rnp_nl
 
 [LPPC_E]
 Setup_Informed=*:AGADO,DEMOS,ORSOS:*:1
