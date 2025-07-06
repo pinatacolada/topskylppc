@@ -9628,10 +9628,14 @@ FOLDER:TWRCAS0
 LAYER:-1
 COLOR:MAP_GREY
 
+//TODO:vfr routes
+
 MAP:vfr_routes_cs_nl
 FOLDER:TWRCAS0
 LAYER:-1
 COLOR:MAP_GREY
+
+//TODO:vfr routes nl
 
 MAP:star_cas
 FOLDER:TWRCAS0
