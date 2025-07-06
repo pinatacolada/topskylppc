@@ -206,7 +206,6 @@ Window_PDC_SetCFL=1
 Window_PredTfc_Caution=20
 Window_PredTfc_Warning=30
 Window_SAP_MaxListItems=7
-Window_SmallQNHTL_ICAO=LPPT
 Window_SM_LowestLevel=30
 Window_WxMsgs_MetarRefreshInterval=600
 Window_WxMsgs_TafRefreshInterval=600
@@ -263,21 +262,26 @@ Label_XFL_Default=0000
 List_TfcMgmt1_Via=ADNOV,AKULU
 Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
+Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPPR
 
 [LPPR_APP]
 Setup_Informed=*:XAMAX:LPPT,LPCS:1
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
-Window_SmallQNHTL=1,1425,25
-Window_SmallQNHTL_ICAO=LPPR
 Setup_LoadMap=APPPRT\nortavia
+
+[LPPS_]
+Window_SmallQNHTL=1,1425,25
+Window_SmallQNHTL_ICAO=LPPS
 
 [LPPT_]
 Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
+Window_SmallQNHTL=1,1425,25
+Window_SmallQNHTL_ICAO=LPPT
 Label_PEL_Default=0000
 Label_WTC_Default=0000
 Label_XFL_Default=0000
