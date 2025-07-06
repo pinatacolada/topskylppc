@@ -19,9 +19,6 @@ Setup_LoadMap=APPFUN\pfun_05_23_a
 
 Setup_LoadMap=APPLIS\arc50
 
-Setup_LoadMap=TWRCAS\pcas
-Setup_LoadMap=TWRCAS\pcas_gnss
-
 Airspace_833_Min=0
 Airspace_AOR_Airports=LP
 Airspace_AOR_Airports_Exclude=LPAZ,LPPD,LPLA,LPGR,LPSJ,LPPI,LPHR,LPCR,LPFL
@@ -332,6 +329,9 @@ Setup_LoadMap=MIL\pmtr
 Setup_LoadMap=MIL\rad_vec_bej
 
 [LPCS_]
+Setup_LoadMap=TWRCAS\rep_cas_app_nl
+Setup_LoadMap=TWRCAS\rep_vfr_nl
+Setup_LoadMap=TWRCAS\ext_cntrline_35
 Setup_LoadMap=TWRLIS\vfr_lis_nl
 
 [LPPC_W]
