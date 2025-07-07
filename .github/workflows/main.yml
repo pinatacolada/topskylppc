@@ -14,6 +14,8 @@ jobs:
         with:
           root_file: TOPLISManual.tex
           working_directory: LPPC/Plugins/topsky/Documentation/Latex/TOPLIS
+        env:
+          TEXINPUTS: "/styles//:"
       - name: Move PDF
         uses: canastro/copy-file-action@master
         with:
