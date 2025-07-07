@@ -350,3 +350,4 @@ LPPC/Plugins/ACDM/CDM_data_LPPT.json
 *.tex
 *.toc
 LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLISManual.pdf
+*.synctex(busy)
