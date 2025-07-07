@@ -12,17 +12,17 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v4
         with:
-          root_file: "TOPLIS Manual.tex"
+          root_file: TOPLISManual.tex
           working_directory: LPPC/Plugins/topsky/Documentation/Latex/TOPLIS
       - name: Move PDF
         uses: canastro/copy-file-action@master
         with:
-          source: "./LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLIS Manual.pdf"
-          target: "./LPPC/TOPLIS Manual.pdf"
+          source: "./LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/TOPLISManual.pdf"
+          target: "./LPPC/TOPLISManual.pdf"
       - name: Add & Commit PDF
         uses: EndBug/add-and-commit@v9
         with:
           default_author: github_actions
-          message: 'Update TOPLIS Manual'
+          message: 'Update TOPLISManual'
           add: '*.pdf'
           cwd: './LPPC/'
