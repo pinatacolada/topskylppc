@@ -12,7 +12,8 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v4
         with:
-          root_file: "TOPLIS Manual.tex"
+          root_file: 'TOPLIS Manual.tex'
+          os: debian
           working_directory: LPPC/Plugins/topsky/Documentation/Latex/TOPLIS
       - name: Move PDF
         uses: canastro/copy-file-action@master
