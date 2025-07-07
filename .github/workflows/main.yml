@@ -14,6 +14,7 @@ jobs:
         with:
           root_file: TOPLISManual.tex
           working_directory: LPPC/Plugins/topsky/Documentation/Latex/TOPLIS
+          continue_on_error: true
       - name: Move PDF
         uses: canastro/copy-file-action@master
         with:
