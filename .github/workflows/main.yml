@@ -5,12 +5,12 @@ on:
     - 'LPPC/Plugins/topsky/Documentation/Latex/**'
 jobs:
   build_latex:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v3
       - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v2
+        uses: dante-ev/latex-action@latest
         with:
           root_file: "TOPLIS Manual.tex"
           working_directory: LPPC/Plugins/topsky/Documentation/Latex/TOPLIS
