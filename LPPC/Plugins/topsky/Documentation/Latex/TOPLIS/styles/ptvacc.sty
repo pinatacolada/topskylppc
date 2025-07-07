@@ -136,7 +136,14 @@ bookmarks=true,bookmarksopenlevel=2]{hyperref}
 \pagestyle{plain}
 \makepagestyle{plain}
 \makeoddfoot{plain}{\rule{\textwidth}{1pt}\\\today}{}{\rev}
-\makeoddhead{plain}{\headerformat}
+\makeoddhead{plain}{
+  \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash\hsize=0.2\hsize}X|>{\centering\arraybackslash\hsize=0.65\hsize}X|>{\centering\arraybackslash\hsize=0.15\hsize}X|}
+    \hline
+    \raisebox{-0.5\height}{\includegraphics[max height=0.5\headheight,max width=0.15\textwidth]{styles/logo.png}} & \textbf{\large{\leftmark}} & \textbf{\large{\thesection}}  \\
+    \scriptsize{\docsubject\space\doctitle}             & \rightmark         & \small{P\thepage}\         \\
+    \hline
+  \end{tabularx}
+}
 
 
 
