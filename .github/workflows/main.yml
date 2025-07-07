@@ -15,6 +15,7 @@ jobs:
           root_file: TOPLISManual.tex
           working_directory: LPPC/Plugins/topsky/Documentation/Latex/TOPLIS
           continue_on_error: true
+          args: -f -pdf -file-line-error -interaction=nonstopmode
       - name: Move PDF
         uses: canastro/copy-file-action@master
         with:
