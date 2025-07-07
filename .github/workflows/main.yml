@@ -10,7 +10,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
       - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v4
+        uses: xu-cheng/latex-action@v2
         with:
           root_file: "TOPLIS Manual.tex"
           working_directory: LPPC/Plugins/topsky/Documentation/Latex/TOPLIS
