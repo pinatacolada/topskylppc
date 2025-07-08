@@ -332,7 +332,7 @@ Setup_LoadMap=MIL\rad_vec_bej
 Setup_LoadMap=TWRCAS\rep_cas_app_nl
 Setup_LoadMap=TWRCAS\rep_vfr_nl
 Setup_LoadMap=TWRCAS\ext_cntrline_35
-Setup_LoadMap=TWRLIS\vfr_lis_nl
+Setup_LoadMap=TWRCAS\vfr_routes_cs_nl
 
 [LPPC_W]
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
