@@ -792,6 +792,10 @@ SCTDATA:ARTCC LOW\adj_fir_gmmm_fir
 //MADRID-SEVILLA BORDER
 SCTDATA:ARTCC LOW\adj_fir_lecs_fir
 
+//MADRID-SLE BORDER
+SCTDATA:ARTCC LOW\adj_fir_lecm_sle_l
+SCTDATA:ARTCC LOW\adj_fir_lecm_sle_r
+
 //LPAZ TMA
 SCTDATA:ARTCC LOW\adj_fir_lpaz_tma
 
