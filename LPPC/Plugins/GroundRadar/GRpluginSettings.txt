@@ -211,7 +211,7 @@ System_RIM=0
 System_RUM=0
 System_RVM=0
 
-Window_APP=1,1,0,45,447,336
+Window_APP=1,1,0,45,336,253
 Window_APP_Extensions=0
 Window_APP_Scale=14
 Window_WindRose=35,2,586,36
@@ -231,7 +231,7 @@ RawVideo_MaxHistory=0
 
 List_Arrival=1,944,260
 
-Window_APP=1,1,0,45,447,336
+Window_APP=1,1,0,45,336,253
 Window_APP_Extensions=0
 Window_APP_Scale=14
 Window_WindRose=28,2,586,36
@@ -266,7 +266,7 @@ Label=GND:UNC:3:
 
 List_Arrival=1,944,260
 
-Window_APP=1,1,0,45,447,336
+Window_APP=1,1,0,45,336,253
 Window_APP_Extensions=0
 Window_APP_Scale=14
 Window_WindRose=05,2,586,36
@@ -299,7 +299,7 @@ Label=GND:UNC:3:
 
 List_Arrival=1,944,260
 
-Window_APP=1,1,0,45,447,336
+Window_APP=1,1,0,45,336,253
 Window_APP_Extensions=0
 Window_APP_Scale=14
 Window_WindRose=36,2,586,36
