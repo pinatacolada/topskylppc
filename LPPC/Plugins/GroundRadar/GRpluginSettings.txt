@@ -90,8 +90,8 @@ Label=APP:UNC:1:CALLSIGN,0,0
 Label=APP:UNC:2:AFL,0,0::VS,4,1
 Label=APP:UNC:3:GS,0,0
 
-List_Stand=1,336,44
-List_Stand_Items=14
+List_Stand=1,1410,130
+List_Stand_Items=20
 
 RawVideo=1
 RawVideo_MaxHistory=5
@@ -124,7 +124,7 @@ Track_HistoryDots_GND=5
 Track_HistoryDots_TWR_Type=1
 Track_Heading_Line=0
 
-List_Alerts=1,1200,44
+List_Alerts=1,1129,260
 
 List_Arrival_RWY=0
 List_Arrival_TYPE=0
@@ -156,9 +156,9 @@ List_Outbound_SID_MaxChars=4
 
 Window_APP_Scale=17
 Window_APP_AltFilter=24000
-Window_METAR=1,0,439,272,215
-Window_QNH=1,995,45
-Window_RVR=1,585,251
+Window_METAR=1,446,45,272,215
+Window_QNH=1,926,45
+Window_RVR=1,926,180
 
 [LPPT]
 Airport_Elevation=374
@@ -171,9 +171,9 @@ Airport_SMR_Track=0
 Airport_ModeA=1
 Airport_ModeS=1
 
-List_Outbound=*,2,762,251
-List_Inbound=*,2,1035,251
-List_Arrival=1,1260,251
+List_Outbound=*,2,446,260
+List_Inbound=*,2,719,260
+List_Arrival=1,944,260
 
 System_APW=1
 System_CBM=1
@@ -184,11 +184,11 @@ System_RIM=1
 System_RUM=1
 System_RVM=1
 
-Window_APP=1,1,0,45,336,253
+Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=9
-Window_WindRose=02,2,586,36
-Window_WindRose=20,2,586,36
+Window_WindRose=02,2,718,45
+Window_WindRose=20,2,718,45
 
 [LPPR]
 Airport_Elevation=227
@@ -201,9 +201,9 @@ Airport_SMR_Track=0
 Airport_ModeA=1
 Airport_ModeS=1
 
-List_Outbound=*,2,762,251
-List_Inbound=*,2,1035,251
-List_Arrival=1,1260,251
+List_Outbound=*,2,446,260
+List_Inbound=*,2,719,260
+List_Arrival=1,944,260
 
 System_APW=0
 System_CBM=0
@@ -211,11 +211,11 @@ System_RIM=0
 System_RUM=0
 System_RVM=0
 
-Window_APP=1,1,0,45,336,253
+Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
-Window_WindRose=35,2,586,36
-Window_WindRose=17,2,586,36
+Window_WindRose=35,2,718,45
+Window_WindRose=17,2,718,45
 
 [LPFR]
 Airport_Elevation=24
@@ -230,12 +230,13 @@ Airport_ModeS=1
 RawVideo_MaxHistory=0
 
 List_Arrival=1,944,260
+List_Alerts=0,1351,44
 
-Window_APP=1,1,0,45,336,253
+Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
-Window_WindRose=28,2,586,36
-Window_WindRose=10,2,586,36
+Window_WindRose=28,2,718,45
+Window_WindRose=10,2,718,45
 
 [LPMA]
 Airport_Elevation=191
@@ -265,12 +266,13 @@ Label=GND:UNC:2:
 Label=GND:UNC:3:
 
 List_Arrival=1,944,260
+List_Alerts=0,1351,44
 
-Window_APP=1,1,0,45,336,253
+Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
-Window_WindRose=05,2,586,36
-Window_WindRose=23,2,586,36
+Window_WindRose=05,2,718,45
+Window_WindRose=23,2,718,45
 
 [LPPS]
 Airport_Elevation=340
@@ -298,9 +300,10 @@ Label=GND:UNC:2:
 Label=GND:UNC:3:
 
 List_Arrival=1,944,260
+List_Alerts=0,1351,44
 
-Window_APP=1,1,0,45,336,253
+Window_APP=1,1,0,45,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
-Window_WindRose=36,2,586,36
-Window_WindRose=18,2,586,36
+Window_WindRose=36,2,718,45
+Window_WindRose=18,2,718,45
