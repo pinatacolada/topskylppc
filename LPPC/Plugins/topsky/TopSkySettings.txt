@@ -30,6 +30,7 @@ Airspace_ASSR_APL_StartCode=3205
 Airspace_ASSR_APL_EndCode=3277
 Airspace_No_DUPE_Codes=2000,7000
 Airspace_NOTAM_Add=LPPC
+Airspace_P_Flag=LPPP
 Airspace_SIGMET_Areas=LPPC
 
 AIW_FlightRules=1
