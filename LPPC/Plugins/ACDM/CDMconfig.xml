@@ -7,7 +7,7 @@
 	<pilotTobt mode="true" />
 	<autoAtot mode="true" />
 	<invalidateAtTsat mode="true" />
-	<Rates url="https://raw.githubusercontent.com/pinatacolada/lppc-atfm/main/rate.txt" />
+	<Rates url="" /><!--TODO: remove file entirely -->
 	<Taxizones url="" />
 	<Ctot url="https://raw.githubusercontent.com/pinatacolada/lppc-atfm/main/ctot.txt" />
 	<sidInterval url="" />
