@@ -1,42 +1,42 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
-Fixes:A-POINT:name
-Fixes:A-POINT:symbol
+Fixes:ALFA:name
+Fixes:ALFA:symbol
 Fixes:ALGES:name
 Fixes:ALGES:symbol
-Fixes:B-POINT:name
-Fixes:B-POINT:symbol
 Fixes:BELAS:name
 Fixes:BELAS:symbol
+Fixes:BRAVO:name
+Fixes:BRAVO:symbol
 Fixes:BUGIO:name
 Fixes:BUGIO:symbol
-Fixes:C-POINT:name
-Fixes:C-POINT:symbol
 Fixes:CARCA:name
 Fixes:CARCA:symbol
 Fixes:CCAIS:name
 Fixes:CCAIS:symbol
+Fixes:CHARL:name
+Fixes:CHARL:symbol
 Fixes:CRASO:name
 Fixes:CRASO:symbol
 Fixes:CROCA:name
 Fixes:CROCA:symbol
 Fixes:CVAPO:name
 Fixes:CVAPO:symbol
-Fixes:D-POINT:name
-Fixes:D-POINT:symbol
+Fixes:DELTA:name
+Fixes:DELTA:symbol
 Fixes:ENACI:name
 Fixes:ENACI:symbol
 Fixes:GUINC:name
 Fixes:GUINC:symbol
-Fixes:N-POINT:name
-Fixes:N-POINT:symbol
+Fixes:NOVMB:name
+Fixes:NOVMB:symbol
 Fixes:OEIRA:name
 Fixes:OEIRA:symbol
 Fixes:PARCO:name
 Fixes:PARCO:symbol
-Fixes:S-POINT:name
-Fixes:S-POINT:symbol
+Fixes:SIERR:name
+Fixes:SIERR:symbol
 Free Text:LPBJ Taxiways\A1:freetext
 Free Text:LPBJ Taxiways\A2:freetext
 Free Text:LPBJ Taxiways\B1:freetext
@@ -63,15 +63,37 @@ Free Text:LPCS Taxiways\K:freetext
 Free Text:LPCS Taxiways\L:freetext
 Free Text:LPCS Taxiways\T:freetext
 Free Text:LPCS Taxiways\W:freetext
+Free Text:LPSO Taxiways\A:freetext
+Free Text:LPSO Taxiways\APN E 02:freetext
+Free Text:LPSO Taxiways\APN NE 03:freetext
+Free Text:LPSO Taxiways\APN SE 01:freetext
+Free Text:LPSO Taxiways\B:freetext
+Free Text:LPSO Taxiways\C:freetext
 Geo:GEO:
 Geo:LP Landmark Continental Coastline:
+Geo:LPBG Groundlayout:
 Geo:LPBJ Groundlayout:
+Geo:LPCB Groundlayout:
+Geo:LPCH Groundlayout:
+Geo:LPCO Groundlayout:
 Geo:LPCS Groundlayout rwy:
 Geo:LPCS Groundlayout twy:
+Geo:LPEV Groundlayout:
+Geo:LPPM Groundlayout:
+Geo:LPSO Groundlayout:
+Geo:LPVR Groundlayout:
 Geo:LPVZ Groundlayout:
+Regions:LPBG Groundlayout:polygon
+Regions:LPCB Groundlayout:polygon
+Regions:LPCH Groundlayout:polygon
+Regions:LPCO Groundlayout:polygon
 Regions:LPCS Groundlayout:polygon
-Runways:LPAR 04-22:centerline
-Runways:LPAR 04-22:name
+Regions:LPEV Groundlayout:polygon
+Regions:LPPM Groundlayout:polygon
+Regions:LPSO Groundlayout:polygon
+Regions:LPVR Groundlayout:polygon
+Runways:LPAR 03-21:centerline
+Runways:LPAR 03-21:name
 Runways:LPBJ 01L-19R:centerline
 Runways:LPBJ 01L-19R:name
 Runways:LPBJ 01R-19L:centerline
@@ -80,8 +102,8 @@ Runways:LPMR 18-36:centerline
 Runways:LPMR 18-36:name
 Runways:LPMT 01-19:centerline
 Runways:LPMT 01-19:name
-Runways:LPMT 08-26:centerline
-Runways:LPMT 08-26:name
+Runways:LPMT 07-25:centerline
+Runways:LPMT 07-25:name
 Runways:LPOV 18-36:centerline
 Runways:LPOV 18-36:name
 Runways:LPST 14-32:centerline
