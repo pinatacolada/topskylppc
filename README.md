@@ -2,6 +2,7 @@
 [![latest-version](https://img.shields.io/github/v/release/pinatacolada/topskylppc?include_prereleases)](https://github.com/pinatacolada/topskylppc/releases)  [![topsky-version](https://img.shields.io/badge/TopSky-2.5-blue.svg)](https://forum.vatsim-scandinavia.org/d/34-topsky-plugin-25)
 [![gr-version](https://img.shields.io/badge/Ground%20Radar-1.6b4-blue.svg)](https://forum.vatsim-scandinavia.org/d/219-ground-radar-plugin-16-beta-4)
 [![cdm-version](https://img.shields.io/badge/CDM-2.2.8.20-blue.svg)](https://github.com/rpuig2001/CDM)
+[![rwym-version](https://img.shields.io/badge/RwyMan-0.15.0-blue.svg)](https://gitlab.com/portugal-vacc/runwaymanager/-/releases/v0.15)
 
 The TopSky plugin is developed and maintained by Juha Holopainen from VATSIM Scandinavia. It is an almost complete set of tag items, tag menus, graphical elements on the radar display and some additional functionality based around the real world TopSky ATM system. 
 
