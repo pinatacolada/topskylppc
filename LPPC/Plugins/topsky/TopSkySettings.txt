@@ -249,18 +249,12 @@ List_TfcMgmt1_Via=PILIM,ABUSU
 List_TfcMgmt2_Via=MARCU,LAPPA
 Setup_LoadMap=TWRSAN\rep_san_stars_nl
 Setup_LoadMap=TWRSAN\rep_san_rnp_nl
-Window_CARD_View_Notif=1
-Window_CARD_View_Future=0
 Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPMA
 
 [LPPR_]
-Label_PEL_Default=0000
-Label_WTC_Default=0000
-Label_XFL_Default=0000
+Label_XFL_Default=0100
 List_TfcMgmt1_Via=ADNOV,AKULU
-Window_CARD_View_Notif=1
-Window_CARD_View_Future=0
 Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPPR
 
@@ -275,15 +269,11 @@ Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPPS
 
 [LPPT_]
-Window_CARD_View_Notif=1
-Window_CARD_View_Future=0
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
 Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPPT
-Label_PEL_Default=0000
-Label_WTC_Default=0000
-Label_XFL_Default=0000
+Label_XFL_Default=0100
 List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
 List_TfcMgmt2_Via=CASLU,ESP
 
@@ -300,13 +290,9 @@ Setup_LoadMap=TWRCAS\ext_cntrline_35
 Setup_Informed=LPPT,LPCS,LPAR,LPMT:*:*:1
 
 [LPFR_]
-Label_PEL_Default=0000
-Label_WTC_Default=0000
-Label_XFL_Default=0000
-List_TfcMgmt1_Via=FR455,VENOL
+Label_XFL_Default=0100
+List_TfcMgmt1_Via=FR910,FR928
 List_TfcMgmt2_Via=SOTEX,ALAGU
-Window_CARD_View_Notif=1
-Window_CARD_View_Future=0
 Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPFR
 
