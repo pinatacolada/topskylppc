@@ -6,8 +6,8 @@ Setup_LoadMap=ENVR\border
 Setup_LoadMap=ENVR\rwy
 Setup_LoadMap=VFR\atz
 Setup_LoadMap=ENR_MAP\adj_fir_sec
-Setup_LoadMap=ENR_REP\rep_out
-Setup_LoadMap=ENR_REP\rep_bdry
+Setup_LoadMap=ENR_MAP\e-w-m
+Setup_LoadMap=ENR_REP\rep_main_nl
 Setup_LoadMap=ENR_MAP\lim
 
 Setup_LoadMap=APP\rep_tma
@@ -18,9 +18,6 @@ Setup_LoadMap=APP\ctr
 Setup_LoadMap=APPFUN\pfun_05_23_a
 
 Setup_LoadMap=APPLIS\arc50
-
-Setup_LoadMap=TWRCAS\pcas
-Setup_LoadMap=TWRCAS\pcas_gnss
 
 Airspace_833_Min=0
 Airspace_AOR_Airports=LP
@@ -33,6 +30,7 @@ Airspace_ASSR_APL_StartCode=3205
 Airspace_ASSR_APL_EndCode=3277
 Airspace_No_DUPE_Codes=2000,7000
 Airspace_NOTAM_Add=LPPC
+Airspace_P_Flag=LPPP
 Airspace_SIGMET_Areas=LPPC
 
 AIW_FlightRules=1
@@ -57,7 +55,7 @@ Areas_AUP_UserText=MIL
 
 Color_Active_Map_Type_3=132,142,139	//D GREY
 Color_Active_Map_Type_6=90,90,90	//INFILL GREY
-
+Color_Preactive_Text_Map=100,160,100 //Color_Active_Map_Type_13
 Color_Proposition_Accepted=175,125,175 //C_Sector_Informed
 Color_Text_Notes=125,125,125
 
@@ -66,7 +64,7 @@ CPDLC_AutoAcceptLogon=1
 CPDLC_AutoAcceptLogon_Time=15
 CPDLC_PDC_Auto=1
 CPDLC_PDC_Timeout_Pilot=180
-CPDLC_FSM_CLD_Header=CLD <hour><min> <year2><month2><day> <adep2> PDC <number> <callsign>
+CPDLC_FSM_CLD_Header=CLD <hour><min> <year2><month2><day> <adep2> PDC 999 <callsign>
 
 Divergence_CLAM_DelayTime=30
 Divergence_RAM_Limit=1
@@ -171,6 +169,7 @@ System_APL_Controlled=0
 System_ASP_IasMach=28500
 System_FPASD_MinState=1
 System_MagModel_Year=2024
+System_MaxMinSepTime=45
 System_MetarSourceVATSIM=0
 System_Oceanic=1
 System_TaxiTime=15
@@ -206,7 +205,6 @@ Window_PDC_SetCFL=1
 Window_PredTfc_Caution=20
 Window_PredTfc_Warning=30
 Window_SAP_MaxListItems=7
-Window_SmallQNHTL_ICAO=LPPT
 Window_SM_LowestLevel=30
 Window_WxMsgs_MetarRefreshInterval=600
 Window_WxMsgs_TafRefreshInterval=600
@@ -249,6 +247,8 @@ List_TfcMgmt2_Via=PILIM,ABUSU
 [LPMA_]
 List_TfcMgmt1_Via=PILIM,ABUSU
 List_TfcMgmt2_Via=MARCU,LAPPA
+Setup_LoadMap=TWRSAN\rep_san_stars_nl
+Setup_LoadMap=TWRSAN\rep_san_rnp_nl
 Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
 Window_SmallQNHTL=1,1425,25
@@ -261,21 +261,26 @@ Label_XFL_Default=0000
 List_TfcMgmt1_Via=ADNOV,AKULU
 Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
+Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPPR
 
 [LPPR_APP]
 Setup_Informed=*:XAMAX:LPPT,LPCS:1
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
+Setup_LoadMap=APPPRT\nortavia_nl
+
+[LPPS_]
 Window_SmallQNHTL=1,1425,25
-Window_SmallQNHTL_ICAO=LPPR
-Setup_LoadMap=APPPRT\nortavia
+Window_SmallQNHTL_ICAO=LPPS
 
 [LPPT_]
 Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
 Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
+Window_SmallQNHTL=1,1425,25
+Window_SmallQNHTL_ICAO=LPPT
 Label_PEL_Default=0000
 Label_WTC_Default=0000
 Label_XFL_Default=0000
@@ -298,7 +303,8 @@ Setup_Informed=LPPT,LPCS,LPAR,LPMT:*:*:1
 Label_PEL_Default=0000
 Label_WTC_Default=0000
 Label_XFL_Default=0000
-List_TfcMgmt1_Via=GEBTI,VENOL
+List_TfcMgmt1_Via=FR455,VENOL
+List_TfcMgmt2_Via=SOTEX,ALAGU
 Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
 Window_SmallQNHTL=1,1425,25
@@ -329,7 +335,10 @@ Setup_LoadMap=MIL\pmtr
 Setup_LoadMap=MIL\rad_vec_bej
 
 [LPCS_]
-Setup_LoadMap=TWRLIS\vfr_lis_nl
+Setup_LoadMap=TWRCAS\rep_cas_app_nl
+Setup_LoadMap=TWRCAS\rep_vfr_nl
+Setup_LoadMap=TWRCAS\ext_cntrline_35
+Setup_LoadMap=TWRCAS\vfr_routes_cs_nl
 
 [LPPC_W]
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
@@ -337,8 +346,14 @@ Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
 [LPPC_D]
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
 
+[LPPC_I]
+Setup_LoadMap=TWRSAN\rep_san_stars_nl
+Setup_LoadMap=TWRSAN\rep_san_rnp_nl
+
 [LPPC_O]
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
+Setup_LoadMap=TWRSAN\rep_san_stars_nl
+Setup_LoadMap=TWRSAN\rep_san_rnp_nl
 
 [LPPC_E]
 Setup_Informed=*:AGADO,DEMOS,ORSOS:*:1

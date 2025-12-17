@@ -9,7 +9,7 @@
 \medskip 
 
 Version 3.1}
-\setdocrevision{4}
+\setdocrevision{7}
 
 \begin{document}
 
@@ -166,6 +166,7 @@ Interaction with core A-CDM systems is done with classic command line inputs:
   \texttt{.cdm realmode}                                    & Toggle realmode on or off\\ \hline
   \texttt{.cdm remarks}                                     & Toggle set TSAT to Euroscope scratchpad on or off\\ \hline
   \texttt{.cdm rates}                                       & Updates rates values from \texttt{rate.txt}\\ \hline
+  \texttt{.cdm recover}                                     & In case of of CTD, it tries to recover the latest time status backed up in the server. Example: \texttt{.cdm recover LPPT} \\ \hline
   \texttt{.cdm flow }                                       & Forces an update on ECFMP flow restrictions data, otherwise updated every 5 minutes.\\ \hline
   \texttt{.cdm help}                                        & Show all available commands \\ \hline
   \caption{A-CDM commands}
@@ -278,20 +279,12 @@ Interaction with core A-CDM systems is done with classic command line inputs:
   Flight Plan Status&
       REA if Ready message has been sent
       
-      PRIO to give priority for improvement
-      
       SUSP if flight plan has been suspended 
       
       Empty otherwise &   
       REA: 
       
       \colorref{color5}
-      
-      \bigskip
-
-      PRIO: 
-      
-      \colorref{color1}
 
       \bigskip
       
@@ -4913,7 +4906,7 @@ Displays a range scale in the bottom right corner of the radar screen.
 
 \subsection{Minimum Separation Tool}\label{tool:mst}
 
-The minimum separation tool displays the predicted minimum lateral separation between two radar tracks within the next 30 minutes, assuming both of them maintain their present ground tracks and speeds. Lines are drawn from the tracks’ present positions to the positions where the tracks are predicted to be at the time of the minimum separation.
+The minimum separation tool displays the predicted minimum lateral separation between two radar tracks within the next 45 minutes, assuming both of them maintain their present ground tracks and speeds. Lines are drawn from the tracks’ present positions to the positions where the tracks are predicted to be at the time of the minimum separation.
 
 To draw minimum separation lines between two radar tracks:
 \begin{itemize}
@@ -5365,7 +5358,7 @@ After any selection from the pop-up menu other than “Edit”, “Ok”, “App
 
 \subsubsection{Area display}
 
-Preactive and active areas are displayed on the radar screen. A preactive area border is drawn in \colorref{Preactive Map}. An active area border is drawn in \colorref{Active Map Type 4} border and, for areas with high operational impact, filled in a transparent \colorref{Active RD Infill Map}. 
+Preactive and active areas are displayed on the radar screen. A preactive area border is drawn in \colorref{Preactive Map} and its label in \colorref{Preactive Text Map}. An active area border is drawn in \colorref{Active Map Type 4} border and, for areas with high operational impact, filled in a transparent \colorref{Active RD Infill Map}. 
 
 \capdimage{img/tsapre.png}{Preactive Area} \capdimage{img/tsaact.png}{Active Area} \capdimage{img/tsafill.png}{Active High Operational Impact Area}
 

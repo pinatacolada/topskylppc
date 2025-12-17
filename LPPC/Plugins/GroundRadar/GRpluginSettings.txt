@@ -50,7 +50,7 @@ Label_WTC=0,1,0
 
 
 Label=GND:DEP:0:ALRT,0,0:ASSR_E,0,1:COMM,0,1
-Label=GND:DEP:1:CALLSIGN,0,0:SID,8,0
+Label=GND:DEP:1:CALLSIGN,0,0:SID,8,0,13
 Label=GND:DEP:2:WTC,0,0:ATYP,2,0
 Label=GND:DEP:3:RMK,0,0
 
@@ -90,14 +90,24 @@ Label=APP:UNC:1:CALLSIGN,0,0
 Label=APP:UNC:2:AFL,0,0::VS,4,1
 Label=APP:UNC:3:GS,0,0
 
-List_Stand=1,1410,130
+List_Stand=1,1300,45
 List_Stand_Items=20
+
+Maps_URL=https://raw.githubusercontent.com/pinatacolada/lppc-atfm/refs/heads/main/GRpluginMaps.txt
 
 RawVideo=1
 RawVideo_MaxHistory=5
 
+System_APM=-1
+System_APW=-1
+System_CBM=-1
+System_ECM=-1
+System_ICM=-1
+System_OSM=-1
+System_RIM=-1
+System_RUM=-1
+System_RVM=-1
 System_State_OnFreq=READY
-System_State_DeIce=TAXI SP
 
 Track_Heading_Line=1
 Track_PredictionLine_TWR=1
@@ -116,7 +126,7 @@ Track_HistoryDots_GND=5
 Track_HistoryDots_TWR_Type=1
 Track_Heading_Line=0
 
-List_Alerts=1,1129,260
+List_Alerts=1,996,45
 
 List_Arrival_RWY=0
 List_Arrival_TYPE=0
@@ -148,9 +158,9 @@ List_Outbound_SID_MaxChars=4
 
 Window_APP_Scale=17
 Window_APP_AltFilter=24000
-Window_METAR=1,446,45,272,215
-Window_QNH=1,926,45
-Window_RVR=1,926,180
+Window_METAR=1,0,45,313,76
+Window_QNH=1,0,121
+Window_RVR=1,0,196
 
 [LPPT]
 Airport_Elevation=374
@@ -163,13 +173,24 @@ Airport_SMR_Track=0
 Airport_ModeA=1
 Airport_ModeS=1
 
-List_Outbound=*,2,446,260
-List_Inbound=*,2,719,260
-List_Arrival=1,944,260
+List_Outbound=*,2,313,45
+List_Inbound=*,2,586,45
+List_Arrival=1,811,45
 
-Window_APP=1,1,0,45,447,336
+System_APW=1
+System_CBM=1
+System_ECM=1
+System_ICM=1
+System_OSM=1
+System_RIM=1
+System_RUM=1
+System_RVM=1
+
+Window_APP=1,1,1190,640,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=9
+Window_WindRose=02,2,847,180
+Window_WindRose=20,2,847,180
 
 [LPPR]
 Airport_Elevation=227
@@ -182,9 +203,9 @@ Airport_SMR_Track=0
 Airport_ModeA=1
 Airport_ModeS=1
 
-List_Outbound=*,2,446,260
-List_Inbound=*,2,719,260
-List_Arrival=1,944,260
+List_Outbound=*,2,313,45
+List_Inbound=*,2,586,45
+List_Arrival=1,811,45
 
 System_APW=0
 System_CBM=0
@@ -192,53 +213,36 @@ System_RIM=0
 System_RUM=0
 System_RVM=0
 
-Window_APP=1,1,0,45,447,336
+Window_APP=1,1,0,438,447,336
 Window_APP_Extensions=0
 Window_APP_Scale=14
+Window_WindRose=35,2,847,180
+Window_WindRose=17,2,847,180
 
 [LPFR]
 Airport_Elevation=24
 Airport_Radius=6.5
 Airport_Runway_Buffer_LVP=28:160.0
 
-Label=GND:DEP:0:
-Label=GND:DEP:1:
-Label=GND:DEP:2:
-Label=GND:DEP:3:
+Airport_SMR_Raw=2
+Airport_SMR_Track=0
+Airport_ModeA=1
+Airport_ModeS=1
 
-Label=GND:ARR:0:
-Label=GND:ARR:1:
-Label=GND:ARR:2:
-Label=GND:ARR:3:
-
-Label=GND:OTH:0:
-Label=GND:OTH:1:
-Label=GND:OTH:2:
-Label=GND:OTH:3:
-
-Label=GND:UNC:0:
-Label=GND:UNC:1:
-Label=GND:UNC:2:
-Label=GND:UNC:3:
-
-System_APW=0
-System_CBM=0
-System_ECM=0
-System_ICM=0
-System_OSM=0
-System_RIM=0
-System_RUM=0
-System_RVM=0
+RawVideo_MaxHistory=0
 
 List_Arrival=1,944,260
 List_Alerts=0,1351,44
 
-Window_APP=1,1,0,45,447,336
+Window_APP=1,1,313,41,406,204
 Window_APP_Extensions=0
-Window_APP_Scale=14
+Window_APP_Scale=11
+Window_WindRose=28,2,718,45
+Window_WindRose=10,2,718,45
 
 [LPMA]
 Airport_Elevation=191
+Airport_LVP=0
 Airport_Radius=6.5
 Airport_Runway_End=05:N032.41.20.317:W016.47.05.617
 Airport_Runway_End=23:N032.42.24.461:W016.45.50.583
@@ -266,21 +270,16 @@ Label=GND:UNC:3:
 List_Arrival=1,944,260
 List_Alerts=0,1351,44
 
-System_APW=0
-System_CBM=0
-System_ECM=0
-System_ICM=0
-System_OSM=0
-System_RIM=0
-System_RUM=0
-System_RVM=0
-
-Window_APP=1,1,0,45,447,336
+Window_APP=1,1,313,41,406,204
+Window_APP_CenterPos=1,32.7243,-16.6717
 Window_APP_Extensions=0
-Window_APP_Scale=14
+Window_APP_Scale=11
+Window_WindRose=05,2,718,45
+Window_WindRose=23,2,718,45
 
 [LPPS]
 Airport_Elevation=340
+Airport_LVP=0
 Airport_Radius=5
 
 Label=GND:DEP:0:
@@ -306,15 +305,8 @@ Label=GND:UNC:3:
 List_Arrival=1,944,260
 List_Alerts=0,1351,44
 
-System_APW=0
-System_CBM=0
-System_ECM=0
-System_ICM=0
-System_OSM=0
-System_RIM=0
-System_RUM=0
-System_RVM=0
-
-Window_APP=1,1,0,45,447,336
+Window_APP=1,1,313,41,406,204
 Window_APP_Extensions=0
-Window_APP_Scale=14
+Window_APP_Scale=11
+Window_WindRose=36,2,718,45
+Window_WindRose=18,2,718,45
