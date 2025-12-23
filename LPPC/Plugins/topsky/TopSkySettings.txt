@@ -188,6 +188,7 @@ Track_PredictionLine=2
 
 Vector_AHDG_Label_Dist=2
 Vector_MinSep_Label_Time=1
+Vector_QDM_AA_Label_Time=1
 
 Window_ASM=1,200,200,610,270
 Window_ASM_ShowNOTAMasUsertext=0
