@@ -71,6 +71,8 @@ Divergence_RAM_Limit=1
 
 Equip_UseCodes=3
 
+FAST=0
+
 FlightLeg_AssumeTime=2
 FlightLeg_AutoShow=1
 FlightLeg_Label_Point=0
