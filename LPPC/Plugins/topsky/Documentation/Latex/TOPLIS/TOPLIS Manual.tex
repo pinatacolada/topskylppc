@@ -8,8 +8,8 @@
 
 \medskip 
 
-Version 3.1}
-\setdocrevision{7}
+Version 3.2}
+\setdocrevision{1}
 
 \begin{document}
 
@@ -2322,7 +2322,11 @@ Sector States are used to control label construction, placement in lists, filter
     No fix warning &
     “F” if IFR flight is not routing via one of specified fixes to its destination &
     \colorref{Information}\\ \hline
-  FCOPN \nextrow \label{tag:FCOPN}&
+  FASTwarn \nextrow \label{tag:FASTwarn}&
+    FAST warning &
+    “SQ” for sequence warning &
+    \colorref{Warning}\\ \hline
+    FCOPN \nextrow \label{tag:FCOPN}&
     FIR COPN point &
     FIR entry coordination point &
     \colorref{Information}\\ \hline
@@ -2368,6 +2372,10 @@ Sector States are used to control label construction, placement in lists, filter
     Flight Message Field &
     User entered text, stored only locally &
     \\ \hline
+  FSQ \nextrow \label{tag:FSQ} &
+    FAST sequence number &
+    Sequence number or “MA” for missed approach &
+    If sequence warning or missed approach: \colorref{Warning} \\ \hline
   FText \nextrow \label{tag:FText} &
     Free text &
     &
@@ -2944,6 +2952,7 @@ This submenu allows changing some of TopSky’s settings. Any changes to the set
   APW alert sound         & Selects which STCA alerts trigger the alert sound:\\                                  & \hspace{10pt}• All All alerts\\                                             & \hspace{10pt}• Own+Co Only alerts for \stateref{Assumed} and \stateref{Coordinated}\\                     & aircraft\\                          & \hspace{10pt}• Own Only alerts for \stateref{Assumed} aircraft\\ & \hspace{10pt}• Off No alert sound\\
   METAR source            & Selects the METAR data source for TopSky windows that display METAR data\\
   FPASD filter            & Allows filtering of displayed FPASD tracks based on sector state\\                    & \hspace{10pt}• Coord Display tracks at least in the \stateref{Coordinated} state\\                          & \hspace{10pt}• Conc Display tracks at least in the \stateref{Notified} state\\                          & \hspace{10pt}• None Display all tracks\\
+  FAST                    & Sets the status of the FAST function\\        
 \end{longtable}
 \medskip
 
@@ -3015,50 +3024,67 @@ Opens the \winref{win:fpsw} and \winref{win:fpw}.
 \label{menu:fplists}
 
 \begin{longtable}{p{5cm} p{7.5cm}}
-  List options bar            & Toggles the display of list options on the \winref{menu:global}\\
-  Sector List…                & Opens the \winref{list:sector}                                 \\
-  Informed                    & Toggles the display of \stateref{Informed} aircraft            \\
-  Concerned                   & Toggles the display of \stateref{Notified} and \stateref{Coordinated} aircraft           \\
-  Redundant                   & Toggles the display of \stateref{Redundant} aircraft           \\
-  Load Factor List…           & Opens the \winref{list:load}                                   \\
-  ETWR List…                  & Opens the \winref{list:etwr}                                   \\
-  <adep>                      & ETWR List departure airports filter                            \\
-  Uncont. List 1…             & Opens the \winref{list:uncon}                                  \\
-  <filter>                    & Uncontrolled 1 List state filter                               \\
-  <units>                     & Uncontrolled 1 List units filter                               \\
-  Uncont. List 2…             & Opens the \winref{list:uncon}                                  \\
-  <filter>                    & Uncontrolled 2 List state filter                               \\
-  <units>                     & Uncontrolled 2 List units filter                               \\
-  Lost List…                  & Opens the \winref{list:lost}                                   \\
-  Resectorisation List…       & Opens the \winref{list:resec}                                  \\
-  <lfunc>                     & Resectorisation List LFUNC filter                              \\
-  Traffic Mgmt. List 1…       & Opens the \winref{list:tml}                                    \\
-  <state>                     & Traffic Management List 1 flight plan state filter             \\
-  <ades>                      & Traffic Management List 1 destination airports filter          \\
-  <via>                       & Traffic Management List 1 route points filter                  \\
-  Traffic Mgmt. List 2…       & Opens the \winref{list:tml}                                    \\
-  <state>                     & Traffic Management List 2 flight plan state filter             \\
-  <ades>                      & Traffic Management List 2 destination airports filter          \\
-  <via>                       & Traffic Management List 2 route points filter                  \\
+  List options bar            & Toggles the display of list options on the \winref{menu:global}                 \\
+  SIL…                        &                                                                                 \\
+  Sort                        & Selects sorting option                                                          \\
+  Sector List…                & Opens the \winref{list:sector}                                                  \\
+  Sort                        & Selects sorting option                                                          \\
+  Informed                    & Toggles the display of \stateref{Informed} aircraft                             \\
+  Concerned                   & Toggles the display of \stateref{Notified} and \stateref{Coordinated} aircraft  \\
+  Redundant                   & Toggles the display of \stateref{Redundant} aircraft                            \\
+  Load Factor List…           & Opens the \winref{list:load}                                                    \\
+  Sort                        & Selects sorting option                                                          \\
+  Departure List…             &                                                                                 \\
+  Sort                        & Selects sorting option                                                          \\
+  Resectorisation List…       & Opens the \winref{list:resec}                                                   \\
+  Sort                        & Selects sorting option                                                          \\
+  <lfunc>                     & Resectorisation List LFUNC filter                                               \\
+  ETWR List…                  & Opens the \winref{list:etwr}                                                    \\
+  Sort                        & Selects sorting option                                                          \\
+  ADEP                        & ETWR List departure airports filter                                             \\
+  Uncont. List 1…             & Opens the \winref{list:uncon}                                                   \\
+  Sort                        & Selects sorting option                                                          \\
+  Display                     & Uncontrolled 1 List state filter                                                \\
+  Filter                      & Uncontrolled 1 List units filter                                                \\
+  Uncont. List 2…             & Opens the \winref{list:uncon}                                                   \\
+  Sort                        & Selects sorting option                                                          \\
+  Display                     & Uncontrolled 2 List state filter                                                \\
+  Filter                      & Uncontrolled 2 List units filter                                                \\
+  Lost List…                  & Opens the \winref{list:lost}                                                    \\ 
+  Traffic Mgmt. List 1…       & Opens the \winref{list:tml}                                                     \\
+  Sort                        & Selects sorting option                                                          \\
+  Display                     & Traffic Management List 1 flight plan state filter                              \\
+  ADES                        & Traffic Management List 1 destination airports filter                           \\
+  Via                         & Traffic Management List 1 route points filter                                   \\
+  Traffic Mgmt. List 2…       & Opens the \winref{list:tml}                                                     \\
+  Sort                        & Selects sorting option                                                          \\
+  Display                     & Traffic Management List 2 flight plan state filter                              \\
+  ADES                        & Traffic Management List 2 destination airports filter                           \\
+  Via                         & Traffic Management List 2 route points filter                                   \\
 \end{longtable}
 
 When enabled, the list options bar displays “Info Conc Redu Filter Filter” on the right edge of the \winref{menu:global}. The first three toggle the respective settings for the \winref{list:sector} and are colored with the appropriate color when enabled, and the last two are displayed in \colorref{Redundant} color when the corresponding \winref{list:uncon} are somehow filtered. Clicking on them opens the \winref{menu:fplists} to change the filtering options.
 
 \bigskip
 
-Left-clicking <filter> cycles through “ALL” (no filtering), “ON-CONTACT” (only tracks \stateref{On Contact} with anyone), “ON-CONTACT-PPOS” (only tracks \stateref{On Contact} with you) and “FREE” (only tracks in the \stateref{Free} state).
+Left- or right-clicking the Sort option cycles through the options forward and backward in alphabetical order. This sorting is achieved using a special sorting tag item in the lists that is hidden from view. The sorting only works when the list is sorted according to that item. If the list is sorted according to any other item, this sorting choice will have no effect until the list is again sorted according to the special sorting item (by displaying it in the list, clicking on the column title, and then hiding it again).
 
 \bigskip
 
-Left-clicking <units> opens a text entry box to enter a comma-separated list of aerodrome ICAO codes to filter the list. When entered, the list will display a flight only if one of the entered codes is its departure or destination, or the code is found in \tagref{tag:OP TEXT2}.
+Left-clicking the “LFUNC”, “ADEP”, “ADES” and “Via” boxes open text entry boxes to enter comma-separated lists for controlled ID’s, ICAO codes and point names respectively to filter the affected lists.
 
 \bigskip
 
-Left-clicking <lfunc>, <adep>, <ades> and <via> open text entry boxes to enter comma-separated lists for controlled ID’s, ICAO codes and point names respectively to filter the affected lists.
+
+Left-clicking the Display option cycles through “ALL” (no filtering), “ON-CONTACT” (only tracks \stateref{On Contact} with anyone), “ON-CONTACT-PPOS” (only tracks \stateref{On Contact} with you) and “FREE” (only tracks in the \stateref{Free} state).
 
 \bigskip
 
-Left-clicking <state> toggles between “ALL” (no filtering), “SIMUL+TERM” (not started flight plans filtered), “NOTST+SIMUL” (terminated flight plans filtered) and “SIMUL” (not started and terminated flight plans filtered).
+Left-clicking the Filter box opens a text entry box to enter a comma-separated list of aerodrome ICAO codes to filter the list. When entered, the list will display a flight only if one of the entered codes is its departure or destination, or the code is found in \tagref{tag:OP TEXT2}.
+
+\bigskip
+
+Left-clicking the Display option toggles between “ALL” (no filtering), “SIMUL+TERM” (not started flight plans filtered), “NOTST+SIMUL” (terminated flight plans filtered) and “SIMUL” (not started and terminated flight plans filtered).
 
 \subsubsection{CPDLC submenu}
 \label{menu:cpdlc}
@@ -4168,6 +4194,52 @@ The AHDG vector is a way of setting an assigned heading for an aircraft. To use 
 
 When the cursor is over a known point (VOR, NDB or waypoint), the name of that point is displayed instead of the heading value, and left-clicking will set a direct-to clearance to that point. To temporarily disable the known points functionality, keep the <ALT> key pressed while using the vector.
 
+\subsection{FAST indicators}\label{menu:fasti}
+
+\note{FAST functionality is not implemented}
+
+Separation and/or gap indicators will be automatically displayed for all defined approaches to all airports set as active for arrivals in EuroScope. The indicators or the sequence orders are not synchronized between controllers.
+
+The system displays a separation indicator, showing the minimum separation from the preceding aircraft (the greater of minimum surveillance separation and wake turbulence separation), and optionally a gap indicator which shows a manually defined distance gap behind the previous aircraft.
+
+The gaps are set from the FAST List, and a pre-defined gap is also automatically entered in front of an aircraft with a CAT2 or CAT3 approach clearance.
+
+\begin{longtable}{|p{3cm}|p{2cm}|p{6cm}|}
+  \hline
+    &  \textbf{Symbol} &  \textbf{Color} \\ \hline
+  \endhead
+  Separation indicator  & (  &  Symbol overtaken: \colorref{FTD Urgency} 
+  
+                                Selected track: \colorref{Track Highlight} 
+  
+                                Otherwise: \colorref{FTD Nominal}  \nextrow \\
+  Gap indicator         & [  &  Selected track: \colorref{Track Highlight} 
+  
+                                Otherwise: \colorref{GAP Nominal}  \nextrow \\
+  \hline
+\end{longtable}
+
+Right-clicking on a gap indicator opens a confirmation window to remove the gap.
+
+\bigskip
+
+The separation indicator is hidden if:
+
+\begin{itemize}
+  \item a gap is present;
+  \item the aircraft hasn’t overtaken the gap indicator, and;
+  \item the separation indicator is further away from the gap indicator than a pre-defined distance.
+\end{itemize}
+
+The gap indicator is hidden if:
+
+\begin{itemize}
+  \item the aircraft overtakes its gap indicator, or;
+  \item the gap is smaller than the required minimum separation.
+\end{itemize}
+
+If the aircraft overtakes its separation indicator by a pre-defined distance, the symbol will be displayed with \colorref{FTD Urgency} color and the overtake distance will be displayed next to the symbol.
+
 \subsection{Handover Proposal (HOP)}
 \label{win:hop}
 
@@ -4371,6 +4443,42 @@ NLT     & current field value if available, current time otherwise\\
 The DSQ menu is used to select a specific departure sequence number to a flight. The list includes the possible numbers, and the current number is highlighted. Left-clicking on a number sets it, “Clear” removes the flight from the departure sequence.
 
 \note{The departure sequence number is only stored locally, it is not sent to other controllers or even to other EuroScope instances.}
+
+\subsection{GAP Menu}
+\label{menu:gap}
+\capdimage{img/gapm.png}{GAP Menu}
+
+The GAP menu is used to set an approach gap or cancel an existing one, either only behind the specified aircraft (manual gap), or also behind all the following ones (systematic gap).
+
+\bigskip
+
+To set a manual gap:
+
+\begin{enumerate}
+  \item Unselect the “Systematic” checkbox;
+  \item Select a value from the list, or enter a custom value to the edit field at the bottom(values from 0.1 to 40.0 nm are accepted).
+\end{enumerate}
+
+To set a systematic gap starting from the selected aircraft:
+
+\begin{enumerate}
+  \item Select the “Systematic” checkbox;
+  \item Select a value from the list, or enter a custom value to the edit field at the bottom (values from 0.1 to 40.0 nm are accepted)
+\end{enumerate}
+
+To cancel an existing manual gap:
+
+\begin{enumerate}
+  \item Unselect the “Systematic” checkbox;
+  \item Left-click on “CNL GAP”
+\end{enumerate}
+
+To cancel a systematic gap starting from the selected aircraft:
+
+\begin{enumerate}
+  \item Select the “Systematic” checkbox;
+  \item Left-click on “CNL GAP”
+\end{enumerate}
 
 \section{Aircraft Lists}
 
@@ -4648,6 +4756,10 @@ The list includes assumed flights that have previously been correlated to a rada
   <field>     & Toggles field visibility                                    \\
 \end{longtable}
 
+“Font” opens the Font menu to select the list font from three options.
+
+\bigskip
+
 Filtering the flights entered in the list can be specified in the filtering menu:
 
 \begin{longtable}{p{5cm} p{7.5cm}}
@@ -4724,6 +4836,10 @@ Left-clicking adjusts only the current list, right-clicking sets the same value 
 
 \bigskip
 
+“Font” opens the Font menu to select the list font from three options.
+
+\bigskip
+
 The list sorting option is displayed next to the "View" label. Clicking on it opens a menu to select between the following sorting options:
 
 \bigskip
@@ -4767,6 +4883,52 @@ If a track label has been hidden, it will be automatically unhidden if the aircr
 \bigskip
 
 The expected approach time, if entered, is broadcast to other controllers as well. By default, 10 minutes after it a warning message will be entered into the tracking controller’s \winref{win:pqw} if the holding has not been terminated. The EAT is not used for any predictions. The EAT given indicator is not transmitted to other controllers.
+
+\subsection{FAST List}\label{list:fast}
+
+\note{FAST functionality is not implemented}
+
+The FAST List contains aircraft that have been entered into a defined approach sequence. The list is automatically displayed whenever there is at least one aircraft in the list. Left-clicking the button at the top right corner collapses the list to display only the title bar.
+
+\capdimage{img/fastlist.png}{FAST List}
+
+“View” opens the View menu:
+
+\begin{longtable}{p{5cm} p{7.5cm}}
+  Header  & Toggle visibility of the list header line \\
+  Default & Sets field visibility to default          \\
+  <field> & Toggles field visibility                  \\
+\end{longtable}
+
+Left-clicking adjusts only the current list, right-clicking sets the same value to all FAST lists.
+
+\bigskip
+
+“Font” opens the Font menu to select the list font from three options.
+
+\bigskip
+
+The list is sorted according to the FSQ field. Aircraft on missed approach are sorted as if they had a sequence number of -1 and aircraft already landed as if they had a sequence number of 0.
+
+\bigskip
+
+The FAST list contains the following fields:
+
+\begin{longtable}{|p{0.10\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|} \hline
+  \textbf{Item} & \textbf{Type} & \textbf{Left Mouse}     & \textbf{Right Mouse} \endhead \hline
+    FSQ         & mandatory     & Start re-sequence       & Remove from sequence      \\ \hline
+    C/S         & mandatory     & Open \winref{menu:cs}   &                           \\ \hline
+    ATYP        & optional      &                         & Toggle ATYP highlight     \\ \hline
+    W           & optional      &                         & Toggle WTC highlight      \\ \hline
+    ARWY        & optional      & Open runway popup list  &                           \\ \hline
+    GAP         & mandatory     & Open \winref{menu:gap}  & Remove gap                \\ \hline
+    ACF         & optional      & Toggle ACF highlight    & Cancel approach clearance \\ \hline
+    \caption{FAST List Construction}
+  \end{longtable}
+
+To resequence an aircraft behind another, first left-click on the FSQ field of the aircraft to be resequenced. The mouse cursor changes to a cross. Then left-click on the radar position symbol, track label or the FSQ field of the aircraft behind which the first aircraft is to be moved.
+
+To cancel the re-sequence operation, press the ESC key or right-click
 
 \subsection{Unsupported Lists}
 \label{list:unsup}
@@ -5287,7 +5449,7 @@ This window is used to control the activation of the areas for the APW and SAP f
 
 \bigskip
 
-An area’s activation status can be inactive, pre-active or active. A pre-active area is an area that will become active within 30 minutes and is shown in \colorref{Selected Period} text on a \colorref{TSA Preactive} background. An active area is shown with \colorref{Selected Period} text on a \colorref{TSA Active} background. The APW system will not alert for a pre-active area, but the SAP system will.
+An area’s activation status can be inactive, pre-active or active. A pre-active area is an area in "Auto" mode that will become active within 30 minutes and is shown in \colorref{Selected Period} text on a \colorref{TSA Preactive} background. An active area is shown with \colorref{Selected Period} text on a \colorref{TSA Active} background. The APW system will not alert for a pre-active area, but the SAP system will.
 
 \bigskip
 
@@ -5320,9 +5482,9 @@ The sorting pop-up menu contains the following items:
 The area pop-up menu contains the following items:
 
 \begin{longtable}{p{2.5cm} p{10cm}}
-  Activate    & Clears any activation times and activates the area\\
-  Deactivate  & Clears any activation times and deactivates the area\\
-  Auto        & If an activation schedule is found in the area data file, sets the area to be activated automatically\\
+  Activate    & Sets start time to current time, clears end time and sets the area to active state                    \\
+  Deactivate  & Sets the end time to current time, sets the area to inactive state                                    \\
+  Auto        & If an activation schedule is found in the area data file, sets the area to be activated automatically \\
   Edit        & Allows to change the area parameters\\
   Full Edit   & Not implemented\\
   Copy        & Not implemented\\
@@ -5746,7 +5908,7 @@ The mouse click areas of the SAP window:
 “View” menu label & Toggle the View menu 
                     
                     o Header Toggle display of list header row\\
-“Font” menu label & not implemented\\
+“Font” menu label & Opens the Font menu to select the list font size  \\
 Sorting option    & Opens a pop-up menu to select the sorting option: 
                     
                     o Time (entry time) 
@@ -6084,7 +6246,7 @@ The Find Track function highlights for a specified time all labels matching the 
 
 \capdimage{img/wxmsg.png}{Weather Messages Window}
 
-The Weather Messages Window displays weather related messages. By default, METAR/SPECI messages are shown. To view other types of messages, left-click on the desired option button (the “SNOWTAM”, “LLF” and “AIREP” options are not available).
+The Weather Messages Window displays weather related messages. To view the messages, left-click on the desired option button (the “LLF” option is not available).
 
 \bigskip
 
@@ -6092,7 +6254,7 @@ By default, with the “METAR/SPECI” option button chosen, this window display
 
 \bigskip
 
-In addition, the window can display SIGMETs and TAFs. The SIGMETs are retrieved when the “SIGMET” button is selected for the first time. Selecting the “TAF” option will open the \winref{menu:ad} where the desired stations must be selected. Messages are automatically updated at 15 minute intervals - the status bar at the bottom displays the remaining time to the next automatic update when the mouse cursor is over the window area.
+Selecting the “SNOWTAM” or “TAF” option will open the \winref{menu:ad} where the desired stations must be selected. Messages are automatically updated at 15 minute intervals - the status bar at the bottom displays the remaining time to the next automatic update when the mouse cursor is over the window area.
 
 \bigskip
 
@@ -6113,7 +6275,7 @@ The messages can be viewed in three modes (decoded only available for METARs):
 To view a single message:
 
 \begin{itemize}
-    \item Left-click on a METAR/SIGMET/TAF in the list
+    \item Left-click on a message in the list
     \item Left-click on a decoded METAR
 \end{itemize}
 
@@ -6131,7 +6293,7 @@ To view a single METAR in the decoded format:
 To return to the list view:
 
 \begin{itemize}
-    \item Left-click on a single METAR/SIGMET/SNOWTAM/TAF
+    \item Left-click on a single message
     \item Right-click on a decoded METAR
 \end{itemize}
 
@@ -6196,10 +6358,13 @@ The General Information Window displays basic information on the system state. T
     CCAMS               & Displayed if plugin is selected as the SSR code source\\
                         & $\bullet$ \colorref{Urgency} color if the SSR data file contains no codes\\
                         & $\bullet$ \colorref{Warning} color if simulated traffic is not downloaded or ESE file or fixed range selected as the code source\\
+    FAST                & Displayed if the FAST function is enabled. \colorref{Warning} color if AMAN as source and data loading has failed \\
     IDLS                & Plugin set up to send DCL. \colorref{Warning} color if datalink comms are failed.\\
     AGCS                & \colorref{Warning} color if Hoppie datalink comms are failed\\
     MTCD                & \colorref{Warning} color if prediction time is set to zero    \\
     SEK                 & Displayed if plugin is receiving AMAN data. \colorref{Warning} color if data loading has failed.\\
+    SMS                 & Displayed if FAST function is enabled \\
+    A-FAST              & Displayed if FAST function is enabled \\
 \end{longtable}
 
 \subsection{Miscellaneous Information Window}
@@ -6859,6 +7024,9 @@ Some TopSky functions can be accessed using a keyboard shortcut. The available s
   \nextrow \label{AIW intrusion} AIW intrusion                          & \cellcolor{AIW intrusion}           & AIW alert related items                     \\ \hline
   \nextrow \label{Conflict Ack FL} Conflict Ack FL                      & \cellcolor{Conflict Ack FL}         & Part of flight leg with acknowledged conflict \\ \hline
   \nextrow \label{Flight Leg} Flight Leg                                & \cellcolor{Flight Leg}              & Part of flight leg without MTCD and SAP coverage \\ \hline
+  \nextrow \label{FTD Nominal} FTD Nominal                              & \cellcolor{FTD Nominal}             & FAST separation indicators                  \\ \hline
+  \nextrow \label{FTD Urgency} FTD Urgency                              & \cellcolor{FTD Urgency}             & FAST separation indicators and labels when overtaken \\ \hline
+  \nextrow \label{GAP Nominal} GAP Nominal                              & \cellcolor{GAP Nominal}             & FAST gap indicators                         \\ \hline
   \nextrow \label{Heading Vector} Heading Vector                        & \cellcolor{Heading Vector}          & Heading vector                              \\ \hline
   \nextrow \label{Information FL} Information FL                        & \cellcolor{Information FL}          & Part of flight leg with no MTCD or SAP problems \\ \hline
   \nextrow \label{MQDM} MQDM                                            & \cellcolor{MQDM}                    & MQDM vector                                 \\ \hline
