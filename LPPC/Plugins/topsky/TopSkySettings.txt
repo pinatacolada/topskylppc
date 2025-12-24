@@ -232,6 +232,9 @@ Window_VAW=0,1610,450
 Setup_LoadMap=ENVR\rivers
 Label_DIAS_Unsel_Default=1111
 Label_DRC_Unsel_Default=1111
+Window_CPDLC_Current=1,910,25
+Window_CPDLC_Setting=1,910,425
+Window_SmallQNHTL=1,1425,25
 
 [_TWR]
 Setup_LoadMap=ENVR\rivers
@@ -258,7 +261,6 @@ Setup_LoadMap=TWRSAN\rep_san_stars_nl
 Setup_LoadMap=TWRSAN\rep_san_rnp_nl
 Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
-Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPMA
 
 [LPPR_]
@@ -271,38 +273,32 @@ Window_CARD_View_Future=0
 Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPPR
 
-[LPPR_APP]
+{PRAPP}
 Setup_Informed=*:XAMAX:LPPT,LPCS:1
-Window_CPDLC_Current=1,910,25
-Window_CPDLC_Setting=1,910,425
-Setup_LoadMap=APPPRT\nortavia_nl
+Setup_LoadMap=APPPRT\nortavia
 
-[LPPS_]
-Window_SmallQNHTL=1,1425,25
-Window_SmallQNHTL_ICAO=LPPS
+{PRTMA}
+Setup_Informed=*:XAMAX:LPPT,LPCS:1
 
 [LPPT_]
 Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
-Window_CPDLC_Current=1,910,25
-Window_CPDLC_Setting=1,910,425
-Window_SmallQNHTL=1,1425,25
-Window_SmallQNHTL_ICAO=LPPT
+
 Label_PEL_Default=0000
 Label_WTC_Default=0000
 Label_XFL_Default=0000
 List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
 List_TfcMgmt2_Via=CASLU,ESP
 
-[LPPT_APP]
+{TME}
 Setup_LoadMap=TWRCAS\ext_cntrline_35
 Setup_Informed=*:*:LPPT,LPCS,LPAR,LPMT:1
 
-[LPPT_W_APP]
+{TMO}
 Setup_LoadMap=TWRCAS\ext_cntrline_35
 Setup_Informed=*:*:LPPT,LPCS,LPAR,LPMT:1
 
-[LPPT_F_APP]
+{ARRLI}
 Setup_LoadMap=TWRCAS\ext_cntrline_35
 Setup_Informed=LPPT,LPCS,LPAR,LPMT:*:*:1
 
@@ -314,17 +310,10 @@ List_TfcMgmt1_Via=FR455,VENOL
 List_TfcMgmt2_Via=SOTEX,ALAGU
 Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
-Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPFR
 
-[LPFR_APP]
+{FRTMA}
 Setup_Informed=*:VATZI:LPPT,LPCS:1
-Window_CPDLC_Current=1,910,25
-Window_CPDLC_Setting=1,910,425
-
-[LPMA_APP]
-Window_CPDLC_Current=1,910,25
-Window_CPDLC_Setting=1,910,425
 
 [LPAM_]
 Setup_LoadMap=ENVR\rivers
@@ -341,32 +330,33 @@ Setup_LoadMap=MIL\pbej
 Setup_LoadMap=MIL\pmtr
 Setup_LoadMap=MIL\rad_vec_bej
 
-[LPCS_]
-Setup_LoadMap=TWRCAS\rep_cas_app_nl
-Setup_LoadMap=TWRCAS\rep_vfr_nl
-Setup_LoadMap=TWRCAS\ext_cntrline_35
-Setup_LoadMap=TWRCAS\vfr_routes_cs_nl
+{CTRCS}
+Setup_LoadMap=TWRLIS\vfr_lis_nl
 
-[LPPC_W]
+
+{OESL}
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
 
-[LPPC_D]
+{DEML}
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
 
-[LPPC_I]
-Setup_LoadMap=TWRSAN\rep_san_stars_nl
-Setup_LoadMap=TWRSAN\rep_san_rnp_nl
+{OEST}
 
-[LPPC_O]
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
 Setup_LoadMap=TWRSAN\rep_san_stars_nl
 Setup_LoadMap=TWRSAN\rep_san_rnp_nl
 
-[LPPC_E]
+{ESTL}
 Setup_Informed=*:AGADO,DEMOS,ORSOS:*:1
 
-[LPPC_N]
+{NORL}
 Setup_Informed=*:BARDI,AGADO,DEMOS,ORSOS:*:1
 
-[LPPC_C]
+{NORM}
+Setup_Informed=*:BARDI,AGADO,DEMOS,ORSOS:*:1
+
+{CENL}
+Setup_Informed=*:TOSDI,BARDI,ADORO,ORSOS:*:1
+
+{CENM}
 Setup_Informed=*:TOSDI,BARDI,ADORO,ORSOS:*:1
