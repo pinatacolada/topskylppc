@@ -71,6 +71,8 @@ Divergence_RAM_Limit=1
 
 Equip_UseCodes=3
 
+FAST=0
+
 FlightLeg_AssumeTime=2
 FlightLeg_AutoShow=1
 FlightLeg_Label_Point=0
@@ -114,8 +116,10 @@ Label_RFL_Default=0000
 Label_WTC_Default=1100
 Label_XFL_Default=1100
 
+List_DEP_Sorting=-1
 List_ETWR_ADEP=LPPT,LPPR,LPFR,LPMA
 List_Holding_Points=RETMO,DIVUT,VASIP,MAZUK,ORTUG,EKLID,DEKKI,CASLU,USALU,GENRO,PILIM,MARCU,LAPPA
+List_Sector_Sorting=0
 List_VFR_FPL_Area=42.2955958,-9.2532349,32.7503226,-17.9956055,32.0453328,-16.6882324,36.9520867,-7.2207642,38.182069,-6.9213867,38.4836948,-7.2015381,38.9893026,-6.8719482,39.4446776,-7.0532227,40.1704789,-6.7730713,41.0337871,-6.6467285,41.463312,-6.1468506,41.9431487,-5.9793091,42.2955958,-9.2532349
 List_TfcMgmt_MaxTime=40
 
@@ -167,6 +171,7 @@ STCA_LinPred_PredictionTime=135
 
 System_APL_Controlled=0
 System_ASP_IasMach=28500
+System_Code7601_flag=CF VMC
 System_FPASD_MinState=1
 System_MagModel_Year=2024
 System_MaxMinSepTime=45
@@ -184,6 +189,7 @@ Track_PredictionLine=2
 
 Vector_AHDG_Label_Dist=2
 Vector_MinSep_Label_Time=1
+Vector_QDM_AA_Label_Time=1
 
 Window_ASM=1,200,200,610,270
 Window_ASM_ShowNOTAMasUsertext=0
