@@ -35,9 +35,7 @@ jobs:
           rm -r .vscode 
           rm -r assets
           rm -r .gitignore
-          rm -r .gitlab-ci.yml
           rm -r _config.yml
-          rm -r LPPC/Plugins/ACDM/CAD/
           rm -r LPPC/Plugins/topsky/Documentation/Latex/
       - name: Zip files
         uses: thedoctor0/zip-release@0.7.5

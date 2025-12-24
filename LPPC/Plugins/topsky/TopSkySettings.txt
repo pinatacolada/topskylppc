@@ -6,8 +6,8 @@ Setup_LoadMap=ENVR\border
 Setup_LoadMap=ENVR\rwy
 Setup_LoadMap=VFR\atz
 Setup_LoadMap=ENR_MAP\adj_fir_sec
-Setup_LoadMap=ENR_REP\rep_out
-Setup_LoadMap=ENR_REP\rep_bdry
+Setup_LoadMap=ENR_MAP\e-w-m
+Setup_LoadMap=ENR_REP\rep_main_nl
 Setup_LoadMap=ENR_MAP\lim
 
 Setup_LoadMap=APP\rep_tma
@@ -18,9 +18,6 @@ Setup_LoadMap=APP\ctr
 Setup_LoadMap=APPFUN\pfun_05_23_a
 
 Setup_LoadMap=APPLIS\arc50
-
-Setup_LoadMap=TWRCAS\pcas
-Setup_LoadMap=TWRCAS\pcas_gnss
 
 Airspace_833_Min=0
 Airspace_AOR_Airports=LP
@@ -33,6 +30,7 @@ Airspace_ASSR_APL_StartCode=3205
 Airspace_ASSR_APL_EndCode=3277
 Airspace_No_DUPE_Codes=2000,7000
 Airspace_NOTAM_Add=LPPC
+Airspace_P_Flag=LPPP
 Airspace_SIGMET_Areas=LPPC
 
 AIW_FlightRules=1
@@ -57,7 +55,7 @@ Areas_AUP_UserText=MIL
 
 Color_Active_Map_Type_3=132,142,139	//D GREY
 Color_Active_Map_Type_6=90,90,90	//INFILL GREY
-
+Color_Preactive_Text_Map=100,160,100 //Color_Active_Map_Type_13
 Color_Proposition_Accepted=175,125,175 //C_Sector_Informed
 Color_Text_Notes=125,125,125
 
@@ -66,12 +64,14 @@ CPDLC_AutoAcceptLogon=1
 CPDLC_AutoAcceptLogon_Time=15
 CPDLC_PDC_Auto=1
 CPDLC_PDC_Timeout_Pilot=180
-CPDLC_FSM_CLD_Header=CLD <hour><min> <year2><month2><day> <adep2> PDC <number> <callsign>
+CPDLC_FSM_CLD_Header=CLD <hour><min> <year2><month2><day> <adep2> PDC 999 <callsign>
 
 Divergence_CLAM_DelayTime=30
 Divergence_RAM_Limit=1
 
 Equip_UseCodes=3
+
+FAST=0
 
 FlightLeg_AssumeTime=2
 FlightLeg_AutoShow=1
@@ -116,8 +116,11 @@ Label_RFL_Default=0000
 Label_WTC_Default=1100
 Label_XFL_Default=1100
 
+List_DEP_Sorting=-1
 List_ETWR_ADEP=LPPT,LPPR,LPFR,LPMA
 List_Holding_Points=RETMO,DIVUT,VASIP,MAZUK,ORTUG,EKLID,DEKKI,CASLU,USALU,GENRO,PILIM,MARCU,LAPPA
+List_Sector_Sorting=0
+List_Sorting_State_Direction=-1
 List_VFR_FPL_Area=42.2955958,-9.2532349,32.7503226,-17.9956055,32.0453328,-16.6882324,36.9520867,-7.2207642,38.182069,-6.9213867,38.4836948,-7.2015381,38.9893026,-6.8719482,39.4446776,-7.0532227,40.1704789,-6.7730713,41.0337871,-6.6467285,41.463312,-6.1468506,41.9431487,-5.9793091,42.2955958,-9.2532349
 List_TfcMgmt_MaxTime=40
 
@@ -169,8 +172,10 @@ STCA_LinPred_PredictionTime=135
 
 System_APL_Controlled=0
 System_ASP_IasMach=28500
+System_Code7601_flag=CF VMC
 System_FPASD_MinState=1
 System_MagModel_Year=2024
+System_MaxMinSepTime=45
 System_MetarSourceVATSIM=0
 System_Oceanic=1
 System_TaxiTime=15
@@ -185,6 +190,7 @@ Track_PredictionLine=2
 
 Vector_AHDG_Label_Dist=2
 Vector_MinSep_Label_Time=1
+Vector_QDM_AA_Label_Time=1
 
 Window_ASM=1,200,200,610,270
 Window_ASM_ShowNOTAMasUsertext=0
@@ -206,7 +212,6 @@ Window_PDC_SetCFL=1
 Window_PredTfc_Caution=20
 Window_PredTfc_Warning=30
 Window_SAP_MaxListItems=7
-Window_SmallQNHTL_ICAO=LPPT
 Window_SM_LowestLevel=30
 Window_WxMsgs_MetarRefreshInterval=600
 Window_WxMsgs_TafRefreshInterval=600
@@ -252,6 +257,8 @@ List_TfcMgmt2_Via=PILIM,ABUSU
 [LPMA_]
 List_TfcMgmt1_Via=PILIM,ABUSU
 List_TfcMgmt2_Via=MARCU,LAPPA
+Setup_LoadMap=TWRSAN\rep_san_stars_nl
+Setup_LoadMap=TWRSAN\rep_san_rnp_nl
 Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
 Window_SmallQNHTL_ICAO=LPMA
@@ -263,6 +270,7 @@ Label_XFL_Default=0000
 List_TfcMgmt1_Via=ADNOV,AKULU
 Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
+Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPPR
 
 {PRAPP}
@@ -275,6 +283,7 @@ Setup_Informed=*:XAMAX:LPPT,LPCS:1
 [LPPT_]
 Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
+
 Label_PEL_Default=0000
 Label_WTC_Default=0000
 Label_XFL_Default=0000
@@ -297,7 +306,8 @@ Setup_Informed=LPPT,LPCS,LPAR,LPMT:*:*:1
 Label_PEL_Default=0000
 Label_WTC_Default=0000
 Label_XFL_Default=0000
-List_TfcMgmt1_Via=GEBTI,VENOL
+List_TfcMgmt1_Via=FR455,VENOL
+List_TfcMgmt2_Via=SOTEX,ALAGU
 Window_CARD_View_Notif=1
 Window_CARD_View_Future=0
 Window_SmallQNHTL_ICAO=LPFR
@@ -323,6 +333,7 @@ Setup_LoadMap=MIL\rad_vec_bej
 {CTRCS}
 Setup_LoadMap=TWRLIS\vfr_lis_nl
 
+
 {OESL}
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
 
@@ -330,7 +341,10 @@ Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
 
 {OEST}
+
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
+Setup_LoadMap=TWRSAN\rep_san_stars_nl
+Setup_LoadMap=TWRSAN\rep_san_rnp_nl
 
 {ESTL}
 Setup_Informed=*:AGADO,DEMOS,ORSOS:*:1
