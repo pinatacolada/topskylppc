@@ -71,6 +71,8 @@ Divergence_RAM_Limit=1
 
 Equip_UseCodes=3
 
+FAST=0
+
 FlightLeg_AssumeTime=2
 FlightLeg_AutoShow=1
 FlightLeg_Label_Point=0
@@ -114,8 +116,11 @@ Label_RFL_Default=0000
 Label_WTC_Default=1100
 Label_XFL_Default=1100
 
+List_DEP_Sorting=-1
 List_ETWR_ADEP=LPPT,LPPR,LPFR,LPMA
 List_Holding_Points=RETMO,DIVUT,VASIP,MAZUK,ORTUG,EKLID,DEKKI,CASLU,USALU,GENRO,PILIM,MARCU,LAPPA
+List_Sector_Sorting=0
+List_Sorting_State_Direction=-1
 List_VFR_FPL_Area=42.2955958,-9.2532349,32.7503226,-17.9956055,32.0453328,-16.6882324,36.9520867,-7.2207642,38.182069,-6.9213867,38.4836948,-7.2015381,38.9893026,-6.8719482,39.4446776,-7.0532227,40.1704789,-6.7730713,41.0337871,-6.6467285,41.463312,-6.1468506,41.9431487,-5.9793091,42.2955958,-9.2532349
 List_TfcMgmt_MaxTime=40
 
@@ -167,6 +172,7 @@ STCA_LinPred_PredictionTime=135
 
 System_APL_Controlled=0
 System_ASP_IasMach=28500
+System_Code7601_flag=CF VMC
 System_FPASD_MinState=1
 System_MagModel_Year=2024
 System_MaxMinSepTime=45
@@ -184,6 +190,7 @@ Track_PredictionLine=2
 
 Vector_AHDG_Label_Dist=2
 Vector_MinSep_Label_Time=1
+Vector_QDM_AA_Label_Time=1
 
 Window_ASM=1,200,200,610,270
 Window_ASM_ShowNOTAMasUsertext=0
@@ -225,6 +232,9 @@ Window_VAW=0,1610,450
 Setup_LoadMap=ENVR\rivers
 Label_DIAS_Unsel_Default=1111
 Label_DRC_Unsel_Default=1111
+Window_CPDLC_Current=1,910,25
+Window_CPDLC_Setting=1,910,425
+Window_SmallQNHTL=1,1425,25
 
 [_TWR]
 Setup_LoadMap=ENVR\rivers
@@ -249,7 +259,6 @@ List_TfcMgmt1_Via=PILIM,ABUSU
 List_TfcMgmt2_Via=MARCU,LAPPA
 Setup_LoadMap=TWRSAN\rep_san_stars_nl
 Setup_LoadMap=TWRSAN\rep_san_rnp_nl
-Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPMA
 
 [LPPR_]
@@ -258,34 +267,28 @@ List_TfcMgmt1_Via=ADNOV,AKULU
 Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPPR
 
-[LPPR_APP]
+{PRAPP}
 Setup_Informed=*:XAMAX:LPPT,LPCS:1
-Window_CPDLC_Current=1,910,25
-Window_CPDLC_Setting=1,910,425
-Setup_LoadMap=APPPRT\nortavia_nl
+Setup_LoadMap=APPPRT\nortavia
 
-[LPPS_]
-Window_SmallQNHTL=1,1425,25
-Window_SmallQNHTL_ICAO=LPPS
+{PRTMA}
+Setup_Informed=*:XAMAX:LPPT,LPCS:1
 
 [LPPT_]
-Window_CPDLC_Current=1,910,25
-Window_CPDLC_Setting=1,910,425
-Window_SmallQNHTL=1,1425,25
-Window_SmallQNHTL_ICAO=LPPT
+
 Label_XFL_Default=0100
 List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
 List_TfcMgmt2_Via=CASLU,ESP
 
-[LPPT_APP]
+{TME}
 Setup_LoadMap=TWRCAS\ext_cntrline_35
 Setup_Informed=*:*:LPPT,LPCS,LPAR,LPMT:1
 
-[LPPT_W_APP]
+{TMO}
 Setup_LoadMap=TWRCAS\ext_cntrline_35
 Setup_Informed=*:*:LPPT,LPCS,LPAR,LPMT:1
 
-[LPPT_F_APP]
+{ARRLI}
 Setup_LoadMap=TWRCAS\ext_cntrline_35
 Setup_Informed=LPPT,LPCS,LPAR,LPMT:*:*:1
 
@@ -293,17 +296,10 @@ Setup_Informed=LPPT,LPCS,LPAR,LPMT:*:*:1
 Label_XFL_Default=0100
 List_TfcMgmt1_Via=FR910,FR928
 List_TfcMgmt2_Via=SOTEX,ALAGU
-Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPFR
 
-[LPFR_APP]
+{FRTMA}
 Setup_Informed=*:VATZI:LPPT,LPCS:1
-Window_CPDLC_Current=1,910,25
-Window_CPDLC_Setting=1,910,425
-
-[LPMA_APP]
-Window_CPDLC_Current=1,910,25
-Window_CPDLC_Setting=1,910,425
 
 [LPAM_]
 Setup_LoadMap=ENVR\rivers
@@ -320,32 +316,33 @@ Setup_LoadMap=MIL\pbej
 Setup_LoadMap=MIL\pmtr
 Setup_LoadMap=MIL\rad_vec_bej
 
-[LPCS_]
-Setup_LoadMap=TWRCAS\rep_cas_app_nl
-Setup_LoadMap=TWRCAS\rep_vfr_nl
-Setup_LoadMap=TWRCAS\ext_cntrline_35
-Setup_LoadMap=TWRCAS\vfr_routes_cs_nl
+{CTRCS}
+Setup_LoadMap=TWRLIS\vfr_lis_nl
 
-[LPPC_W]
+
+{OESL}
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
 
-[LPPC_D]
+{DEML}
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
 
-[LPPC_I]
-Setup_LoadMap=TWRSAN\rep_san_stars_nl
-Setup_LoadMap=TWRSAN\rep_san_rnp_nl
+{OEST}
 
-[LPPC_O]
 Setup_Informed=*:PINEK,EKROL,LUPOV:*:1
 Setup_LoadMap=TWRSAN\rep_san_stars_nl
 Setup_LoadMap=TWRSAN\rep_san_rnp_nl
 
-[LPPC_E]
+{ESTL}
 Setup_Informed=*:AGADO,DEMOS,ORSOS:*:1
 
-[LPPC_N]
+{NORL}
 Setup_Informed=*:BARDI,AGADO,DEMOS,ORSOS:*:1
 
-[LPPC_C]
+{NORM}
+Setup_Informed=*:BARDI,AGADO,DEMOS,ORSOS:*:1
+
+{CENL}
+Setup_Informed=*:TOSDI,BARDI,ADORO,ORSOS:*:1
+
+{CENM}
 Setup_Informed=*:TOSDI,BARDI,ADORO,ORSOS:*:1
