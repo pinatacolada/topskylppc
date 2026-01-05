@@ -9,7 +9,7 @@
 \medskip 
 
 Version 3.2}
-\setdocrevision{1}
+\setdocrevision{2}
 
 \begin{document}
 
@@ -976,14 +976,13 @@ TopSky supports for the following message types:
 \begin{longtable}{|p{4.5cm}|p{4.5cm}|}
   \hline
   \textbf{Uplink}             & \textbf{Downlink} \endhead \hline
-  Level clearance             & Level request\\ \hline
-  Heading clearance           & Heading request\\ \hline
-  Direct-to clearance         & Direct-to request\\ \hline
-  Speed clearance             & Speed request\\ \hline
-  Squawk code assignment      & MAYDAY/PAN/SQ7500\\ \hline
-  Squawk ident instruction    & Position report\\ \hline
-  Voice contact instruction   & Free text\\ \hline
-  Free text                   & \\ \hline
+  Level clearance             & Level request     \\ \hline
+  Heading clearance           & Heading request   \\ \hline
+  Direct-to clearance         & Direct-to request \\ \hline
+  Squawk code assignment      & Speed request     \\ \hline
+  Squawk ident instruction    & MAYDAY/PAN/SQ7500 \\ \hline
+  Voice contact instruction   & Position report   \\ \hline
+  Free text                   & Free text         \\ \hline
   \caption{Supported CPDLC message types}
 \end{longtable}
 
@@ -3881,13 +3880,9 @@ QDM             & Starts a \winref{tool:qdm} from this track\\
 \subsection{Transfer menu}
 \label{menu:xfr}
 
-\capdimage{img/xfr.png}{Transfer Menu}
+\capdimage{img/xfr.png}{Transfer Menu}%TODO:check image accuracy
 
 For CPDLC connected aircraft, the menu contains options related to the transfer. Left clicking on the frequency button initiates the transfer (and sends the CPDLC message if selected).
-
-\bigskip
-
-“Monitor” / “Contact” select which of the two CPDLC message types will be sent.
 
 \bigskip
 
