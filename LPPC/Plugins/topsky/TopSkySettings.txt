@@ -66,6 +66,7 @@ CPDLC_PDC_Auto=1
 CPDLC_PDC_Timeout_Pilot=180
 CPDLC_FSM_CLD_Header=CLD <hour><min> <year2><month2><day> <adep2> PDC 999 <callsign>
 CPDLC_MessageSet_Speed=0
+CPDLC_MessageSet_Rate=0
 
 Divergence_CLAM_DelayTime=30
 Divergence_RAM_Limit=1
