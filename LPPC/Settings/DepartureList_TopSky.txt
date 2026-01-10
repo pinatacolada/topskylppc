@@ -8,6 +8,9 @@ m_OrderingColumn:3
 m_HeaderOnly:0
 m_Column: C/S:9:0:10021:6:39:1:TopSky plugin:TopSky plugin:TopSky plugin:4:0.0
 m_Column:FSTS:7:1:18:0:137:1:CDM Plugin::CDM Plugin:0:0.0
+m_Column:TSAT:8:1:2:103:101:1:Runway Manager:Runway Manager:Runway Manager:0:0.0
+m_Column:TTOT:5:0:1:101:0:0:Runway Manager:Runway Manager::0:0.0
+m_Column:CTOT:4:0:5:0:0:1:Runway Manager:::0:0.0
 m_Column:ATYPE:6:1:10028:0:0:1:TopSky plugin:::4:0.0
 m_Column:WTC:3:1:10032:0:0:1:TopSky plugin:::4:0.0
 m_Column:FR:3:1:10031:0:0:1:TopSky plugin:::4:0.0
