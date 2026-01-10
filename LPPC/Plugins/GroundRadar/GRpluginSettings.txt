@@ -93,6 +93,8 @@ Label=APP:UNC:3:GS,0,0
 List_Stand=1,1300,45
 List_Stand_Items=20
 
+Maps_URL=https://raw.githubusercontent.com/pinatacolada/lppc-atfm/refs/heads/main/GRpluginMaps.txt
+
 RawVideo=1
 RawVideo_MaxHistory=5
 
