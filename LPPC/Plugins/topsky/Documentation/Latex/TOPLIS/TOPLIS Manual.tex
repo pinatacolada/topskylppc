@@ -276,23 +276,52 @@ Interaction with core A-CDM systems is done with classic command line inputs:
           \colorref{color8}\\ \hline
 
   FSTS \nextrow \label{tag:FSTS}&  
-  Flight Plan Status&
-      REA if Ready message has been sent
-      
-      SUSP if flight plan has been suspended 
-      
-      Empty otherwise &   
-      REA: 
-      
-      \colorref{color5}
+    Flight Plan Status&
+
+      FLS-NRA: Flight Suspended due to Not Reported As Airborne.
 
       \bigskip
-      
-      SUSP: 
-      
-      \colorref{color7}
-      
-      \\ \hline
+
+      FLS-CDM: Flight Suspended Triggered by CDM.
+
+      \bigskip
+
+      FLS-MR: Flight Suspended due to Mandatory Route.
+
+      \bigskip
+
+      FLS-GS: Flight Suspended due to Ground Stop.
+
+      \bigskip
+
+      DES: Flight is De-Suspended
+
+      \bigskip
+
+      SAM: Slot Allocation Message.
+
+      \bigskip
+
+      SRM: Slot Revision Message.
+
+      \bigskip
+
+      SLC: Slot Cancellation.
+
+      \bigskip
+
+      ATC ACTIV: Flight is already in movement. Automatically set when AOBT is set. &   
+        DES, SAM, SRM, SLC and ACT: 
+
+        \colorref{color5}
+
+        \bigskip
+
+        FLS: 
+
+        \colorref{color7}
+
+        \\ \hline
 
   Ready \nextrow \label{tag:Ready}&  
     Ready State Flag&
