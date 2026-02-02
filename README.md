@@ -1,6 +1,6 @@
 # TopSky plugin for Portugal vACC 
 [![latest-version](https://img.shields.io/github/v/release/pinatacolada/topskylppc?include_prereleases)](https://github.com/pinatacolada/topskylppc/releases)  [![topsky-version](https://img.shields.io/badge/TopSky-2.6.1-blue.svg)](https://forum.vatsim-scandinavia.org/d/228-topsky-plugin-26-beta-1)
-[![gr-version](https://img.shields.io/badge/Ground%20Radar-1.6b4-blue.svg)](https://forum.vatsim-scandinavia.org/d/219-ground-radar-plugin-16-beta-4)
+[![gr-version](https://img.shields.io/badge/Ground%20Radar-1.6b5-blue.svg)](https://forum.vatsim-scandinavia.org/d/256-ground-radar-plugin-16-beta-5)
 [![cdm-version](https://img.shields.io/badge/CDM-2.2.8.23-blue.svg)](https://github.com/rpuig2001/CDM)
 [![rwym-version](https://img.shields.io/badge/RwyMan-0.15.3-blue.svg)](https://gitlab.com/portugal-vacc/runwaymanager/-/releases/v0.15.3)
 
