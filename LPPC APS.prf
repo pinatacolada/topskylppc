@@ -37,7 +37,7 @@ Plugins	Plugin3Display1	Standard ES radar screen
 Plugins	Plugin4	\LPPC\Plugins\VATCANBookings.dll
 ASRFastKeys	1	LPPC\ASR\LPPC_CTR_TS.asr
 ASRFastKeys	4	LPPC\ASR\LPPS_GND_TSGR.asr
-ASRFastKeys	5	LPPC\ASR\LPCS_TWR.asr
+ASRFastKeys	5	LPPC\ASR\ADC.asr
 ASRFastKeys	6	LPPC\ASR\LPMA_GND_TSGR.asr
 ASRFastKeys	7	LPPC\ASR\LPFR_GND_TSGR.asr
 ASRFastKeys	8	LPPC\ASR\LPPT_GND_TSGR.asr
@@ -45,7 +45,7 @@ ASRFastKeys	9	LPPC\ASR\LPPR_GND_TSGR.asr
 RecentFiles	Recent1	LPPC\ASR\LPPC_CTR_TS.asr
 LastSession	connecttype	0
 LastSession	certificate	vatsim ID
-RecentFiles	Recent2	LPPC\ASR\LPCS_TWR.asr
+RecentFiles	Recent2	LPPC\ASR\ADC.asr
 RecentFiles	Recent3	LPPC\ASR\LPPR_GND_TSGR.asr
 RecentFiles	Recent4	LPPC\ASR\LPPT_GND_TSGR.asr
 RecentFiles	Recent5	LPPC\ASR\LPFR_GND_TSGR.asr
