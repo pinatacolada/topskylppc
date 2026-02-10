@@ -1,10 +1,16 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
+SECTORFILE:
+SECTORTITLE:
+Fixes:ABOBA:name
+Fixes:ABOBA:symbol
 Fixes:ALFA:name
 Fixes:ALFA:symbol
 Fixes:ALGES:name
 Fixes:ALGES:symbol
+Fixes:BACEL:name
+Fixes:BACEL:symbol
 Fixes:BELAS:name
 Fixes:BELAS:symbol
 Fixes:BRAVO:name
@@ -13,6 +19,8 @@ Fixes:BUGIO:name
 Fixes:BUGIO:symbol
 Fixes:CARCA:name
 Fixes:CARCA:symbol
+Fixes:CASAB:name
+Fixes:CASAB:symbol
 Fixes:CCAIS:name
 Fixes:CCAIS:symbol
 Fixes:CHARL:name
@@ -29,6 +37,8 @@ Fixes:ENACI:name
 Fixes:ENACI:symbol
 Fixes:GUINC:name
 Fixes:GUINC:symbol
+Fixes:MAXED:name
+Fixes:MAXED:symbol
 Fixes:NOVMB:name
 Fixes:NOVMB:symbol
 Fixes:OEIRA:name
@@ -37,6 +47,8 @@ Fixes:PARCO:name
 Fixes:PARCO:symbol
 Fixes:SIERR:name
 Fixes:SIERR:symbol
+Fixes:VALVE:name
+Fixes:VALVE:symbol
 Free Text:LPBJ Taxiways\A1:freetext
 Free Text:LPBJ Taxiways\A2:freetext
 Free Text:LPBJ Taxiways\B1:freetext
