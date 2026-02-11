@@ -11,8 +11,12 @@ Fixes:ALFA:name
 Fixes:ALFA:symbol
 Fixes:ALGES:name
 Fixes:ALGES:symbol
+Fixes:ALMAL:name
+Fixes:ALMAL:symbol
 Fixes:ALVOR:name
 Fixes:ALVOR:symbol
+Fixes:ANCA:name
+Fixes:ANCA:symbol
 Fixes:BACEL:name
 Fixes:BACEL:symbol
 Fixes:BELAS:name
@@ -33,8 +37,14 @@ Fixes:CASTB:name
 Fixes:CASTB:symbol
 Fixes:CCAIS:name
 Fixes:CCAIS:symbol
+Fixes:CERNA:name
+Fixes:CERNA:symbol
 Fixes:CHARL:name
 Fixes:CHARL:symbol
+Fixes:CNOVA:name
+Fixes:CNOVA:symbol
+Fixes:COIMB:name
+Fixes:COIMB:symbol
 Fixes:CRASO:name
 Fixes:CRASO:symbol
 Fixes:CROCA:name
@@ -67,6 +77,8 @@ Fixes:OEIRA:name
 Fixes:OEIRA:symbol
 Fixes:PARCO:name
 Fixes:PARCO:symbol
+Fixes:PEREI:name
+Fixes:PEREI:symbol
 Fixes:PLUZ:name
 Fixes:PLUZ:symbol
 Fixes:PROCH:name
