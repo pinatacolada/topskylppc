@@ -91,14 +91,20 @@ Fixes:QUEIR:name
 Fixes:QUEIR:symbol
 Fixes:SATAO:name
 Fixes:SATAO:symbol
+Fixes:SBROS:name
+Fixes:SBROS:symbol
 Fixes:SIERR:name
 Fixes:SIERR:symbol
 Fixes:SILVE:name
 Fixes:SILVE:symbol
+Fixes:SMPEN:name
+Fixes:SMPEN:symbol
 Fixes:VALVE:name
 Fixes:VALVE:symbol
 Fixes:VISEU:name
 Fixes:VISEU:symbol
+Fixes:VREAL:name
+Fixes:VREAL:symbol
 Free Text:LPBJ Taxiways\A1:freetext
 Free Text:LPBJ Taxiways\A2:freetext
 Free Text:LPBJ Taxiways\B1:freetext
