@@ -5,6 +5,8 @@ SECTORFILE:
 SECTORTITLE:
 Fixes:ABOBA:name
 Fixes:ABOBA:symbol
+Fixes:ALCAI:name
+Fixes:ALCAI:symbol
 Fixes:ALFA:name
 Fixes:ALFA:symbol
 Fixes:ALGES:name
@@ -27,6 +29,8 @@ Fixes:CARVO:name
 Fixes:CARVO:symbol
 Fixes:CASAB:name
 Fixes:CASAB:symbol
+Fixes:CASTB:name
+Fixes:CASTB:symbol
 Fixes:CCAIS:name
 Fixes:CCAIS:symbol
 Fixes:CHARL:name
