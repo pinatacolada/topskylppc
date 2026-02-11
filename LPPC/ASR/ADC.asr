@@ -27,6 +27,8 @@ Fixes:BRAVO:name
 Fixes:BRAVO:symbol
 Fixes:BUGIO:name
 Fixes:BUGIO:symbol
+Fixes:CAIRE:name
+Fixes:CAIRE:symbol
 Fixes:CARCA:name
 Fixes:CARCA:symbol
 Fixes:CARVO:name
@@ -85,12 +87,18 @@ Fixes:PROCH:name
 Fixes:PROCH:symbol
 Fixes:PTMAO:name
 Fixes:PTMAO:symbol
+Fixes:QUEIR:name
+Fixes:QUEIR:symbol
+Fixes:SATAO:name
+Fixes:SATAO:symbol
 Fixes:SIERR:name
 Fixes:SIERR:symbol
 Fixes:SILVE:name
 Fixes:SILVE:symbol
 Fixes:VALVE:name
 Fixes:VALVE:symbol
+Fixes:VISEU:name
+Fixes:VISEU:symbol
 Free Text:LPBJ Taxiways\A1:freetext
 Free Text:LPBJ Taxiways\A2:freetext
 Free Text:LPBJ Taxiways\B1:freetext
