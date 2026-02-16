@@ -175,7 +175,7 @@ STCA_LinPred_PredictionTime=135
 
 System_APL_Controlled=0
 System_ASP_IasMach=28500
-System_Code7601_flag=CF VMC
+System_Code7601_flag=RCFVMC
 System_FPASD_MinState=1
 System_MagModel_Year=2024
 System_MaxMinSepTime=45
