@@ -1,22 +1,64 @@
 DisplayTypeName:Standard ES radar screen
 DisplayTypeNeedRadarContent:1
 DisplayTypeGeoReferenced:1
+Fixes:ABOBA:name
+Fixes:ABOBA:symbol
+Fixes:ABRAN:name
+Fixes:ABRAN:symbol
+Fixes:ALCAI:name
+Fixes:ALCAI:symbol
 Fixes:ALFA:name
 Fixes:ALFA:symbol
 Fixes:ALGES:name
 Fixes:ALGES:symbol
+Fixes:ALMAL:name
+Fixes:ALMAL:symbol
+Fixes:ALPAL:name
+Fixes:ALPAL:symbol
+Fixes:ALVOR:name
+Fixes:ALVOR:symbol
+Fixes:ANCA:name
+Fixes:ANCA:symbol
+Fixes:ARGIL:name
+Fixes:ARGIL:symbol
+Fixes:AVIS:name
+Fixes:AVIS:symbol
+Fixes:BACEL:name
+Fixes:BACEL:symbol
 Fixes:BELAS:name
 Fixes:BELAS:symbol
+Fixes:BODIA:name
+Fixes:BODIA:symbol
 Fixes:BRAVO:name
 Fixes:BRAVO:symbol
+Fixes:BRGAN:name
+Fixes:BRGAN:symbol
 Fixes:BUGIO:name
 Fixes:BUGIO:symbol
+Fixes:BVILA:name
+Fixes:BVILA:symbol
+Fixes:CAIRE:name
+Fixes:CAIRE:symbol
 Fixes:CARCA:name
 Fixes:CARCA:symbol
+Fixes:CARVO:name
+Fixes:CARVO:symbol
+Fixes:CASAB:name
+Fixes:CASAB:symbol
+Fixes:CASTB:name
+Fixes:CASTB:symbol
 Fixes:CCAIS:name
 Fixes:CCAIS:symbol
+Fixes:CERNA:name
+Fixes:CERNA:symbol
 Fixes:CHARL:name
 Fixes:CHARL:symbol
+Fixes:CHAVE:name
+Fixes:CHAVE:symbol
+Fixes:CNOVA:name
+Fixes:CNOVA:symbol
+Fixes:COIMB:name
+Fixes:COIMB:symbol
 Fixes:CRASO:name
 Fixes:CRASO:symbol
 Fixes:CROCA:name
@@ -27,16 +69,70 @@ Fixes:DELTA:name
 Fixes:DELTA:symbol
 Fixes:ENACI:name
 Fixes:ENACI:symbol
+Fixes:EVORA:name
+Fixes:EVORA:symbol
+Fixes:FGUDO:name
+Fixes:FGUDO:symbol
+Fixes:FOROS:name
+Fixes:FOROS:symbol
+Fixes:FRATE:name
+Fixes:FRATE:symbol
+Fixes:GALVE:name
+Fixes:GALVE:symbol
+Fixes:GAVIO:name
+Fixes:GAVIO:symbol
 Fixes:GUINC:name
 Fixes:GUINC:symbol
+Fixes:LAGOA:name
+Fixes:LAGOA:symbol
+Fixes:LAGOS:name
+Fixes:LAGOS:symbol
+Fixes:MAXED:name
+Fixes:MAXED:symbol
+Fixes:MCHIQ:name
+Fixes:MCHIQ:symbol
+Fixes:MNHAO:name
+Fixes:MNHAO:symbol
+Fixes:NISA:name
+Fixes:NISA:symbol
 Fixes:NOVMB:name
 Fixes:NOVMB:symbol
+Fixes:ODIAX:name
+Fixes:ODIAX:symbol
 Fixes:OEIRA:name
 Fixes:OEIRA:symbol
 Fixes:PARCO:name
 Fixes:PARCO:symbol
+Fixes:PEREI:name
+Fixes:PEREI:symbol
+Fixes:PLUZ:name
+Fixes:PLUZ:symbol
+Fixes:PROCH:name
+Fixes:PROCH:symbol
+Fixes:PTMAO:name
+Fixes:PTMAO:symbol
+Fixes:QUEIR:name
+Fixes:QUEIR:symbol
+Fixes:SATAO:name
+Fixes:SATAO:symbol
+Fixes:SBROS:name
+Fixes:SBROS:symbol
 Fixes:SIERR:name
 Fixes:SIERR:symbol
+Fixes:SILVE:name
+Fixes:SILVE:symbol
+Fixes:SMPEN:name
+Fixes:SMPEN:symbol
+Fixes:VACOR:name
+Fixes:VACOR:symbol
+Fixes:VALVE:name
+Fixes:VALVE:symbol
+Fixes:VARGE:name
+Fixes:VARGE:symbol
+Fixes:VISEU:name
+Fixes:VISEU:symbol
+Fixes:VREAL:name
+Fixes:VREAL:symbol
 Free Text:LPBJ Taxiways\A1:freetext
 Free Text:LPBJ Taxiways\A2:freetext
 Free Text:LPBJ Taxiways\B1:freetext
@@ -69,6 +165,10 @@ Free Text:LPSO Taxiways\APN NE 03:freetext
 Free Text:LPSO Taxiways\APN SE 01:freetext
 Free Text:LPSO Taxiways\B:freetext
 Free Text:LPSO Taxiways\C:freetext
+Free Text:VFR Referencias\P1:freetext
+Free Text:VFR Referencias\P2:freetext
+Free Text:VFR Referencias\P3:freetext
+Free Text:VFR Referencias\RASKETE BRIDGE:freetext
 Geo:GEO:
 Geo:LP Landmark Continental Coastline:
 Geo:LPBG Groundlayout:
