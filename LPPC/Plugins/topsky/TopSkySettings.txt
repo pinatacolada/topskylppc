@@ -62,6 +62,7 @@ Color_Text_Notes=125,125,125
 CPDLC_MinLevel=1
 CPDLC_AutoAcceptLogon=1
 CPDLC_AutoAcceptLogon_Time=15
+CPDLC_Default=0
 CPDLC_PDC_Auto=1
 CPDLC_PDC_Timeout_Pilot=180
 CPDLC_CLD_Header=CLD <hour><min> <year2><month2><day> <adep> PDC 999 <callsign>
