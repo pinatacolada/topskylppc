@@ -206,8 +206,8 @@ TCT_BS_VS_Climb_Threshold=300
 TCT_BS_VS_Descent_Threshold=300
 TCT_BS_Min_VS_Ratio=0.25
 TCT_BS_Max_VS_Ratio=0.75
-TCT_BS_Sep_Lat=5.5
-TCT_BS_Sep_Lat_Div=5
+//TCT_BS_Sep_Lat=5.5
+//TCT_BS_Sep_Lat_Div=5
 
 Track_PredictionLine=2
 
