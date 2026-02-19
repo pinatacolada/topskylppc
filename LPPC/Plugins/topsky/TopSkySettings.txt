@@ -189,6 +189,23 @@ System_UpdateNotificationDelay=90
 System_UseRwyLockedColor=0
 System_UseTSAborderHighlightColor=1
 
+TCT_Min_State_Source=3
+TCT_ConflictCount=4
+TCT_AHDG_Reaction_Time=12
+TCT_AHDG_Max_Time=40
+TCT_AHDG_Turn_Rate=3
+TCT_Label_Pos_Angle=150
+TCT_Label_Pos_Distance=50
+
+TCT_BS_Min_VS_Climb=300
+TCT_BS_Min_VS_Descent=300
+TCT_BS_VS_Climb_Threshold=300
+TCT_BS_VS_Descent_Threshold=300
+TCT_BS_Min_VS_Ratio=0.25
+TCT_BS_Max_VS_Ratio=0.75
+TCT_BS_Sep_Lat=5.5
+TCT_BS_Sep_Lat_Div=5
+
 Track_PredictionLine=2
 
 Vector_AHDG_Label_Dist=2
