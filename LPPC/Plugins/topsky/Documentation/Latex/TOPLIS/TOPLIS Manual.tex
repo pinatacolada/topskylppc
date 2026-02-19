@@ -8,8 +8,8 @@
 
 \medskip 
 
-Version 3.2}
-\setdocrevision{3}
+Version 3.3}
+\setdocrevision{1}
 
 \begin{document}
 
@@ -996,10 +996,46 @@ A conflict is shown by displaying the Military coordination indicator (“M”).
 
 SAP conflicts are also shown in the \winref{win:sap}.
 
+\section{Tactical Controller Tool (TCT)}\label{tool:tct}
+
+\subsection{General}
+
+Tactical Controller Tool works between the STCA and MTCD functions, providing alerts based on the aircraft’s tactical trajectory for the next 5 minutes.
+
+\bigskip
+
+In the lateral plane, the aircraft’s predicted trajectory follows either the planned route, an assigned heading clearance, or the current ground track if the aircraft is not found to follow the cleared route/heading.
+
+\bigskip
+
+In the vertical plane, the predictions use the current level for aircraft maintaining their cleared levels, a range of pre-defined vertical speeds for tracks cleared for a vertical maneuver but still in level flight, and an uncertainty buffer around the current vertical speed for aircraft climbing or descending. The predictions assume the aircraft to level off at its cleared level.
+
+\subsection{Alert display}
+
+An alert is shown by displaying the text “TC” (or “TC+” if the aircraft is involved in multiple TCT conflicts) in the TCT label item. The conflict(s) can be visualized by toggling on the TCT legs display using the tag function.
+
+\section{Blind Spot function}\label{tool:bs}
+
+\subsection{General}
+
+The Blind Spot function alerts the controller for level clearances that would create conflicts, by probing specified levels around the aircraft’s current level for conflicts. The function uses by default the TCT parameters, but some of the parameters can be specified to be different for Blind Spot. Conflicts starting within the next three minutes are displayed.
+
+\subsection{Alert display}
+
+The Blind Spot function probes the relevant levels when the CFL Menu is opened, and displays the results with colored bars on the right side of the level values. The probe is not refreshed periodically, and as the results are valid for only the probed time, they will be flagged as expired (\colorref{BS Aged} color) after a specified time. For still valid results, the color coding for the probed levels will be:
+
+\bigskip
+
+\begin{tabular}{l l}
+  Conflict                                                  & \colorref{BS Warning}       \\
+  No conflict, but conflict level(s) between it and AFL     & \colorref{BS Crossed Level} \\
+  No conflict, and no conflict level(s) between it and AFL  & \colorref{BS No Conflict}   \\
+  No calculated data due to probe failure                   & \colorref{BS Unknown}       \\
+\end{tabular}
+
 \section{Monitoring Aids}
 
 \warn{The use of Safety Nets does not relieve the controller from manually identifying and correcting conflicts. Safety Nets are generally configured with conservative values in respect to minimum separations. Even so, the controller must be aware that it is impossible to configure Safety Nets to catch all possible conflict situations.}
-
 
 \subsection{CLAM (Cleared Level Adherence Monitoring)}
 \label{tool:CLAM}
@@ -1847,27 +1883,31 @@ Sector States are used to control label construction, placement in lists, filter
     Minor difference between estimated time at point and CTO: \colorref{Warning}
 
     Non-acknowledged OCM with changed CTO: \colorref{Information} \\ \hline
+  DBPS \nextrow \label{tag:DBPS}&
+    Downlinked barometric pressure setting &
+    Barometric pressure setting as downlinked via mode S DAPs. Not available on VATSIM. &
+    \\ \hline
   DGS \nextrow \label{tag:DGS}&
-    Downloaded ground speed &
-    Ground speed as downloaded from the aircraft via mode S DAPs. Format as in GS field. &
+    Downlinked ground speed &
+    Ground speed as Downlinked via mode S DAPs. Format as in GS field. &
     \\ \hline
   DHDG \nextrow \label{tag:DHDG}&
-    Downloaded heading &
-    Magnetic heading as downloaded  from the aircraft via mode S DAPs.  
+    Downlinked heading &
+    Magnetic heading as Downlinked via mode S DAPs.  
     
     “H” + 3 digits. &
     \\ \hline
   DIAS \nextrow \label{tag:DIAS}&
-    Downloaded indicated airspeed &
-    Indicated airspeed as downloaded  from the aircraft via mode S DAPs. An estimated value is displayed if upper wind/temp data is available. &
+    Downlinked indicated airspeed &
+    Indicated airspeed as Downlinked via mode S DAPs. An estimated value is displayed if upper wind/temp data is available. &
     \\ \hline
   DMACH \nextrow \label{tag:DMACH}&
-    Downloaded Mach number &
-    Mach number as downloaded from the aircraft via mode S DAPs.  An estimated value is displayed if upper wind/temp data is available. &
+    Downlinked Mach number &
+    Mach number as Downlinked via mode S DAPs.  An estimated value is displayed if upper wind/temp data is available. &
     \\ \hline
   DRC \nextrow \label{tag:DRC}&
-    Downloaded rate of  climb/descent &
-    Rate of climb/descent as downloaded from the aircraft via mode S DAPs. 
+    Downlinked rate of  climb/descent &
+    Rate of climb/descent as Downlinked via mode S DAPs. 
     
     Not available on  VATSIM (computed rate displayed instead, see CRC). &
     \\ \hline
@@ -1971,11 +2011,15 @@ Sector States are used to control label construction, placement in lists, filter
     No fix warning &
     “F” if IFR flight is not routing via one of specified fixes to its destination &
     \colorref{Information}\\ \hline
+  FASTRWY \nextrow \label{tag:FASTRWY}&
+    FAST runway &
+    Arrival runway identifier, if not the first runway in a DPA setup &
+    \\ \hline
   FASTwarn \nextrow \label{tag:FASTwarn}&
     FAST warning &
     “SQ” for sequence warning &
     \colorref{Warning}\\ \hline
-    FCOPN \nextrow \label{tag:FCOPN}&
+  FCOPN \nextrow \label{tag:FCOPN}&
     FIR COPN point &
     FIR entry coordination point &
     \colorref{Information}\\ \hline
@@ -1996,7 +2040,7 @@ Sector States are used to control label construction, placement in lists, filter
   FF \nextrow \label{tag:FF}&
     Feeder fix &
     &
-    \\ \hline
+    If highlighted: \colorref{AMAN Data Highlight}\\ \hline
   FIELD15 \nextrow \label{tag:FIELD15}&
     Speed Level Route &
     The flight plan field 15 data (TAS,  RFL and route). Max 360 characters &
@@ -2024,7 +2068,11 @@ Sector States are used to control label construction, placement in lists, filter
   FSQ \nextrow \label{tag:FSQ} &
     FAST sequence number &
     Sequence number or “MA” for missed approach &
-    If sequence warning or missed approach: \colorref{Warning} \\ \hline
+    If sequence warning or missed approach: \colorref{Warning} 
+    
+    \bigskip
+
+    If arrival runway is not set as active for arrivals: \colorref{FSQ SI}\\ \hline
   FText \nextrow \label{tag:FText} &
     Free text &
     &
@@ -2064,11 +2112,11 @@ Sector States are used to control label construction, placement in lists, filter
   MFX \nextrow \label{tag:MFX}&
     Metering fix &
     AMAN metering fix name &
-    \\ \hline
+    If highlighted: \colorref{AMAN Data Highlight}\\ \hline
   MFX\_FF \nextrow \label{tag:MFXFF}&
     Metering fix or feeder fix &
     AMAN metering fix or feeder fix name &
-    \\ \hline
+    If highlighted: \colorref{AMAN Data Highlight}\\ \hline
   MNR \nextrow \label{tag:MNR}&
     Oceanic cruising speed &
     Cleared cruising speed from the last received OCM &
@@ -2103,6 +2151,10 @@ Sector States are used to control label construction, placement in lists, filter
     Not Before Time &
     Time restriction at OAN &
     Non-acknowledged: \colorref{Warning} \\ \hline
+  NFREQ \nextrow \label{tag:NFREQ}&
+    Next frequency &
+    Next frequency for a departing aircraft, to be sent in DCL &
+    \\ \hline
   NLT \nextrow \label{tag:NLT}&
     Not Later than Time &
     Time restriction at OAN &
@@ -2343,6 +2395,17 @@ Sector States are used to control label construction, placement in lists, filter
     Arrival sequence number (provided by AMAN)&
     A number from 1 to 99  &
     \\ \hline
+  STAB \nextrow \label{tag:STAB}&
+    Arrival stability &
+    Empty, or one of the following:
+
+    \begin{itemize}
+      \item UNSTABLE
+      \item STABLE
+      \item SUPERSTABLE
+      \item FROZEN
+    \end{itemize} &
+    \\ \hline
   STAFF \nextrow \label{tag:STAFF}&
     Scheduled Time of Arrival at feeder fix&
     AMAN calculated time to pass the feeder fix  &
@@ -2354,18 +2417,32 @@ Sector States are used to control label construction, placement in lists, filter
   STATE \nextrow \label{tag:STATE}&
     Current system state &
     Notified: NOTI 
+
+    \bigskip
     
     Coordinated: COOR 
+
+    \bigskip
     
     On-going coordination: ONGC 
+
+    \bigskip
     
     Assumed: ASSU 
+
+    \bigskip
     
     Transfer initiated: TRAN 
+
+    \bigskip
     
     Redundant: REDU 
+
+    \bigskip
     
     Terminated: TERM 
+
+    \bigskip
     
     Free: FREE 
     
@@ -2385,6 +2462,16 @@ Sector States are used to control label construction, placement in lists, filter
     
     “M” + 3 digits, 1/100’s of Ma &
     \\ \hline
+  TCT \nextrow \label{tag:TCT}&
+    TCT indicator &
+    “TC” if track is involved in one  TCT conflict, “TC+” if in more than one
+
+    \bigskip
+    
+    Unselected label:
+    
+    Not displayed if track is subject to an STCA alert &
+    \\ \hline
   TEXT2 \nextrow \label{tag:TEXT2}&
     OP-TEXT2 message &
     If more than 10 characters, then shows first 9 + “>” &
@@ -2396,11 +2483,11 @@ Sector States are used to control label construction, placement in lists, filter
   TOM \nextrow \label{tag:TOM}&
     Time of Metering &
     AMAN calculated time to pass the metering fix &
-    \\ \hline
+    If highlighted: \colorref{AMAN Data Highlight} \\ \hline
   TOM\_STAFF \nextrow \label{tag:TOMSTAFF}&
     Time of Metering or Scheduled Time of Arrival at feeder fix &
     AMAN calculated time to pass the metering fix or feeder fix &
-    \\ \hline
+    If highlighted: \colorref{AMAN Data Highlight} \\ \hline
   TSSR \nextrow \label{tag:TSSR}&
     Aircraft transponded  mode 3/A code &
     4 digits or “A”+ 4 digits &
@@ -2408,15 +2495,15 @@ Sector States are used to control label construction, placement in lists, filter
   TTL\_TTG \nextrow \label{tag:TTLTTG}&
     Time To Lose/Gain at metering fix &
     &
-    \\ \hline
+    If highlighted: \colorref{AMAN Data Highlight} \\ \hline
   TTLTTG\_FF \nextrow \label{tag:TTLTTGFF}&
     Time To Lose/Gain at feeder fix &
     &
-    \\ \hline
+    If highlighted: \colorref{AMAN Data Highlight} \\ \hline
   TTLTTG\_MFX\_FF \nextrow \label{tag:TTLTTGMFXFF}&
   Time To Lose/Gain at metering fix or feeder fix &
     &
-    \\ \hline
+    If highlighted: \colorref{AMAN Data Highlight} \\ \hline
   V \nextrow \label{tag:V}&
     Flight rules &
     “V” if VFR
@@ -2550,6 +2637,8 @@ Personal settings can be defined in \texttt{\detokenize{TopSky_Developer_Guide_S
   FPASD                 & Toggles on/off the display of flight plan tracks\\
   CPDLC Setting…        & Opens the \winref{win:dls}\\
   RR Main >             & Opens the RR Main submenu\\
+% FAST                  & Toggles on/off the FAST function\\
+  Blind Spot            & Toggles on/off the Blind Spot function\\
 \end{longtable}
 
 \subsubsection{Unit Settings submenu}
@@ -2600,8 +2689,7 @@ This submenu allows changing some of TopSky’s settings. Any changes to the set
   APW alert               & Selects which aircraft display the APW alert:\\                                       & \hspace{10pt}• All All aircraft\\                                           & \hspace{10pt}• Own+Co Only \stateref{Assumed} and \stateref{Coordinated} aircraft\\                       & \hspace{10pt}• Own Only \stateref{Assumed} aircraft\\
   APW alert sound         & Selects which STCA alerts trigger the alert sound:\\                                  & \hspace{10pt}• All All alerts\\                                             & \hspace{10pt}• Own+Co Only alerts for \stateref{Assumed} and \stateref{Coordinated}\\                     & aircraft\\                          & \hspace{10pt}• Own Only alerts for \stateref{Assumed} aircraft\\ & \hspace{10pt}• Off No alert sound\\
   METAR source            & Selects the METAR data source for TopSky windows that display METAR data\\
-  FPASD filter            & Allows filtering of displayed FPASD tracks based on sector state\\                    & \hspace{10pt}• Coord Display tracks at least in the \stateref{Coordinated} state\\                          & \hspace{10pt}• Conc Display tracks at least in the \stateref{Notified} state\\                          & \hspace{10pt}• None Display all tracks\\
-  FAST                    & Sets the status of the FAST function\\        
+  FPASD filter            & Allows filtering of displayed FPASD tracks based on sector state\\                    & \hspace{10pt}• Coord Display tracks at least in the \stateref{Coordinated} state\\                          & \hspace{10pt}• Conc Display tracks at least in the \stateref{Notified} state\\                          & \hspace{10pt}• None Display all tracks\\      
 \end{longtable}
 \medskip
 
@@ -2828,18 +2916,20 @@ Left-clicking the number opens the \winref{win:pqw}.
 \label{menu:sts}
 
 \begin{tabular}{p{5cm} p{7.5cm}}
-Plugin Status >                & Opens the \winref{menu:status}\\
-Safety Nets Status…            & Opens the \winref{win:snsw}\\
-Divergence Detection Status…   & Opens the \winref{win:ddsw}\\
-MTCD Status…                   & Opens the \winref{win:mtcdsw}\\
-FPCA Status…                   & Opens the \winref{win:fpcas}\\
-CPDLC Default Status           & Toggles the CPDLC Default Status On/Off\\
-Runway In Use                  & Opens the \winref{menu:ad}\\
-RWY line display…              & Opens the \winref{menu:ad}\\
-Supervisory >                  & Opens the \winref{menu:super}\\
-Flow Management…               & Opens the \winref{win:atfmw}\\
-Current Operational Load…      & Opens the \winref{win:colw}\\
-Operational Load Forecast…     & Opens the \winref{win:olfw}\\
+Plugin Status >                 & Opens the \winref{menu:status}\\
+Safety Nets and TCT Status…     & Opens the \winref{win:snsw}\\
+TCT Status                      & Opens the \winref{win:tctsw}\\
+Divergence Detection Status…    & Opens the \winref{win:ddsw}\\
+MTCD Status…                    & Opens the \winref{win:mtcdsw}\\
+FPCA Status…                    & Opens the \winref{win:fpcas}\\
+CPDLC Default Status            & Toggles the CPDLC Default Status On/Off\\
+%FAST Configuration              & Opens the \winref{menu:ad}\\ 
+Runway In Use                   & Opens the \winref{menu:ad}\\
+Runway line display…            & Opens the \winref{menu:ad}\\
+Supervisory >                   & Opens the \winref{menu:super}\\
+Flow Management…                & Opens the \winref{win:atfmw}\\
+Current Operational Load…       & Opens the \winref{win:colw}\\
+Operational Load Forecast…      & Opens the \winref{win:olfw}\\
 \end{tabular}
 \medskip
 
@@ -2867,7 +2957,19 @@ Depending on the file, there are one to three of the following buttons available
 - Save (Areas)            & Saves a snapshot of the current area activation data\\
 - Save set (Maps \& MapsL) & Saves a list of currently active radar screen specific maps\\
 - Load set (Maps \& MapsL) & Loads a saved list of active screen specific maps\\
-\end{tabular}\\ 
+\end{tabular}
+
+\bigskip
+
+For the Areas data file, the displayed area types can be filtered by right-clicking the View button, which then cycles the displayed areas in the following order (and displays the filter in the button label):
+
+\begin{tabular}{l l}
+- TSA   & All TSA area types (yellow)                 \\
+- MTCD  & MTCD areas (green) and inhibit areas (red)  \\
+- STCA  & STCA areas (green) and inhibit areas (red)  \\
+- TCT   & TCT areas (green) and inhibit areas (red)   \\
+- DD    & CLAM/RAM inhibit areas (red)                \\
+\end{tabular}
 
 \bigskip
 
@@ -2890,13 +2992,9 @@ Right-clicking the Reload button for Settings \& SettingsL has a special purpose
 \end{tabular}
 \medskip 
 
-\subsection{RRxxx/Off}
+\subsection{RRx}
 
-Opens the \winref{menu:rr}. If the rings are selected on,
-
-\bigskip
-
-“xxx” displays the distance between consecutive rings, otherwise “Off”.
+Opens the \winref{menu:rr}. If the rings are selected on, “x” displays the distance between consecutive rings, otherwise “Off”.
 
 \subsection{Mxxx-yyy}
 \label{menu:mfil}
@@ -2906,10 +3004,6 @@ Displays the status of the altitude filters for the Main Radar Window. If enable
 \bigskip
 
 Left-clicking the item opens the \winref{win:afw}.
-
-\subsection{S000-999}
-
-Displays the status of the altitude filters for the Secondary Radar Window (not implemented, shows static values)
 
 \section{Aircraft Position Symbol}
 
@@ -2937,13 +3031,13 @@ The history dots show the previous positions of the track. The number of display
 
 The prediction line draws the predicted ground track of the aircraft, based on its current track and ground speed. It is a two-color line, starting with \colorref{Track Default} at the position symbol and then alternating with \colorref{Track Highlight}, with every segment representing one minute of flying time. 
 
-The default lenght of the prediction line is 2 minutes, and can be changed for all tracks via the \winref{win:tcw}, or for a single track via the \winref{menu:prl}. Prediction lines are not displayed for flight plan tracks.
+The default lenght of the prediction line is 2 minutes, and can be changed for all tracks via the \winref{win:tcw}, or for a single track via the \winref{menu:prl}.
 
 \capdimage{img/rps_predline+history_selected.png}{Selected track with 5 history dots and a 3-minute prediction line}
 
 \subsection{Track filtering}\label{win:tf}
 
-For all the filters, it is only possible to filter out \stateref{Unconcerned} tracks. Aircraft with transponder codes 7500, 7600 and 7700 and tracks with an active STCA, MSAW, APW or DUPE alert are also excluded from filtering. If a filter is active, the filter title in the Radar Menu will be shown in \colorref{Selected} color.
+For all the filters, it is only possible to filter out \stateref{Unconcerned} tracks. Aircraft with transponder codes 7500, 7600 and 7700 and tracks with an STCA, MSAW, APW, TCT or DUPE alert, highlighted tracks, and tracks subject to Blind Spot function alerts are also excluded from filtering. If a filter is active, its name in the Radar Menu will be shown in \colorref{Selected} color.
 
 \bigskip
 
@@ -3046,7 +3140,7 @@ The Extended label can be opened from the Standard or Reduced label by right cli
 
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item \tagref{tag:COM} \tagref{tag:*} \tagref{tag:V} \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:RI} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC E} \tagref{tag:CPDLC W} \tagref{tag:TEXT2} \tagref{tag:SQAMAN} \tagref{tag:TTLTTGMFXFF}  
+  \item \tagref{tag:COM} \tagref{tag:*} \tagref{tag:V} \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC E} \tagref{tag:CPDLC W} \tagref{tag:TEXT2} \tagref{tag:SQAMAN} \tagref{tag:TTLTTGMFXFF}  
   \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \hfill \tagref{tag:TSSR} \tagref{tag:ASSR} \tagref{tag:PSSR}
   \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:ACF} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL} \hfill \tagref{tag:FLTID} \tagref{tag:FLTADD} \tagref{tag:CODE}
   \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX} \tagref{tag:OFL} \tagref{tag:O+} \tagref{tag:STATE} \tagref{tag:ASI}
@@ -3738,9 +3832,16 @@ The CFL menu is available only when the aircraft is assumed. The default value i
 
 The aircraft’s RFL is displayed above the level list with format “R<RFL>”. Left-clicking it sets the CFL equal to RFL.
 
-\bigskip
+\begin{itemize}
+  \item “CA” sets “Cleared for approach”
+  \item “VA” sets “Cleared for visual approach”
+  \item “OS” sets “Own separation” (treated as visual approach by safety nets)
+  %\item “OS” sets “Own separation” (FAST indicators hidden, treated as visual approach by safety nets)
+\end{itemize}
 
-“VA”, “CA”, “CAT2” and “CAT3” set the corresponding approach clearances.
+The “APP Clr” folder contains other available approach types for the aircraft’s arrival runway. If none are defined in the plugin settings, the folder is not displayed in the menu.
+
+\warn{The clearances in the “APP Clr” folder will be displayed as “cleared for approach” to controllers not using this plugin (“OS” will be “cleared for visual approach”)}
 
 \bigskip
 
@@ -3838,52 +3939,54 @@ The AHDG vector is a way of setting an assigned heading for an aircraft. To use 
 
 When the cursor is over a known point (VOR, NDB or waypoint), the name of that point is displayed instead of the heading value, and left-clicking will set a direct-to clearance to that point. To temporarily disable the known points functionality, keep the <ALT> key pressed while using the vector.
 
-\subsection{FAST indicators}\label{menu:fasti}
-
-\note{FAST functionality is not implemented}
-
-Separation and/or gap indicators will be automatically displayed for all defined approaches to all airports set as active for arrivals in EuroScope. The indicators or the sequence orders are not synchronized between controllers.
-
-The system displays a separation indicator, showing the minimum separation from the preceding aircraft (the greater of minimum surveillance separation and wake turbulence separation), and optionally a gap indicator which shows a manually defined distance gap behind the previous aircraft.
-
-The gaps are set from the FAST List, and a pre-defined gap is also automatically entered in front of an aircraft with a CAT2 or CAT3 approach clearance.
-
-\begin{longtable}{|p{3cm}|p{2cm}|p{6cm}|}
-  \hline
-    &  \textbf{Symbol} &  \textbf{Color} \\ \hline
-  \endhead
-  Separation indicator  & (  &  Symbol overtaken: \colorref{FTD Urgency} 
-  
-                                Selected track: \colorref{Track Highlight} 
-  
-                                Otherwise: \colorref{FTD Nominal}  \nextrow \\
-  Gap indicator         & [  &  Selected track: \colorref{Track Highlight} 
-  
-                                Otherwise: \colorref{GAP Nominal}  \nextrow \\
-  \hline
-\end{longtable}
-
-Right-clicking on a gap indicator opens a confirmation window to remove the gap.
-
-\bigskip
-
-The separation indicator is hidden if:
-
-\begin{itemize}
-  \item a gap is present;
-  \item the aircraft hasn’t overtaken the gap indicator, and;
-  \item the separation indicator is further away from the gap indicator than a pre-defined distance.
-\end{itemize}
-
-The gap indicator is hidden if:
-
-\begin{itemize}
-  \item the aircraft overtakes its gap indicator, or;
-  \item the gap is smaller than the required minimum separation.
-\end{itemize}
-
-If the aircraft overtakes its separation indicator by a pre-defined distance, the symbol will be displayed with \colorref{FTD Urgency} color and the overtake distance will be displayed next to the symbol.
-
+% \subsection{FAST indicators}\label{menu:fasti}
+% 
+% 
+% Separation and/or gap indicators will be automatically displayed for all defined approaches to all airports set as active for arrivals in EuroScope. The indicators or the sequence orders are not synchronized between controllers.
+% 
+% The system displays a separation indicator, showing the minimum separation from the preceding aircraft (the greater of minimum surveillance separation and wake turbulence separation), and optionally a gap indicator which shows a manually defined distance gap behind the previous aircraft.
+% 
+% The gaps are set from the FAST List, and a pre-defined gap is also automatically entered in front of an aircraft with a CAT2 or CAT3 approach clearance.
+% 
+% \begin{longtable}{|p{3cm}|p{2cm}|p{6cm}|}
+%   \hline
+%     &  \textbf{Symbol} &  \textbf{Color} \\ \hline
+%   \endhead
+%   Separation indicator  & (  &  Symbol overtaken: \colorref{FTD Urgency} 
+%   
+%                                 Selected track: \colorref{Track Highlight} 
+%   
+%                                 Otherwise: \colorref{FTD Nominal}  \nextrow \\
+%   Gap indicator         & [  &  Symbol overtaken: \colorref{GAP Warning} 
+%   
+%                                 Selected track: \colorref{Track Highlight} 
+%   
+%                                 Otherwise: \colorref{GAP Nominal}  \nextrow \\
+%   \hline
+% \end{longtable}
+% 
+% Right-clicking on a gap indicator opens a confirmation window to remove the gap.
+% 
+% \bigskip
+% 
+% The separation indicator is hidden if:
+% 
+% \begin{itemize}
+%   \item a gap is present;
+%   \item the aircraft hasn’t overtaken the gap indicator, and;
+%   \item the separation indicator is further away from the gap indicator than a pre-defined distance, or;
+%   \item the aircraft has an “OS” approach clearance.
+% \end{itemize}
+% 
+% The gap indicator is hidden if:
+% 
+% \begin{itemize}
+%   \item the gap is smaller than the required minimum separation, or;
+%   \item the aircraft has an “OS” approach clearance.
+% \end{itemize}
+% 
+% If the aircraft overtakes its separation indicator by a pre-defined distance, the symbol will be displayed with \colorref{FTD Urgency} color and the overtake distance will be displayed next to the symbol.
+% 
 \subsection{Handover Proposal (HOP)}
 \label{win:hop}
 
@@ -4088,41 +4191,31 @@ The DSQ menu is used to select a specific departure sequence number to a flight.
 
 \note{The departure sequence number is only stored locally, it is not sent to other controllers or even to other EuroScope instances.}
 
-\subsection{GAP Menu}
-\label{menu:gap}
-\capdimage{img/gapm.png}{GAP Menu}
+% \subsection{GAP Menu}
+% \label{menu:gap}
+% \capdimage{img/gapm.png}{GAP Menu}
+% 
+% The GAP menu is used to set an approach gap or cancel an existing one. If opened from a FAST List row, the gap is for that aircraft only (manual gap), and if opened from the FAST Configuration Window, it applies to all new aircraft entered into that sequence (systematic gap).
+% 
+% \bigskip
+% 
+% To set a new gap or change an existing one::
+% 
+% \begin{enumerate}
+%   \item Select a value from the list, or enter a custom value to the edit field at the bottom (values from 0.1 to 40.0 nm are accepted)
+% \end{enumerate}
+% 
+% To cancel an existing gap:
+% 
+% \begin{enumerate}
+%   \item Left-click on “CNL GAP”
+% \end{enumerate}
+% 
+\subsection{NFREQ menu}
+\label{menu:nfreq}
+\capdimage{img/nfreq.png}{NFREQ Menu}
 
-The GAP menu is used to set an approach gap or cancel an existing one, either only behind the specified aircraft (manual gap), or also behind all the following ones (systematic gap).
-
-\bigskip
-
-To set a manual gap:
-
-\begin{enumerate}
-  \item Unselect the “Systematic” checkbox;
-  \item Select a value from the list, or enter a custom value to the edit field at the bottom(values from 0.1 to 40.0 nm are accepted).
-\end{enumerate}
-
-To set a systematic gap starting from the selected aircraft:
-
-\begin{enumerate}
-  \item Select the “Systematic” checkbox;
-  \item Select a value from the list, or enter a custom value to the edit field at the bottom (values from 0.1 to 40.0 nm are accepted)
-\end{enumerate}
-
-To cancel an existing manual gap:
-
-\begin{enumerate}
-  \item Unselect the “Systematic” checkbox;
-  \item Left-click on “CNL GAP”
-\end{enumerate}
-
-To cancel a systematic gap starting from the selected aircraft:
-
-\begin{enumerate}
-  \item Select the “Systematic” checkbox;
-  \item Left-click on “CNL GAP”
-\end{enumerate}
+The NFREQ menu is used to set the “next frequency” value to be sent in datalink departure clearances. Left-click on one of the pre-defined values in the list to set it, or on the empty area at the bottom to type in a value manually.
 
 \section{Aircraft Lists}
 
@@ -4493,22 +4586,22 @@ The ETO column initially displays the estimated time over the holding fix. Once 
 
 \begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.10\textwidth}|} \hline
   \textbf{Item}             & \textbf{Type} & \textbf{Left Mouse}   & \textbf{Right Mouse} \endhead \hline
-    Lbl                     & optional  & Hide/display track label  &                           \\ \hline
-    C/S                     & mandatory & Open \winref{menu:cs}     &                           \\ \hline
-    ASSR                    & optional  & Open \winref{menu:assr}   &                           \\ \hline
-    AFL                     & mandatory & Open \winref{menu:afl}    &                           \\ \hline
-    (attitude indicator)    & mandatory &                           &                           \\ \hline
-    CFL                     & mandatory & Open \winref{menu:cfl}    & Open \winref{win:vaw}     \\ \hline
-    HPT                     & optional  & Open \winref{win:smw}     &                           \\ \hline
-    ETO                     & optional  &                           &                           \\ \hline
-    XFL                     & optional  & Open COPX Alt popup       &                           \\ \hline
-    COPX                    & optional  & Open \winref{menu:wpt}    & Toggle route draw         \\ \hline
-    EAT                     & optional  & Open \winref{menu:tm}     &                           \\ \hline
-    RT (EAT given indicator)& optional  & Toggle EAT given indicator&                           \\ \hline
-    PEL                     & optional  & Open COPX Alt popup       &                           \\ \hline
-    FX                      & optional  &                           &                           \\ \hline
-    STA                     & optional  &                           &                           \\ \hline
-    TTLTTG                  & optional  &                           &                           \\ \hline
+    Lbl                     & optional  & Hide/display track label  &                             \\ \hline
+    C/S                     & mandatory & Open \winref{menu:cs}     &                             \\ \hline
+    ASSR                    & optional  & Open \winref{menu:assr}   &                             \\ \hline
+    AFL                     & mandatory & Open \winref{menu:afl}    &                             \\ \hline
+    (attitude indicator)    & mandatory &                           &                             \\ \hline
+    CFL                     & mandatory & Open \winref{menu:cfl}    & Open \winref{win:vaw}       \\ \hline
+    HPT                     & optional  & Open \winref{win:smw}     &                             \\ \hline
+    ETO                     & optional  &                           &                             \\ \hline
+    XFL                     & optional  & Open COPX Alt popup       &                             \\ \hline
+    COPX                    & optional  & Open \winref{menu:wpt}    & Toggle route draw           \\ \hline
+    EAT                     & optional  & Open \winref{menu:tm}     &                             \\ \hline
+    RT (EAT given indicator)& optional  & Toggle EAT given indicator&                             \\ \hline
+    PEL                     & optional  & Open COPX Alt popup       &                             \\ \hline
+    FX                      & optional  &                           & Acknowledge AMAN highlight  \\ \hline
+    STA                     & optional  &                           & Acknowledge AMAN highlight  \\ \hline
+    TTLTTG                  & optional  &                           & Acknowledge AMAN highlight  \\ \hline
     \caption{Holding List Construction}
   \end{longtable}
 
@@ -4518,52 +4611,54 @@ If a track label has been hidden, it will be automatically unhidden if the aircr
 
 The expected approach time, if entered, is broadcast to other controllers as well. By default, 10 minutes after it a warning message will be entered into the tracking controller’s \winref{win:pqw} if the holding has not been terminated. The EAT is not used for any predictions. The EAT given indicator is not transmitted to other controllers.
 
-\subsection{FAST List}\label{list:fast}
-
-\note{FAST functionality is not implemented}
-
-The FAST List contains aircraft that have been entered into a defined approach sequence. The list is automatically displayed whenever there is at least one aircraft in the list. Left-clicking the button at the top right corner collapses the list to display only the title bar.
-
-\capdimage{img/fastlist.png}{FAST List}
-
-“View” opens the View menu:
-
-\begin{longtable}{p{5cm} p{7.5cm}}
-  Header  & Toggle visibility of the list header line \\
-  Default & Sets field visibility to default          \\
-  <field> & Toggles field visibility                  \\
-\end{longtable}
-
-Left-clicking adjusts only the current list, right-clicking sets the same value to all FAST lists.
-
-\bigskip
-
-“Font” opens the Font menu to select the list font from three options.
-
-\bigskip
-
-The list is sorted according to the FSQ field. Aircraft on missed approach are sorted as if they had a sequence number of -1 and aircraft already landed as if they had a sequence number of 0.
-
-\bigskip
-
-The FAST list contains the following fields:
-
-\begin{longtable}{|p{0.10\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|} \hline
-  \textbf{Item} & \textbf{Type} & \textbf{Left Mouse}     & \textbf{Right Mouse} \endhead \hline
-    FSQ         & mandatory     & Start re-sequence       & Remove from sequence      \\ \hline
-    C/S         & mandatory     & Open \winref{menu:cs}   &                           \\ \hline
-    ATYP        & optional      &                         & Toggle ATYP highlight     \\ \hline
-    W           & optional      &                         & Toggle WTC highlight      \\ \hline
-    ARWY        & optional      & Open runway popup list  &                           \\ \hline
-    GAP         & mandatory     & Open \winref{menu:gap}  & Remove gap                \\ \hline
-    ACF         & optional      & Toggle ACF highlight    & Cancel approach clearance \\ \hline
-    \caption{FAST List Construction}
-  \end{longtable}
-
-To resequence an aircraft behind another, first left-click on the FSQ field of the aircraft to be resequenced. The mouse cursor changes to a cross. Then left-click on the radar position symbol, track label or the FSQ field of the aircraft behind which the first aircraft is to be moved.
-
-To cancel the re-sequence operation, press the ESC key or right-click
-
+%\subsection{FAST List}\label{list:fast}
+%
+%The FAST List contains aircraft that have been entered into a defined approach sequence. The list is automatically %displayed whenever there is at least one aircraft in the list. Left-clicking the button at the top right corner %collapses the list to display only the title bar.
+%
+%\capdimage{img/fastlist.png}{FAST List}
+%
+%“View” opens the View menu:
+%
+%\begin{longtable}{p{5cm} p{7.5cm}}
+%  Header  & Toggle visibility of the list header line \\
+%  Default & Sets field visibility to default          \\
+%  <field> & Toggles field visibility                  \\
+%\end{longtable}
+%
+%Left-clicking adjusts only the current list, right-clicking sets the same value to all FAST lists.
+%
+%\bigskip
+%
+%“Font” opens the Font menu to select the list font from three options.
+%
+%\bigskip
+%
+%The list is sorted according to the FSQ field. Aircraft on missed approach are sorted as if they had a sequence number %of -1 and aircraft already landed as if they had a sequence number of 0.
+%
+%\bigskip
+%
+%On the right side of the menu bar, the current minimum surveillance separation and the systematic gap, if any, are %displayed for the runway(s). Left-clicking in that area opens the \winref{win:fastcw}.
+%
+%\bigskip
+%
+%The FAST list contains the following fields:
+%
+%\begin{longtable}{|p{0.10\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|} \hline
+%  \textbf{Item}   & \textbf{Type} & \textbf{Left Mouse}     & \textbf{Right Mouse} \endhead \hline
+%    FSQ           & mandatory     & Start re-sequence       & Remove from sequence      \\ \hline
+%    C/S           & mandatory     & Open \winref{menu:cs}   &                           \\ \hline
+%    ATYP          & optional      &                         & Toggle ATYP highlight     \\ \hline
+%    W             & optional      &                         & Toggle WTC highlight      \\ \hline
+%    RWY           & optional      & Open runway popup list  &                           \\ \hline
+%    GAP           & mandatory     & Open \winref{menu:gap}  & Remove gap                \\ \hline
+%    ACF           & optional      & Toggle ACF highlight    & Cancel approach clearance \\ \hline
+%    \caption{FAST List Construction}
+%  \end{longtable}
+%
+%To resequence an aircraft behind another, first left-click on the FSQ field of the aircraft to be resequenced. The %mouse cursor changes to a cross. Then left-click on the radar position symbol, track label or the FSQ field of the %aircraft behind which the first aircraft is to be moved.
+%
+%To cancel the re-sequence operation, press the ESC key or right-click
+%
 \subsection{Unsupported Lists}
 \label{list:unsup}
 
@@ -4761,11 +4856,11 @@ Right-clicking on the colored box for a set of lines cycles through:
 When vertical separation display is enabled, on both lines two points are displayed, the first showing the point where the tracks’ vertical separation is calculated to become smaller than an offline-defined value, and the second the point after that where it is calculated to become greater. The calculation is done using the tracks’ current vertical speeds.
 
 \begin{itemize}
-    \item The vertical separation labels, when displayed, are similar to the minimum separation label but prefixed with “V”.
+    \item The vertical separation labels, when displayed, are similar to the minimum separation label but prefixed with “v”.
     \item If one or both points are beyond the minimum separation point, their calculation is extended forward up to an offline-defined time value.
     \item If a point is already passed or beyond the maximum displayed time, it will not be drawn.
     \item If the end point is beyond the maximum displayed time, a line will be drawn using \colorref{SEP Vert} color from the CPA to the end point or the maximum displayed time whichever is earlier.
-    \item If the tracks are not predicted to be separated by less than the defined value within the prediction time, “V=” is displayed left of the minimum separation label.
+    \item If the tracks are not predicted to be vertically separated within the prediction time, “v=” is displayed near the track whose line contains the separation distance label.
 \end{itemize}
 
 \subsection{View Window}
@@ -4840,7 +4935,7 @@ The Track Control Window is used to set track and track label related options. N
     Vector          & Sets the length of the prediction line in minutes\\
     History         & Sets the number of history dots\\
     Text            & Changes the track label text size\\
-    X Label Fields  & Opens/closes the corresponding Label Fields section\\
+    …Label Fields   & Opens/closes the corresponding Label Fields section\\
 \end{longtable}
 
 \bigskip
@@ -4962,7 +5057,7 @@ While active, this function highlights the callsigns of the referenced flight an
 
 \bigskip
 
-All other flights will be filtered out to display just their track position symbols and history dots unless they have an active STCA, APW, MSAW or AIW warning or are squawking 7500, 7600 or 7700. Tracks without a valid AFL will be filtered out.
+All other flights will be filtered out to display just their track position symbols and history dots unless they have an active STCA, APW, MSAW, AIW or TCT alert or are squawking 7500, 7600 or 7700. Tracks without a valid AFL will be filtered out.
 
 \subsection{Oceanic Level highlight}\label{func:olh}
 
@@ -4974,7 +5069,7 @@ While active, this function highlights the callsigns of the referenced flight an
 
 \bigskip
 
-All other flights will be filtered out to display just their track position symbols and history dots unless they have an active STCA, APW, MSAW or AIW warning or are squawking 7500, 7600 or 7700.
+All other flights will be filtered out to display just their track position symbols and history dots unless they have an active STCA, APW, MSAW, AIW or TCT alert or are squawking 7500, 7600 or 7700.
 
 \subsection{Clock Window}\label{win:clock}
 
@@ -5025,7 +5120,7 @@ If the VATSIM callsign is known when the window is opened, the CPDLC login calls
   Auto    & Automatic sending of datalink clearances on/off\\
 \end{longtable}
 
-\note{The DFREQ, NFREQ, NPT and START options have no effect, as they are not used in the CLD message.}
+\note{The DFREQ, NFREQ, NPT, ADT and START options have no effect, as they are not used in the CLD message.}
 
 When the “Auto” option is enabled, a datalink clearance will be automatically sent when a request is received if all the following conditions are met:
 
@@ -5989,6 +6084,8 @@ The General Information Window displays basic information on the system state. T
     CPDLC Def: [ON|OFF] & Displays the state of the CPDLC Default setting\\
     FPASD: [ON|OFF]     & Displays the state of the FPASD setting \\
     Alert functions     & Status of the alert functions. The function name is shown in \colorref{Warning} color if selected off or there’s a fault in the data file.\\
+    TCT                 & TCT Displayed if the TCT function is enabled\\
+    BS                  & BS Displayed if the Blind Spot function is enabled\\
     CCAMS               & Displayed if plugin is selected as the SSR code source\\
                         & $\bullet$ \colorref{Urgency} color if the SSR data file contains no codes\\
                         & $\bullet$ \colorref{Warning} color if simulated traffic is not downloaded or ESE file or fixed range selected as the code source\\
@@ -6163,19 +6260,19 @@ The NAT Track Messages Window displays the downloaded track messages. The messag
 
 \capdimage{img/snets.png}{Safety Nets Status Window}
 
-Allows setting the status for the \winref{tool:STCA}, \winref{tool:MSAW}, \winref{tool:APW} and \winref{tool:AIW} systems. The “On/Off” buttons control the corresponding system’s status.
+Allows setting the status for the \winref{tool:STCA}, \winref{tool:MSAW}, \winref{tool:APW}, \winref{tool:AIW}, \winref{tool:tct} and \winref{tool:bs} systems. The “On/Off” buttons control the corresponding system’s status.
 
 \bigskip
 
-Below them, there are four entry boxes for callsigns to exclude specific callsigns from all the safety nets. The “*” wildcard can be used to match multiple callsigns. It causes all the callsigns that match up to the “*” to be a match (i.e. “ABC*” will match all callsigns that start with “ABC”, but “*ABC” will match all callsigns as any characters after the “*” will be ignored).
+Below them, there are four entry boxes for callsigns to exclude specific callsigns from the specified safety nets. The “*” wildcard can be used to match multiple callsigns. It causes all the callsigns that match up to the “*” to be a match (i.e. “ABC*” will match all callsigns that start with “ABC”, but “*ABC” will match all callsigns as any characters after the “*” will be ignored).
 
 \bigskip
 
-Below the callsign fields, there are four SSR code boxes that can be used to exclude specific SSR codes from all the safety nets. The entered values must be 1-4 octal digits, and the system will match the number of digits entered (i.e. “2000” will match only code 2000, whereas “20” will match all codes in the range 2000-2077).
+Below the callsign fields, there are four SSR code boxes that can be used to exclude specific SSR codes from the specified safety nets.
 
 \bigskip
 
-If there are STCA inhibition areas defined in the area data file, they will be listed in the area in the bottom part of the window. The area vertical limits (displayed in 100’s of feet or meters+“m” depending on system units) can be edited by clicking on the values, and the area activation can be toggled by clicking on the area status.
+If there are STCA inhibition areas defined in the areas data file, they will be listed in the area in the bottom part of the window. The area vertical limits (displayed in 100’s of feet or meters+“m” depending on system units) can be edited by clicking on the values, and the area activation can be toggled by clicking on the area status.
 
 \bigskip
 
@@ -6187,6 +6284,35 @@ All changes to the window must be applied using the buttons in the bottom of the
     Ok      & Applies the changes if any, closes the window\\
     Apply   & Applies the changes\\
     Cancel  & Cancels the changes\\
+\end{longtable}
+
+\subsection{TCT Status Window}
+\label{win:tctsw}
+
+\winref{menu:global} STS -> TCT Status...
+
+\bigskip
+
+\capdimage{img/tctsw.png}{TCT Status Window}
+
+The window contains four entry boxes for callsigns to exclude specific callsigns from TCT. The “*” wildcard can be used to match multiple callsigns. It causes all the callsigns that match up to the “*” to be a match (i.e. “ABC*” will match all callsigns that start with “ABC”, but “*ABC” will match all callsigns as any characters after the “*” will be ignored). 
+
+\bigskip
+
+Below the callsign fields, there are four SSR code boxes that can be used to exclude specific SSR codes.
+
+\bigskip
+
+If there are TCT areas or TCT inhibition areas defined in the areas data file, they will be listed in the area in the bottom part of the window. The area vertical limits (displayed in 100’s of feet) can be edited by clicking on the values, and the area activation can be toggled by clicking on the area status.
+
+\bigskip
+
+All changes to the window must be applied using the buttons in the bottom of the window to take effect.
+
+\begin{longtable}{p{2.5cm} p{10cm}}
+  Ok      & Applies the changes if any, closes the window\\
+  Apply   & Applies the changes\\
+  Cancel  & Cancels the changes\\
 \end{longtable}
 
 \subsection{Divergence Detection Status Window}
@@ -6223,11 +6349,7 @@ MTCD inhibition areas will be listed in the area below the “On/Off” button. 
 
 \bigskip
 
-The rest of the inhibition settings affect both \winref{tool:MTCD} and \winref{tool:SAP} systems:
-
-\bigskip
-
-Below the inhibit areas, there are four SSR code boxes that can be used to exclude specific SSR codes from MTCD/SAP processing. The entered values must be 1-2 octal digits, and the system will match the number of digits entered (i.e. “2” will match codes 2000-2777, whereas “20” will match codes 2000-2077).
+Below the inhibit areas, there are four SSR code boxes that can be used to exclude specific SSR codes from MTCD processing. The entered values must be 2 octal digits, and the system will match codes starting with the entered digits (i.e. “20” will match codes 2000-2077).
 
 \bigskip
 
@@ -6243,7 +6365,7 @@ VFR or IFR flights can be excluded by selecting the respective “Inhibited Flig
 
 \bigskip
 
-Finally, there are four entry boxes to exclude specific callsigns. The “*” wildcard can be used to match multiple callsigns. It causes all the callsigns that match up to the “*” to be a match (i.e. “ABC*” will match all callsigns that start with “ABC”, but “*ABC” will match all callsigns as any characters after the “*” will be ignored).
+Finally, there are four entry boxes to exclude specific callsigns. The “*” wildcard can be used to match multiple callsigns. It causes all the callsigns that match up to the “*” to be a match (i.e. “ABC*” will match all callsigns that start with “ABC”.
 
 \bigskip
 
@@ -6282,6 +6404,25 @@ All changes to the window must be applied using the buttons in the bottom of the
 \subsection{Runway in Use Window}\label{win:riuw}
 
 \winref{menu:global} STS -> Runway In Use... (opens the \winref{menu:ad} for airport selection) 
+
+\subsection{FAST Configuration Window}\label{win:fastcw}
+
+\winref{menu:global} STS -> STS -> FAST Configuration
+FAST List -> left-click on the area of the menu bar where the MSS and SYS GAP are displayed
+
+\capdimage{img/fastcw.png}{FAST Configuration Window}
+
+The FAST Configuration Window is used to change approach-specific settings. If an approach has more than one possible minimum surveillance separation defined, left-clicking on the button in the MSS column cycles through them. Left-clicking on the button in the Sys GAP column opens the GAP menu to set up a systematic gap to be applied for all new aircraft entered into that approach sequence. Right-clicking removes any previously defined gap.
+
+\bigskip
+
+All changes to the window must be applied using the buttons in the bottom of the window to take effect.
+
+\begin{longtable}{p{2.5cm} p{10cm}}
+  Ok      & Applies the changes, closes the window\\
+  Apply   & Applies the changes\\
+  Cancel  & Cancels the changes\\
+\end{longtable}
 
 \capdimage{img/rwy.png}{Runway in Use Window}
 
@@ -6566,7 +6707,7 @@ manually toggled off, depending on the function that was used to display it.
 
 \bigskip
 
-The Flight Leg line is one pixel thick, except when it is showing only SAP conflicts (opened from the SAP Window) or showing also MTCD information (any conflicting aircraft legs). In that case the FLEG for the referenced flight is three pixels thick and the possible other FLEGs one pixel thick.
+The Flight Leg line is one pixel thick, except when it is showing only SAP conflicts (opened from the SAP Window) or showing also MTCD information (any conflicting aircraft legs). In that case the FLEG for the referenced flight is three pixels thick and the other FLEGs one pixel thick.
 
 \bigskip
 
@@ -6579,6 +6720,18 @@ The label that’s shown on each route point includes the following predefined f
 \image{img/fltoc.png}   & Top of Climb\\
 \image{img/fltod.png}   & Top of Descent\\
 \end{longtable}
+
+\section{Tactical Controller Tool (TCT) Leg}\label{func:tct}
+
+The TCT leg displays the predicted trajectories of the selected aircraft and the conflicting aircraft up to the closest point of approach. If the selected aircraft is involved in more than one conflict, the displayed one for the selected aircraft is the conflict where the time to start of conflict is the least.
+
+\bigskip
+
+The leg is \colorref{TCT Leg} color until the start of the conflict, and then \colorref{TCT Leg Embellished} until the closest point of approach. On the conflicting aircraft’s leg, a label is displayed in \colorref{TCT Label} color. It displays the minimum distance and time to that point (closest point of approach).
+
+\bigskip
+
+When TCT legs are being displayed, all minimum separation tools (except for tracks with STCA alert), velocity vectors (except for tracks with STCA alert) and flight legs are temporarily hidden.
 
 \section{Keyboard Shortcuts}\label{func:short}
 
@@ -6613,12 +6766,14 @@ Some TopSky functions can be accessed using a keyboard shortcut. The available s
   \endhead   
   \textit{\textbf{Aircraft colors}}                                     &                                     &                                             \\ \hline
   \nextrow \label{ACF Via CFL} ACF Via CFL                              & \cellcolor{ACF Via CFL}             & Labels                                      \\ \hline
+  \nextrow \label{AMAN Data Highlight} AMAN Data Highlight              & \cellcolor{AMAN Data Highlight}     & Labels                                      \\ \hline
   \nextrow \label{Assumed} Assumed                                      & \cellcolor{Assumed}                 & Labels, Tracks                              \\ \hline
   \nextrow \label{CARD Mark All} CARD Mark All                          & \cellcolor{CARD Mark All}           & Labels                                      \\ \hline
   \nextrow \label{CARD Mark Own} CARD Mark Own                          & \cellcolor{CARD Mark Own}           & Labels                                      \\ \hline
   \nextrow \label{Concerned} Concerned                                  & \cellcolor{Concerned}               & Labels, Tracks                              \\ \hline
   \nextrow \label{Coordination} Coordination                            & \cellcolor{Coordination}            & Labels, Tracks                              \\ \hline
   \nextrow \label{Freq Indicator} Freq Indicator                        & \cellcolor{Freq Indicator}          & Labels                                      \\ \hline
+  \nextrow \label{FSQ SI} FSQ SI                                        & \cellcolor{FSQ SI}                  & Labels                                      \\ \hline
   \nextrow \label{Info Coord} Info Coord                                & \cellcolor{Info Coord}              & Labels                                      \\ \hline
   \nextrow \label{Information} Information                              & \cellcolor{Information}             & Labels, Windows                             \\ \hline
   \nextrow \label{Informed 1} Informed 1                                & \cellcolor{Informed 1}              & Labels, Tracks                              \\ \hline
@@ -6636,6 +6791,7 @@ Some TopSky functions can be accessed using a keyboard shortcut. The available s
   \nextrow \label{Sid Star Allocation} Sid Star Allocation              & \cellcolor{Sid Star Allocation}     & Labels                                      \\ \hline
   \nextrow \label{Sid Star No Allocation} Sid Star No Allocation        & \cellcolor{Sid Star No Allocation}  & Labels                                      \\ \hline
   \nextrow \label{Suite Highlight} Suite Highlight                      & \cellcolor{Suite Highlight}         & Labels                                      \\ \hline
+  \nextrow \label{TCT Warning} TCT Warning                              & \cellcolor{TCT Warning}             & Labels                                      \\ \hline
   \nextrow \label{Temp Track Highlight} Temp Track Highlight            & \cellcolor{Temp Track Highlight}    & Labels (Find Track function)                \\ \hline
   \nextrow \label{Track Default} Track Default                          & \cellcolor{Track Default}           & Tracks                                      \\ \hline
   \nextrow \label{Track Highlight} Track Highlight                      & \cellcolor{Track Highlight}         & Tracks                                      \\ \hline
@@ -6661,11 +6817,13 @@ Some TopSky functions can be accessed using a keyboard shortcut. The available s
   \nextrow \label{FTD Nominal} FTD Nominal                              & \cellcolor{FTD Nominal}             & FAST separation indicators                  \\ \hline
   \nextrow \label{FTD Urgency} FTD Urgency                              & \cellcolor{FTD Urgency}             & FAST separation indicators and labels when overtaken \\ \hline
   \nextrow \label{GAP Nominal} GAP Nominal                              & \cellcolor{GAP Nominal}             & FAST gap indicators                         \\ \hline
+  \nextrow \label{GAP Warning} GAP Warning                              & \cellcolor{GAP Warning}             & FAST gap indicators when overtaken          \\ \hline
   \nextrow \label{Heading Vector} Heading Vector                        & \cellcolor{Heading Vector}          & Heading vector                              \\ \hline
   \nextrow \label{Information FL} Information FL                        & \cellcolor{Information FL}          & Part of flight leg with no MTCD or SAP problems \\ \hline
   \nextrow \label{MQDM} MQDM                                            & \cellcolor{MQDM}                    & MQDM vector                                 \\ \hline
   \nextrow \label{Potential FL} Potential FL                            & \cellcolor{Potential FL}            & Part of flight leg with MTCD potential risk \\ \hline
   \nextrow \label{QDM} QDM                                              & \cellcolor{QDM}                     & QDM vector                                  \\ \hline
+  \nextrow \label{SEP Tool} SEP Tool                                    & \cellcolor{SEP Tool}                & Minimum separation tools 8 and greater      \\ \hline
   \nextrow \label{SEP Tool 1} SEP Tool 1                                & \cellcolor{SEP Tool 1}              & Minimum separation tool 1                   \\ \hline
   \nextrow \label{SEP Tool 2} SEP Tool 2                                & \cellcolor{SEP Tool 2}              & Minimum separation tool 2                   \\ \hline
   \nextrow \label{SEP Tool 3} SEP Tool 3                                & \cellcolor{SEP Tool 3}              & Minimum separation tool 3                   \\ \hline
@@ -6676,6 +6834,9 @@ Some TopSky functions can be accessed using a keyboard shortcut. The available s
   \nextrow \label{SEP Vert} SEP Vert                                    & \cellcolor{SEP Vert}                & Extensions of minimum separation tools      \\ \hline
   \nextrow \label{System Calculated TOC} System Calculated TOC          & \cellcolor{System Calculated TOC}   & TOC symbol on flight leg                    \\ \hline
   \nextrow \label{System Calculated TOD} System Calculated TOD          & \cellcolor{System Calculated TOD}   & TOD symbol on flight leg                    \\ \hline
+  \nextrow \label{TCT Label} TCT Label                                  & \cellcolor{TCT Label}               & TCT leg labels                              \\ \hline
+  \nextrow \label{TCT Leg} TCT Leg                                      & \cellcolor{TCT Leg}                 & TCT leg part before conflict start          \\ \hline
+  \nextrow \label{TCT Leg Embellished} TCT Leg Embellished              & \cellcolor{TCT Leg Embellished}     & TCT leg from conflict start to CPA          \\ \hline
   \nextrow \label{Urgency FL} Urgency FL                                & \cellcolor{Urgency FL}              & Part of flight leg with MTCD or SAP conflict\\ \hline
   \nextrow \label{Warning FL} Warning FL                                & \cellcolor{Warning FL}              & Part of flight leg with MTCD or SAP risk    \\ \hline
   \nextrow \textit{\textbf{Map colors}}                                 &                                     &                                             \\ \hline
@@ -6729,6 +6890,11 @@ Some TopSky functions can be accessed using a keyboard shortcut. The available s
   \nextrow \label{Background} Background                                & \cellcolor{Background}              & Background                                  \\ \hline
   \nextrow \label{Border} Border                                        & \cellcolor{Border}                  & Various lines in windows                    \\ \hline
   \nextrow \label{BottomShadow} BottomShadow                            & \cellcolor{BottomShadow}            & 3D effects in windows                       \\ \hline
+  \nextrow \label{BS Aged} BS Aged                                      & \cellcolor{BS Aged}                 & CFL menu Blind Spot function results        \\ \hline
+  \nextrow \label{BS Crossed Level} BS Crossed Level                    & \cellcolor{BS Crossed Level}        & CFL menu Blind Spot function results        \\ \hline
+  \nextrow \label{BS No Conflict} BS No Conflict                        & \cellcolor{BS No Conflict}          & CFL menu Blind Spot function result         \\ \hline
+  \nextrow \label{BS Unknown} BS Unknown                                & \cellcolor{BS Unknown}              & CFL menu Blind Spot function result         \\ \hline
+  \nextrow \label{BS Warning} BS Warning                                & \cellcolor{Warning}                 & CFL menu Blind Spot function result         \\ \hline
   \nextrow \label{CARD Min Sep} CARD Min Sep                            & \cellcolor{CARD Min Sep}            & CARD minimum separation area                \\ \hline
   \nextrow \label{CARD Reminder} CARD Reminder                          & \cellcolor{CARD Reminder}           & CARD warning time triangle                  \\ \hline
   \nextrow \label{CARD Symbol Fg} CARD Symbol Fg                        & \cellcolor{CARD Symbol Fg}          & CARD conflict numbers                       \\ \hline
