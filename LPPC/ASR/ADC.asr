@@ -87,8 +87,6 @@ Fixes:LAGOA:name
 Fixes:LAGOA:symbol
 Fixes:LAGOS:name
 Fixes:LAGOS:symbol
-Fixes:MACAO:name
-Fixes:MACAO:symbol
 Fixes:MAXED:name
 Fixes:MAXED:symbol
 Fixes:MCHIQ:name
@@ -107,16 +105,12 @@ Fixes:PARCO:name
 Fixes:PARCO:symbol
 Fixes:PEREI:name
 Fixes:PEREI:symbol
-Fixes:POSTA:name
-Fixes:POSTA:symbol
 Fixes:PLUZ:name
 Fixes:PLUZ:symbol
 Fixes:PROCH:name
 Fixes:PROCH:symbol
 Fixes:PTMAO:name
 Fixes:PTMAO:symbol
-Fixes:RASKETE BRIDGE:name
-Fixes:RASKETE BRIDGE:symbol
 Fixes:QUEIR:name
 Fixes:QUEIR:symbol
 Fixes:SATAO:name
@@ -171,6 +165,10 @@ Free Text:LPSO Taxiways\APN NE 03:freetext
 Free Text:LPSO Taxiways\APN SE 01:freetext
 Free Text:LPSO Taxiways\B:freetext
 Free Text:LPSO Taxiways\C:freetext
+Free Text:VFR Referencias\P1:freetext
+Free Text:VFR Referencias\P2:freetext
+Free Text:VFR Referencias\P3:freetext
+Free Text:VFR Referencias\RASKETE BRIDGE:freetext
 Geo:GEO:
 Geo:LP Landmark Continental Coastline:
 Geo:LPBG Groundlayout:
