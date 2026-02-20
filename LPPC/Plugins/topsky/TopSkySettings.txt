@@ -53,6 +53,8 @@ Areas_PreActiveTime=1800
 Areas_AUP_Activation=1
 Areas_AUP_UserText=MIL
 
+BlindSpot_Time_Aged=12
+
 Color_Active_Map_Type_3=132,142,139	//D GREY
 Color_Active_Map_Type_6=90,90,90	//INFILL GREY
 Color_Preactive_Text_Map=100,160,100 //Color_Active_Map_Type_13
@@ -104,7 +106,7 @@ Label_CompCsCaps=1
 Label_COP_MaxChars=5
 Label_FCOP_MaxChars=3
 Label_Field18_Flag_Items=STS/ALTRV,STS/ATFMX,STS/HUM,STS/FFR,STS/FLTCK,STS/HAZMAT,STS/HEAD,STS/HOSP,STS/MARSA,STS/MEDEVAC,STS/NONRVSM,STS/SAR,STS/STATE
-Label_Minimised_ItemCodes_List=4,5,6,15,22,26,49,67,68,107,151,152,199,202,206,264,303,305,306,307,308,399,400
+Label_Minimised_ItemCodes_List=4,5,6,15,22,26,49,67,68,107,151,152,199,202,206,264,303,305,306,307,308,399,400,418
 Label_SI_FreqTime=5
 Label_SI_ShowFreq=1
 Label_WTC_Highlight_WTC=J
@@ -188,6 +190,23 @@ System_Trf_Release=0
 System_UpdateNotificationDelay=90
 System_UseRwyLockedColor=0
 System_UseTSAborderHighlightColor=1
+
+TCT_Min_State_Source=3
+TCT_ConflictCount=4
+TCT_AHDG_Reaction_Time=12
+TCT_AHDG_Max_Time=40
+TCT_AHDG_Turn_Rate=3
+TCT_Label_Pos_Angle=150
+TCT_Label_Pos_Distance=50
+
+TCT_BS_Min_VS_Climb=300
+TCT_BS_Min_VS_Descent=300
+TCT_BS_VS_Climb_Threshold=300
+TCT_BS_VS_Descent_Threshold=300
+TCT_BS_Min_VS_Ratio=0.25
+TCT_BS_Max_VS_Ratio=0.75
+TCT_Sep_Lat=5.5
+TCT_Sep_Lat_Div=5
 
 Track_PredictionLine=2
 
