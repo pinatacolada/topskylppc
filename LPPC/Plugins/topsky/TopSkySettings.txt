@@ -54,7 +54,6 @@ Areas_AUP_Activation=1
 Areas_AUP_UserText=MIL
 
 BlindSpot_Time_Aged=12
-BlindSpot_Time_Warning=180
 
 Color_Active_Map_Type_3=132,142,139	//D GREY
 Color_Active_Map_Type_6=90,90,90	//INFILL GREY
