@@ -1,0 +1,31 @@
+# Default configuration
+[stations]
+ignored = []
+
+# Profiles for filtering and prioritizing stations
+[stations.profiles.Default]
+include = []
+exclude = []
+priority = ["*_FMP", "*_CTR", "*_APP", "*_TWR", "*_GND", "*_DEL"]
+frequencies = "ShowAll"
+grouping = "None"
+
+[stations.profiles.all]
+include = ["LP*", "LECM*", "GCCC*", "GMAC*", "GMMM*"]
+grouping = "FirAndIcao"
+
+[stations.profiles.twrprt]
+include = ["LPPR*"]
+grouping = "FirAndIcao"
+
+[stations.profiles.twrlis]
+include = ["LPPT*","LPCS*"]
+grouping = "FirAndIcao"
+
+[stations.profiles.twrfar]
+include = ["LPFR*"]
+grouping = "FirAndIcao"
+
+[stations.profiles.twrfun]
+include = ["LPMA*","LPPS*"]
+grouping = "FirAndIcao"

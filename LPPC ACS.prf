@@ -50,8 +50,6 @@ RecentFiles	Recent3	LPPC\ASR\TWRPRT.asr
 RecentFiles	Recent4	LPPC\ASR\TWRLIS.asr
 RecentFiles	Recent5	LPPC\ASR\TWRFAR.asr
 RecentFiles	Recent6	LPPC\ASR\TWRFUN.asr
-TeamSpeakVccs	TsVccsMiniControlX	1537
-TeamSpeakVccs	TsVccsMiniControlY	25
 LastSession	atis_freq0	124305
 LastSession	atis_url0	https://vatatis.vatsim.pt/generate?lvo=FALSE&icao=$atisairport&runway=$arrrwy($atisairport)&info=$atiscode
 LastSession	atis_callsign0	LPPR_ATIS

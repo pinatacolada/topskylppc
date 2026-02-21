@@ -23,31 +23,7 @@ If you are only updating your sectorfile, jump to step 3.
 
      ![Autoload](/assets/img/aload.png)
 
-1.   Locate the mini VCCS window, to the right of the Clock window and above the METAR list, and right click either LINE 1 or LINE 2, to open the full VCCS window.
-
-     ![VCCS mini window](/assets/img/vccsmini.png)
-
-1.  On the VCCS window, click EDIT.
-     
-     ![alt text](/assets/img/vccs.png)
-
-1.  Insert your VATSIM ID on the Nickname field.
-
-     ![alt text](/assets/img/vccsvid.png)
-
-1.  On the G2G PTT line, click SET. This will be your keybind to communicate with other controlers through VCCS, and must be different than the one you use on Audio for VATSIM to transmit on the frequency.
-
-     ![alt text](/assets/img/vccsptt.png)
-
-1.  On the Devices section, verify your Capture and Playback devices are correctly set, or change as required.
-
-     ![alt text](/assets/img/vccsaudio.png)
-
-1. Click OK, to close the VCCS setup dialogue, and close the VCCS full window. 
-
 1.  Close EuroScope. When prompted to Save Changes, press save. 
-
-1. Important note: You will need to repeat the VCCS steps on all .prf files you intend to use, as changes are only saved to the profile that was open at the time.
 
 1. Installation is complete. **Make sure to always open EuroScope from the Windows Start menu**.
 
