@@ -92,3 +92,6 @@ Sounds	Sound15	\LPPC\Sounds\new_atis.wav
 Sounds	Sound16	\LPPC\Sounds\handoff_refused.wav
 Sounds	Sound17	\LPPC\Sounds\pointout.wav
 Sounds	Sound18	\LPPC\Sounds\startup.wav
+Plugins	Plugin5	\LPPC\Plugins\RwyManager\RunwayManagerPlugin.dll
+Plugins	Plugin5Display0	Ground Radar display
+Plugins	Plugin5Display1	Ground Radar display
