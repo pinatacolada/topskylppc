@@ -1,0 +1,37 @@
+DisplayTypeName:Ground Radar display
+DisplayTypeNeedRadarContent:1
+DisplayTypeGeoReferenced:1
+SECTORFILE:
+SECTORTITLE:
+Free Text:LPPS Stands\A01:freetext
+Free Text:LPPS Stands\A02:freetext
+Free Text:LPPS Stands\A03:freetext
+Free Text:LPPS Stands\A04:freetext
+Free Text:LPPS Stands\A05:freetext
+Free Text:LPPS Stands\A06:freetext
+Free Text:LPPS Stands\A07:freetext
+Free Text:LPPS Taxiways\A:freetext
+Free Text:LPPS Taxiways\B:freetext
+Geo:LP Landmark Madeira Coastline:
+Geo:LP Landmark Porto Santo Coastline:
+Geo:LPPS Groundlayout:
+Runways:LPPS 18-36:centerline
+Runways:LPPS 18-36:name
+SHOWC:1
+SHOWSB:1
+BELOW:0
+ABOVE:0
+LEADER:5
+SHOWLEADER:0
+TURNLEADER:0
+HISTORY_DOTS:0
+SIMULATION_MODE:4
+DISABLEPANNING:0
+DISABLEZOOMING:0
+DisplayRotation:91.90000
+TAGFAMILY:TopSky LP
+WINDOWAREA:33.062441:-16.376738:33.081441:-16.332268
+PLUGIN:Ground Radar plugin:AirportElevation:340
+PLUGIN:Ground Radar plugin:AirportRadius:5.0
+PLUGIN:Ground Radar plugin:GroundMode:LPPS
+PLUGIN:TopSky plugin:NoDraw:1
