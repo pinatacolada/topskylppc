@@ -335,3 +335,4 @@ soundbackends
 DEVPROF.prf
 LPPC/Plugins/ACDM/log.txt
 LPPC/Plugins/ACDM/CDM_data_LPPT.json
+LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/%OUTDIR%/
