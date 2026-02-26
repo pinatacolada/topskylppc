@@ -336,3 +336,4 @@ DEVPROF.prf
 LPPC/Plugins/ACDM/log.txt
 LPPC/Plugins/ACDM/CDM_data_LPPT.json
 .~lock.*
+LPPC/Plugins/topsky/Documentation/Latex/TOPLIS/%OUTDIR%/
