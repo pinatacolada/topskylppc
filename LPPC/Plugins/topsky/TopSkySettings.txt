@@ -17,7 +17,7 @@ Setup_LoadMap=APP\ctr
 
 Setup_LoadMap=APPFUN\pfun_05_23_a
 
-Setup_LoadMap=APPLIS\arc50
+Setup_LoadMap=APPLIS2\arc50
 
 Airspace_833_Min=0
 Airspace_AOR_Airports=LP
@@ -302,11 +302,11 @@ Label_XFL_Default=0100
 List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
 List_TfcMgmt2_Via=CASLU,ESP
 
-{TME}
+{ATME}
 Setup_LoadMap=TWRCAS\ext_cntrline_35
 Setup_Informed=*:*:LPPT,LPCS,LPAR,LPMT:1
 
-{TMO}
+{ATMO}
 Setup_LoadMap=TWRCAS\ext_cntrline_35
 Setup_Informed=*:*:LPPT,LPCS,LPAR,LPMT:1
 
