@@ -17,7 +17,7 @@ Setup_LoadMap=APP\ctr
 
 Setup_LoadMap=APPFUN\pfun_05_23_a
 
-Setup_LoadMap=APPLIS\arc50
+Setup_LoadMap=APPLIS2\arc50
 
 Airspace_833_Min=0
 Airspace_AOR_Airports=LP
