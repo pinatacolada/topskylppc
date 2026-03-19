@@ -1413,10 +1413,10 @@ The Blind Spot function probes the relevant levels when the CFL Menu is opened, 
 \bigskip
 
 \begin{tabular}{l l}
-  Conflict                                                  & \colorref{BS Warning}       \\
-  No conflict, but conflict level(s) between it and AFL     & \colorref{BS Crossed Level} \\
-  No conflict, and no conflict level(s) between it and AFL  & \colorref{BS No Conflict}   \\
-  No calculated data due to probe failure                   & \colorref{BS Unknown}       \\
+  Conflict                                                          & \colorref{BS Warning}       \\
+  No conflict, but conflict level(s) between this level and AFL     & \colorref{BS Crossed Level} \\
+  No conflict, and no conflict level(s) between this level and AFL  & \colorref{BS No Conflict}   \\
+  No calculated data due to probe failure                           & \colorref{BS Unknown}       \\
 \end{tabular}
 
 \section{Monitoring Aids}
@@ -5807,7 +5807,7 @@ The following buttons are available:
                       & “Apply” creates the APL, “Cancel” aborts the operation\\
     Unforce           & Cancel the forced inclusion of this aircraft in the MTCD and SAP processing\\
     Get SSR           & Assigns a new SSR code for the flight\\
-    FSSR              & Not implemented\\
+    FSSR              & Opens the \winref{win:gssrcw} (for formation flights only) \\
     MAC               & Not implemented\\
     Prev              & Selects the previous flight plan in the list (see Flight Plan Selection Window)\\
     Next              & Selects the next flight plan in the list (see Flight Plan Selection Window)\\
@@ -7077,6 +7077,16 @@ The “Send MSG” button is available when a clearance can be sent – a define
 \capdimage{img/otrw.png}{Oceanic Time Restriction Window}
 
 The Oceanic Time Restriction Window displays the time restriction(s) contained in the OCM. The window closes when the cursor leaves the window area.
+
+\subsection{Group SSR Code Window}\label{win:gssrcw}
+
+“Open Group SSR Code Window” label function 
+“Open Group SSR Code Window / ASSR menu” label function 
+Left-click FSSR button in Flight Plan Window
+
+\capdimage{img/gssrcw.png}{Group SSR Code Window}
+
+The Group SSR Code Window displays the aircraft belonging to the formation, and their assigned transponder codes. Left-click on a code to open the \winref{menu:assr} to assign a new code.
 
 \section{Flight Leg}
 
