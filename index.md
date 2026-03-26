@@ -1,7 +1,7 @@
 ---
 ---
 
-If you are only updating your sectorfile, jump to step 3.
+If you are only updating your sectorfile, jump to step 9.
 
 1.   Install or update the Microsoft Visual C++ Redistributable 2015-2022 (x86) package, available at https://aka.ms/vs/17/release/vc_redist.x86.exe.
 
