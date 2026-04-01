@@ -1,5 +1,6 @@
 ---
 ---
+# Guide to Install
 
 If you are only updating your sectorfile, jump to step 11.
 
@@ -57,3 +58,10 @@ If you are only updating your sectorfile, jump to step 11.
 1. Installation is complete. **Make sure to always open EuroScope from the Windows Start menu**.
 
      ![Complete](/assets/img/complete.png)
+
+# Guide to Update
+
+1.   Download the [sector file](https://files.aero-nav.com/LPPC). Extract the contents of the zip file into
+'%appdata%\EuroScope\'.
+
+1.  yeah that's it
