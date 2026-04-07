@@ -9,7 +9,7 @@
 \medskip 
 
 Version 3.3}
-\setdocrevision{2}
+\setdocrevision{3}
 
 \begin{document}
 
@@ -1703,17 +1703,8 @@ Sector States are used to control label construction, placement in lists, filter
     \colorref{Warning}\\ \hline
   ACF \nextrow \label{tag:ACF}&
     Approach clearance &
-    Approach clearance type: 
-    
-    \bigskip
-
-    Approach: “CA” 
-    
-    Visual approach: “VA” 
-    
-    CAT II approach: “CAT2” 
-    
-    CAT III approach: “CAT3” & 
+    Approach clearance type 
+    & 
     If toggled on: \colorref{ACF Via CFL}\\ \hline
   ADEP \nextrow \label{tag:ADEP}&
     Departure aerodrome &
@@ -4230,7 +4221,17 @@ The aircraft’s RFL is displayed above the level list with format “R<RFL>”.
   %\item “OS” sets “Own separation” (FAST indicators hidden, treated as visual approach by safety nets)
 \end{itemize}
 
-The “APP Clr” folder contains other available approach types for the aircraft’s arrival runway. If none are defined in the plugin settings, the folder is not displayed in the menu.
+The “APP Clr” folder contains other available approach types to populate the \winref{tag:ACF} field:
+
+\begin{itemize}
+  \item RNP
+  \item VOR
+  \item CAT2
+  \item CAT3
+  \item TACA
+  \item TACI
+\end{itemize}
+
 
 \warn{The clearances in the “APP Clr” folder will be displayed as “cleared for approach” to controllers not using this plugin (“OS” will be “cleared for visual approach”)}
 
