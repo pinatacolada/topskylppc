@@ -127,7 +127,9 @@ List_Holding_Points=RETMO,DIVUT,VASIP,MAZUK,ORTUG,EKLID,DEKKI,CASLU,USALU,GENRO,
 List_Sector_Sorting=0
 List_Sorting_State_Direction=-1
 List_VFR_FPL_Area=42.2955958,-9.2532349,32.7503226,-17.9956055,32.0453328,-16.6882324,36.9520867,-7.2207642,38.182069,-6.9213867,38.4836948,-7.2015381,38.9893026,-6.8719482,39.4446776,-7.0532227,40.1704789,-6.7730713,41.0337871,-6.6467285,41.463312,-6.1468506,41.9431487,-5.9793091,42.2955958,-9.2532349
-List_TfcMgmt_MaxTime=40
+List_TfcMgmt_MaxTime=999
+List_TfcMgmt1_Sorting=5
+List_TfcMgmt2_Sorting=5
 
 Menu_CFL_ExtendedItems=21
 Menu_DAPs=1
@@ -272,10 +274,14 @@ Window_CPDLC_Current=1,910,25
 Window_CPDLC_Setting=1,910,425
 Window_MsgOut=1,1200,957
 
+List_TfcMgmt1_ADES=LPPT
 List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
+List_TfcMgmt2_ADES=LPMA
 List_TfcMgmt2_Via=PILIM,ABUSU
 
 [LPMA_]
+List_TfcMgmt1_ADES=LPMA
+List_TfcMgmt2_ADES=LPPS
 List_TfcMgmt1_Via=PILIM,ABUSU
 List_TfcMgmt2_Via=MARCU,LAPPA
 Setup_LoadMap=TWRSAN\rep_san_stars_nl
@@ -284,6 +290,7 @@ Window_SmallQNHTL_ICAO=LPMA
 
 [LPPR_]
 Label_XFL_Default=0100
+List_TfcMgmt1_ADES=LPPR
 List_TfcMgmt1_Via=ADNOV,AKULU
 Window_SmallQNHTL=1,1425,25
 Window_SmallQNHTL_ICAO=LPPR
@@ -298,7 +305,9 @@ Setup_Informed=*:XAMAX:LPPT,LPCS:1
 [LPPT_]
 
 Label_XFL_Default=0100
+List_TfcMgmt1_ADES=LPPT
 List_TfcMgmt1_Via=MAZUK,ORTUG,EKLID,DEKKI
+List_TfcMgmt2_ADES=LPCS
 List_TfcMgmt2_Via=CASLU,ESP
 
 {ATME}
@@ -315,7 +324,9 @@ Setup_Informed=LPPT,LPCS,LPAR,LPMT:*:*:1
 
 [LPFR_]
 Label_XFL_Default=0100
+List_TfcMgmt1_ADES=LPFR
 List_TfcMgmt1_Via=FR910,FR928
+List_TfcMgmt2_ADES=LPFR
 List_TfcMgmt2_Via=SOTEX,ALAGU
 Window_SmallQNHTL_ICAO=LPFR
 
