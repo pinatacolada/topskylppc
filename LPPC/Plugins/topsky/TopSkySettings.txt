@@ -297,7 +297,7 @@ Window_SmallQNHTL_ICAO=LPPR
 
 {PRAPP}
 Setup_Informed=*:XAMAX:LPPT,LPCS:1
-Setup_LoadMap=APPPRT\nortavia
+Setup_LoadMap=APPPRT1\nortavia_nl
 
 {PRTMA}
 Setup_Informed=*:XAMAX:LPPT,LPCS:1
