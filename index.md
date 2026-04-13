@@ -1,18 +1,13 @@
-# Installation Guides
-
-If you are merely updating your setup: [Updating](https://github.com/pinatacolada/topskylppc/blob/master/index.md#updating)
-
-If you are installing for the first time, or your setup is FUBAR: [Full Installation](https://github.com/pinatacolada/topskylppc/blob/master/index.md#full-installation)
-
----
-## Updating
+# Updating
+If you are merely updating your setup:
 
 1.   Download the [LPPC Update-Package](https://files.aero-nav.com/LPPC). Extract the contents of the zip file into `%appdata%\EuroScope`
 
 1.  yeah that's it
 
----
-## Full Installation
+# Full Installation
+
+If you are installing for the first time, or your setup is FUBAR:
 
 1.   Install or update the [Microsoft Visual C++ Redistributable 2015-2022 (x86) package](https://aka.ms/vs/17/release/vc_redist.x86.exe).
 
