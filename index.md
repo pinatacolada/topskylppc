@@ -6,7 +6,7 @@ If you are only updating your sectorfile, jump to step 11.
 
 1.   Install or update the [Microsoft Visual C++ Redistributable 2015-2022 (x86) package](https://aka.ms/vs/17/release/vc_redist.x86.exe).
 
-1.   Download and install [TrackAudio 1.3.3](https://release-assets.githubusercontent.com/github-production-release-asset/783394445/8facb372-7337-4cdd-906d-92b67c38dbf0?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-04-01T03%3A04%3A54Z&rscd=attachment%3B+filename%3Dtrackaudio-1.3.3-x64-setup.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-04-01T02%3A04%3A10Z&ske=2026-04-01T03%3A04%3A54Z&sks=b&skv=2018-11-09&sig=hQJpjhW90kgCNvwGI04zaC2bGWAYbCLK4wm2GQXBOLs%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3NTAxMTU1OSwibmJmIjoxNzc1MDA5NzU5LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.XopmME6ouqLDM1Bo4W-zF6jKEXuDoSWzQX5Sm-p9h30&response-content-disposition=attachment%3B%20filename%3Dtrackaudio-1.3.3-x64-setup.exe&response-content-type=application%2Foctet-stream).
+1.   Download and install [TrackAudio 1.3.3](https://github.com/pierr3/TrackAudio/releases/download/1.3.3/trackaudio-1.3.3-x64-setup.exe).
 
 1.   Open TrackAudio and click on the settings cog.
 
