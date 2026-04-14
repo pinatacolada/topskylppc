@@ -37,7 +37,7 @@ AIW_PredictionTime=2
 
 APW_Buffer_Lat_L_VFR=0
 APW_Buffer_Lat_U=3
-APW_Buffer_Vert_U=2000
+APW_Buffer_Vert_U=1000
 APW_Buffer_Vert_L_IFR=1000
 APW_Buffer_Vert_L_VFR=0
 APW_PredictionTime=120
@@ -151,11 +151,12 @@ Rings_Highlight=1
 
 RwyAppLines_Length=18
 
+SAP_Buffer_Lat_L_IFR=0
 SAP_Buffer_Lat_L_VFR=0
-SAP_Buffer_Lat_U=3
-SAP_Buffer_Vert_L_IFR=1000
+SAP_Buffer_Lat_U=0
+SAP_Buffer_Vert_L_IFR=0
 SAP_Buffer_Vert_L_VFR=0
-SAP_Buffer_Vert_U=2000
+SAP_Buffer_Vert_U=0
 
 Shortcut_AHDG_NoFixes_Combo=0x00
 Shortcut_CARD=0x52
