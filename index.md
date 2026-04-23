@@ -17,7 +17,7 @@ If you are installing for the first time, or your setup is FUBAR:
 
      ![Autoload](/assets/img/ta1.png)
 
-1.   Fill out the CID and password fields with your VATSIM credentials, select your appropriate hardware devices, and at least a PTT 1 key. The remaining settings may be set according to your preference, but it is recomended to be set as per below.
+1.   Fill out the CID and password fields with your VATSIM credentials, select your appropriate hardware devices, and at least a PTT 1 key (we recommend to NOT use Left Ctrl to avoid spurious transmissions when copying and pasting). The remaining settings may be set according to your preference, but it is recomended to be set as per below.
 
      ![Autoload](/assets/img/ta2.png)
 
