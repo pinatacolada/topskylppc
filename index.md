@@ -35,7 +35,7 @@ If you are installing for the first time, or your setup is FUBAR:
 
      ![Autoload](/assets/img/vacs3.png)
 
-1.   We recommend to set a single key for `Accept first call` and `End active call` (must not be the same key you have for PTT in TrackAudio), then click X to close the `Hotkeys Config` window.
+1.   We recommend to set the same key for `Accept first call` and `End active call` (must be different than TrackAudio PTT), then click X to close the `Hotkeys Config` window.
 
      ![Autoload](/assets/img/vacs4.png)
 
