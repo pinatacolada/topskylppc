@@ -17,7 +17,7 @@ If you are installing for the first time, or your setup is FUBAR:
 
      ![Autoload](/assets/img/ta1.png)
 
-1.   Fill out the CID and password fields with your VATSIM credentials, select your appropriate hardware devices, and at least a PTT 1 key (do not use Left Ctrl). The remaining settings may be set according to your preference, but it is recomended to be set as per below.
+1.   Fill out the CID and password fields with your VATSIM credentials, select your appropriate hardware devices, and at least a PTT 1 key. The remaining settings may be set according to your preference, but it is recomended to be set as per below.
 
      ![Autoload](/assets/img/ta2.png)
 
@@ -27,7 +27,7 @@ If you are installing for the first time, or your setup is FUBAR:
 
      ![Autoload](/assets/img/vacs1.png)
 
-1.   Set as per below, then click X to close the Transmit Config window.
+1.   Set `MODE` to `Voice activation` , then click X to close the `Transmit Config` window.
 
      ![Autoload](/assets/img/vacs2.png)
 
@@ -35,7 +35,7 @@ If you are installing for the first time, or your setup is FUBAR:
 
      ![Autoload](/assets/img/vacs3.png)
 
-1.   Set as per below, then click X to close the Hotkeys Config window.
+1.   We recommend to set a single key for `Accept first call` and `End active call` (must not be the same key you have for PTT in TrackAudio), then click X to close the `Hotkeys Config` window.
 
      ![Autoload](/assets/img/vacs4.png)
 
