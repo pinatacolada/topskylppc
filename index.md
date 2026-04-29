@@ -17,17 +17,17 @@ If you are installing for the first time, or your setup is FUBAR:
 
      ![Autoload](/assets/img/ta1.png)
 
-1.   Fill out the CID and password fields with your VATSIM credentials, select your appropriate hardware devices, and at least a PTT 1 key (do not use Left Ctrl). The remaining settings may be set according to your preference, but it is recomended to be set as per below.
+1.   Fill out the CID and password fields with your VATSIM credentials, select your appropriate hardware devices, and at least a PTT 1 key (we recommend to NOT use Left Ctrl to avoid spurious transmissions when copying and pasting). The remaining settings may be set according to your preference, but it is recomended to be set as per below.
 
      ![Autoload](/assets/img/ta2.png)
 
-1.   Download and install [VACS 2.2.0](https://github.com/vacs-project/vacs/releases/download/vacs-client-v2.2.0/vacs_2.2.0_x64-setup.exe).
+1.   Download and install [VACS 2.3.0](https://github.com/vacs-project/vacs/releases/download/vacs-client-v2.3.0/vacs_2.3.0_x64-setup.exe).
 
 1.   Open VACS. Open the settings menu, double check your hardware devices are correctly selected, then click `Transmit`.
 
      ![Autoload](/assets/img/vacs1.png)
 
-1.   Set as per below, then click X to close the Transmit Config window.
+1.   Set `MODE` to `Voice activation` , then click X to close the `Transmit Config` window.
 
      ![Autoload](/assets/img/vacs2.png)
 
@@ -35,7 +35,7 @@ If you are installing for the first time, or your setup is FUBAR:
 
      ![Autoload](/assets/img/vacs3.png)
 
-1.   Set as per below, then click X to close the Hotkeys Config window.
+1.   We recommend to set the same key for `Accept first call` and `End active call` (must be different than TrackAudio PTT), then click X to close the `Hotkeys Config` window.
 
      ![Autoload](/assets/img/vacs4.png)
 
