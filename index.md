@@ -21,7 +21,7 @@ If you are installing for the first time, or your setup is FUBAR:
 
      ![Autoload](/assets/img/ta2.png)
 
-1.   Download and install [VACS 2.2.0](https://github.com/vacs-project/vacs/releases/download/vacs-client-v2.2.0/vacs_2.2.0_x64-setup.exe).
+1.   Download and install [VACS 2.3.0](https://github.com/vacs-project/vacs/releases/download/vacs-client-v2.3.0/vacs_2.3.0_x64-setup.exe).
 
 1.   Open VACS. Open the settings menu, double check your hardware devices are correctly selected, then click `Transmit`.
 
