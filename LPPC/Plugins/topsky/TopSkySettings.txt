@@ -84,7 +84,7 @@ FlightLeg_Label_DIST=0
 FlightLeg_Label_RFL=0
 FlightLeg_Label_SCFL=0
 
-HTTP_AUP_URL=https://eaup.vatsim.pt/api/v2/areas/LP/
+HTTP_AUP_URL=https://lara.vatsim.pt/api/areas/LP/rule/?format=eaup_timing
 
 HTTP_GRIB_Latitude_Max=45
 HTTP_GRIB_Latitude_Min=30
