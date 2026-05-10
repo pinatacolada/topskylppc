@@ -49,7 +49,7 @@ Areas_Label_Font=Lucida Sans Unicode
 Areas_Label_FontSize=12
 Areas_Label_UserText=0,0
 Areas_PreActiveTime=1800
-Areas_URL=https://raw.githubusercontent.com/pinatacolada/topskylppc/refs/heads/master/LPPC/Plugins/topsky/TopSkyAreas.txt
+Areas_URL=https://raw.githubusercontent.com/pinatacolada/lppc-atfm/refs/heads/main/TopSkyAreas.txt
 
 BlindSpot_Time_Aged=12
 
