@@ -4,6 +4,7 @@
 	<rateLvo ops="13" />
 	<expiredCtot time="15" />
 	<realMode mode="false" />
+	<bmi mode="false" />
 	<pilotTobt mode="true" />
 	<autoAtot mode="true" />
 	<invalidateAtTsat mode="true" />
@@ -28,5 +29,9 @@
 	<Server mode="true" />
 	<Su_Wait mode="false" />
 	<flashingMode tobtLastMin= "false" tsatFirstMin="false" tsatLastMin= "false"/>
-	<bmi mode="false" />
+	<reqTobtPriority mode="false" />
+	<eventPriority mode="false" />
+	<autoSetTobtFromEvSlot mode="false" />
+	<remarksOptionCtot mode="false" />
+	<PrivateMessage text="[CDM MSG] PLEASE, MONITOR https://vats.im/vdgs FOR CDM AND ATFCM UPDATES. [END OF CDM MSG]" />
 </CDM>
