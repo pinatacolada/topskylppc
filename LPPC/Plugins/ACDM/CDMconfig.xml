@@ -4,10 +4,12 @@
 	<rateLvo ops="13" />
 	<expiredCtot time="15" />
 	<realMode mode="false" />
+	<bmi mode="false" />
 	<pilotTobt mode="true" />
 	<autoAtot mode="true" />
 	<invalidateAtTsat mode="true" />
 	<invalidateAtTobt mode="false" />
+	<readySetTsac mode="true" />
 	<Rates url="https://raw.githubusercontent.com/pinatacolada/lppc-atfm/main/rate.txt" />
 	<Taxizones url="" />
 	<Ctot url="https://raw.githubusercontent.com/pinatacolada/lppc-atfm/main/ctot.txt" />
@@ -15,6 +17,7 @@
 	<DefaultTaxiTime minutes="15" />
 	<DeIceTimes light="5" medium="9" heavy="12" super="15"/>
 	<DeIceRemTaxi rem1Name= "" rem1="0" rem2Name= "" rem2="0" rem3Name= "" rem3="0" rem4Name= "" rem4="0" rem5Name= "" rem5="0"/>
+	<eventModeMin time="5" />
 	<RefreshTime seconds="10" />
 	<Debug mode="false" />
 	<FlowRestrictions url="" />
@@ -25,4 +28,10 @@
 	<sftpConnection mode="true" />
 	<Server mode="true" />
 	<Su_Wait mode="false" />
+	<flashingMode tobtLastMin= "false" tsatFirstMin="false" tsatLastMin= "false"/>
+	<reqTobtPriority mode="false" />
+	<eventPriority mode="false" />
+	<autoSetTobtFromEvSlot mode="false" />
+	<remarksOptionCtot mode="false" />
+	<PrivateMessage text="[CDM MSG] PLEASE, MONITOR https://vats.im/vdgs FOR CDM AND ATFCM UPDATES. [END OF CDM MSG]" />
 </CDM>
