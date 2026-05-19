@@ -9,7 +9,7 @@
 \medskip 
 
 Version 3.3}
-\setdocrevision{3}
+\setdocrevision{4}
 
 \begin{document}
 
@@ -2462,7 +2462,7 @@ Sector States are used to control label construction, placement in lists, filter
   HOLD &
     Hold/XHold \nextrow \label{tag:HOLD}&
     Holding clearance state at point related to the traffic management list &
-    \colorref{Warning} \\ \hline
+    If “XHOLD”: \colorref{Warning} \\ \hline
   HPT \nextrow \label{tag:HPT}&
     Holding point &
     Holding point name or for lat/lon  point holdings, “POS”. 
@@ -6497,7 +6497,7 @@ The General Information Window displays basic information on the system state. T
     MTCD                & \colorref{Warning} color if prediction time is set to zero    \\
     SEK                 & Displayed if plugin is receiving AMAN data. \colorref{Warning} color if data loading has failed.\\
     SMS                 & Displayed if FAST function is enabled \\
-    A-FAST              & Displayed if FAST function is enabled \\
+    FAST                & Displayed if FAST function is enabled \\
 \end{longtable}
 
 \subsection{Miscellaneous Information Window}
