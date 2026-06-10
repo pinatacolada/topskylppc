@@ -449,7 +449,6 @@ VORs:FTM:symbol
 VORs:FUN:symbol
 VORs:LIS:symbol
 VORs:PRT:symbol
-VORs:SGR:symbol
 VORs:SNT:symbol
 VORs:SRA:symbol
 VORs:VFA:symbol
