@@ -39,7 +39,7 @@ If you are installing for the first time, or your setup is FUBAR:
 
      ![Autoload](/assets/img/vacs4.png)
 
-1.   Download and install [EuroScope 3.2.9](https://euroscope.hu/install/EuroScopeSetup.3.2.9.msi).
+1.   Download and install [EuroScope 3.2.9](https://github.com/vaccfr/EuroScope-v3.2.9-Installer/raw/refs/heads/main/EuroScopeSetup.3.2.9.msi).
 
 1.   Download the [LPPC Install-Package](https://files.aero-nav.com/LPPC). Extract the contents of the zip file into `%appdata%\EuroScope`
 
