@@ -34,4 +34,5 @@
 	<autoSetTobtFromEvSlot mode="false" />
 	<remarksOptionCtot mode="false" />
 	<PrivateMessage text="[CDM MSG] PLEASE, MONITOR https://vats.im/vdgs FOR CDM AND ATFCM UPDATES. [END OF CDM MSG]" />
+	<loading text="...." />
 </CDM>
