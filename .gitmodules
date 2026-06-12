@@ -1,0 +1,3 @@
+[submodule "lppc-atfm"]
+	path = lppc-atfm
+	url = https://github.com/pinatacolada/lppc-atfm
