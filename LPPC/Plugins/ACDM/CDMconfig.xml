@@ -10,7 +10,7 @@
 	<invalidateAtTsat mode="true" />
 	<invalidateAtTobt mode="false" />
 	<readySetTsac mode="true" />
-	<Rates url="" /><!--TODO: remove file entirely -->
+	<Rates url="" />
 	<Taxizones url="" />
 	<Ctot url="https://raw.githubusercontent.com/pinatacolada/lppc-atfm/main/ctot.txt" />
 	<sidInterval url="" />
