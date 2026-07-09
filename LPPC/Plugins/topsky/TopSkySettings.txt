@@ -127,6 +127,8 @@ List_TfcMgmt_MaxTime=999
 List_TfcMgmt1_Sorting=5
 List_TfcMgmt2_Sorting=5
 
+Maps_AD_Hotspots=
+
 Menu_CFL_ExtendedItems=21
 Menu_DAPs=1
 Menu_Level_MaxValue=650
