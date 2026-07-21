@@ -2,7 +2,6 @@
 [![latest-version](https://img.shields.io/github/v/release/pinatacolada/topskylppc?include_prereleases)](https://github.com/pinatacolada/topskylppc/releases)  
 [![topsky-version](https://img.shields.io/badge/TopSky-2.6b5-blue.svg)](https://forum.vatsim-scandinavia.org/d/305-topsky-plugin-26-beta-5)
 [![gr-version](https://img.shields.io/badge/Ground%20Radar-1.6b5-blue.svg)](https://forum.vatsim-scandinavia.org/d/256-ground-radar-plugin-16-beta-5)
-[![cdm-version](https://img.shields.io/badge/CDM-2.29-blue.svg)](https://github.com/rpuig2001/CDM/releases/tag/v2.29)
 [![rwym-version](https://img.shields.io/badge/RwyMan-1.0-blue.svg)](https://gitlab.com/portugal-vacc/runwaymanager/-/releases/plugin-v1.0)
 
 
