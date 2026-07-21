@@ -37,6 +37,9 @@ Plugins	Plugin4	\LPPC\Plugins\VATCANBookings.dll
 Plugins	Plugin5	\LPPC\Plugins\LPPCFileChecker\LPPCFileChecker.dll
 Plugins	Plugin5Display0	Standard ES radar screen
 Plugins	Plugin5Display1	Ground Radar display
+Plugins	Plugin6	\LPPC\Plugins\RwyManager\RunwayManagerPlugin.dll
+Plugins	Plugin6Display0	Ground Radar display
+Plugins	Plugin6Display1	Ground Radar display
 ASRFastKeys	1	LPPC\ASR\CCLIS.asr
 ASRFastKeys	4	LPPC\ASR\TWRSAN.asr
 ASRFastKeys	5	LPPC\ASR\ADC.asr
