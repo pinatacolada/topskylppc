@@ -28,18 +28,16 @@ Plugins	Plugin0Display1	Ground Radar display
 Plugins	Plugin1	\LPPC\Plugins\GroundRadar\GRplugin.dll
 Plugins	Plugin1Display0	Ground Radar display
 Plugins	Plugin1Display1	Standard ES radar screen
-Plugins	Plugin2	\LPPC\Plugins\ACDM\CDM.dll
+Plugins	Plugin2	\LPPC\Plugins\AfvEuroScopeBridge.dll
 Plugins	Plugin2Display0	Ground Radar display
-Plugins	Plugin3	\LPPC\Plugins\AfvEuroScopeBridge.dll
-Plugins	Plugin3Display0	Ground Radar display
-Plugins	Plugin3Display1	Standard ES radar screen
-Plugins	Plugin4	\LPPC\Plugins\VATCANBookings.dll
-Plugins	Plugin5	\LPPC\Plugins\LPPCFileChecker\LPPCFileChecker.dll
-Plugins	Plugin5Display0	Standard ES radar screen
+Plugins	Plugin2Display1	Standard ES radar screen
+Plugins	Plugin3	\LPPC\Plugins\VATCANBookings.dll
+Plugins	Plugin4	\LPPC\Plugins\LPPCFileChecker\LPPCFileChecker.dll
+Plugins	Plugin4Display0	Standard ES radar screen
+Plugins	Plugin4Display1	Ground Radar display
+Plugins	Plugin5	\LPPC\Plugins\RwyManager\RunwayManagerPlugin.dll
+Plugins	Plugin5Display0	Ground Radar display
 Plugins	Plugin5Display1	Ground Radar display
-Plugins	Plugin6	\LPPC\Plugins\RwyManager\RunwayManagerPlugin.dll
-Plugins	Plugin6Display0	Ground Radar display
-Plugins	Plugin6Display1	Ground Radar display
 ASRFastKeys	1	LPPC\ASR\CCLIS.asr
 ASRFastKeys	4	LPPC\ASR\TWRSAN.asr
 ASRFastKeys	5	LPPC\ASR\ADC.asr
