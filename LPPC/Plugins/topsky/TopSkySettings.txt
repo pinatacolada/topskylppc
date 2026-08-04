@@ -53,9 +53,6 @@ Areas_URL=https://raw.githubusercontent.com/pinatacolada/lppc-atfm/refs/heads/ma
 
 BlindSpot_Time_Aged=12
 
-Color_Active_Map_Type_3=132,142,139	//D GREY
-Color_Active_Map_Type_6=90,90,90	//INFILL GREY
-Color_Preactive_Text_Map=100,160,100 //Color_Active_Map_Type_13
 Color_Proposition_Accepted=175,125,175 //C_Sector_Informed
 Color_Text_Notes=125,125,125
 
@@ -129,6 +126,8 @@ List_VFR_FPL_Area=42.2955958,-9.2532349,32.7503226,-17.9956055,32.0453328,-16.68
 List_TfcMgmt_MaxTime=999
 List_TfcMgmt1_Sorting=5
 List_TfcMgmt2_Sorting=5
+
+Maps_AD_Hotspots=
 
 Menu_CFL_ExtendedItems=21
 Menu_DAPs=1

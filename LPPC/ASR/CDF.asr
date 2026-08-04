@@ -243,8 +243,6 @@ Fixes:NIRAK:name
 Fixes:NIRAK:symbol
 Fixes:OBESA:symbol
 Fixes:OBOLO:symbol
-Fixes:ODEMI:name
-Fixes:ODEMI:symbol
 Fixes:ODLIX:symbol
 Fixes:OGDOR:name
 Fixes:OGDOR:symbol
@@ -394,7 +392,6 @@ Geo:LPPT Groundlayout:
 NDBs:BJA:symbol
 NDBs:CB:symbol
 NDBs:EVR:symbol
-NDBs:LAR:symbol
 NDBs:MIO:symbol
 NDBs:PST:symbol
 NDBs:STR:symbol
@@ -452,7 +449,6 @@ VORs:FTM:symbol
 VORs:FUN:symbol
 VORs:LIS:symbol
 VORs:PRT:symbol
-VORs:SGR:symbol
 VORs:SNT:symbol
 VORs:SRA:symbol
 VORs:VFA:symbol
