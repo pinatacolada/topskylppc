@@ -113,7 +113,6 @@ GBO	C
 GCL	C
 GDQ	Mil
 GEC	C
-GGC	C
 GHF	Mil
 GJH	C
 GKA	Mil
@@ -192,6 +191,7 @@ MGC	C
 MGW	C
 MIX	C
 MJN	Mil
+MKK	C
 MMI	Mil
 MNB	C
 MRD	C
