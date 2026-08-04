@@ -9,7 +9,7 @@
 \medskip 
 
 Version 3.3}
-\setdocrevision{1}
+\setdocrevision{4}
 
 \begin{document}
 
@@ -29,392 +29,7 @@ EuroScope, a controller client developed by Gergely Csernák for the VATSIM netw
 
 The base TopSky plugin is developed by Juha Holopainen. The TopSky plugin (a.k.a. The Plugin Formerly Known As “EUROCAT 2000 E”) started out as a very small project to create a couple of customized aircraft tag items, but as more information about the real system and the possibilities with the plugin development became available, it slowly grew to include an almost complete set of tag items, tag menus, graphical elements on the radar display and some additional functionality.\cite{topskygen}
 
-\bigskip
-
-The A-CDM plugin is developed by Roger Puig. CDM is an Euroscope plugin based on the real life CDM tool that allows us to improve the departure flows at airports.\cite{cdm}
-
 \chapter{Systems}
-
-\section{A-CDM}
-
-Airport CDM (A-CDM) aims to improve the efficiency and resilience of airport operations by optimising the use of resources and improving the predictability of air traffic. 
-
-It also allows the exchange of more accurate departure information, particularly target take-off times, with the European ATFCM network, leading to improved en-route and sectoral planning.\cite{eurocontrol}
-
-\subsection{Operation}
-
-The A-CDM plugin operates in a Master-Slave topology, in which the "CDM Master" will calculate the required data and distribute it to the slaved CDM positions. Due to this, it is mandatory that the "Master" ATC is the one at the lowest position, such as Delivery.
-
-\warn{IF THERE IS NO ACTIVE "CDM MASTER" A-CDM WILL NOT BE OPERATIONAL}
-
-\warn{IF MORE THAN ONE POSITION ASSIGNS ITSELF AS "CDM MASTER" A-CDM WILL NOT BE OPERATIONAL}
-
-At the end of a session or controller swap, the "CDM MASTER" ATC should return himself to "CDM SLAVE" before the next controller takes over.
-
-\subsubsection{A-CDM Timeline}
-
-\begin{figure}[H]
-  \centering
-  \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-    \path (0,121); 
-    
-    \draw [line width=2.25]    (0,84.09) -- (\textwidth,84.09) ;
-    \draw [line width=2.25]    (438.47,42.6) -- (438.47,84.41) ;
-    \draw [line width=2.25]    (298.69,40.97) -- (298.69,82.78) ;
-    \draw [line width=2.25]    (119.42,43.39) -- (119.42,85.2) ;
-    \draw   (282.5,86.46) .. controls (282.5,90.8) and (284.67,92.97) .. (289,92.97) -- (289,92.97) .. controls (295.19,92.97) and (298.29,95.14) .. (298.29,99.47) .. controls (298.29,95.14) and (301.39,92.97) .. (307.59,92.97)(304.8,92.97) -- (307.59,92.97) .. controls (311.92,92.97) and (314.09,90.8) .. (314.09,86.46) ;
-    \draw   (423.07,86.46) .. controls (423.07,91.13) and (425.4,93.46) .. (430.07,93.46) -- (431.63,93.46) .. controls (438.3,93.46) and (441.63,95.79) .. (441.63,100.46) .. controls (441.63,95.79) and (444.96,93.46) .. (451.63,93.46)(448.63,93.46) -- (463.62,93.46) .. controls (468.29,93.46) and (470.62,91.13) .. (470.62,86.46) ;
-    \draw   (437.06,68.94) .. controls (437.06,64.27) and (434.73,61.94) .. (430.06,61.94) -- (378.58,61.94) .. controls (371.91,61.94) and (368.58,59.61) .. (368.58,54.94) .. controls (368.58,59.61) and (365.25,61.94) .. (358.58,61.94)(361.58,61.94) -- (307.1,61.94) .. controls (302.43,61.94) and (300.1,64.27) .. (300.1,68.94) ;
-    
-    \draw (416.76,6.65) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textbf{CTOT}\\\textbf{TTOT}};
-    \draw (279.87,23.86) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textbf{TSAT}};
-    \draw (97.71,6.65) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textbf{EOBT}\\\textbf{TOBT}};
-    \draw (280.29,97.31) node [anchor=north west][inner sep=0.75pt]   [align=left] {\mbox{-}5/+5};
-    \draw (416.87,97.31) node [anchor=north west][inner sep=0.75pt]   [align=left] {\mbox{-}5/+10};
-    \draw (347.71,41.46) node [anchor=north west][inner sep=0.75pt]   [align=left] {\textbf{EXOT}};
-  \end{tikzpicture}
-  \caption{A-CDM timeline with delaying TSAT example} \label{fig:acdm}
-\end{figure}
-
-Each departure follows a timeline of events from the moment a Flight Plan is submitted until the flight is airborne. These events are called "Milestones".
-
-\medskip
-
-The A-CDM calculation begins at Target Off Block Time (TOBT). TOBT is the time the aircraft is ready for startup, or push and start. This is typically the time at which the pilots reports "fully ready", or requests pushback or startup. In an optimal scenario this would match with the flight plan Estimated Off Block Time (EOBT, sometimes called ETD in other sources).
-
-\medskip
-
-A-CDM will calculate a Target Take Off Time (TTOT) based on the TOBT, current departure rate, known traffic and Flow Restrictions. Each TTOT is separated from other TTOTs by the amount of time required to achieve the maximum defined departure rate. During moments of high traffic that, without a regulation, would exceed the airport departure rate capacity, the system will delay the TTOT in order to meet the required departure rate. 
-
-\medskip
-
-Different Stands have different Estimated Taxi Out Time (EXOT). A stand closer to the runway will have a shorter EXOT than another further away. The system adds EXOT to TOBT, to obtain TTOT.
-
-\bigskip
-
-Target Start-up Time (TSAT) is the time at which a flight may push back and start up. 
-
-If there is no delay, TSAT will be the same as TOBT. 
-
-If there is a delay, TSAT will the difference from TTOT - EXOT. 
-
-A TSAT has a validity window of -5 to +5 minutes, within which start-up approval may be issued. 
-
-A TSAT within the validity window will be colored in \colorref{color1}, or if outside the validity window \colorref{color2}. Additionally, it will be colored in \colorref{color5} the minute it expires, as an attention getter.
-
-If a flight misses its TSAT, a new one must be assigned by right clicking the TSAT value in order to set TOBT to present time and restart the CDM calculation for the concerned flight.
-
-\medskip
-
-During times of extraordinary demand, a Calculated Take-Off Time (CTOT) may be issued for a certain flight. The A-CDM operation remains the same, with the exception that it will try to match TTOT to CTOT. A CTOT has a validity window of -5 to +10 minutes of CTOT, during which Take Off clearance must be issued.
-
-\medskip
-
-During some events, a manually created list of callsign and CTOT pairs may be created. These are Event CTOT, or ECTOT. ECTOT on their own do not contribute to A-CDM calculations, unless manually added as a CTOT to the flight.
-
-\medskip
-
-Once A-CDM is made aware of the assignment of a CTOT to a flight, it will keep the same CTOT locked until a Ready Message (REA) is sent, even if the external source of the CTOT is updated with an improvement. 
-
-\subsubsection{Examples}
-
-The system first attempts to calculate a departure with no delay, by adding EXOT to TOBT it obtains TTOT. For example, TAP123 reports "fully ready" at 12:00 (TOBT 12:00), sitting on a stand with 15 minutes of taxi time (EXOT 15 minute), the system predicts TAP123 will be able to take off at 12:15 (TTOT 12:15). Because there is no conflict, TSAT is equal to TOBT (TSAT 12:00)
-
-\bigskip
-
-A second flight, RYR456, reports "fully ready" at the very next minute (TOBT 12:01), but is on a stand very close to the runway with a shorter taxi time (EXOT 5 minutes, for example), the system predicts RYR456 will be able to take off at 12:06 (TTOT 12:06). Because there is no conflict, TSAT is equal to TOBT (TSAT 12:01).
-
-Notice how RYR456 was ready for push and start after TAP123, yet, because of the very short taxi time, it will take off much sooner that TAP123.
-
-\bigskip
-
-A third flight, IBE789, also reports "fully ready" at 12:01 (TOBT 12:01), sitting on a stand with 15 minutes of taxi time (EXOT 15 minute), the system predicts IBE789 will be able to take off at 12:16 (TTOT 12:16). 
-
-However, this TTOT is too close to TAP123 (TTOT 12:15) and must be delayed for separation. 
-
-The system calculates that according to the current departure rate, IBE789 must take off at 12:18 (TTOT 12:18). By subtracting the 15 minutes Estimated Taxi Out Time from the Target Take Off Time, the system obtains IBE789's Target Startup Time of 12:03 (TTOT - EXOT = TSAT, 12:18 - 15 = 12:03).
-
-This is a very small delay, in fact so small that it falls within the TSAT window. IBE789 TSAT is 12:03, and because the TSAT window is +/- 5 minutes (11:58 - 12:08). IBE789 may be pushed back at anytime within this window.
-
-\bigskip
-
-A fourth flight, EJU321, is departing to the same destination as IBE789. This destination has limited capacity and can only accept arrivals in 15 minute intervals. The system will take care of this limitation, no intervention should be required.
-
-EJU321 reports "fully ready" at 12:01 (TOBT 12:01), sitting on a stand with 15 minutes of taxi time (EXOT 15 minute), the system predicts EJU321 will be able to take off at 12:16 (TTOT 12:16). Because of the restriction at destination, the earliest time that EJU321 can take off, while remaining separated of IBE789, is 12:33 (IBE789's TTOT, 12:18, + 15 minutes required separation at destination).
-
-The system assigns a Calculated Take Off Time of 12:33 to EJU321 (CTOT 12:33). By subtracting the taxi time from this (EXOT 15 minutes), the system obtains TSAT 12:18 (CTOT - EXOT = TSAT, 12:33 - 15 = 12:18).
-
-EJU321 must wait on the stand until the TSAT window (12:13 - 12:23) before being able to pushb and start.
-
-
-\subsubsection{Commands}
-
-Interaction with core A-CDM systems is done with classic command line inputs:
-
-\begin{longtable}{|p{5cm}|p{8.5cm}|}
-  \hline
-  \texttt{.cdm reload}                                      & Reloads all CDM configs\\ \hline
-  \texttt{.cdm refresh}                                     & Forces a data refresh phase\\ \hline
-  \texttt{.cdm ctot}                                        & Refreshes CTOT data\\ \hline
-  \texttt{.cdm save}                                        & Saves data to \texttt{savedData.txt}\\ \hline
-  \texttt{.cdm load}                                        & Loads \texttt{savedData.txt}\\ \hline
-  \texttt{.cdm master "airport"}                            & Become the master of the selected airport.\\ \hline
-  \texttt{.cdm slave "airport"}                             & Turn back to slave of the selected airport.\\ \hline
-  \texttt{.cdm refreshtime "seconds"}                       & Change refresh rate time in seconds (Default 30, MAX 99).\\ \hline
-  \texttt{.cdm customdelay "airport"/"runway" "time\_start"} & Shifts all TSATs for selected airport and runway to start at the \texttt{time\_start}. Wait some seconds to update after applied. (Ex. \texttt{.cdm customdelay LPPT/02 1100} All TSATs from LPPT runway 02 will start at 1100). To remove use \texttt{.cdm customdelay LPPT/02 9999}.\\ \hline
-  \texttt{.cdm lvo}                                         & Toggle LVO on or off\\ \hline
-  \texttt{.cdm realmode}                                    & Toggle realmode on or off\\ \hline
-  \texttt{.cdm remarks}                                     & Toggle set TSAT to Euroscope scratchpad on or off\\ \hline
-  \texttt{.cdm rates}                                       & Updates rates values from \texttt{rate.txt}\\ \hline
-  \texttt{.cdm recover}                                     & In case of of CTD, it tries to recover the latest time status backed up in the server. Example: \texttt{.cdm recover LPPT} \\ \hline
-  \texttt{.cdm flow }                                       & Forces an update on ECFMP flow restrictions data, otherwise updated every 5 minutes.\\ \hline
-  \texttt{.cdm help}                                        & Show all available commands \\ \hline
-  \caption{A-CDM commands}
-  \label{tab:acdm-commands}
-\end{longtable}
-
-
-
-\subsection{A-CDM field descriptions}
-
-\begin{longtable}{|p{2.5cm}|p{2.5cm}|p{4.5cm}|p{4.5cm}|}
-  \hline
-  \textbf{Data field}             &  \textbf{Description}     &  \textbf{Comments}                    &  \textbf{Color} \\ \hline  \endhead
-  A \nextrow \label{tag:CDM A}&  
-    Alert & 
-      Flashes A if the aircraft is waiting for an action&
-        \colorref{color5}\\ \hline
-
-  ASAT \nextrow \label{tag:ASAT}&  
-    Actual Start-Up Approval Time &
-        Automatically records time of Start-Up Approval when inputting a Start-Up, Pushback, Taxi or DEPA Ground Status &   
-          \colorref{color12} \\ \hline
-
-  ASRT \nextrow \label{tag:ASRT}&  
-    Actual Start-Up Request Time &
-        Used to record time of Ready or Start-Up Request &   
-          \colorref{color10} \\ \hline
-  
-  CTOT \nextrow \label{tag:CTOT}&  
-      Calculated Take Off Time&
-        Flow restrictions create CTOTs to planes affected with published MDIs from ECFMP &   
-            \colorref{color11} 
-            
-            \bigskip
-
-            If REA message has been sent:
-            
-            \colorref{color2}
-
-            \bigskip
-
-            If Manual or Event CTOT:
-            
-            \colorref{color4}
-
-            \bigskip
-
-            If Manual or Event CTOT, and Flow/CAD CTOT:
-            
-            \colorref{color7} \\ \hline
-
-  Delta CTOT \nextrow \label{tag:Delta CTOT}&  
-      Countdown to CTOT&
-            &   
-            \colorref{color11} 
-            
-            \bigskip
-
-            If REA message has been sent:
-            
-            \colorref{color2}
-
-            \bigskip
-
-            If Manual or Event CTOT:
-            
-            \colorref{color4}
-
-            \bigskip
-
-            If Manual or Event CTOT, and Flow/CAD CTOT:
-            
-            \colorref{color7} \\ \hline
-
-  ECTOT \nextrow \label{tag:ECTOT}&  
-      Event Calculated Take Off Time&
-        Similar to \tagref{tag:CTOT}, but originating from a manually compiled list of callsign and CTOT pairs. Needs to be manually added to \tagref{tag:CTOT} to have an effect on A-CDM calculations. &   
-            \colorref{color11} \\ \hline
-
-  E \nextrow \label{tag:E}&  
-    State & 
-      Depending on aircraft timming:
-
-      P: EOBT more than 35 minutes in the future
-
-      C: EOBT is less than 35min and TSAT not expired
-
-      I: TSAT expired &
-      \colorref{color1} \\ \hline            
-
-            
-  EOBT \nextrow \label{tag:EOBT}&  
-    Estimated Off Block Time & 
-      Same time as Flight Plan ETD or EOBT &
-        \colorref{color8} 
-
-        \bigskip
-
-        If a new EOBT is submitted by the pilot, and EOBT is different than TOBT:
-
-        \colorref{color4} \\ \hline
-
-  
-  Flow Message \nextrow \label{tag:Flow Message}&  
-    ECFMP Flow Message&
-        Description of the restriction impacting the flight &   
-          \colorref{color8}\\ \hline
-
-  FSTS \nextrow \label{tag:FSTS}&  
-    Flight Plan Status&
-
-      FLS-NRA: Flight Suspended due to Not Reported As Airborne.
-
-      \bigskip
-
-      FLS-CDM: Flight Suspended Triggered by CDM.
-
-      \bigskip
-
-      FLS-MR: Flight Suspended due to Mandatory Route.
-
-      \bigskip
-
-      FLS-GS: Flight Suspended due to Ground Stop.
-
-      \bigskip
-
-      DES: Flight is De-Suspended
-
-      \bigskip
-
-      SAM: Slot Allocation Message.
-
-      \bigskip
-
-      SRM: Slot Revision Message.
-
-      \bigskip
-
-      SLC: Slot Cancellation.
-
-      \bigskip
-
-      ATC ACTIV: Flight is already in movement. Automatically set when AOBT is set. &   
-        DES, SAM, SRM, SLC and ACT: 
-
-        \colorref{color5}
-
-        \bigskip
-
-        FLS: 
-
-        \colorref{color7}
-
-        \\ \hline
-
-  Ready \nextrow \label{tag:Ready}&  
-    Ready State Flag&
-      Used to signal Ready state. Setting Ready also records time of Ready or Start-Up Request &   
-        Ready:
-        
-        \colorref{color1} 
-        
-        \bigskip
-        
-        Not Ready:
-        
-        \colorref{color7}\\ \hline
-      
-  TOBT \nextrow \label{tag:TOBT}&  
-    Target Off Block Time & 
-      On receipt of a new Flight Plan, TOBT is set to the same time as EOBT. 
-
-      \bigskip
-
-      If the Flight Plan is updated with a new EOBT, TOBT will not change automatically. 
-
-      If required, TOBT may be manually updated using the Edit TOBT function &
-        From TOBT-35 to TOBT-5
-
-        \colorref{color2} 
-
-        \bigskip
-
-        From TOBT-5 to TOBT+5:
-
-        \colorref{color1} \\ \hline
-
-  TSAC \nextrow \label{tag:TSAC}&  
-    Target Start-Up Approval Communicated Time&
-      Used to note down TSAT communicated to the flight&   
-       If TSAC within 5 minutes of TSAT:
-
-       \colorref{color1}
-
-       If TSAT changed by more than 5 minutes:
-
-       \colorref{color4} \\ \hline
-
-  TSAT \nextrow \label{tag:TSAT}&  
-    Target Startup Time / Delay & 
-      TTOT - EXOT. Ammount of delay may be displayed right of the slash, as the difference between TOBT and TSAT. &   
-        From EOBT-35 to TSAT-5:
-        
-        \colorref{color2}
-
-        \bigskip  
-
-        From TSAT-5 to TSAT+5:
-
-        \colorref{color1} 
-
-        \bigskip 
-
-        From TSAT+5 to TSAT+6:
-
-        \colorref{color5} 
-
-        \bigskip  
-
-        After TSAT+6:
-        
-        \colorref{color2}\\ \hline
-  
-  TTOT \nextrow \label{tag:TTOT}&  
-    Target Take Off Time &
-      &   
-        \colorref{color9}
-
-        \bigskip
-        
-        If TTOT is locked due to a CDT restriction:
-
-        \colorref{color2}\\ \hline
-  Delta TTOT \nextrow \label{tag:Delta TTOT}&  
-    Countdown to TTOT &
-      &   
-      \colorref{color9}
-
-      \bigskip
-      
-      If TTOT is locked due to a CDT restriction:
-
-      \colorref{color2}\\ \hline
-
-  \caption{A-CDM field descriptions}
-  \label{tab:acdm-items}
-\end{longtable}
 
 \section{Coordination}
 
@@ -1393,13 +1008,17 @@ In the vertical plane, the predictions use the current level for aircraft mainta
 
 \subsection{Alert display}
 
-An alert is shown by displaying the text “TC” (or “TC+” if the aircraft is involved in multiple TCT conflicts) in the TCT label item. The conflict(s) can be visualized by toggling on the TCT legs display using the tag function.
+An alert is shown by displaying the text “TC” (or “TC+” if the aircraft is involved in multiple TCT conflicts) in the TCT label item. The conflict(s) can be visualized by toggling on the TCT legs display by right clicking the "TC" flag.
+
+\capdimage{img/tc.png}{TCT example}
 
 \section{Blind Spot function}\label{tool:bs}
 
 \subsection{General}
 
 The Blind Spot function alerts the controller for level clearances that would create conflicts, by probing specified levels around the aircraft’s current level for conflicts. The function uses by default the TCT parameters, but some of the parameters can be specified to be different for Blind Spot. Conflicts starting within the next three minutes are displayed.
+
+\capdimage{img/bs.png}{BS function example}
 
 \subsection{Alert display}
 
@@ -1408,10 +1027,10 @@ The Blind Spot function probes the relevant levels when the CFL Menu is opened, 
 \bigskip
 
 \begin{tabular}{l l}
-  Conflict                                                  & \colorref{BS Warning}       \\
-  No conflict, but conflict level(s) between it and AFL     & \colorref{BS Crossed Level} \\
-  No conflict, and no conflict level(s) between it and AFL  & \colorref{BS No Conflict}   \\
-  No calculated data due to probe failure                   & \colorref{BS Unknown}       \\
+  Conflict                                                          & \colorref{BS Warning}       \\
+  No conflict, but conflict level(s) between this level and AFL     & \colorref{BS Crossed Level} \\
+  No conflict, and no conflict level(s) between this level and AFL  & \colorref{BS No Conflict}   \\
+  No calculated data due to probe failure                           & \colorref{BS Unknown}       \\
 \end{tabular}
 
 \section{Monitoring Aids}
@@ -1698,17 +1317,8 @@ Sector States are used to control label construction, placement in lists, filter
     \colorref{Warning}\\ \hline
   ACF \nextrow \label{tag:ACF}&
     Approach clearance &
-    Approach clearance type: 
-    
-    \bigskip
-
-    Approach: “CA” 
-    
-    Visual approach: “VA” 
-    
-    CAT II approach: “CAT2” 
-    
-    CAT III approach: “CAT3” & 
+    Approach clearance type 
+    & 
     If toggled on: \colorref{ACF Via CFL}\\ \hline
   ADEP \nextrow \label{tag:ADEP}&
     Departure aerodrome &
@@ -2466,7 +2076,7 @@ Sector States are used to control label construction, placement in lists, filter
   HOLD &
     Hold/XHold \nextrow \label{tag:HOLD}&
     Holding clearance state at point related to the traffic management list &
-    \colorref{Warning} \\ \hline
+    If “XHOLD”: \colorref{Warning} \\ \hline
   HPT \nextrow \label{tag:HPT}&
     Holding point &
     Holding point name or for lat/lon  point holdings, “POS”. 
@@ -2852,7 +2462,7 @@ Sector States are used to control label construction, placement in lists, filter
     Unselected label:
     
     Not displayed if track is subject to an STCA alert &
-    \\ \hline
+    \colorref{TCT Warning}\\ \hline
   TEXT2 \nextrow \label{tag:TEXT2}&
     OP-TEXT2 message &
     If more than 10 characters, then shows first 9 + “>” &
@@ -3456,7 +3066,7 @@ The Standard label is shown for aircraft that are in or will enter the active se
 
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item \tagref{tag:COM} \tagref{tag:*} \tagref{tag:V} \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC E} \tagref{tag:CPDLC W} \tagref{tag:TEXT2} \tagref{tag:SQAMAN} \tagref{tag:TTLTTGMFXFF}  
+  \item \tagref{tag:COM} \tagref{tag:*} \tagref{tag:V} \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:TCT} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC E} \tagref{tag:CPDLC W} \tagref{tag:TEXT2} \tagref{tag:SQAMAN} \tagref{tag:TTLTTGMFXFF}  
   \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
   \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:ACF} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL}
   \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX} \tagref{tag:OFL} \tagref{tag:O+}
@@ -3469,7 +3079,7 @@ The Standard label is shown for aircraft that are in or will enter the active se
 
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item \tagref{tag:COM} \tagref{tag:*} \tagref{tag:V} \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC E} \tagref{tag:CPDLC W} \tagref{tag:TEXT2} \tagref{tag:SQAMAN} \tagref{tag:TTLTTGMFXFF}  
+  \item \tagref{tag:COM} \tagref{tag:*} \tagref{tag:V} \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:TCT} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC E} \tagref{tag:CPDLC W} \tagref{tag:TEXT2} \tagref{tag:SQAMAN} \tagref{tag:TTLTTGMFXFF}  
   \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \tagref{tag:TSSR}
   \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:ACF} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL}
   \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX} \tagref{tag:OFL} \tagref{tag:O+}
@@ -3521,7 +3131,7 @@ The Extended label can be opened from the Standard or Reduced label by right cli
 
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item \tagref{tag:COM} \tagref{tag:*} \tagref{tag:V} \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC E} \tagref{tag:CPDLC W} \tagref{tag:TEXT2} \tagref{tag:SQAMAN} \tagref{tag:TTLTTGMFXFF}  
+  \item \tagref{tag:COM} \tagref{tag:*} \tagref{tag:V} \tagref{tag:MSAW} \tagref{tag:APM} \tagref{tag:TCT} \tagref{tag:APW} \tagref{tag:AIW} \tagref{tag:CLAM} \tagref{tag:DUPE} \tagref{tag:O} \tagref{tag:W} \tagref{tag:Y} \tagref{tag:R} \tagref{tag:P} \tagref{tag:M} \tagref{tag:Mark dot} \tagref{tag:Frequency dot} \tagref{tag:A} \tagref{tag:+} \tagref{tag:C} \tagref{tag:I} \tagref{tag:S} \tagref{tag:EMRG} \tagref{tag:COORD} \tagref{tag:NSSR} \tagref{tag:CPDLC E} \tagref{tag:CPDLC W} \tagref{tag:TEXT2} \tagref{tag:SQAMAN} \tagref{tag:TTLTTGMFXFF}  
   \item \tagref{tag:MTCD} \tagref{tag:CALLSIGN} \tagref{tag:PFREQ} \tagref{tag:SI} \tagref{tag:N/ATYP} \tagref{tag:WTC} \hfill \tagref{tag:TSSR} \tagref{tag:ASSR} \tagref{tag:PSSR}
   \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:CFL/PEL} \tagref{tag:ACF} \tagref{tag:GS} \tagref{tag:NPT} \tagref{tag:ADES} \tagref{tag:RFL} \hfill \tagref{tag:FLTID} \tagref{tag:FLTADD} \tagref{tag:CODE}
   \item \tagref{tag:XFL} \tagref{tag:TRACK} \tagref{tag:AHDG}\ \tagref{tag:ASP} \tagref{tag:ARC} \tagref{tag:COPN/COPX} \tagref{tag:FCOPX} \tagref{tag:OFL} \tagref{tag:O+} \tagref{tag:STATE} \tagref{tag:ASI}
@@ -3564,7 +3174,7 @@ The Uncoupled label is shown for radar tracks that aren’t correlated with a fl
 
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item \tagref{tag:AIW} \tagref{tag:DUPE} \tagref{tag:EMRG}
+  \item \tagref{tag:TCT} \tagref{tag:AIW} \tagref{tag:DUPE} \tagref{tag:EMRG}
   \item \tagref{tag:FLTID} or \tagref{tag:TSSR}  
   \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:GS}
   \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
@@ -3578,7 +3188,7 @@ The Uncoupled label is shown for radar tracks that aren’t correlated with a fl
 
 \begin{enumerate}[label=Line \arabic*]
   \setcounter{enumi}{-1}
-  \item \tagref{tag:AIW} \tagref{tag:DUPE} \tagref{tag:EMRG}
+  \item \tagref{tag:TCT} \tagref{tag:AIW} \tagref{tag:DUPE} \tagref{tag:EMRG}
   \item \tagref{tag:FLTID} \tagref{tag:TSSR}
   \item \tagref{tag:AFL} \tagref{tag:a} \tagref{tag:GS}
   \item \tagref{tag:DSFL} \tagref{tag:DHDG} \tagref{tag:DIAS} \tagref{tag:DRC} \tagref{tag:DMACH}
@@ -3603,6 +3213,7 @@ Line 0 is constructed solely of indicators and warnings. Line 0 is only displaye
   \colortab{Warning}/t             & Communication Type Indicator                                                                                                & \tagref{tag:COM}          \\ \hline
   \colortab{Assumed}V              & Y, Y or Z Flight Rules, same color as Track Label                                                                           & \tagref{tag:V}             \\ \hline
   \colortab{Warning}MSAW           & Approach Path Monitor or Minimum Safe Altitude Warning                                                                                               & \tagref{tag:MSAW}          \\ \hline
+  \colortab{Warning}TC+            & Tactical Controller Tool  Warning                                                                                           & \tagref{tag:TCT}           \\ \hline
   \colortab{Warning}APW            & Area Proximity Warning                                                                                                      & \tagref{tag:APW}           \\ \hline
   \colortab{AIW intrusion}AIW      & Area Intrusion Warning                                                                                                      & \tagref{tag:AIW}           \\ \hline
   \colortab{Warning}L              & Cleared Level Adherence Monitoring                                                               & \tagref{tag:CLAM}          \\ \hline
@@ -3649,45 +3260,49 @@ Label items may be interacted with either with a left, right or shift and right 
   \centering
   \resizebox{\columnwidth}{!}{
     \begin{tikzpicture}
-      \node[,anchor=west,draw,text=Assumed,fill=Flight Highlight,minimum height=0.55cm] at (0,0) () {\texttt{\textcolor{Warning}{/t} V \textcolor   {Warning}{MSAW} \textcolor{Warning}{APW} \textcolor{AIW intrusion}{AIW} \textcolor{Warning}{L} \textcolor{Warning}{DUPE} \textcolor{Warning}{O}   \textcolor{Urgency}{W Y R} \textcolor{Information}{P} \textcolor{Warning}{M} \textcolor{Information}{$\bullet$} $\bullet$ \textcolor{Warning}{A} +     I \textcolor{Information}{F} \textcolor{Warning}{S} \textcolor{Urgency}{EM} \textcolor{Proposition In}{ROF} \textcolor{Warning}{A1000} 3223 \textcolor{Urgency}{[MAYDAY]} \textcolor{CPDLC Pilot Late}{CPDLC P LATE} DIV 01 \textcolor{Warning}{G01}}};
+      \node[,anchor=west,draw,text=Assumed,fill=Flight Highlight,minimum height=0.55cm] at (0,0) () {\texttt{\textcolor{Warning}{/t} V \textcolor{Warning}{MSAW} \textcolor{Warning}{TC} \textcolor{Warning}{APW} \textcolor{AIW intrusion}{AIW} \textcolor{Warning}{L} \textcolor{Warning}{DUPE} \textcolor{Warning}{O}   \textcolor{Urgency}{W Y R} \textcolor{Information}{P} \textcolor{Warning}{M} \textcolor{Information}{$\bullet$} $\bullet$ \textcolor{Warning}{A} +     I \textcolor{Information}{F} \textcolor{Warning}{S} \textcolor{Urgency}{EM} \textcolor{Proposition In}{ROF} \textcolor{Warning}{A1000} 3223 \textcolor{Urgency}{[MAYDAY]} \textcolor{CPDLC Pilot Late}{CPDLC P LATE} DIV 01 \textcolor{Warning}{G01}}};
       
       \drawtag{0.6cm}{0.3,0}{com};
       \drawtagdesc{4cm}{2.1,4}{lcom}{L: Open Communication Type Menu};
       \draw[red,very thick] (com.north west) -- (lcom.south west);
+      
+      \drawtag{0.6cm}{2.7,0}{tct};
+      \drawtagdesc{4cm}{2.1,-3.3}{ltct}{R: Toggle TCT Leg};
+      \draw[red,very thick] (tct.south west) -- (ltct.north west);
 
-      \drawtag{0.8cm}{3.7,0}{aiw};
-      \drawtagdesc{3cm}{3.7,-2}{lext}{R: Acknowledge AIW alert};
+      \drawtag{0.8cm}{4.4,0}{aiw};
+      \drawtagdesc{3cm}{4.2,-2}{lext}{R: Acknowledge AIW alert};
       \draw[red,very thick] (aiw) -- (lext);
 
-      \drawtag{0.4cm}{6,0}{o};
+      \drawtag{0.4cm}{6.7,0}{o};
       \drawtagdesc{4cm}{3,2}{lext}{R: Acknowledge OCM};
       \draw[red,very thick] (o) -- (lext);
 
-      \drawtag{1.3cm}{10,0}{alrt};
+      \drawtag{1.3cm}{10.7,0}{alrt};
       \drawtagdesc{3cm}{8,-2}{lext}{R: Open Extended label};
       \draw[red,very thick] (alrt) -- (lext);
 
-      \drawtag{0.4cm}{10.9,0}{f};
+      \drawtag{0.4cm}{11.6,0}{f};
       \drawtagdesc{3cm}{12,-2}{lext}{L: Toggle No Fix flag};
       \draw[red,very thick] (f) -- (lext);
 
-      \drawtag{0.4cm}{8.3,0}{m};
+      \drawtag{0.4cm}{9,0}{m};
       \drawtagdesc{4cm}{8.3,2}{lm}{L: Toggle Military Coordination Flag\\R: Toggle Flight Leg display};
       \draw[red,very thick] (m) -- (lm);
     
-      \drawtag{1cm}{15.2,0}{nssr};
+      \drawtag{1cm}{15.9,0}{nssr};
       \drawtagdesc{4cm}{15,2}{lnssr}{L: Open \winref{menu:assr}\\R: Send CPDLC squawk message};
       \draw[red,very thick] (nssr) -- (lnssr);
     
-      \drawtag{3cm}{19.3 ,0}{dlw};
+      \drawtag{3cm}{20 ,0}{dlw};
       \drawtagdesc{4cm}{19.3,2}{ldlw}{L: CPDLC Warning functions\\R: Open \winref{win:dlcmw}};
       \draw[red,very thick] (dlw) -- (ldlw);
 
-      \drawtag{1.8cm}{16.8,0}{dle};
+      \drawtag{1.8cm}{17.5,0}{dle};
       \drawtagdesc{4cm}{16.8,-2}{ldle}{L: \winref{menu:dleam}};
       \draw[red,very thick] (dle) -- (ldle);      
     
-      \drawtag{0.8cm}{21.3,0}{opt2};
+      \drawtag{0.8cm}{22,0}{opt2};
       \drawtagdesc{3.3cm}{21.3,-2}{lopt2}{L: Edit OP\_TEXT2\\R: Open Extended label};
       \draw[red,very thick] (opt2) -- (lopt2);
     \end{tikzpicture}
@@ -4220,7 +3835,17 @@ The aircraft’s RFL is displayed above the level list with format “R<RFL>”.
   %\item “OS” sets “Own separation” (FAST indicators hidden, treated as visual approach by safety nets)
 \end{itemize}
 
-The “APP Clr” folder contains other available approach types for the aircraft’s arrival runway. If none are defined in the plugin settings, the folder is not displayed in the menu.
+The “APP Clr” folder contains other available approach types to populate the \winref{tag:ACF} field:
+
+\begin{itemize}
+  \item RNP
+  \item VOR
+  \item CAT2
+  \item CAT3
+  \item TACA
+  \item TACI
+\end{itemize}
+
 
 \warn{The clearances in the “APP Clr” folder will be displayed as “cleared for approach” to controllers not using this plugin (“OS” will be “cleared for visual approach”)}
 
@@ -4607,20 +4232,10 @@ The Departure List contains all departures still on the ground of the controlled
 \begin{longtable}{|p{0.25\textwidth}|p{0.25\textwidth}|p{0.25\textwidth}|} \hline
   \textbf{Item}                 & \textbf{Left Mouse}                 & \textbf{Right Mouse}      \endhead \hline
   \tagref{tag:CALLSIGN}         & Open \winref{menu:cs}               & Toggle Flight Leg display \\ \hline
-  \tagref{tag:FSTS}             &                                     & Network Status Options    \\ \hline
-  \tagref{tag:EOBT}             & Edit EOBT                           & EOBT Options              \\ \hline
-  \tagref{tag:TOBT}*            & Edit TOBT                           & TOBT Options              \\ \hline
-  \tagref{tag:TSAT}             & Ready TOBT                          &                           \\ \hline
-  \tagref{tag:TSAC}             & Add TSAT to TSAC                    & Edit TSAC                 \\ \hline
-  \tagref{tag:ASRT}             & Toggle ASRT                         &                           \\ \hline
-  \tagref{tag:ASAT}             &                                     &                           \\ \hline
-  \tagref{tag:TTOT}             &                                     & TTOT Options              \\ \hline
-  \tagref{tag:Delta TTOT}       &                                     &                           \\ \hline
-  \tagref{tag:CTOT}             &                                     & CTOT Options              \\ \hline
-  \tagref{tag:Delta CTOT}       &                                     &                           \\ \hline
-  \tagref{tag:ECTOT}            & Add ECTOT to CTOT                   & ECTOT Options             \\ \hline
-  \tagref{tag:Flow Message}     & Get FM as text                      &                           \\ \hline
-  \tagref{tag:Ready}            & Toggle Ready                        &                           \\ \hline
+  FSTS                          &                                     & Network Status Options    \\ \hline
+  TSAT                          & Set TOBT to Now                     &                           \\ \hline
+  TTOT                          & Edit TTOT                           &                           \\ \hline
+  CTOT                          &                                     &                           \\ \hline
   \tagref{tag:ATYP}             &                                     &                           \\ \hline
   \tagref{tag:WTC}              &                                     &                           \\ \hline
   \tagref{tag:V}                &                                     &                           \\ \hline
@@ -4639,7 +4254,7 @@ The Departure List contains all departures still on the ground of the controlled
   \caption{Departure List Construction}
 \end{longtable}
 
-*EOBT is displayed instead of TOBT in non-CDM airports.
+TSAT, TTOT and CTOT fields are Runway Manager related. Refer to Runway Manager documentation for details.
 
 \subsection{Sector List}\label{list:sector}
 
@@ -5797,7 +5412,7 @@ The following buttons are available:
                       & “Apply” creates the APL, “Cancel” aborts the operation\\
     Unforce           & Cancel the forced inclusion of this aircraft in the MTCD and SAP processing\\
     Get SSR           & Assigns a new SSR code for the flight\\
-    FSSR              & Not implemented\\
+    FSSR              & Opens the \winref{win:gssrcw} (for formation flights only) \\
     MAC               & Not implemented\\
     Prev              & Selects the previous flight plan in the list (see Flight Plan Selection Window)\\
     Next              & Selects the next flight plan in the list (see Flight Plan Selection Window)\\
@@ -6486,7 +6101,7 @@ The General Information Window displays basic information on the system state. T
     MTCD                & \colorref{Warning} color if prediction time is set to zero    \\
     SEK                 & Displayed if plugin is receiving AMAN data. \colorref{Warning} color if data loading has failed.\\
     SMS                 & Displayed if FAST function is enabled \\
-    A-FAST              & Displayed if FAST function is enabled \\
+    FAST                & Displayed if FAST function is enabled \\
 \end{longtable}
 
 \subsection{Miscellaneous Information Window}
@@ -7009,7 +6624,7 @@ The “Ok” button is active when at least “RWY”, “CFL” and “ASSR” 
 
 \capdimage{img/dcw.png}{Departure Coordination Window}
 
-The Departure Coordination Window can be used to set the clearance flag. The window displays the aircraft callsign, departure runway, destination and beginning of the route and allows setting the \tagref{tag:CFL}, \tagref{tag:ASSR} and \tagref{tag:EOBT} values.
+The Departure Coordination Window can be used to set the clearance flag. The window displays the aircraft callsign, departure runway, destination and beginning of the route and allows setting the \tagref{tag:CFL}, \tagref{tag:ASSR} and EOBT values.
 
 \begin{longtable}{p{2.5cm} p{10cm}}
     CFL     & Opens the \winref{menu:cfl}\\
@@ -7067,6 +6682,16 @@ The “Send MSG” button is available when a clearance can be sent – a define
 \capdimage{img/otrw.png}{Oceanic Time Restriction Window}
 
 The Oceanic Time Restriction Window displays the time restriction(s) contained in the OCM. The window closes when the cursor leaves the window area.
+
+\subsection{Group SSR Code Window}\label{win:gssrcw}
+
+“Open Group SSR Code Window” label function 
+“Open Group SSR Code Window / ASSR menu” label function 
+Left-click FSSR button in Flight Plan Window
+
+\capdimage{img/gssrcw.png}{Group SSR Code Window}
+
+The Group SSR Code Window displays the aircraft belonging to the formation, and their assigned transponder codes. Left-click on a code to open the \winref{menu:assr} to assign a new code.
 
 \section{Flight Leg}
 
@@ -7327,19 +6952,6 @@ Some TopSky functions can be accessed using a keyboard shortcut. The available s
   \nextrow \textit{\textbf{Other colors}}                               &                                     &                                             \\ \hline
   \nextrow \label{Standard Line RDF} Standard Line RDF                  & \cellcolor{Standard Line RDF}       & Direction Finder position circle or direction line \\ \hline
   \nextrow \label{Text Notes} Text Notes                                & \cellcolor{Text Notes}              & Text notes                                  \\ \hline
-  \nextrow \textit{\textbf{A-CDM colors}}                               &                                     &                                             \\ \hline
-  \nextrow \label{color1} color1                                        & \cellcolor{color1}                  &                                             \\ \hline
-  \nextrow \label{color2} color2                                        & \cellcolor{color2}                  &                                             \\ \hline
-  \nextrow \label{color3} color3                                        & \cellcolor{color3}                  &                                             \\ \hline
-  \nextrow \label{color4} color4                                        & \cellcolor{color4}                  &                                             \\ \hline
-  \nextrow \label{color5} color5                                        & \cellcolor{color5}                  &                                             \\ \hline
-  \nextrow \label{color6} color6                                        & \cellcolor{color6}                  &                                             \\ \hline
-  \nextrow \label{color7} color7                                        & \cellcolor{color7}                  &                                             \\ \hline
-  \nextrow \label{color8} color8                                        & \cellcolor{color8}                  &                                             \\ \hline
-  \nextrow \label{color9} color9                                        & \cellcolor{color9}                  &                                             \\ \hline
-  \nextrow \label{color10} color10                                      & \cellcolor{color10}                 &                                             \\ \hline
-  \nextrow \label{color11} color11                                      & \cellcolor{color11}                 &                                             \\ \hline
-  \nextrow \label{color12} color12                                      & \cellcolor{color12}                 &                                             \\ \hline
   \caption{Color Names}
 \end{longtable}
 

@@ -275,4 +275,7 @@ TopSky plugin:ACList/Uncontrolled List 2/m_Column_24:C:1:0:10101:129:0:0:TopSky 
 TopSky plugin:ACList/ETWR List/m_Column_24:C:2:0:10089:118:0:1:TopSky plugin:TopSky plugin:
 TopSky plugin:ACList/Traffic Management List 1/m_Column_36:HOLD:5:0:10096:120:0:1:TopSky plugin:TopSky plugin:
 TopSky plugin:ACList/Traffic Management List 2/m_Column_36:HOLD:5:0:10097:121:0:1:TopSky plugin:TopSky plugin:
+CDM Plugin:CDMWindowPositionX:1307
+CDM Plugin:CDMWindowPositionY:47
+CDM Plugin:CDMMinimized:1
 END

@@ -28,13 +28,14 @@ Plugins	Plugin0Display1	Ground Radar display
 Plugins	Plugin1	\LPPC\Plugins\GroundRadar\GRplugin.dll
 Plugins	Plugin1Display0	Ground Radar display
 Plugins	Plugin1Display1	Standard ES radar screen
-Plugins	Plugin2	\LPPC\Plugins\ACDM\CDM.dll
-Plugins	Plugin2Display0	Ground Radar display
+Plugins	Plugin2	\LPPC\Plugins\AfvEuroScopeBridge.dll
 Plugins	Plugin2Display1	Standard ES radar screen
-Plugins	Plugin3	\LPPC\Plugins\AfvEuroScopeBridge.dll
-Plugins	Plugin3Display0	Ground Radar display
-Plugins	Plugin3Display1	Standard ES radar screen
-Plugins	Plugin4	\LPPC\Plugins\VATCANBookings.dll
+Plugins	Plugin2Display0	Ground Radar display
+Plugins	Plugin3	\LPPC\Plugins\LPPCFileChecker\LPPCFileChecker.dll
+Plugins	Plugin3Display0	Standard ES radar screen
+Plugins	Plugin3Display1	Ground Radar display
+Plugins	Plugin4	\LPPC\Plugins\RwyManager\RunwayManagerPlugin.dll
+Plugins	Plugin4Display0	Ground Radar display
 ASRFastKeys	1	LPPC\ASR\CCLIS.asr
 ASRFastKeys	4	LPPC\ASR\TWRSAN.asr
 ASRFastKeys	5	LPPC\ASR\ADC.asr
@@ -50,8 +51,6 @@ RecentFiles	Recent3	LPPC\ASR\TWRPRT.asr
 RecentFiles	Recent4	LPPC\ASR\TWRLIS.asr
 RecentFiles	Recent5	LPPC\ASR\TWRFAR.asr
 RecentFiles	Recent6	LPPC\ASR\TWRFUN.asr
-TeamSpeakVccs	TsVccsMiniControlX	1537
-TeamSpeakVccs	TsVccsMiniControlY	25
 LastSession	atis_freq0	124305
 LastSession	atis_url0	https://vatatis.vatsim.pt/generate?lvo=FALSE&icao=$atisairport&runway=$arrrwy($atisairport)&info=$atiscode
 LastSession	atis_callsign0	LPPR_ATIS
