@@ -11,7 +11,7 @@ If you are installing for the first time, or your setup is FUBAR:
 
 1.   Install or update the [Microsoft Visual C++ Redistributable 2015-2022 (x86) package](https://aka.ms/vs/17/release/vc_redist.x86.exe).
 
-1.   Download and install [TrackAudio 1.3.3](https://github.com/pierr3/TrackAudio/releases/download/1.3.3/trackaudio-1.3.3-x64-setup.exe).
+1.   Download and install [TrackAudio 1.4.0](https://github.com/pierr3/TrackAudio/releases/download/1.4.0/trackaudio-1.4.0-x64-setup.exe).
 
 1.   Open TrackAudio and click on the settings cog.
 
