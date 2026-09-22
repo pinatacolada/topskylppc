@@ -3,7 +3,15 @@ If you are merely updating your setup:
 
 1.   Download the [LPPC Update-Package](https://files.aero-nav.com/LPPC). Extract the contents of the zip file into `%appdata%\EuroScope`
 
-1.  yeah that's it
+1.  If there is a vacs update, it will be displayed at the top of its UI. Click the UPDATE AVAILABLE line or the settings button.
+
+     ![Autoload](/assets/img/vacsupd.png)
+
+1.  Click the green `Update & Restart`.
+
+     ![Autoload](/assets/img/vacsuprs.png)
+
+1.  If there is a TrackAudio update, [install me](https://github.com/pierr3/TrackAudio/releases/download/1.4.0/trackaudio-1.4.0-x64-setup.exe).
 
 # Full Installation
 
@@ -21,7 +29,7 @@ If you are installing for the first time, or your setup is FUBAR:
 
      ![Autoload](/assets/img/ta2.png)
 
-1.   Download and install [VACS 2.5.1](https://github.com/vacs-project/vacs/releases/download/vacs-client-v2.5.1/vacs_2.5.1_x64-setup.exe).
+1.   Download and install [VACS 2.8.0](https://github.com/vacs-project/vacs/releases/download/vacs-client-v2.8.0/vacs_2.8.0_x64-setup.exe).
 
 1.   Open VACS. Open the settings menu, double check your hardware devices are correctly selected, then click `Transmit`.
 
