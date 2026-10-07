@@ -147,6 +147,7 @@ IFC	Mil
 IFF	C
 INP	Mil
 IRL	Mil
+IVC	C
 JAE	C
 JCH	C
 JDE	C
@@ -170,6 +171,7 @@ LCS	Mil
 LEE	Mil
 LFR	C
 LMG	Mil
+LNF	C
 LOP	Mil
 LOS	Mil
 LSI	C
@@ -221,6 +223,7 @@ NRN	Mil
 NVY	Mil
 NWO	Mil
 NYB	Mil
+NYY	C
 OAN	C
 OLC	C
 OWT	C
